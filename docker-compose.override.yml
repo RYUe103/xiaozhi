@@ -1,0 +1,266 @@
+services:
+  keycloak:
+    container_name: sansuo-keycloak
+    image: quay.io/keycloak/keycloak:26.0.7
+    restart: unless-stopped
+    command:
+      - start-dev
+      - --import-realm
+      - --http-enabled=true
+      - --hostname=http://keycloak.localhost:8081
+      - --hostname-strict=false
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin123
+    ports:
+      - "127.0.0.1:8081:8080"
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "timeout 5 bash -c 'exec 3<>/dev/tcp/127.0.0.1/8080 && printf \"GET /realms/sansuo/.well-known/openid-configuration HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n\" >&3 && grep -q \"HTTP/1.1 200\" <&3'",
+        ]
+      interval: 10s
+      timeout: 6s
+      retries: 12
+      start_period: 20s
+    volumes:
+      - ./keycloak/import:/opt/keycloak/data/import
+      - keycloak_data:/opt/keycloak/data
+
+  api:
+    image: ${SANSUO_PDF_IMAGE:-sansuo/librechat-current-local:20261031}
+    platform: linux/amd64
+    depends_on:
+      mongodb:
+        condition: service_started
+      rag_api:
+        condition: service_started
+      keycloak:
+        condition: service_healthy
+    extra_hosts:
+      - "keycloak.localhost:host-gateway"
+    env_file:
+      - .env
+    environment:
+      SANSUO_KNOWLEDGE_BASE_URL: http://host.docker.internal:8765
+      SANSUO_PDF_RENDER_PYTHON: /opt/sansuo-pdf-venv/bin/python
+      SANSUO_JIT_TRACE: "${SANSUO_JIT_TRACE:-true}"
+    volumes:
+      - type: bind
+        source: ./librechat.yaml
+        target: /app/librechat.yaml
+      - type: bind
+        source: ./api/models/everosMemory.js
+        target: /app/api/models/everosMemory.js
+      - type: bind
+        source: ./api/models/memoryGateway.js
+        target: /app/api/models/memoryGateway.js
+      - type: bind
+        source: ./api/models/index.js
+        target: /app/api/models/index.js
+      - type: bind
+        source: ./api/models/sansuoFile.js
+        target: /app/api/models/sansuoFile.js
+      - type: bind
+        source: ./api/models/sansuoUsageEvent.js
+        target: /app/api/models/sansuoUsageEvent.js
+      - type: bind
+        source: ./api/strategies/openidStrategy.js
+        target: /app/api/strategies/openidStrategy.js
+      - type: bind
+        source: ./api/strategies/localStrategy.js
+        target: /app/api/strategies/localStrategy.js
+      - type: bind
+        source: ./api/strategies/validators.js
+        target: /app/api/strategies/validators.js
+      - type: bind
+        source: ./api/server/routes/auth.js
+        target: /app/api/server/routes/auth.js
+      - type: bind
+        source: ./api/server/controllers/auth/LoginController.js
+        target: /app/api/server/controllers/auth/LoginController.js
+      - type: bind
+        source: ./api/server/controllers/auth/TwoFactorAuthController.js
+        target: /app/api/server/controllers/auth/TwoFactorAuthController.js
+      - type: bind
+        source: ./api/server/routes/index.js
+        target: /app/api/server/routes/index.js
+      - type: bind
+        source: ./api/server/routes/memories.js
+        target: /app/api/server/routes/memories.js
+      - type: bind
+        source: ./api/server/controllers/agents/openai.js
+        target: /app/api/server/controllers/agents/openai.js
+      - type: bind
+        source: ./api/server/controllers/agents/responses.js
+        target: /app/api/server/controllers/agents/responses.js
+      - type: bind
+        source: ./api/server/routes/admin/sansuoData.js
+        target: /app/api/server/routes/admin/sansuoData.js
+      - type: bind
+        source: ./api/server/routes/sansuoUi.js
+        target: /app/api/server/routes/sansuoUi.js
+      - type: bind
+        source: ./api/server/routes/sansuoUsage.js
+        target: /app/api/server/routes/sansuoUsage.js
+      - type: bind
+        source: ./api/server/services/SanSuoKnowledge.js
+        target: /app/api/server/services/SanSuoKnowledge.js
+      - type: bind
+        source: ./api/server/services/SanSuoIndustryMaterials.js
+        target: /app/api/server/services/SanSuoIndustryMaterials.js
+      - type: bind
+        source: ./api/server/services/SanSuoUsage.js
+        target: /app/api/server/services/SanSuoUsage.js
+      - type: bind
+        source: ./api/server/index.js
+        target: /app/api/server/index.js
+      - type: bind
+        source: ./api/server/services/Config/loadDefaultModels.js
+        target: /app/api/server/services/Config/loadDefaultModels.js
+      - type: bind
+        source: ./api/server/controllers/agents/request.js
+        target: /app/api/server/controllers/agents/request.js
+      - type: bind
+        source: ./api/server/controllers/agents/requestIdempotency.js
+        target: /app/api/server/controllers/agents/requestIdempotency.js
+      - type: bind
+        source: ./api/server/services/Endpoints/agents/initialize.js
+        target: /app/api/server/services/Endpoints/agents/initialize.js
+      - type: bind
+        source: ./api/server/services/ExecutionResourceService.js
+        target: /app/api/server/services/ExecutionResourceService.js
+      - type: bind
+        source: ./api/server/services/Endpoints/agents/sansuoToolPolicy.js
+        target: /app/api/server/services/Endpoints/agents/sansuoToolPolicy.js
+      - type: bind
+        source: ./api/server/services/Endpoints/agents/skillDeps.js
+        target: /app/api/server/services/Endpoints/agents/skillDeps.js
+      - type: bind
+        source: ./api/server/services/Endpoints/agents/addedConvo.js
+        target: /app/api/server/services/Endpoints/agents/addedConvo.js
+      - type: bind
+        source: ./api/server/services/Endpoints/agents/runtimeCompat.js
+        target: /app/api/server/services/Endpoints/agents/runtimeCompat.js
+      - type: bind
+        source: ./api/server/services/Endpoints/agents/title.js
+        target: /app/api/server/services/Endpoints/agents/title.js
+      - type: bind
+        source: ./patches/api-server-controllers-tools.js
+        target: /app/api/server/controllers/tools.js
+      - type: bind
+        source: ./patches/api-server-controllers-agents-callbacks.js
+        target: /app/api/server/controllers/agents/callbacks.js
+      - type: bind
+        source: ./patches/api-server-controllers-agents-client.js
+        target: /app/api/server/controllers/agents/client.js
+      - type: bind
+        source: ./api/server/services/ToolService.js
+        target: /app/api/server/services/ToolService.js
+      - type: bind
+        source: ./api/app/clients/BaseClient.js
+        target: /app/api/app/clients/BaseClient.js
+      - type: bind
+        source: ./patches/api-app-clients-tools-util-handleTools.js
+        target: /app/api/app/clients/tools/util/handleTools.js
+      - type: bind
+        source: ./api/server/services/Threads/manage.js
+        target: /app/api/server/services/Threads/manage.js
+      - type: bind
+        source: ./api/server/services/Files/process.js
+        target: /app/api/server/services/Files/process.js
+      - type: bind
+        source: ./api/server/services/Files/Code/process.js
+        target: /app/api/server/services/Files/Code/process.js
+      - type: bind
+        source: ./api/server/services/Files/Pdf/render_pages.py
+        target: /app/api/server/services/Files/Pdf/render_pages.py
+      - type: bind
+        source: ./api/server/services/DocumentContextService.js
+        target: /app/api/server/services/DocumentContextService.js
+      - type: bind
+        source: ./api/server/services/DocumentArtifactAdapter.js
+        target: /app/api/server/services/DocumentArtifactAdapter.js
+      - type: bind
+        source: ./api/server/services/DocumentArtifactRepository.js
+        target: /app/api/server/services/DocumentArtifactRepository.js
+      - type: bind
+        source: ./api/server/services/DocumentRetrieval.js
+        target: /app/api/server/services/DocumentRetrieval.js
+      - type: bind
+        source: ./api/server/services/DocumentTables.js
+        target: /app/api/server/services/DocumentTables.js
+      - type: bind
+        source: ./api/server/services/DocumentVectorSearch.js
+        target: /app/api/server/services/DocumentVectorSearch.js
+      - type: bind
+        source: ./api/server/services/DocumentJitTrace.js
+        target: /app/api/server/services/DocumentJitTrace.js
+      - type: bind
+        source: ./api/server/services/DocumentVisualPolicy.js
+        target: /app/api/server/services/DocumentVisualPolicy.js
+      - type: bind
+        source: ./api/server/services/DocumentQueryProcessor.js
+        target: /app/api/server/services/DocumentQueryProcessor.js
+      - type: bind
+        source: ./api/server/services/DocumentToolResult.js
+        target: /app/api/server/services/DocumentToolResult.js
+      - type: bind
+        source: ./api/server/services/DocumentTableFocus.js
+        target: /app/api/server/services/DocumentTableFocus.js
+      - type: bind
+        source: ./api/server/services/DocumentEvidenceReranker.js
+        target: /app/api/server/services/DocumentEvidenceReranker.js
+        read_only: true
+      - type: bind
+        source: ./api/server/services/Files/Code/crud.js
+        target: /app/api/server/services/Files/Code/crud.js
+      - type: bind
+        source: ./api/server/routes/files/files.js
+        target: /app/api/server/routes/files/files.js
+      - type: bind
+        source: ./api/server/routes/files/multer.js
+        target: /app/api/server/routes/files/multer.js
+      - type: bind
+        source: ./api/server/utils/files.js
+        target: /app/api/server/utils/files.js
+      - type: bind
+        source: ./patches/librechat-api-dist-index.js
+        target: /app/packages/api/dist/index.js
+      - type: bind
+        source: ./packages/data-schemas/dist/schema/memory.cjs
+        target: /app/packages/data-schemas/dist/schema/memory.cjs
+      - type: bind
+        source: ./packages/data-schemas/dist/app/memory.cjs
+        target: /app/packages/data-schemas/dist/app/memory.cjs
+      - type: bind
+        source: ./packages/data-schemas/dist/app/memory.es.js
+        target: /app/packages/data-schemas/dist/app/memory.es.js
+      - type: bind
+        source: ./packages/data-schemas/dist/schema/user.cjs
+        target: /app/packages/data-schemas/dist/schema/user.cjs
+      - type: bind
+        source: ./packages/data-schemas/dist/schema/file.cjs
+        target: /app/packages/data-schemas/dist/schema/file.cjs
+      - type: bind
+        source: ./packages/data-schemas/dist/methods/memory.cjs
+        target: /app/packages/data-schemas/dist/methods/memory.cjs
+      - type: bind
+        source: ./packages/data-schemas/dist/methods/user.cjs
+        target: /app/packages/data-schemas/dist/methods/user.cjs
+      - type: bind
+        source: ./packages/data-schemas/dist/methods/file.cjs
+        target: /app/packages/data-schemas/dist/methods/file.cjs
+      - type: bind
+        source: ./packages/data-schemas/dist/methods/role.cjs
+        target: /app/packages/data-schemas/dist/methods/role.cjs
+      - type: bind
+        source: ./packages/data-schemas/dist/methods/role.es.js
+        target: /app/packages/data-schemas/dist/methods/role.es.js
+      - type: bind
+        source: ./packages/data-provider/dist/index.js
+        target: /app/packages/data-provider/dist/index.js
+
+volumes:
+  keycloak_data:

@@ -1,0 +1,11 @@
+services:
+  gateway:
+    container_name: sansuo-gateway
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "127.0.0.1:8088:8088"
+    volumes:
+      - ./gateway/nginx.conf:/etc/nginx/nginx.conf:ro

@@ -1,0 +1,98 @@
+{
+  "realm": "sansuo",
+  "enabled": true,
+  "sslRequired": "none",
+  "displayName": "三所统一认证测试",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "roles": {
+    "realm": [
+      {
+        "name": "sansuo_user",
+        "description": "三所助手普通用户"
+      },
+      {
+        "name": "sansuo_admin",
+        "description": "三所助手管理员"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "librechat",
+      "name": "SanSuo LibreChat Local",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "sansuo-local-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "http://localhost:3080/oauth/openid/callback",
+        "http://127.0.0.1:3080/oauth/openid/callback"
+      ],
+      "webOrigins": [
+        "http://localhost:3095",
+        "http://127.0.0.1:3095",
+        "http://localhost:3080",
+        "http://127.0.0.1:3080"
+      ],
+      "attributes": {
+        "post.logout.redirect.uris": "http://localhost:3095/*##http://127.0.0.1:3095/*##http://localhost:3080/*##http://127.0.0.1:3080/*"
+      },
+      "protocolMappers": [
+        {
+          "name": "realm roles",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "consentRequired": false,
+          "config": {
+            "multivalued": "true",
+            "userinfo.token.claim": "true",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "realm_access.roles",
+            "jsonType.label": "String"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "test@sansuo.local",
+      "email": "test@sansuo.local",
+      "firstName": "三所",
+      "lastName": "测试用户",
+      "enabled": true,
+      "emailVerified": true,
+      "realmRoles": ["sansuo_user"],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Test@123456",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "admin@sansuo.local",
+      "email": "admin@sansuo.local",
+      "firstName": "三所",
+      "lastName": "管理员",
+      "enabled": true,
+      "emailVerified": true,
+      "realmRoles": ["sansuo_user", "sansuo_admin"],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Admin@123456",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}

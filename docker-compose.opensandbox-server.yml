@@ -1,0 +1,12 @@
+services:
+  opensandbox_server:
+    container_name: sansuo-opensandbox-server
+    image: sansuo/opensandbox-server:latest
+    restart: unless-stopped
+    command: ["--config", "/etc/opensandbox/config.toml"]
+    ports:
+      - "127.0.0.1:8090:8090"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./sandbox/opensandbox.container.toml:/etc/opensandbox/config.toml:ro
+      - ./sandbox/codeapi-data:/data

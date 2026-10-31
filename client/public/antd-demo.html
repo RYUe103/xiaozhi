@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>三所小智 · Ant Design 预览</title>
+    <link rel="stylesheet" href="https://unpkg.com/antd@4.24.16/dist/antd.min.css" />
+    <style>
+      html, body, #root { min-height: 100%; margin: 0; }
+      body { background: #f5f7fa; }
+      .demo-shell { min-height: 100vh; }
+      .demo-sider { box-shadow: 1px 0 0 rgba(5, 5, 5, .06); }
+      .demo-brand { height: 64px; display: flex; align-items: center; padding: 0 24px; color: #fff; font-size: 18px; font-weight: 600; }
+      .demo-content { padding: 24px; }
+      .demo-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+      .demo-title { margin: 0 !important; }
+      .demo-subtitle { color: #8c8c8c; }
+      .metric-card .ant-statistic-title { color: #8c8c8c; }
+      .metric-card .ant-statistic-content { font-size: 26px; }
+      .section-card { height: 100%; }
+      .conversation-item { padding: 12px 0 !important; }
+      .conversation-item .ant-list-item-meta-title { margin-bottom: 2px; }
+      .composer { background: #fff; border: 1px solid #d9d9d9; border-radius: 6px; padding: 12px; }
+      .composer-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+      .table-card .ant-card-body { padding: 0; }
+      @media (max-width: 780px) {
+        .demo-sider { display: none; }
+        .demo-content { padding: 16px; }
+        .demo-header { align-items: flex-start; flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/antd@4.24.16/dist/antd.min.js"></script>
+    <script>
+      (function () {
+        var R = React;
+        var A = antd;
+        var h = R.createElement;
+        var Layout = A.Layout, Menu = A.Menu, Card = A.Card, Row = A.Row, Col = A.Col;
+        var Statistic = A.Statistic, Tag = A.Tag, Progress = A.Progress, Input = A.Input;
+        var Button = A.Button, Avatar = A.Avatar, Badge = A.Badge, Typography = A.Typography;
+        var Space = A.Space, List = A.List, Table = A.Table, Divider = A.Divider;
+        var Header = Layout.Header, Sider = Layout.Sider, Content = Layout.Content;
+        var Title = Typography.Title, Text = Typography.Text;
+
+        var files = [
+          { key: '1', name: '工会秋游策划书_修改版.docx', type: 'DOCX', status: '解析完成', size: '2.4 MB', time: '刚刚' },
+          { key: '2', name: '2026 年度活动预算.xlsx', type: 'XLSX', status: '解析中', size: '842 KB', time: '2 分钟前' },
+          { key: '3', name: '会议纪要-第三季度.pdf', type: 'PDF', status: '解析完成', size: '5.8 MB', time: '昨天' }
+        ];
+        var columns = [
+          { title: '文件名', dataIndex: 'name', key: 'name', render: function (value, row) { return h(Space, null, h(Tag, { color: row.type === 'PDF' ? 'red' : row.type === 'XLSX' ? 'green' : 'blue' }, row.type), h(Text, { ellipsis: true }, value)); } },
+          { title: '状态', dataIndex: 'status', key: 'status', render: function (value) { return h(Tag, { color: value === '解析完成' ? 'success' : 'processing' }, value); } },
+          { title: '大小', dataIndex: 'size', key: 'size' },
+          { title: '上传时间', dataIndex: 'time', key: 'time' }
+        ];
+        var conversations = [
+          { title: '秋游活动方案优化', desc: '刚刚 · 深度模式' },
+          { title: '第三季度会议纪要', desc: '昨天 · 知识库' },
+          { title: '预算表数据分析', desc: '周一 · 深度模式' },
+          { title: '年度工作总结', desc: '10 月 12 日 · 快速模式' }
+        ];
+
+        function App() {
+          var state = R.useState('');
+          var message = state[0], setMessage = state[1];
+          return h(Layout, { className: 'demo-shell' },
+            h(Sider, { width: 240, className: 'demo-sider', theme: 'dark' },
+              h('div', { className: 'demo-brand' }, '三所小智'),
+              h(Menu, { theme: 'dark', mode: 'inline', defaultSelectedKeys: ['workspace'] },
+                h(Menu.Item, { key: 'workspace' }, '工作台'),
+                h(Menu.Item, { key: 'files' }, '我的文件'),
+                h(Menu.Item, { key: 'memory' }, '记忆管理'),
+                h(Menu.Item, { key: 'knowledge' }, '知识库'),
+                h(Menu.Item, { key: 'settings' }, '系统设置')
+              ),
+              h('div', { style: { position: 'absolute', bottom: 20, left: 24, right: 24 } }, h(Badge, { status: 'success', text: h('span', { style: { color: '#bfbfbf' } }, '服务运行正常') }))
+            ),
+            h(Layout, null,
+              h(Header, { style: { background: '#fff', padding: '0 24px', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' } }, h(Space, { size: 16 }, h(Badge, { count: 3, size: 'small' }, h(Button, { type: 'text' }, '通知')), h(Avatar, { style: { backgroundColor: '#1677ff' } }, '三'))),
+              h(Content, { className: 'demo-content' },
+                h('div', { className: 'demo-header' }, h('div', null, h(Title, { level: 3, className: 'demo-title' }, '工作台'), h('div', { className: 'demo-subtitle' }, '集中查看对话、文件和知识库处理状态')), h(Space, null, h(Button, null, '导入对话'), h(Button, { type: 'primary' }, '新建对话'))),
+                h(Row, { gutter: [16, 16] },
+                  h(Col, { xs: 24, sm: 12, lg: 6 }, h(Card, { className: 'metric-card' }, h(Statistic, { title: '今日对话', value: 28, suffix: '轮' }))),
+                  h(Col, { xs: 24, sm: 12, lg: 6 }, h(Card, { className: 'metric-card' }, h(Statistic, { title: '已处理文件', value: 136, suffix: '个' }))),
+                  h(Col, { xs: 24, sm: 12, lg: 6 }, h(Card, { className: 'metric-card' }, h(Statistic, { title: '知识库命中', value: 92, suffix: '%' }))),
+                  h(Col, { xs: 24, sm: 12, lg: 6 }, h(Card, { className: 'metric-card' }, h(Statistic, { title: '本月生成文件', value: 14, suffix: '个' })))
+                ),
+                h(Row, { gutter: [16, 16], style: { marginTop: 16 } },
+                  h(Col, { xs: 24, lg: 8 }, h(Card, { title: '最近对话', extra: h(Button, { type: 'link' }, '查看全部'), className: 'section-card' }, h(List, { itemLayout: 'horizontal', dataSource: conversations, renderItem: function (item, index) { return h(List.Item, { className: 'conversation-item' }, h(List.Item.Meta, { avatar: h(Avatar, { style: { backgroundColor: index === 0 ? '#1677ff' : '#d9d9d9' } }, index === 0 ? '新' : '对'), title: item.title, description: item.desc })); } }))),
+                  h(Col, { xs: 24, lg: 16 }, h(Card, { title: '文件处理', extra: h(Space, null, h(Tag, { color: 'processing' }, '1 个处理中'), h(Button, { type: 'primary' }, '上传文件')), className: 'section-card table-card' }, h(Table, { columns: columns, dataSource: files, pagination: false, scroll: { x: 560 } })))
+                ),
+                h(Card, { title: '快速开始对话', style: { marginTop: 16 }, extra: h(Tag, { color: 'blue' }, '深度模式') }, h('div', { className: 'composer' }, h(Input.TextArea, { value: message, onChange: function (e) { setMessage(e.target.value); }, autoSize: { minRows: 2, maxRows: 4 }, placeholder: '输入问题，或拖入 PDF、DOCX、Excel 文件…' }), h('div', { className: 'composer-footer' }, h(Space, null, h(Button, null, '添加文件'), h(Button, null, '选择知识库')), h(Button, { type: 'primary', disabled: !message.trim() }, '发送')))),
+                h(Divider, null), h(Text, { type: 'secondary' }, 'Ant Design 预览 · 当前页面仅用于比较组件风格，不影响正式聊天入口')
+              )
+            )
+          );
+        }
+        ReactDOM.render(h(App), document.getElementById('root'));
+      })();
+    </script>
+  </body>
+</html>

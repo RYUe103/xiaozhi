@@ -1,0 +1,150 @@
+const crypto = require('crypto');
+const fetch = require('node-fetch');
+
+const fingerprint = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
+
+function isBailianEndpoint(endpoint) {
+  try {
+    return /^(?:dashscope(?:-intl|-us)?\.aliyuncs\.com|dashscope\.(?:intl|us)\.aliyuncs\.com)$/.test(new URL(endpoint).hostname);
+  } catch { return false; }
+}
+
+function resolveEmbeddingConfig(options = {}, env = process.env) {
+  const base = env.RAG_OPENAI_BASEURL || (isBailianEndpoint(env.QWEN_BASE_URL) ? env.QWEN_BASE_URL : '');
+  const endpoint = options.endpoint || env.SANSUO_JIT_EMBEDDING_URL || (base ? base.replace(/\/$/, '') + '/embeddings' : '');
+  const bailian = isBailianEndpoint(endpoint);
+  const sameQwenProvider = bailian && isBailianEndpoint(env.QWEN_BASE_URL) &&
+    new URL(endpoint).origin === new URL(env.QWEN_BASE_URL).origin;
+  return {
+    endpoint,
+    apiKey: options.apiKey || env.SANSUO_JIT_EMBEDDING_KEY || env.SANSUO_JIT_EMBEDDING_API_KEY ||
+      (sameQwenProvider ? env.QWEN_API_KEY : env.RAG_OPENAI_API_KEY),
+    model: options.model || env.SANSUO_JIT_EMBEDDING_MODEL || env.EMBEDDINGS_MODEL || (bailian ? 'text-embedding-v4' : ''),
+    revision: options.revision || env.SANSUO_JIT_EMBEDDING_REVISION || '1',
+    bailian,
+  };
+}
+
+/** Reuses an OpenAI-compatible embedding provider; never queries the knowledge-base corpus. */
+class DocumentVectorSearch {
+  constructor(options = {}) {
+    const { fetchImpl = fetch, cache = null, timeoutMs = 15000, searchTimeoutMs = 45000, maxEmbeddingCalls = 40, maxEmbeddingChars = 480000, cacheQueries = true } = options;
+    Object.assign(this, resolveEmbeddingConfig(options));
+    this.fetch = fetchImpl;
+    this.cache = cache;
+    this.timeoutMs = timeoutMs;
+    this.searchTimeoutMs = searchTimeoutMs;
+    this.maxEmbeddingCalls = maxEmbeddingCalls;
+    this.maxEmbeddingChars = maxEmbeddingChars;
+    this.cacheQueries = cacheQueries;
+    this.queryVectors = new Map();
+    this.usage = { calls: 0, chars: 0, total_tokens: 0 };
+  }
+  get configured() { return Boolean(this.endpoint && this.apiKey && this.model); }
+  async embed(texts, timeoutMs = this.timeoutMs) {
+    if (!this.configured) throw new Error('VECTOR_PROVIDER_UNCONFIGURED');
+    if (!texts.length || texts.some((text) => typeof text !== 'string' || !text.trim())) throw new Error('VECTOR_INPUT_INVALID');
+    const chars = texts.reduce((sum, text) => sum + text.length, 0);
+    if (this.usage.calls >= this.maxEmbeddingCalls || this.usage.chars + chars > this.maxEmbeddingChars) throw new Error('VECTOR_REQUEST_BUDGET_EXCEEDED');
+    this.usage.calls++;
+    this.usage.chars += chars;
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), Math.max(1, Math.min(this.timeoutMs, timeoutMs)));
+    try {
+      const response = await this.fetch(this.endpoint, { method: 'POST', signal: controller.signal,
+        headers: { Authorization: 'Bearer ' + this.apiKey, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: this.model, input: texts }) });
+      if (!response.ok) throw new Error('VECTOR_HTTP_' + response.status);
+      const result = await response.json();
+      this.usage.total_tokens += result.usage?.total_tokens || 0;
+      const rows = Array.isArray(result.data) ? result.data.slice().sort((a, b) => a.index - b.index) : null;
+      if (!Array.isArray(rows) || rows.length !== texts.length || rows.some((r, i) => r.index !== i || !validVector(r.embedding))) throw new Error('VECTOR_RESPONSE_INVALID');
+      if (rows.some((r) => r.embedding.length !== rows[0].embedding.length)) throw new Error('VECTOR_DIMENSION_MISMATCH');
+      return rows.map((r) => r.embedding);
+    } catch (error) {
+      if (error.name === 'AbortError') throw new Error('VECTOR_TIMEOUT');
+      if (error.message.startsWith('VECTOR_')) throw error;
+      throw new Error('VECTOR_REQUEST_FAILED');
+    } finally { clearTimeout(timer); }
+  }
+  async search({ userId, conversationId, document, query, limit = 12 }) {
+    if (!userId || !conversationId) throw new Error('DOCUMENT_ACCESS_DENIED');
+    const records = [...document.records, ...(document.visualRecords || [])];
+    if (!records.length) return [];
+    if (records.length > 2000) throw new Error('VECTOR_INDEX_BUDGET_EXCEEDED');
+    if (!String(query || '').trim() || String(query).length > 8000) throw new Error('VECTOR_QUERY_INVALID');
+    const scope = fingerprint([userId, conversationId, document.documentId, this.endpoint, this.model, this.revision]);
+    // Segment embedding inputs without truncating the evidence returned by the Repository.
+    const segments = records.flatMap((record, recordIndex) => {
+      const result = [];
+      for (let offset = 0; offset < record.text.length; offset += 6000) result.push({ ...record, recordIndex, offset, text: record.text.slice(offset, offset + 6000) });
+      return result;
+    });
+    if (segments.length > 5000) throw new Error('VECTOR_INDEX_BUDGET_EXCEEDED');
+    const deadline = Date.now() + this.searchTimeoutMs;
+    const remaining = () => {
+      const ms = deadline - Date.now();
+      if (ms <= 0) throw new Error('VECTOR_SEARCH_TIMEOUT');
+      return ms;
+    };
+    const vectors = [];
+    let newChars = 0;
+    const batchSize = this.bailian ? 10 : 32;
+    for (let start = 0; start < segments.length; start += batchSize) {
+      remaining();
+      const batch = segments.slice(start, start + batchSize);
+      const keys = batch.map((r) => fingerprint([scope, r.id, r.kind, r.offset, r.text]));
+      const values = await Promise.all(keys.map((key) => this.cache?.get(key, scope) || null));
+      const missing = batch.map((r, i) => ({ r, i })).filter((item) => !validVector(values[item.i]));
+      if (missing.length) {
+        newChars += missing.reduce((sum, x) => sum + x.r.text.length, 0);
+        if (newChars > 240000) throw new Error('VECTOR_INDEX_BUDGET_EXCEEDED');
+        const generated = await this.embed(missing.map((x) => x.r.text), remaining());
+        for (let i = 0; i < missing.length; i++) {
+          const target = missing[i].i;
+          values[target] = generated[i];
+          await this.cache?.set(keys[target], scope, generated[i]);
+        }
+      }
+      vectors.push(...values);
+    }
+    const queryKey = fingerprint([scope, document.version, query]);
+    let q = this.cacheQueries ? this.queryVectors.get(queryKey) : null;
+    if (!q) {
+      [q] = await this.embed([query], remaining());
+      if (this.cacheQueries) {
+        this.queryVectors.set(queryKey, q);
+        if (this.queryVectors.size > 128) this.queryVectors.delete(this.queryVectors.keys().next().value);
+      }
+    }
+    const scores = new Map();
+    segments.forEach((segment, i) => scores.set(segment.recordIndex, Math.max(scores.get(segment.recordIndex) ?? -Infinity, cosine(q, vectors[i]))));
+    return records.map((record, i) => ({ record, source: record.kind === 'visual_summary' ? 'vector_visual' : 'vector', score: scores.get(i) ?? -1 }))
+      .sort((a, b) => b.score - a.score).slice(0, limit).map((r, i) => ({ ...r, rank: i + 1 }));
+  }
+}
+
+function validVector(v) { return Array.isArray(v) && v.length > 0 && v.length <= 32768 && v.every(Number.isFinite); }
+function cosine(a, b) {
+  if (!validVector(a) || !validVector(b) || a.length !== b.length) throw new Error('VECTOR_DIMENSION_MISMATCH');
+  const dot = a.reduce((s, v, i) => s + v * b[i], 0);
+  const norm = Math.sqrt(a.reduce((s, v) => s + v * v, 0) * b.reduce((s, v) => s + v * v, 0));
+  return norm ? dot / norm : 0;
+}
+
+/** New isolated cache collection; TTL expiry only removes derived vectors, never source artifacts. */
+function createMongoVectorCache(mongoose) {
+  let initialization;
+  const ready = () => initialization ||= (async () => {
+    const collection = mongoose.connection.collection('sansuo_jit_embedding_cache');
+    await collection.createIndex({ key: 1, scope: 1 }, { unique: true });
+    await collection.createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 });
+    return collection;
+  })().catch((error) => { initialization = null; throw error; });
+  return {
+    async get(key, scope) { const row = await (await ready()).findOne({ key, scope, expiresAt: { $gt: new Date() } }); return row?.vector || null; },
+    async set(key, scope, vector) { await (await ready()).updateOne({ key, scope }, { $set: { vector, expiresAt: new Date(Date.now() + 7 * 86400000) } }, { upsert: true }); },
+  };
+}
+
+module.exports = { DocumentVectorSearch, createMongoVectorCache, cosine, resolveEmbeddingConfig };

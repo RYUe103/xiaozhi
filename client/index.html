@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <base href="/" />
+    <meta name="theme-color" content="#171717" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="LibreChat - An open source chat application with support for multiple AI models" />
+    <title>LibreChat</title>
+    <link rel="icon" type="image/svg+xml" href="assets/sansuo-dino.svg?v=1" />
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <link rel="alternate icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon-180x180.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+    <script>
+      const theme = localStorage.getItem('color-theme');
+      const loadingContainerStyle = document.createElement('style');
+      let backgroundColor;
+
+      if (theme === 'dark') {
+        backgroundColor = '#0d0d0d';
+      } else if (theme === 'light') {
+        backgroundColor = '#ffffff';
+      } else if (theme === 'system') {
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        backgroundColor = prefersDarkScheme ? '#0d0d0d' : '#ffffff';
+      } else {
+        backgroundColor = '#ffffff';
+      }
+
+      loadingContainerStyle.innerHTML = `
+        #loading-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          background-color: ${backgroundColor};
+        }
+      `;
+      document.head.appendChild(loadingContainerStyle);
+    </script>
+    <script>
+      (function () {
+        const RECOVERY_KEY = '__sansuo_frontend_recovery__';
+        const RECOVERY_PARAM = '__frontend_recovery__';
+        const MAX_ATTEMPTS = 2;
+        const RETRY_WINDOW_MS = 2 * 60 * 1000;
+        let recoveryInFlight = false;
+
+        function normalizeMessage(value) {
+          if (!value) {
+            return '';
+          }
+          if (typeof value === 'string') {
+            return value;
+          }
+          if (typeof value.message === 'string') {
+            return value.message;
+          }
+          if (typeof value.reason === 'string') {
+            return value.reason;
+          }
+          if (value.reason && typeof value.reason.message === 'string') {
+            return value.reason.message;
+          }
+          return String(value);
+        }
+
+        const assetErrorPatterns = [
+          /Failed to fetch dynamically imported module/i,
+          /Importing a module script failed/i,
+          /Failed to load module script/i,
+          /Loading chunk [\w-]+ failed/i,
+          /ChunkLoadError/i,
+          /Unexpected token '</i,
+          /mime type of "text\/html"/i,
+        ];
+
+        function shouldRecoverFromAssetError(message) {
+          return assetErrorPatterns.some(function (pattern) {
+            return pattern.test(message);
+          });
+        }
+
+        function readRecoveryState() {
+          try {
+            const raw = sessionStorage.getItem(RECOVERY_KEY);
+            return raw ? JSON.parse(raw) : null;
+          } catch {
+            return null;
+          }
+        }
+
+        function writeRecoveryState(state) {
+          try {
+            sessionStorage.setItem(RECOVERY_KEY, JSON.stringify(state));
+          } catch {}
+        }
+
+        function clearRecoveryState() {
+          try {
+            sessionStorage.removeItem(RECOVERY_KEY);
+          } catch {}
+        }
+
+        async function clearFrontendCaches() {
+          try {
+            if ('serviceWorker' in navigator) {
+              const registrations = await navigator.serviceWorker.getRegistrations();
+              await Promise.all(registrations.map((registration) => registration.unregister()));
+            }
+          } catch {}
+
+          try {
+            if ('caches' in window) {
+              const keys = await caches.keys();
+              await Promise.all(keys.map((key) => caches.delete(key)));
+            }
+          } catch {}
+        }
+
+        function canRetryNow() {
+          const state = readRecoveryState();
+          if (!state) {
+            return true;
+          }
+          const withinWindow = Date.now() - Number(state.ts || 0) < RETRY_WINDOW_MS;
+          if (!withinWindow) {
+            return true;
+          }
+          return Number(state.attempts || 0) < MAX_ATTEMPTS;
+        }
+
+        function markRetry(reason) {
+          const state = readRecoveryState();
+          const withinWindow =
+            state && Date.now() - Number(state.ts || 0) < RETRY_WINDOW_MS;
+          writeRecoveryState({
+            attempts: withinWindow ? Number(state.attempts || 0) + 1 : 1,
+            ts: Date.now(),
+            reason: reason || 'unknown',
+            href: window.location.href,
+          });
+        }
+
+        async function recoverFromAssetFailure(reason) {
+          if (recoveryInFlight || !canRetryNow()) {
+            return;
+          }
+          recoveryInFlight = true;
+          markRetry(reason);
+          await clearFrontendCaches();
+          const nextUrl = new URL(window.location.href);
+          nextUrl.searchParams.set(RECOVERY_PARAM, String(Date.now()));
+          window.location.replace(nextUrl.toString());
+        }
+
+        window.__SANSUO_FRONTEND_RECOVERY_CLEAR__ = clearRecoveryState;
+
+        window.addEventListener(
+          'error',
+          function (event) {
+            const message = normalizeMessage(event && (event.error || event.message || event));
+            if (shouldRecoverFromAssetError(message)) {
+              recoverFromAssetFailure(message);
+            }
+          },
+          true,
+        );
+
+        window.addEventListener('unhandledrejection', function (event) {
+          const message = normalizeMessage(event && (event.reason || event));
+          if (shouldRecoverFromAssetError(message)) {
+            recoverFromAssetFailure(message);
+          }
+        });
+
+        window.addEventListener('vite:preloadError', function (event) {
+          if (event && typeof event.preventDefault === 'function') {
+            event.preventDefault();
+          }
+          const message = normalizeMessage(event && (event.payload || event.reason || event));
+          recoverFromAssetFailure(message || 'vite:preloadError');
+        });
+      })();
+    </script>
+    <script>
+      (function () {
+        const host = window.location.hostname;
+        const isLocalhost =
+          host === 'localhost' ||
+          host === '127.0.0.1' ||
+          host === '::1' ||
+          host.endsWith('.localhost');
+        const shouldRegisterServiceWorker =
+          'serviceWorker' in navigator &&
+          !isLocalhost &&
+          (window.isSecureContext || window.location.protocol === 'https:');
+
+        const clearLocalServiceWorkerState = function () {
+          if (!('serviceWorker' in navigator)) {
+            return Promise.resolve();
+          }
+
+          return navigator.serviceWorker
+            .getRegistrations()
+            .then(function (registrations) {
+              return Promise.all(
+                registrations.map(function (registration) {
+                  return registration.unregister().catch(function () {});
+                }),
+              );
+            })
+            .then(function () {
+              if (!('caches' in window)) {
+                return;
+              }
+              return caches.keys().then(function (keys) {
+                return Promise.all(
+                  keys.map(function (key) {
+                    return caches.delete(key).catch(function () {});
+                  }),
+                );
+              });
+            })
+            .catch(function () {});
+        };
+
+        if (isLocalhost) {
+          window.addEventListener('load', function () {
+            clearLocalServiceWorkerState();
+          });
+          return;
+        }
+
+        if (!shouldRegisterServiceWorker) {
+          return;
+        }
+
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(function () {});
+        });
+      })();
+    </script>
+    <script defer type="module" src="/src/main.jsx"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div id="loading-container"></div>
+    </div>
+  </body>
+</html>

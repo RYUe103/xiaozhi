@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <system.webServer>
+
+    <rewrite>
+      <rules>
+
+        <!-- 后端 API -->
+        <rule name="Proxy API to LibreChat" stopProcessing="true">
+          <match url="^api/(.*)" />
+          <action type="Rewrite" url="http://后端LinuxIP:3080/api/{R:1}" />
+        </rule>
+
+        <!-- 登录 / OAuth 回调 -->
+        <rule name="Proxy OAuth to LibreChat" stopProcessing="true">
+          <match url="^oauth/(.*)" />
+          <action type="Rewrite" url="http://后端LinuxIP:3080/oauth/{R:1}" />
+        </rule>
+
+        <!-- 文件下载 -->
+        <rule name="Proxy Files to LibreChat" stopProcessing="true">
+          <match url="^files/(.*)" />
+          <action type="Rewrite" url="http://后端LinuxIP:3080/files/{R:1}" />
+        </rule>
+
+        <!-- 图片 / 静态后端资源 -->
+        <rule name="Proxy Images to LibreChat" stopProcessing="true">
+          <match url="^images/(.*)" />
+          <action type="Rewrite" url="http://后端LinuxIP:3080/images/{R:1}" />
+        </rule>
+
+        <!-- 前端单页应用：刷新 /login /sansuo-admin 不报 404 -->
+        <rule name="React SPA fallback" stopProcessing="true">
+          <match url=".*" />
+          <conditions logicalGrouping="MatchAll">
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+          </conditions>
+          <action type="Rewrite" url="/index.html" />
+        </rule>
+
+      </rules>
+    </rewrite>
+
+    <!-- 开启 IIS 反向代理 -->
+    <proxy enabled="true" preserveHostHeader="true" />
+
+    <!-- 上传文件大小限制，约 200MB -->
+    <security>
+      <requestFiltering>
+        <requestLimits maxAllowedContentLength="209715200" />
+      </requestFiltering>
+    </security>
+
+  </system.webServer>
+</configuration>

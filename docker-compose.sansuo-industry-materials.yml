@@ -1,0 +1,8 @@
+services:
+  api:
+    volumes:
+      - ./api/server/services/SanSuoIndustryMaterials.js:/app/api/server/services/SanSuoIndustryMaterials.js:ro
+      - ./api/server/routes/sansuoUi.js:/app/api/server/routes/sansuoUi.js:ro
+      - ./api/server/routes/admin/sansuoData.js:/app/api/server/routes/admin/sansuoData.js:ro
+      - ./api/app/clients/BaseClient.js:/app/api/app/clients/BaseClient.js:ro
+      - ./client/dist:/app/client/dist:ro

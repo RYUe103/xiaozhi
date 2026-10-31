@@ -1,0 +1,34 @@
+**/.circleci
+**/.editorconfig
+**/.dockerignore
+**/.git
+**/.DS_Store
+**/.vscode
+**/node_modules
+
+# Local runtime data, generated output, and historical transfer archives
+/backups
+/migration
+/outputs
+/evidence
+/wheels
+/logs
+/uploads
+/images
+/data-node
+/meili_data*
+/patch_builds
+/sandbox/codeapi-data
+/sandbox/__pycache__
+/client/coverage
+/client/dist*
+/client/junit.xml
+/client/vite-output.log
+
+# Specific patterns to ignore
+librechat*
+Dockerfile*
+docs
+
+# Ignore all hidden files
+.*

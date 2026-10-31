@@ -1,0 +1,28 @@
+FROM sandbox-registry.cn-zhangjiakou.cr.aliyuncs.com/opensandbox/code-interpreter:v1.0.2
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    file \
+    fontconfig \
+    fonts-dejavu \
+    fonts-liberation \
+    fonts-noto-cjk \
+    fonts-noto-color-emoji \
+    ghostscript \
+    libreoffice \
+    pandoc \
+    poppler-utils \
+    unzip \
+    zip \
+    && rm -rf /var/lib/apt/lists/* \
+    && fc-cache -f
+
+COPY sandbox/office-requirements.txt /tmp/office-requirements.txt
+
+RUN set -euo pipefail; \
+    source /opt/opensandbox/code-interpreter-env.sh python 3.11; \
+    python3 -m pip install --no-cache-dir --break-system-packages -r /tmp/office-requirements.txt; \
+    rm -f /tmp/office-requirements.txt
+
+ENV PYTHON_VERSION=3.11
