@@ -318,6 +318,10 @@ async function ensureSanSuoPdfPageArtifacts({
     req,
   );
   const sourceBuffer = await streamToBuffer(downloaded?.data || downloaded);
+  const expectedSourceHash = sourceFile?.metadata?.sha256 || sourceFile?.metadata?.contentHash;
+  if (!expectedSourceHash || crypto.createHash('sha256').update(sourceBuffer).digest('hex') !== expectedSourceHash) {
+    throw new Error('DOCUMENT_VERSION_MISMATCH');
+  }
   const rendered = await renderSanSuoPdfPages(sourceBuffer, requestedPages);
   const sourceName = String(sourceFile.filename || sourceFile.name || 'document.pdf').replace(
     /[^\w.\-\u3400-\u9fff ]+/g,

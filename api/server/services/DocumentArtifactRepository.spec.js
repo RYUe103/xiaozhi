@@ -12,6 +12,17 @@ function fixture(scope = {}) {
 }
 
 describe('authorized DocumentArtifactRepository', () => {
+  test('fills missing MinerU pages with FITZ while excluding duplicate page text', async () => {
+    const { repo } = fixture();
+    const artifacts = ['mineru', 'visual'].map((type) => ({ libreFileId: type, displayFilename: `x_${type}_chunks.jsonl`, metadata: { rootSourceLibreFileId: 'mixed' } }));
+    await repo.load({ roots: [{ file_id: 'mixed' }], artifacts, download: async (a) => Buffer.from(a.libreFileId === 'mineru'
+      ? JSON.stringify({ page: 1, text: 'MinerU page one' })
+      : [JSON.stringify({ page: 1, text: 'duplicate one' }), JSON.stringify({ page: 2, text: 'FITZ page two' })].join('\n')) });
+    const doc = [...repo.documents.values()].find((d) => d.fileId === 'mixed');
+    expect(doc.records.map((r) => [r.pageStart, r.engine, r.text, r.sourceArtifact])).toEqual([
+      [1, 'mineru', 'MinerU page one', 'mineru'], [2, 'fitz', 'FITZ page two', 'visual'],
+    ]);
+  });
   test('scanned page has separate summary and no fabricated searchable body', () => {
     const { repo, doc } = fixture();
     const info = repo.execute({ action: 'info', document_id: doc.documentId });

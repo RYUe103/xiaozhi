@@ -45,6 +45,8 @@ function normalizePdfChunk(value = {}, index = 0, documentId = '') {
     pageStart,
     pageEnd,
     text,
+    engine: value.engine,
+    sourceArtifact: value.sourceArtifact,
   };
 }
 

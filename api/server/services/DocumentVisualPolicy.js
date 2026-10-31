@@ -9,7 +9,7 @@ function canDeferPdfVisualPreparation({ fileIds, documents, query = '' }) {
   return fileIds.every(fileId => {
     const doc = all.find(d => d.fileId === fileId);
     return doc && doc.pageCount > 0 && doc.pageCoverage?.length === doc.pageCount &&
-      doc.pageCoverage.every(p => p.hasExtractedText === true && p.textStatus === 'available');
+      doc.pageCoverage.every(p => p.hasExtractedText === true && p.textStatus === 'available' && p.textQuality === 'verified');
   });
 }
 module.exports = { canDeferPdfVisualPreparation };

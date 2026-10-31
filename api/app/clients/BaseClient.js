@@ -2182,6 +2182,20 @@ async function buildSanSuoPreparsedFileTextContext({
     await repository.load({ roots: pdfRoots, artifacts: records || [], download: (record) => downloadCodeApiFile({
       storage_session_id: record.sandboxSessionId, file_id: record.sandboxFileId, name: record.displayFilename,
     }, req) });
+    const { DocumentPageVisionService } = require('~/server/services/DocumentPageVisionService');
+    req._sansuoPageVision = new DocumentPageVisionService({ repository, baseURL: getQwenBaseURL(), apiKey: process.env.QWEN_API_KEY, model: SANSUO_VISION_MODEL,
+      getPage: async (document, page) => {
+        const sourceFile = pdfRoots.find((root) => root.file_id === document.fileId);
+        if (!sourceFile || !conversationId || conversationId === 'new') throw new Error('DOCUMENT_ACCESS_DENIED');
+        let item = getSanSuoPdfPageItems(records, document.fileId).find((p) => p.page === page && /\.png$/i.test(p.imageFile.name) && p.record.metadata?.sourceHash === document.sourceHash);
+        if (!item) {
+          const rendered = await ensureSanSuoPdfPageArtifacts({ req, conversationId, messageId: req.body?.messageId,
+            sourceFile: { ...sourceFile, metadata: { ...sourceFile.metadata, sha256: document.sourceHash } }, pages: [page] });
+          item = getSanSuoPdfPageItems(rendered, document.fileId).find((p) => p.page === page);
+        }
+        if (!item) throw new Error('PAGE_IMAGE_UNAVAILABLE');
+        return { id: item.record.libreFileId, bytes: await downloadCodeApiFile(item.imageFile, req) };
+      } });
     req._sansuoJitTrace ||= repository.trace;
     req._sansuoDocumentRepository = repository;
     req._sansuoPdfReadSources = repository.documents;
@@ -4723,7 +4737,9 @@ class BaseClient {
       const pdfRegistered = pdfService
         ? agents.filter((agent) =>
             registerSanSuoPdfReadTool(this.options.req, agent, async (args) => {
-              const result = pdfService.executeAsync ? await pdfService.executeAsync(args) : pdfService.execute(args);
+              const result = args.action === 'inspect_page'
+                ? await this.options.req._sansuoPageVision.inspect(args)
+                : pdfService.executeAsync ? await pdfService.executeAsync(args) : pdfService.execute(args);
               await recordDocumentReference(result);
               return result;
             }),

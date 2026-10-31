@@ -11,6 +11,7 @@ def main():
     parser.add_argument('--input', required=True)
     parser.add_argument('--output-dir', required=True)
     parser.add_argument('--dpi', type=int, default=180)
+    parser.add_argument('--layout', action='store_true')
     parser.add_argument(
         '--pages',
         default='',
@@ -39,13 +40,27 @@ def main():
                     continue
                 if 1 <= page_number <= document.page_count and page_number not in requested_pages:
                     requested_pages.append(page_number)
-        page_numbers = requested_pages or range(1, document.page_count + 1)
+        if args.pages and not requested_pages:
+            raise ValueError('No requested PDF pages are valid')
+        page_numbers = requested_pages if args.pages else range(1, document.page_count + 1)
         for page_number in page_numbers:
             page = document.load_page(page_number - 1)
             pixmap = page.get_pixmap(matrix=fitz.Matrix(scale, scale), alpha=False)
             image_name = f'page_{page_number:04d}.png'
             pixmap.save(str(output_dir / image_name))
-            text = ' '.join((page.get_text('text') or '').split())
+            text = (page.get_text('text', sort=True) or '').strip()
+            layout_blocks = []
+            for block in (page.get_text('dict', sort=True).get('blocks', []) if args.layout else []):
+                if block.get('type') != 0:
+                    continue
+                lines = []
+                for line in block.get('lines', []):
+                    spans = [{'text': span.get('text', ''), 'bbox': list(span['bbox'])}
+                             for span in line.get('spans', []) if span.get('text')]
+                    if spans:
+                        lines.append({'bbox': list(line['bbox']), 'spans': spans})
+                if lines:
+                    layout_blocks.append({'bbox': list(block['bbox']), 'lines': lines})
             # Native table geometry only. Raster scan recognition remains a separate VL/OCR capability.
             tables = []
             table_status = 'not_detected'
@@ -74,6 +89,8 @@ def main():
                 'page': page_number,
                 'text': text,
                 'text_chars': len(text),
+                'layout_blocks': layout_blocks,
+                'page_rect': list(page.rect),
                 'image_name': image_name,
                 'width': pixmap.width,
                 'height': pixmap.height,

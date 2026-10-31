@@ -112,7 +112,25 @@ class DocumentArtifactRepository {
       const manifest = parse(/_visual_manifest\.json$/i, json) || parse(/_smart_manifest\.json$/i, json);
       const profile = parse(/_profile\.json$/i, json);
       if (manifest?.fallback_reason) warnings.push({ code: 'PARSER_FALLBACK', reason: manifest.fallback_reason });
-      let records = mineru?.length ? mineru : fitz?.length ? fitz : pages.filter((p) => String(p.text || '').trim());
+      const mineruPages = new Set((mineru || []).flatMap((r) => {
+        const start = Number(pageOf(r));
+        const end = Number(r.pageEnd ?? r.page_end ?? start);
+        if (!Number.isInteger(start) || start < 1 || !Number.isInteger(end) || end < start || end - start > 1000 || !String(r.text || r.content || '').trim()) return [];
+        return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+      }));
+      const mineruId = choose(/_mineru_chunks\.jsonl$/i)?.[1].artifact.libreFileId || null;
+      const fitzId = choose(/_visual_chunks\.jsonl$/i)?.[1].artifact.libreFileId || choose(/_visual_pages\.jsonl$/i)?.[1].artifact.libreFileId || null;
+      const fallback = fitz?.length ? fitz : pages.filter((p) => String(p.text || '').trim());
+      let records = [
+        ...(mineru || []).map((r) => ({ ...r, engine: 'mineru', sourceArtifact: mineruId })),
+        ...fallback.filter((r) => {
+          const page = Number(pageOf(r));
+          const end = Number(r.pageEnd ?? r.page_end ?? page);
+          if ((!Number.isInteger(page) || page < 1) && !mineru?.length) return true;
+          return Number.isInteger(page) && page > 0 && Number.isInteger(end) && end >= page && end - page <= 1000 &&
+            Array.from({ length: end - page + 1 }, (_, i) => page + i).every((p) => !mineruPages.has(p));
+        }).map((r) => ({ ...r, engine: 'fitz', sourceArtifact: fitzId })),
+      ];
       let engine = mineru?.length ? 'mineru' : records.length ? 'fitz' : 'unknown';
       if (!records.length) {
         const md = choose(/_mineru\.md$/i);
@@ -160,7 +178,7 @@ class DocumentArtifactRepository {
     summaries = [], warnings = [], contentList = null, sourceHash = null, sourceArtifact = null }) {
     if (records.length > 50000 || records.reduce((sum, r) => sum + String(r.text || r.content || '').length, 0) > 16000000 || Number(pageCount) > 100000) throw new Error('DOCUMENT_LOAD_BUDGET_EXCEEDED');
     const document = buildPdfDocument({ userId: this.userId, fileId, filename, records, artifactId: sourceArtifact });
-    document.records.forEach((r) => Object.assign(r, { id: r.chunkId, kind: 'extracted_text', engine, sourceArtifact }));
+    document.records.forEach((r) => Object.assign(r, { id: r.chunkId, kind: 'extracted_text', engine: r.engine || engine, sourceArtifact: r.sourceArtifact || sourceArtifact }));
     document.visualRecords = summaries.map((p) => ({ id: 'visual_' + digest([fileId, p.page, p.summary]), pageStart: p.page, pageEnd: p.page,
       kind: 'visual_summary', engine: 'vl', text: p.summary, keywords: p.keywords || [] }));
     const observed = [...document.records.flatMap((r) => [r.pageStart, r.pageEnd]), ...pageRecords.map((p) => p.page), ...pageImages, ...summaries.map((p) => p.page)].filter((p) => Number.isInteger(p) && p > 0 && p <= 100000);
