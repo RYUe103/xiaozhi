@@ -2332,6 +2332,7 @@ describe('SanSuo document upload preparse', () => {
           metadata: expect.objectContaining({
             artifactKind: 'pdf_extracted_image',
             rootSourceLibreFileId: 'libre-pdf-review',
+            sourceHash: require('crypto').createHash('sha256').update('%PDF-1.4 review PDF').digest('hex'),
           }),
         }),
       );
@@ -2344,6 +2345,16 @@ describe('SanSuo document upload preparse', () => {
       if (previousScript === undefined) delete process.env.SANSUO_PDF_VISION_RENDER_SCRIPT;
       else process.env.SANSUO_PDF_VISION_RENDER_SCRIPT = previousScript;
     }
+  });
+
+  it('rejects a requested page if the stored PDF does not match its source hash', async () => {
+    getStrategyFunctions.mockReturnValue({
+      getDownloadStream: jest.fn().mockResolvedValue({ data: require('stream').Readable.from(Buffer.from('changed source')) }),
+      handleFileUpload: jest.fn(),
+    });
+    await expect(ensureSanSuoPdfPageArtifacts({ req: { user: { id: 'user-123' } },
+      sourceFile: { file_id: 'f', metadata: { sha256: 'old-hash', codeEnvRef: { storage_session_id: 's', file_id: 'f' } } },
+      conversationId: 'c', pages: [1] })).rejects.toThrow('DOCUMENT_VERSION_MISMATCH');
   });
 
   it('does not report ready when text artifacts could not be persisted', async () => {

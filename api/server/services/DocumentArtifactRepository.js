@@ -9,6 +9,14 @@ const { DocumentJitTrace, runtimeEvent } = require('./DocumentJitTrace');
 const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const fail = (code, message) => ({ status: 'unavailable', ok: false, error: { code, message }, message });
 const pageOf = (r) => r.pageStart ?? r.page_start ?? r.page ?? (r.page_idx != null ? Number(r.page_idx) + 1 : null);
+function assessPageTextQuality(text) {
+  const value = String(text || '').trim();
+  if (value.length < 20) return 'unknown';
+  const bad = (value.match(/[\uFFFD\u0000-\u0008\u000B\u000C\u000E-\u001F\uE000-\uF8FF]/g) || []).length;
+  const useful = (value.match(/[\p{L}\p{N}]/gu) || []).length;
+  if (bad > 0 || useful / value.length < 0.35) return 'suspect';
+  return 'plausible';
+}
 const json = (buffer) => JSON.parse(Buffer.from(buffer).toString('utf8'));
 const lines = (buffer, onInvalid = () => {}) => Buffer.from(buffer).toString('utf8').split(/\r?\n/).filter((s) => s.trim()).flatMap((line) => {
   try { return [JSON.parse(line)]; } catch { onInvalid(); return []; }
@@ -185,19 +193,21 @@ class DocumentArtifactRepository {
     const count = Number.isInteger(Number(pageCount)) && Number(pageCount) > 0 ? Number(pageCount) : null;
     const pageSet = new Set(observed);
     if (count) for (let p = 1; p <= count; p++) pageSet.add(p);
-    const textPages = new Map(), layers = new Map(pageRecords.map((p) => [p.page, p]));
+    const textPages = new Map(), pageTexts = new Map(), layers = new Map(pageRecords.map((p) => [p.page, p]));
     const summaryPages = new Set(document.visualRecords.map((p) => p.pageStart)), imagePages = new Set(pageImages);
     for (const record of document.records) if (record.pageStart != null) {
       for (let page = record.pageStart; page <= Math.min(record.pageEnd, 100000); page++) {
         pageSet.add(page);
         if (!textPages.has(page)) textPages.set(page, new Set());
         textPages.get(page).add(record.engine);
+        if (record.pageStart === record.pageEnd) pageTexts.set(page, (pageTexts.get(page) || '') + '\n' + record.text);
       }
     }
     document.pageCoverage = [...pageSet].sort((a, b) => a - b).map((page) => {
       const text = textPages.get(page), layer = layers.get(page), summary = summaryPages.has(page), image = imagePages.has(page);
       return { page, hasExtractedText: Boolean(text), hasVisualPage: image, hasVisualSummary: summary,
         textStatus: text ? 'available' : layer && layer.text === '' ? 'empty' : 'unknown',
+        textQuality: assessPageTextQuality(pageTexts.get(page) || layer?.text),
         visualStatus: summary ? 'available' : image ? 'pending' : 'unavailable',
         engines: [...new Set([...(text || []), ...(layer ? ['fitz'] : []), ...(summary ? ['vl'] : [])])],
         warnings: [...(!text ? ['PAGE_TEXT_UNAVAILABLE'] : []), ...(!image ? ['PAGE_IMAGE_UNAVAILABLE'] : [])] };

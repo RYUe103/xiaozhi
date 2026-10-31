@@ -1,4 +1,4 @@
-/** Avoid eager VL only when every attached PDF has a verified complete text layer.
+/** Avoid eager VL only when every attached PDF has a plausible complete text layer.
  * Missing/partial coverage, unknown artifacts and explicit visual requests fail open
  * to the existing visual route. No document facts or answer heuristics are encoded.
  */
@@ -8,8 +8,8 @@ function canDeferPdfVisualPreparation({ fileIds, documents, query = '' }) {
   const all = [...documents.values()];
   return fileIds.every(fileId => {
     const doc = all.find(d => d.fileId === fileId);
-    return doc && doc.pageCount > 0 && doc.pageCoverage?.length === doc.pageCount &&
-      doc.pageCoverage.every(p => p.hasExtractedText === true && p.textStatus === 'available' && p.textQuality === 'verified');
+    return doc && doc.pageCount > 0 && doc.pageCountSource !== 'observed_lower_bound' && doc.pageCoverage?.length === doc.pageCount &&
+      doc.pageCoverage.every(p => p.hasExtractedText === true && p.textStatus === 'available' && p.textQuality === 'plausible');
   });
 }
 module.exports = { canDeferPdfVisualPreparation };

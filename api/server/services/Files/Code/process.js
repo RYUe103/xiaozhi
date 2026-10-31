@@ -319,7 +319,8 @@ async function ensureSanSuoPdfPageArtifacts({
   );
   const sourceBuffer = await streamToBuffer(downloaded?.data || downloaded);
   const expectedSourceHash = sourceFile?.metadata?.sha256 || sourceFile?.metadata?.contentHash;
-  if (!expectedSourceHash || crypto.createHash('sha256').update(sourceBuffer).digest('hex') !== expectedSourceHash) {
+  const actualSourceHash = crypto.createHash('sha256').update(sourceBuffer).digest('hex');
+  if (expectedSourceHash && actualSourceHash !== expectedSourceHash) {
     throw new Error('DOCUMENT_VERSION_MISMATCH');
   }
   const rendered = await renderSanSuoPdfPages(sourceBuffer, requestedPages);
@@ -333,6 +334,7 @@ async function ensureSanSuoPdfPageArtifacts({
       file_id: rootFileId,
       filename: sourceName,
       metadata: {
+        sha256: actualSourceHash,
         codeEnvRef: {
           kind: sourceRef.kind || 'user',
           storage_session_id: storageSessionId,

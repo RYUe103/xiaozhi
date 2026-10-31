@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 
-const PROMPT_VERSION = 'inspect-page-v1';
+const PROMPT_VERSION = 'inspect-page-v2';
 const MODES = new Set(['auto', 'text', 'table', 'figure', 'formula']);
 const INSTRUCTIONS = {
   auto: '依据问题选择识别方式，保留问题中的全部条件。',
@@ -9,6 +9,18 @@ const INSTRUCTIONS = {
   figure: '识别图例、标记和对应数据系列；区分标注数值与估计值，不确定的对应关系不得猜测。',
   formula: '保留公式、上下标和符号结构，区分原文与解释；模糊符号标记不确定。',
 };
+
+function parseVisualResult(raw) {
+  let value;
+  try { value = JSON.parse(raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '')); } catch { return null; }
+  const strings = (v) => Array.isArray(v) && v.every((x) => typeof x === 'string');
+  const objects = (v, keys) => Array.isArray(v) && v.every((item) => item && typeof item === 'object' && !Array.isArray(item) &&
+    keys.every((key) => typeof item[key] === 'string' || item[key] === null));
+  if (!value || typeof value.answer !== 'string' || typeof value.evidence_text !== 'string' ||
+      !strings(value.uncertainties) || !objects(value.cells, ['row', 'column', 'value', 'unit']) ||
+      !objects(value.series, ['legend', 'series', 'value', 'unit', 'certainty'])) return null;
+  return { answer: value.answer, evidence_text: value.evidence_text, cells: value.cells, series: value.series, uncertainties: value.uncertainties };
+}
 
 class DocumentPageVisionService {
   constructor({ repository, getPage, baseURL, apiKey, model, fetchImpl = fetch, timeoutMs = 60000 }) {
@@ -34,14 +46,22 @@ class DocumentPageVisionService {
     if (!doc.sourceHash || !this.baseURL || !this.apiKey || !this.model) return invalid('VISION_NOT_CONFIGURED_OR_SOURCE_UNKNOWN');
     const key = crypto.createHash('sha256').update(JSON.stringify([this.repository.userId, this.repository.conversationId,
       doc.sourceHash, page, region || null, query.trim(), mode, max_chars, this.model, PROMPT_VERSION])).digest('hex');
-    if (this.cache.has(key)) return this.cache.get(key);
-    if (this.pending.has(key)) return this.pending.get(key);
+    if (this.cache.has(key)) {
+      this.repository.trace?.emit('PageVision', { page, mode, cache: 'hit' });
+      return this.cache.get(key);
+    }
+    if (this.pending.has(key)) {
+      this.repository.trace?.emit('PageVision', { page, mode, cache: 'inflight' });
+      return this.pending.get(key);
+    }
     if (this.calls >= 12) return invalid('VISION_BUDGET_EXCEEDED');
     if (this.active >= 2) return invalid('VISION_CONCURRENCY_LIMIT');
     this.calls++;
     this.active++;
     const task = this.run({ doc, page, query, region, mode, max_chars }).then((result) => {
-      if (result.ok) this.cache.set(key, result);
+      if (result.status === 'ok') this.cache.set(key, result);
+      this.repository.trace?.emit('PageVision', { page, mode, cache: 'miss', status: result.status,
+        elapsed_ms: result.telemetry?.elapsed_ms, usage: result.telemetry?.usage, error: result.error?.code });
       return result;
     }).finally(() => { this.pending.delete(key); this.active--; });
     this.pending.set(key, task);
@@ -67,20 +87,22 @@ class DocumentPageVisionService {
         signal: AbortSignal.timeout(this.timeoutMs),
         body: JSON.stringify({ model: this.model, temperature: 0.1, max_tokens: 3000,
           messages: [{ role: 'user', content: [
-            { type: 'text', text: `只依据原始页面图像回答，不能辨认的内容标为不确定。${INSTRUCTIONS[mode]}\n问题：${query}\n返回与问题相关的原文、答案、数值及不确定性，不要虚构。` },
+            { type: 'text', text: `只依据原始页面图像回答，不能辨认的内容标为不确定。${INSTRUCTIONS[mode]}\n问题：${query}\n只返回 JSON 对象：{"answer":"答案","evidence_text":"可见原文","cells":[{"row":"行标题或null","column":"列标题或null","value":"原文或null","unit":"单位或null"}],"series":[{"legend":"图例或null","series":"数据系列或null","value":"数值或null","unit":"单位或null","certainty":"确定或不确定"}],"uncertainties":["无法确认之处"]}。不适用的数组为空；无法辨认用 null 并写入 uncertainties，绝不猜测。` },
             { type: 'image_url', image_url: { url: `data:image/png;base64,${bytes.toString('base64')}` } },
           ] }] }),
       });
       const payload = await response.json();
       if (!response.ok) throw new Error('VISION_REQUEST_FAILED');
       const choice = payload?.choices?.[0];
-      const answer = String(choice?.message?.content || '').trim();
-      if (!answer) throw new Error('VISION_EMPTY_RESULT');
-      const truncated = answer.length > max_chars || choice.finish_reason === 'length';
-      return { ok: true, status: 'ok', document_id: doc.documentId, page, mode,
-        result: { answer: answer.slice(0, max_chars), uncertainties: truncated ? ['视觉结果可能不完整'] : [] },
+      const raw = String(choice?.message?.content || '').trim();
+      if (!raw) throw new Error('VISION_EMPTY_RESULT');
+      const truncated = raw.length > max_chars || choice.finish_reason === 'length';
+      const parsed = parseVisualResult(raw);
+      const partial = truncated || !parsed || choice.finish_reason !== 'stop';
+      return { ok: !partial, status: partial ? 'partial' : 'ok', document_id: doc.documentId, page, mode,
+        result: parsed || { answer: '', evidence_text: '', cells: [], series: [], uncertainties: ['视觉输出未通过结构校验'] }, raw_model_output: raw,
         source: { type: 'original_pdf_page', engine: 'qwen_vl', source_content_hash: doc.sourceHash, page_image_id: image.id, region: region || null },
-        warnings: ['视觉识别结果未经人工核验，不等同于完整 OCR 正文', ...(truncated ? ['VISION_RESULT_TRUNCATED'] : [])],
+        warnings: ['视觉识别结果未经人工核验，不等同于完整 OCR 正文', ...(truncated ? ['VISION_RESULT_TRUNCATED'] : []), ...(!parsed ? ['VISION_RESULT_INVALID_SCHEMA'] : []), ...(partial ? ['VISION_RESULT_PARTIAL'] : [])],
         telemetry: { elapsed_ms: Date.now() - started, usage: payload.usage || null, finish_reason: choice.finish_reason || null } };
     } catch (error) {
       return { ok: false, status: 'unavailable', error: { code: error.name === 'TimeoutError' ? 'VISION_TIMEOUT' : 'VISION_INSPECTION_FAILED' },

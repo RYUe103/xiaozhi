@@ -12,6 +12,14 @@ function fixture(scope = {}) {
 }
 
 describe('authorized DocumentArtifactRepository', () => {
+  test('classifies page text for visual preparation without calling it verified OCR', () => {
+    const { repo } = fixture();
+    const doc = repo.add({ fileId: 'quality', pageCount: 2, records: [
+      { page: 1, text: 'This is a normal electronic PDF with readable text and numbers 12345.' },
+      { page: 2, text: 'This is damaged text with replacement character \uFFFD in the middle.' },
+    ] });
+    expect(doc.pageCoverage.map((p) => p.textQuality)).toEqual(['plausible', 'suspect']);
+  });
   test('fills missing MinerU pages with FITZ while excluding duplicate page text', async () => {
     const { repo } = fixture();
     const artifacts = ['mineru', 'visual'].map((type) => ({ libreFileId: type, displayFilename: `x_${type}_chunks.jsonl`, metadata: { rootSourceLibreFileId: 'mixed' } }));
