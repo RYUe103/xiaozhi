@@ -1109,8 +1109,9 @@ async function preparseSanSuoPdfOnUpload({
       (process.env.SANSUO_MINERU_BASE_URL
         ? process.env.SANSUO_MINERU_BASE_URL.replace(/\/+$/, '') + '/pdf_parse'
         : '');
-    if (isSanSuoPdfMineruFirst() && !url) throw new Error('mineru_not_configured');
-    if (isSanSuoPdfMineruFirst() && !/^https?:$/.test(new URL(url).protocol)) {
+    const cloudMode = String(process.env.SANSUO_MINERU_MODE || '').toLowerCase() === 'cloud';
+    if (isSanSuoPdfMineruFirst() && !url && !cloudMode) throw new Error('mineru_not_configured');
+    if (isSanSuoPdfMineruFirst() && !cloudMode && !/^https?:$/.test(new URL(url).protocol)) {
       throw new Error('invalid_mineru_url');
     }
     if (!isSanSuoPdfMineruFirst()) throw new Error('mineru_disabled_by_config');
@@ -1123,7 +1124,12 @@ async function preparseSanSuoPdfOnUpload({
       contentType: 'application/pdf',
     });
     const mineruStartedAt = Date.now();
-    const response = await axios({
+    const timeoutMs = Math.max(1000, Math.min(SANSUO_DOCUMENT_PARSE_TIMEOUT_MS,
+      Number(process.env.SANSUO_MINERU_TIMEOUT_MS) || SANSUO_DOCUMENT_PARSE_TIMEOUT_MS));
+    const response = cloudMode ? { status: 200, data: await require('./mineruCloud').parseMineruCloud({
+      axios, baseURL: process.env.SANSUO_MINERU_CLOUD_URL, apiKey: process.env.SANSUO_MINERU_CLOUD_API_KEY,
+      sourceBuffer, filename: getSanSuoMineruUploadFilename(sourceFile), timeoutMs, signal: req._sansuoDocumentParseSignal,
+    }) } : await axios({
       method: 'post',
       url,
       data: form,

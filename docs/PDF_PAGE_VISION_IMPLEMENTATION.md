@@ -10,6 +10,12 @@
 - `process.spec.js` 依赖问题已通过隔离目录依赖链接解决，113 项通过。文档上下文（含 Word）、文件权限、通用权限及 Repository 安全测试另外 4 组 113 项通过；这些为单元测试，并非真实 Word 对话或跨用户 HTTP 访问。
 - 完整原方案/新方案 A/B、其余视觉失败矩阵、正常文字 PDF 性能及真实 Word、普通聊天、权限回归仍未完成；缓存命中率及 P50/P95 未取得。当前不能部署。需优先处理全页预处理延迟、识别可靠性及原页结果引用，再使用最新代码重新执行端到端和冻结样本对照。原百题 gold 和旧结果未修改。
 
+## 本机 MinerU 云端测试接入
+
+- 工作副本新增 `api/server/services/Files/Code/mineruCloud.js`，云端模式创建上传任务、上传 PDF、轮询并转换结果 ZIP 为既有 MinerU 产物。启用需在隔离测试进程设置 `SANSUO_MINERU_MODE=cloud`、`SANSUO_MINERU_CLOUD_URL` 和 `SANSUO_MINERU_CLOUD_API_KEY`；不设置云端模式时原同步接口不变。云端服务会接收上传的 PDF。
+- 真实云端合成 PDF：适配器直接调用约 16991ms，返回 Markdown 和 2 个块。独立 API、独立 Mongo 中真实上传后，解析任务 ready，约 10064ms，保存 Markdown、chunks、content_list、result、profile 和 manifest。云端请求阶段约 9208ms；样本没有图片。同步 PDF 测试 113 项和云端适配测试 2 项通过。
+- 云端 ZIP 内容被转换为现有产物格式，保存的 result 不是原始云端状态响应；原始 ZIP 当前不持久化。真实图像、表格、大文件、失败恢复、对话引用和用户界面尚未端到端验证；`ready` 不代表答案准确。现有 3080 服务未切换，仍使用原配置；没有修改实际 `.env` 或内网配置。
+
 本分支是尚未完成端到端验收的工作成果，不应直接部署。保留已有百题评测、gold 和失败记录；本分支包含本次隔离 Agent 和 ToolNode 结果，不包含原百题完整数据或模型密钥。原始结果位于 `evidence/pdf-page-vision-20261101/`。
 
 ## 2026-10-31 后续修复
