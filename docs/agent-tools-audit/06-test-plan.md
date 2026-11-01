@@ -1,5 +1,6 @@
 # 回归与真实验收
 
+> 以下保留实施前检查点，基于 1a99227；不代表最新状态。实施与实测结论见 07、08 和独立 evidence 目录。
 基线命令（api cwd）：npx jest app/clients/specs/BaseClient.test.js server/services/Endpoints/agents/sansuoToolPolicy.spec.js server/services/Endpoints/agents/initialize.spec.js --runInBand --config jest.config.js --json --outputFile=../evidence/agent-tools-refactor-20261102/baseline/jest.json
 
 目录发现不得调用下载、MinerU、embedding、VL；工具 load 前验证此条件。两用户两会话＋多 PDF/Word＋本轮新附件；模拟撤权/删除/hash/generation 变化，必须拒绝。并发同目标只加载一次、不同请求不可共享私有状态。所有 action/schema/continuation 参数保持。
