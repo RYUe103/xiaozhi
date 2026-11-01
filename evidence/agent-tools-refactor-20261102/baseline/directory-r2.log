@@ -1,0 +1,17 @@
+PASS server/services/SessionDocumentResources.spec.js
+  request-scoped conversation document directory
+    ✓ discovers multiple files without reading content or inspecting user language (1 ms)
+    ✓ does not discover deep documents in fast
+    ✓ does not discover deep documents in knowledge
+    ✓ requires explicit selection for multiple files and rejects foreign IDs
+    ✓ does not trust cross-user, cross-conversation or deleted rows even if a database stub returns them (1 ms)
+    ✓ rechecks deletion and source version before every execution
+    ✓ shares only an in-flight request-local content load and rechecks after it
+    ✓ denies a replaced artifact and ignores incomplete generations (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        0.193 s, estimated 1 s
+Ran all test suites matching server/services/SessionDocumentResources.spec.js.
+Test results written to: ../evidence/agent-tools-refactor-20261102/baseline/directory-r2.json

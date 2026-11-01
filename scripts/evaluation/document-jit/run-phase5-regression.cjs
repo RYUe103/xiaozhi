@@ -36,6 +36,18 @@ async function chat(text,files=[],conversationId=crypto.randomUUID(),parentMessa
  const excelId=crypto.randomUUID(),xf=new FormData();xf.append('file',new Blob([await xlsx.generateAsync({type:'nodebuffer'})],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}),'phase5.xlsx');
  for(const [k,v]of Object.entries({endpoint:'SanSuoMain',endpointType:'custom',file_id:crypto.randomUUID(),conversationId:excelId,message_file:'true',tool_resource:'execute_code'}))xf.append(k,v);
  const xu=await request('/api/files',{method:'POST',body:xf});if(!xu.ok)throw Error('XLSX_UPLOAD_'+xu.status);const xp=await xu.json();const excel=await chat('请实际读取附件 Excel，KM-883 的 period_days 是多少？',[xp.file||xp],excelId);report.checks.push({name:'xlsx_read',ok:/29/.test(excel.answer)&&!excel.error&&!excel.active,...excel});
+ if (process.argv.includes('--generation')) {
+  const generation = await chat('请生成一个可下载的 UTF-8 文本文件 acceptance.txt，内容为：工具生成验收 37。请实际保存文件并提供下载链接。');
+  const generated = await db.getSanSuoFiles({userId:String(user._id),conversationId:generation.conversationId,status:'ready'});
+  const outputs = [];
+  for (const file of generated.filter(f => /acceptance.*\.txt$/i.test(f.displayFilename || f.originalFilename || ''))) {
+   const response = await fetch(process.env.LIBRECHAT_CODE_BASEURL+'/download/'+encodeURIComponent(file.sandboxSessionId)+'/'+encodeURIComponent(file.sandboxFileId)+'?kind=user&id='+user._id,
+    {headers:{'X-API-Key':process.env.LIBRECHAT_CODE_API_KEY,'User-Id':String(user._id)},signal:AbortSignal.timeout(30000)});
+   const bytes = Buffer.from(await response.arrayBuffer());
+   outputs.push({filename:file.displayFilename,status:response.status,bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),expected_content:response.ok&&bytes.toString('utf8').includes('工具生成验收 37')});
+  }
+  report.checks.push({name:'generated_file_persisted_and_downloaded',ok:!generation.error&&!generation.active&&generation.tools.some(t=>t.name==='execute_code'&&t.output)&&outputs.some(o=>o.expected_content&&o.bytes>0),...generation,outputs});
+ }
  const foreign=await db.createUser({name:'Foreign regression',email:'foreign-'+crypto.randomUUID()+'@example.invalid',provider:'local',role:'USER',emailVerified:true},undefined,true,true);const foreignToken=jwt.sign({id:String(foreign._id)},process.env.JWT_SECRET,{expiresIn:'1h'});
  const denied=await request('/api/messages?conversationId='+conversationId,{},foreignToken);const content=await denied.json();report.checks.push({name:'foreign_message_isolation',ok:[403,404].includes(denied.status)||(denied.ok&&(Array.isArray(content)?content.length===0:Array.isArray(content.messages)&&content.messages.length===0)),http_status:denied.status});
 })().catch(error=>{report.error=error.message;process.exitCode=1;}).finally(async()=>{fs.writeFileSync(process.argv[2],JSON.stringify(report,null,2),{flag:'wx'});console.log(JSON.stringify({checks:report.checks.map(c=>({name:c.name,ok:c.ok,elapsed_ms:c.elapsed_ms})),error:report.error}));await mongoose.disconnect();process.exit(report.error||report.checks.some(c=>!c.ok)?1:0);});

@@ -1,0 +1,1 @@
+r6新增能力撤销测试曾失败：夹具使用临时Agent id=a、endpoint能力空集，原生resolveAgentCapabilities会按设计回退appConfig能力。修正为非空有效集execute_code且不含tools后，capability-r2通过50项；r8仍保留16项旧BaseClient失败。本次未改变原生空集回退规则。

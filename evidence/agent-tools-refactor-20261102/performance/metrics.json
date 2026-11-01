@@ -1,0 +1,758 @@
+{
+  "r1": {
+    "sha": "0198c13",
+    "n": 10,
+    "completed": 10,
+    "p50_ms": 25236.5,
+    "p95_ms": 38117.6,
+    "total_ms": 240227,
+    "tool_calls": 5,
+    "main_model_accounting_tokens": {
+      "prompt": 203344,
+      "completion": 11824
+    },
+    "turns": [
+      {
+        "id": "turn_01",
+        "completed": true,
+        "elapsed_ms": 31123,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 18804.0,
+          "Keyword": 8.0,
+          "BM25": 8.0,
+          "Vector": 9529.0,
+          "RRF": 0.0,
+          "Rerank": 2230.0,
+          "EvidenceDelivery": 12552.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 8952,
+          "completion": 862
+        },
+        "trace_usage_tokens": 51255,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_02",
+        "completed": true,
+        "elapsed_ms": 5267,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 5080.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 6473,
+          "completion": 213
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_03",
+        "completed": true,
+        "elapsed_ms": 25676,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "read"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 26283.0,
+          "EvidenceDelivery": 14.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 15954,
+          "completion": 1356
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_04",
+        "completed": true,
+        "elapsed_ms": 24797,
+        "tool_calls": 2,
+        "tool_names": [
+          "read_parsed_pdf",
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search",
+          "read_adjacent"
+        ],
+        "model_transport_completed": 3,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 21865.0,
+          "Keyword": 2.0,
+          "BM25": 2.0,
+          "Vector": 1162.0,
+          "RRF": 0.0,
+          "Rerank": 1983.0,
+          "EvidenceDelivery": 3677.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 37850,
+          "completion": 1063
+        },
+        "trace_usage_tokens": 2846,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_05",
+        "completed": true,
+        "elapsed_ms": 28805,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 29541.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 15615,
+          "completion": 1628
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_06",
+        "completed": true,
+        "elapsed_ms": 38045,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 38601.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 16161,
+          "completion": 2169
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_07",
+        "completed": true,
+        "elapsed_ms": 38177,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 36551.0,
+          "Keyword": 0.0,
+          "BM25": 1.0,
+          "Vector": 913.0,
+          "RRF": 0.0,
+          "Rerank": 1163.0,
+          "EvidenceDelivery": 2523.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 37675,
+          "completion": 1969
+        },
+        "trace_usage_tokens": 2559,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_08",
+        "completed": true,
+        "elapsed_ms": 17517,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 17570.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 21292,
+          "completion": 932
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_09",
+        "completed": true,
+        "elapsed_ms": 13349,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 13729.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 21560,
+          "completion": 720
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_10",
+        "completed": true,
+        "elapsed_ms": 17471,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 17404.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 21812,
+          "completion": 912
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      }
+    ]
+  },
+  "r2": {
+    "sha": "a3d057b",
+    "n": 10,
+    "completed": 10,
+    "p50_ms": 27244.0,
+    "p95_ms": 62452.15,
+    "total_ms": 316724,
+    "tool_calls": 6,
+    "main_model_accounting_tokens": {
+      "prompt": 177898,
+      "completion": 15369
+    },
+    "turns": [
+      {
+        "id": "turn_01",
+        "completed": true,
+        "elapsed_ms": 34024,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 16862.0,
+          "Keyword": 6.0,
+          "BM25": 6.0,
+          "Vector": 13274.0,
+          "RRF": 0.0,
+          "Rerank": 3131.0,
+          "EvidenceDelivery": 17548.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 8058,
+          "completion": 807
+        },
+        "trace_usage_tokens": 51322,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_02",
+        "completed": true,
+        "elapsed_ms": 19595,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 19695.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 5283,
+          "completion": 1016
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_03",
+        "completed": true,
+        "elapsed_ms": 15449,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 16300.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 5523,
+          "completion": 810
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_04",
+        "completed": true,
+        "elapsed_ms": 35132,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 31555.0,
+          "Keyword": 2.0,
+          "BM25": 2.0,
+          "Vector": 1074.0,
+          "RRF": 0.0,
+          "Rerank": 2050.0,
+          "EvidenceDelivery": 3912.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 13950,
+          "completion": 1682
+        },
+        "trace_usage_tokens": 2855,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_05",
+        "completed": true,
+        "elapsed_ms": 84805,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 82646.0,
+          "Keyword": 1.0,
+          "BM25": 2.0,
+          "Vector": 1583.0,
+          "RRF": 0.0,
+          "Rerank": 943.0,
+          "EvidenceDelivery": 3271.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 19709,
+          "completion": 4684
+        },
+        "trace_usage_tokens": 2976,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_06",
+        "completed": true,
+        "elapsed_ms": 27662,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 28428.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 11602,
+          "completion": 1564
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_07",
+        "completed": true,
+        "elapsed_ms": 29936,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 27791.0,
+          "Keyword": 1.0,
+          "BM25": 2.0,
+          "Vector": 868.0,
+          "RRF": 0.0,
+          "Rerank": 1886.0,
+          "EvidenceDelivery": 3269.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 26754,
+          "completion": 1461
+        },
+        "trace_usage_tokens": 2539,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_08",
+        "completed": true,
+        "elapsed_ms": 21522,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 22184.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 15124,
+          "completion": 1194
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_09",
+        "completed": true,
+        "elapsed_ms": 21773,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 20182.0,
+          "Keyword": 0.0,
+          "BM25": 1.0,
+          "Vector": 905.0,
+          "RRF": 0.0,
+          "Rerank": 1821.0,
+          "EvidenceDelivery": 3302.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 33329,
+          "completion": 901
+        },
+        "trace_usage_tokens": 2210,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_10",
+        "completed": true,
+        "elapsed_ms": 26826,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 24127.0,
+          "Keyword": 0.0,
+          "BM25": 1.0,
+          "Vector": 724.0,
+          "RRF": 1.0,
+          "Rerank": 1887.0,
+          "EvidenceDelivery": 3086.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 38566,
+          "completion": 1250
+        },
+        "trace_usage_tokens": 2221,
+        "tool_not_found": false
+      }
+    ]
+  },
+  "r3": {
+    "sha": "27df227",
+    "n": 10,
+    "completed": 10,
+    "p50_ms": 30731.5,
+    "p95_ms": 37132.9,
+    "total_ms": 277863,
+    "tool_calls": 6,
+    "main_model_accounting_tokens": {
+      "prompt": 173250,
+      "completion": 13317
+    },
+    "turns": [
+      {
+        "id": "turn_01",
+        "completed": true,
+        "elapsed_ms": 30095,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 14231.0,
+          "Keyword": 6.0,
+          "BM25": 6.0,
+          "Vector": 12701.0,
+          "RRF": 0.0,
+          "Rerank": 2881.0,
+          "EvidenceDelivery": 16524.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 7994,
+          "completion": 624
+        },
+        "trace_usage_tokens": 51322,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_02",
+        "completed": true,
+        "elapsed_ms": 37159,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 37453.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 5189,
+          "completion": 2128
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_03",
+        "completed": true,
+        "elapsed_ms": 15434,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 16175.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 5490,
+          "completion": 829
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_04",
+        "completed": true,
+        "elapsed_ms": 31368,
+        "tool_calls": 3,
+        "tool_names": [
+          "read_parsed_pdf",
+          "read_parsed_pdf",
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search",
+          "read",
+          "search"
+        ],
+        "model_transport_completed": 4,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 28809.0,
+          "Keyword": 1.0,
+          "BM25": 3.0,
+          "Vector": 1896.0,
+          "RRF": 0.0,
+          "Rerank": 2630.0,
+          "EvidenceDelivery": 5184.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 33768,
+          "completion": 1285
+        },
+        "trace_usage_tokens": 4248,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_05",
+        "completed": true,
+        "elapsed_ms": 32926,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 33373.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 11455,
+          "completion": 1851
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_06",
+        "completed": true,
+        "elapsed_ms": 25714,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 26034.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 11983,
+          "completion": 1445
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_07",
+        "completed": true,
+        "elapsed_ms": 33037,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 33753.0,
+          "Keyword": 0.0,
+          "BM25": 1.0,
+          "Vector": 959.0,
+          "RRF": 0.0,
+          "Rerank": 890.0,
+          "EvidenceDelivery": 2343.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 27471,
+          "completion": 1483
+        },
+        "trace_usage_tokens": 2499,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_08",
+        "completed": true,
+        "elapsed_ms": 37101,
+        "tool_calls": 1,
+        "tool_names": [
+          "read_parsed_pdf"
+        ],
+        "actions": [
+          "search"
+        ],
+        "model_transport_completed": 2,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 34377.0,
+          "Keyword": 1.0,
+          "BM25": 1.0,
+          "Vector": 839.0,
+          "RRF": 0.0,
+          "Rerank": 1816.0,
+          "EvidenceDelivery": 3104.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 33260,
+          "completion": 1828
+        },
+        "trace_usage_tokens": 2413,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_09",
+        "completed": true,
+        "elapsed_ms": 17563,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 17817.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 18203,
+          "completion": 938
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      },
+      {
+        "id": "turn_10",
+        "completed": true,
+        "elapsed_ms": 17466,
+        "tool_calls": 0,
+        "tool_names": [],
+        "actions": [],
+        "model_transport_completed": 1,
+        "vl_tool_calls": 0,
+        "stage_ms": {
+          "ModelTransport": 17514.0
+        },
+        "main_model_accounting_tokens": {
+          "prompt": 18437,
+          "completion": 906
+        },
+        "trace_usage_tokens": 0,
+        "tool_not_found": false
+      }
+    ]
+  }
+}

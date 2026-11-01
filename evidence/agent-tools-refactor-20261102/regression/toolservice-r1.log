@@ -1,0 +1,82 @@
+2026-11-02 00:54:59 [33m[3mwarn[23m[39m: [33m[3mCapability "actions" disabled. User: user_123 | Agent: agent_123[23m[39m
+2026-11-02 00:54:59 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_123[23m[39m
+2026-11-02 00:54:59 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_123[23m[39m
+2026-11-02 00:54:59 [33m[3mwarn[23m[39m: [33m[3mNo tools found for the specified tool calls: calculator, get_weather_action_api_example_com[23m[39m
+2026-11-02 00:54:59 [33m[3mwarn[23m[39m: [33m[3m[loadToolsForExecution] Capability "actions" disabled. Skipping action tool execution. User: user_123 | Agent: agent_123 | Tools: get_weather_action_api_example_com[23m[39m
+2026-11-02 00:54:59 [33m[3mwarn[23m[39m: [33m[3m[loadToolsForExecution] Capability "actions" disabled. Skipping action tool execution. User: user_123 | Agent: agent_123 | Tools: get_weather_action_api_example_com[23m[39m
+2026-11-02 00:54:59 [32minfo[39m: [32m[code-env:resources] refreshed conversation files[39m
+2026-11-02 00:54:59 [32minfo[39m: [32m[code-env:resources] prepared event fallback files[39m
+2026-11-02 00:54:59 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_collision[23m[39m
+2026-11-02 00:55:00 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_collision[23m[39m
+2026-11-02 00:55:00 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_legacy[23m[39m
+2026-11-02 00:55:00 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_hyphen[23m[39m
+2026-11-02 00:55:00 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_short[23m[39m
+PASS api/server/services/__tests__/ToolService.spec.js
+  ToolService - Action Capability Gating
+    ✓ loads the request-local DOCX reader without code resources or auth (1 ms)
+    ✓ loads the request-local PDF reader without code resources or auth
+    ✓ does not lend a private document reader to an unbound Agent (1 ms)
+    resolveAgentCapabilities
+      ✓ should return capabilities from endpoints config
+      ✓ should fall back to default capabilities for ephemeral agents with empty config (1 ms)
+      ✓ should return empty set when no capabilities and not ephemeral
+    isActionTool — cross-delimiter collision guard
+      ✓ should identify real action tools
+      ✓ should identify action tools whose operationId contains _mcp_
+      ✓ should reject MCP tools whose name ends with _action
+      ✓ should reject MCP tools with _action_ in the middle of their name
+      ✓ should reject tools without the action delimiter
+      ✓ known limitation: non-RFC domain with _mcp_ substring yields false negative
+    loadAgentTools (definitionsOnly=true) — action tool filtering
+      ✓ should exclude action tools from definitions when actions capability is disabled
+      ✓ should include action tools in definitions when actions capability is enabled
+      ✓ should not filter MCP tools whose name contains _action (cross-delimiter collision)
+      ✓ should return actionsEnabled in the result (1 ms)
+    loadAgentTools (definitionsOnly=false) — action tool filtering
+      ✓ should not load action sets when actions capability is disabled (1 ms)
+      ✓ should load action sets when actions capability is enabled and action tools present
+    loadToolsForExecution — action tool gating
+      ✓ loads bash PTC under the legacy programmatic tool name when code capabilities are enabled
+      ✓ does not load PTC when programmatic tools capability is disabled (1 ms)
+      ✓ does not load PTC when agent did not request execute_code
+      ✓ should skip action tool loading when actionsEnabled=false
+      ✓ should load action tools when actionsEnabled=true
+      ✓ should resolve actionsEnabled from capabilities when not explicitly provided
+      ✓ should not call loadActionSets when there are no action tools (1 ms)
+    loadToolsForExecution — conversation PDF artifacts
+      ✓ refreshes hidden PDF artifact refs after the first tool call
+    checkCapability logic
+      ✓ should return true when capability is enabled
+      ✓ should return false when capability is not enabled
+      ✓ should log warning with "despite configured tool" for tool capabilities (1 ms)
+      ✓ should log warning without "despite configured tool" for non-tool capabilities
+      ✓ should not log warning when capability is enabled
+    defaultAgentCapabilities
+      ✓ should include deferred_tools capability by default
+      ✓ should include all expected default capabilities
+    userMCPAuthMap gating
+      ✓ should return true when agent has MCP tools
+      ✓ should return false when agent has no MCP tools
+      ✓ should return false when tools is empty
+      ✓ should return false when tools is undefined
+      ✓ should return false when tools is null (1 ms)
+      ✓ should detect MCP tools with different server names
+      ✓ should return true even when only one tool is MCP
+    deferredToolsEnabled integration
+      ✓ should correctly determine deferredToolsEnabled from capabilities set
+      ✓ should use defaultAgentCapabilities when no capabilities configured
+    multi-action domain collision regression
+      ✓ loadAgentTools resolves both actions when they share a hostname (176 ms)
+      ✓ loadAgentTools is order-invariant for two actions sharing a hostname (5 ms)
+      ✓ loadToolsForExecution resolves both actions when they share a hostname (4 ms)
+      ✓ processRequiredActions resolves both actions when they share a hostname (5 ms)
+      ✓ loadAgentTools resolves legacy-format tool names via the legacy encoding branch (2 ms)
+      ✓ loadAgentTools distinguishes operationIds that differ only by `---` vs `_` (3 ms)
+      ✓ loadAgentTools resolves raw `---`-separated tool names from agent.tools (2 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       49 passed, 49 total
+Snapshots:   0 total
+Time:        2.744 s
+Ran all test suites matching api/server/services/__tests__/ToolService.spec.js.
+Test results written to: evidence/agent-tools-refactor-20261102/regression/toolservice-r1.json

@@ -1,0 +1,1627 @@
+{
+  "id": "turn_07",
+  "question": "换个关注点，金秀如何开展线上线下读书？活动规模有哪些数据？",
+  "conversation_id": "a7ab59fa-00a2-419f-bef0-938046ae8fb5",
+  "parent_message_id": "5bb47e68-bb7d-4b39-930b-6dc95747111c",
+  "request_id": "95b38cad-f44d-4639-b6f7-69bebdd63456",
+  "started_at": "2026-11-01T16:54:09.009Z",
+  "http_status": 200,
+  "active_at_end": false,
+  "messages": [
+    {
+      "_id": "6ae76eb029b56c8c8fb05e87",
+      "messageId": "5bb47e68-bb7d-4b39-930b-6dc95747111c",
+      "user": "6ae73548fbae1de9b1b18ae2",
+      "__v": 0,
+      "attachments": [],
+      "content": [
+        {
+          "type": "think",
+          "think": "用户要求：\n1.  把象州的读书平台组织方式与上坪村的事联系起来。\n2.  说明平台怎样转化为履职。\n3.  给出平台构成。\n\n需要提取的信息：\n1.  **象州读书平台组织方式/平台构成**：材料中提到“4+14+2+1+N”的委员读书实践工作新格局。\n    *   4个“书香政协”委员读书实践活动基地为龙头（如中平社区的中平基地）。\n    *   14个“书香政协 委员书屋”为延伸。\n    *   “线上线下”2种结合为渠道。\n    *   1个常态化网红“书香打卡点”。\n    *   开展N种形式多样的委员读书交流活动。\n2.  **上坪村的事**：安装路灯，民宗局投资30万元改善基础设施。\n3.  **平台如何转化为履职**：\n    *   读书活动搭建起委员与群众交流、了解社情民意的桥梁。\n    *   委员在读书活动中发现问题、形成共识、创造经验，把“金点子”“好路子”“新办法”反映上去。\n    *   紧扣民生所需，提升协商成效，通过提案办理协商等推动问题解决。\n    *   具体到上坪村：县政协在中平社区创建了委员读书实践活动基地（属于“4”个基地之一），读书活动正常开展，委员（如谭克新）通过与群众交流了解民意，推动民生问题（路灯、30万资金）解决。\n\n需要整合这些信息，画出解释示意图，并给出清晰的文字说明。\n\n检查材料中的具体原文：\n*   第83页：“构建了“4+14+2+1+N”的委员读书实践工作新格局，以4个“书香政协”委员读书实践活动基地为龙头，以14个“书香政协 委员书屋”为延伸，以“线上线下”2种结合为渠道，建成1个常态化网红“书香打卡点”，开展N种形式多样的委员读书交流活动”\n*   第84页：“上坪村的变化，还得益于县政协在中平社区创建了委员读书实践活动基地。读书活动的正常开展搭建起了委员与群众交流、了解社情民意的桥梁，推动民生问题的解决。”\n*   第84页：“象州县政协委员、中平镇党委统战委员谭克新告诉记者……下一步，象州县民宗局还将充分采纳我们的建议，投资30万元用于改善……上坪村的基础设施……”\n*   第84页：“通过开展调查研究，把发现的问题、形成的共识、创造的经验收集起来，把“金点子”“好路子”“新办法”通过读书活动反映上去……”\n\n组织回答结构：\n1.  **平台构成**（“4+14+2+1+N”格局）。\n2.  **平台与上坪村的联系**（中平社区基地是“4”之一）。\n3.  **平台转化为履职的路径**（交流 -> 收集民意/金点子 -> 提案建议 -> 部门采纳/资金落地）。\n4.  **解释示意图**。\n\n确保Mermaid符合规则：\n*   flowchart TD\n*   节点ID用英文，标签用双引号。\n*   关系准确。\n\n草拟Mermaid：\n```mermaid\nflowchart TD\n    subgraph Platform [\"平台构成：4+14+2+1+N\"]\n        Base[\"4个读书实践基地(龙头)\"]\n        House[\"14个委员书屋(延伸)\"]\n        Channel[\"线上线下2种渠道\"]\n        Spot[\"1个网红打卡点\"]\n        Activity[\"N种交流活动\"]\n    end\n    \n    Base -->|包含| Zhongping[\"中平社区读书实践基地\"]\n    Zhongping -->|搭建桥梁| Exchange[\"委员与群众交流\"]\n    Exchange -->|了解| Needs[\"上坪村民生需求\"]\n    Needs -->|转化为| Proposal[\"委员建议/金点子\"]\n    Proposal -->|推动| Action[\"民宗局采纳建议\"]\n    Action -->|落实| Result1[\"安装100多盏路灯(已落实)\"]\n    Action -->|计划| Result2[\"投资30万改造基础设施(下一步)\"]\n```\n\n检查是否符合所有规则。\n- 平台构成明确。\n- 联系明确（中平社区基地）。\n- 转化路径明确。\n- Mermaid格式正确。\n\n输出内容。\n注意：用户问题中写的是“上平村”，材料中是“上坪村”，回答时应指出材料原文为“上坪村”。\n材料第84页：“象州县中平镇上坪村”。\n\n文字部分：\n1. 平台构成：“4+14+2+1+N”格局。\n2. 联系：上坪村所在的“中平社区”正是该格局中“4个读书实践基地”之一（“书香政协·魅力中平”）。\n3. 转化路径：读书活动常态化开展 -> 搭建委员与群众交流桥梁 -> 收集社情民意（如路灯不亮、设施陈旧） -> 委员形成“金点子”/提案建议 -> 推动职能部门（如民宗局）采纳并落实资金/项目。\n\n整合输出。\nMermaid代码块：\n```mermaid\nflowchart TD\n    subgraph Platform [\"平台构成：4+14+2+1+N格局\"]\n        Base[\"4个读书实践基地(龙头)\"]\n        House[\"14个委员书屋(延伸)\"]\n        Channel[\"线上线下2种结合(渠道)\"]\n        Spot[\"1个常态化网红打卡点\"]\n        Activity[\"N种读书交流活动\"]\n    end\n\n    Base -->|涵盖| Zhongping[\"中平社区读书实践基地\"]\n    Zhongping -->|依托读书活动搭建| Bridge[\"委员与群众交流桥梁\"]\n    Bridge -->|收集| Needs[\"上坪村社情民意(照明/设施)\"]\n    Needs -->|转化为| Idea[\"委员建议与金点子\"]\n    Idea -->|推动协商| Dept[\"职能部门(民宗局)\"]\n    Dept -->|已落实| Light[\"安装100多盏太阳能路灯\"]\n    Dept -->|下一步计划| Fund[\"投资30万元改造基础设施\"]\n```\n检查ID和标签格式，没问题。\n开始生成回答。\n引用页码：第83页、第84页。\n文件名：41489021-892f-5f2a-9c49-d0515dad08a2.pdf。\n确认“上平村”在材料中为“上坪村”。\n确认平台构成细节。\n确认转化逻辑。\n一切就绪。\n输出。"
+        },
+        {
+          "type": "text",
+          "text": "根据材料（第83-84页），象州县政协通过构建**“4+14+2+1+N”**读书平台格局，将中平社区（含上坪村）纳入其中，实现了从“读书交流”到“民生落地”的履职转化。具体如下：\n\n### 1. 平台构成（“4+14+2+1+N”格局）\n*   **“4”个龙头**：4个“书香政协”委员读书实践活动基地（含**中平社区**的“书香政协·魅力中平”基地）。\n*   **“14”个延伸**：14个“书香政协 委员书屋”。\n*   **“2”种渠道**：“线上线下”结合。\n*   **“1”个打卡点**：1个常态化网红“书香打卡点”。\n*   **“N”种活动**：形式多样的委员读书交流活动。\n\n### 2. 平台与上坪村的联系\n上坪村所在的**中平社区**正是该格局中**“4个读书实践基地”之一**。县政协在此创建基地，使读书活动直接下沉到该村屯一线。\n\n### 3. 平台如何转化为履职\n读书平台不仅是学习场所，更是履职枢纽，其转化路径为：\n1.  **搭建桥梁**：依托中平社区基地开展常态化读书活动，搭建起委员与群众面对面交流的平台。\n2.  **收集民意**：委员在“书香气”与“泥土味”中了解上坪村的实际困难（如夜间照明不足、基础设施陈旧）。\n3.  **形成建议**：将收集到的问题转化为“金点子”和提案建议。\n4.  **推动落实**：通过协商推动职能部门（如象州县民宗局）采纳建议，最终促成**100多盏太阳能路灯的安装（已落实）**以及**30万元基础设施改造资金的投入（下一步计划）**。\n\n---\n\n### 解释示意图\n\n```mermaid\nflowchart TD\n    subgraph Platform [\"平台构成：4+14+2+1+N格局\"]\n        Base[\"4个读书实践基地(龙头)\"]\n        House[\"14个委员书屋(延伸)\"]\n        Channel[\"线上线下2种结合(渠道)\"]\n        Spot[\"1个常态化网红打卡点\"]\n        Activity[\"N种读书交流活动\"]\n    end\n\n    Base -->|涵盖| Zhongping[\"中平社区读书实践基地\"]\n    Zhongping -->|依托读书活动搭建| Bridge[\"委员与群众交流桥梁\"]\n    Bridge -->|收集| Needs[\"上坪村社情民意(照明/设施)\"]\n    Needs -->|转化为| Idea[\"委员建议与金点子\"]\n    Idea -->|推动协商| Dept[\"职能部门(民宗局)\"]\n    Dept -->|已落实| Light[\"安装100多盏太阳能路灯\"]\n    Dept -->|下一步计划| Fund[\"投资30万元改造基础设施\"]\n```\n\n**图示说明**：\n“4+14+2+1+N”平台体系通过中平社区基地落地，使委员能直接触达上坪村群众；读书活动转化为民意收集与建议提出的过程，最终推动职能部门落实路灯安装与30万元改造资金。"
+        }
+      ],
+      "contextMeta": {
+        "calibrationRatio": 1.13,
+        "encoding": "o200k_base"
+      },
+      "conversationId": "a7ab59fa-00a2-419f-bef0-938046ae8fb5",
+      "createdAt": "2026-11-01T16:54:08.818Z",
+      "endpoint": "SanSuoMain",
+      "error": false,
+      "expiredAt": null,
+      "isCreatedByUser": false,
+      "metadata": {
+        "sansuoMode": "deep",
+        "sansuoProcessTiming": {
+          "startedAt": "2026-11-01T16:53:30.966Z",
+          "completedAt": "2026-11-01T16:53:56.981Z",
+          "elapsedMs": 26015
+        },
+        "sansuoClientRequestId": "77c516a3-6111-44cd-be9f-3af43495ea1a"
+      },
+      "model": "qwen3.6-plus",
+      "parentMessageId": "83c4441d-9ddb-496b-abbc-ca04c048cf6d",
+      "sender": "三所小智",
+      "text": "根据材料（第83-84页），象州县政协通过构建**“4+14+2+1+N”**读书平台格局，将中平社区（含上坪村）纳入其中，实现了从“读书交流”到“民生落地”的履职转化。具体如下：\n\n### 1. 平台构成（“4+14+2+1+N”格局）\n*   **“4”个龙头**：4个“书香政协”委员读书实践活动基地（含**中平社区**的“书香政协·魅力中平”基地）。\n*   **“14”个延伸**：14个“书香政协 委员书屋”。\n*   **“2”种渠道**：“线上线下”结合。\n*   **“1”个打卡点**：1个常态化网红“书香打卡点”。\n*   **“N”种活动**：形式多样的委员读书交流活动。\n\n### 2. 平台与上坪村的联系\n上坪村所在的**中平社区**正是该格局中**“4个读书实践基地”之一**。县政协在此创建基地，使读书活动直接下沉到该村屯一线。\n\n### 3. 平台如何转化为履职\n读书平台不仅是学习场所，更是履职枢纽，其转化路径为：\n1.  **搭建桥梁**：依托中平社区基地开展常态化读书活动，搭建起委员与群众面对面交流的平台。\n2.  **收集民意**：委员在“书香气”与“泥土味”中了解上坪村的实际困难（如夜间照明不足、基础设施陈旧）。\n3.  **形成建议**：将收集到的问题转化为“金点子”和提案建议。\n4.  **推动落实**：通过协商推动职能部门（如象州县民宗局）采纳建议，最终促成**100多盏太阳能路灯的安装（已落实）**以及**30万元基础设施改造资金的投入（下一步计划）**。\n\n---\n\n### 解释示意图\n\n```mermaid\nflowchart TD\n    subgraph Platform [\"平台构成：4+14+2+1+N格局\"]\n        Base[\"4个读书实践基地(龙头)\"]\n        House[\"14个委员书屋(延伸)\"]\n        Channel[\"线上线下2种结合(渠道)\"]\n        Spot[\"1个常态化网红打卡点\"]\n        Activity[\"N种读书交流活动\"]\n    end\n\n    Base -->|涵盖| Zhongping[\"中平社区读书实践基地\"]\n    Zhongping -->|依托读书活动搭建| Bridge[\"委员与群众交流桥梁\"]\n    Bridge -->|收集| Needs[\"上坪村社情民意(照明/设施)\"]\n    Needs -->|转化为| Idea[\"委员建议与金点子\"]\n    Idea -->|推动协商| Dept[\"职能部门(民宗局)\"]\n    Dept -->|已落实| Light[\"安装100多盏太阳能路灯\"]\n    Dept -->|下一步计划| Fund[\"投资30万元改造基础设施\"]\n```\n\n**图示说明**：\n“4+14+2+1+N”平台体系通过中平社区基地落地，使委员能直接触达上坪村群众；读书活动转化为民意收集与建议提出的过程，最终推动职能部门落实路灯安装与30万元改造资金。",
+      "tokenCount": 2169,
+      "unfinished": false,
+      "updatedAt": "2026-11-01T16:54:08.818Z"
+    },
+    {
+      "_id": "6ae76eb129b56c8c8fb05e88",
+      "user": "6ae73548fbae1de9b1b18ae2",
+      "messageId": "034d954b-078e-488b-afa0-70de2d7a0bdc",
+      "__v": 0,
+      "conversationId": "a7ab59fa-00a2-419f-bef0-938046ae8fb5",
+      "createdAt": "2026-11-01T16:54:09.089Z",
+      "endpoint": "SanSuoMain",
+      "error": false,
+      "expiredAt": null,
+      "isCreatedByUser": true,
+      "metadata": {
+        "sansuoClientRequestId": "95b38cad-f44d-4639-b6f7-69bebdd63456",
+        "sansuoMode": "deep",
+        "sansuoDocumentReferences": [
+          {
+            "document_id": "doc_bbf3e2225d13b5482436",
+            "chunk_id": "chunk_bcbbe7482d9322d5f746",
+            "page_start": 87,
+            "page_end": 87,
+            "section_id": null,
+            "table_id": null,
+            "version": "9d89b35fca7f10f5fbb11914bf6f60de2a0075e83cbbcf05c3826b319c664f7c",
+            "source_hash": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0",
+            "user_id": "6ae73548fbae1de9b1b18ae2",
+            "conversation_id": "a7ab59fa-00a2-419f-bef0-938046ae8fb5"
+          }
+        ]
+      },
+      "model": null,
+      "parentMessageId": "5bb47e68-bb7d-4b39-930b-6dc95747111c",
+      "sender": "User",
+      "text": "换个关注点，金秀如何开展线上线下读书？活动规模有哪些数据？",
+      "tokenCount": 551,
+      "unfinished": false,
+      "updatedAt": "2026-11-01T16:54:46.891Z"
+    },
+    {
+      "_id": "6ae76ed629b56c8c8fb05e89",
+      "messageId": "5adfdeb1-97ab-40a3-9ec2-531ad9947473",
+      "user": "6ae73548fbae1de9b1b18ae2",
+      "__v": 0,
+      "attachments": [],
+      "content": [
+        {
+          "type": "think",
+          "think": "用户询问金秀如何开展线上线下读书，以及活动规模有哪些数据。\n我需要搜索文档中关于“金秀”、“线上线下读书”、“活动规模”的数据。\n先搜索“金秀 读书”或“金秀 线上线下”。"
+        },
+        {
+          "type": "tool_call",
+          "tool_call": {
+            "id": "call_7c960d8e802544ec92374c5b",
+            "name": "read_parsed_pdf",
+            "args": "{\"action\":\"search\",\"document_id\":\"doc_bbf3e2225d13b5482436\",\"query\":\"金秀 线上线下 读书 活动规模\",\"limit\":10}",
+            "type": "tool_call",
+            "progress": 1,
+            "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_bbf3e2225d13b5482436\",\"filename\":\"41489021-892f-5f2a-9c49-d0515dad08a2.pdf\",\"version\":\"9d89b35fca7f10f5fbb11914bf6f60de2a0075e83cbbcf05c3826b319c664f7c\",\"action\":\"search\",\"content\":\"[chunk_bcbbe7482d9322d5f746 page=87 kind=extracted_text]\\n“线上”发力，促进委员读书融入日常。金秀政协注重抓好“线上”分享，淡化时间和空间的限制，委员参与度高，读书效果好；开展好线上“好书我阅读”活动，利用政协微信公众号、界别委员活动小组微信群等线上平台，鼓励委员通过短视频、微信语音、微信群视频等方式进行线上互动分享。据统计，读书实践活动开展以来，金秀瑶族自治县共有80余名县政协委员通过线上渠道进行读书互动分享，委员们通过分享读书心得，相互加深了解，相互促进成长，有效把读书的收获转化为建言献策的过硬本领，以书香涵养“政协气质”，提升履职能力。\\n\\n[chunk_6ecde94afe3eb803e760 page=87 kind=extracted_text]\\n今年以来，金秀瑶族自治县政协坚持“线下线上”相融合的方式，持续丰富委员读书实践活动的内容和载体，将履职和读书活动有机融合起来，积极引导委员多读书、读好书、善读书，不断提高委员思想水平和履职能力。\\n\\n[chunk_9cf235e5df1887bf9b60 page=87 kind=extracted_text]\\n金秀瑶族自治县政协：“双线发力”推动履职和读书活动双促进\\n\\n[chunk_b6a1a4d0c8d84059ce81 page=87 kind=extracted_text]\\n“线下”发力，促进委员读书成为习惯。金秀政协制定了《金秀县政协深化开展“书香政协香飘八桂”2022年工作计划》，以7项具体工作为抓手，通过推荐一批图书书目、建立“6+1”委员读书交流平台、开展一批读书分享活动、开展“走读广西·阅美大瑶山”读书系列活动、举办一期学习研讨班、开展一次调研交流、举办读书心得体会文章征集活动，推进委员读书实践活动走深走实。注重调动委员主体作用，充分发挥委员读书小组、委员书屋、飘香书吧、读书角功能，在居民小区、“同心小剧场”、委员企业等地设置委员工作室6个、委员书屋1个、飘香书吧3个，并免费向群众、学生、旅客开放，以“书香政协”为引擎，助推“书香社会”建设。\\n\\n[chunk_19d09f4544e6111d6cb0 page=8 kind=extracted_text]\\n兴宾区政协委员开展宣讲会和主题党日活动\\n——唱响“铸牢中华民族共同体意识”政协强音（黎慧梅） 76\\n把“书香政协”打造成履职为民的靓丽名片——象州县政协以“4+14+\\n2+1+N”开展委员读书实践活动纪实（潘照春 韦冠林 郑南瑛 黄炳壮） 76\\n武宣县政协：召开乡镇政协工作联络站工作交流会（罗阳斌 潘晓宁） 80\\n忻城县政协：强化学习培训提升履职成效（卢国武 罗金城） 81\\n金秀瑶族自治县政协：“双线发力”推动履职和读书活动双促进(曾铭鑫) 82\\n委员“动”起来工作“活”起来\\n——合山市政协着力提升委员履职质效侧记（黄冲 吴伯伦） 83\\n\\n[chunk_291689aa9700f269ee3b page=83 kind=extracted_text]\\n书。”象州县政协副主席李柳告诉记者，在开展委员读书实践活动中，县政协用心用情用力，在创新平台建设上下功夫，构建了“4+14+2+1+N”的委员读书实践工作新格局，以4个“书香政协”委员读书实践活动基地为龙头，以14个“书香政协 委员书屋”为延伸，以“线上线下”2种结合为渠道，建成1个常态化网红“书香打卡点”，开展N种形式多样的委员读书交流活动，倾力打造“书香政协 香飘象州”读书实践工作品牌，形成读书履职相促进、委员公众双互动的读书活动模式。\\n\\n[chunk_acf4417d3e433af282d4 page=83 kind=extracted_text]\\n随着“书香政协”建设深入推进，“书卷常开，灯火不熄”成为象州市民读书学习新常态。该县利用建成的14个“委员书屋”，推动“书香政协”进社区、进乡村、进企业，在基层全覆盖延伸“书香政协”阵地。县政协联合象州新华书店设立“书香政协”委员读书实践活动基地，建成常态化网红“书香打卡点”。每周五晚上定期开展“书香象州朗读者”读书打卡行动，切实发挥政协委员的示范引领作用，引导广大市民多读书、读好书、善读书，深受委员和群众的喜爱，期期人气爆满，广受社会好评。同时，象州县政协“线上线下”结合开展“书香政协“香飘象州”委员读书实践系列活动，联合相关部门开展阅读推广、培训讲座、线上展览、好书推介等活动102场次，服务委员和群众开展线上线下阅读6万多人次，扩大社会各界读书参与面。\\n\\n[chunk_e18feb94663621c9ca2e page=73 kind=extracted_text]\\n在委员读书活动中，市政协利用好各界别党支部、委员小组活动阵地，进一步打造线下读书平台，为委员读书学习提供固定场地，推动委员读书学习常态化。通过在市新华书店打造委员读书活动基地，充分发挥委员读书基地作用，广泛动员委员参与，开展经常性、不定期的读书交流活动。在“微观来宾”和《来宾日报》等平台开设“书香政协·朗读者”栏目和“书香政协·委员分享”专栏。围绕读书实践主题，结合党史学习教育、“铸牢中华民族共同体意识委员行动”\\n\\n[chunk_a41662a8faa56e677af2 page=83 kind=extracted_text]\\n“与此同时，在来宾市政协指导下，象州县政协投入60多万元，率先在妙皇乡思高村、罗秀镇纳禄村、中平镇中平社区和石龙工业园区，分别创建‘书香政协·茶韵妙皇’“书香政协·古韵罗秀”“书香政协·魅力中平”“书香政协·法护企业”等4个服务村屯、社区、企业，市县政协联动的委员读书实践活动基地。把委员读书实践活动与推动产业发展、助力乡村振兴和铸牢中华民族共同体意识有机结合，并在象州县“书香政协”活动妙皇乡思高示范点，来宾市、象州县两级政协联动开展2022年“书香传智慧茶韵同心”读书实践活动，推动“读书+履职”深度融合、相互赋能，把读书所得转化为履职本领和工作成果。”\\n\\n[chunk_58fb38bd679867427fa5 page=82 kind=extracted_text]\\n妙皇乡思高村是国际著名漫画大师廖冰兄故里，也是名茶象州古琶茶的主产地。为深入挖掘地方资源禀赋，助推古琶茶产业发展，在来宾市政协指导下，象州县政协在思高村率先创建村屯一级的市县联动的“书香政协茶韵妙皇”委员读书实践活动基地，突出“茶韵妙皇”主题，搭建“交流平台”。书香政协活动示范点不仅成为村民学习采茶践活动工作机制。委员读书活动深度融入政治理论学习之中，结合理论中心组集中学习、党组会、常委会议、专题党课等开展读书活动33次，编写《委员理论学习专报》4期，读书活动规范化、常态化、制度化。\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_bcbbe7482d9322d5f746\",\"source_chunk_id\":\"mineru_0ad1c200c20cccaa542bede7\",\"page_start\":87,\"page_end\":87,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_ff5753753dd5de15a9fe45e4\",\"image_id\":null,\"bbox\":[508,666,904,918],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_6ecde94afe3eb803e760\",\"source_chunk_id\":\"mineru_e9184e66f96d420a91a75c01\",\"page_start\":87,\"page_end\":87,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_f6cc22fba7d835105647f91e\",\"image_id\":null,\"bbox\":[93,530,485,645],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_9cf235e5df1887bf9b60\",\"source_chunk_id\":\"mineru_83d727d065d424a9439e0522\",\"page_start\":87,\"page_end\":87,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_0db1ec42bb80c8b8ab8b2be9\",\"image_id\":null,\"bbox\":[205,421,793,488],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_b6a1a4d0c8d84059ce81\",\"source_chunk_id\":\"mineru_5a40a9c47f808f57f3089431\",\"page_start\":87,\"page_end\":87,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_4a655ce6304e66f4b3dd65c4\",\"image_id\":null,\"bbox\":[92,646,486,918],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_19d09f4544e6111d6cb0\",\"source_chunk_id\":\"mineru_1e2db4d145013ded5e5d0516\",\"page_start\":8,\"page_end\":8,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_05d43d6c97ea86a81499ba07\",\"image_id\":null,\"bbox\":[93,702,594,853],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_291689aa9700f269ee3b\",\"source_chunk_id\":\"mineru_59ebfd6d5df907b58f874274\",\"page_start\":83,\"page_end\":83,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_d173970bbd25494f0d8970e6\",\"image_id\":null,\"bbox\":[92,125,487,330],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_acf4417d3e433af282d4\",\"source_chunk_id\":\"mineru_3db878c180240f0d49b61c85\",\"page_start\":83,\"page_end\":83,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_005edaf7c9536e2c847cd3ca\",\"image_id\":null,\"bbox\":[91,648,487,916],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_e18feb94663621c9ca2e\",\"source_chunk_id\":\"mineru_18d33a0961bf950479f45a33\",\"page_start\":73,\"page_end\":73,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_27bb991e34e9e3e566f36ee3\",\"image_id\":null,\"bbox\":[93,858,486,919],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_a41662a8faa56e677af2\",\"source_chunk_id\":\"mineru_78724328963f37f7ece9933f\",\"page_start\":83,\"page_end\":83,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_163361042e170d320f65a6d0\",\"image_id\":null,\"bbox\":[508,525,905,832],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_58fb38bd679867427fa5\",\"source_chunk_id\":\"mineru_8c8b308002998eaadab44264\",\"page_start\":82,\"page_end\":82,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_0f27db976e39c584cb2b3853\",\"image_id\":null,\"bbox\":[93,752,487,916],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_bbf3e2225d13b5482436\",\"chunk_id\":\"chunk_bcbbe7482d9322d5f746\",\"page_start\":87,\"page_end\":87,\"section_id\":null,\"table_id\":null,\"version\":\"9d89b35fca7f10f5fbb11914bf6f60de2a0075e83cbbcf05c3826b319c664f7c\",\"source_hash\":\"5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0\",\"user_id\":\"6ae73548fbae1de9b1b18ae2\",\"conversation_id\":\"a7ab59fa-00a2-419f-bef0-938046ae8fb5\"},\"page_coverage\":[{\"page\":8,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":73,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":82,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":83,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":87,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+          }
+        },
+        {
+          "type": "think",
+          "think": "用户想了解金秀县政协如何开展线上线下读书活动，以及相关的活动规模数据。\n根据搜索结果（第87页），金秀瑶族自治县政协“双线发力”推动履职和读书活动双促进。\n\n1.  **线上开展方式**：\n    *   淡化时间和空间限制。\n    *   开展线上“好书我阅读”活动。\n    *   利用政协微信公众号、界别委员活动小组微信群等平台。\n    *   鼓励委员通过短视频、微信语音、微信群视频等方式进行线上互动分享。\n    *   **数据**：共有80余名县政协委员通过线上渠道进行读书互动分享。\n\n2.  **线下开展方式**：\n    *   制定工作计划《金秀县政协深化开展“书香政协香飘八桂”2022年工作计划》，以7项具体工作为抓手。\n    *   建立“6+1”委员读书交流平台。\n    *   设置场所：在居民小区、“同心小剧场”、委员企业等地设置委员工作室6个、委员书屋1个、飘香书吧3个，免费向群众、学生、旅客开放。\n    *   开展活动：推荐图书书目、开展读书分享活动、“走读广西·阅美大瑶山”系列活动、举办学习研讨班、调研交流、心得体会文章征集等。\n\n3.  **其他相关数据/规模**：\n    *   线上互动分享：80余名委员参与。\n    *   场所数量：委员工作室6个，委员书屋1个，飘香书吧3个。\n    *   线下平台：“6+1”委员读书交流平台。\n\n需要整合这些信息来回答用户的问题。\n\n**解释示意图**：\n可以用一个流程图或结构图来展示金秀的“双线发力”模式。\n左边是线上，右边是线下，中间是转化履职。\n线上：微信公众号、微信群 -> 短视频/语音分享 -> 80余名委员参与。\n线下：6个工作室、1个书屋、3个书吧 -> 推荐书目/分享活动/走读广西等。\n结果：读书收获转化为建言献策本领。\n\n**结构**：\n1. 线上读书方式及数据。\n2. 线下读书方式及数据。\n3. 履职转化效果。\n4. 解释示意图。\n\n检查是否有遗漏数据。\n- 线上：80余名委员。\n- 线下：6个委员工作室，1个委员书屋，3个飘香书吧。\n- 计划：7项具体工作。\n- 平台：“6+1”。\n\n确认内容准确性。\n出处：第87页《金秀瑶族自治县政协：“双线发力”推动履职和读书活动双促进》。\n\n开始撰写回答。\n注意用户要求：节点ID简单，标签双引号，Mermaid格式。\n\n**草稿内容**：\n根据材料（第87页），金秀瑶族自治县政协坚持“线下线上”相融合，开展读书活动并转化为履职能力的具体做法如下：\n\n**1. 线上开展方式与规模**\n*   **方式**：利用政协微信公众号、界别委员活动小组微信群等平台，开展线上“好书我阅读”活动。鼓励委员通过短视频、微信语音、微信群视频等方式进行互动分享。\n*   **数据**：共有**80余名**县政协委员通过线上渠道进行读书互动分享。\n\n**2. 线下开展方式与规模**\n*   **方式**：制定《2022年工作计划》，以7项具体工作为抓手（如推荐书目、分享活动、“走读广西·阅美大瑶山”系列活动、学习研讨班等）。建立“6+1”委员读书交流平台。\n*   **设施与数据**：在居民小区、“同心小剧场”、委员企业等地设置了：\n    *   **6个**委员工作室\n    *   **1个**委员书屋\n    *   **3个**飘香书吧\n    *   这些场所均免费向群众、学生、旅客开放。\n\n**3. 转化为履职**\n*   通过线上线下读书，委员们分享心得，加深了解，将读书收获转化为建言献策的过硬本领，提升履职能力。\n\n**解释示意图**\n```mermaid\nflowchart LR\n    subgraph Online [\"线上发力\"]\n        O1[\"微信公众号/微信群\"]\n        O2[\"短视频/语音/视频分享\"]\n        O1 --> O2\n        O2 --> O3[\"80余名委员参与互动\"]\n    end\n\n    subgraph Offline [\"线下发力\"]\n        L1[\"6个委员工作室\"]\n        L2[\"1个委员书屋\"]\n        L3[\"3个飘香书吧\"]\n        L4[\"7项具体工作抓手\"]\n        L1 & L2 & L3 --> L5[\"免费向群众开放\"]\n        L4 --> L5\n    end\n\n    O3 --> Result[\"转化为建言献策本领\"]\n    L5 --> Result\n    Result --> Goal[\"提升履职能力\"]\n```\n(调整Mermaid以符合用户要求的格式)\n节点ID用简单英文，标签双引号。\nID: Online_Platform, Share_Method, Participant_Count, Offline_Space_1, Offline_Space_2, Offline_Space_3, Work_Plan, Free_Open, Transform, Improve_Ability.\n\n```mermaid\nflowchart TD\n    subgraph Online [\"线上发力\"]\n        A[\"政协微信公众号/微信群\"]\n        B[\"短视频/语音/视频分享\"]\n        C[\"80余名委员参与\"]\n        A --> B --> C\n    end\n\n    subgraph Offline [\"线下发力\"]\n        D[\"6个委员工作室\"]\n        E[\"1个委员书屋\"]\n        F[\"3个飘香书吧\"]\n        G[\"7项具体工作抓手\"]\n        H[\"免费向群众开放\"]\n        D & E & F --> H\n        G --> H\n    end\n\n    C --> I[\"转化为建言献策本领\"]\n    H --> I\n    I --> J[\"提升履职能力\"]\n```\n\n检查：\n- 线上：80余名委员。\n- 线下：6个室，1个屋，3个吧。\n- 转化：建言献策本领。\n- 格式：flowchart TD，节点ID简单，标签双引号。\n\n可以了。\n"
+        },
+        {
+          "type": "text",
+          "text": "根据材料（第87页），金秀瑶族自治县政协通过“双线发力”推动履职和读书活动双促进，具体开展方式及相关数据如下：\n\n### 1. 线上读书：打破时空限制\n*   **开展方式**：利用政协微信公众号、界别委员活动小组微信群等平台，开展线上“好书我阅读”活动。鼓励委员通过**短视频、微信语音、微信群视频**等方式进行互动分享。\n*   **活动规模数据**：读书实践活动开展以来，共有**80余名**县政协委员通过线上渠道进行读书互动分享。\n\n### 2. 线下读书：阵地建设与活动抓手\n*   **开展方式**：制定《2022年工作计划》，以**7项具体工作**为抓手（如推荐书目、读书分享、“走读广西·阅美大瑶山”系列活动、学习研讨班等）。建立**“6+1”**委员读书交流平台。\n*   **设施规模数据**：在居民小区、“同心小剧场”、委员企业等地设置了以下场所，并免费向群众、学生、旅客开放：\n    *   **6个**委员工作室\n    *   **1个**委员书屋\n    *   **3个**飘香书吧\n\n### 3. 读书转化为履职\n通过线上线下读书活动，委员们分享心得、加深了解，将读书收获转化为**建言献策的过硬本领**，以书香涵养“政协气质”，提升履职能力。\n\n---\n\n### 解释示意图\n\n```mermaid\nflowchart TD\n    subgraph Online [\"线上发力\"]\n        A[\"政协微信公众号/微信群\"]\n        B[\"短视频/语音/视频分享\"]\n        C[\"80余名委员参与\"]\n        A --> B --> C\n    end\n\n    subgraph Offline [\"线下发力\"]\n        D[\"6个委员工作室\"]\n        E[\"1个委员书屋\"]\n        F[\"3个飘香书吧\"]\n        G[\"7项具体工作抓手\"]\n        H[\"免费向群众开放\"]\n        D & E & F --> H\n        G --> H\n    end\n\n    C --> I[\"转化为建言献策本领\"]\n    H --> I\n    I --> J[\"提升履职能力\"]\n```"
+        }
+      ],
+      "contextMeta": {
+        "calibrationRatio": 1.144,
+        "encoding": "o200k_base"
+      },
+      "conversationId": "a7ab59fa-00a2-419f-bef0-938046ae8fb5",
+      "createdAt": "2026-11-01T16:54:46.880Z",
+      "endpoint": "SanSuoMain",
+      "error": false,
+      "expiredAt": null,
+      "isCreatedByUser": false,
+      "metadata": {
+        "sansuoMode": "deep",
+        "sansuoProcessTiming": {
+          "startedAt": "2026-11-01T16:54:09.030Z",
+          "completedAt": "2026-11-01T16:54:38.916Z",
+          "elapsedMs": 29886
+        },
+        "sansuoClientRequestId": "95b38cad-f44d-4639-b6f7-69bebdd63456"
+      },
+      "model": "qwen3.6-plus",
+      "parentMessageId": "034d954b-078e-488b-afa0-70de2d7a0bdc",
+      "sender": "三所小智",
+      "text": "根据材料（第87页），金秀瑶族自治县政协通过“双线发力”推动履职和读书活动双促进，具体开展方式及相关数据如下：\n\n### 1. 线上读书：打破时空限制\n*   **开展方式**：利用政协微信公众号、界别委员活动小组微信群等平台，开展线上“好书我阅读”活动。鼓励委员通过**短视频、微信语音、微信群视频**等方式进行互动分享。\n*   **活动规模数据**：读书实践活动开展以来，共有**80余名**县政协委员通过线上渠道进行读书互动分享。\n\n### 2. 线下读书：阵地建设与活动抓手\n*   **开展方式**：制定《2022年工作计划》，以**7项具体工作**为抓手（如推荐书目、读书分享、“走读广西·阅美大瑶山”系列活动、学习研讨班等）。建立**“6+1”**委员读书交流平台。\n*   **设施规模数据**：在居民小区、“同心小剧场”、委员企业等地设置了以下场所，并免费向群众、学生、旅客开放：\n    *   **6个**委员工作室\n    *   **1个**委员书屋\n    *   **3个**飘香书吧\n\n### 3. 读书转化为履职\n通过线上线下读书活动，委员们分享心得、加深了解，将读书收获转化为**建言献策的过硬本领**，以书香涵养“政协气质”，提升履职能力。\n\n---\n\n### 解释示意图\n\n```mermaid\nflowchart TD\n    subgraph Online [\"线上发力\"]\n        A[\"政协微信公众号/微信群\"]\n        B[\"短视频/语音/视频分享\"]\n        C[\"80余名委员参与\"]\n        A --> B --> C\n    end\n\n    subgraph Offline [\"线下发力\"]\n        D[\"6个委员工作室\"]\n        E[\"1个委员书屋\"]\n        F[\"3个飘香书吧\"]\n        G[\"7项具体工作抓手\"]\n        H[\"免费向群众开放\"]\n        D & E & F --> H\n        G --> H\n    end\n\n    C --> I[\"转化为建言献策本领\"]\n    H --> I\n    I --> J[\"提升履职能力\"]\n```",
+      "tokenCount": 1969,
+      "unfinished": false,
+      "updatedAt": "2026-11-01T16:54:46.880Z"
+    }
+  ],
+  "message_id": "5adfdeb1-97ab-40a3-9ec2-531ad9947473",
+  "answer": "根据材料（第87页），金秀瑶族自治县政协通过“双线发力”推动履职和读书活动双促进，具体开展方式及相关数据如下：\n\n### 1. 线上读书：打破时空限制\n*   **开展方式**：利用政协微信公众号、界别委员活动小组微信群等平台，开展线上“好书我阅读”活动。鼓励委员通过**短视频、微信语音、微信群视频**等方式进行互动分享。\n*   **活动规模数据**：读书实践活动开展以来，共有**80余名**县政协委员通过线上渠道进行读书互动分享。\n\n### 2. 线下读书：阵地建设与活动抓手\n*   **开展方式**：制定《2022年工作计划》，以**7项具体工作**为抓手（如推荐书目、读书分享、“走读广西·阅美大瑶山”系列活动、学习研讨班等）。建立**“6+1”**委员读书交流平台。\n*   **设施规模数据**：在居民小区、“同心小剧场”、委员企业等地设置了以下场所，并免费向群众、学生、旅客开放：\n    *   **6个**委员工作室\n    *   **1个**委员书屋\n    *   **3个**飘香书吧\n\n### 3. 读书转化为履职\n通过线上线下读书活动，委员们分享心得、加深了解，将读书收获转化为**建言献策的过硬本领**，以书香涵养“政协气质”，提升履职能力。\n\n---\n\n### 解释示意图\n\n```mermaid\nflowchart TD\n    subgraph Online [\"线上发力\"]\n        A[\"政协微信公众号/微信群\"]\n        B[\"短视频/语音/视频分享\"]\n        C[\"80余名委员参与\"]\n        A --> B --> C\n    end\n\n    subgraph Offline [\"线下发力\"]\n        D[\"6个委员工作室\"]\n        E[\"1个委员书屋\"]\n        F[\"3个飘香书吧\"]\n        G[\"7项具体工作抓手\"]\n        H[\"免费向群众开放\"]\n        D & E & F --> H\n        G --> H\n    end\n\n    C --> I[\"转化为建言献策本领\"]\n    H --> I\n    I --> J[\"提升履职能力\"]\n```",
+  "error": false,
+  "tools": [
+    {
+      "id": "call_7c960d8e802544ec92374c5b",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_bbf3e2225d13b5482436\",\"query\":\"金秀 线上线下 读书 活动规模\",\"limit\":10}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_bbf3e2225d13b5482436\",\"filename\":\"41489021-892f-5f2a-9c49-d0515dad08a2.pdf\",\"version\":\"9d89b35fca7f10f5fbb11914bf6f60de2a0075e83cbbcf05c3826b319c664f7c\",\"action\":\"search\",\"content\":\"[chunk_bcbbe7482d9322d5f746 page=87 kind=extracted_text]\\n“线上”发力，促进委员读书融入日常。金秀政协注重抓好“线上”分享，淡化时间和空间的限制，委员参与度高，读书效果好；开展好线上“好书我阅读”活动，利用政协微信公众号、界别委员活动小组微信群等线上平台，鼓励委员通过短视频、微信语音、微信群视频等方式进行线上互动分享。据统计，读书实践活动开展以来，金秀瑶族自治县共有80余名县政协委员通过线上渠道进行读书互动分享，委员们通过分享读书心得，相互加深了解，相互促进成长，有效把读书的收获转化为建言献策的过硬本领，以书香涵养“政协气质”，提升履职能力。\\n\\n[chunk_6ecde94afe3eb803e760 page=87 kind=extracted_text]\\n今年以来，金秀瑶族自治县政协坚持“线下线上”相融合的方式，持续丰富委员读书实践活动的内容和载体，将履职和读书活动有机融合起来，积极引导委员多读书、读好书、善读书，不断提高委员思想水平和履职能力。\\n\\n[chunk_9cf235e5df1887bf9b60 page=87 kind=extracted_text]\\n金秀瑶族自治县政协：“双线发力”推动履职和读书活动双促进\\n\\n[chunk_b6a1a4d0c8d84059ce81 page=87 kind=extracted_text]\\n“线下”发力，促进委员读书成为习惯。金秀政协制定了《金秀县政协深化开展“书香政协香飘八桂”2022年工作计划》，以7项具体工作为抓手，通过推荐一批图书书目、建立“6+1”委员读书交流平台、开展一批读书分享活动、开展“走读广西·阅美大瑶山”读书系列活动、举办一期学习研讨班、开展一次调研交流、举办读书心得体会文章征集活动，推进委员读书实践活动走深走实。注重调动委员主体作用，充分发挥委员读书小组、委员书屋、飘香书吧、读书角功能，在居民小区、“同心小剧场”、委员企业等地设置委员工作室6个、委员书屋1个、飘香书吧3个，并免费向群众、学生、旅客开放，以“书香政协”为引擎，助推“书香社会”建设。\\n\\n[chunk_19d09f4544e6111d6cb0 page=8 kind=extracted_text]\\n兴宾区政协委员开展宣讲会和主题党日活动\\n——唱响“铸牢中华民族共同体意识”政协强音（黎慧梅） 76\\n把“书香政协”打造成履职为民的靓丽名片——象州县政协以“4+14+\\n2+1+N”开展委员读书实践活动纪实（潘照春 韦冠林 郑南瑛 黄炳壮） 76\\n武宣县政协：召开乡镇政协工作联络站工作交流会（罗阳斌 潘晓宁） 80\\n忻城县政协：强化学习培训提升履职成效（卢国武 罗金城） 81\\n金秀瑶族自治县政协：“双线发力”推动履职和读书活动双促进(曾铭鑫) 82\\n委员“动”起来工作“活”起来\\n——合山市政协着力提升委员履职质效侧记（黄冲 吴伯伦） 83\\n\\n[chunk_291689aa9700f269ee3b page=83 kind=extracted_text]\\n书。”象州县政协副主席李柳告诉记者，在开展委员读书实践活动中，县政协用心用情用力，在创新平台建设上下功夫，构建了“4+14+2+1+N”的委员读书实践工作新格局，以4个“书香政协”委员读书实践活动基地为龙头，以14个“书香政协 委员书屋”为延伸，以“线上线下”2种结合为渠道，建成1个常态化网红“书香打卡点”，开展N种形式多样的委员读书交流活动，倾力打造“书香政协 香飘象州”读书实践工作品牌，形成读书履职相促进、委员公众双互动的读书活动模式。\\n\\n[chunk_acf4417d3e433af282d4 page=83 kind=extracted_text]\\n随着“书香政协”建设深入推进，“书卷常开，灯火不熄”成为象州市民读书学习新常态。该县利用建成的14个“委员书屋”，推动“书香政协”进社区、进乡村、进企业，在基层全覆盖延伸“书香政协”阵地。县政协联合象州新华书店设立“书香政协”委员读书实践活动基地，建成常态化网红“书香打卡点”。每周五晚上定期开展“书香象州朗读者”读书打卡行动，切实发挥政协委员的示范引领作用，引导广大市民多读书、读好书、善读书，深受委员和群众的喜爱，期期人气爆满，广受社会好评。同时，象州县政协“线上线下”结合开展“书香政协“香飘象州”委员读书实践系列活动，联合相关部门开展阅读推广、培训讲座、线上展览、好书推介等活动102场次，服务委员和群众开展线上线下阅读6万多人次，扩大社会各界读书参与面。\\n\\n[chunk_e18feb94663621c9ca2e page=73 kind=extracted_text]\\n在委员读书活动中，市政协利用好各界别党支部、委员小组活动阵地，进一步打造线下读书平台，为委员读书学习提供固定场地，推动委员读书学习常态化。通过在市新华书店打造委员读书活动基地，充分发挥委员读书基地作用，广泛动员委员参与，开展经常性、不定期的读书交流活动。在“微观来宾”和《来宾日报》等平台开设“书香政协·朗读者”栏目和“书香政协·委员分享”专栏。围绕读书实践主题，结合党史学习教育、“铸牢中华民族共同体意识委员行动”\\n\\n[chunk_a41662a8faa56e677af2 page=83 kind=extracted_text]\\n“与此同时，在来宾市政协指导下，象州县政协投入60多万元，率先在妙皇乡思高村、罗秀镇纳禄村、中平镇中平社区和石龙工业园区，分别创建‘书香政协·茶韵妙皇’“书香政协·古韵罗秀”“书香政协·魅力中平”“书香政协·法护企业”等4个服务村屯、社区、企业，市县政协联动的委员读书实践活动基地。把委员读书实践活动与推动产业发展、助力乡村振兴和铸牢中华民族共同体意识有机结合，并在象州县“书香政协”活动妙皇乡思高示范点，来宾市、象州县两级政协联动开展2022年“书香传智慧茶韵同心”读书实践活动，推动“读书+履职”深度融合、相互赋能，把读书所得转化为履职本领和工作成果。”\\n\\n[chunk_58fb38bd679867427fa5 page=82 kind=extracted_text]\\n妙皇乡思高村是国际著名漫画大师廖冰兄故里，也是名茶象州古琶茶的主产地。为深入挖掘地方资源禀赋，助推古琶茶产业发展，在来宾市政协指导下，象州县政协在思高村率先创建村屯一级的市县联动的“书香政协茶韵妙皇”委员读书实践活动基地，突出“茶韵妙皇”主题，搭建“交流平台”。书香政协活动示范点不仅成为村民学习采茶践活动工作机制。委员读书活动深度融入政治理论学习之中，结合理论中心组集中学习、党组会、常委会议、专题党课等开展读书活动33次，编写《委员理论学习专报》4期，读书活动规范化、常态化、制度化。\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_bcbbe7482d9322d5f746\",\"source_chunk_id\":\"mineru_0ad1c200c20cccaa542bede7\",\"page_start\":87,\"page_end\":87,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_ff5753753dd5de15a9fe45e4\",\"image_id\":null,\"bbox\":[508,666,904,918],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_6ecde94afe3eb803e760\",\"source_chunk_id\":\"mineru_e9184e66f96d420a91a75c01\",\"page_start\":87,\"page_end\":87,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_f6cc22fba7d835105647f91e\",\"image_id\":null,\"bbox\":[93,530,485,645],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_9cf235e5df1887bf9b60\",\"source_chunk_id\":\"mineru_83d727d065d424a9439e0522\",\"page_start\":87,\"page_end\":87,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_0db1ec42bb80c8b8ab8b2be9\",\"image_id\":null,\"bbox\":[205,421,793,488],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_b6a1a4d0c8d84059ce81\",\"source_chunk_id\":\"mineru_5a40a9c47f808f57f3089431\",\"page_start\":87,\"page_end\":87,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_4a655ce6304e66f4b3dd65c4\",\"image_id\":null,\"bbox\":[92,646,486,918],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_19d09f4544e6111d6cb0\",\"source_chunk_id\":\"mineru_1e2db4d145013ded5e5d0516\",\"page_start\":8,\"page_end\":8,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_05d43d6c97ea86a81499ba07\",\"image_id\":null,\"bbox\":[93,702,594,853],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_291689aa9700f269ee3b\",\"source_chunk_id\":\"mineru_59ebfd6d5df907b58f874274\",\"page_start\":83,\"page_end\":83,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_d173970bbd25494f0d8970e6\",\"image_id\":null,\"bbox\":[92,125,487,330],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_acf4417d3e433af282d4\",\"source_chunk_id\":\"mineru_3db878c180240f0d49b61c85\",\"page_start\":83,\"page_end\":83,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_005edaf7c9536e2c847cd3ca\",\"image_id\":null,\"bbox\":[91,648,487,916],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_e18feb94663621c9ca2e\",\"source_chunk_id\":\"mineru_18d33a0961bf950479f45a33\",\"page_start\":73,\"page_end\":73,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_27bb991e34e9e3e566f36ee3\",\"image_id\":null,\"bbox\":[93,858,486,919],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_a41662a8faa56e677af2\",\"source_chunk_id\":\"mineru_78724328963f37f7ece9933f\",\"page_start\":83,\"page_end\":83,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_163361042e170d320f65a6d0\",\"image_id\":null,\"bbox\":[508,525,905,832],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_58fb38bd679867427fa5\",\"source_chunk_id\":\"mineru_8c8b308002998eaadab44264\",\"page_start\":82,\"page_end\":82,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_0f27db976e39c584cb2b3853\",\"image_id\":null,\"bbox\":[93,752,487,916],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_bbf3e2225d13b5482436\",\"chunk_id\":\"chunk_bcbbe7482d9322d5f746\",\"page_start\":87,\"page_end\":87,\"section_id\":null,\"table_id\":null,\"version\":\"9d89b35fca7f10f5fbb11914bf6f60de2a0075e83cbbcf05c3826b319c664f7c\",\"source_hash\":\"5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0\",\"user_id\":\"6ae73548fbae1de9b1b18ae2\",\"conversation_id\":\"a7ab59fa-00a2-419f-bef0-938046ae8fb5\"},\"page_coverage\":[{\"page\":8,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":73,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":82,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":83,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":87,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    }
+  ],
+  "completed": true,
+  "elapsed_ms": 38177,
+  "trace_events": [
+    {
+      "stage": "ModelTransport",
+      "scope_hash": "94384bcd85ed9f8b7dc7",
+      "attempt": 1,
+      "phase": "headers",
+      "status": 200,
+      "elapsed_ms": 829
+    },
+    {
+      "stage": "ModelTransport",
+      "scope_hash": "94384bcd85ed9f8b7dc7",
+      "attempt": 1,
+      "phase": "complete",
+      "bytes": 13349,
+      "elapsed_ms": 3305
+    },
+    {
+      "stage": "QueryProcessor",
+      "scope_hash": "94384bcd85ed9f8b7dc7",
+      "trace_id": "a330a580-0af0-46b5-94ee-81a87eb3a2c3",
+      "at": 1793552052993,
+      "query_hash": "6b80b9fde74087f8eb47",
+      "query_chars": 15,
+      "method": "original",
+      "query_count": 1
+    },
+    {
+      "stage": "Keyword",
+      "scope_hash": "94384bcd85ed9f8b7dc7",
+      "trace_id": "a330a580-0af0-46b5-94ee-81a87eb3a2c3",
+      "at": 1793552052994,
+      "query_hash": "6b80b9fde74087f8eb47",
+      "query_chars": 15,
+      "elapsed_ms": 0,
+      "hits": [
+        {
+          "id": "chunk_291689aa9700f269ee3b",
+          "page": 83,
+          "score": 22,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_acf4417d3e433af282d4",
+          "page": 83,
+          "score": 22,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_243c857dfbbfe5a09c21",
+          "page": 30,
+          "score": 20,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_6ecde94afe3eb803e760",
+          "page": 87,
+          "score": 14,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_b6a1a4d0c8d84059ce81",
+          "page": 87,
+          "score": 12,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_58fb38bd679867427fa5",
+          "page": 82,
+          "score": 10,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_bcbbe7482d9322d5f746",
+          "page": 87,
+          "score": 10,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_19d09f4544e6111d6cb0",
+          "page": 8,
+          "score": 9,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_9cf235e5df1887bf9b60",
+          "page": 87,
+          "score": 9,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_e18feb94663621c9ca2e",
+          "page": 73,
+          "score": 8,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_486aefee55c34ace761a",
+          "page": 8,
+          "score": 6,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_f9794438d2465da2be72",
+          "page": 80,
+          "score": 6,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_a41662a8faa56e677af2",
+          "page": 83,
+          "score": 6,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_0eafa4233f071652af6c",
+          "page": 90,
+          "score": 6,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_39e56755349c239c8c54",
+          "page": 90,
+          "score": 6,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_d0bc7963d4fa646a4cf3",
+          "page": 22,
+          "score": 5,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_fbb86aa08ec5b13570a4",
+          "page": 84,
+          "score": 5,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_367550829e958f9f2958",
+          "page": 14,
+          "score": 4,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_fe33ba04a8b5df6994ae",
+          "page": 19,
+          "score": 4,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_d74615e9f5fb15e99a8e",
+          "page": 35,
+          "score": 4,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_f8a0f9aaaa4a9fda437b",
+          "page": 43,
+          "score": 4,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_28aba9d72071c0931589",
+          "page": 47,
+          "score": 4,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_efd838c115139f5e9265",
+          "page": 49,
+          "score": 4,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_fe950cc29c8a03b964da",
+          "page": 65,
+          "score": 4,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_6a7896cd219cf245f647",
+          "page": 68,
+          "score": 4,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_2e9c26400fdd00d1e859",
+          "page": 68,
+          "score": 4,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_6055fbfb933a0ffb4b46",
+          "page": 68,
+          "score": 4,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_ce274ff0d30911841628",
+          "page": 69,
+          "score": 4,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_339b7f817b91e0de5de7",
+          "page": 71,
+          "score": 4,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_88445de1a973e1c2cb64",
+          "page": 72,
+          "score": 4,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        }
+      ]
+    },
+    {
+      "stage": "BM25",
+      "scope_hash": "94384bcd85ed9f8b7dc7",
+      "trace_id": "a330a580-0af0-46b5-94ee-81a87eb3a2c3",
+      "at": 1793552052995,
+      "query_hash": "6b80b9fde74087f8eb47",
+      "query_chars": 15,
+      "elapsed_ms": 1,
+      "hits": [
+        {
+          "id": "chunk_acf4417d3e433af282d4",
+          "page": 83,
+          "score": 42.853546247698844,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_291689aa9700f269ee3b",
+          "page": 83,
+          "score": 38.208001404850876,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_6ecde94afe3eb803e760",
+          "page": 87,
+          "score": 37.671196283273154,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_243c857dfbbfe5a09c21",
+          "page": 30,
+          "score": 31.73383780660498,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_9cf235e5df1887bf9b60",
+          "page": 87,
+          "score": 28.038135895366345,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_b6a1a4d0c8d84059ce81",
+          "page": 87,
+          "score": 27.870247807534852,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_bcbbe7482d9322d5f746",
+          "page": 87,
+          "score": 27.419469248297563,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_58fb38bd679867427fa5",
+          "page": 82,
+          "score": 18.656335319859668,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_e18feb94663621c9ca2e",
+          "page": 73,
+          "score": 17.561889544825586,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_19d09f4544e6111d6cb0",
+          "page": 8,
+          "score": 16.76824173772075,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_0eafa4233f071652af6c",
+          "page": 90,
+          "score": 16.536929603573302,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_c6d912b977956087e0e7",
+          "page": 87,
+          "score": 16.51352368662048,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_beed53254fb5145f65c5",
+          "page": 80,
+          "score": 15.549535432043164,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_6ca1e7e41074ba560587",
+          "page": 80,
+          "score": 14.840652112562779,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_a41662a8faa56e677af2",
+          "page": 83,
+          "score": 13.823686076924277,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_39e56755349c239c8c54",
+          "page": 90,
+          "score": 13.19094499437347,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_f9794438d2465da2be72",
+          "page": 80,
+          "score": 12.816863598312143,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_e898b2dc22e1951c9c19",
+          "page": 73,
+          "score": 12.124359529816935,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_fbb86aa08ec5b13570a4",
+          "page": 84,
+          "score": 11.718982262976157,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_b934cb8835f093d91e2f",
+          "page": 73,
+          "score": 10.851528637780863,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_9abceebf1ed4fee2b6d2",
+          "page": 73,
+          "score": 10.70874000311289,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_2ae01448afdaaee7fd75",
+          "page": 80,
+          "score": 10.70874000311289,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_e61dee802ce00c004a3d",
+          "page": 80,
+          "score": 10.209748585828034,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_d74615e9f5fb15e99a8e",
+          "page": 35,
+          "score": 10.193545730378062,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_367550829e958f9f2958",
+          "page": 14,
+          "score": 9.17561451930002,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_e8ee65fb4a698af7f140",
+          "page": 73,
+          "score": 9.088136808653855,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_339b7f817b91e0de5de7",
+          "page": 71,
+          "score": 8.981992708202094,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_f8a0f9aaaa4a9fda437b",
+          "page": 43,
+          "score": 8.86005091983887,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_0cb0d47ea174439a8ecf",
+          "page": 73,
+          "score": 8.553305686011697,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_c3e47eca4ea307eae3d1",
+          "page": 84,
+          "score": 8.43102446272228,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        }
+      ]
+    },
+    {
+      "stage": "Vector",
+      "scope_hash": "94384bcd85ed9f8b7dc7",
+      "trace_id": "a330a580-0af0-46b5-94ee-81a87eb3a2c3",
+      "at": 1793552053908,
+      "query_hash": "6b80b9fde74087f8eb47",
+      "query_chars": 15,
+      "elapsed_ms": 913,
+      "hits": [
+        {
+          "id": "chunk_bcbbe7482d9322d5f746",
+          "page": 87,
+          "score": 0.7348361436579942,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_6ecde94afe3eb803e760",
+          "page": 87,
+          "score": 0.7231305538934399,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_9cf235e5df1887bf9b60",
+          "page": 87,
+          "score": 0.708164696072567,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_b6a1a4d0c8d84059ce81",
+          "page": 87,
+          "score": 0.7022887762748862,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_291689aa9700f269ee3b",
+          "page": 83,
+          "score": 0.5841110987953183,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_e18feb94663621c9ca2e",
+          "page": 73,
+          "score": 0.5749209318611068,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_a41662a8faa56e677af2",
+          "page": 83,
+          "score": 0.5592081046857782,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_e8ee65fb4a698af7f140",
+          "page": 73,
+          "score": 0.5569865993102882,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_00e4de25d75007877f21",
+          "page": 82,
+          "score": 0.5546462935775467,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_9402d453fa35227ced0c",
+          "page": 87,
+          "score": 0.553215608742278,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_6a7896cd219cf245f647",
+          "page": 68,
+          "score": 0.55285907336884,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_acf4417d3e433af282d4",
+          "page": 83,
+          "score": 0.5518812591429381,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_2e9c26400fdd00d1e859",
+          "page": 68,
+          "score": 0.5508896078363038,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_44660417e461ade12bc2",
+          "page": 81,
+          "score": 0.5497474850181789,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_782d853b80107e4b3838",
+          "page": 74,
+          "score": 0.5396342404732469,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_a6a6878c4e83204acd02",
+          "page": 74,
+          "score": 0.5357233134007086,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_fea37d7b54f83f4ba0e5",
+          "page": 83,
+          "score": 0.5305758674206743,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_f8a0f9aaaa4a9fda437b",
+          "page": 43,
+          "score": 0.525889436637989,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_d8579d40f6daccc53cbc",
+          "page": 81,
+          "score": 0.5241938148632144,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_92f44ae058b9cdff675a",
+          "page": 83,
+          "score": 0.523573343672192,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_016bc39c1ef257386d1d",
+          "page": 84,
+          "score": 0.5219563666522573,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_fbb86aa08ec5b13570a4",
+          "page": 84,
+          "score": 0.5194189521252435,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_2ae01448afdaaee7fd75",
+          "page": 80,
+          "score": 0.517401291707948,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_c6d912b977956087e0e7",
+          "page": 87,
+          "score": 0.5126133620845903,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_0cb0d47ea174439a8ecf",
+          "page": 73,
+          "score": 0.5123285404022716,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_6055fbfb933a0ffb4b46",
+          "page": 68,
+          "score": 0.5115093037259709,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_19d09f4544e6111d6cb0",
+          "page": 8,
+          "score": 0.5103754729543188,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_0eafa4233f071652af6c",
+          "page": 90,
+          "score": 0.5084920201441062,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_58fb38bd679867427fa5",
+          "page": 82,
+          "score": 0.5082766463790792,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_37bdb200d1e0786d2172",
+          "page": 83,
+          "score": 0.503948280726154,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        }
+      ],
+      "warnings": [],
+      "usage": {
+        "calls": 1,
+        "chars": 15,
+        "total_tokens": 15
+      }
+    },
+    {
+      "stage": "RRF",
+      "scope_hash": "94384bcd85ed9f8b7dc7",
+      "trace_id": "a330a580-0af0-46b5-94ee-81a87eb3a2c3",
+      "at": 1793552053909,
+      "elapsed_ms": 0,
+      "candidates": 30,
+      "hits": [
+        {
+          "id": "chunk_291689aa9700f269ee3b",
+          "page": 83,
+          "score": 0.047907090265630725,
+          "ranks": {
+            "keyword": 1,
+            "bm25": 2,
+            "vector": 5
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_6ecde94afe3eb803e760",
+          "page": 87,
+          "score": 0.04762704813108039,
+          "ranks": {
+            "keyword": 4,
+            "bm25": 3,
+            "vector": 2
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_acf4417d3e433af282d4",
+          "page": 83,
+          "score": 0.04641136376990423,
+          "ranks": {
+            "keyword": 2,
+            "bm25": 1,
+            "vector": 12
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_bcbbe7482d9322d5f746",
+          "page": 87,
+          "score": 0.046244188891607536,
+          "ranks": {
+            "keyword": 7,
+            "bm25": 7,
+            "vector": 1
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_b6a1a4d0c8d84059ce81",
+          "page": 87,
+          "score": 0.04616113053613054,
+          "ranks": {
+            "keyword": 5,
+            "bm25": 6,
+            "vector": 4
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_9cf235e5df1887bf9b60",
+          "page": 87,
+          "score": 0.045750384880819665,
+          "ranks": {
+            "keyword": 9,
+            "bm25": 5,
+            "vector": 3
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_e18feb94663621c9ca2e",
+          "page": 73,
+          "score": 0.04392998306041784,
+          "ranks": {
+            "keyword": 10,
+            "bm25": 9,
+            "vector": 6
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_a41662a8faa56e677af2",
+          "page": 83,
+          "score": 0.041957336604647996,
+          "ranks": {
+            "keyword": 13,
+            "bm25": 15,
+            "vector": 7
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_58fb38bd679867427fa5",
+          "page": 82,
+          "score": 0.04109335256063611,
+          "ranks": {
+            "keyword": 6,
+            "bm25": 8,
+            "vector": 29
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_19d09f4544e6111d6cb0",
+          "page": 8,
+          "score": 0.04048584951221868,
+          "ranks": {
+            "keyword": 8,
+            "bm25": 10,
+            "vector": 27
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_0eafa4233f071652af6c",
+          "page": 90,
+          "score": 0.0389616569194034,
+          "ranks": {
+            "keyword": 14,
+            "bm25": 11,
+            "vector": 28
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_fbb86aa08ec5b13570a4",
+          "page": 84,
+          "score": 0.037840362786333764,
+          "ranks": {
+            "keyword": 17,
+            "bm25": 19,
+            "vector": 22
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_f8a0f9aaaa4a9fda437b",
+          "page": 43,
+          "score": 0.03652982819649486,
+          "ranks": {
+            "keyword": 21,
+            "bm25": 28,
+            "vector": 18
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_243c857dfbbfe5a09c21",
+          "page": 30,
+          "score": 0.03149801587301587,
+          "ranks": {
+            "keyword": 3,
+            "bm25": 4
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_f9794438d2465da2be72",
+          "page": 80,
+          "score": 0.026875901875901876,
+          "ranks": {
+            "keyword": 12,
+            "bm25": 17
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_39e56755349c239c8c54",
+          "page": 90,
+          "score": 0.02649122807017544,
+          "ranks": {
+            "keyword": 15,
+            "bm25": 16
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_e8ee65fb4a698af7f140",
+          "page": 73,
+          "score": 0.026333789329685362,
+          "ranks": {
+            "bm25": 26,
+            "vector": 8
+          },
+          "sources": [
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_6a7896cd219cf245f647",
+          "page": 68,
+          "score": 0.025849212924606464,
+          "ranks": {
+            "keyword": 25,
+            "vector": 11
+          },
+          "sources": [
+            "keyword",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_c6d912b977956087e0e7",
+          "page": 87,
+          "score": 0.025793650793650792,
+          "ranks": {
+            "bm25": 12,
+            "vector": 24
+          },
+          "sources": [
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_2e9c26400fdd00d1e859",
+          "page": 68,
+          "score": 0.025326537113730486,
+          "ranks": {
+            "keyword": 26,
+            "vector": 13
+          },
+          "sources": [
+            "keyword",
+            "vector"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Rerank",
+      "scope_hash": "94384bcd85ed9f8b7dc7",
+      "trace_id": "a330a580-0af0-46b5-94ee-81a87eb3a2c3",
+      "at": 1793552055073,
+      "elapsed_ms": 1163,
+      "candidate_limit": 20,
+      "excerpt_chars": 1200,
+      "usage": {
+        "prompt_tokens": 2520,
+        "completion_tokens": 24,
+        "total_tokens": 2544,
+        "completion_tokens_details": {
+          "text_tokens": 24
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 2520
+        }
+      },
+      "finish_reason": "stop",
+      "hits": [
+        {
+          "id": "chunk_bcbbe7482d9322d5f746",
+          "page": 87,
+          "rrf_score": 0.046244188891607536,
+          "rerank_rank": 1,
+          "ranks": {
+            "keyword": 7,
+            "bm25": 7,
+            "vector": 1
+          }
+        },
+        {
+          "id": "chunk_6ecde94afe3eb803e760",
+          "page": 87,
+          "rrf_score": 0.04762704813108039,
+          "rerank_rank": 2,
+          "ranks": {
+            "keyword": 4,
+            "bm25": 3,
+            "vector": 2
+          }
+        },
+        {
+          "id": "chunk_9cf235e5df1887bf9b60",
+          "page": 87,
+          "rrf_score": 0.045750384880819665,
+          "rerank_rank": 3,
+          "ranks": {
+            "keyword": 9,
+            "bm25": 5,
+            "vector": 3
+          }
+        },
+        {
+          "id": "chunk_b6a1a4d0c8d84059ce81",
+          "page": 87,
+          "rrf_score": 0.04616113053613054,
+          "rerank_rank": 4,
+          "ranks": {
+            "keyword": 5,
+            "bm25": 6,
+            "vector": 4
+          }
+        },
+        {
+          "id": "chunk_19d09f4544e6111d6cb0",
+          "page": 8,
+          "rrf_score": 0.04048584951221868,
+          "rerank_rank": 5,
+          "ranks": {
+            "keyword": 8,
+            "bm25": 10,
+            "vector": 27
+          }
+        },
+        {
+          "id": "chunk_291689aa9700f269ee3b",
+          "page": 83,
+          "rrf_score": 0.047907090265630725,
+          "rerank_rank": 6,
+          "ranks": {
+            "keyword": 1,
+            "bm25": 2,
+            "vector": 5
+          }
+        },
+        {
+          "id": "chunk_acf4417d3e433af282d4",
+          "page": 83,
+          "rrf_score": 0.04641136376990423,
+          "rerank_rank": 7,
+          "ranks": {
+            "keyword": 2,
+            "bm25": 1,
+            "vector": 12
+          }
+        },
+        {
+          "id": "chunk_e18feb94663621c9ca2e",
+          "page": 73,
+          "rrf_score": 0.04392998306041784,
+          "rerank_rank": 8,
+          "ranks": {
+            "keyword": 10,
+            "bm25": 9,
+            "vector": 6
+          }
+        },
+        {
+          "id": "chunk_a41662a8faa56e677af2",
+          "page": 83,
+          "rrf_score": 0.041957336604647996,
+          "rerank_rank": 9,
+          "ranks": {
+            "keyword": 13,
+            "bm25": 15,
+            "vector": 7
+          }
+        },
+        {
+          "id": "chunk_58fb38bd679867427fa5",
+          "page": 82,
+          "rrf_score": 0.04109335256063611,
+          "rerank_rank": 10,
+          "ranks": {
+            "keyword": 6,
+            "bm25": 8,
+            "vector": 29
+          }
+        },
+        {
+          "id": "chunk_0eafa4233f071652af6c",
+          "page": 90,
+          "rrf_score": 0.0389616569194034,
+          "rerank_rank": 11,
+          "ranks": {
+            "keyword": 14,
+            "bm25": 11,
+            "vector": 28
+          }
+        },
+        {
+          "id": "chunk_fbb86aa08ec5b13570a4",
+          "page": 84,
+          "rrf_score": 0.037840362786333764,
+          "rerank_rank": 12,
+          "ranks": {
+            "keyword": 17,
+            "bm25": 19,
+            "vector": 22
+          }
+        },
+        {
+          "id": "chunk_f8a0f9aaaa4a9fda437b",
+          "page": 43,
+          "rrf_score": 0.03652982819649486,
+          "rerank_rank": 13,
+          "ranks": {
+            "keyword": 21,
+            "bm25": 28,
+            "vector": 18
+          }
+        },
+        {
+          "id": "chunk_243c857dfbbfe5a09c21",
+          "page": 30,
+          "rrf_score": 0.03149801587301587,
+          "rerank_rank": 14,
+          "ranks": {
+            "keyword": 3,
+            "bm25": 4
+          }
+        },
+        {
+          "id": "chunk_f9794438d2465da2be72",
+          "page": 80,
+          "rrf_score": 0.026875901875901876,
+          "rerank_rank": 15,
+          "ranks": {
+            "keyword": 12,
+            "bm25": 17
+          }
+        },
+        {
+          "id": "chunk_39e56755349c239c8c54",
+          "page": 90,
+          "rrf_score": 0.02649122807017544,
+          "rerank_rank": 16,
+          "ranks": {
+            "keyword": 15,
+            "bm25": 16
+          }
+        },
+        {
+          "id": "chunk_e8ee65fb4a698af7f140",
+          "page": 73,
+          "rrf_score": 0.026333789329685362,
+          "rerank_rank": 17,
+          "ranks": {
+            "bm25": 26,
+            "vector": 8
+          }
+        },
+        {
+          "id": "chunk_6a7896cd219cf245f647",
+          "page": 68,
+          "rrf_score": 0.025849212924606464,
+          "rerank_rank": 18,
+          "ranks": {
+            "keyword": 25,
+            "vector": 11
+          }
+        },
+        {
+          "id": "chunk_c6d912b977956087e0e7",
+          "page": 87,
+          "rrf_score": 0.025793650793650792,
+          "rerank_rank": 19,
+          "ranks": {
+            "bm25": 12,
+            "vector": 24
+          }
+        },
+        {
+          "id": "chunk_2e9c26400fdd00d1e859",
+          "page": 68,
+          "rrf_score": 0.025326537113730486,
+          "rerank_rank": 20,
+          "ranks": {
+            "keyword": 26,
+            "vector": 13
+          }
+        }
+      ]
+    },
+    {
+      "stage": "EvidenceDelivery",
+      "scope_hash": "94384bcd85ed9f8b7dc7",
+      "trace_id": "a330a580-0af0-46b5-94ee-81a87eb3a2c3",
+      "at": 1793552055077,
+      "action": "search",
+      "document_id": "doc_bbf3e2225d13b5482436",
+      "elapsed_ms": 2523,
+      "content_chars": 2807,
+      "pages": [
+        87,
+        87,
+        87,
+        87,
+        8,
+        83,
+        83,
+        73,
+        83,
+        82
+      ],
+      "truncated": false,
+      "continuation_available": false
+    },
+    {
+      "stage": "ModelTransport",
+      "scope_hash": "94384bcd85ed9f8b7dc7",
+      "attempt": 1,
+      "phase": "headers",
+      "status": 200,
+      "elapsed_ms": 714
+    },
+    {
+      "stage": "ModelTransport",
+      "scope_hash": "94384bcd85ed9f8b7dc7",
+      "attempt": 1,
+      "phase": "complete",
+      "bytes": 154549,
+      "elapsed_ms": 31703
+    }
+  ],
+  "timings": [],
+  "parse_job_after": {
+    "_id": "6ae76e17f43ff5e37d72556c",
+    "attempts": 1,
+    "completedAt": "2026-11-01T12:52:09.698Z",
+    "startedAt": "2026-11-01T12:49:13.254Z",
+    "status": "ready",
+    "evaluationReuse": {
+      "sourceFileId": "f44df096-a3f4-48b5-988d-ce199cbe7fed",
+      "sourceJobId": "6ae7354929b56c8c8fafd9d5",
+      "notNewParse": true
+    }
+  }
+}

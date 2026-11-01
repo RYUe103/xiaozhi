@@ -1,0 +1,26 @@
+FAIL server/services/SessionDocumentResources.spec.js
+  ● Test suite failed to run
+
+    Cannot find module './SessionDocumentResources' from 'server/services/SessionDocumentResources.spec.js'
+
+    However, Jest was able to find:
+    	'./SessionDocumentResources.spec.js'
+
+    You might want to include a file extension in your import, or update your 'moduleFileExtensions', which is currently ['js', 'mjs', 'cjs', 'jsx', 'ts', 'mts', 'cts', 'tsx', 'json', 'node'].
+
+    See https://jestjs.io/docs/configuration#modulefileextensions-arraystring
+
+    > 1 | const { SessionDocumentResources } = require('./SessionDocumentResources');
+        |                                      ^
+      2 |
+      3 | describe('request-scoped conversation document directory', () => {
+      4 |   let rows, roots, db, load;
+
+      at Resolver._throwModNotFoundError (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/node_modules/jest/node_modules/jest-resolve/build/index.js:863:11)
+      at Object.require (server/services/SessionDocumentResources.spec.js:1:38)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.173 s
+Ran all test suites matching server/services/SessionDocumentResources.spec.js.

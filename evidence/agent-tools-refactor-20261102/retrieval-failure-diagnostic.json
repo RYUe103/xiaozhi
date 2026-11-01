@@ -1,0 +1,145 @@
+[
+  {
+    "run": "r1",
+    "target_source_chunk": "mineru_fe620c0ffc31706d034e0f04",
+    "runtime_chunk": "chunk_9402d453fa35227ced0c",
+    "source_page": 87,
+    "source_fact": "15次，参与人数2500余人次",
+    "stages": [
+      {
+        "stage": "Keyword",
+        "logged_candidates": 30,
+        "target": null,
+        "position": null
+      },
+      {
+        "stage": "BM25",
+        "logged_candidates": 30,
+        "target": null,
+        "position": null
+      },
+      {
+        "stage": "Vector",
+        "logged_candidates": 30,
+        "target": {
+          "id": "chunk_9402d453fa35227ced0c",
+          "page": 87,
+          "score": 0.553215608742278,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        "position": 10
+      },
+      {
+        "stage": "RRF",
+        "logged_candidates": 20,
+        "target": null,
+        "position": null
+      },
+      {
+        "stage": "Rerank",
+        "logged_candidates": 20,
+        "target": null,
+        "position": null
+      }
+    ],
+    "delivered": false
+  },
+  {
+    "run": "r2",
+    "target_source_chunk": "mineru_fe620c0ffc31706d034e0f04",
+    "runtime_chunk": "chunk_5ec85fb4759a748b776f",
+    "source_page": 87,
+    "source_fact": "15次，参与人数2500余人次",
+    "stages": [
+      {
+        "stage": "Keyword",
+        "logged_candidates": 30,
+        "target": null,
+        "position": null
+      },
+      {
+        "stage": "BM25",
+        "logged_candidates": 30,
+        "target": null,
+        "position": null
+      },
+      {
+        "stage": "Vector",
+        "logged_candidates": 30,
+        "target": {
+          "id": "chunk_5ec85fb4759a748b776f",
+          "page": 87,
+          "score": 0.4898877110903623,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        "position": 25
+      },
+      {
+        "stage": "RRF",
+        "logged_candidates": 20,
+        "target": null,
+        "position": null
+      },
+      {
+        "stage": "Rerank",
+        "logged_candidates": 20,
+        "target": null,
+        "position": null
+      }
+    ],
+    "delivered": false
+  },
+  {
+    "run": "r3",
+    "runtime_chunk": "chunk_b17169cd311e6edc4c1f",
+    "target_source_chunk": "mineru_fe620c0ffc31706d034e0f04",
+    "source_page": 87,
+    "stages": [
+      {
+        "stage": "Keyword",
+        "logged_candidates": 30,
+        "target": null,
+        "position": null
+      },
+      {
+        "stage": "BM25",
+        "logged_candidates": 30,
+        "target": null,
+        "position": null
+      },
+      {
+        "stage": "Vector",
+        "logged_candidates": 30,
+        "target": {
+          "id": "chunk_b17169cd311e6edc4c1f",
+          "page": 87,
+          "score": 0.5197865411052771,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        "position": 12
+      },
+      {
+        "stage": "RRF",
+        "logged_candidates": 20,
+        "target": null,
+        "position": null
+      },
+      {
+        "stage": "Rerank",
+        "logged_candidates": 20,
+        "target": null,
+        "position": null
+      }
+    ],
+    "delivered": false
+  }
+]

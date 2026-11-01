@@ -1,0 +1,255 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "affec669-f302-4d35-9c81-b997b0ca8f43",
+  "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+  "pdf_sha256": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+  "elapsed_ms": 90185,
+  "active": false,
+  "upload_ms": 197,
+  "answer": "根据 PDF 第 1 页中 Figure 4（\"A total of 788 media were uploaded to Wikimedia Commons\"）的柱状图数据，2016-17 学年三个学期上传到 Wikimedia Commons 的媒体数量分别为：\n\n- **2016-17 T1**：160 个媒体\n- **2016-17 T2**：50 个媒体\n- **2016-17 T3**：220 个媒体\n\n因此，**2016-17 学年第三学期（T3）**上传到 Wikimedia Commons 的媒体数量最高，为 220 个。（PDF 第 1 页）",
+  "tool_calls": [
+    {
+      "id": "call_d8d076ed717242819327f2aa",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_53fa004c256dc4891c77\",\"query\":\"Wikimedia Commons 2016-17 media uploaded trimester\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_53fa004c256dc4891c77\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"action\":\"search\",\"content\":\"[chunk_4bc878effbceea0115e1 page=1 kind=extracted_text]\\n\\\\- Educators and students share free knowledge by contributing to Wikipedia and its sister projects in an academic setting.\\n\\n[chunk_5ac1145936ecfbb21e96 page=1 kind=extracted_text]\\n\\\\- Students worked on text and illustration of their article to meet course requirements. - Students’ work was subject to peer review and scrutiny by other Wikipedians.\\n\\n[chunk_15e998ce5b532a62f464 page=1 kind=extracted_text]\\n\\\\- Students completed online training: 1) The cores of Wikipedia 2) Editing\\n\\n[chunk_aaa72c36efa1bc90b54a page=1 kind=extracted_text]\\n\\\\- Fifty six high quality articles were created, and more than 81 articles were improved.\\n\\n[chunk_734cd3551cb3b4ee627e page=1 kind=extracted_text]\\nSuwannakhan A & Limpanuparb T. 2017. Wikipedia writing assignments: a one-year pilot program in chemistry classes at Mahidol University. Catalyst. 15(2): 65-79.\\n\\n[chunk_211ddb9b80e5a5d48cb8 page=1 kind=extracted_text]\\n\\\\- Wikipedia writing assignment has been incorported into undergraduate chemistry classes at Mahidol University International College since September 2014.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_4bc878effbceea0115e1\",\"source_chunk_id\":\"mineru_4f89bbe2822af47884142d35\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_ae96c114f52403cc3e7e47d2\",\"image_id\":null,\"bbox\":[60,260,694,286],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_5ac1145936ecfbb21e96\",\"source_chunk_id\":\"mineru_d24be03ac7c25cb7fad8375a\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_967c46e9b3219f796fa1b8c6\",\"image_id\":null,\"bbox\":[526,451,745,530],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_15e998ce5b532a62f464\",\"source_chunk_id\":\"mineru_8fbfe63af0b15a249d7ee624\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_f5db5b014f4cbb59229dc1e0\",\"image_id\":null,\"bbox\":[276,451,519,490],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_aaa72c36efa1bc90b54a\",\"source_chunk_id\":\"mineru_102589cb998a995f66ad2f9c\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_a8c3403822a266c6f3b3fe10\",\"image_id\":null,\"bbox\":[654,693,935,719],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_734cd3551cb3b4ee627e\",\"source_chunk_id\":\"mineru_4c55ceb6367d2a9c302cf030\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_e1a08a730fe244c7fdede88f\",\"image_id\":null,\"bbox\":[654,883,939,937],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_211ddb9b80e5a5d48cb8\",\"source_chunk_id\":\"mineru_84c714c14c1e476bb23c47d9\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_35fc05675baffd83a725c22c\",\"image_id\":null,\"bbox\":[654,608,936,660],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_53fa004c256dc4891c77\",\"chunk_id\":\"chunk_4bc878effbceea0115e1\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae77085aca45426098cfcdb\",\"conversation_id\":\"affec669-f302-4d35-9c81-b997b0ca8f43\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_b9c0e5b4535b484aafc3561e",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_53fa004c256dc4891c77\",\"query\":\"trimester media uploaded Wikimedia Commons 2016\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_53fa004c256dc4891c77\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"action\":\"search\",\"content\":\"[chunk_aaa72c36efa1bc90b54a page=1 kind=extracted_text]\\n\\\\- Fifty six high quality articles were created, and more than 81 articles were improved.\\n\\n[chunk_15e998ce5b532a62f464 page=1 kind=extracted_text]\\n\\\\- Students completed online training: 1) The cores of Wikipedia 2) Editing\\n\\n[chunk_211ddb9b80e5a5d48cb8 page=1 kind=extracted_text]\\n\\\\- Wikipedia writing assignment has been incorported into undergraduate chemistry classes at Mahidol University International College since September 2014.\\n\\n[chunk_734cd3551cb3b4ee627e page=1 kind=extracted_text]\\nSuwannakhan A & Limpanuparb T. 2017. Wikipedia writing assignments: a one-year pilot program in chemistry classes at Mahidol University. Catalyst. 15(2): 65-79.\\n\\n[chunk_5515fb88262df29c7fe7 page=1 kind=extracted_text]\\nREFERENCE\\n\\n[chunk_f33d61ae2047f306f9a0 page=1 kind=extracted_text]\\n3) Advanced editing\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_aaa72c36efa1bc90b54a\",\"source_chunk_id\":\"mineru_102589cb998a995f66ad2f9c\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_a8c3403822a266c6f3b3fe10\",\"image_id\":null,\"bbox\":[654,693,935,719],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_15e998ce5b532a62f464\",\"source_chunk_id\":\"mineru_8fbfe63af0b15a249d7ee624\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_f5db5b014f4cbb59229dc1e0\",\"image_id\":null,\"bbox\":[276,451,519,490],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_211ddb9b80e5a5d48cb8\",\"source_chunk_id\":\"mineru_84c714c14c1e476bb23c47d9\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_35fc05675baffd83a725c22c\",\"image_id\":null,\"bbox\":[654,608,936,660],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_734cd3551cb3b4ee627e\",\"source_chunk_id\":\"mineru_4c55ceb6367d2a9c302cf030\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_e1a08a730fe244c7fdede88f\",\"image_id\":null,\"bbox\":[654,883,939,937],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_5515fb88262df29c7fe7\",\"source_chunk_id\":\"mineru_98a7ad90740594c10c22f6ed\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_3deb6ab02fd2569cabb66319\",\"image_id\":null,\"bbox\":[667,857,788,874],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_f33d61ae2047f306f9a0\",\"source_chunk_id\":\"mineru_911904c3c4406f2659fb6333\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_993bce49c3ca3721ab2cee4a\",\"image_id\":null,\"bbox\":[289,491,424,503],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_53fa004c256dc4891c77\",\"chunk_id\":\"chunk_aaa72c36efa1bc90b54a\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae77085aca45426098cfcdb\",\"conversation_id\":\"affec669-f302-4d35-9c81-b997b0ca8f43\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_c45eb3b6cf4b4f9888c3ff64",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"info\",\"document_id\":\"doc_53fa004c256dc4891c77\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ready\",\"ok\":true,\"document_id\":\"doc_53fa004c256dc4891c77\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"file_id\":\"0deaa356-2535-4b0a-baad-c2116ec8f293\",\"format\":\"pdf\",\"page_count\":1,\"page_count_source\":\"manifest\",\"chunk_count\":27,\"table_count\":0,\"section_count\":7,\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}],\"coverage_total\":1,\"coverage_truncated\":false,\"coverage_summary\":{\"text_pages\":1,\"summary_pages\":0},\"warnings\":[],\"coverage_offset\":0,\"next_coverage_offset\":null}"
+    },
+    {
+      "id": "call_ffbe15f3c9414f80bfdb4503",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"document_id\":\"doc_53fa004c256dc4891c77\",\"chunk_id\":\"chunk_4bc878effbceea0115e1\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_53fa004c256dc4891c77\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"action\":\"read\",\"content\":\"[chunk_4bc878effbceea0115e1 page=1 kind=extracted_text]\\n\\\\- Educators and students share free knowledge by contributing to Wikipedia and its sister projects in an academic setting.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_4bc878effbceea0115e1\",\"source_chunk_id\":\"mineru_4f89bbe2822af47884142d35\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_ae96c114f52403cc3e7e47d2\",\"image_id\":null,\"bbox\":[60,260,694,286],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_53fa004c256dc4891c77\",\"chunk_id\":\"chunk_4bc878effbceea0115e1\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae77085aca45426098cfcdb\",\"conversation_id\":\"affec669-f302-4d35-9c81-b997b0ca8f43\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_9d98f6d19daf4745b08922f8",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"toc\",\"document_id\":\"doc_53fa004c256dc4891c77\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_53fa004c256dc4891c77\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"sections\":[{\"sectionId\":\"section_24909a248fd932aeb285\",\"level\":1,\"title\":\"\\u001b\\u001a\\u001e\\u0019\\u0018\\u001b\\u001a\\u0017\\u0016\\u0019\\u0015\\u001e\\u0014\\u0013\\u0018\\u001c\\u0012\\u0014\\u0011\\u0012\\u0019\\u0010 \\u0013\\u0018\\u0015\\u000f\\u0019\\u001e\\u000e\\u0019\\u0013\\u001a \\u0018\\u0019\\u0018\\u0015\\u000f\\u0012\\u001b\\u001b\\f\\u000b\\u001b\\u0019\\u0012\\u0018\\u001b \\u001c\\u001b\\u0012\\u001e\\u001b\\u0013\\u0016\\u001b\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_6dc41b10233e810d5202\",\"textOffset\":0},{\"sectionId\":\"section_bd0d305909f17903b381\",\"level\":2,\"title\":\"BACKGROUND\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_741bd101b3eecde0dbe9\",\"textOffset\":0},{\"sectionId\":\"section_4211d75d2ed9cbdb013d\",\"level\":2,\"title\":\"METHODOLOGY\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_e3ed64efe9a2d966b6f0\",\"textOffset\":0},{\"sectionId\":\"section_76137099cf08feb08629\",\"level\":2,\"title\":\"RESULTS\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_a8a0de98fe7aeae61578\",\"textOffset\":0},{\"sectionId\":\"section_03acbe0295dfb802493a\",\"level\":2,\"title\":\"Students’ contributions\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_1d8304f2db6734c23aab\",\"textOffset\":0},{\"sectionId\":\"section_5bda968a5082d1a1829e\",\"level\":2,\"title\":\"CONCLUSIONS\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_1100acec516d346f8632\",\"textOffset\":0},{\"sectionId\":\"section_f261795662618ac8a256\",\"level\":2,\"title\":\"REFERENCE\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_5515fb88262df29c7fe7\",\"textOffset\":0}],\"section_count\":7,\"tables\":[],\"table_count\":0,\"next_catalog_offset\":null}"
+    },
+    {
+      "id": "call_15832673ea2d497cb2c5a0c0",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"chunk_id\":\"chunk_741bd101b3eecde0dbe9\",\"document_id\":\"doc_53fa004c256dc4891c77\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_53fa004c256dc4891c77\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"action\":\"read\",\"content\":\"[chunk_741bd101b3eecde0dbe9 page=1 kind=extracted_text]\\nBACKGROUND\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_741bd101b3eecde0dbe9\",\"source_chunk_id\":\"mineru_9457f9b9affc0a7cf6532440\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_42c0e80788a40ff0725c1a8d\",\"image_id\":null,\"bbox\":[75,200,228,217],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_53fa004c256dc4891c77\",\"chunk_id\":\"chunk_741bd101b3eecde0dbe9\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae77085aca45426098cfcdb\",\"conversation_id\":\"affec669-f302-4d35-9c81-b997b0ca8f43\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_6a396c227e1e47828a7a4ab3",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"chunk_id\":\"chunk_a8a0de98fe7aeae61578\",\"document_id\":\"doc_53fa004c256dc4891c77\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_53fa004c256dc4891c77\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"action\":\"read\",\"content\":\"[chunk_a8a0de98fe7aeae61578 page=1 kind=extracted_text]\\nRESULTS\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_a8a0de98fe7aeae61578\",\"source_chunk_id\":\"mineru_967cca488e852ee7e4f6ad00\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_4466b8a21511571a0fa48eeb\",\"image_id\":null,\"bbox\":[72,577,162,595],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_53fa004c256dc4891c77\",\"chunk_id\":\"chunk_a8a0de98fe7aeae61578\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae77085aca45426098cfcdb\",\"conversation_id\":\"affec669-f302-4d35-9c81-b997b0ca8f43\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_f0ef6d6c47ec463982e4d69b",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"chunk_id\":\"chunk_1d8304f2db6734c23aab\",\"document_id\":\"doc_53fa004c256dc4891c77\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_53fa004c256dc4891c77\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"action\":\"read\",\"content\":\"[chunk_1d8304f2db6734c23aab page=1 kind=extracted_text]\\nStudents’ contributions\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_1d8304f2db6734c23aab\",\"source_chunk_id\":\"mineru_3249df4591c97765861d02a4\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_d7fbacbfb45daf4c7e2bf4f1\",\"image_id\":null,\"bbox\":[59,605,246,619],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_53fa004c256dc4891c77\",\"chunk_id\":\"chunk_1d8304f2db6734c23aab\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae77085aca45426098cfcdb\",\"conversation_id\":\"affec669-f302-4d35-9c81-b997b0ca8f43\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_59e8e00eacee4aac8d128bdb",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"document_id\":\"doc_53fa004c256dc4891c77\",\"offset\":0,\"max_chars\":20000}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_53fa004c256dc4891c77\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"action\":\"read\",\"content\":\"[chunk_1d8304f2db6734c23aab page=1 kind=extracted_text]\\nStudents’ contributions\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_1d8304f2db6734c23aab\",\"source_chunk_id\":\"mineru_3249df4591c97765861d02a4\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_d7fbacbfb45daf4c7e2bf4f1\",\"image_id\":null,\"bbox\":[59,605,246,619],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_53fa004c256dc4891c77\",\"chunk_id\":\"chunk_1d8304f2db6734c23aab\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae77085aca45426098cfcdb\",\"conversation_id\":\"affec669-f302-4d35-9c81-b997b0ca8f43\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_be0f396f1e064f089321dbdc",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"document_id\":\"doc_53fa004c256dc4891c77\",\"coverage_offset\":0}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_53fa004c256dc4891c77\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"action\":\"read\",\"content\":\"[chunk_1d8304f2db6734c23aab page=1 kind=extracted_text]\\nStudents’ contributions\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_1d8304f2db6734c23aab\",\"source_chunk_id\":\"mineru_3249df4591c97765861d02a4\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_d7fbacbfb45daf4c7e2bf4f1\",\"image_id\":null,\"bbox\":[59,605,246,619],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_53fa004c256dc4891c77\",\"chunk_id\":\"chunk_1d8304f2db6734c23aab\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae77085aca45426098cfcdb\",\"conversation_id\":\"affec669-f302-4d35-9c81-b997b0ca8f43\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_e47d6287e6434c83a019c5ba",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_53fa004c256dc4891c77\",\"query\":\"trimester\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_53fa004c256dc4891c77\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"action\":\"search\",\"content\":\"[chunk_a8a0de98fe7aeae61578 page=1 kind=extracted_text]\\nRESULTS\\n\\n[chunk_741bd101b3eecde0dbe9 page=1 kind=extracted_text]\\nBACKGROUND\\n\\n[chunk_5515fb88262df29c7fe7 page=1 kind=extracted_text]\\nREFERENCE\\n\\n[chunk_f33d61ae2047f306f9a0 page=1 kind=extracted_text]\\n3) Advanced editing\\n\\n[chunk_4ec8ac83274c76dd4446 page=1 kind=extracted_text]\\nto 364 written pages.\\n\\n[chunk_290c30fd5a5d9e8ad416 page=1 kind=extracted_text]\\n\\\\- One hundred and three students participated in the program.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_a8a0de98fe7aeae61578\",\"source_chunk_id\":\"mineru_967cca488e852ee7e4f6ad00\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_4466b8a21511571a0fa48eeb\",\"image_id\":null,\"bbox\":[72,577,162,595],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_741bd101b3eecde0dbe9\",\"source_chunk_id\":\"mineru_9457f9b9affc0a7cf6532440\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_42c0e80788a40ff0725c1a8d\",\"image_id\":null,\"bbox\":[75,200,228,217],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_5515fb88262df29c7fe7\",\"source_chunk_id\":\"mineru_98a7ad90740594c10c22f6ed\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_3deb6ab02fd2569cabb66319\",\"image_id\":null,\"bbox\":[667,857,788,874],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_f33d61ae2047f306f9a0\",\"source_chunk_id\":\"mineru_911904c3c4406f2659fb6333\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_993bce49c3ca3721ab2cee4a\",\"image_id\":null,\"bbox\":[289,491,424,503],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_4ec8ac83274c76dd4446\",\"source_chunk_id\":\"mineru_ffdb4474835e5ad7f8257e18\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_df1032648906fd3e5bddeba5\",\"image_id\":null,\"bbox\":[655,736,797,749],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_290c30fd5a5d9e8ad416\",\"source_chunk_id\":\"mineru_de36d21c280c92453839ffcf\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_707fa6114c1c711e67a99259\",\"image_id\":null,\"bbox\":[654,663,934,690],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_53fa004c256dc4891c77\",\"chunk_id\":\"chunk_a8a0de98fe7aeae61578\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae77085aca45426098cfcdb\",\"conversation_id\":\"affec669-f302-4d35-9c81-b997b0ca8f43\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_9a32120ec78c4e0a87950bb2",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_53fa004c256dc4891c77\",\"mode\":\"text\",\"page\":1,\"query\":\"trimester 2016-17 media uploaded Wikimedia Commons\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_53fa004c256dc4891c77\",\"page\":1,\"page_start\":1,\"page_end\":1,\"source_sha256\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"image_id\":\"sansuo_hidden__upload_a464ae4571f836713796__file_b46058641575f1d1dc66\",\"region\":null,\"visual_result_id\":\"vision_4b6b0ebb8c7691829f430486944fe2d6\",\"vision_version\":\"inspect-page-v7-question-context\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c\",\"user_id\":\"6ae77085aca45426098cfcdb\",\"conversation_id\":\"affec669-f302-4d35-9c81-b997b0ca8f43\",\"status\":\"ok\"},\"visual_result_id\":\"vision_4b6b0ebb8c7691829f430486944fe2d6\",\"ok\":true,\"status\":\"ok\",\"document_id\":\"doc_53fa004c256dc4891c77\",\"assessment\":{\"parsing_complete\":true,\"factual_verification\":\"not_independently_verified\",\"uncertainty_reported\":false},\"page\":1,\"mode\":\"text\",\"result\":{\"answer\":\"2016-17 T3\",\"evidence_text\":\"Figure 4: A total of 788 media were uploaded to Wikimedia Commons.\",\"cells\":[{\"row\":\"2016-17 T3\",\"column\":\"Number of uploaded media\",\"value\":\"220\",\"unit\":\"media\"},{\"row\":\"2016-17 T2\",\"column\":\"Number of uploaded media\",\"value\":\"50\",\"unit\":\"media\"},{\"row\":\"2016-17 T1\",\"column\":\"Number of uploaded media\",\"value\":\"160\",\"unit\":\"media\"}],\"series\":[{\"legend\":\"Number of uploaded media\",\"series\":\"2016-17 T1\",\"value\":\"160\",\"unit\":\"media\",\"certainty\":\"确定\",\"color_or_symbol\":\"yellow bar\",\"axes\":\"Y-axis: Number of media (0–250); X-axis: Trimester\",\"binding_evidence\":\"X-axis labels explicitly show '2016-17 T1', '2016-17 T2', '2016-17 T3' beneath corresponding bars in Figure 4; bar heights match values: T1 ≈160, T2 ≈50, T3 ≈220\"},{\"legend\":\"Number of uploaded media\",\"series\":\"2016-17 T2\",\"value\":\"50\",\"unit\":\"media\",\"certainty\":\"确定\",\"color_or_symbol\":\"yellow bar\",\"axes\":\"Y-axis: Number of media (0–250); X-axis: Trimester\",\"binding_evidence\":\"X-axis label '2016-17 T2' directly under bar; bar height aligns with 50 on Y-axis\"},{\"legend\":\"Number of uploaded media\",\"series\":\"2016-17 T3\",\"value\":\"220\",\"unit\":\"media\",\"certainty\":\"确定\",\"color_or_symbol\":\"yellow bar\",\"axes\":\"Y-axis: Number of media (0–250); X-axis: Trimester\",\"binding_evidence\":\"X-axis label '2016-17 T3' directly under tallest bar; bar top aligns with ~220 on Y-axis (between 200 and 250, closer to 220)\"}],\"uncertainties\":[]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"2016-17 T3\\\",\\n  \\\"evidence_text\\\": \\\"Figure 4: A total of 788 media were uploaded to Wikimedia Commons.\\\",\\n  \\\"cells\\\": [\\n    {\\n      \\\"row\\\": \\\"2016-17 T3\\\",\\n      \\\"column\\\": \\\"Number of uploaded media\\\",\\n      \\\"value\\\": \\\"220\\\",\\n      \\\"unit\\\": \\\"media\\\"\\n    },\\n    {\\n      \\\"row\\\": \\\"2016-17 T2\\\",\\n      \\\"column\\\": \\\"Number of uploaded media\\\",\\n      \\\"value\\\": \\\"50\\\",\\n      \\\"unit\\\": \\\"media\\\"\\n    },\\n    {\\n      \\\"row\\\": \\\"2016-17 T1\\\",\\n      \\\"column\\\": \\\"Number of uploaded media\\\",\\n      \\\"value\\\": \\\"160\\\",\\n      \\\"unit\\\": \\\"media\\\"\\n    }\\n  ],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Number of uploaded media\\\",\\n      \\\"series\\\": \\\"2016-17 T1\\\",\\n      \\\"value\\\": \\\"160\\\",\\n      \\\"unit\\\": \\\"media\\\",\\n      \\\"certainty\\\": \\\"确定\\\",\\n      \\\"color_or_symbol\\\": \\\"yellow bar\\\",\\n      \\\"axes\\\": \\\"Y-axis: Number of media (0–250); X-axis: Trimester\\\",\\n      \\\"binding_evidence\\\": \\\"X-axis labels explicitly show '2016-17 T1', '2016-17 T2', '2016-17 T3' beneath corresponding bars in Figure 4; bar heights match values: T1 ≈160, T2 ≈50, T3 ≈220\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Number of uploaded media\\\",\\n      \\\"series\\\": \\\"2016-17 T2\\\",\\n      \\\"value\\\": \\\"50\\\",\\n      \\\"unit\\\": \\\"media\\\",\\n      \\\"certainty\\\": \\\"确定\\\",\\n      \\\"color_or_symbol\\\": \\\"yellow bar\\\",\\n      \\\"axes\\\": \\\"Y-axis: Number of media (0–250); X-axis: Trimester\\\",\\n      \\\"binding_evidence\\\": \\\"X-axis label '2016-17 T2' directly under bar; bar height aligns with 50 on Y-axis\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Number of uploaded media\\\",\\n      \\\"series\\\": \\\"2016-17 T3\\\",\\n      \\\"value\\\": \\\"220\\\",\\n      \\\"unit\\\": \\\"media\\\",\\n      \\\"certainty\\\": \\\"确定\\\",\\n      \\\"color_or_symbol\\\": \\\"yellow bar\\\",\\n      \\\"axes\\\": \\\"Y-axis: Number of media (0–250); X-axis: Trimester\\\",\\n      \\\"binding_evidence\\\": \\\"X-axis label '2016-17 T3' directly under tallest bar; bar top aligns with ~220 on Y-axis (between 200 and 250, closer to 220)\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"page_image_id\":\"sansuo_hidden__upload_a464ae4571f836713796__file_b46058641575f1d1dc66\",\"region\":null,\"renderer_version\":\"fitz-bounded-region-v2\",\"dpi\":71.772,\"resolution_limited\":true},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\",\"PAGE_RESOLUTION_LIMITED_USE_REGION_FOR_SMALL_TEXT\"],\"telemetry\":{\"elapsed_ms\":13887,\"usage\":{\"prompt_tokens\":2958,\"completion_tokens\":636,\"total_tokens\":3594,\"completion_tokens_details\":{\"text_tokens\":636},\"prompt_tokens_details\":{\"image_tokens\":2522,\"text_tokens\":436,\"cached_tokens\":0}},\"finish_reason\":\"stop\",\"attempts\":[{\"attempt\":1,\"phase\":\"headers\",\"status\":200,\"elapsed_ms\":12665},{\"attempt\":1,\"phase\":\"complete\",\"bytes\":2528,\"elapsed_ms\":12673}]}}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 16
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T17:01:58.326Z",
+      "completedAt": "2026-11-01T17:03:25.221Z",
+      "elapsedMs": 86895
+    },
+    "sansuoClientRequestId": "15d8daa2-80fa-48c4-a3df-a8c5ac2cce36"
+  },
+  "references": [
+    {
+      "document_id": "doc_53fa004c256dc4891c77",
+      "chunk_id": "chunk_4bc878effbceea0115e1",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae77085aca45426098cfcdb",
+      "conversation_id": "affec669-f302-4d35-9c81-b997b0ca8f43"
+    },
+    {
+      "document_id": "doc_53fa004c256dc4891c77",
+      "chunk_id": "chunk_aaa72c36efa1bc90b54a",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae77085aca45426098cfcdb",
+      "conversation_id": "affec669-f302-4d35-9c81-b997b0ca8f43"
+    },
+    {
+      "document_id": "doc_53fa004c256dc4891c77",
+      "chunk_id": "chunk_4bc878effbceea0115e1",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae77085aca45426098cfcdb",
+      "conversation_id": "affec669-f302-4d35-9c81-b997b0ca8f43"
+    },
+    {
+      "document_id": "doc_53fa004c256dc4891c77",
+      "chunk_id": "chunk_741bd101b3eecde0dbe9",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae77085aca45426098cfcdb",
+      "conversation_id": "affec669-f302-4d35-9c81-b997b0ca8f43"
+    },
+    {
+      "document_id": "doc_53fa004c256dc4891c77",
+      "chunk_id": "chunk_a8a0de98fe7aeae61578",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae77085aca45426098cfcdb",
+      "conversation_id": "affec669-f302-4d35-9c81-b997b0ca8f43"
+    },
+    {
+      "document_id": "doc_53fa004c256dc4891c77",
+      "chunk_id": "chunk_1d8304f2db6734c23aab",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae77085aca45426098cfcdb",
+      "conversation_id": "affec669-f302-4d35-9c81-b997b0ca8f43"
+    },
+    {
+      "document_id": "doc_53fa004c256dc4891c77",
+      "chunk_id": "chunk_1d8304f2db6734c23aab",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae77085aca45426098cfcdb",
+      "conversation_id": "affec669-f302-4d35-9c81-b997b0ca8f43"
+    },
+    {
+      "document_id": "doc_53fa004c256dc4891c77",
+      "chunk_id": "chunk_1d8304f2db6734c23aab",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae77085aca45426098cfcdb",
+      "conversation_id": "affec669-f302-4d35-9c81-b997b0ca8f43"
+    },
+    {
+      "document_id": "doc_53fa004c256dc4891c77",
+      "chunk_id": "chunk_a8a0de98fe7aeae61578",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae77085aca45426098cfcdb",
+      "conversation_id": "affec669-f302-4d35-9c81-b997b0ca8f43"
+    },
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_53fa004c256dc4891c77",
+      "page": 1,
+      "page_start": 1,
+      "page_end": 1,
+      "source_sha256": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "image_id": "sansuo_hidden__upload_a464ae4571f836713796__file_b46058641575f1d1dc66",
+      "region": null,
+      "visual_result_id": "vision_4b6b0ebb8c7691829f430486944fe2d6",
+      "vision_version": "inspect-page-v7-question-context",
+      "vision_model": "qwen3-vl-plus",
+      "version": "3343efad9c12ea259a1d2ee1762b39cbf36d9129621c1ab29254c0f8694cc09c",
+      "user_id": "6ae77085aca45426098cfcdb",
+      "conversation_id": "affec669-f302-4d35-9c81-b997b0ca8f43",
+      "status": "ok"
+    }
+  ]
+}

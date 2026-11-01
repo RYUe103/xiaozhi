@@ -1,0 +1,121 @@
+diff --git a/api/app/clients/BaseClient.js b/api/app/clients/BaseClient.js
+index 8994abc..620ee59 100644
+--- a/api/app/clients/BaseClient.js
++++ b/api/app/clients/BaseClient.js
+@@ -1386,42 +1386,6 @@ function sleepSanSuo(ms) {
+   return new Promise((resolve) => setTimeout(resolve, ms));
+ }
+ 
+-function hasSanSuoFollowupFileIntent(userText = '') {
+-  const text = String(userText || '').trim();
+-  if (!text) {
+-    return false;
+-  }
+-  return /^(继续|继续看|继续读|继续处理|接着|再看|再读|再处理|重新读|重新看|重新处理|第一页|第二页|第三页|上一页|下一页|这一页|那一页|这份|那个文件|这个文件|这个pdf|这个word|这个文档|这个表格|这个附件|刚才那个|上一个|它)\b/i.test(
+-    text,
+-  );
+-}
+-
+-function hasSanSuoArtifactContinuationSignal(userText = '') {
+-  const text = String(userText || '').trim();
+-  if (!text) {
+-    return false;
+-  }
+-  if (hasSanSuoFollowupFileIntent(text)) {
+-    return true;
+-  }
+-  return (
+-    /^(?:基于|根据|按照|结合|参考|依据).{0,24}(?:前面|刚才|上一轮|上一次|上述|这个|那个|它|他|该文件|该文档).{0,24}(?:写|生成|制作|创建|做成|整理|导出|保存|html|网页|页面|文件|附件)/i.test(
+-      text,
+-    ) ||
+-    /^(具体|详细|细说|展开|接着|继续|再来|再加|加个|加一个|加一段|加一页|改一下|改成|调整|优化|润色|删掉|删除|替换|补充|增加|居中|左对齐|右对齐|加粗|缩小|放大|改标题|改字体|改字号|改颜色|改格式|重新导出|重新生成|重新整理)/i.test(
+-      text,
+-    ) ||
+-    /^(大标题|小标题|正文|表格|第一页|第二页|第三页|上一页|下一页|这一页|那一页)/i.test(text) ||
+-    /(这个|那个|它|里面|其中|刚才|上一个|上次|前面|前一个).{0,24}(具体|详细|内容|讲了什么|说了什么|怎么写|怎么改|改成|加|删|调整|表格|图片|标题|字体|字号|颜色|格式|导出|下载)/i.test(
+-      text,
+-    ) ||
+-    (text.length <= 36 &&
+-      /(讲了什么|说了什么|具体内容|详细内容|继续看|继续读|继续改|再改|再看|再读|再导出|再生成|重新导出|重新生成)/i.test(
+-        text,
+-      ))
+-  );
+-}
+-
+ function getSanSuoMessagePlainText(message) {
+   if (!message) {
+     return '';
+@@ -1446,19 +1410,6 @@ function getSanSuoMessagePlainText(message) {
+   return '';
+ }
+ 
+-function hasSanSuoPdfContentQuestion(userText = '') {
+-  const text = String(userText || '').trim();
+-  if (!text) {
+-    return false;
+-  }
+-  return (
+-    /pdf|文档|附件|文件|标准|报告|材料|条款|章节|附录|页|段|图表|表格/i.test(text) ||
+-    /摘要|总结|概括|主要内容|核心内容|讲了什么|说了什么|第一页|第二页|第三页|上一页|下一页|第.{1,8}(页|条|章|节)|关键词|关键点|条款|具体内容|全文|有没有|是否|怎么规定|写了什么/i.test(
+-      text,
+-    )
+-  );
+-}
+-
+ function hasImageAttachment(attachments) {
+   return Array.isArray(attachments) && attachments.some((file) => file.type?.startsWith('image/'));
+ }
+@@ -4468,15 +4419,15 @@ class BaseClient {
+     }
+     if (!sansuoFileParseFailure && isSanSuoDeepMode && !hasCurrentRequestFiles) {
+       let currentVisualRecord = null;
+-      if (
+-        hasSanSuoArtifactContinuationSignal(originalUserMessageText) ||
+-        hasSanSuoPdfContentQuestion(originalUserMessageText)
+-      ) {
+-        const recentFileMessage = findRecentMessageWithFiles(
+-          this.currentMessages,
+-          userMessage.messageId,
+-        );
+-        if (recentFileMessage) {
++      // Historical document access is determined by the authorized conversation
++      // resources, not by natural-language keywords. The user text remains a
++      // query for retrieval/visual follow-up, but must not decide whether the
++      // PDF/DOCX reader is registered for this request.
++      const recentFileMessage = findRecentMessageWithFiles(
++        this.currentMessages,
++        userMessage.messageId,
++      );
++      if (recentFileMessage) {
+           try {
+             const fileIds = recentFileMessage.files.map((file) => file.file_id).filter(Boolean);
+             const files = await db.getFiles({ file_id: { $in: fileIds } }, {}, {});
+@@ -4523,7 +4474,6 @@ class BaseClient {
+               error: error?.message || String(error),
+             });
+           }
+-        }
+       }
+       let visualCarryoverRecord =
+         currentVisualRecord ||
+diff --git a/api/app/clients/specs/BaseClient.test.js b/api/app/clients/specs/BaseClient.test.js
+index 42a13a0..85b3b9d 100644
+--- a/api/app/clients/specs/BaseClient.test.js
++++ b/api/app/clients/specs/BaseClient.test.js
+@@ -2636,14 +2636,14 @@ describe('BaseClient', () => {
+           return { completion: [...TestClient.contentParts] };
+         });
+ 
+-        await TestClient.sendMessage('总结这个 PDF', {
++        await TestClient.sendMessage('换个关注点，金秀如何开展线上线下读书？活动规模有哪些数据？', {
+           conversationId: 'conversation-pdf-ready',
+         });
+ 
+         const completionOptions = TestClient.sendCompletion.mock.calls.at(-1)[1];
+         expect(completionOptions.sansuoForceCodeTool).toBeUndefined();
+         expect(TestClient.options.req.body._sansuoForceCodeTool).not.toBe(true);
+-        expect(TestClient.options.req.body._sansuoPersistedPdfContextReady).toBe(true);
++        expect(TestClient.options.req._sansuoPdfReadTool).toBeDefined();
+         expect(TestClient.options.req.body._sansuoTaskRoute).toBeUndefined();
+         expect(TestClient.options.agent.tools).toContain('execute_code');
+         expect(TestClient.options.agent.toolDefinitions.map((tool) => tool.name)).toContain(

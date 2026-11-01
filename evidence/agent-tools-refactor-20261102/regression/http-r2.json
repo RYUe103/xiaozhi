@@ -1,0 +1,58 @@
+{
+  "scope": "Phase5 isolated live HTTP; synthetic DOCX/CSV are compatibility fixtures, not PDF accuracy evidence",
+  "checks": [
+    {
+      "name": "plain_chat",
+      "ok": true,
+      "conversationId": "ca74835a-a7a8-466e-bd4b-96873e8a0b5b",
+      "elapsed_ms": 7351,
+      "answer": "15",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "docx_read",
+      "ok": true,
+      "conversationId": "27fcdc8b-3538-4a5b-ac44-a0a263fa2a5c",
+      "elapsed_ms": 6229,
+      "answer": "根据附件文档内容，**RX-481 的校验周期为 17 天**。",
+      "active": false,
+      "error": false,
+      "tools": [
+        {
+          "id": "call_0b7446ae7e22453e83883366",
+          "name": "read_parsed_docx",
+          "args": "{\"action\":\"search\",\"document_id\":\"doc_d39875dd529af88b3afb\",\"query\":\"RX-481\"}",
+          "type": "tool_call",
+          "progress": 1,
+          "output": "{\"status\":\"ok\",\"document_id\":\"doc_d39875dd529af88b3afb\",\"file_id\":\"a5d9041e-7572-4e89-ac68-eba28106ed5e\",\"filename\":\"regression.docx\",\"action\":\"search\",\"scope\":\"keyword_selection\",\"content\":\"[paragraph=1 chunk=chunk_ff994cce2d834b4b6782]\\n回归测试记录：样机 RX-481 的校验周期为 17 天。此文档仅用于测试。\",\"offset\":0,\"truncated\":false,\"next_offset\":null,\"hits\":[{\"chunk_id\":\"chunk_ff994cce2d834b4b6782\",\"paragraph_id\":\"paragraph_24656eb53bab6a550690\",\"paragraph_index\":1}],\"tables\":[],\"reference\":{\"document_id\":\"doc_d39875dd529af88b3afb\",\"chunk_id\":\"chunk_ff994cce2d834b4b6782\",\"paragraph_id\":\"paragraph_24656eb53bab6a550690\",\"paragraph_index\":1,\"table_id\":null,\"source_hash\":null,\"version\":\"c23f44b02d2b7ec248c94dde870ad3a0bbad071725a03ec5ae5de6efae2bf24f\"},\"matched_paragraphs\":1,\"matched_segments\":1,\"total_paragraphs\":1,\"total_segments\":1,\"paragraph_start\":1,\"paragraph_end\":1}"
+        }
+      ]
+    },
+    {
+      "name": "csv_execute_code",
+      "ok": true,
+      "conversationId": "f77f422b-7aaf-491c-b998-13321b6d737d",
+      "elapsed_ms": 20554,
+      "answer": "通过读取附件 `phase5.csv`，**ZX-917** 的 `period_days` 值为 **23**。",
+      "active": false,
+      "error": false,
+      "tools": [
+        {
+          "id": "call_9eb21c044d16468f96dbaafb",
+          "name": "execute_code",
+          "args": "{\"code\":\"import csv\\n\\nfile_path = '/mnt/data/phase5.csv'\\nresult = None\\n\\nwith open(file_path, mode='r', encoding='utf-8') as f:\\n    reader = csv.DictReader(f)\\n    for row in reader:\\n        if row['model'].strip() == 'ZX-917':\\n            result = row['period_days'].strip()\\n            break\\n\\nif result:\\n    print(f\\\"ZX-917 的 period_days 值为: {result}\\\")\\nelse:\\n    print(\\\"未找到 ZX-917 的数据\\\")\\n\",\"lang\":\"py\"}",
+          "type": "tool_call",
+          "progress": 1,
+          "output": "stdout:\nZX-917 的 period_days 值为: 23"
+        }
+      ]
+    },
+    {
+      "name": "foreign_message_isolation",
+      "ok": true,
+      "http_status": 200
+    }
+  ]
+}

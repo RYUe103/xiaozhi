@@ -1,0 +1,82 @@
+[
+  {
+    "test": "BaseClient sendMessage file population reuses persisted DOCX text context without reading the original file twice",
+    "baseline_failed": false,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population DOCX visual questions reuse persisted images, select later images, and never reparse",
+    "baseline_failed": false,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population missing DOCX visual artifacts do not trigger sandbox fallback",
+    "baseline_failed": false,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population missing PDF artifacts never fall back to the generic sandbox reader",
+    "baseline_failed": true,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population batches persisted fitz PDF pages by 20 and selects an explicitly requested page",
+    "baseline_failed": true,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population completes the fitz index in batches while exposing only the requested page",
+    "baseline_failed": true,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population retrieves a persisted fitz VL index within the current conversation and reviews only matching pages",
+    "baseline_failed": true,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population reuses persisted PDF MinerU Markdown context without reading the original file",
+    "baseline_failed": false,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population retrieves a relevant late MinerU chunk instead of truncating a long PDF prefix",
+    "baseline_failed": false,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population selects a requested PDF page and its neighboring chunks when page metadata exists",
+    "baseline_failed": false,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population reviews only the requested MinerU page image and ignores extracted figures",
+    "baseline_failed": true,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population samples the beginning, middle, and end for a whole-document PDF summary",
+    "baseline_failed": false,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population samples across legacy MinerU Markdown when chunks are unavailable",
+    "baseline_failed": false,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population answers a ready DOCX from persisted context without forcing execute_code",
+    "baseline_failed": false,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population answers a ready PDF without execution (follow-up=false)",
+    "baseline_failed": false,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  },
+  {
+    "test": "BaseClient sendMessage file population answers a ready PDF without execution (follow-up=true)",
+    "baseline_failed": false,
+    "reason": "Legacy eager pre-read expectation or legacy fixture lacking scoped metadata; not migrated; retained as failing regression"
+  }
+]

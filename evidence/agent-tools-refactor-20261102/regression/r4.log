@@ -1,0 +1,81 @@
+PASS api/server/services/Endpoints/agents/initialize.spec.js (9.646 s)
+PASS api/server/services/__tests__/ToolService.spec.js
+  ● Console
+
+    console.log
+      2026-11-02 00:56:33 [33m[3mwarn[23m[39m: [33m[3mCapability "actions" disabled. User: user_123 | Agent: agent_123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [33m[3mwarn[23m[39m: [33m[3mNo tools found for the specified tool calls: calculator, get_weather_action_api_example_com[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [33m[3mwarn[23m[39m: [33m[3m[loadToolsForExecution] Capability "actions" disabled. Skipping action tool execution. User: user_123 | Agent: agent_123 | Tools: get_weather_action_api_example_com[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [33m[3mwarn[23m[39m: [33m[3m[loadToolsForExecution] Capability "actions" disabled. Skipping action tool execution. User: user_123 | Agent: agent_123 | Tools: get_weather_action_api_example_com[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [32minfo[39m: [32m[code-env:resources] refreshed conversation files[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [32minfo[39m: [32m[code-env:resources] prepared event fallback files[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_collision[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_collision[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_legacy[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_hyphen[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 00:56:33 [33m[3mwarn[23m[39m: [33m[3mCapability "deferred_tools" disabled. User: user_123 | Agent: agent_short[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+PASS api/server/services/Endpoints/agents/sansuoToolPolicy.spec.js
+PASS api/server/services/SessionDocumentResources.spec.js
+PASS api/server/services/DocumentPageVisionService.spec.js
+PASS api/server/services/DocumentArtifactRepository.spec.js
+PASS api/server/services/DocumentContextService.spec.js
+
+Test Suites: 7 passed, 7 total
+Tests:       136 passed, 136 total
+Snapshots:   0 total
+Time:        10.971 s, estimated 12 s
+Ran all test suites matching api/server/services/SessionDocumentResources.spec.js|api/server/services/Endpoints/agents/sansuoToolPolicy.spec.js|api/server/services/Endpoints/agents/initialize.spec.js|api/server/services/__tests__/ToolService.spec.js|api/server/services/DocumentArtifactRepository.spec.js|api/server/services/DocumentContextService.spec.js|api/server/services/DocumentPageVisionService.spec.js.
+Test results written to: evidence/agent-tools-refactor-20261102/regression/r4.json

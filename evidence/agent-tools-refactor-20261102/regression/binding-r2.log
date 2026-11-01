@@ -1,0 +1,103 @@
+2026-11-02 00:59:14 [32minfo[39m: [32m[SanSuoDocumentDirectory] ready[39m
+2026-11-02 00:59:14 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-01T16:59:14.736Z","traceId":"message-1793552354736","fileType":"document","stage":"persisted_text_context_total","status":"empty","elapsedMs":4,"files":1}[39m
+PASS api/app/clients/specs/BaseClient.test.js
+  BaseClient
+    ○ skipped returns the input messages without instructions when addInstructions() is called with empty instructions
+    ○ skipped returns the input messages with instructions properly added when addInstructions() is called with non-empty instructions
+    ○ skipped returns the input messages with instructions properly added when addInstructions() with legacy flag
+    ○ skipped concats messages correctly in concatenateMessages()
+    ○ skipped refines messages correctly in summarizeMessages()
+    ○ skipped gets messages within token limit (under limit) correctly in getMessagesWithinTokenLimit()
+    ○ skipped gets result over token limit correctly in getMessagesWithinTokenLimit()
+    getMessagesForConversation
+      ○ skipped should return an empty array if the parentMessageId does not exist
+      ○ skipped should handle messages with messageId property
+      ○ skipped should handle messages with null parentMessageId that are not root
+      ○ skipped should handle cyclic references without going into an infinite loop
+      ○ skipped should return ordered messages based on parentMessageId
+      ○ skipped should return ordered messages from a branched array based on parentMessageId
+      ○ skipped should return an empty array if no messages are provided
+      ○ skipped should map over the ordered messages if mapMethod is provided
+      ○ skipped should start with the message that has a summary property and continue until the specified parentMessageId
+      ○ skipped should handle multiple summaries and return the branch from the latest to the parentMessageId
+      ○ skipped should handle summary at root edge case and continue until the parentMessageId
+      ○ skipped should detect summary content block and use it over legacy fields (summary mode)
+      ○ skipped should prefer content block summary over legacy summary field
+      ○ skipped should fallback to legacy summary when no content block exists
+    findSummaryContentBlock
+      ○ skipped should find a summary block in the content array
+      ○ skipped should return null when no summary block exists
+      ○ skipped should return null for string content
+      ○ skipped should return null for missing content
+      ○ skipped should skip summary blocks with no text
+    sendMessage
+      ○ skipped sendMessage should return a response message
+      ○ skipped should replace responseMessageId with new UUID when isRegenerate is true and messageId ends with underscore
+      ○ skipped should not replace responseMessageId when isRegenerate is false
+      ○ skipped should not replace responseMessageId when it does not end with underscore
+      ○ skipped sendMessage should work with provided conversationId and parentMessageId
+      ○ skipped should return chat history
+      ○ skipped should not push userMessage to currentMessages when isEdited is true and vice versa
+      ○ skipped setOptions is called with the correct arguments only when replaceOptions is set to true
+      ○ skipped loadHistory is called with the correct arguments
+      ○ skipped getReqData is called with the correct arguments
+      ○ skipped onStart is called with the correct arguments
+      ○ skipped saveMessageToDatabase is called with the correct arguments
+      ○ skipped should handle existing conversation when getConvo retrieves one
+      ○ skipped should correctly handle existing conversation and unset fields appropriately
+      ○ skipped sendCompletion is called with the correct arguments
+      ○ skipped getTokenCount for response is called with the correct arguments
+      ○ skipped returns an object with the correct shape
+      ○ skipped saveMessageToDatabase returns early when this.options is null (client disposed)
+      ○ skipped saveMessageToDatabase uses snapshot of options, immune to mid-await disposal
+      ○ skipped saveMessageToDatabase reuses conversation resolved on the request
+      ○ skipped SanSuoMain manual memory mode only reads saved memory
+      ○ skipped SanSuoMain off memory mode neither reads nor writes memory
+      ○ skipped userMessagePromise is awaited before saving response message
+    recordTokenUsage model assignment
+      ○ skipped should pass this.model to recordTokenUsage, not the agent ID from responseMessage.model
+      ○ skipped should pass this.model even when this.model differs from modelOptions.model
+    getMessagesWithinTokenLimit with instructions
+      ○ skipped should always include instructions when present
+      ○ skipped should handle case when messages exceed limit but instructions must be preserved
+      ○ skipped should work correctly without instructions (1/2)
+      ○ skipped should work correctly without instructions (2/2)
+      ○ skipped should handle case when only instructions fit within limit
+    sendMessage file population
+      ✓ binds document readers from metadata before model inference without eager downloads (23 ms)
+      ○ skipped populates userMessage.files before saveMessageToDatabase is called
+      ○ skipped populates assistant response files from generated attachments before save
+      ○ skipped strips text and _id from files before saving
+      ○ skipped deletes image_urls from userMessage when files are present
+      ○ skipped does not set files when no attachments match request file IDs
+      ○ skipped skips file population when attachments is not an array (Promise case)
+      ○ skipped skips file population when skipSaveUserMessage is true
+      ○ skipped ignores file_id: undefined entries in req.body.files (no set poisoning)
+      ○ skipped persists a failed document parse response without starting the model
+      ○ skipped reuses persisted DOCX text context without reading the original file twice
+      ○ skipped DOCX visual questions reuse persisted images, select later images, and never reparse
+      ○ skipped missing DOCX visual artifacts do not trigger sandbox fallback
+      ○ skipped missing PDF artifacts never fall back to the generic sandbox reader
+      ○ skipped batches persisted fitz PDF pages by 20 and selects an explicitly requested page
+      ○ skipped completes the fitz index in batches while exposing only the requested page
+      ○ skipped retrieves a persisted fitz VL index within the current conversation and reviews only matching pages
+      ○ skipped reuses persisted PDF MinerU Markdown context without reading the original file
+      ○ skipped reuses persisted XLSX rows context without reading the original file
+      ○ skipped reuses persisted CSV rows context without reading the original file
+      ○ skipped reuses persisted Markdown blocks context without reading the original file
+      ○ skipped reuses persisted plain-text blocks context without reading the original file
+      ○ skipped retrieves a relevant late MinerU chunk instead of truncating a long PDF prefix
+      ○ skipped selects a requested PDF page and its neighboring chunks when page metadata exists
+      ○ skipped reviews only the requested MinerU page image and ignores extracted figures
+      ○ skipped samples the beginning, middle, and end for a whole-document PDF summary
+      ○ skipped samples across legacy MinerU Markdown when chunks are unavailable
+      ○ skipped answers a ready DOCX from persisted context without forcing execute_code
+      ○ skipped answers a ready PDF without execution (follow-up=false)
+      ○ skipped answers a ready PDF without execution (follow-up=true)
+
+Test Suites: 1 passed, 1 total
+Tests:       85 skipped, 1 passed, 86 total
+Snapshots:   0 total
+Time:        3.026 s, estimated 4 s
+Ran all test suites matching api/app/clients/specs/BaseClient.test.js with tests matching "binds document readers from metadata".
+Test results written to: evidence/agent-tools-refactor-20261102/regression/binding-r2.json
