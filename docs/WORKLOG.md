@@ -98,3 +98,6 @@
 - 提交范围：MinerU/Repository/按需视觉/检索代码、测试脚本、实施说明和脱敏真实Agent证据；保留所有失败及未完成事项。
 - 排除依赖软链接、原始PDF/ZIP大资产和服务凭据；未改生产配置。推送前代码与文档diff检查通过（原始休眠日志的行尾空白保留），163项证据约3.89MB，凭据模式扫描无命中。
 - 既有验证为14组270项测试通过；本轮仅发布，不重新运行付费Agent评测。远端提交结果在发布后独立核实。
+
+- 发布核对：本地提交8028d780559cd5c3b0d5bcbd5a2610a19d059e71，共194文件；依赖软链接未提交。GitHub ls-remote与独立IPv4 HTTPS探测均连接超时，不能声明远端已更新。
+- push最终结果：退出128，could not read Username for https://github.com（terminal prompts disabled）；当前CLI无可用认证，gh未安装。需恢复GitHub认证及网络后重试普通push；未强推，原测试结果保持不变。
