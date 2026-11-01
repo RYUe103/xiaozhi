@@ -1,0 +1,27 @@
+{
+  "scope": "Explicit model-transport fault injection with real Agent; not natural failure or accuracy benchmark",
+  "checks": [
+    {
+      "name": "reset_once",
+      "ok": true
+    }
+  ],
+  "mode": "reset_once",
+  "result": {
+    "conversationId": "84501f1b-637e-418a-90d1-a93b59de8527",
+    "elapsed_ms": 10394,
+    "answer": "代码执行环境当前不可用（连接错误），但根据数学公式，从 1 到 n 的平方和公式为：\n\n$$\\sum_{i=1}^{n} i^2 = \\frac{n(n+1)(2n+1)}{6}$$\n\n代入 n = 100：\n\n$$\\frac{100 \\times 101 \\times 201}{6} = \\frac{2030100}{6} = 338350$$\n\n**从 1 到 100 的所有整数的平方和为：338350**",
+    "active": false,
+    "error": false,
+    "tools": [
+      {
+        "id": "call_aa9b17e3bdca466785e31fc1",
+        "name": "execute_code",
+        "args": "{\"code\":\"result = sum(i**2 for i in range(1, 101))\\nprint(result)\",\"lang\":\"py\"}",
+        "type": "tool_call",
+        "progress": 1,
+        "output": "Error: Execution error:\n\nCodeAPI request failed: POST http://127.0.0.1:5057/v1/exec returned 500, body: {\"session_id\":\"exec_764d501beee169f06979\",\"stdout\":\"\",\"stderr\":\"connect ECONNREFUSED 127.0.0.1:8090\",\"files\":[],\"outputFiles\":[],\"generatedFiles\":[],\"inputFiles\":[]}\n Please fix your mistakes."
+      }
+    ]
+  }
+}

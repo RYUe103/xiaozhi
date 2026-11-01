@@ -1,0 +1,15 @@
+PASS api/server/services/ModelTransportReliability.spec.js
+  ✓ retries only transient model request failures and records underlying cause (4 ms)
+  ✓ does not retry authorization failures or unknown application errors (1 ms)
+  ✓ cancels error body and retries 503, but respects retry-after beyond deadline (1 ms)
+  ✓ stream failure is not replayed after delivering bytes (5 ms)
+  ✓ abort interrupts backoff and cannot restart model call (5 ms)
+  ✓ timeout bounds all retries and produces an explicit non-answer (11 ms)
+  ✓ user cancellation during a returned body never retries and preserves cancellation classification (1 ms)
+  ✓ deadline covers body consumption and does not replay an unfinished stream (16 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        0.214 s, estimated 1 s
+Ran all test suites matching api/server/services/ModelTransportReliability.spec.js.

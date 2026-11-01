@@ -1,0 +1,134 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "f5d6db14-f46a-4189-bf91-2e4fb48c5327",
+  "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+  "pdf_sha256": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+  "elapsed_ms": 79624,
+  "active": false,
+  "upload_ms": 140,
+  "answer": "根据对文档第1页 Figure 4 的视觉核查，该柱状图展示了各学期上传至 Wikimedia Commons 的媒体数量，但**无法确认**2016-17学年中哪个 trimester 上传数量最高。原因如下：\n\n1. **学年定义不明确**：Figure 4 横轴使用 \"YYYY/MM T1/T2/T3\" 格式标注（如 2016/5 T1、2016/7 T2、2016/10 T3 等），但文档未明确定义 2016-17 学术年对应的 trimester 区间。\n\n2. **数据归属不确定**：图中显示 2016/7 T2 约 220 个媒体、2016/10 T3 约 160 个、2016/5 T1 约 70 个，但这些标注是否全部属于 2016-17 学年、或如何与标准学年划分对应，文档正文及图注均未说明。\n\n3. **缺乏明确归类**：没有任何文本或表格将媒体上传数据按 \"2016-17 学年\" 的 trimester 进行归类并给出具体数值。\n\n**结论**：基于当前文档（第1页 Figure 4 及相关正文），无法确认 2016-17 学年中哪个 trimester 上传至 Wikimedia Commons 的媒体数量最高。如需准确回答，需要文档提供明确的学年-trimester 对应关系或更详细的数据表格。",
+  "tool_calls": [
+    {
+      "id": "call_2d2fe4da6dcc4d6782fbf563",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_1ae42bf2f1dc3c20b876\",\"query\":\"trimester Wikimedia Commons media uploaded 2016-17\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_1ae42bf2f1dc3c20b876\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"4bc0c55ab964e28795785747be50d0b9e5e46957e41ba8e0cee021f6b297879f\",\"action\":\"search\",\"content\":\"[chunk_0290658b204a14354b71 page=1 kind=extracted_text]\\nSuwannakhan A & Limpanuparb T. 2017. Wikipedia writing assignments: a one-year pilot program in chemistry classes at Mahidol University. Catalyst. 15(2): 65-79.\\n\\n[chunk_96ec998926098c0c1df3 page=1 kind=extracted_text]\\n\\\\- Wikipedia writing assignment has been incorported into undergraduate chemistry classes at Mahidol University International College since September 2014.\\n\\n[chunk_c97cf0b96cd8a8b5cfc4 page=1 kind=extracted_text]\\n\\\\- One hundred and three students participated in the program.\\n\\n[chunk_d2aa7c10fdc842ab08bc page=1 kind=extracted_text]\\n\\\\- Fifty six high quality articles were created, and more than 81 articles were improved.\\n\\n[chunk_e2b017733e744cdf7ba1 page=1 kind=extracted_text]\\nto 364 written pages.\\n\\n[chunk_b223da4a0b5acdba6314 page=1 kind=extracted_text]\\n\\\\- Students worked on text and illustration of their article to meet course requirements. - Students’ work was subject to peer review and scrutiny by other Wikipedians.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_0290658b204a14354b71\",\"source_chunk_id\":\"mineru_7e32249f93bd38b8d9490923\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_090fb82024a29eca4c491c2d\",\"image_id\":null,\"bbox\":[654,883,939,937],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_96ec998926098c0c1df3\",\"source_chunk_id\":\"mineru_72f3acf03fe14a780204af15\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_21e782a6b05612ab6d348e5f\",\"image_id\":null,\"bbox\":[654,608,936,660],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_c97cf0b96cd8a8b5cfc4\",\"source_chunk_id\":\"mineru_1bef6ad57f79eff4557f174a\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_b0f8ef1312d25ddc98b796ec\",\"image_id\":null,\"bbox\":[654,663,934,690],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_d2aa7c10fdc842ab08bc\",\"source_chunk_id\":\"mineru_2098ac501d756fc85461458b\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_a5b52b6ada9089b3765586f5\",\"image_id\":null,\"bbox\":[654,693,935,719],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_e2b017733e744cdf7ba1\",\"source_chunk_id\":\"mineru_49a81d8a7d7af3b2a1779ac3\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_45632f10c3a008387af8b581\",\"image_id\":null,\"bbox\":[655,736,797,749],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_b223da4a0b5acdba6314\",\"source_chunk_id\":\"mineru_d77071f4fee02e2abe96a532\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_5a5b5b6f34969de2d75aec27\",\"image_id\":null,\"bbox\":[526,451,745,530],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_1ae42bf2f1dc3c20b876\",\"chunk_id\":\"chunk_0290658b204a14354b71\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"4bc0c55ab964e28795785747be50d0b9e5e46957e41ba8e0cee021f6b297879f\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae7296975d149fca2a3bf3d\",\"conversation_id\":\"f5d6db14-f46a-4189-bf91-2e4fb48c5327\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_38a5241f87b744f6af410717",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"document_id\":\"doc_1ae42bf2f1dc3c20b876\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_1ae42bf2f1dc3c20b876\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"4bc0c55ab964e28795785747be50d0b9e5e46957e41ba8e0cee021f6b297879f\",\"action\":\"read\",\"content\":\"[chunk_0290658b204a14354b71 page=1 kind=extracted_text]\\nSuwannakhan A & Limpanuparb T. 2017. Wikipedia writing assignments: a one-year pilot program in chemistry classes at Mahidol University. Catalyst. 15(2): 65-79.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_0290658b204a14354b71\",\"source_chunk_id\":\"mineru_7e32249f93bd38b8d9490923\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_090fb82024a29eca4c491c2d\",\"image_id\":null,\"bbox\":[654,883,939,937],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_1ae42bf2f1dc3c20b876\",\"chunk_id\":\"chunk_0290658b204a14354b71\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"4bc0c55ab964e28795785747be50d0b9e5e46957e41ba8e0cee021f6b297879f\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae7296975d149fca2a3bf3d\",\"conversation_id\":\"f5d6db14-f46a-4189-bf91-2e4fb48c5327\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_2be576baedba4a1aa0efe0e9",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_1ae42bf2f1dc3c20b876\",\"query\":\"trimester Wikimedia Commons media uploaded 2016-17\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_1ae42bf2f1dc3c20b876\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"4bc0c55ab964e28795785747be50d0b9e5e46957e41ba8e0cee021f6b297879f\",\"action\":\"search\",\"content\":\"[chunk_0290658b204a14354b71 page=1 kind=extracted_text]\\nSuwannakhan A & Limpanuparb T. 2017. Wikipedia writing assignments: a one-year pilot program in chemistry classes at Mahidol University. Catalyst. 15(2): 65-79.\\n\\n[chunk_96ec998926098c0c1df3 page=1 kind=extracted_text]\\n\\\\- Wikipedia writing assignment has been incorported into undergraduate chemistry classes at Mahidol University International College since September 2014.\\n\\n[chunk_c97cf0b96cd8a8b5cfc4 page=1 kind=extracted_text]\\n\\\\- One hundred and three students participated in the program.\\n\\n[chunk_d2aa7c10fdc842ab08bc page=1 kind=extracted_text]\\n\\\\- Fifty six high quality articles were created, and more than 81 articles were improved.\\n\\n[chunk_e2b017733e744cdf7ba1 page=1 kind=extracted_text]\\nto 364 written pages.\\n\\n[chunk_b223da4a0b5acdba6314 page=1 kind=extracted_text]\\n\\\\- Students worked on text and illustration of their article to meet course requirements. - Students’ work was subject to peer review and scrutiny by other Wikipedians.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_0290658b204a14354b71\",\"source_chunk_id\":\"mineru_7e32249f93bd38b8d9490923\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_090fb82024a29eca4c491c2d\",\"image_id\":null,\"bbox\":[654,883,939,937],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_96ec998926098c0c1df3\",\"source_chunk_id\":\"mineru_72f3acf03fe14a780204af15\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_21e782a6b05612ab6d348e5f\",\"image_id\":null,\"bbox\":[654,608,936,660],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_c97cf0b96cd8a8b5cfc4\",\"source_chunk_id\":\"mineru_1bef6ad57f79eff4557f174a\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_b0f8ef1312d25ddc98b796ec\",\"image_id\":null,\"bbox\":[654,663,934,690],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_d2aa7c10fdc842ab08bc\",\"source_chunk_id\":\"mineru_2098ac501d756fc85461458b\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_a5b52b6ada9089b3765586f5\",\"image_id\":null,\"bbox\":[654,693,935,719],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_e2b017733e744cdf7ba1\",\"source_chunk_id\":\"mineru_49a81d8a7d7af3b2a1779ac3\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_45632f10c3a008387af8b581\",\"image_id\":null,\"bbox\":[655,736,797,749],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_b223da4a0b5acdba6314\",\"source_chunk_id\":\"mineru_d77071f4fee02e2abe96a532\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_5a5b5b6f34969de2d75aec27\",\"image_id\":null,\"bbox\":[526,451,745,530],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_1ae42bf2f1dc3c20b876\",\"chunk_id\":\"chunk_0290658b204a14354b71\",\"page_start\":1,\"page_end\":1,\"section_id\":null,\"table_id\":null,\"version\":\"4bc0c55ab964e28795785747be50d0b9e5e46957e41ba8e0cee021f6b297879f\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"user_id\":\"6ae7296975d149fca2a3bf3d\",\"conversation_id\":\"f5d6db14-f46a-4189-bf91-2e4fb48c5327\"},\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_82b2908c157e4c1fa1829b01",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_1ae42bf2f1dc3c20b876\",\"page\":1,\"query\":\"trimester Wikimedia Commons media uploaded 2016-17\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_1ae42bf2f1dc3c20b876\",\"page\":1,\"page_start\":1,\"page_end\":1,\"source_sha256\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"source_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"image_id\":\"sansuo_hidden__upload_307a63e70b628ce7d648__file_b7aa139fdf000bd0d321\",\"region\":null,\"visual_result_id\":\"vision_66647521dbdc18ac968714a198f04e6f\",\"vision_version\":\"inspect-page-v7-question-context\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"4bc0c55ab964e28795785747be50d0b9e5e46957e41ba8e0cee021f6b297879f\",\"user_id\":\"6ae7296975d149fca2a3bf3d\",\"conversation_id\":\"f5d6db14-f46a-4189-bf91-2e4fb48c5327\",\"status\":\"partial\"},\"visual_result_id\":\"vision_66647521dbdc18ac968714a198f04e6f\",\"ok\":false,\"status\":\"partial\",\"document_id\":\"doc_1ae42bf2f1dc3c20b876\",\"assessment\":{\"parsing_complete\":true,\"factual_verification\":\"not_independently_verified\",\"uncertainty_reported\":true},\"page\":1,\"mode\":\"auto\",\"result\":{\"answer\":\"无法确认\",\"evidence_text\":\"文档中Figure 4显示了2014/15至2017/18各学期上传至Wikimedia Commons的媒体总数（共788个），但未按2016-17学年划分 trimester（学期）；且图中横轴标注为'Trimester'，但实际使用的是'YYYY/MM'格式（如2016/5 T1、2016/7 T2、2016/10 T3等），该标注与标准trimester定义不一致，且未明确说明2016-17学年对应的trimester区间。此外，图中2016/7 T2对应约220个媒体，2016/10 T3对应约160个，2016/5 T1对应约70个，但这些‘T1/T2/T3’是否属于2016-17学年无明确定义；文档正文亦未提供2016-17学年trimester划分及对应媒体上传数。\",\"cells\":[],\"series\":[{\"legend\":\"Number of uploaded media\",\"series\":\"Media uploads per trimester (YYYY/MM)\",\"value\":\"2016/5 T1: ~70; 2016/7 T2: ~220; 2016/10 T3: ~160\",\"unit\":\"media\",\"certainty\":\"不确定\",\"color_or_symbol\":\"黄色柱状图\",\"axes\":\"X轴：Trimester (YYYY/MM format); Y轴：Number of media\",\"binding_evidence\":\"Figure 4标题注明'A total of 788 media were uploaded to Wikimedia Commons'，柱状图为单一黄色系列，无图例区分不同类别；横轴标签含'T1','T2','T3'但未定义其所属学年\"}],\"uncertainties\":[\"文档未明确定义2016-17学术年的trimester起止时间（例如：2016年5月是否属2016-17学年T1？）\",\"Figure 4中横轴标注'Trimester'但使用'YYYY/MM'加T1/T2/T3，该T1/T2/T3是否严格对应2016-17学年三学期未知\",\"无任何文本或图表将媒体上传数据按2016-17学年trimester归类并给出具体数值\",\"无法确认2016/5、2016/7、2016/10是否全部属于2016-17学年\",\"数据系列缺少明确的图例、标记、坐标轴或绑定依据\"]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"无法确认\\\",\\n  \\\"evidence_text\\\": \\\"文档中Figure 4显示了2014/15至2017/18各学期上传至Wikimedia Commons的媒体总数（共788个），但未按2016-17学年划分 trimester（学期）；且图中横轴标注为'Trimester'，但实际使用的是'YYYY/MM'格式（如2016/5 T1、2016/7 T2、2016/10 T3等），该标注与标准trimester定义不一致，且未明确说明2016-17学年对应的trimester区间。此外，图中2016/7 T2对应约220个媒体，2016/10 T3对应约160个，2016/5 T1对应约70个，但这些‘T1/T2/T3’是否属于2016-17学年无明确定义；文档正文亦未提供2016-17学年trimester划分及对应媒体上传数。\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Number of uploaded media\\\",\\n      \\\"series\\\": \\\"Media uploads per trimester (YYYY/MM)\\\",\\n      \\\"value\\\": \\\"2016/5 T1: ~70; 2016/7 T2: ~220; 2016/10 T3: ~160\\\",\\n      \\\"unit\\\": \\\"media\\\",\\n      \\\"certainty\\\": \\\"不确定\\\",\\n      \\\"color_or_symbol\\\": \\\"黄色柱状图\\\",\\n      \\\"axes\\\": \\\"X轴：Trimester (YYYY/MM format); Y轴：Number of media\\\",\\n      \\\"binding_evidence\\\": \\\"Figure 4标题注明'A total of 788 media were uploaded to Wikimedia Commons'，柱状图为单一黄色系列，无图例区分不同类别；横轴标签含'T1','T2','T3'但未定义其所属学年\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": [\\n    \\\"文档未明确定义2016-17学术年的trimester起止时间（例如：2016年5月是否属2016-17学年T1？）\\\",\\n    \\\"Figure 4中横轴标注'Trimester'但使用'YYYY/MM'加T1/T2/T3，该T1/T2/T3是否严格对应2016-17学年三学期未知\\\",\\n    \\\"无任何文本或图表将媒体上传数据按2016-17学年trimester归类并给出具体数值\\\",\\n    \\\"无法确认2016/5、2016/7、2016/10是否全部属于2016-17学年\\\"\\n  ]\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86\",\"page_image_id\":\"sansuo_hidden__upload_307a63e70b628ce7d648__file_b7aa139fdf000bd0d321\",\"region\":null,\"renderer_version\":\"fitz-bounded-region-v2\",\"dpi\":71.772,\"resolution_limited\":true},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\",\"PAGE_RESOLUTION_LIMITED_USE_REGION_FOR_SMALL_TEXT\",\"VISION_RESULT_PARTIAL\"],\"telemetry\":{\"elapsed_ms\":14953,\"usage\":{\"prompt_tokens\":3522,\"completion_tokens\":637,\"total_tokens\":4159,\"completion_tokens_details\":{\"text_tokens\":637},\"prompt_tokens_details\":{\"image_tokens\":2522,\"text_tokens\":1000,\"cached_tokens\":0}},\"finish_reason\":\"stop\",\"attempts\":[{\"attempt\":1,\"phase\":\"headers\",\"status\":200,\"elapsed_ms\":13725},{\"attempt\":1,\"phase\":\"complete\",\"bytes\":2330,\"elapsed_ms\":13735}]}}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 16
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T11:58:33.758Z",
+      "completedAt": "2026-11-01T11:59:46.505Z",
+      "elapsedMs": 72747
+    },
+    "sansuoClientRequestId": "ca9e0d82-e152-4bb0-bca8-16094c97ec0e",
+    "sansuoSources": [
+      {
+        "file_id": "b4efa434-e123-49fe-8aa8-0030c9fc2e50",
+        "filename": "academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1073408,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "document_id": "doc_1ae42bf2f1dc3c20b876",
+      "chunk_id": "chunk_0290658b204a14354b71",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "4bc0c55ab964e28795785747be50d0b9e5e46957e41ba8e0cee021f6b297879f",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae7296975d149fca2a3bf3d",
+      "conversation_id": "f5d6db14-f46a-4189-bf91-2e4fb48c5327",
+      "recorded_at": "2026-11-01T11:59:03.193Z"
+    },
+    {
+      "document_id": "doc_1ae42bf2f1dc3c20b876",
+      "chunk_id": "chunk_0290658b204a14354b71",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "4bc0c55ab964e28795785747be50d0b9e5e46957e41ba8e0cee021f6b297879f",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae7296975d149fca2a3bf3d",
+      "conversation_id": "f5d6db14-f46a-4189-bf91-2e4fb48c5327",
+      "recorded_at": "2026-11-01T11:59:05.942Z"
+    },
+    {
+      "document_id": "doc_1ae42bf2f1dc3c20b876",
+      "chunk_id": "chunk_0290658b204a14354b71",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "4bc0c55ab964e28795785747be50d0b9e5e46957e41ba8e0cee021f6b297879f",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae7296975d149fca2a3bf3d",
+      "conversation_id": "f5d6db14-f46a-4189-bf91-2e4fb48c5327",
+      "recorded_at": "2026-11-01T11:59:12.366Z"
+    },
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_1ae42bf2f1dc3c20b876",
+      "page": 1,
+      "page_start": 1,
+      "page_end": 1,
+      "source_sha256": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "image_id": "sansuo_hidden__upload_307a63e70b628ce7d648__file_b7aa139fdf000bd0d321",
+      "region": null,
+      "visual_result_id": "vision_66647521dbdc18ac968714a198f04e6f",
+      "vision_version": "inspect-page-v7-question-context",
+      "vision_model": "qwen3-vl-plus",
+      "version": "4bc0c55ab964e28795785747be50d0b9e5e46957e41ba8e0cee021f6b297879f",
+      "user_id": "6ae7296975d149fca2a3bf3d",
+      "conversation_id": "f5d6db14-f46a-4189-bf91-2e4fb48c5327",
+      "status": "partial",
+      "recorded_at": "2026-11-01T11:59:37.256Z"
+    }
+  ]
+}

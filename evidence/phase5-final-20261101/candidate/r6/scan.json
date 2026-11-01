@@ -1,0 +1,62 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "751caa85-f6ff-4a31-8e54-e415bedfaaad",
+  "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+  "pdf_sha256": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0",
+  "elapsed_ms": 252816,
+  "active": false,
+  "upload_ms": 446,
+  "answer": "依据所附文档，来宾市政协推动的“建设铸牢中华民族共同体意识示范区委员行动”在兴宾区街道社区的落地方式、群众评价及成效如下（均出自 **PDF 第81页**）：\n\n### 📍 街道社区具体落地方式\n1. **多支部联动共建**：兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部，共同在瑞民社区开展活动。\n2. **政协委员宣讲分享**：政协委员结合自身经历与工作实际，宣讲“铸牢中华民族共同体意识”及广西建设示范区的重大意义，号召群众参与优秀传统文化传承、地方文化古迹保护，发挥地域特色弘扬民族精神，注入“兴宾因子”。\n3. **融合传统节日开展主题党日**：结合端午节开展“粽情端午话清廉·重温初心明使命”活动，组织现场包粽子、民俗互动，并向异地扶贫搬迁户赠送粽子，以民俗为载体打开基层群众了解中华优秀传统文化的大门。\n\n### 💬 群众对宣讲的评价\n活动现场群众对宣讲给予高度评价，认为宣讲**“既有高度又有深度，既通俗易懂又深入浅出”**，赢得了在场群众的阵阵好评。（第81页）\n\n### 🤝 促进民族融合与增强向心力的成效\n* **激发向心力与凝聚力**：通过典型人物的树立、宣传与宣讲，有效激发了社区广大党员、干部群众的向心力和凝聚力。\n* **推进各民族互促互进互融**：活动切实推进了社区内各民族的互促、互进与互融，讲好了民族团结故事，传播了民族团结好声音。\n* **筑牢共有精神家园**：民俗互动与文化体验让基层百姓切身感受到传统文化魅力，极大增强了文化自信和民族自豪感，为构筑中华民族共有精神家园彰显了“兴宾特色”。（第81页）\n\n---\n\n### 📊 落地路径与成效解释示意图\n```mermaid\nflowchart TD\n    A[\"兴宾区政协机关党支部\"] --> B[\"联合农商行兴宾党支部、瑞民社区党总支\"]\n    B --> C[\"6月2日瑞民社区联合活动\"]\n    C --> D[\"政协委员宣讲分享会\"]\n    C --> E[\"端午主题党日与民俗互动\"]\n    D --> F[\"结合经历宣讲共同体意识\"]\n    E --> G[\"现场包粽子、慰问搬迁户\"]\n    F --> H[\"评价：既有高度又有深度，通俗易懂获好评\"]\n    G --> I[\"体验传统文化，增强文化自信\"]\n    H --> J[\"成效：激发向心力与凝聚力\"]\n    I --> J\n    J --> K[\"推进社区各民族互促互进互融\"]\n```\n*(注：图中关系与节点内容均严格提炼自文档第81页的报道事实。)*",
+  "tool_calls": [
+    {
+      "id": "call_f4e1bc751df24f3f859223e2",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"document_id\":\"doc_447847e13f052a290d28\",\"page\":81}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_447847e13f052a290d28\",\"filename\":\"41489021-892f-5f2a-9c49-d0515dad08a2.pdf\",\"version\":\"e7319edb669f2a52e91e0e6617569682a275ce4e6db9faedb7f7d55f21649aaa\",\"action\":\"read\",\"content\":\"[chunk_0e212913afa163d92ad9 page=81 kind=extracted_text]\\n兴宾区政协委员开展宣讲会和主题党日活动 唱响“铸牢中华民族共同体意识”政协强音\\n\\n[chunk_f5df3804d3229d4b9b93 page=81 kind=extracted_text]\\n黎慧梅\\n\\n[chunk_3090b35ad878d185af0c page=81 kind=extracted_text]\\n6月2日，来宾市兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部，在河西街道瑞民社区开展“铸牢中华民族共同体意识”政协委员宣讲分享会和“粽情端午话清廉·重温初心明使命”主题党日活动。\\n\\n[chunk_a6eef78e0f3e2be8fead page=81 kind=extracted_text]\\n参加活动的政协委员们，结合自身经历和工作实际，宣讲了“铸牢中华民族共同体意识”和“广西建设铸牢中华民族共同体意识示范区”的重大意义，号召大家积极参与实施中华民族优秀传统文化传承发展工程，加强对地方文化古迹的挖掘与保护，发挥地域特色弘扬民族优秀文化和民族精神，为构筑中华民族共有精神家园注入“兴宾因子”、彰显“兴宾特色”，在铸牢中华民族共同体意识的思想自觉、行动自觉上实现新提高。\\n\\n[chunk_beba1e27cc3fe8ab2833 page=81 kind=extracted_text]\\n宣讲活动既有高度又有深度，既通俗易懂又深入浅出，获得在场群众的阵阵好评。“感谢政协委员来到瑞民社区开展宣讲活动，今后我们将进一步讲好民族团结故事，传播民族团结好声音。通过典型人物的树立、宣传、宣讲，激发广大党员、干部群众的向心力和凝聚力，推进社区各民族互促互进互融。”河西街道瑞民社区党总支书记、主任胡自杰说道。\\n\\n[chunk_a935c8f7f6a1d989839b page=81 kind=extracted_text]\\n粽叶飘香四溢，端午情意满怀。在“粽情端午话清廉·重温初心明使命”主题党日活动环节，开展了丰富多彩的现场包粽子、民俗互动、向异地扶贫搬迁户赠送粽子，为社区群众打开了一扇了解中华优秀传统文化的大门，让基层百姓了解了中国传统文化的习俗，体验到传统文化魅力，极大增强了大家的文化自信和民族自豪感。\\n\\n[chunk_835b65c9a8e971a1ab62 page=81 kind=extracted_text]\\n把 “书香政协” 打造成履职为民的靓丽名片\\n\\n[chunk_4fb1ec5d3c96cb00e0eb page=81 kind=extracted_text]\\n——象州县政协以“4+14+2+1+N”开展委员读书实践活动纪实\\n\\n[chunk_8ad8a87c2d2c57d42795 page=81 kind=extracted_text]\\n潘照春 韦冠林 郑南瑛 黄炳壮\\n\\n[chunk_f8e204c9946ae49e3f6e page=81 kind=extracted_text]\\n“在象州书城，只要听到朗读和翻书的声音，就能闻出带着‘政协味道’的书香来。”7月1日晚，在以“庆七一·颂党恩”红色经典诵读为主题的“书香象州·朗读者”读书打卡行动现场，谈到象州书城变身“网红打卡点”时，读书爱好者对主办方象州县政协赞不绝口。作为象州县“书香政协”委员读书实践活动基地，每周五晚上，“书香象州·朗读者”读书打卡行动都会如期在这里举行。参与读书打卡行动的除了政协委员，还有老、少、中、青各个年龄段的读者。活动以朗诵为主，也有读者以歌唱、舞蹈、乐器演奏、书法绘画等多元化的方式进行分享。\\n\\n[chunk_f671488efbb8be423f90 page=81 kind=extracted_text]\\n这是象州县政协高度重视载体建设，着力打造读书实践工作品牌的一个缩影。\\n\\n[chunk_18d1961dfaeca43c637f page=81 kind=extracted_text]\\n今年以来，象州县政协将委员读书与履职工作紧密结合，坚持党建引领，创新读书平台，营造浓厚氛围，注重学用相长，推动委员读书实践活动深入开展。\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_0e212913afa163d92ad9\",\"source_chunk_id\":\"mineru_71988ec85c90df1c26abb117\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_85ec2b278ac6851f6168a1ce\",\"image_id\":null,\"bbox\":[136,123,860,190],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_f5df3804d3229d4b9b93\",\"source_chunk_id\":\"mineru_de81adbf9fb16f474d691fbe\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_1c45831f16f7b04aa8ec56d8\",\"image_id\":null,\"bbox\":[460,209,544,226],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_3090b35ad878d185af0c\",\"source_chunk_id\":\"mineru_6430f94fbd04e0854f54288f\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_7f0e8377d6f76abbf8172138\",\"image_id\":null,\"bbox\":[92,241,486,357],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_a6eef78e0f3e2be8fead\",\"source_chunk_id\":\"mineru_7d0a42962e801c99450620af\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_4cc4d27c04fb693cc4b68dfb\",\"image_id\":null,\"bbox\":[92,358,487,572],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_beba1e27cc3fe8ab2833\",\"source_chunk_id\":\"mineru_4a5f4c74c2d960b78e306321\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_71d6a8560d35f7ce31a6ca17\",\"image_id\":null,\"bbox\":[508,241,904,415],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_a935c8f7f6a1d989839b\",\"source_chunk_id\":\"mineru_ebaa5f369534b14bc5b7f8bf\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_bfb63c2668cd2493cae9c514\",\"image_id\":null,\"bbox\":[509,416,905,572],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_835b65c9a8e971a1ab62\",\"source_chunk_id\":\"mineru_ba51abc661dcc2554d0c42e3\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_29eed6c123954792f21fc9e4\",\"image_id\":null,\"bbox\":[136,612,860,644],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_4fb1ec5d3c96cb00e0eb\",\"source_chunk_id\":\"mineru_575d590167bf8294f9bfad4e\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_545f038419fadad65dea0b4c\",\"image_id\":null,\"bbox\":[107,658,888,680],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_8ad8a87c2d2c57d42795\",\"source_chunk_id\":\"mineru_bb60b0174370e82254104a80\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_dc9c926c12da7e751e9b29ea\",\"image_id\":null,\"bbox\":[353,694,644,712],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_f8e204c9946ae49e3f6e\",\"source_chunk_id\":\"mineru_42f4ce20c708e1e4b42923c2\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_648a717bb996415513c420cf\",\"image_id\":null,\"bbox\":[91,724,487,919],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_f671488efbb8be423f90\",\"source_chunk_id\":\"mineru_5ff350afc77d51aea69cdca4\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_0a9f78a63e49881ba5fb9a6f\",\"image_id\":null,\"bbox\":[509,802,902,840],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_18d1961dfaeca43c637f\",\"source_chunk_id\":\"mineru_69898e8ee1ce75bdbdbb7fc4\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_798fdd71a05a9526f51ecca5\",\"image_id\":null,\"bbox\":[509,841,904,918],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}],\"reference\":{\"document_id\":\"doc_447847e13f052a290d28\",\"chunk_id\":\"chunk_0e212913afa163d92ad9\",\"page_start\":81,\"page_end\":81,\"section_id\":null,\"table_id\":null,\"version\":\"e7319edb669f2a52e91e0e6617569682a275ce4e6db9faedb7f7d55f21649aaa\",\"source_hash\":\"5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0\",\"user_id\":\"6ae73548fbae1de9b1b18ae2\",\"conversation_id\":\"751caa85-f6ff-4a31-8e54-e415bedfaaad\"},\"page_coverage\":[{\"page\":81,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 74
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T12:49:13.317Z",
+      "completedAt": "2026-11-01T12:53:14.892Z",
+      "elapsedMs": 241575
+    },
+    "sansuoClientRequestId": "727c1774-74ae-40ce-917b-54ca26aafb85",
+    "sansuoSources": [
+      {
+        "file_id": "f44df096-a3f4-48b5-988d-ce199cbe7fed",
+        "filename": "41489021-892f-5f2a-9c49-d0515dad08a2.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 33875317,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "document_id": "doc_447847e13f052a290d28",
+      "chunk_id": "chunk_0e212913afa163d92ad9",
+      "page_start": 81,
+      "page_end": 81,
+      "section_id": null,
+      "table_id": null,
+      "version": "e7319edb669f2a52e91e0e6617569682a275ce4e6db9faedb7f7d55f21649aaa",
+      "source_hash": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0",
+      "user_id": "6ae73548fbae1de9b1b18ae2",
+      "conversation_id": "751caa85-f6ff-4a31-8e54-e415bedfaaad",
+      "recorded_at": "2026-11-01T12:52:38.779Z"
+    }
+  ]
+}

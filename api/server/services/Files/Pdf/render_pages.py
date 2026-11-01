@@ -11,6 +11,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--input', required=True)
     parser.add_argument('--output-dir', required=True)
+    parser.add_argument('--result-json', help='Write page/layout JSON to a file instead of stdout')
     parser.add_argument('--dpi', type=int, default=180)
     parser.add_argument('--layout', action='store_true')
     parser.add_argument('--metadata-only', action='store_true')
@@ -131,11 +132,18 @@ def main():
     finally:
         document.close()
 
-    print(json.dumps({
+    result = json.dumps({
         'document_page_count': document_page_count,
         'rendered_page_count': len(pages),
         'pages': pages,
-    }, ensure_ascii=False))
+    }, ensure_ascii=False)
+    if args.result_json:
+        result_path = Path(args.result_json)
+        temporary = result_path.with_suffix('.tmp')
+        temporary.write_text(result, encoding='utf-8')
+        temporary.replace(result_path)
+    else:
+        print(result)
 
 
 if __name__ == '__main__':

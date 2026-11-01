@@ -1,0 +1,1489 @@
+[
+  {
+    "arm": "baseline",
+    "batch": "r6",
+    "case": "academic",
+    "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+    "completed": true,
+    "elapsed_ms": 50462,
+    "upload_ms": 165,
+    "answer": "根据您提供的 PDF 文档（Mahidol University 的 Wikipedia 写作任务海报），**无法确认** 2016-17 学年哪个 trimester 上传到 Wikimedia Commons 的媒体数量最多。\n\n该文档仅包含以下信息：\n- 自 2014 年 9 月起，维基百科写作任务被纳入 Mahidol University International College 的本科化学课程（第 1 页）。\n- 共有 103 名学生参与，创建了 56 篇高质量文章，改进了超过 81 篇文章，贡献相当于 364 页书面内容（第 1 页）。\n- 参考文献指向 2017 年发表在 *Catalyst* 期刊上的完整论文（Suwannakhan A & Limpanuparb T. 2017），但本 PDF 仅为会议/学术海报，**未包含按学期（trimester）划分的 Wikimedia Commons 媒体上传统计数据**。\n\n如需该详细数据，建议查阅海报中引用的完整期刊论文（*Catalyst* 15(2): 65-79）。",
+    "failure": [],
+    "model_tokens_initial": 20860,
+    "model_calls_initial": 3,
+    "rerank_tokens_initial": 0,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 4,
+          "chars": 2289,
+          "total_tokens": 585
+        },
+        "warnings": [],
+        "elapsed_ms": 805
+      },
+      {
+        "usage": {
+          "calls": 5,
+          "chars": 2355,
+          "total_tokens": 604
+        },
+        "warnings": [],
+        "elapsed_ms": 234
+      },
+      {
+        "usage": {
+          "calls": 6,
+          "chars": 2393,
+          "total_tokens": 616
+        },
+        "warnings": [],
+        "elapsed_ms": 860
+      },
+      {
+        "usage": {
+          "calls": 7,
+          "chars": 2443,
+          "total_tokens": 634
+        },
+        "warnings": [],
+        "elapsed_ms": 291
+      },
+      {
+        "usage": {
+          "calls": 8,
+          "chars": 2483,
+          "total_tokens": 650
+        },
+        "warnings": [],
+        "elapsed_ms": 163
+      },
+      {
+        "usage": {
+          "calls": 9,
+          "chars": 2510,
+          "total_tokens": 656
+        },
+        "warnings": [],
+        "elapsed_ms": 180
+      }
+    ],
+    "tool_actions": {
+      "search": 2,
+      "read": 1
+    },
+    "errors": [],
+    "visual_attempts_in_initial_tools": 0,
+    "visual_statuses": {},
+    "visual_tokens_initial_lower_bound": 0,
+    "tool_reference_pages": [],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 4619,
+      "Keyword": 5,
+      "BM25": 11,
+      "Vector": 2533,
+      "RRF": 0,
+      "Rerank": 2602,
+      "EvidenceDelivery": 9892,
+      "ModelEnd": 29690,
+      "ToolOutput": 6597,
+      "AgentToolEnd": 6677,
+      "AgentToolBatchEnd": 6618
+    },
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": null,
+    "warm_answer": null,
+    "scope_hash": "18025d9fc80e5de5b5d2",
+    "core_gold_match": false,
+    "extra_fact_error": true,
+    "failure_stage": "A/B",
+    "source_review_note": "未视觉读取原图，错误说无统计数据",
+    "persisted_reference_count": 3,
+    "visual_calls": [],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r6",
+    "case": "finance",
+    "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+    "completed": true,
+    "elapsed_ms": 79590,
+    "upload_ms": 120,
+    "answer": "根据文档第 2 页的 `GENERAL FUND REVENUES FY 2016` 图表及同页数据表，代表最小部分的类别是 **Licenses/Permits（许可证/许可费）**，金额为 **$76,000**。\n\n该类别占一般基金总收入（总计 $5,561,940）的比例约为 **1.37%**。",
+    "failure": [],
+    "model_tokens_initial": 6039,
+    "model_calls_initial": 1,
+    "rerank_tokens_initial": 3175,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 5,
+          "chars": 10482,
+          "total_tokens": 5748
+        },
+        "warnings": [],
+        "elapsed_ms": 1801
+      },
+      {
+        "usage": {
+          "calls": 6,
+          "chars": 10533,
+          "total_tokens": 5756
+        },
+        "warnings": [],
+        "elapsed_ms": 185
+      },
+      {
+        "usage": {
+          "calls": 7,
+          "chars": 10576,
+          "total_tokens": 5763
+        },
+        "warnings": [],
+        "elapsed_ms": 220
+      }
+    ],
+    "tool_actions": {
+      "inspect_page": 1
+    },
+    "errors": [],
+    "visual_attempts_in_initial_tools": 1,
+    "visual_statuses": {
+      "partial": 1
+    },
+    "visual_tokens_initial_lower_bound": 4121,
+    "tool_reference_pages": [
+      2
+    ],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 1440,
+      "Keyword": 5,
+      "BM25": 7,
+      "Vector": 2206,
+      "RRF": 0,
+      "Rerank": 2079,
+      "EvidenceDelivery": 5786,
+      "ModelEnd": 73063,
+      "PageVision": 20943,
+      "ToolOutput": 20992,
+      "AgentToolEnd": 21024,
+      "AgentToolBatchEnd": 21007
+    },
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": null,
+    "warm_answer": null,
+    "scope_hash": "56e30ac74be84cda0817",
+    "core_gold_match": false,
+    "extra_fact_error": false,
+    "failure_stage": "B",
+    "source_review_note": "给金额及计算1.37%，未答颜色/图示1%；与gold不匹配",
+    "persisted_reference_count": 1,
+    "visual_calls": [
+      {
+        "status": "partial",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 3198,
+          "completion_tokens": 923,
+          "total_tokens": 4121,
+          "completion_tokens_details": {
+            "text_tokens": 923
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2510,
+            "text_tokens": 688,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      }
+    ],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r6",
+    "case": "netflix",
+    "id": "mml:1021",
+    "completed": false,
+    "elapsed_ms": 182418,
+    "upload_ms": 132,
+    "answer": "文件解析失败，尚未启动模型：文件“NETFLIX_2015_10K.pdf”解析失败：pdf_vision_fallback_failed:stdout maxBuffer length exceeded",
+    "failure": {
+      "code": "FILE_PARSE_FAILED"
+    },
+    "model_tokens_initial": 0,
+    "model_calls_initial": 0,
+    "rerank_tokens_initial": 0,
+    "vector_events_initial": [],
+    "tool_actions": {},
+    "errors": [],
+    "visual_attempts_in_initial_tools": 0,
+    "visual_statuses": {},
+    "visual_tokens_initial_lower_bound": 0,
+    "tool_reference_pages": [],
+    "stage_elapsed_ms_with_followup": {},
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": 1656,
+    "warm_answer": "文件解析失败，尚未启动模型：文件“NETFLIX_2015_10K.pdf”解析失败：pdf_vision_fallback_failed:stdout maxBuffer length exceeded",
+    "scope_hash": "78133a0928abbfa37727",
+    "core_gold_match": false,
+    "extra_fact_error": null,
+    "failure_stage": "parse",
+    "source_review_note": "云端失败后FITZ布局stdout超限，3次任务失败，无模型答案",
+    "persisted_reference_count": 0,
+    "visual_calls": [],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r6",
+    "case": "phone",
+    "id": "mml:888",
+    "completed": true,
+    "elapsed_ms": 102304,
+    "upload_ms": 587,
+    "answer": "根据所附文档 `mi_phone.pdf` 的元数据信息，该 PDF 总共只有 **30 页**（`page_count: 30`），因此**不存在第 40-47 页**，无法为您统计该页码范围内的 applications 数量。\n\n如果您是指文档中其他页码（例如关于住宿申请 Application Steps 的第 27 页），或需要统计其他特定内容，请提供正确的页码范围，我将为您进一步核实。",
+    "failure": [],
+    "model_tokens_initial": 0,
+    "model_calls_initial": 0,
+    "rerank_tokens_initial": 2303,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 15,
+          "chars": 28891,
+          "total_tokens": 6845
+        },
+        "warnings": [],
+        "elapsed_ms": 2410
+      },
+      {
+        "usage": {
+          "calls": 16,
+          "chars": 28928,
+          "total_tokens": 6856
+        },
+        "warnings": [],
+        "elapsed_ms": 341
+      }
+    ],
+    "tool_actions": {},
+    "errors": [],
+    "visual_attempts_in_initial_tools": 0,
+    "visual_statuses": {},
+    "visual_tokens_initial_lower_bound": 0,
+    "tool_reference_pages": [],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 8324,
+      "Keyword": 14,
+      "BM25": 20,
+      "Vector": 3315,
+      "RRF": 0,
+      "Rerank": 4001,
+      "EvidenceDelivery": 15860,
+      "ModelEnd": 16572
+    },
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": 13835,
+    "warm_answer": "根据您提供的文档 `mi_phone.pdf`，该文件总共只有 **30 页**，因此**不存在第 40-47 页**，无法为您统计该范围内的内容。\n\n文档中关于 **Applications（申请）** 的内容主要出现在 **第 27 页**，标题为 \"**Application Steps and Important Dates**\"。如果您是指这一页或文档中的其他部分，请告诉我，我很乐意为您详细解读。",
+    "scope_hash": "2795511c4d2e21fcab19",
+    "core_gold_match": true,
+    "extra_fact_error": false,
+    "failure_stage": null,
+    "source_review_note": "无40–47页，正确不可回答",
+    "persisted_reference_count": 0,
+    "visual_calls": [],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r6",
+    "case": "scan",
+    "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+    "completed": true,
+    "elapsed_ms": 897429,
+    "upload_ms": 629,
+    "answer": "根据对您提供的 PDF 文件《来宾政协》（2022年9月，总第57期，中国人民政治协商会议来宾市第五届委员会第二次会议会刊）的全面检索与多页原页核对（第1、3、4、10、20、30、50页等），**该文档中并未包含您所提及的“建设铸牢中华民族共同体意识示范区委员行动”在兴宾区街道社区落地的相关内容，也未提及6月2日的相关宣讲活动及其成效评价。**\n\n具体说明如下：\n1. **文档性质与时间**：该 PDF 为2022年9月印发的市政协五届二次会议会刊，主要内容为会议开幕、领导讲话、政协工作报告、联组讨论及提案审查等常规会务信息，时间范围聚焦于2022年1月的会议期间。\n2. **关键词缺失**：经逐页视觉识别与文本检索，全文未出现“铸牢中华民族共同体意识”“兴宾区”“委员行动”“街道”“社区”“6月2日”“宣讲”等词组或其组合。文档中仅出现“来宾市”“政协”“委员”等通用表述，但均未与您问题中的具体活动场景关联。\n3. **结论**：您询问的“兴宾区街道社区落地方式”“6月2日活动宣讲评价”及“促进民族融合成效”等内容，**不在本份 PDF 文档的记载范围内**。如需获取该活动的具体信息，建议查阅来宾市政协后续期号（如2023年或2024年）的会刊、兴宾区统战部/民宗局的工作简报或当地官方新闻报道。",
+    "failure": [],
+    "model_tokens_initial": 226845,
+    "model_calls_initial": 17,
+    "rerank_tokens_initial": 0,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 0,
+          "chars": 0,
+          "total_tokens": 0
+        },
+        "warnings": [],
+        "elapsed_ms": 0
+      },
+      {
+        "usage": {
+          "calls": 0,
+          "chars": 0,
+          "total_tokens": 0
+        },
+        "warnings": [],
+        "elapsed_ms": 0
+      },
+      {
+        "usage": {
+          "calls": 0,
+          "chars": 0,
+          "total_tokens": 0
+        },
+        "warnings": [],
+        "elapsed_ms": 0
+      },
+      {
+        "usage": {
+          "calls": 0,
+          "chars": 0,
+          "total_tokens": 0
+        },
+        "warnings": [],
+        "elapsed_ms": 1
+      }
+    ],
+    "tool_actions": {
+      "search": 1,
+      "inspect_page": 14,
+      "visual_search": 1
+    },
+    "errors": [
+      {
+        "code": "PAGE_TEXT_UNAVAILABLE",
+        "message": "当前范围没有可用内容。"
+      },
+      {
+        "code": "INVALID_INSPECTION",
+        "message": "inspect_page 需要 document_id、正整数 page、非空 query；max_chars 范围100–20000。"
+      },
+      {
+        "code": "VISION_TIMEOUT"
+      },
+      {
+        "code": "VISION_TIMEOUT"
+      },
+      {
+        "code": "VISION_INSPECTION_FAILED"
+      },
+      {
+        "code": "VISUAL_SUMMARY_UNAVAILABLE",
+        "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。"
+      },
+      {
+        "code": "VISION_BUDGET_EXCEEDED"
+      }
+    ],
+    "visual_attempts_in_initial_tools": 14,
+    "visual_statuses": {
+      "unavailable": 5,
+      "partial": 8,
+      "ok": 1
+    },
+    "visual_tokens_initial_lower_bound": 25928,
+    "tool_reference_pages": [
+      1,
+      2,
+      3,
+      4,
+      10,
+      20,
+      30,
+      50
+    ],
+    "stage_elapsed_ms_with_followup": {
+      "ModelEnd": 206135,
+      "QueryProcessor": 7513,
+      "Keyword": 7,
+      "BM25": 11,
+      "Vector": 1,
+      "RRF": 1,
+      "EvidenceDelivery": 7558,
+      "ToolOutput": 333329,
+      "AgentToolEnd": 333599,
+      "AgentToolBatchEnd": 333542,
+      "PageVision": 160472
+    },
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": null,
+    "warm_answer": null,
+    "scope_hash": "b66f5efbfff9a1061bca",
+    "core_gold_match": false,
+    "extra_fact_error": true,
+    "failure_stage": "A/B",
+    "source_review_note": "云端失败无OCR，盲看多页未定位81页，最终错误声称不存在",
+    "persisted_reference_count": 9,
+    "visual_calls": [
+      {
+        "status": "unavailable",
+        "error": {
+          "code": "INVALID_INSPECTION",
+          "message": "inspect_page 需要 document_id、正整数 page、非空 query；max_chars 范围100–20000。"
+        },
+        "tokens": null,
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "partial",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 2712,
+          "completion_tokens": 247,
+          "total_tokens": 2959,
+          "completion_tokens_details": {
+            "text_tokens": 247
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2503,
+            "text_tokens": 209,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "partial",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 2691,
+          "completion_tokens": 155,
+          "total_tokens": 2846,
+          "completion_tokens_details": {
+            "text_tokens": 155
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2496,
+            "text_tokens": 195,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "partial",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 2699,
+          "completion_tokens": 111,
+          "total_tokens": 2810,
+          "completion_tokens_details": {
+            "text_tokens": 111
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2496,
+            "text_tokens": 203,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "unavailable",
+        "error": {
+          "code": "VISION_TIMEOUT"
+        },
+        "tokens": null,
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "unavailable",
+        "error": {
+          "code": "VISION_TIMEOUT"
+        },
+        "tokens": null,
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "ok",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 2703,
+          "completion_tokens": 92,
+          "total_tokens": 2795,
+          "completion_tokens_details": {
+            "text_tokens": 92
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2496,
+            "text_tokens": 207,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "partial",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 2707,
+          "completion_tokens": 136,
+          "total_tokens": 2843,
+          "completion_tokens_details": {
+            "text_tokens": 136
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2496,
+            "text_tokens": 211,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "partial",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 2705,
+          "completion_tokens": 240,
+          "total_tokens": 2945,
+          "completion_tokens_details": {
+            "text_tokens": 240
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2496,
+            "text_tokens": 209,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "unavailable",
+        "error": {
+          "code": "VISION_INSPECTION_FAILED"
+        },
+        "tokens": null,
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "partial",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 2723,
+          "completion_tokens": 229,
+          "total_tokens": 2952,
+          "completion_tokens_details": {
+            "text_tokens": 229
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2496,
+            "text_tokens": 227,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "partial",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 2723,
+          "completion_tokens": 170,
+          "total_tokens": 2893,
+          "completion_tokens_details": {
+            "text_tokens": 170
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2496,
+            "text_tokens": 227,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "partial",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 2723,
+          "completion_tokens": 162,
+          "total_tokens": 2885,
+          "completion_tokens_details": {
+            "text_tokens": 162
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2496,
+            "text_tokens": 227,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "unavailable",
+        "error": {
+          "code": "VISION_BUDGET_EXCEEDED"
+        },
+        "tokens": null,
+        "passes": 1,
+        "cache_hit": false
+      }
+    ],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r6",
+    "case": "table",
+    "id": "mml:80",
+    "completed": false,
+    "elapsed_ms": 157696,
+    "upload_ms": 151,
+    "answer": "",
+    "failure": [
+      {
+        "type": "error",
+        "error": "An error occurred while processing the request: terminated"
+      }
+    ],
+    "model_tokens_initial": 12062,
+    "model_calls_initial": 2,
+    "rerank_tokens_initial": 6788,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 37,
+          "chars": 116559,
+          "total_tokens": 33344
+        },
+        "warnings": [],
+        "elapsed_ms": 14664
+      },
+      {
+        "usage": {
+          "calls": 38,
+          "chars": 116603,
+          "total_tokens": 33352
+        },
+        "warnings": [],
+        "elapsed_ms": 557
+      },
+      {
+        "usage": {
+          "calls": 39,
+          "chars": 116611,
+          "total_tokens": 33355
+        },
+        "warnings": [],
+        "elapsed_ms": 768
+      }
+    ],
+    "tool_actions": {
+      "search": 1,
+      "read_table": 1
+    },
+    "errors": [],
+    "visual_attempts_in_initial_tools": 0,
+    "visual_statuses": {},
+    "visual_tokens_initial_lower_bound": 0,
+    "tool_reference_pages": [
+      13
+    ],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 1227,
+      "Keyword": 6,
+      "BM25": 10,
+      "Vector": 15989,
+      "RRF": 0,
+      "Rerank": 3345,
+      "EvidenceDelivery": 20955,
+      "ModelEnd": 17978,
+      "ToolOutput": 3001,
+      "AgentToolEnd": 3072,
+      "AgentToolBatchEnd": 3019
+    },
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": null,
+    "warm_answer": null,
+    "scope_hash": "aa5f08004b69ec687503",
+    "core_gold_match": false,
+    "extra_fact_error": null,
+    "failure_stage": "transport",
+    "source_review_note": "搜索和表格读取已成功，流terminated，无最终回答",
+    "persisted_reference_count": 2,
+    "visual_calls": [],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r6",
+    "case": "tree",
+    "id": "mml:76",
+    "completed": true,
+    "elapsed_ms": 99180,
+    "upload_ms": 134,
+    "answer": "根据文档第 2 页的 **Fig. 1. Technology tree of RAG research**（RAG 研究技术树），该树形图包含三个主干分支，分别对应 RAG 技术介入大模型的三个阶段。各分支及其叶子节点（具体方法/模型名称）数量如下：\n\n| 分支名称 | 颜色标识 | 叶子节点数量 |\n|:---|:---|:---|\n| **Pre-training（预训练）** | 橙色 | **5** |\n| Fine-tuning（微调） | 青色 | 22 |\n| Inference（推理） | 蓝色 | 37 |\n\n因此，**叶子节点最少的分支是 Pre-training（预训练）**，仅有 5 个叶子节点。\n\n> 引用来源：PDF 第 2 页，Fig. 1 及其图注。",
+    "failure": [],
+    "model_tokens_initial": 17938,
+    "model_calls_initial": 3,
+    "rerank_tokens_initial": 3015,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 37,
+          "chars": 116575,
+          "total_tokens": 33352
+        },
+        "warnings": [],
+        "elapsed_ms": 9780
+      },
+      {
+        "usage": {
+          "calls": 38,
+          "chars": 116630,
+          "total_tokens": 33362
+        },
+        "warnings": [],
+        "elapsed_ms": 432
+      }
+    ],
+    "tool_actions": {
+      "visual_page": 1,
+      "inspect_page": 2
+    },
+    "errors": [
+      {
+        "code": "VISUAL_SUMMARY_UNAVAILABLE",
+        "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。"
+      }
+    ],
+    "visual_attempts_in_initial_tools": 2,
+    "visual_statuses": {
+      "ok": 1,
+      "partial": 1
+    },
+    "visual_tokens_initial_lower_bound": 7625,
+    "tool_reference_pages": [
+      2
+    ],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 1377,
+      "Keyword": 5,
+      "BM25": 8,
+      "Vector": 10212,
+      "RRF": 0,
+      "Rerank": 2096,
+      "EvidenceDelivery": 13996,
+      "ModelEnd": 29104,
+      "ToolOutput": 19145,
+      "AgentToolEnd": 19188,
+      "AgentToolBatchEnd": 19160,
+      "PageVision": 19056
+    },
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": null,
+    "warm_answer": null,
+    "scope_hash": "44c194df114bf9a95eb8",
+    "core_gold_match": true,
+    "extra_fact_error": true,
+    "failure_stage": "C",
+    "source_review_note": "核心Pre-training正确，附加分支数量未获可靠证据",
+    "persisted_reference_count": 2,
+    "visual_calls": [
+      {
+        "status": "ok",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 3416,
+          "completion_tokens": 214,
+          "total_tokens": 3630,
+          "completion_tokens_details": {
+            "text_tokens": 214
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2510,
+            "text_tokens": 906,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      },
+      {
+        "status": "partial",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 3432,
+          "completion_tokens": 563,
+          "total_tokens": 3995,
+          "completion_tokens_details": {
+            "text_tokens": 563
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2510,
+            "text_tokens": 922,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      }
+    ],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r6",
+    "case": "academic",
+    "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+    "completed": true,
+    "elapsed_ms": 211281,
+    "upload_ms": 130,
+    "answer": "根据对 PDF 第 1 页原图的视觉核查，文档包含 **Figure 4: Number of uploaded media**（上传媒体数量柱状图），横轴覆盖 2014/15 T1 至 2017/18 T2 各学期，纵轴为媒体数量（0–250）。\n\n针对 **2016–17 学年**（对应横轴标签 2016/17 T1、T2、T3），视觉识别显示三个学期中 **2016/17 T3** 的柱高最高（目视估算约 160，T1 约 100，T2 约 50）。\n\n**但需明确说明以下限制：**\n1. 图 4 中各柱**无精确数值标签**，仅能通过柱高目视估算，不符合精确数据确认标准。\n2. 文档正文（RESULTS、CONCLUSIONS 等部分）及图注仅提及\"A total of 788 media were uploaded to Wikimedia Commons\"，**未按学期或学年细分具体数量**。\n3. 文档未明确定义 trimester 与 academic year 的映射关系。\n\n因此，**基于现有解析文本无法精确确认** 2016–17 学年中哪一 trimester 上传媒体最多；若仅依据图 4 柱状图的视觉高度推断，**2016/17 T3** 为最高，但该结论缺乏精确数值支撑。",
+    "failure": [],
+    "model_tokens_initial": 33272,
+    "model_calls_initial": 5,
+    "rerank_tokens_initial": 793,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 4,
+          "chars": 2289,
+          "total_tokens": 585
+        },
+        "warnings": [],
+        "elapsed_ms": 8800
+      },
+      {
+        "usage": {
+          "calls": 5,
+          "chars": 2355,
+          "total_tokens": 604
+        },
+        "warnings": [],
+        "elapsed_ms": 1165
+      },
+      {
+        "usage": {
+          "calls": 6,
+          "chars": 2405,
+          "total_tokens": 620
+        },
+        "warnings": [],
+        "elapsed_ms": 14954
+      },
+      {
+        "usage": {
+          "calls": 7,
+          "chars": 2457,
+          "total_tokens": 620
+        },
+        "warnings": [
+          "VECTOR_REQUEST_FAILED"
+        ],
+        "elapsed_ms": 5056
+      }
+    ],
+    "tool_actions": {
+      "search": 2,
+      "read": 2,
+      "inspect_page": 1
+    },
+    "errors": [],
+    "visual_attempts_in_initial_tools": 1,
+    "visual_statuses": {
+      "partial": 1
+    },
+    "visual_tokens_initial_lower_bound": 10164,
+    "tool_reference_pages": [
+      1
+    ],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 19404,
+      "Keyword": 3,
+      "BM25": 7,
+      "Vector": 29975,
+      "RRF": 0,
+      "Rerank": 17310,
+      "EvidenceDelivery": 66797,
+      "ModelTransport": 81500,
+      "ModelEnd": 58240,
+      "ToolOutput": 101726,
+      "AgentToolEnd": 101785,
+      "AgentToolBatchEnd": 101758,
+      "PageVisionTransport": 97211,
+      "PageVision": 51249
+    },
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": null,
+    "warm_answer": null,
+    "scope_hash": "64ebe1ce9ef334b4d23f",
+    "core_gold_match": false,
+    "extra_fact_error": true,
+    "failure_stage": "C/B",
+    "source_review_note": "提及T3但最终无法确认；两次VL年份冲突且附加数字错，不判通过",
+    "persisted_reference_count": 5,
+    "visual_calls": [
+      {
+        "status": "partial",
+        "error": null,
+        "tokens": {
+          "total_tokens": 10164,
+          "prompt_tokens": 8978,
+          "completion_tokens": 1186
+        },
+        "passes": 2,
+        "cache_hit": false
+      }
+    ],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r6",
+    "case": "finance",
+    "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+    "completed": true,
+    "elapsed_ms": 146503,
+    "upload_ms": 109,
+    "answer": "Based on the **General Fund Revenues FY 2016** table and chart legend on **Page 2**, the category representing the smallest portion is **Licenses/Permits** at `$76,000`. \n\nThis corresponds to approximately **1.37%** of the total General Fund Revenues (`$76,000 / $5,561,940`).",
+    "failure": [],
+    "model_tokens_initial": 22999,
+    "model_calls_initial": 3,
+    "rerank_tokens_initial": 3175,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 5,
+          "chars": 10482,
+          "total_tokens": 5748
+        },
+        "warnings": [],
+        "elapsed_ms": 2165
+      },
+      {
+        "usage": {
+          "calls": 6,
+          "chars": 10543,
+          "total_tokens": 5757
+        },
+        "warnings": [],
+        "elapsed_ms": 244
+      },
+      {
+        "usage": {
+          "calls": 7,
+          "chars": 10586,
+          "total_tokens": 5764
+        },
+        "warnings": [],
+        "elapsed_ms": 295
+      }
+    ],
+    "tool_actions": {
+      "inspect_page": 1,
+      "read": 1
+    },
+    "errors": [
+      {
+        "code": "VISION_TIMEOUT",
+        "stage": "vision_model",
+        "category": "MODEL_TIMEOUT",
+        "http_status": null,
+        "cause": null,
+        "retryable": false
+      }
+    ],
+    "visual_attempts_in_initial_tools": 1,
+    "visual_statuses": {
+      "unavailable": 1
+    },
+    "visual_tokens_initial_lower_bound": 0,
+    "tool_reference_pages": [
+      2
+    ],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 1309,
+      "Keyword": 3,
+      "BM25": 5,
+      "Vector": 2704,
+      "RRF": 0,
+      "Rerank": 1927,
+      "EvidenceDelivery": 6057,
+      "ModelTransport": 167133,
+      "ModelEnd": 111986,
+      "PageVisionTransport": 60017,
+      "PageVision": 60518,
+      "ToolOutput": 60592,
+      "AgentToolEnd": 67235,
+      "AgentToolBatchEnd": 67205
+    },
+    "model_retry_events_with_followup": [
+      {
+        "stage": "ModelTransport",
+        "scope_hash": "1d5b316faacb7c8dc830",
+        "attempt": 1,
+        "phase": "failed",
+        "code": "MODEL_NETWORK_ERROR",
+        "retryable": true,
+        "status": null,
+        "cause": "UND_ERR_CONNECT_TIMEOUT",
+        "retry": true,
+        "delay_ms": 300,
+        "elapsed_ms": 10525,
+        "export_log_time_utc": "2026-11-01T12:33:27Z"
+      }
+    ],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": null,
+    "warm_answer": null,
+    "scope_hash": "1d5b316faacb7c8dc830",
+    "core_gold_match": false,
+    "extra_fact_error": false,
+    "failure_stage": "transport/B",
+    "source_review_note": "VL60秒超时，改按表计算1.37%，遗漏颜色",
+    "persisted_reference_count": 1,
+    "visual_calls": [
+      {
+        "status": "unavailable",
+        "error": {
+          "code": "VISION_TIMEOUT",
+          "stage": "vision_model",
+          "category": "MODEL_TIMEOUT",
+          "http_status": null,
+          "cause": null,
+          "retryable": false
+        },
+        "tokens": null,
+        "passes": 1,
+        "cache_hit": false
+      }
+    ],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r6",
+    "case": "netflix",
+    "id": "mml:1021",
+    "completed": true,
+    "elapsed_ms": 228852,
+    "upload_ms": 186,
+    "answer": "根据文档第17页的财务数据摘要表，Netflix在FY2015（截至2015年12月31日）的营运资金（Working capital）为 **1,902,216**（单位：千美元）。",
+    "failure": [],
+    "model_tokens_initial": 5314,
+    "model_calls_initial": 1,
+    "rerank_tokens_initial": 3884,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 0,
+          "chars": 0,
+          "total_tokens": 0
+        },
+        "warnings": [
+          "VECTOR_INDEX_BUDGET_EXCEEDED"
+        ],
+        "elapsed_ms": 162
+      },
+      {
+        "usage": {
+          "calls": 0,
+          "chars": 0,
+          "total_tokens": 0
+        },
+        "warnings": [
+          "VECTOR_INDEX_BUDGET_EXCEEDED"
+        ],
+        "elapsed_ms": 137
+      },
+      {
+        "usage": {
+          "calls": 0,
+          "chars": 0,
+          "total_tokens": 0
+        },
+        "warnings": [
+          "VECTOR_INDEX_BUDGET_EXCEEDED"
+        ],
+        "elapsed_ms": 144
+      }
+    ],
+    "tool_actions": {},
+    "errors": [],
+    "visual_attempts_in_initial_tools": 0,
+    "visual_statuses": {},
+    "visual_tokens_initial_lower_bound": 0,
+    "tool_reference_pages": [],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 3152,
+      "Keyword": 7,
+      "BM25": 9,
+      "Vector": 1027,
+      "RRF": 0,
+      "Rerank": 4205,
+      "EvidenceDelivery": 9033,
+      "ModelTransport": 14840,
+      "ModelEnd": 13130
+    },
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": 12384,
+    "warm_answer": "根据文档第 17 页的财务数据摘要表（Selected Consolidated Financial Data），Netflix 在 FY2015（截至 2015 年 12 月 31 日）的营运资金（Working capital）为 **1,902,216**（单位：千美元）。",
+    "scope_hash": "51bda19b8e3f5b1bc870",
+    "core_gold_match": true,
+    "extra_fact_error": false,
+    "failure_stage": null,
+    "source_review_note": "首次解析失败、重试成功；17页核心正确，持久引用缺失",
+    "persisted_reference_count": 0,
+    "visual_calls": [],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r6",
+    "case": "phone",
+    "id": "mml:888",
+    "completed": true,
+    "elapsed_ms": 158894,
+    "upload_ms": 1040,
+    "answer": "根据文档信息，该 PDF 文件总共只有 **30 页**（`page_count: 30`），因此**不存在第 40-47 页**。\n\n由于文档内容在第 30 页结束，无法提供第 40-47 页中提到的应用程序数量。如果您指的是其他文档或特定的页码范围，请核对后重新提问。",
+    "failure": [],
+    "model_tokens_initial": 0,
+    "model_calls_initial": 0,
+    "rerank_tokens_initial": 3721,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 4,
+          "chars": 8676,
+          "total_tokens": 0
+        },
+        "warnings": [
+          "VECTOR_REQUEST_FAILED"
+        ],
+        "elapsed_ms": 10314
+      }
+    ],
+    "tool_actions": {},
+    "errors": [],
+    "visual_attempts_in_initial_tools": 0,
+    "visual_statuses": {},
+    "visual_tokens_initial_lower_bound": 0,
+    "tool_reference_pages": [],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 6081,
+      "Keyword": 19,
+      "BM25": 20,
+      "Vector": 13779,
+      "RRF": 3,
+      "Rerank": 4635,
+      "EvidenceDelivery": 24911,
+      "ModelTransport": 14820,
+      "ModelEnd": 12490
+    },
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": 13741,
+    "warm_answer": "根据文档元数据，该 PDF 文件（`mi_phone.pdf`）总共只有 **30 页**。因此，文档中**不存在第 40-47 页**，无法回答关于该页码范围内提到的应用程序数量的问题。\n\n如果您是指其他文档或特定的页码范围，请核对后重新提问。",
+    "scope_hash": "f52e4357f90650b46bae",
+    "core_gold_match": true,
+    "extra_fact_error": false,
+    "failure_stage": null,
+    "source_review_note": "无40–47页，正确不可回答",
+    "persisted_reference_count": 0,
+    "visual_calls": [],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r6",
+    "case": "scan",
+    "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+    "completed": true,
+    "elapsed_ms": 252816,
+    "upload_ms": 446,
+    "answer": "依据所附文档，来宾市政协推动的“建设铸牢中华民族共同体意识示范区委员行动”在兴宾区街道社区的落地方式、群众评价及成效如下（均出自 **PDF 第81页**）：\n\n### 📍 街道社区具体落地方式\n1. **多支部联动共建**：兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部，共同在瑞民社区开展活动。\n2. **政协委员宣讲分享**：政协委员结合自身经历与工作实际，宣讲“铸牢中华民族共同体意识”及广西建设示范区的重大意义，号召群众参与优秀传统文化传承、地方文化古迹保护，发挥地域特色弘扬民族精神，注入“兴宾因子”。\n3. **融合传统节日开展主题党日**：结合端午节开展“粽情端午话清廉·重温初心明使命”活动，组织现场包粽子、民俗互动，并向异地扶贫搬迁户赠送粽子，以民俗为载体打开基层群众了解中华优秀传统文化的大门。\n\n### 💬 群众对宣讲的评价\n活动现场群众对宣讲给予高度评价，认为宣讲**“既有高度又有深度，既通俗易懂又深入浅出”**，赢得了在场群众的阵阵好评。（第81页）\n\n### 🤝 促进民族融合与增强向心力的成效\n* **激发向心力与凝聚力**：通过典型人物的树立、宣传与宣讲，有效激发了社区广大党员、干部群众的向心力和凝聚力。\n* **推进各民族互促互进互融**：活动切实推进了社区内各民族的互促、互进与互融，讲好了民族团结故事，传播了民族团结好声音。\n* **筑牢共有精神家园**：民俗互动与文化体验让基层百姓切身感受到传统文化魅力，极大增强了文化自信和民族自豪感，为构筑中华民族共有精神家园彰显了“兴宾特色”。（第81页）\n\n---\n\n### 📊 落地路径与成效解释示意图\n```mermaid\nflowchart TD\n    A[\"兴宾区政协机关党支部\"] --> B[\"联合农商行兴宾党支部、瑞民社区党总支\"]\n    B --> C[\"6月2日瑞民社区联合活动\"]\n    C --> D[\"政协委员宣讲分享会\"]\n    C --> E[\"端午主题党日与民俗互动\"]\n    D --> F[\"结合经历宣讲共同体意识\"]\n    E --> G[\"现场包粽子、慰问搬迁户\"]\n    F --> H[\"评价：既有高度又有深度，通俗易懂获好评\"]\n    G --> I[\"体验传统文化，增强文化自信\"]\n    H --> J[\"成效：激发向心力与凝聚力\"]\n    I --> J\n    J --> K[\"推进社区各民族互促互进互融\"]\n```\n*(注：图中关系与节点内容均严格提炼自文档第81页的报道事实。)*",
+    "failure": [],
+    "model_tokens_initial": 5255,
+    "model_calls_initial": 1,
+    "rerank_tokens_initial": 3098,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 75,
+          "chars": 82392,
+          "total_tokens": 49304
+        },
+        "warnings": [],
+        "elapsed_ms": 11345
+      },
+      {
+        "usage": {
+          "calls": 76,
+          "chars": 82427,
+          "total_tokens": 49328
+        },
+        "warnings": [],
+        "elapsed_ms": 679
+      },
+      {
+        "usage": {
+          "calls": 77,
+          "chars": 82452,
+          "total_tokens": 49348
+        },
+        "warnings": [],
+        "elapsed_ms": 635
+      }
+    ],
+    "tool_actions": {
+      "read": 1
+    },
+    "errors": [],
+    "visual_attempts_in_initial_tools": 0,
+    "visual_statuses": {},
+    "visual_tokens_initial_lower_bound": 0,
+    "tool_reference_pages": [
+      81
+    ],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 1808,
+      "Keyword": 17,
+      "BM25": 19,
+      "Vector": 12659,
+      "RRF": 0,
+      "Rerank": 3143,
+      "EvidenceDelivery": 18417,
+      "ModelTransport": 57494,
+      "ModelEnd": 56071,
+      "ToolOutput": 24,
+      "AgentToolEnd": 42,
+      "AgentToolBatchEnd": 31
+    },
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": null,
+    "warm_answer": null,
+    "scope_hash": "59e7c33cec579bf6da0d",
+    "core_gold_match": true,
+    "extra_fact_error": null,
+    "failure_stage": null,
+    "source_review_note": "自动定位81页并读到评价原文；附加活动细节仍待独立审阅",
+    "persisted_reference_count": 1,
+    "visual_calls": [],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r6",
+    "case": "table",
+    "id": "mml:80",
+    "completed": false,
+    "elapsed_ms": 259938,
+    "upload_ms": 147,
+    "answer": "根据 Table II（位于 PDF 第 13 页），统计每个数据集在 \"Method\" 列中对应的引用数量，**恰好包含 3 个方法（引用）**的数据集如下：\n\n| 数据集 | Method 引用 |\n|:---|:---|\n| **PopQA** | `[7], [25], [67]` |\n| **MS MARCO** | `[4], [40], [52]` |\n| **SST-2** | `[20], [33], [38]` |\n\n其余数据集对应的引用数量均不为 3（如 Natural Question 有 4 行共 28 个引用，HotpotQA 有 2 行共 17 个引用，而多数数据集仅有 1~2 个引用\n本次回答未完成：模型连接中断（MODEL_NETWORK_ERROR）。已取得的证据不能视为完成核对的答案；请稍后重试。",
+    "failure": true,
+    "model_tokens_initial": 12862,
+    "model_calls_initial": 2,
+    "rerank_tokens_initial": 2652,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 4,
+          "chars": 16986,
+          "total_tokens": 0
+        },
+        "warnings": [
+          "VECTOR_TIMEOUT"
+        ],
+        "elapsed_ms": 15126
+      },
+      {
+        "usage": {
+          "calls": 16,
+          "chars": 75602,
+          "total_tokens": 12643
+        },
+        "warnings": [
+          "VECTOR_TIMEOUT"
+        ],
+        "elapsed_ms": 35345
+      }
+    ],
+    "tool_actions": {
+      "search": 1,
+      "read_table": 1
+    },
+    "errors": [],
+    "visual_attempts_in_initial_tools": 0,
+    "visual_statuses": {},
+    "visual_tokens_initial_lower_bound": 0,
+    "tool_reference_pages": [
+      13
+    ],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 8005,
+      "Keyword": 5,
+      "BM25": 6,
+      "Vector": 50471,
+      "RRF": 0,
+      "Rerank": 14918,
+      "EvidenceDelivery": 73753,
+      "ModelTransport": 134281,
+      "ModelEnd": 32507,
+      "ToolOutput": 38321,
+      "AgentToolEnd": 38346,
+      "AgentToolBatchEnd": 38333
+    },
+    "model_retry_events_with_followup": [
+      {
+        "stage": "ModelTransport",
+        "scope_hash": "d519fb0974d37c1dac22",
+        "attempt": 1,
+        "phase": "failed",
+        "code": "MODEL_NETWORK_ERROR",
+        "retryable": true,
+        "status": null,
+        "cause": "ECONNRESET",
+        "retry": true,
+        "delay_ms": 300,
+        "elapsed_ms": 5020,
+        "export_log_time_utc": "2026-11-01T12:42:43Z"
+      }
+    ],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": null,
+    "warm_answer": null,
+    "scope_hash": "d519fb0974d37c1dac22",
+    "core_gold_match": false,
+    "extra_fact_error": null,
+    "failure_stage": "transport",
+    "source_review_note": "已有核心正确片段但流中断，error=true，不计完成或准确",
+    "persisted_reference_count": 2,
+    "visual_calls": [],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r6",
+    "case": "tree",
+    "id": "mml:76",
+    "completed": true,
+    "elapsed_ms": 131339,
+    "upload_ms": 190,
+    "answer": "根据文档第 2 页的 **Fig. 1. Technology tree of RAG research**，该树形图包含三个主要分支（按 RAG 参与阶段划分）：\n\n* **Pre-training**（预训练）：仅有 **3** 个叶子节点（InstructRetro、CoG、Retro++）\n* **Fine-tuning**（微调）：有 **14** 个叶子节点\n* **Inference**（推理）：有 **20** 个叶子节点\n\n因此，叶子节点最少的分支是 **Pre-training**（预训练）。\n\n（来源：2312.10997v5.pdf，第 2 页 Fig. 1）",
+    "failure": [],
+    "model_tokens_initial": 4891,
+    "model_calls_initial": 1,
+    "rerank_tokens_initial": 0,
+    "vector_events_initial": [
+      {
+        "usage": {
+          "calls": 20,
+          "chars": 85999,
+          "total_tokens": 18888
+        },
+        "warnings": [
+          "VECTOR_REQUEST_FAILED"
+        ],
+        "elapsed_ms": 30352
+      },
+      {
+        "usage": {
+          "calls": 40,
+          "chars": 123512,
+          "total_tokens": 33315
+        },
+        "warnings": [],
+        "elapsed_ms": 14271
+      },
+      {
+        "usage": {
+          "calls": 41,
+          "chars": 123568,
+          "total_tokens": 33326
+        },
+        "warnings": [],
+        "elapsed_ms": 2654
+      }
+    ],
+    "tool_actions": {
+      "inspect_page": 1
+    },
+    "errors": [],
+    "visual_attempts_in_initial_tools": 1,
+    "visual_statuses": {
+      "ok": 1
+    },
+    "visual_tokens_initial_lower_bound": 4247,
+    "tool_reference_pages": [
+      2
+    ],
+    "stage_elapsed_ms_with_followup": {
+      "QueryProcessor": 1273,
+      "Keyword": 8,
+      "BM25": 12,
+      "Vector": 47277,
+      "RRF": 0,
+      "Rerank": 12006,
+      "EvidenceDelivery": 60826,
+      "ModelTransport": 17257,
+      "ModelEnd": 13744,
+      "PageVisionTransport": 26347,
+      "PageVision": 14146,
+      "ToolOutput": 14166,
+      "AgentToolEnd": 14183,
+      "AgentToolBatchEnd": 14172
+    },
+    "model_retry_events_with_followup": [],
+    "visual_cache_hits_with_followup": 0,
+    "warm_ms": null,
+    "warm_answer": null,
+    "scope_hash": "4a8468786cb8e3b0a1d6",
+    "core_gold_match": true,
+    "extra_fact_error": true,
+    "failure_stage": "C",
+    "source_review_note": "核心正确，VL误数橙色3，实际5",
+    "persisted_reference_count": 1,
+    "visual_calls": [
+      {
+        "status": "ok",
+        "error": null,
+        "tokens": {
+          "prompt_tokens": 3699,
+          "completion_tokens": 548,
+          "total_tokens": 4247,
+          "completion_tokens_details": {
+            "text_tokens": 548
+          },
+          "prompt_tokens_details": {
+            "image_tokens": 2510,
+            "text_tokens": 1189,
+            "cached_tokens": 0
+          }
+        },
+        "passes": 1,
+        "cache_hit": false
+      }
+    ],
+    "reviewer": "Codex source/tool review; not independent human blind review"
+  }
+]

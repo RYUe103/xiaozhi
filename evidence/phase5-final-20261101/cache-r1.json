@@ -1,0 +1,70 @@
+{
+  "scope": "real persisted artifacts/cache with tool-level calls; isolated database mutations restored",
+  "checks": [
+    {
+      "name": "persisted_visual_hit",
+      "ok": true,
+      "imageCalls": 0,
+      "modelCalls": 0,
+      "status": "ok"
+    },
+    {
+      "name": "revocation_before_cached_visual_read",
+      "ok": true,
+      "code": "DOCUMENT_ACCESS_DENIED"
+    },
+    {
+      "name": "source_metadata_change_rejects_cached_visual",
+      "ok": true,
+      "code": "DOCUMENT_VERSION_MISMATCH"
+    },
+    {
+      "name": "deleted_root_denied",
+      "ok": true
+    },
+    {
+      "name": "failed_artifact_denied",
+      "ok": true
+    },
+    {
+      "name": "foreign_user_repository_empty",
+      "ok": true
+    },
+    {
+      "name": "foreign_conversation_no_records",
+      "ok": true
+    },
+    {
+      "name": "vector_warm_reuse",
+      "ok": true,
+      "first_calls": 1,
+      "records": 359,
+      "second_calls": 0,
+      "total_ms": 1040,
+      "second_ms": 215
+    }
+  ],
+  "events": [
+    {
+      "stage": "PageVisionCache",
+      "page": 2,
+      "cache": "persistent_hit",
+      "calls": 0
+    },
+    {
+      "stage": "PageVision",
+      "page": 2,
+      "mode": "figure",
+      "cache": "persistent_hit",
+      "status": "ok",
+      "elapsed_ms": 0,
+      "usage": null
+    }
+  ],
+  "loaded": {
+    "artifacts": 20,
+    "records": 359,
+    "warnings": [],
+    "sourceHash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02"
+  }
+}

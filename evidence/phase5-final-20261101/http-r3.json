@@ -1,0 +1,74 @@
+{
+  "scope": "Phase5 isolated live HTTP; synthetic DOCX/CSV are compatibility fixtures, not PDF accuracy evidence",
+  "checks": [
+    {
+      "name": "plain_chat",
+      "ok": true,
+      "conversationId": "63cb6c1c-40c6-4c95-8008-b9c882831ce9",
+      "messageId": "565302d3-3741-4815-892f-b0e96fdc2137",
+      "elapsed_ms": 8344,
+      "answer": "15",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "docx_read",
+      "ok": true,
+      "conversationId": "bc8e606a-711d-4ff0-8a83-cef04b5ab1c0",
+      "messageId": "f5f8f78c-168c-4b64-89ae-c60dea1c719c",
+      "elapsed_ms": 5232,
+      "answer": "依据附件 `regression.docx` 的记录，样机 **RX-481** 的校验周期为 **17 天**。",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "csv_execute_code",
+      "ok": true,
+      "conversationId": "9a45f512-20e3-4e0f-bbaf-3506f29fb0f3",
+      "messageId": "50dab760-7a55-4a22-96d1-34420704f5d4",
+      "elapsed_ms": 39114,
+      "answer": "根据执行结果，`ZX-917` 的 `period_days` 值为 **23**。",
+      "active": false,
+      "error": false,
+      "tools": [
+        {
+          "id": "call_05af7ce841bf44f2bc034781",
+          "name": "execute_code",
+          "args": "{\"code\":\"import pandas as pd\\n\\n# 读取 CSV 文件\\ndf = pd.read_csv('/mnt/data/phase5.csv')\\n\\n# 查找 model 为 ZX-917 的行\\ntarget_row = df[df['model'] == 'ZX-917']\\n\\nif not target_row.empty:\\n    period_days = target_row['period_days'].values[0]\\n    print(f\\\"ZX-917 的 period_days 值为: {period_days}\\\")\\nelse:\\n    print(\\\"未找到 ZX-917 的数据。\\\")\\n    print(\\\"文件内容如下：\\\")\\n    print(df)\\n\"}",
+          "type": "tool_call",
+          "progress": 1,
+          "output": "stdout:\nZX-917 的 period_days 值为: 23"
+        }
+      ]
+    },
+    {
+      "name": "docx_followup_without_reattachment",
+      "ok": true,
+      "conversationId": "bc8e606a-711d-4ff0-8a83-cef04b5ab1c0",
+      "messageId": "14389ec2-91ce-4dc8-b740-b9ed58a65d73",
+      "elapsed_ms": 3196,
+      "answer": "17 天",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "xlsx_read",
+      "ok": true,
+      "conversationId": "3c8e7a6f-715c-4a1d-8393-e158af92e6af",
+      "messageId": "8825ec8f-680e-4dab-a0cb-c43409c39589",
+      "elapsed_ms": 15406,
+      "answer": "根据附件 `phase5.xlsx` 的内容，`KM-883` 对应的 `period_days` 为 **29**。",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "foreign_message_isolation",
+      "ok": true,
+      "http_status": 200
+    }
+  ]
+}

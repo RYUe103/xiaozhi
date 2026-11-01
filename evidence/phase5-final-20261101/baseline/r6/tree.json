@@ -1,0 +1,109 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "70a7faaa-558e-458e-927d-e3f967045446",
+  "id": "mml:76",
+  "pdf_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+  "elapsed_ms": 99180,
+  "active": false,
+  "upload_ms": 134,
+  "answer": "根据文档第 2 页的 **Fig. 1. Technology tree of RAG research**（RAG 研究技术树），该树形图包含三个主干分支，分别对应 RAG 技术介入大模型的三个阶段。各分支及其叶子节点（具体方法/模型名称）数量如下：\n\n| 分支名称 | 颜色标识 | 叶子节点数量 |\n|:---|:---|:---|\n| **Pre-training（预训练）** | 橙色 | **5** |\n| Fine-tuning（微调） | 青色 | 22 |\n| Inference（推理） | 蓝色 | 37 |\n\n因此，**叶子节点最少的分支是 Pre-training（预训练）**，仅有 5 个叶子节点。\n\n> 引用来源：PDF 第 2 页，Fig. 1 及其图注。",
+  "tool_calls": [
+    {
+      "id": "call_aff321830c4645c1bf0b860e",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"visual_page\",\"document_id\":\"doc_177f1492037d7bffc622\",\"page\":2}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"unavailable\",\"ok\":false,\"document_id\":\"doc_177f1492037d7bffc622\",\"filename\":\"2312.10997v5.pdf\",\"version\":\"b85f9002be1faaf6e073ff15eb06dae3b06eb523ce19bfd7974a24f55264a8bd\",\"error\":{\"code\":\"VISUAL_SUMMARY_UNAVAILABLE\",\"message\":\"当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。\"},\"message\":\"当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。\",\"inspection_available\":true,\"next_action\":{\"tool\":\"read_parsed_pdf\",\"action\":\"inspect_page\",\"document_id\":\"doc_177f1492037d7bffc622\",\"page\":2,\"query_required\":true},\"page_candidates\":[],\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":2,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":3,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":4,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":5,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":6,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":7,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":8,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":9,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":10,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":11,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":12,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":13,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":14,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":15,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":16,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":17,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":18,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":19,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":20,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":21,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_e744d80b2a1344bc90f5f965",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_177f1492037d7bffc622\",\"mode\":\"figure\",\"page\":2,\"query\":\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference.\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_177f1492037d7bffc622\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_a6b986d2451cb365f0d7__file_e44fa1cc4bdc53fe4270\",\"region\":null,\"visual_result_id\":\"vision_5a8bfe4e91bc7df4f48974422a158a18\",\"vision_version\":\"inspect-page-v4-crosscheck\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"b85f9002be1faaf6e073ff15eb06dae3b06eb523ce19bfd7974a24f55264a8bd\",\"user_id\":\"6ae72face6cdd3bd52f5f684\",\"conversation_id\":\"70a7faaa-558e-458e-927d-e3f967045446\",\"status\":\"ok\"},\"visual_result_id\":\"vision_5a8bfe4e91bc7df4f48974422a158a18\",\"ok\":true,\"status\":\"ok\",\"document_id\":\"doc_177f1492037d7bffc622\",\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"The stages of involving RAG mainly include pre-training, fine-tuning, and inference.\",\"evidence_text\":\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference.\",\"cells\":[],\"series\":[{\"legend\":\"Fine-tuning\",\"series\":\"Fine-tuning branch (teal)\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Pre-training\",\"series\":\"Pre-training branch (orange)\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Inference\",\"series\":\"Inference branch (blue)\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"}],\"uncertainties\":[]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"The stages of involving RAG mainly include pre-training, fine-tuning, and inference.\\\",\\n  \\\"evidence_text\\\": \\\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference.\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Fine-tuning\\\",\\n      \\\"series\\\": \\\"Fine-tuning branch (teal)\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Pre-training\\\",\\n      \\\"series\\\": \\\"Pre-training branch (orange)\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Inference\\\",\\n      \\\"series\\\": \\\"Inference branch (blue)\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_a6b986d2451cb365f0d7__file_e44fa1cc4bdc53fe4270\",\"region\":null},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\"],\"telemetry\":{\"elapsed_ms\":6402,\"usage\":{\"prompt_tokens\":3416,\"completion_tokens\":214,\"total_tokens\":3630,\"completion_tokens_details\":{\"text_tokens\":214},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":906,\"cached_tokens\":0}},\"finish_reason\":\"stop\"}}"
+    },
+    {
+      "id": "call_4a4fb1ce12e4486ea0ddacac",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_177f1492037d7bffc622\",\"mode\":\"figure\",\"page\":2,\"query\":\"Describe the full tree structure of Fig. 1 in detail. List every branch and every leaf node under each branch. Count how many leaf nodes are on the Pre-training branch, Fine-tuning branch, and Inference branch.\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_177f1492037d7bffc622\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_a6b986d2451cb365f0d7__file_e44fa1cc4bdc53fe4270\",\"region\":null,\"visual_result_id\":\"vision_0955576b8cd8c62fb0efacc37c1d42af\",\"vision_version\":\"inspect-page-v4-crosscheck\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"b85f9002be1faaf6e073ff15eb06dae3b06eb523ce19bfd7974a24f55264a8bd\",\"user_id\":\"6ae72face6cdd3bd52f5f684\",\"conversation_id\":\"70a7faaa-558e-458e-927d-e3f967045446\",\"status\":\"partial\"},\"visual_result_id\":\"vision_0955576b8cd8c62fb0efacc37c1d42af\",\"ok\":false,\"status\":\"partial\",\"document_id\":\"doc_177f1492037d7bffc622\",\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"\",\"evidence_text\":\"\",\"cells\":[],\"series\":[],\"uncertainties\":[\"视觉输出未通过结构校验\"]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"Fig. 1 shows a technology tree with three main branches: 'Pre-training' (orange), 'Fine-tuning' (teal), and 'Inference' (blue), all stemming from a root labeled 'Retrieval-Augmented Generation'. Each branch contains multiple leaf nodes (method names in rounded rectangles). Leaf nodes under Pre-training: InstructRetro, RAVEN, CoG, TIGER, Retro++. Total = 5. Leaf nodes under Fine-tuning: UniMS-RAG, CT-RAG, BEQ, RAST, Self-RAG, LM-Indexer, RA-DIT, Dual-Feedback-ToD, MK-ToD, RAG-Robust, Retrieve-and-Sample, SANTA, SUGRE, AAR, FLARE, UPRISÉ, R-GQA, Zemi, Atlas, RAG-e2e, PROMPTAGATOR, RAG. Total = 22. Leaf nodes under Inference: G-Retriever, CRAG, IAG, FILCO, ARM-RAG, PRCA, Token-Elimination, KALMV, ITRG, KGP, LLM-R, ITER-RETGEN, COQ, LLM-IE, ICALM, DSP, GenRead, RADA, RAPTOR, BGM, HyKGE, PaperQA, DRAGON-AI, CREA-ICL, 1-PAGER, FABULA, QLM-Doc-ranking, SKR, Recomp, KnownledGPT, IRCOT, PGRA, PKG, SCM4LLMs, Filter-Retanker, RePLUG, RECITE. Total = 37.\\\",\\n  \\\"evidence_text\\\": \\\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. ... [caption continues] — and the visual tree in the image shows explicit labels and connections.\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Pre-training\\\",\\n      \\\"series\\\": \\\"leaf nodes\\\",\\n      \\\"value\\\": 5,\\n      \\\"unit\\\": \\\"nodes\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Fine-tuning\\\",\\n      \\\"series\\\": \\\"leaf nodes\\\",\\n      \\\"value\\\": 22,\\n      \\\"unit\\\": \\\"nodes\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Inference\\\",\\n      \\\"series\\\": \\\"leaf nodes\\\",\\n      \\\"value\\\": 37,\\n      \\\"unit\\\": \\\"nodes\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_a6b986d2451cb365f0d7__file_e44fa1cc4bdc53fe4270\",\"region\":null},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\",\"VISION_RESULT_INVALID_SCHEMA\",\"VISION_RESULT_PARTIAL\"],\"telemetry\":{\"elapsed_ms\":12654,\"usage\":{\"prompt_tokens\":3432,\"completion_tokens\":563,\"total_tokens\":3995,\"completion_tokens_details\":{\"text_tokens\":563},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":922,\"cached_tokens\":0}},\"finish_reason\":\"stop\"}}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 19
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T12:25:16.355Z",
+      "completedAt": "2026-11-01T12:26:51.693Z",
+      "elapsedMs": 95338
+    },
+    "sansuoClientRequestId": "c0476c6c-a768-4d92-a487-7655c0e1ec1f",
+    "sansuoSources": [
+      {
+        "file_id": "4497dc77-228a-446a-a609-dee611fc1b37",
+        "filename": "2312.10997v5.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1662567,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_177f1492037d7bffc622",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_a6b986d2451cb365f0d7__file_e44fa1cc4bdc53fe4270",
+      "region": null,
+      "visual_result_id": "vision_5a8bfe4e91bc7df4f48974422a158a18",
+      "vision_version": "inspect-page-v4-crosscheck",
+      "vision_model": "qwen3-vl-plus",
+      "version": "b85f9002be1faaf6e073ff15eb06dae3b06eb523ce19bfd7974a24f55264a8bd",
+      "user_id": "6ae72face6cdd3bd52f5f684",
+      "conversation_id": "70a7faaa-558e-458e-927d-e3f967045446",
+      "status": "ok",
+      "recorded_at": "2026-11-01T12:26:25.038Z"
+    },
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_177f1492037d7bffc622",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_a6b986d2451cb365f0d7__file_e44fa1cc4bdc53fe4270",
+      "region": null,
+      "visual_result_id": "vision_0955576b8cd8c62fb0efacc37c1d42af",
+      "vision_version": "inspect-page-v4-crosscheck",
+      "vision_model": "qwen3-vl-plus",
+      "version": "b85f9002be1faaf6e073ff15eb06dae3b06eb523ce19bfd7974a24f55264a8bd",
+      "user_id": "6ae72face6cdd3bd52f5f684",
+      "conversation_id": "70a7faaa-558e-458e-927d-e3f967045446",
+      "status": "partial",
+      "recorded_at": "2026-11-01T12:26:48.287Z"
+    }
+  ]
+}

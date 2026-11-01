@@ -25,6 +25,8 @@ const pages = (requested.length ? requested : [1, 2]).map((page) => {
     status: 'ready',
   };
 });
-process.stdout.write(
-  JSON.stringify({ document_page_count: 30, rendered_page_count: pages.length, pages }),
-);
+const result = JSON.stringify({ document_page_count: 30, rendered_page_count: pages.length, pages,
+  ...(process.env.SANSUO_TEST_LARGE_LAYOUT ? { diagnosticPadding: 'x'.repeat(2 * 1024 * 1024) } : {}),
+});
+if (process.argv.includes('--result-json')) fs.writeFileSync(value('--result-json'), result);
+else process.stdout.write(result);

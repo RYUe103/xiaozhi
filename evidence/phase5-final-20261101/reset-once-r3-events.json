@@ -1,0 +1,66 @@
+[
+  {
+    "stage": "ModelTransport",
+    "scope_hash": "ae202b5b33c1a7579017",
+    "attempt": 1,
+    "phase": "failed",
+    "code": "MODEL_NETWORK_ERROR",
+    "retryable": true,
+    "status": null,
+    "cause": "ECONNRESET",
+    "retry": true,
+    "delay_ms": 300,
+    "elapsed_ms": 0,
+    "export_log_time_utc": "2026-11-01T12:55:27Z"
+  },
+  {
+    "stage": "ModelTransport",
+    "scope_hash": "ae202b5b33c1a7579017",
+    "attempt": 2,
+    "phase": "headers",
+    "status": 200,
+    "elapsed_ms": 1225,
+    "export_log_time_utc": "2026-11-01T12:55:29Z"
+  },
+  {
+    "stage": "ModelTransport",
+    "scope_hash": "ae202b5b33c1a7579017",
+    "attempt": 2,
+    "phase": "complete",
+    "bytes": 22946,
+    "elapsed_ms": 5202,
+    "export_log_time_utc": "2026-11-01T12:55:33Z"
+  },
+  {
+    "stage": "ModelTransport",
+    "scope_hash": "ae202b5b33c1a7579017",
+    "attempt": 1,
+    "phase": "failed",
+    "code": "MODEL_NETWORK_ERROR",
+    "retryable": true,
+    "status": null,
+    "cause": "ECONNRESET",
+    "retry": true,
+    "delay_ms": 300,
+    "elapsed_ms": 0,
+    "export_log_time_utc": "2026-11-01T12:55:38Z"
+  },
+  {
+    "stage": "ModelTransport",
+    "scope_hash": "ae202b5b33c1a7579017",
+    "attempt": 2,
+    "phase": "headers",
+    "status": 200,
+    "elapsed_ms": 796,
+    "export_log_time_utc": "2026-11-01T12:55:39Z"
+  },
+  {
+    "stage": "ModelTransport",
+    "scope_hash": "ae202b5b33c1a7579017",
+    "attempt": 2,
+    "phase": "complete",
+    "bytes": 13750,
+    "elapsed_ms": 3400,
+    "export_log_time_utc": "2026-11-01T12:55:42Z"
+  }
+]

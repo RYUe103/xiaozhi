@@ -1,0 +1,9 @@
+{
+  "scope": "isolated Phase5 code-api only; production config untouched",
+  "initial_http_r1": "plain chat and DOCX passed; CSV checker false-positive because error output was truthy",
+  "reset_once_r1": "transport recovery occurred, but execute_code failed ECONNREFUSED; does not prove successful tool execution",
+  "reset_once_r2": "sandbox proxy timed out; harness hit null content part and preserved failure",
+  "correction": "SANSUO_OPENSANDBOX_BASE_URL uses host.docker.internal:8090; direct endpoint returned loopback address, isolated Axios response shim changes endpoint host to host.docker.internal; use_server_proxy=false",
+  "fixture_policy": "only synthetic compatibility files and six pre-authorized public PDFs",
+  "model": "qwen3.6-plus; VL qwen3-vl-plus; original frozen questions unchanged"
+}

@@ -119,6 +119,7 @@ async function renderSanSuoPdfPages(sourceBuffer, requestedPages = [], { textOnl
   const tempDir = path.join('/tmp', `sansuo-pdf-render-${crypto.randomUUID()}`);
   const inputPath = path.join(tempDir, 'source.pdf');
   const outputDir = path.join(tempDir, 'pages');
+  const resultPath = path.join(tempDir, 'result.json');
   await fsp.mkdir(outputDir, { recursive: true });
   await fsp.writeFile(inputPath, sourceBuffer);
   const normalizedPages = Array.from(
@@ -131,6 +132,8 @@ async function renderSanSuoPdfPages(sourceBuffer, requestedPages = [], { textOnl
       inputPath,
       '--output-dir',
       outputDir,
+      '--result-json',
+      resultPath,
       '--dpi',
       String(dpi),
     ];
@@ -144,7 +147,14 @@ async function renderSanSuoPdfPages(sourceBuffer, requestedPages = [], { textOnl
       args,
       { timeout: SANSUO_DOCUMENT_PARSE_TIMEOUT_MS, maxBuffer: 1024 * 1024, ...(signal ? { signal } : {}) },
     );
-    const result = JSON.parse(String(stdout || '{}').trim());
+    // Layout for long PDFs exceeds execFile's stdout budget. Keep diagnostics bounded
+    // and read the private result file with a separate explicit size limit.
+    const stat = await fsp.stat(resultPath).catch(error => {
+      if (error.code === 'ENOENT') return null;
+      throw error;
+    });
+    if (stat && stat.size > 64 * 1024 * 1024) throw new Error('pdf_layout_result_budget_exceeded');
+    const result = JSON.parse(stat ? await fsp.readFile(resultPath, 'utf8') : String(stdout || '{}').trim());
     const pages = Array.isArray(result.pages) ? result.pages : [];
     if (!pages.length) throw new Error('pdf_page_render_empty');
     return {

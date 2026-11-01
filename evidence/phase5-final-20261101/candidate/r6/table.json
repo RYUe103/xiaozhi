@@ -1,0 +1,94 @@
+{
+  "message_error": true,
+  "error_parts": [
+    {
+      "type": "error",
+      "error": "本次回答未完成：模型连接中断（MODEL_NETWORK_ERROR）。已取得的证据不能视为完成核对的答案；请稍后重试。"
+    }
+  ],
+  "scope_hash": null,
+  "conversation_id": "ad76b2e5-47a8-44fc-8a5a-5ff8a539b338",
+  "id": "mml:80",
+  "pdf_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+  "elapsed_ms": 259938,
+  "active": false,
+  "upload_ms": 147,
+  "answer": "根据 Table II（位于 PDF 第 13 页），统计每个数据集在 \"Method\" 列中对应的引用数量，**恰好包含 3 个方法（引用）**的数据集如下：\n\n| 数据集 | Method 引用 |\n|:---|:---|\n| **PopQA** | `[7], [25], [67]` |\n| **MS MARCO** | `[4], [40], [52]` |\n| **SST-2** | `[20], [33], [38]` |\n\n其余数据集对应的引用数量均不为 3（如 Natural Question 有 4 行共 28 个引用，HotpotQA 有 2 行共 17 个引用，而多数数据集仅有 1~2 个引用\n本次回答未完成：模型连接中断（MODEL_NETWORK_ERROR）。已取得的证据不能视为完成核对的答案；请稍后重试。",
+  "tool_calls": [
+    {
+      "id": "call_080899dc48594e4e823e776f",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_9cdf28110d0c668d6378\",\"query\":\"Table II\",\"limit\":5}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_9cdf28110d0c668d6378\",\"filename\":\"2312.10997v5.pdf\",\"version\":\"6b9c4c30e13b796e0eb3af47d6682f161b35eedaa9b48ab5e2933fdb0b8fc0f5\",\"action\":\"search\",\"content\":\"[chunk_6f7ea727c41823534689 page=13 kind=extracted_text]\\n55], [58]</td></tr><tr><td rowspan=\\\"2\\\">Fact Checking/Verification</td><td>FEVER [149]</td><td>[4], [13], [27], [34], [42], [50]</td></tr><tr><td>PubHealth [150]</td><td>[25], [67]</td></tr><tr><td>Text Generation</td><td>Biography [151]</td><td>[67]</td></tr><tr><td rowspan=\\\"2\\\">Text Summarization</td><td>WikiASP [152]</td><td>[24]</td></tr><tr><td>XSum [153]</td><td>[17]</td></tr><tr><td rowspan=\\\"2\\\">Text Classification</td><td>VioLens [154]</td><td>[19]</td></tr><tr><td>TREC [155]</td><td>[33]</td></tr><tr><td>Sentiment</td><td>SST-2 [156]</td><td>[20], [33], [38]</td></tr><tr><td>Code Search</td><td>CodeSearchNet [157]</td><td>[76]</td></tr><tr><td>Robustness Evaluation</td><td>NoMIRACL [56]</td><td>[56]</td></tr><tr><td>Math</td><td>GSM8K [158]</td><td>[73]</td></tr><tr><td>Machine Translation</td><td>JRC-Acquis [159]</td><td>[17]</td></tr></table>\\n\\nTABLE II\\n\\nDOWNSTREAM TASKS AND DATASETS OF RAG\\n\\n[chunk_98ab249074e8e7bf6619 page=12 kind=extracted_text]\\nThe core task of RAG remains Question Answering (QA), including traditional single-hop/multi-hop QA, multiplechoice, domain-specific QA as well as long-form scenarios suitable for RAG. In addition to QA, RAG is continuously being expanded into multiple downstream tasks, such as Information Extraction (IE), dialogue generation, code search, etc. The main downstream tasks of RAG and their corresponding datasets are summarized in Table II.\\n\\n[chunk_f398bbd3adccdba8c6c0 page=14 kind=extracted_text]\\nThe specific metrics for each evaluation aspect are summarized in Table III. It is essential to recognize that these metrics, derived from related work, are traditional measures and do not yet represent a mature or standardized approach for quantifying RAG evaluation aspects. Custom metrics tailored to the nuances of RAG models, though not included here, have also been developed in some evaluation studies.\\n\\n[chunk_bb69a64591f488aea7ca page=15 kind=extracted_text]\\n<table><tr><td>Evaluation Framework</td><td>Evaluation Targets</td><td>Evaluation Aspects</td><td>Quantitative Metrics</td></tr><tr><td> $RGB^†$ </td><td>Retrieval Quality Generation Quality</td><td>Noise RobustnessNegative RejectionInformation IntegrationCounterfactual Robustness</td><td>AccuracyEMAccuracyAccuracy</td></tr><tr><td> $RECALL^†$ </td><td>Generation Quality</td><td>Counterfactual Robustness</td><td>R-Rate (Reappearance Rate)</td></tr><tr><td> $RAGAS^‡$ </td><td>Retrieval Quality Generation Quality</td><td>Context RelevanceFaithfulnessAnswer Relevance</td><td>**Cosine Similarity</td></tr><tr><td> $ARES^‡$ </td><td>Retrieval Quality Generation Quality</td><td>Context RelevanceFaithfulnessAnswer Relevance</td><td>AccuracyAccuracyAccuracy</td></tr><tr><td> $TruLens^‡$ </td><td>Retrieval Quality Generation Quality</td><td>Context RelevanceFaithfulnessAnswer Relevance</td><td>**</td></tr><tr><td> $CRUD^†$ </td><td>Retrieval Quality Generation Quality</td><td>Creative GenerationKnowledge-intensive QAError CorrectionSu\\n\\n[chunk_56d4b16432738f46fdb3 page=14 kind=extracted_text]\\n/td><td></td><td>√</td><td></td><td></td><td></td></tr><tr><td>R-Rate</td><td></td><td></td><td></td><td></td><td></td><td></td><td>√</td></tr><tr><td>Cosine Similarity</td><td></td><td></td><td>√</td><td></td><td></td><td></td><td></td></tr><tr><td>Hit Rate</td><td>√</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>MRR</td><td>√</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>NDCG</td><td>√</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>BLEU</td><td>√</td><td>√</td><td>√</td><td></td><td></td><td></td><td></td></tr><tr><td>ROUGE/ROUGE-L</td><td>√</td><td>√</td><td>√</td><td></td><td></td><td></td><td></td></tr></table>\\n\\nTABLE III\\n\\nSUMMARY OF METRICS APPLICABLE FOR EVALUATION ASPECTS OF RAG\",\"excerpted\":true,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[\"SEARCH_EXCERPTS_USE_READ_FOR_FULL_EVIDENCE\"],\"hits\":[{\"chunk_id\":\"chunk_6f7ea727c41823534689\",\"source_chunk_id\":\"mineru_4737f0cdf91294746e6e3e7d\",\"page_start\":13,\"page_end\":13,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_f794d3a8aa9608f7bc77c7cc\",\"image_id\":\"image_f935e48146a649f756d9c4e0\",\"bbox\":[73,104,996,967],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[\"table_3cefdbce47480f03260b\"]},{\"chunk_id\":\"chunk_98ab249074e8e7bf6619\",\"source_chunk_id\":\"mineru_15fd0186b2663f7cdf4769d4\",\"page_start\":12,\"page_end\":12,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_44b9e80ba24f3d2c46d12b1a\",\"image_id\":null,\"bbox\":[73,541,493,662],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_f398bbd3adccdba8c6c0\",\"source_chunk_id\":\"mineru_d6b744d7e9425b55eb8a94e3\",\"page_start\":14,\"page_end\":14,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_d8eafdcbc4e2126d97ca8142\",\"image_id\":null,\"bbox\":[73,343,493,450],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_bb69a64591f488aea7ca\",\"source_chunk_id\":\"mineru_37d1ca20dbd3c078b6730b1b\",\"page_start\":15,\"page_end\":15,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_a9d2047780a1f9b3bf7de65a\",\"image_id\":\"image_574f5eb78ecb95d4c3dc7502\",\"bbox\":[148,103,846,441],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[\"table_7bcdbd8c428a8dfe234a\"]},{\"chunk_id\":\"chunk_56d4b16432738f46fdb3\",\"source_chunk_id\":\"mineru_c7e6be2a4810907a79ddb157\",\"page_start\":14,\"page_end\":14,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_edec23b0eea3b12d4698fb8b\",\"image_id\":\"image_13d7f8eb47ae6149bde9bbfe\",\"bbox\":[147,103,841,315],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[\"table_fed724c83daae45e7903\"]}],\"reference\":{\"document_id\":\"doc_9cdf28110d0c668d6378\",\"chunk_id\":\"chunk_6f7ea727c41823534689\",\"page_start\":13,\"page_end\":13,\"section_id\":null,\"table_id\":\"table_3cefdbce47480f03260b\",\"version\":\"6b9c4c30e13b796e0eb3af47d6682f161b35eedaa9b48ab5e2933fdb0b8fc0f5\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"user_id\":\"6ae7334ab22a45bc0fb5cefe\",\"conversation_id\":\"ad76b2e5-47a8-44fc-8a5a-5ff8a539b338\"},\"page_coverage\":[{\"page\":12,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":13,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":14,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true},{\"page\":15,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}],\"retrieval_warnings\":[\"VECTOR_TIMEOUT\"]}"
+    },
+    {
+      "id": "call_1c7551f28864454eb3eea0a9",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read_table\",\"document_id\":\"doc_9cdf28110d0c668d6378\",\"table_id\":\"table_3cefdbce47480f03260b\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_9cdf28110d0c668d6378\",\"filename\":\"2312.10997v5.pdf\",\"version\":\"6b9c4c30e13b796e0eb3af47d6682f161b35eedaa9b48ab5e2933fdb0b8fc0f5\",\"action\":\"read_table\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"table_id\":\"table_3cefdbce47480f03260b\",\"hits\":[{\"chunk_id\":\"chunk_6f7ea727c41823534689\",\"page_start\":13,\"page_end\":13,\"kind\":\"table\",\"engine\":\"mineru\",\"table_ids\":[\"table_3cefdbce47480f03260b\"]}],\"table\":{\"structure\":\"structured_table\",\"rows\":[[\"Task\",\"Sub Task\",\"Dataset\",\"Method\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[26], [30], [34], [42], [45], [50], [52], [59], [64], [82]\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[3], [4], [22], [27], [40], [43], [54], [62], [71], [112]\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[20], [44], [72]\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[13], [30], [34], [45], [50], [64]\"],[\"QA\",\"Single-hop\",\"TriviaQA(TQA) [113]\",\"[4], [27], [59], [62], [112]\"],[\"QA\",\"Single-hop\",\"TriviaQA(TQA) [113]\",\"[22], [25], [43], [44], [71], [72]\"],[\"QA\",\"Single-hop\",\"SQuAD [114]\",\"[20], [23], [30], [32], [45], [69], [112]\"],[\"QA\",\"Single-hop\",\"Web Questions(WebQ) [115]\",\"[3], [4], [13], [30], [50], [68]\"],[\"QA\",\"Single-hop\",\"PopQA [116]\",\"[7], [25], [67]\"],[\"QA\",\"Single-hop\",\"MS MARCO [117]\",\"[4], [40], [52]\"],[\"QA\",\"Multi-hop\",\"HotpotQA [118]\",\"[23], [26], [31], [34], [47], [51], [61], [82]\"],[\"QA\",\"Multi-hop\",\"HotpotQA [118]\",\"[7], [14], [22], [27], [59], [62], [69], [71], [91]\"],[\"QA\",\"Multi-hop\",\"2WikiMultiHopQA [119]\",\"[14], [24], [48], [59], [61], [91]\"],[\"QA\",\"Multi-hop\",\"MuSiQue [120]\",\"[14], [51], [61], [91]\"],[\"QA\",\"Long-form QA\",\"ELI5 [121]\",\"[27], [34], [43], [49], [51]\"],[\"QA\",\"Long-form QA\",\"NarrativeQA(NQA) [122]\",\"[45], [60], [63], [123]\"],[\"QA\",\"Long-form QA\",\"ASQA [124]\",\"[24], [57]\"],[\"QA\",\"Long-form QA\",\"QMSum(QM) [125]\",\"[60], [123]\"],[\"QA\",\"Domain QA\",\"Qasper [126]\",\"[60], [63]\"],[\"QA\",\"Domain QA\",\"COVID-QA [127]\",\"[35], [46]\"],[\"QA\",\"Domain QA\",\"CMB [128],MMCU_Medical [129]\",\"[81]\"],[\"QA\",\"Multi-Choice QA\",\"QuALITY [130]\",\"[60], [63]\"],[\"QA\",\"Multi-Choice QA\",\"ARC [131]\",\"[25], [67]\"],[\"QA\",\"Multi-Choice QA\",\"CommonsenseQA [132]\",\"[58], [66]\"],[\"QA\",\"Graph QA\",\"GraphQA [84]\",\"[84]\"],[\"Dialog\",\"Dialog Generation\",\"Wizard of Wikipedia (WoW) [133]\",\"[13], [27], [34], [42]\"],[\"Dialog\",\"Personal Dialog\",\"KBP [134]\",\"[74], [135]\"],[\"Dialog\",\"Personal Dialog\",\"DuleMon [136]\",\"[74]\"],[\"Dialog\",\"Task-oriented Dialog\",\"CamRest [137]\",\"[78], [79]\"],[\"Dialog\",\"Recommendation\",\"Amazon(Toys,Sport,Beauty) [138]\",\"[39], [40]\"],[\"IE\",\"Event Argument Extraction\",\"WikiEvent [139]\",\"[13], [27], [37], [42]\"],[\"IE\",\"Event Argument Extraction\",\"RAMS [140]\",\"[36], [37]\"],[\"IE\",\"Relation Extraction\",\"T-REx [141],ZsRE [142]\",\"[27], [51]\"],[\"Reasoning\",\"Commonsense Reasoning\",\"HellaSwag [143]\",\"[20], [66]\"],[\"Reasoning\",\"CoT Reasoning\",\"CoT Reasoning [144]\",\"[27]\"],[\"Reasoning\",\"Complex Reasoning\",\"CSQA [145]\",\"[55]\"],[\"Others\",\"Language Understanding\",\"MMLU [146]\",\"[7], [27], [28], [42], [43], [47], [72]\"],[\"Others\",\"Language Modeling\",\"WikiText-103 [147]\",\"[5], [29], [64], [71]\"],[\"Others\",\"Language Modeling\",\"StrategyQA [148]\",\"[14], [24], [48], [51], [55], [58]\"],[\"Others\",\"Fact Checking/Verification\",\"FEVER [149]\",\"[4], [13], [27], [34], [42], [50]\"],[\"Others\",\"Fact Checking/Verification\",\"PubHealth [150]\",\"[25], [67]\"],[\"Others\",\"Text Generation\",\"Biography [151]\",\"[67]\"],[\"Others\",\"Text Summarization\",\"WikiASP [152]\",\"[24]\"],[\"Others\",\"Text Summarization\",\"XSum [153]\",\"[17]\"],[\"Others\",\"Text Classification\",\"VioLens [154]\",\"[19]\"],[\"Others\",\"Text Classification\",\"TREC [155]\",\"[33]\"],[\"Others\",\"Sentiment\",\"SST-2 [156]\",\"[20], [33], [38]\"],[\"Others\",\"Code Search\",\"CodeSearchNet [157]\",\"[76]\"],[\"Others\",\"Robustness Evaluation\",\"NoMIRACL [56]\",\"[56]\"],[\"Others\",\"Math\",\"GSM8K [158]\",\"[73]\"],[\"Others\",\"Machine Translation\",\"JRC-Acquis [159]\",\"[17]\"]],\"complete\":true,\"columns\":4,\"source_table_id\":\"table_10cdf69040d182e34aa886c2\",\"merged_cells\":[{\"row\":1,\"column\":0,\"rowspan\":25,\"colspan\":1,\"text\":\"QA\",\"header\":false},{\"row\":1,\"column\":1,\"rowspan\":10,\"colspan\":1,\"text\":\"Single-hop\",\"header\":false},{\"row\":1,\"column\":2,\"rowspan\":4,\"colspan\":1,\"text\":\"Natural Qustion(NQ) [111]\",\"header\":false},{\"row\":5,\"column\":2,\"rowspan\":2,\"colspan\":1,\"text\":\"TriviaQA(TQA) [113]\",\"header\":false},{\"row\":11,\"column\":1,\"rowspan\":4,\"colspan\":1,\"text\":\"Multi-hop\",\"header\":false},{\"row\":11,\"column\":2,\"rowspan\":2,\"colspan\":1,\"text\":\"HotpotQA [118]\",\"header\":false},{\"row\":15,\"column\":1,\"rowspan\":4,\"colspan\":1,\"text\":\"Long-form QA\",\"header\":false},{\"row\":19,\"column\":1,\"rowspan\":3,\"colspan\":1,\"text\":\"Domain QA\",\"header\":false},{\"row\":22,\"column\":1,\"rowspan\":3,\"colspan\":1,\"text\":\"Multi-Choice QA\",\"header\":false},{\"row\":26,\"column\":0,\"rowspan\":5,\"colspan\":1,\"text\":\"Dialog\",\"header\":false},{\"row\":27,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Personal Dialog\",\"header\":false},{\"row\":31,\"column\":0,\"rowspan\":3,\"colspan\":1,\"text\":\"IE\",\"header\":false},{\"row\":31,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Event Argument Extraction\",\"header\":false},{\"row\":34,\"column\":0,\"rowspan\":3,\"colspan\":1,\"text\":\"Reasoning\",\"header\":false},{\"row\":37,\"column\":0,\"rowspan\":15,\"colspan\":1,\"text\":\"Others\",\"header\":false},{\"row\":38,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Language Modeling\",\"header\":false},{\"row\":40,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Fact Checking/Verification\",\"header\":false},{\"row\":43,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Text Summarization\",\"header\":false},{\"row\":45,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Text Classification\",\"header\":false}],\"merge_semantics\":\"row/column are zero-based source coordinates. Repeated values in expanded rows covered by one rowspan belong to the SAME entity; aggregate its associated values across the entire span before comparing counts or totals.\"},\"evidence_format\":\"table_rows\",\"page_coverage\":[{\"page\":13,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}],\"reference\":{\"document_id\":\"doc_9cdf28110d0c668d6378\",\"chunk_id\":\"chunk_6f7ea727c41823534689\",\"page_start\":13,\"page_end\":13,\"section_id\":null,\"table_id\":\"table_3cefdbce47480f03260b\",\"version\":\"6b9c4c30e13b796e0eb3af47d6682f161b35eedaa9b48ab5e2933fdb0b8fc0f5\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"user_id\":\"6ae7334ab22a45bc0fb5cefe\",\"conversation_id\":\"ad76b2e5-47a8-44fc-8a5a-5ff8a539b338\"}}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 19
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T12:40:43.159Z",
+      "completedAt": "2026-11-01T12:44:20.112Z",
+      "elapsedMs": 216953
+    },
+    "sansuoClientRequestId": "bc9b82a8-4fc9-49a5-b274-d3b36edf3c07",
+    "sansuoModelFailure": {
+      "code": "MODEL_NETWORK_ERROR",
+      "retryable": true,
+      "status": null,
+      "cause": "UND_ERR_SOCKET"
+    },
+    "sansuoSources": [
+      {
+        "file_id": "12683319-4c83-42f0-b6ab-ea4b9f35868c",
+        "filename": "2312.10997v5.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1662567,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "document_id": "doc_9cdf28110d0c668d6378",
+      "chunk_id": "chunk_6f7ea727c41823534689",
+      "page_start": 13,
+      "page_end": 13,
+      "section_id": null,
+      "table_id": "table_3cefdbce47480f03260b",
+      "version": "6b9c4c30e13b796e0eb3af47d6682f161b35eedaa9b48ab5e2933fdb0b8fc0f5",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "user_id": "6ae7334ab22a45bc0fb5cefe",
+      "conversation_id": "ad76b2e5-47a8-44fc-8a5a-5ff8a539b338",
+      "recorded_at": "2026-11-01T12:43:42.819Z"
+    },
+    {
+      "document_id": "doc_9cdf28110d0c668d6378",
+      "chunk_id": "chunk_6f7ea727c41823534689",
+      "page_start": 13,
+      "page_end": 13,
+      "section_id": null,
+      "table_id": "table_3cefdbce47480f03260b",
+      "version": "6b9c4c30e13b796e0eb3af47d6682f161b35eedaa9b48ab5e2933fdb0b8fc0f5",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "user_id": "6ae7334ab22a45bc0fb5cefe",
+      "conversation_id": "ad76b2e5-47a8-44fc-8a5a-5ff8a539b338",
+      "recorded_at": "2026-11-01T12:43:48.954Z"
+    }
+  ]
+}

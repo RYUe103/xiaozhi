@@ -1,4 +1,4 @@
-const { DocumentArtifactRepository } = require('./DocumentArtifactRepository');
+const { DocumentArtifactRepository, artifactSignature } = require('./DocumentArtifactRepository');
 
 function fixture(scope = {}) {
   const repo = new DocumentArtifactRepository({ userId: 'u', conversationId: 'c', secret: 'test-secret', ...scope });
@@ -12,6 +12,13 @@ function fixture(scope = {}) {
 }
 
 describe('authorized DocumentArtifactRepository', () => {
+  test('invalidates loaded artifact bindings when parse generation, commit state or parser version changes', () => {
+    const artifact = { libreFileId: 'a', metadata: { sourceHash: 'same', parseGeneration: 'g1', artifactSetStatus: 'complete', parserVersion: 'v1' } };
+    for (const [key, value] of Object.entries({ parseGeneration: 'g2', artifactSetStatus: 'partial', parserVersion: 'v2' })) {
+      expect(artifactSignature({ ...artifact, metadata: { ...artifact.metadata, [key]: value } })).not.toBe(artifactSignature(artifact));
+    }
+    expect(artifactSignature({ ...artifact, lastAccess: 'changed' })).toBe(artifactSignature(artifact));
+  });
   test('classifies page text for visual preparation without calling it verified OCR', () => {
     const { repo } = fixture();
     const doc = repo.add({ fileId: 'quality', pageCount: 2, records: [
@@ -143,4 +150,15 @@ test('uncommitted generation cannot replace available evidence',async()=>{
   {libreFileId:'partial',displayFilename:'x_mineru_chunks.jsonl',metadata:{rootSourceLibreFileId:'x',sourceHash:'sha',parseGeneration:'incomplete'}}
  ],download:async()=>Buffer.from(JSON.stringify({text:'wrong partial',page:1}))});
  const doc=[...repo.documents.values()].find(d=>d.fileId==='x');expect(doc.records).toHaveLength(0);expect(doc.warnings).toContainEqual({code:'INCOMPLETE_OR_SUPERSEDED_PARSE_IGNORED'});
+});
+
+test('query-only read searches existing channels instead of returning missing page evidence', async () => {
+ const {repo,doc}=fixture({quality:{queryProcessing:false,rerank:false}});
+ repo.previousReference={document_id:doc.documentId,chunk_id:'missing-old-chunk',version:doc.version};
+ const result=await repo.executeAsync({action:'read',document_id:doc.documentId,query:'检修周期'});
+ expect(result.error).toBeUndefined();
+ expect(result.content).toContain('三个月');
+ expect(repo.trace.events.some(e=>e.stage==='BM25')).toBe(true);
+ const explicit=await repo.executeAsync({action:'read',document_id:doc.documentId,query:'检修周期',pages:[2]});
+ expect(explicit.error.code).toBe('PAGE_TEXT_UNAVAILABLE');
 });

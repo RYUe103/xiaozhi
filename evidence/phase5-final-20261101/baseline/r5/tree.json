@@ -1,0 +1,143 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "22e2a0d3-c4a4-4473-b638-c855c1e6a7cf",
+  "id": "mml:76",
+  "pdf_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+  "elapsed_ms": 99171,
+  "active": false,
+  "upload_ms": 147,
+  "answer": "根据 PDF 第 2 页的 **Fig. 1. Technology tree of RAG research**（RAG 研究技术树），该树状图包含三个主干分支：**Pre-training（预训练）**、**Fine-tuning（微调）** 和 **Inference（推理）**。\n\n通过核对原图视觉统计，**Pre-training（预训练）** 分支挂载的叶子节点（具体方法/文献）数量最少（约 3 个），明显少于 Fine-tuning 分支和 Inference 分支。\n\n> 📄 依据来源：PDF 第 2 页 Figure 1 及其图注。",
+  "tool_calls": [
+    {
+      "id": "call_85279cae76a045d49ea2f908",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_9b6e7911fbbdbca124d7\",\"mode\":\"figure\",\"page\":2,\"query\":\"Figure 1 Technology tree of RAG research\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_9b6e7911fbbdbca124d7\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_a3ce7a286d2faa0c1188__file_09babb21f20f92979f21\",\"region\":null,\"visual_result_id\":\"vision_b83745162b7ec5fa60bb09e5021e2426\",\"vision_version\":\"inspect-page-v4-crosscheck\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"f12c32a4327514889ca1bafc8b8cc667a3c0f6b23e7420be2f58d92a4b00df61\",\"user_id\":\"6ae72ab6e5bdde0c91815162\",\"conversation_id\":\"22e2a0d3-c4a4-4473-b638-c855c1e6a7cf\",\"status\":\"ok\"},\"visual_result_id\":\"vision_b83745162b7ec5fa60bb09e5021e2426\",\"ok\":true,\"status\":\"ok\",\"document_id\":\"doc_9b6e7911fbbdbca124d7\",\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"Figure 1 shows a technology tree of RAG research, structured as a branching diagram with three main stages: Pre-training (orange branch), Fine-tuning (teal branch), and Inference (blue branch), rooted in 'Retrieval—Augmented Generation'. The vertical axis marks years 2020 (GPT-3), 2023 (ChatGPT), and 2024 (GPT-4), with methods grouped by year and stage. A legend in the bottom-right identifies 'Augmentation Stage' with three colored bars: teal for Fine-tuning, orange for Pre-training, blue for Inference.\",\"evidence_text\":\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. With the emergence of LLMs, research on RAG initially focused on leveraging the powerful in context learning abilities of LLMs, primarily concentrating on the inference stage. Subsequent research has delved deeper, gradually integrating more with the fine-tuning of LLMs. Researchers have also been exploring ways to enhance language models in the pre-training stage through retrieval-augmented techniques.\",\"cells\":[],\"series\":[{\"legend\":\"Fine-tuning\",\"series\":\"teal branch\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Pre-training\",\"series\":\"orange branch\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Inference\",\"series\":\"blue branch\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"}],\"uncertainties\":[]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"Figure 1 shows a technology tree of RAG research, structured as a branching diagram with three main stages: Pre-training (orange branch), Fine-tuning (teal branch), and Inference (blue branch), rooted in 'Retrieval—Augmented Generation'. The vertical axis marks years 2020 (GPT-3), 2023 (ChatGPT), and 2024 (GPT-4), with methods grouped by year and stage. A legend in the bottom-right identifies 'Augmentation Stage' with three colored bars: teal for Fine-tuning, orange for Pre-training, blue for Inference.\\\",\\n  \\\"evidence_text\\\": \\\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. With the emergence of LLMs, research on RAG initially focused on leveraging the powerful in context learning abilities of LLMs, primarily concentrating on the inference stage. Subsequent research has delved deeper, gradually integrating more with the fine-tuning of LLMs. Researchers have also been exploring ways to enhance language models in the pre-training stage through retrieval-augmented techniques.\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Fine-tuning\\\",\\n      \\\"series\\\": \\\"teal branch\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Pre-training\\\",\\n      \\\"series\\\": \\\"orange branch\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Inference\\\",\\n      \\\"series\\\": \\\"blue branch\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_a3ce7a286d2faa0c1188__file_09babb21f20f92979f21\",\"region\":null},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\"],\"telemetry\":{\"elapsed_ms\":9932,\"usage\":{\"prompt_tokens\":3396,\"completion_tokens\":396,\"total_tokens\":3792,\"completion_tokens_details\":{\"text_tokens\":396},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":886,\"cached_tokens\":0}},\"finish_reason\":\"stop\"}}"
+    },
+    {
+      "id": "call_11456415c2d84bcc99a69a52",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_9b6e7911fbbdbca124d7\",\"query\":\"Figure 1 technology tree branches pre-training fine-tuning inference methods\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_9b6e7911fbbdbca124d7\",\"filename\":\"2312.10997v5.pdf\",\"version\":\"f12c32a4327514889ca1bafc8b8cc667a3c0f6b23e7420be2f58d92a4b00df61\",\"action\":\"search\",\"content\":\"[chunk_f2f3cb7ecacf6e379ef5 page=2 kind=extracted_text]\\nFig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. With the emergence of LLMs research on RAG initially focused on leveraging the powerful in context learning abilities of LLMs, primarily concentrating on the inference stage. Subsequent research has delved deeper, gradually integrating more with the fine-tuning of LLMs. Researchers have also been exploring ways to enhance language models in the pre-training stage through retrieval-augmented techniques.\\n\\n[chunk_904cf7fbd2954dd573b4 page=1 kind=extracted_text]\\nRAG technology has rapidly developed in recent years, and the technology tree summarizing related research is shown in Figure 1. The development trajectory of RAG in the era of large models exhibits several distinct stage characteristics. Initially, RAG’s inception coincided with the rise of the Transformer architecture, focusing on enhancing language models by incorporating additional knowledge through Pre-Training Models (PTM). This early stage was characterized by foundational work aimed at refining pre-training techniques [3]–[5].The subsequent arrival of ChatGPT [6] marked a pivotal moment, with LLM demonstrating powerful in context learning (ICL) capabilities. RAG research shifted towards providing better information for LLMs to answer more complex and knowledge-intensive tasks during the inference stage, leading to rapid \\n\\n[chunk_42e02846dd1b65d1325c page=6 kind=extracted_text]\\n<table><tr><td>Method</td><td>Retrieval Source</td><td>Retrieval Data Type</td><td>Retrieval Granularity</td><td>Augmentation Stage</td><td>Retrieval process</td></tr><tr><td>CoG [29]</td><td>Wikipedia</td><td>Text</td><td>Phrase</td><td>Pre-training</td><td>Iterative</td></tr><tr><td>DenseX [30]</td><td>FactoidWiki</td><td>Text</td><td>Proposition</td><td>Inference</td><td>Once</td></tr><tr><td>EAR [31]</td><td>Dataset-base</td><td>Text</td><td>Sentence</td><td>Tuning</td><td>Once</td></tr><tr><td>UPRISE [20]</td><td>Dataset-base</td><td>Text</td><td>Sentence</td><td>Tuning</td><td>Once</td></tr><tr><td>RAST [32]</td><td>Dataset-base</td><td>Text</td><td>Sentence</td><td>Tuning</td><td>Once</td></tr><tr><td>Self-Mem [17]</td><td>Dataset-base</td><td>Text</td><td>Sentence</td><td>Tuning</td><td>Iterative</td></tr><tr><td>FLARE [\\n\\n[chunk_f39890feb1b0c3c06578 page=16 kind=extracted_text]\\nThe summary of this paper, as depicted in Figure 6, emphasizes RAG’s significant advancement in enhancing the capabilities of LLMs by integrating parameterized knowledge from language models with extensive non-parameterized data from external knowledge bases. The survey showcases the evolution of RAG technologies and their application on many different tasks. The analysis outlines three developmental paradigms within the RAG framework: Naive, Advanced, and Modular RAG, each representing a progressive enhancement over its predecessors. RAG’s technical integration with other AI methodologies, such as fine-tuning and reinforcement learning, has further expanded its capabilities. Despite the progress in RAG technology, there are research opportunities to improve its robustness and its ability to handle extended contexts. RAG’s appli\\n\\n[chunk_66b25ac5e2e46c863a41 page=5 kind=extracted_text]\\nAdjustments in module arrangement and interaction, such as the Demonstrate-Search-Predict (DSP) [23] framework and the iterative Retrieve-Read-Retrieve-Read flow of ITER-RETGEN [14], showcase the dynamic use of module outputs to bolster another module’s functionality, illustrating a sophisticated understanding of enhancing module synergy. The flexible orchestration of Modular RAG Flow showcases the benefits of adaptive retrieval through techniques such as FLARE [24] and Self-RAG [25]. This approach transcends the fixed RAG retrieval process by evaluating the necessity of retrieval based on different scenarios. Another benefit of a flexible architecture is that the RAG system can more easily integrate with other technologies (such as fine-tuning or reinforcement learning) [26]. For example, this can involve fine-tuning the retrie\\n\\n[chunk_042007fe5a336fe4156d page=7 kind=extracted_text]\\nFig. 4. RAG compared with other model optimization methods in the aspects of “External Knowledge Required” and “Model Adaption Required”. Prompt Engineering requires low modifications to the model and external knowledge, focusing on harnessing the capabilities of LLMs themselves. Fine-tuning, on the other hand, involves further training the model. In the early stages of RAG (Naive RAG), there is a low demand for model modifications. As research progresses, Modular RAG has become more integrated with fine-tuning techniques.\",\"excerpted\":true,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[\"SEARCH_EXCERPTS_USE_READ_FOR_FULL_EVIDENCE\"],\"hits\":[{\"chunk_id\":\"chunk_f2f3cb7ecacf6e379ef5\",\"source_chunk_id\":\"mineru_f79b0967a375c597b3678975\",\"page_start\":2,\"page_end\":2,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_cbeb09203bb9d2274d5a7946\",\"image_id\":\"image_829d2ce4ff41a92e4d0c2e37\",\"bbox\":[142,71,854,465],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_904cf7fbd2954dd573b4\",\"source_chunk_id\":\"mineru_45a53cb816ef596b1a13b4c4\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_6ba5375c53c86682b26fe1fe\",\"image_id\":null,\"bbox\":[73,864,493,896],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_42e02846dd1b65d1325c\",\"source_chunk_id\":\"mineru_66fffdacc6ea869493179d9d\",\"page_start\":6,\"page_end\":6,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_02036531e8615c579ec39c72\",\"image_id\":\"image_f5077d6d1f2526d53a264c1f\",\"bbox\":[125,104,869,1000],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[\"table_c39fdac1aba348be18ff\"]},{\"chunk_id\":\"chunk_f39890feb1b0c3c06578\",\"source_chunk_id\":\"mineru_63fad9892429bf64747a5728\",\"page_start\":16,\"page_end\":16,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_f0a551cbef94562d2ea4e3b8\",\"image_id\":null,\"bbox\":[501,657,924,946],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_66b25ac5e2e46c863a41\",\"source_chunk_id\":\"mineru_d035fd3a05162aa5cbad583c\",\"page_start\":5,\"page_end\":5,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_218671e37de321c5fb7c4c8d\",\"image_id\":null,\"bbox\":[73,626,493,883],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_042007fe5a336fe4156d\",\"source_chunk_id\":\"mineru_6660be0586dec2439b90a161\",\"page_start\":7,\"page_end\":7,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_b4ed8f446f8a9ddeb65440ee\",\"image_id\":\"image_6177a50c2d95e1aa74051a53\",\"bbox\":[163,69,834,373],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    },
+    {
+      "id": "call_34252d5334dc4974a230a1b6",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_9b6e7911fbbdbca124d7\",\"mode\":\"figure\",\"page\":2,\"query\":\"Count all leaf nodes methods papers under each of the three branches Pre-training Fine-tuning Inference in Figure 1\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_9b6e7911fbbdbca124d7\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_a3ce7a286d2faa0c1188__file_09babb21f20f92979f21\",\"region\":null,\"visual_result_id\":\"vision_282b06e9cceae270c4b50123c3642663\",\"vision_version\":\"inspect-page-v4-crosscheck\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"f12c32a4327514889ca1bafc8b8cc667a3c0f6b23e7420be2f58d92a4b00df61\",\"user_id\":\"6ae72ab6e5bdde0c91815162\",\"conversation_id\":\"22e2a0d3-c4a4-4473-b638-c855c1e6a7cf\",\"status\":\"partial\"},\"visual_result_id\":\"vision_282b06e9cceae270c4b50123c3642663\",\"ok\":false,\"status\":\"partial\",\"document_id\":\"doc_9b6e7911fbbdbca124d7\",\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"\",\"evidence_text\":\"\",\"cells\":[],\"series\":[],\"uncertainties\":[\"视觉输出未通过结构校验\"]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"Pre-training: 3, Fine-tuning: 7, Inference: 20\\\",\\n  \\\"evidence_text\\\": \\\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference.\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Pre-training\\\",\\n      \\\"series\\\": \\\"leaf nodes under Pre-training branch\\\",\\n      \\\"value\\\": 3,\\n      \\\"unit\\\": \\\"methods papers\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Fine-tuning\\\",\\n      \\\"series\\\": \\\"leaf nodes under Fine-tuning branch\\\",\\n      \\\"value\\\": 7,\\n      \\\"unit\\\": \\\"methods papers\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Inference\\\",\\n      \\\"series\\\": \\\"leaf nodes under Inference branch\\\",\\n      \\\"value\\\": 20,\\n      \\\"unit\\\": \\\"methods papers\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_a3ce7a286d2faa0c1188__file_09babb21f20f92979f21\",\"region\":null},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\",\"VISION_RESULT_INVALID_SCHEMA\",\"VISION_RESULT_PARTIAL\"],\"telemetry\":{\"elapsed_ms\":5853,\"usage\":{\"prompt_tokens\":3410,\"completion_tokens\":228,\"total_tokens\":3638,\"completion_tokens_details\":{\"text_tokens\":228},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":900,\"cached_tokens\":0}},\"finish_reason\":\"stop\"}}"
+    },
+    {
+      "id": "call_c622ab37c9f74f07b134ad22",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"document_id\":\"doc_9b6e7911fbbdbca124d7\",\"chunk_id\":\"chunk_f2f3cb7ecacf6e379ef5\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_9b6e7911fbbdbca124d7\",\"filename\":\"2312.10997v5.pdf\",\"version\":\"f12c32a4327514889ca1bafc8b8cc667a3c0f6b23e7420be2f58d92a4b00df61\",\"action\":\"read\",\"content\":\"[chunk_f2f3cb7ecacf6e379ef5 page=2 kind=extracted_text]\\nFig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. With the emergence of LLMs research on RAG initially focused on leveraging the powerful in context learning abilities of LLMs, primarily concentrating on the inference stage. Subsequent research has delved deeper, gradually integrating more with the fine-tuning of LLMs. Researchers have also been exploring ways to enhance language models in the pre-training stage through retrieval-augmented techniques.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_f2f3cb7ecacf6e379ef5\",\"source_chunk_id\":\"mineru_f79b0967a375c597b3678975\",\"page_start\":2,\"page_end\":2,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_cbeb09203bb9d2274d5a7946\",\"image_id\":\"image_829d2ce4ff41a92e4d0c2e37\",\"bbox\":[142,71,854,465],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 19
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T12:04:07.039Z",
+      "completedAt": "2026-11-01T12:05:42.545Z",
+      "elapsedMs": 95506
+    },
+    "sansuoClientRequestId": "2c517b2a-9c0a-40e8-abed-46011e31af3d",
+    "sansuoSources": [
+      {
+        "file_id": "b1ef76a6-7138-40e2-9cca-0fc44174f9d9",
+        "filename": "2312.10997v5.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1662567,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_9b6e7911fbbdbca124d7",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_a3ce7a286d2faa0c1188__file_09babb21f20f92979f21",
+      "region": null,
+      "visual_result_id": "vision_b83745162b7ec5fa60bb09e5021e2426",
+      "vision_version": "inspect-page-v4-crosscheck",
+      "vision_model": "qwen3-vl-plus",
+      "version": "f12c32a4327514889ca1bafc8b8cc667a3c0f6b23e7420be2f58d92a4b00df61",
+      "user_id": "6ae72ab6e5bdde0c91815162",
+      "conversation_id": "22e2a0d3-c4a4-4473-b638-c855c1e6a7cf",
+      "status": "ok",
+      "recorded_at": "2026-11-01T12:05:11.683Z"
+    },
+    {
+      "document_id": "doc_9b6e7911fbbdbca124d7",
+      "chunk_id": "chunk_f2f3cb7ecacf6e379ef5",
+      "page_start": 2,
+      "page_end": 2,
+      "section_id": null,
+      "table_id": null,
+      "version": "f12c32a4327514889ca1bafc8b8cc667a3c0f6b23e7420be2f58d92a4b00df61",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "user_id": "6ae72ab6e5bdde0c91815162",
+      "conversation_id": "22e2a0d3-c4a4-4473-b638-c855c1e6a7cf",
+      "recorded_at": "2026-11-01T12:05:20.479Z"
+    },
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_9b6e7911fbbdbca124d7",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_a3ce7a286d2faa0c1188__file_09babb21f20f92979f21",
+      "region": null,
+      "visual_result_id": "vision_282b06e9cceae270c4b50123c3642663",
+      "vision_version": "inspect-page-v4-crosscheck",
+      "vision_model": "qwen3-vl-plus",
+      "version": "f12c32a4327514889ca1bafc8b8cc667a3c0f6b23e7420be2f58d92a4b00df61",
+      "user_id": "6ae72ab6e5bdde0c91815162",
+      "conversation_id": "22e2a0d3-c4a4-4473-b638-c855c1e6a7cf",
+      "status": "partial",
+      "recorded_at": "2026-11-01T12:05:30.661Z"
+    },
+    {
+      "document_id": "doc_9b6e7911fbbdbca124d7",
+      "chunk_id": "chunk_f2f3cb7ecacf6e379ef5",
+      "page_start": 2,
+      "page_end": 2,
+      "section_id": null,
+      "table_id": null,
+      "version": "f12c32a4327514889ca1bafc8b8cc667a3c0f6b23e7420be2f58d92a4b00df61",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "user_id": "6ae72ab6e5bdde0c91815162",
+      "conversation_id": "22e2a0d3-c4a4-4473-b638-c855c1e6a7cf",
+      "recorded_at": "2026-11-01T12:05:34.631Z"
+    }
+  ]
+}

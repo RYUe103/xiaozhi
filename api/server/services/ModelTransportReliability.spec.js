@@ -31,3 +31,17 @@ test('timeout bounds all retries and produces an explicit non-answer',async()=>{
  expect(classifyModelError({cause:{code:'UND_ERR_CONNECT_TIMEOUT'}})).toMatchObject({code:'MODEL_NETWORK_ERROR',retryable:true});
  expect(failureMessage({code:'MODEL_TIMEOUT'})).toContain('本次回答未完成');
 });
+
+test('user cancellation during a returned body never retries and preserves cancellation classification',async()=>{
+ const controller=new AbortController(),events=[];
+ const fetchImpl=jest.fn(async(u,{signal})=>new Response(new ReadableStream({start(c){signal.addEventListener('abort',()=>c.error(signal.reason),{once:true});}})));
+ const response=await createModelFetch({fetchImpl,signal:controller.signal,emit:e=>events.push(e)})('url');
+ const body=response.text();controller.abort();await expect(body).rejects.toMatchObject({name:'AbortError'});
+ expect(fetchImpl).toHaveBeenCalledTimes(1);expect(events.at(-1).code).toBe('MODEL_CANCELLED');
+});
+test('deadline covers body consumption and does not replay an unfinished stream',async()=>{
+ const events=[];const fetchImpl=jest.fn(async(u,{signal})=>new Response(new ReadableStream({start(c){signal.addEventListener('abort',()=>c.error(signal.reason),{once:true});}})));
+ const response=await createModelFetch({fetchImpl,timeoutMs:15,emit:e=>events.push(e)})('url');
+ await expect(response.text()).rejects.toMatchObject({code:'MODEL_DEADLINE'});
+ expect(fetchImpl).toHaveBeenCalledTimes(1);expect(events.at(-1).code).toBe('MODEL_TIMEOUT');
+});

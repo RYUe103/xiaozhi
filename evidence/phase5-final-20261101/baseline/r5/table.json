@@ -1,0 +1,83 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "c2b6a940-7537-4632-88f3-c0fe91403685",
+  "id": "mml:80",
+  "pdf_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+  "elapsed_ms": 150094,
+  "active": false,
+  "upload_ms": 128,
+  "answer": "根据文档第 13 页的 **Table II**（`DOWNSTREAM TASKS AND DATASETS OF RAG`），Method 列中恰好包含 3 个方法（即 3 篇文献引用）的数据集共有以下三个：\n\n1. **PopQA** `[116]`：对应方法引用为 `[7], [25], [67]`\n2. **MS MARCO** `[117]`：对应方法引用为 `[4], [40], [52]`\n3. **SST-2** `[156]`：对应方法引用为 `[20], [33], [38]`\n\n（注：表中部分数据集如 Natural Question、TriviaQA、HotpotQA 因跨多行展示，其方法总数经合并计算后均超过 3 个；其余数据集的方法数均为 1、2、4 及以上。）\n\n📖 **引用页码**：PDF 物理第 13 页",
+  "tool_calls": [
+    {
+      "id": "call_7d303b385f3f4081a0f3a606",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_108d7bf5b70dd9b4a38e\",\"query\":\"TABLE II\",\"limit\":5}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_108d7bf5b70dd9b4a38e\",\"filename\":\"2312.10997v5.pdf\",\"version\":\"f36bd03ad39dd9d29f95d8095ef74ac4cc8ad22efbb4006ef2415d9889720f15\",\"action\":\"search\",\"content\":\"[chunk_767a7dcfa7a6a9683cc3 page=13 kind=extracted_text]\\n55], [58]</td></tr><tr><td rowspan=\\\"2\\\">Fact Checking/Verification</td><td>FEVER [149]</td><td>[4], [13], [27], [34], [42], [50]</td></tr><tr><td>PubHealth [150]</td><td>[25], [67]</td></tr><tr><td>Text Generation</td><td>Biography [151]</td><td>[67]</td></tr><tr><td rowspan=\\\"2\\\">Text Summarization</td><td>WikiASP [152]</td><td>[24]</td></tr><tr><td>XSum [153]</td><td>[17]</td></tr><tr><td rowspan=\\\"2\\\">Text Classification</td><td>VioLens [154]</td><td>[19]</td></tr><tr><td>TREC [155]</td><td>[33]</td></tr><tr><td>Sentiment</td><td>SST-2 [156]</td><td>[20], [33], [38]</td></tr><tr><td>Code Search</td><td>CodeSearchNet [157]</td><td>[76]</td></tr><tr><td>Robustness Evaluation</td><td>NoMIRACL [56]</td><td>[56]</td></tr><tr><td>Math</td><td>GSM8K [158]</td><td>[73]</td></tr><tr><td>Machine Translation</td><td>JRC-Acquis [159]</td><td>[17]</td></tr></table>\\n\\nTABLE II\\n\\nDOWNSTREAM TASKS AND DATASETS OF RAG\\n\\n[chunk_d731d3d1f31477ec2ecb page=12 kind=extracted_text]\\nThe core task of RAG remains Question Answering (QA), including traditional single-hop/multi-hop QA, multiplechoice, domain-specific QA as well as long-form scenarios suitable for RAG. In addition to QA, RAG is continuously being expanded into multiple downstream tasks, such as Information Extraction (IE), dialogue generation, code search, etc. The main downstream tasks of RAG and their corresponding datasets are summarized in Table II.\\n\\n[chunk_f8583bed0fbb8ed7b654 page=14 kind=extracted_text]\\n/td><td></td><td>√</td><td></td><td></td><td></td></tr><tr><td>R-Rate</td><td></td><td></td><td></td><td></td><td></td><td></td><td>√</td></tr><tr><td>Cosine Similarity</td><td></td><td></td><td>√</td><td></td><td></td><td></td><td></td></tr><tr><td>Hit Rate</td><td>√</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>MRR</td><td>√</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>NDCG</td><td>√</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>BLEU</td><td>√</td><td>√</td><td>√</td><td></td><td></td><td></td><td></td></tr><tr><td>ROUGE/ROUGE-L</td><td>√</td><td>√</td><td>√</td><td></td><td></td><td></td><td></td></tr></table>\\n\\nTABLE III\\n\\nSUMMARY OF METRICS APPLICABLE FOR EVALUATION ASPECTS OF RAG\\n\\n[chunk_ff760dcf3e4796c1a861 page=14 kind=extracted_text]\\nThe specific metrics for each evaluation aspect are summarized in Table III. It is essential to recognize that these metrics, derived from related work, are traditional measures and do not yet represent a mature or standardized approach for quantifying RAG evaluation aspects. Custom metrics tailored to the nuances of RAG models, though not included here, have also been developed in some evaluation studies.\\n\\n[chunk_a21faeb21cf006703e6c page=15 kind=extracted_text]\\n<table><tr><td>Evaluation Framework</td><td>Evaluation Targets</td><td>Evaluation Aspects</td><td>Quantitative Metrics</td></tr><tr><td> $RGB^†$ </td><td>Retrieval Quality Generation Quality</td><td>Noise RobustnessNegative RejectionInformation IntegrationCounterfactual Robustness</td><td>AccuracyEMAccuracyAccuracy</td></tr><tr><td> $RECALL^†$ </td><td>Generation Quality</td><td>Counterfactual Robustness</td><td>R-Rate (Reappearance Rate)</td></tr><tr><td> $RAGAS^‡$ </td><td>Retrieval Quality Generation Quality</td><td>Context RelevanceFaithfulnessAnswer Relevance</td><td>**Cosine Similarity</td></tr><tr><td> $ARES^‡$ </td><td>Retrieval Quality Generation Quality</td><td>Context RelevanceFaithfulnessAnswer Relevance</td><td>AccuracyAccuracyAccuracy</td></tr><tr><td> $TruLens^‡$ </td><td>Retrieval Quality Generation Quality</td><td>Context RelevanceFaithfulnessAnswer Relevance</td><td>**</td></tr><tr><td> $CRUD^†$ </td><td>Retrieval Quality Generation Quality</td><td>Creative GenerationKnowledge-intensive QAError CorrectionSu\",\"excerpted\":true,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[\"SEARCH_EXCERPTS_USE_READ_FOR_FULL_EVIDENCE\"],\"hits\":[{\"chunk_id\":\"chunk_767a7dcfa7a6a9683cc3\",\"source_chunk_id\":\"mineru_a7404ffd09e87133eba1b123\",\"page_start\":13,\"page_end\":13,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_9a9eba9c622c95f5112bade8\",\"image_id\":\"image_2b98c24bc2ee3b3359a63bb6\",\"bbox\":[73,104,996,967],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[\"table_a7090dfa48bc81e5eb3c\"]},{\"chunk_id\":\"chunk_d731d3d1f31477ec2ecb\",\"source_chunk_id\":\"mineru_c42a0b6f9bff39984a50be8a\",\"page_start\":12,\"page_end\":12,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_23400b7b2f08111c53e7a891\",\"image_id\":null,\"bbox\":[73,541,493,662],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_f8583bed0fbb8ed7b654\",\"source_chunk_id\":\"mineru_90b700c38038585fd21a7962\",\"page_start\":14,\"page_end\":14,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_fec8cc49c78d47f50fe0e375\",\"image_id\":\"image_02d0e310a201189721a997d7\",\"bbox\":[147,103,841,315],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[\"table_1a7eb843a78be6d93125\"]},{\"chunk_id\":\"chunk_ff760dcf3e4796c1a861\",\"source_chunk_id\":\"mineru_b18f78e9a665952024f7701a\",\"page_start\":14,\"page_end\":14,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_18e8e164f414a8857ccef0cd\",\"image_id\":null,\"bbox\":[73,343,493,450],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_a21faeb21cf006703e6c\",\"source_chunk_id\":\"mineru_d1ce5b1db08ccfb4384841b8\",\"page_start\":15,\"page_end\":15,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_31a46c58ab01a7dca484ee39\",\"image_id\":\"image_87157bffe3ad092c487c3fa0\",\"bbox\":[148,103,846,441],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[\"table_77d63250316063022f64\"]}]}"
+    },
+    {
+      "id": "call_00fefbc2531c4e4cbc9e3c53",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read_table\",\"document_id\":\"doc_108d7bf5b70dd9b4a38e\",\"table_id\":\"table_a7090dfa48bc81e5eb3c\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_108d7bf5b70dd9b4a38e\",\"filename\":\"2312.10997v5.pdf\",\"version\":\"f36bd03ad39dd9d29f95d8095ef74ac4cc8ad22efbb4006ef2415d9889720f15\",\"action\":\"read_table\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"table_id\":\"table_a7090dfa48bc81e5eb3c\",\"hits\":[{\"chunk_id\":\"chunk_767a7dcfa7a6a9683cc3\",\"page_start\":13,\"page_end\":13,\"kind\":\"table\",\"engine\":\"mineru\",\"table_ids\":[\"table_a7090dfa48bc81e5eb3c\"]}],\"table\":{\"structure\":\"structured_table\",\"rows\":[[\"Task\",\"Sub Task\",\"Dataset\",\"Method\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[26], [30], [34], [42], [45], [50], [52], [59], [64], [82]\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[3], [4], [22], [27], [40], [43], [54], [62], [71], [112]\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[20], [44], [72]\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[13], [30], [34], [45], [50], [64]\"],[\"QA\",\"Single-hop\",\"TriviaQA(TQA) [113]\",\"[4], [27], [59], [62], [112]\"],[\"QA\",\"Single-hop\",\"TriviaQA(TQA) [113]\",\"[22], [25], [43], [44], [71], [72]\"],[\"QA\",\"Single-hop\",\"SQuAD [114]\",\"[20], [23], [30], [32], [45], [69], [112]\"],[\"QA\",\"Single-hop\",\"Web Questions(WebQ) [115]\",\"[3], [4], [13], [30], [50], [68]\"],[\"QA\",\"Single-hop\",\"PopQA [116]\",\"[7], [25], [67]\"],[\"QA\",\"Single-hop\",\"MS MARCO [117]\",\"[4], [40], [52]\"],[\"QA\",\"Multi-hop\",\"HotpotQA [118]\",\"[23], [26], [31], [34], [47], [51], [61], [82]\"],[\"QA\",\"Multi-hop\",\"HotpotQA [118]\",\"[7], [14], [22], [27], [59], [62], [69], [71], [91]\"],[\"QA\",\"Multi-hop\",\"2WikiMultiHopQA [119]\",\"[14], [24], [48], [59], [61], [91]\"],[\"QA\",\"Multi-hop\",\"MuSiQue [120]\",\"[14], [51], [61], [91]\"],[\"QA\",\"Long-form QA\",\"ELI5 [121]\",\"[27], [34], [43], [49], [51]\"],[\"QA\",\"Long-form QA\",\"NarrativeQA(NQA) [122]\",\"[45], [60], [63], [123]\"],[\"QA\",\"Long-form QA\",\"ASQA [124]\",\"[24], [57]\"],[\"QA\",\"Long-form QA\",\"QMSum(QM) [125]\",\"[60], [123]\"],[\"QA\",\"Domain QA\",\"Qasper [126]\",\"[60], [63]\"],[\"QA\",\"Domain QA\",\"COVID-QA [127]\",\"[35], [46]\"],[\"QA\",\"Domain QA\",\"CMB [128],MMCU_Medical [129]\",\"[81]\"],[\"QA\",\"Multi-Choice QA\",\"QuALITY [130]\",\"[60], [63]\"],[\"QA\",\"Multi-Choice QA\",\"ARC [131]\",\"[25], [67]\"],[\"QA\",\"Multi-Choice QA\",\"CommonsenseQA [132]\",\"[58], [66]\"],[\"QA\",\"Graph QA\",\"GraphQA [84]\",\"[84]\"],[\"Dialog\",\"Dialog Generation\",\"Wizard of Wikipedia (WoW) [133]\",\"[13], [27], [34], [42]\"],[\"Dialog\",\"Personal Dialog\",\"KBP [134]\",\"[74], [135]\"],[\"Dialog\",\"Personal Dialog\",\"DuleMon [136]\",\"[74]\"],[\"Dialog\",\"Task-oriented Dialog\",\"CamRest [137]\",\"[78], [79]\"],[\"Dialog\",\"Recommendation\",\"Amazon(Toys,Sport,Beauty) [138]\",\"[39], [40]\"],[\"IE\",\"Event Argument Extraction\",\"WikiEvent [139]\",\"[13], [27], [37], [42]\"],[\"IE\",\"Event Argument Extraction\",\"RAMS [140]\",\"[36], [37]\"],[\"IE\",\"Relation Extraction\",\"T-REx [141],ZsRE [142]\",\"[27], [51]\"],[\"Reasoning\",\"Commonsense Reasoning\",\"HellaSwag [143]\",\"[20], [66]\"],[\"Reasoning\",\"CoT Reasoning\",\"CoT Reasoning [144]\",\"[27]\"],[\"Reasoning\",\"Complex Reasoning\",\"CSQA [145]\",\"[55]\"],[\"Others\",\"Language Understanding\",\"MMLU [146]\",\"[7], [27], [28], [42], [43], [47], [72]\"],[\"Others\",\"Language Modeling\",\"WikiText-103 [147]\",\"[5], [29], [64], [71]\"],[\"Others\",\"Language Modeling\",\"StrategyQA [148]\",\"[14], [24], [48], [51], [55], [58]\"],[\"Others\",\"Fact Checking/Verification\",\"FEVER [149]\",\"[4], [13], [27], [34], [42], [50]\"],[\"Others\",\"Fact Checking/Verification\",\"PubHealth [150]\",\"[25], [67]\"],[\"Others\",\"Text Generation\",\"Biography [151]\",\"[67]\"],[\"Others\",\"Text Summarization\",\"WikiASP [152]\",\"[24]\"],[\"Others\",\"Text Summarization\",\"XSum [153]\",\"[17]\"],[\"Others\",\"Text Classification\",\"VioLens [154]\",\"[19]\"],[\"Others\",\"Text Classification\",\"TREC [155]\",\"[33]\"],[\"Others\",\"Sentiment\",\"SST-2 [156]\",\"[20], [33], [38]\"],[\"Others\",\"Code Search\",\"CodeSearchNet [157]\",\"[76]\"],[\"Others\",\"Robustness Evaluation\",\"NoMIRACL [56]\",\"[56]\"],[\"Others\",\"Math\",\"GSM8K [158]\",\"[73]\"],[\"Others\",\"Machine Translation\",\"JRC-Acquis [159]\",\"[17]\"]],\"complete\":true,\"columns\":4,\"source_table_id\":\"table_cebc38efb6be3c6315cd28b7\",\"merged_cells\":[{\"row\":1,\"column\":0,\"rowspan\":25,\"colspan\":1,\"text\":\"QA\",\"header\":false},{\"row\":1,\"column\":1,\"rowspan\":10,\"colspan\":1,\"text\":\"Single-hop\",\"header\":false},{\"row\":1,\"column\":2,\"rowspan\":4,\"colspan\":1,\"text\":\"Natural Qustion(NQ) [111]\",\"header\":false},{\"row\":5,\"column\":2,\"rowspan\":2,\"colspan\":1,\"text\":\"TriviaQA(TQA) [113]\",\"header\":false},{\"row\":11,\"column\":1,\"rowspan\":4,\"colspan\":1,\"text\":\"Multi-hop\",\"header\":false},{\"row\":11,\"column\":2,\"rowspan\":2,\"colspan\":1,\"text\":\"HotpotQA [118]\",\"header\":false},{\"row\":15,\"column\":1,\"rowspan\":4,\"colspan\":1,\"text\":\"Long-form QA\",\"header\":false},{\"row\":19,\"column\":1,\"rowspan\":3,\"colspan\":1,\"text\":\"Domain QA\",\"header\":false},{\"row\":22,\"column\":1,\"rowspan\":3,\"colspan\":1,\"text\":\"Multi-Choice QA\",\"header\":false},{\"row\":26,\"column\":0,\"rowspan\":5,\"colspan\":1,\"text\":\"Dialog\",\"header\":false},{\"row\":27,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Personal Dialog\",\"header\":false},{\"row\":31,\"column\":0,\"rowspan\":3,\"colspan\":1,\"text\":\"IE\",\"header\":false},{\"row\":31,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Event Argument Extraction\",\"header\":false},{\"row\":34,\"column\":0,\"rowspan\":3,\"colspan\":1,\"text\":\"Reasoning\",\"header\":false},{\"row\":37,\"column\":0,\"rowspan\":15,\"colspan\":1,\"text\":\"Others\",\"header\":false},{\"row\":38,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Language Modeling\",\"header\":false},{\"row\":40,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Fact Checking/Verification\",\"header\":false},{\"row\":43,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Text Summarization\",\"header\":false},{\"row\":45,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Text Classification\",\"header\":false}],\"merge_semantics\":\"row/column are zero-based source coordinates. Repeated values in expanded rows covered by one rowspan belong to the SAME entity; aggregate its associated values across the entire span before comparing counts or totals.\"},\"evidence_format\":\"table_rows\",\"page_coverage\":[{\"page\":13,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}],\"reference\":{\"document_id\":\"doc_108d7bf5b70dd9b4a38e\",\"page_start\":13,\"page_end\":13}}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 19
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T12:05:49.234Z",
+      "completedAt": "2026-11-01T12:08:15.186Z",
+      "elapsedMs": 145952
+    },
+    "sansuoClientRequestId": "c5dbdd81-2b75-4877-b5db-9e0366a2e398",
+    "sansuoSources": [
+      {
+        "file_id": "39fd5bf4-ddae-4e9b-ae2b-69fc3d625d43",
+        "filename": "2312.10997v5.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1662567,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "document_id": "doc_108d7bf5b70dd9b4a38e",
+      "chunk_id": "chunk_767a7dcfa7a6a9683cc3",
+      "page_start": 13,
+      "page_end": 13,
+      "section_id": null,
+      "table_id": "table_a7090dfa48bc81e5eb3c",
+      "version": "f36bd03ad39dd9d29f95d8095ef74ac4cc8ad22efbb4006ef2415d9889720f15",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "user_id": "6ae72b1c64fcd316201351e1",
+      "conversation_id": "c2b6a940-7537-4632-88f3-c0fe91403685",
+      "recorded_at": "2026-11-01T12:07:03.003Z"
+    },
+    {
+      "document_id": "doc_108d7bf5b70dd9b4a38e",
+      "chunk_id": "chunk_767a7dcfa7a6a9683cc3",
+      "page_start": 13,
+      "page_end": 13,
+      "section_id": null,
+      "table_id": "table_a7090dfa48bc81e5eb3c",
+      "version": "f36bd03ad39dd9d29f95d8095ef74ac4cc8ad22efbb4006ef2415d9889720f15",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "user_id": "6ae72b1c64fcd316201351e1",
+      "conversation_id": "c2b6a940-7537-4632-88f3-c0fe91403685",
+      "recorded_at": "2026-11-01T12:07:06.132Z"
+    }
+  ]
+}

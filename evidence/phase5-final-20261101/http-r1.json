@@ -1,0 +1,49 @@
+{
+  "scope": "Phase5 isolated live HTTP; synthetic DOCX/CSV are compatibility fixtures, not PDF accuracy evidence",
+  "checks": [
+    {
+      "name": "plain_chat",
+      "ok": true,
+      "conversationId": "5b21c1b7-af58-4be4-a16c-6a9b3b905214",
+      "elapsed_ms": 6341,
+      "answer": "15",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "docx_read",
+      "ok": true,
+      "conversationId": "148faf09-aa39-4bb4-89d6-f6ba0b094c21",
+      "elapsed_ms": 4109,
+      "answer": "根据附件《regression.docx》的内容，样机 RX-481 的校验周期为 **17 天**。",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "csv_execute_code",
+      "ok": true,
+      "conversationId": "c887d626-7905-41d2-8541-c75b7aae49ce",
+      "elapsed_ms": 14466,
+      "answer": "代码执行环境当前出现连接错误，未能成功运行脚本。不过根据已解析的附件内容，可以直接给出结果：\n\n**ZX-917 的 `period_days` 值为 `23`。**",
+      "active": false,
+      "error": false,
+      "tools": [
+        {
+          "id": "call_bb5c3352c7174bf4b75ed350",
+          "name": "execute_code",
+          "args": "{\"code\":\"import pandas as pd\\n\\ndf = pd.read_csv('/mnt/data/phase5.csv')\\nresult = df[df['model'] == 'ZX-917']['period_days'].values\\nif len(result) > 0:\\n    print(result[0])\\nelse:\\n    print(\\\"Not found\\\")\",\"lang\":\"py\"}",
+          "type": "tool_call",
+          "progress": 1,
+          "output": "Error: Execution error:\n\nCodeAPI request failed: POST http://127.0.0.1:5057/v1/exec returned 500, body: {\"session_id\":\"exec_8c03cc41350bbb2ccde9\",\"stdout\":\"\",\"stderr\":\"connect ECONNREFUSED 127.0.0.1:8090\",\"files\":[],\"outputFiles\":[],\"generatedFiles\":[],\"inputFiles\":[]}\n Please fix your mistakes."
+        }
+      ]
+    },
+    {
+      "name": "foreign_message_isolation",
+      "ok": true,
+      "http_status": 200
+    }
+  ]
+}

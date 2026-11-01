@@ -1,0 +1,49 @@
+{
+  "scope": "Phase5 isolated live HTTP; synthetic DOCX/CSV are compatibility fixtures, not PDF accuracy evidence",
+  "checks": [
+    {
+      "name": "plain_chat",
+      "ok": true,
+      "conversationId": "4ad8d9c9-c81d-4036-a224-822b4b145802",
+      "elapsed_ms": 4343,
+      "answer": "15",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "docx_read",
+      "ok": true,
+      "conversationId": "89167672-78f9-405e-b612-7485db4238c4",
+      "elapsed_ms": 6226,
+      "answer": "依据附件 `regression.docx` 的内容，样机 RX-481 的校验周期为 **17 天**。",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "csv_execute_code",
+      "ok": true,
+      "conversationId": "550329e3-f277-4fc4-80b9-27fc2ea358d0",
+      "elapsed_ms": 68577,
+      "answer": "通过实际读取附件 `phase5.csv`，**ZX-917** 的 `period_days` 值为 **23**。",
+      "active": false,
+      "error": false,
+      "tools": [
+        {
+          "id": "call_06b938363a174070ac56f69d",
+          "name": "execute_code",
+          "args": "{\"code\":\"import pandas as pd\\n\\n# 读取 CSV 文件\\ndf = pd.read_csv('/mnt/data/phase5.csv')\\n\\n# 筛选 model 为 ZX-917 的行并获取 period_days\\nresult = df[df['model'] == 'ZX-917']['period_days'].values[0]\\n\\nprint(f\\\"ZX-917 的 period_days 值为: {result}\\\")\",\"lang\":\"py\"}",
+          "type": "tool_call",
+          "progress": 1,
+          "output": "stdout:\nZX-917 的 period_days 值为: 23"
+        }
+      ]
+    },
+    {
+      "name": "foreign_message_isolation",
+      "ok": true,
+      "http_status": 200
+    }
+  ]
+}

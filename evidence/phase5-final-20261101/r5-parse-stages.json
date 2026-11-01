@@ -1,0 +1,1318 @@
+[
+  {
+    "arm": "baseline",
+    "case": "academic",
+    "upload_ms": 130,
+    "first_answer_ms": 70200,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T12:02:53.517Z",
+        "traceId": "file-ed1aedbf-c6b6-4b66-897e-f6bcf18d4257",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 2,
+        "fileId": "ed1aedbf-c6b6-4b66-897e-f6bcf18d4257",
+        "export_log_time_utc": "2026-11-01T12:02:53Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:53.521Z",
+        "traceId": "file-ed1aedbf-c6b6-4b66-897e-f6bcf18d4257",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 3,
+        "queueWaitMs": 6,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:02:53Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:53.530Z",
+        "traceId": "file-ed1aedbf-c6b6-4b66-897e-f6bcf18d4257",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 9,
+        "sourceBytes": 1073408,
+        "export_log_time_utc": "2026-11-01T12:02:53Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:58.707Z",
+        "traceId": "file-ed1aedbf-c6b6-4b66-897e-f6bcf18d4257",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 5176,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T12:02:58Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:58.995Z",
+        "traceId": "file-ed1aedbf-c6b6-4b66-897e-f6bcf18d4257",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 5,
+        "artifacts": 16,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T12:02:58Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:59.092Z",
+        "traceId": "file-ed1aedbf-c6b6-4b66-897e-f6bcf18d4257",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 97,
+        "artifacts": 16,
+        "saved": 16,
+        "export_log_time_utc": "2026-11-01T12:02:59Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:59.092Z",
+        "traceId": "file-ed1aedbf-c6b6-4b66-897e-f6bcf18d4257",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 5571,
+        "artifacts": 16,
+        "saved": 16,
+        "export_log_time_utc": "2026-11-01T12:02:59Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:59.094Z",
+        "traceId": "file-ed1aedbf-c6b6-4b66-897e-f6bcf18d4257",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 5573,
+        "artifacts": 16,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:02:59Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "baseline",
+    "case": "finance",
+    "upload_ms": 99,
+    "first_answer_ms": 82233,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T11:59:58.063Z",
+        "traceId": "file-834503c1-d784-4153-90d0-523216d82ff1",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 1,
+        "fileId": "834503c1-d784-4153-90d0-523216d82ff1",
+        "export_log_time_utc": "2026-11-01T11:59:58Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:59:58.067Z",
+        "traceId": "file-834503c1-d784-4153-90d0-523216d82ff1",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 2,
+        "queueWaitMs": 5,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T11:59:58Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:59:58.073Z",
+        "traceId": "file-834503c1-d784-4153-90d0-523216d82ff1",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 5,
+        "sourceBytes": 173992,
+        "export_log_time_utc": "2026-11-01T11:59:58Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:00:11.693Z",
+        "traceId": "file-834503c1-d784-4153-90d0-523216d82ff1",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 13619,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T12:00:11Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:00:12.004Z",
+        "traceId": "file-834503c1-d784-4153-90d0-523216d82ff1",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 15,
+        "artifacts": 16,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T12:00:12Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:00:12.100Z",
+        "traceId": "file-834503c1-d784-4153-90d0-523216d82ff1",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 96,
+        "artifacts": 16,
+        "saved": 16,
+        "export_log_time_utc": "2026-11-01T12:00:12Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:00:12.100Z",
+        "traceId": "file-834503c1-d784-4153-90d0-523216d82ff1",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 14032,
+        "artifacts": 16,
+        "saved": 16,
+        "export_log_time_utc": "2026-11-01T12:00:12Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:00:12.102Z",
+        "traceId": "file-834503c1-d784-4153-90d0-523216d82ff1",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 14035,
+        "artifacts": 16,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:00:12Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "baseline",
+    "case": "netflix",
+    "upload_ms": 145,
+    "first_answer_ms": 97330,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T12:08:23.077Z",
+        "traceId": "file-2aa54684-0bbb-4275-8c03-53d96ff8f6d0",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 3,
+        "fileId": "2aa54684-0bbb-4275-8c03-53d96ff8f6d0",
+        "export_log_time_utc": "2026-11-01T12:08:23Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:08:23.087Z",
+        "traceId": "file-2aa54684-0bbb-4275-8c03-53d96ff8f6d0",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 8,
+        "queueWaitMs": 13,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:08:23Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:08:23.098Z",
+        "traceId": "file-2aa54684-0bbb-4275-8c03-53d96ff8f6d0",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 11,
+        "sourceBytes": 578489,
+        "export_log_time_utc": "2026-11-01T12:08:23Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:09:30.260Z",
+        "traceId": "file-2aa54684-0bbb-4275-8c03-53d96ff8f6d0",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 67161,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T12:09:30Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:09:30.741Z",
+        "traceId": "file-2aa54684-0bbb-4275-8c03-53d96ff8f6d0",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 120,
+        "artifacts": 65,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T12:09:30Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:09:31.327Z",
+        "traceId": "file-2aa54684-0bbb-4275-8c03-53d96ff8f6d0",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 585,
+        "artifacts": 65,
+        "saved": 65,
+        "export_log_time_utc": "2026-11-01T12:09:31Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:09:31.327Z",
+        "traceId": "file-2aa54684-0bbb-4275-8c03-53d96ff8f6d0",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 68240,
+        "artifacts": 65,
+        "saved": 65,
+        "export_log_time_utc": "2026-11-01T12:09:31Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:09:31.331Z",
+        "traceId": "file-2aa54684-0bbb-4275-8c03-53d96ff8f6d0",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 68244,
+        "artifacts": 65,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:09:31Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "baseline",
+    "case": "phone",
+    "upload_ms": 635,
+    "first_answer_ms": 211028,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T11:56:14.712Z",
+        "traceId": "file-cb33b000-ad6e-4cfb-9eea-1abd642cc59a",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 1,
+        "fileId": "cb33b000-ad6e-4cfb-9eea-1abd642cc59a",
+        "export_log_time_utc": "2026-11-01T11:56:14Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:56:14.719Z",
+        "traceId": "file-cb33b000-ad6e-4cfb-9eea-1abd642cc59a",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 4,
+        "queueWaitMs": 8,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T11:56:14Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:56:14.961Z",
+        "traceId": "file-cb33b000-ad6e-4cfb-9eea-1abd642cc59a",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 242,
+        "sourceBytes": 31841340,
+        "export_log_time_utc": "2026-11-01T11:56:14Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:59:21.036Z",
+        "traceId": "file-cb33b000-ad6e-4cfb-9eea-1abd642cc59a",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 186073,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T11:59:21Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:59:21.516Z",
+        "traceId": "file-cb33b000-ad6e-4cfb-9eea-1abd642cc59a",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 127,
+        "artifacts": 89,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T11:59:21Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:59:22.159Z",
+        "traceId": "file-cb33b000-ad6e-4cfb-9eea-1abd642cc59a",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 642,
+        "artifacts": 89,
+        "saved": 89,
+        "export_log_time_utc": "2026-11-01T11:59:22Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:59:22.159Z",
+        "traceId": "file-cb33b000-ad6e-4cfb-9eea-1abd642cc59a",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 187440,
+        "artifacts": 89,
+        "saved": 89,
+        "export_log_time_utc": "2026-11-01T11:59:22Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:59:22.161Z",
+        "traceId": "file-cb33b000-ad6e-4cfb-9eea-1abd642cc59a",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 187442,
+        "artifacts": 89,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T11:59:22Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "baseline",
+    "case": "scan",
+    "upload_ms": 560,
+    "first_answer_ms": 228078,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T12:10:26.154Z",
+        "traceId": "file-eb3cff15-ec2e-4184-91c5-2f6f7a2cc165",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 2,
+        "fileId": "eb3cff15-ec2e-4184-91c5-2f6f7a2cc165",
+        "export_log_time_utc": "2026-11-01T12:10:26Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:10:26.160Z",
+        "traceId": "file-eb3cff15-ec2e-4184-91c5-2f6f7a2cc165",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 4,
+        "queueWaitMs": 8,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:10:26Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:10:26.402Z",
+        "traceId": "file-eb3cff15-ec2e-4184-91c5-2f6f7a2cc165",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 242,
+        "sourceBytes": 33875317,
+        "export_log_time_utc": "2026-11-01T12:10:26Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:12:48.673Z",
+        "traceId": "file-eb3cff15-ec2e-4184-91c5-2f6f7a2cc165",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 142269,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T12:12:48Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:12:49.240Z",
+        "traceId": "file-eb3cff15-ec2e-4184-91c5-2f6f7a2cc165",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 241,
+        "artifacts": 74,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T12:12:49Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:12:49.815Z",
+        "traceId": "file-eb3cff15-ec2e-4184-91c5-2f6f7a2cc165",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 574,
+        "artifacts": 74,
+        "saved": 74,
+        "export_log_time_utc": "2026-11-01T12:12:49Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:12:49.816Z",
+        "traceId": "file-eb3cff15-ec2e-4184-91c5-2f6f7a2cc165",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 143656,
+        "artifacts": 74,
+        "saved": 74,
+        "export_log_time_utc": "2026-11-01T12:12:49Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:12:49.818Z",
+        "traceId": "file-eb3cff15-ec2e-4184-91c5-2f6f7a2cc165",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 143658,
+        "artifacts": 74,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:12:49Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "baseline",
+    "case": "table",
+    "upload_ms": 128,
+    "first_answer_ms": 150094,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T12:05:49.190Z",
+        "traceId": "file-39fd5bf4-ddae-4e9b-ae2b-69fc3d625d43",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 2,
+        "fileId": "39fd5bf4-ddae-4e9b-ae2b-69fc3d625d43",
+        "export_log_time_utc": "2026-11-01T12:05:49Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:05:49.193Z",
+        "traceId": "file-39fd5bf4-ddae-4e9b-ae2b-69fc3d625d43",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 2,
+        "queueWaitMs": 4,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:05:49Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:05:49.206Z",
+        "traceId": "file-39fd5bf4-ddae-4e9b-ae2b-69fc3d625d43",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 12,
+        "sourceBytes": 1662567,
+        "export_log_time_utc": "2026-11-01T12:05:49Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:06:32.377Z",
+        "traceId": "file-39fd5bf4-ddae-4e9b-ae2b-69fc3d625d43",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 43171,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T12:06:32Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:06:32.733Z",
+        "traceId": "file-39fd5bf4-ddae-4e9b-ae2b-69fc3d625d43",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 55,
+        "artifacts": 19,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T12:06:32Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:06:32.986Z",
+        "traceId": "file-39fd5bf4-ddae-4e9b-ae2b-69fc3d625d43",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 253,
+        "artifacts": 19,
+        "saved": 19,
+        "export_log_time_utc": "2026-11-01T12:06:32Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:06:32.986Z",
+        "traceId": "file-39fd5bf4-ddae-4e9b-ae2b-69fc3d625d43",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 43792,
+        "artifacts": 19,
+        "saved": 19,
+        "export_log_time_utc": "2026-11-01T12:06:32Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:06:32.988Z",
+        "traceId": "file-39fd5bf4-ddae-4e9b-ae2b-69fc3d625d43",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 43795,
+        "artifacts": 19,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:06:32Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "baseline",
+    "case": "tree",
+    "upload_ms": 147,
+    "first_answer_ms": 99171,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T12:04:06.925Z",
+        "traceId": "file-b1ef76a6-7138-40e2-9cca-0fc44174f9d9",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 5,
+        "fileId": "b1ef76a6-7138-40e2-9cca-0fc44174f9d9",
+        "export_log_time_utc": "2026-11-01T12:04:06Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:04:06.933Z",
+        "traceId": "file-b1ef76a6-7138-40e2-9cca-0fc44174f9d9",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 4,
+        "queueWaitMs": 12,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:04:06Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:04:06.963Z",
+        "traceId": "file-b1ef76a6-7138-40e2-9cca-0fc44174f9d9",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 29,
+        "sourceBytes": 1662567,
+        "export_log_time_utc": "2026-11-01T12:04:06Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:04:38.352Z",
+        "traceId": "file-b1ef76a6-7138-40e2-9cca-0fc44174f9d9",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 31388,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T12:04:38Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:04:38.684Z",
+        "traceId": "file-b1ef76a6-7138-40e2-9cca-0fc44174f9d9",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 42,
+        "artifacts": 19,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T12:04:38Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:04:38.897Z",
+        "traceId": "file-b1ef76a6-7138-40e2-9cca-0fc44174f9d9",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 212,
+        "artifacts": 19,
+        "saved": 19,
+        "export_log_time_utc": "2026-11-01T12:04:38Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:04:38.898Z",
+        "traceId": "file-b1ef76a6-7138-40e2-9cca-0fc44174f9d9",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 31964,
+        "artifacts": 19,
+        "saved": 19,
+        "export_log_time_utc": "2026-11-01T12:04:38Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:04:38.899Z",
+        "traceId": "file-b1ef76a6-7138-40e2-9cca-0fc44174f9d9",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 31966,
+        "artifacts": 19,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:04:38Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "candidate",
+    "case": "academic",
+    "upload_ms": 140,
+    "first_answer_ms": 79624,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T11:58:33.715Z",
+        "traceId": "file-b4efa434-e123-49fe-8aa8-0030c9fc2e50",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 1,
+        "fileId": "b4efa434-e123-49fe-8aa8-0030c9fc2e50",
+        "export_log_time_utc": "2026-11-01T11:58:33Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:58:33.720Z",
+        "traceId": "file-b4efa434-e123-49fe-8aa8-0030c9fc2e50",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 3,
+        "queueWaitMs": 6,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T11:58:33Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:58:33.733Z",
+        "traceId": "file-b4efa434-e123-49fe-8aa8-0030c9fc2e50",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 13,
+        "sourceBytes": 1073408,
+        "export_log_time_utc": "2026-11-01T11:58:33Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:58:48.165Z",
+        "traceId": "file-b4efa434-e123-49fe-8aa8-0030c9fc2e50",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 14431,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T11:58:48Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:58:48.504Z",
+        "traceId": "file-b4efa434-e123-49fe-8aa8-0030c9fc2e50",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 7,
+        "artifacts": 16,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T11:58:48Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:58:48.618Z",
+        "traceId": "file-b4efa434-e123-49fe-8aa8-0030c9fc2e50",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 114,
+        "artifacts": 16,
+        "saved": 16,
+        "export_log_time_utc": "2026-11-01T11:58:48Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:58:48.619Z",
+        "traceId": "file-b4efa434-e123-49fe-8aa8-0030c9fc2e50",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 14899,
+        "artifacts": 16,
+        "saved": 16,
+        "export_log_time_utc": "2026-11-01T11:58:48Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:58:48.621Z",
+        "traceId": "file-b4efa434-e123-49fe-8aa8-0030c9fc2e50",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 14901,
+        "artifacts": 16,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T11:58:48Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "candidate",
+    "case": "finance",
+    "upload_ms": 162,
+    "first_answer_ms": 73442,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T11:56:53.618Z",
+        "traceId": "file-c68cd3fe-871f-45ac-9a54-3c919c1060f4",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 3,
+        "fileId": "c68cd3fe-871f-45ac-9a54-3c919c1060f4",
+        "export_log_time_utc": "2026-11-01T11:56:53Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:56:53.625Z",
+        "traceId": "file-c68cd3fe-871f-45ac-9a54-3c919c1060f4",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 3,
+        "queueWaitMs": 7,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T11:56:53Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:56:53.633Z",
+        "traceId": "file-c68cd3fe-871f-45ac-9a54-3c919c1060f4",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 8,
+        "sourceBytes": 173992,
+        "export_log_time_utc": "2026-11-01T11:56:53Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:57:07.860Z",
+        "traceId": "file-c68cd3fe-871f-45ac-9a54-3c919c1060f4",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 14226,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T11:57:07Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:57:08.154Z",
+        "traceId": "file-c68cd3fe-871f-45ac-9a54-3c919c1060f4",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 18,
+        "artifacts": 16,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T11:57:08Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:57:08.248Z",
+        "traceId": "file-c68cd3fe-871f-45ac-9a54-3c919c1060f4",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 94,
+        "artifacts": 16,
+        "saved": 16,
+        "export_log_time_utc": "2026-11-01T11:57:08Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:57:08.248Z",
+        "traceId": "file-c68cd3fe-871f-45ac-9a54-3c919c1060f4",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 14623,
+        "artifacts": 16,
+        "saved": 16,
+        "export_log_time_utc": "2026-11-01T11:57:08Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:57:08.249Z",
+        "traceId": "file-c68cd3fe-871f-45ac-9a54-3c919c1060f4",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 14625,
+        "artifacts": 16,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T11:57:08Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "candidate",
+    "case": "netflix",
+    "upload_ms": 121,
+    "first_answer_ms": 80639,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T12:04:22.188Z",
+        "traceId": "file-484d38a4-2986-4cc9-a546-f4889dc18960",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 2,
+        "fileId": "484d38a4-2986-4cc9-a546-f4889dc18960",
+        "export_log_time_utc": "2026-11-01T12:04:22Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:04:22.192Z",
+        "traceId": "file-484d38a4-2986-4cc9-a546-f4889dc18960",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 2,
+        "queueWaitMs": 6,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:04:22Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:04:22.202Z",
+        "traceId": "file-484d38a4-2986-4cc9-a546-f4889dc18960",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 9,
+        "sourceBytes": 578489,
+        "export_log_time_utc": "2026-11-01T12:04:22Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:05:23.888Z",
+        "traceId": "file-484d38a4-2986-4cc9-a546-f4889dc18960",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 61685,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T12:05:23Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:05:24.280Z",
+        "traceId": "file-484d38a4-2986-4cc9-a546-f4889dc18960",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 115,
+        "artifacts": 65,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T12:05:24Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:05:24.624Z",
+        "traceId": "file-484d38a4-2986-4cc9-a546-f4889dc18960",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 343,
+        "artifacts": 65,
+        "saved": 65,
+        "export_log_time_utc": "2026-11-01T12:05:24Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:05:24.625Z",
+        "traceId": "file-484d38a4-2986-4cc9-a546-f4889dc18960",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 62432,
+        "artifacts": 65,
+        "saved": 65,
+        "export_log_time_utc": "2026-11-01T12:05:24Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:05:24.626Z",
+        "traceId": "file-484d38a4-2986-4cc9-a546-f4889dc18960",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 62434,
+        "artifacts": 65,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:05:24Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "candidate",
+    "case": "phone",
+    "upload_ms": 622,
+    "first_answer_ms": 59780,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T11:55:23.576Z",
+        "traceId": "file-13ebc275-75a3-429a-85ac-8675f3b66061",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 8,
+        "fileId": "13ebc275-75a3-429a-85ac-8675f3b66061",
+        "export_log_time_utc": "2026-11-01T11:55:23Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:55:23.587Z",
+        "traceId": "file-13ebc275-75a3-429a-85ac-8675f3b66061",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 6,
+        "queueWaitMs": 15,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T11:55:23Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:55:23.936Z",
+        "traceId": "file-13ebc275-75a3-429a-85ac-8675f3b66061",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 348,
+        "sourceBytes": 31841340,
+        "export_log_time_utc": "2026-11-01T11:55:23Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:56:06.592Z",
+        "traceId": "file-13ebc275-75a3-429a-85ac-8675f3b66061",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 42656,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T11:56:06Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:56:07.050Z",
+        "traceId": "file-13ebc275-75a3-429a-85ac-8675f3b66061",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 111,
+        "artifacts": 89,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T11:56:07Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:56:07.578Z",
+        "traceId": "file-13ebc275-75a3-429a-85ac-8675f3b66061",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 528,
+        "artifacts": 89,
+        "saved": 89,
+        "export_log_time_utc": "2026-11-01T11:56:07Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:56:07.578Z",
+        "traceId": "file-13ebc275-75a3-429a-85ac-8675f3b66061",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 43990,
+        "artifacts": 89,
+        "saved": 89,
+        "export_log_time_utc": "2026-11-01T11:56:07Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:56:07.581Z",
+        "traceId": "file-13ebc275-75a3-429a-85ac-8675f3b66061",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 43994,
+        "artifacts": 89,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T11:56:07Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "candidate",
+    "case": "scan",
+    "upload_ms": 460,
+    "first_answer_ms": 287586,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T12:05:58.574Z",
+        "traceId": "file-d13f4357-1980-49e8-8332-89af3dc85563",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 1,
+        "fileId": "d13f4357-1980-49e8-8332-89af3dc85563",
+        "export_log_time_utc": "2026-11-01T12:05:58Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:05:58.579Z",
+        "traceId": "file-d13f4357-1980-49e8-8332-89af3dc85563",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 3,
+        "queueWaitMs": 6,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:05:58Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:05:58.829Z",
+        "traceId": "file-d13f4357-1980-49e8-8332-89af3dc85563",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 250,
+        "sourceBytes": 33875317,
+        "export_log_time_utc": "2026-11-01T12:05:58Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:08:59.088Z",
+        "traceId": "file-d13f4357-1980-49e8-8332-89af3dc85563",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 180258,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T12:08:59Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:08:59.688Z",
+        "traceId": "file-d13f4357-1980-49e8-8332-89af3dc85563",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 228,
+        "artifacts": 74,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T12:08:59Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:09:00.258Z",
+        "traceId": "file-d13f4357-1980-49e8-8332-89af3dc85563",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 566,
+        "artifacts": 74,
+        "saved": 74,
+        "export_log_time_utc": "2026-11-01T12:09:00Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:09:00.258Z",
+        "traceId": "file-d13f4357-1980-49e8-8332-89af3dc85563",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 181679,
+        "artifacts": 74,
+        "saved": 74,
+        "export_log_time_utc": "2026-11-01T12:09:00Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:09:00.260Z",
+        "traceId": "file-d13f4357-1980-49e8-8332-89af3dc85563",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 181681,
+        "artifacts": 74,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:09:00Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "candidate",
+    "case": "table",
+    "upload_ms": 154,
+    "first_answer_ms": 172200,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T12:01:26.773Z",
+        "traceId": "file-5520801c-2590-4b17-a82a-209859ebb2d0",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 6,
+        "fileId": "5520801c-2590-4b17-a82a-209859ebb2d0",
+        "export_log_time_utc": "2026-11-01T12:01:26Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:01:26.785Z",
+        "traceId": "file-5520801c-2590-4b17-a82a-209859ebb2d0",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 9,
+        "queueWaitMs": 17,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:01:26Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:01:26.809Z",
+        "traceId": "file-5520801c-2590-4b17-a82a-209859ebb2d0",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 23,
+        "sourceBytes": 1662567,
+        "export_log_time_utc": "2026-11-01T12:01:26Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:04.400Z",
+        "traceId": "file-5520801c-2590-4b17-a82a-209859ebb2d0",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 37590,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T12:02:04Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:04.778Z",
+        "traceId": "file-5520801c-2590-4b17-a82a-209859ebb2d0",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 45,
+        "artifacts": 19,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T12:02:04Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:04.958Z",
+        "traceId": "file-5520801c-2590-4b17-a82a-209859ebb2d0",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 179,
+        "artifacts": 19,
+        "saved": 19,
+        "export_log_time_utc": "2026-11-01T12:02:04Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:04.958Z",
+        "traceId": "file-5520801c-2590-4b17-a82a-209859ebb2d0",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 38172,
+        "artifacts": 19,
+        "saved": 19,
+        "export_log_time_utc": "2026-11-01T12:02:04Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:02:04.960Z",
+        "traceId": "file-5520801c-2590-4b17-a82a-209859ebb2d0",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 38175,
+        "artifacts": 19,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:02:04Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  },
+  {
+    "arm": "candidate",
+    "case": "tree",
+    "upload_ms": 139,
+    "first_answer_ms": 86700,
+    "parse_timings": [
+      {
+        "timestamp": "2026-11-01T11:59:56.634Z",
+        "traceId": "file-f330ac58-2a54-48c2-a90e-91bb03ecf89f",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 2,
+        "fileId": "f330ac58-2a54-48c2-a90e-91bb03ecf89f",
+        "export_log_time_utc": "2026-11-01T11:59:56Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:59:56.638Z",
+        "traceId": "file-f330ac58-2a54-48c2-a90e-91bb03ecf89f",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 2,
+        "queueWaitMs": 6,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T11:59:56Z"
+      },
+      {
+        "timestamp": "2026-11-01T11:59:56.658Z",
+        "traceId": "file-f330ac58-2a54-48c2-a90e-91bb03ecf89f",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 20,
+        "sourceBytes": 1662567,
+        "export_log_time_utc": "2026-11-01T11:59:56Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:00:33.016Z",
+        "traceId": "file-f330ac58-2a54-48c2-a90e-91bb03ecf89f",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 36357,
+        "httpStatus": 200,
+        "export_log_time_utc": "2026-11-01T12:00:33Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:00:33.455Z",
+        "traceId": "file-f330ac58-2a54-48c2-a90e-91bb03ecf89f",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 119,
+        "artifacts": 19,
+        "missingImages": 0,
+        "export_log_time_utc": "2026-11-01T12:00:33Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:00:33.632Z",
+        "traceId": "file-f330ac58-2a54-48c2-a90e-91bb03ecf89f",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 175,
+        "artifacts": 19,
+        "saved": 19,
+        "export_log_time_utc": "2026-11-01T12:00:33Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:00:33.632Z",
+        "traceId": "file-f330ac58-2a54-48c2-a90e-91bb03ecf89f",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 36994,
+        "artifacts": 19,
+        "saved": 19,
+        "export_log_time_utc": "2026-11-01T12:00:33Z"
+      },
+      {
+        "timestamp": "2026-11-01T12:00:33.634Z",
+        "traceId": "file-f330ac58-2a54-48c2-a90e-91bb03ecf89f",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 36996,
+        "artifacts": 19,
+        "attempt": 1,
+        "export_log_time_utc": "2026-11-01T12:00:33Z"
+      }
+    ],
+    "note": "First answer includes waiting for async parsing; overlapping timings must not be added."
+  }
+]

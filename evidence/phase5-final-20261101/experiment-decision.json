@@ -1,0 +1,9 @@
+{
+  "experiment": "inspect-page-v8-grounded-detail",
+  "source": "r6-source.json",
+  "patch": "r6-visual-experiment.patch",
+  "outcome": "reverted automatic detail pass and unproven prompt changes; original explicit region inspection retained",
+  "evidence": "candidate/r6/academic.json",
+  "reason": "automatic crop produced wrong academic year, retained partial, added 16877 ms and 5852 tokens; tree still reported false exact counts; no reliable demonstrated accuracy gain",
+  "final_prompt_version": "inspect-page-v7-question-context"
+}

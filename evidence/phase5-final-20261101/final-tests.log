@@ -1,0 +1,25 @@
+
+> @librechat/backend@v0.8.5 test
+> cross-env NODE_ENV=test jest --runInBand server/services/Files/Code/process.spec.js server/services/Files/Code/mineruCloud.spec.js server/services/DocumentArtifactRepository.spec.js server/services/DocumentRepositorySecurity.spec.js server/services/DocumentVectorSearch.spec.js server/services/DocumentContextService.spec.js server/services/DocumentTables.spec.js server/services/DocumentVisualPolicy.spec.js server/services/DocumentPageVisionService.spec.js server/services/DocumentQuality.spec.js server/services/DocumentRetrieval.spec.js server/services/DocumentLexicalIndex.spec.js server/services/DocumentToolResult.spec.js server/services/ModelTransportReliability.spec.js server/services/Endpoints/agents/sansuoToolPolicy.spec.js
+
+PASS server/services/DocumentQuality.spec.js
+PASS server/services/DocumentLexicalIndex.spec.js
+PASS server/services/Files/Code/process.spec.js
+PASS server/services/DocumentArtifactRepository.spec.js
+PASS server/services/Endpoints/agents/sansuoToolPolicy.spec.js
+PASS server/services/DocumentRepositorySecurity.spec.js
+PASS server/services/ModelTransportReliability.spec.js
+PASS server/services/DocumentVectorSearch.spec.js
+PASS server/services/Files/Code/mineruCloud.spec.js
+PASS server/services/DocumentPageVisionService.spec.js
+PASS server/services/DocumentTables.spec.js
+PASS server/services/DocumentContextService.spec.js
+PASS server/services/DocumentRetrieval.spec.js
+PASS server/services/DocumentVisualPolicy.spec.js
+PASS server/services/DocumentToolResult.spec.js
+
+Test Suites: 15 passed, 15 total
+Tests:       256 passed, 256 total
+Snapshots:   0 total
+Time:        1.949 s, estimated 3 s
+Ran all test suites matching server/services/Files/Code/process.spec.js|server/services/Files/Code/mineruCloud.spec.js|server/services/DocumentArtifactRepository.spec.js|server/services/DocumentRepositorySecurity.spec.js|server/services/DocumentVectorSearch.spec.js|server/services/DocumentContextService.spec.js|server/services/DocumentTables.spec.js|server/services/DocumentVisualPolicy.spec.js|server/services/DocumentPageVisionService.spec.js|server/services/DocumentQuality.spec.js|server/services/DocumentRetrieval.spec.js|server/services/DocumentLexicalIndex.spec.js|server/services/DocumentToolResult.spec.js|server/services/ModelTransportReliability.spec.js|server/services/Endpoints/agents/sansuoToolPolicy.spec.js.

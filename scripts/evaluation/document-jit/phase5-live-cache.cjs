@@ -22,7 +22,7 @@ const report={scope:'real persisted artifacts/cache with tool-level calls; isola
   const current=await db.getFiles({user:userId,file_id:document.fileId},{},{});const source=current[0];if(!source)return 'DOCUMENT_ACCESS_DENIED';
   if((source.metadata?.sha256||source.metadata?.contentHash)!==document.sourceHash)return 'DOCUMENT_VERSION_MISMATCH';return true;
  }});
- await repo.load({roots:[file],artifacts,download});repo.trace={emit:(stage,data)=>report.events.push({stage,...data})};
+ await repo.load({roots:[file],artifacts,download});repo.trace={emit:(stage,data)=>report.events.push({stage,...data}),query:()=>({})};
  const doc=[...repo.documents.values()][0];report.loaded={artifacts:artifacts.length,records:doc?.records.length,warnings:doc?.warnings,sourceHash:doc?.sourceHash};if(!doc?.records.length)throw Error('NO_PARSED_RECORDS_LOADED');
  const call=result.tool_calls.map(t=>{try{return {args:JSON.parse(t.args),out:JSON.parse(t.output)}}catch{return {}}}).find(t=>t.args?.action==='inspect_page'&&t.out?.status==='ok');
  if(call){
@@ -37,7 +37,25 @@ const report={scope:'real persisted artifacts/cache with tool-level calls; isola
    await files.updateOne({_id:original._id},{$set:{'metadata.sha256':'phase5-changed-source'}});const changed=await service.inspect(call.args);report.checks.push({name:'source_metadata_change_rejects_cached_visual',ok:changed.error?.code==='DOCUMENT_VERSION_MISMATCH',code:changed.error?.code});
   }finally{await files.replaceOne({_id:original._id},original);}
  }else report.checks.push({name:'persisted_visual_hit',ok:false,reason:'NO_COMPLETE_VISUAL_RESULT_IN_SELECTED_AGENT_RUN'});
+ const sourceCollection=mongoose.connection.collection('files');const savedRoot=await sourceCollection.findOne({file_id:file.file_id});
+ try{
+  await sourceCollection.deleteOne({_id:savedRoot._id});const denied=await repo.checkAuthorization([doc]);report.checks.push({name:'deleted_root_denied',ok:denied?.error?.code==='DOCUMENT_ACCESS_DENIED'});
+ }finally{await sourceCollection.replaceOne({_id:savedRoot._id},savedRoot,{upsert:true});}
+ const artifactCollection=mongoose.connection.collection('sansuofiles');const binding=doc.artifactBindings?.[0];
+ if(binding){const originalArtifact=await artifactCollection.findOne({libreFileId:binding.id});try{
+  await artifactCollection.updateOne({_id:originalArtifact._id},{$set:{status:'failed'}});const denied=await repo.checkAuthorization([doc]);report.checks.push({name:'failed_artifact_denied',ok:denied?.error?.code==='DOCUMENT_ACCESS_DENIED'});
+ }finally{await artifactCollection.replaceOne({_id:originalArtifact._id},originalArtifact);}}
+ if(binding){const originalArtifact=await artifactCollection.findOne({libreFileId:binding.id});try{
+  for(const [field,value] of Object.entries({parseGeneration:'phase5-new-generation',parserVersion:'phase5-new-parser',artifactSetStatus:'partial'})){
+   await artifactCollection.updateOne({_id:originalArtifact._id},{$set:{['metadata.'+field]:value}});
+   const denied=await repo.checkAuthorization([doc]);report.checks.push({name:field+'_change_denies_loaded_evidence',ok:denied?.error?.code==='DOCUMENT_VERSION_MISMATCH'});
+   await artifactCollection.replaceOne({_id:originalArtifact._id},originalArtifact);
+  }
+ }finally{await artifactCollection.replaceOne({_id:originalArtifact._id},originalArtifact);}}
+ const foreign=new DocumentArtifactRepository({userId:'foreign-isolation',conversationId});await foreign.load({roots:[file],artifacts,download});report.checks.push({name:'foreign_user_repository_empty',ok:foreign.documents.size===0});
+ const other=new DocumentArtifactRepository({userId,conversationId:'foreign-conversation'});await other.load({roots:[file],artifacts,download});report.checks.push({name:'foreign_conversation_no_records',ok:[...other.documents.values()].every(d=>d.records.length===0)});
  const vector=new DocumentVectorSearch({cache:createMongoVectorCache(mongoose)});const query=JSON.parse(fs.readFileSync('/tmp/jit-inference-manifest.json')).questions.find(q=>q.id===result.id).question;
+ const routed=await repo.executeAsync({action:'read',document_id:doc.documentId,query});report.checks.push({name:'query_only_read_uses_search_on_real_artifacts',ok:routed.action==='search'&&Boolean(routed.content),action:routed.action,error:routed.error});
  const before=vector.usage.calls,t=Date.now();await vector.search({userId,conversationId,document:doc,query});const first=vector.usage.calls-before;
  const t2=Date.now();await vector.search({userId,conversationId,document:doc,query});report.checks.push({name:'vector_warm_reuse',ok:doc.records.length>0&&vector.usage.calls===before+first,first_calls:first,records:doc.records.length,second_calls:vector.usage.calls-before-first,total_ms:Date.now()-t,second_ms:Date.now()-t2});
-})().catch(e=>{report.error=e.message;process.exitCode=1;}).finally(async()=>{fs.writeFileSync(output,JSON.stringify(report,null,2),{flag:'wx'});console.log(JSON.stringify({download_status:report.download_status,loaded:report.loaded,checks:report.checks,error:report.error}));await mongoose.disconnect();process.exit(process.exitCode||0);});
+})().catch(e=>{report.error=e.message;process.exitCode=1;}).finally(async()=>{fs.writeFileSync(output,JSON.stringify(report,null,2),{flag:'wx'});console.log(JSON.stringify({download_status:report.download_status,loaded:report.loaded,checks:report.checks,error:report.error}));await mongoose.disconnect();process.exit(process.exitCode||report.checks.some(c=>!c.ok)?1:0);});

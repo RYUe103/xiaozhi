@@ -1,0 +1,71 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "35ececc1-a4b5-4921-93f2-628768bcd4cb",
+  "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+  "pdf_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+  "elapsed_ms": 79590,
+  "active": false,
+  "upload_ms": 120,
+  "answer": "根据文档第 2 页的 `GENERAL FUND REVENUES FY 2016` 图表及同页数据表，代表最小部分的类别是 **Licenses/Permits（许可证/许可费）**，金额为 **$76,000**。\n\n该类别占一般基金总收入（总计 $5,561,940）的比例约为 **1.37%**。",
+  "tool_calls": [
+    {
+      "id": "call_b003a48f032a41dcb032d892",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_c116bed312d3740e8f21\",\"mode\":\"figure\",\"page\":2,\"query\":\"GENERAL FUND REVENUES chart\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_c116bed312d3740e8f21\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef\",\"source_hash\":\"d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef\",\"image_id\":\"sansuo_hidden__upload_54ea15a12e1b1862f7cf__file_5f19e2df98a65658ae13\",\"region\":null,\"visual_result_id\":\"vision_fa622f1260c89fe8ffcf3df99b55af01\",\"vision_version\":\"inspect-page-v4-crosscheck\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"3f96fa3d9c5a3cad43b642d1ded7f2c154326402b7374251e1fdb7e7b217c2d2\",\"user_id\":\"6ae72efbcd8c1bba9d495dbc\",\"conversation_id\":\"35ececc1-a4b5-4921-93f2-628768bcd4cb\",\"status\":\"partial\"},\"visual_result_id\":\"vision_fa622f1260c89fe8ffcf3df99b55af01\",\"ok\":false,\"status\":\"partial\",\"document_id\":\"doc_c116bed312d3740e8f21\",\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"\",\"evidence_text\":\"\",\"cells\":[],\"series\":[],\"uncertainties\":[\"视觉输出未通过结构校验\"]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"见 evidence_text 与 series\\\",\\n  \\\"evidence_text\\\": \\\"GENERAL FUND REVENUES FY 2016\\\\nSales Tax\\\\nSev/Mineral Royalties\\\\n□ Property Tax\\\\nFranchise Fees\\\\n■ Fuel/Cigarette Tax\\\\nLicenses/Permits\\\\nFines\\\\nOther/Interest\\\\nGrants\\\\nCharges/Services\\\\nSupplem Funds\\\\nReserve\\\\n\\\\n[图例框]：\\\\n■ Sales Tax\\\\n□ Property Tax\\\\n■ Fuel/Cigarette Tax\\\\n■ Fines\\\\n■ Grants\\\\n■ Supplem Funds\\\\n（其余为不同颜色方块对应）\\\\n\\\\n表格数据：\\\\nSales & Use Tax $1,800,000\\\\nSeverance/Mineral Royalties $752,000\\\\nProperty Tax $665,000\\\\nFranchise Fees $350,000\\\\nFuel/Cigarette Tax $351,600\\\\nLicenses/Permits $76,000\\\\nFines $118,251\\\\nOther Incl. Interest $178,623\\\\nGrants $169,266\\\\nCharges for Services $220,200\\\\nState Supplemental Funds $620,000\\\\nReserve Transfer $261,000\\\\nTotal $5,561,940\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Sales Tax\\\",\\n      \\\"series\\\": \\\"Sales & Use Tax\\\",\\n      \\\"value\\\": 1800000,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Sev/Mineral Royalties\\\",\\n      \\\"series\\\": \\\"Severance/Mineral Royalties\\\",\\n      \\\"value\\\": 752000,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Property Tax\\\",\\n      \\\"series\\\": \\\"Property Tax\\\",\\n      \\\"value\\\": 665000,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Franchise Fees\\\",\\n      \\\"series\\\": \\\"Franchise Fees\\\",\\n      \\\"value\\\": 350000,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Fuel/Cigarette Tax\\\",\\n      \\\"series\\\": \\\"Fuel/Cigarette Tax\\\",\\n      \\\"value\\\": 351600,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Licenses/Permits\\\",\\n      \\\"series\\\": \\\"Licenses/Permits\\\",\\n      \\\"value\\\": 76000,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Fines\\\",\\n      \\\"series\\\": \\\"Fines\\\",\\n      \\\"value\\\": 118251,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Other/Interest\\\",\\n      \\\"series\\\": \\\"Other Incl. Interest\\\",\\n      \\\"value\\\": 178623,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Grants\\\",\\n      \\\"series\\\": \\\"Grants\\\",\\n      \\\"value\\\": 169266,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Charges/Services\\\",\\n      \\\"series\\\": \\\"Charges for Services\\\",\\n      \\\"value\\\": 220200,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Supplem Funds\\\",\\n      \\\"series\\\": \\\"State Supplemental Funds\\\",\\n      \\\"value\\\": 620000,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Reserve\\\",\\n      \\\"series\\\": \\\"Reserve Transfer\\\",\\n      \\\"value\\\": 261000,\\n      \\\"unit\\\": \\\"$\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef\",\"page_image_id\":\"sansuo_hidden__upload_54ea15a12e1b1862f7cf__file_5f19e2df98a65658ae13\",\"region\":null},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\",\"VISION_RESULT_INVALID_SCHEMA\",\"VISION_RESULT_PARTIAL\"],\"telemetry\":{\"elapsed_ms\":20943,\"usage\":{\"prompt_tokens\":3198,\"completion_tokens\":923,\"total_tokens\":4121,\"completion_tokens_details\":{\"text_tokens\":923},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":688,\"cached_tokens\":0}},\"finish_reason\":\"stop\"}}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 16
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T12:22:20.159Z",
+      "completedAt": "2026-11-01T12:23:37.128Z",
+      "elapsedMs": 76969
+    },
+    "sansuoClientRequestId": "e3fb361c-f3d3-4401-a5f0-9147e1ed968e",
+    "sansuoSources": [
+      {
+        "file_id": "593ff771-cfd9-4a5e-822e-5b5754e350a9",
+        "filename": "finance--DUDE_2879a049d77aae9eccbedf4e9af7ac70.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 173992,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_c116bed312d3740e8f21",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+      "source_hash": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+      "image_id": "sansuo_hidden__upload_54ea15a12e1b1862f7cf__file_5f19e2df98a65658ae13",
+      "region": null,
+      "visual_result_id": "vision_fa622f1260c89fe8ffcf3df99b55af01",
+      "vision_version": "inspect-page-v4-crosscheck",
+      "vision_model": "qwen3-vl-plus",
+      "version": "3f96fa3d9c5a3cad43b642d1ded7f2c154326402b7374251e1fdb7e7b217c2d2",
+      "user_id": "6ae72efbcd8c1bba9d495dbc",
+      "conversation_id": "35ececc1-a4b5-4921-93f2-628768bcd4cb",
+      "status": "partial",
+      "recorded_at": "2026-11-01T12:23:10.683Z"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "scope": "Explicit model-transport fault injection with real Agent; not natural failure or accuracy benchmark",
+  "checks": [
+    {
+      "name": "deny",
+      "ok": true
+    }
+  ],
+  "mode": "deny",
+  "result": {
+    "conversationId": "77d24ac4-2779-45fa-b341-87b4d8cc2b15",
+    "elapsed_ms": 1203,
+    "answer": "本次回答未完成：模型服务拒绝访问（MODEL_AUTH_REJECTED）。已取得的证据不能视为完成核对的答案；请稍后重试。",
+    "active": false,
+    "error": true,
+    "failure": {
+      "code": "MODEL_AUTH_REJECTED",
+      "retryable": false,
+      "status": 403,
+      "cause": null
+    },
+    "tools": []
+  }
+}

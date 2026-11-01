@@ -1,0 +1,88 @@
+{
+  "message_error": false,
+  "error_parts": [
+    {
+      "type": "error",
+      "error": "An error occurred while processing the request: terminated"
+    }
+  ],
+  "scope_hash": null,
+  "conversation_id": "f123817f-c92e-41a8-839f-b3168e6ec840",
+  "id": "mml:80",
+  "pdf_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+  "elapsed_ms": 157696,
+  "active": false,
+  "upload_ms": 151,
+  "answer": "",
+  "tool_calls": [
+    {
+      "id": "call_d0742120b7ce439c9f25f7dd",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_e1d134ad8b86ba056fcf\",\"query\":\"TABLE II\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_e1d134ad8b86ba056fcf\",\"filename\":\"2312.10997v5.pdf\",\"version\":\"825c01bb934cb3631e8c731dc8848557b60354f0d05478fafbc8f34b0cafff5e\",\"action\":\"search\",\"content\":\"[chunk_a6b43fcdf36ab187b09f page=13 kind=extracted_text]\\n><td>[67]</td></tr><tr><td rowspan=\\\"2\\\">Text Summarization</td><td>WikiASP [152]</td><td>[24]</td></tr><tr><td>XSum [153]</td><td>[17]</td></tr><tr><td rowspan=\\\"2\\\">Text Classification</td><td>VioLens [154]</td><td>[19]</td></tr><tr><td>TREC [155]</td><td>[33]</td></tr><tr><td>Sentiment</td><td>SST-2 [156]</td><td>[20], [33], [38]</td></tr><tr><td>Code Search</td><td>CodeSearchNet [157]</td><td>[76]</td></tr><tr><td>Robustness Evaluation</td><td>NoMIRACL [56]</td><td>[56]</td></tr><tr><td>Math</td><td>GSM8K [158]</td><td>[73]</td></tr><tr><td>Machine Translation</td><td>JRC-Acquis [159]</td><td>[17]</td></tr></table>\\n\\nTABLE II\\n\\nDOWNSTREAM TASKS AND DATASETS OF RAG\\n\\n[chunk_32286ed46e302f81d023 page=12 kind=extracted_text]\\nThe core task of RAG remains Question Answering (QA), including traditional single-hop/multi-hop QA, multiplechoice, domain-specific QA as well as long-form scenarios suitable for RAG. In addition to QA, RAG is continuously being expanded into multiple downstream tasks, such as Information Extraction (IE), dialogue generation, code search, etc. The main downstream tasks of RAG and their corresponding datasets are summarized in Table II.\\n\\n[chunk_26a35fa3bee915aad982 page=14 kind=extracted_text]\\n/td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Precision</td><td>√</td><td></td><td></td><td>√</td><td></td><td></td><td></td></tr><tr><td>R-Rate</td><td></td><td></td><td></td><td></td><td></td><td></td><td>√</td></tr><tr><td>Cosine Similarity</td><td></td><td></td><td>√</td><td></td><td></td><td></td><td></td></tr><tr><td>Hit Rate</td><td>√</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>MRR</td><td>√</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>NDCG</td><td>√</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>BLEU</td><td>√</td><td>√</td><td>√</td><td></td><td></td><td></td><td></td></tr><tr><td>ROUGE/ROUGE-L</td><td>√</td><td>√</td><td>√</td><td></td><td></td><td></td><td></td></tr></table>\\n\\nTABLE III\\n\\nSUMMARY OF METRICS APPLICABLE F\\n\\n[chunk_4f2f8c70f33fcd9965fb page=14 kind=extracted_text]\\nThe specific metrics for each evaluation aspect are summarized in Table III. It is essential to recognize that these metrics, derived from related work, are traditional measures and do not yet represent a mature or standardized approach for quantifying RAG evaluation aspects. Custom metrics tailored to the nuances of RAG models, though not included here, have also been developed in some evaluation studies.\\n\\n[chunk_c97b6399c1da16a83954 page=15 kind=extracted_text]\\n<table><tr><td>Evaluation Framework</td><td>Evaluation Targets</td><td>Evaluation Aspects</td><td>Quantitative Metrics</td></tr><tr><td> $RGB^†$ </td><td>Retrieval Quality Generation Quality</td><td>Noise RobustnessNegative RejectionInformation IntegrationCounterfactual Robustness</td><td>AccuracyEMAccuracyAccuracy</td></tr><tr><td> $RECALL^†$ </td><td>Generation Quality</td><td>Counterfactual Robustness</td><td>R-Rate (Reappearance Rate)</td></tr><tr><td> $RAGAS^‡$ </td><td>Retrieval Quality Generation Quality</td><td>Context RelevanceFaithfulnessAnswer Relevance</td><td>**Cosine Similarity</td></tr><tr><td> $ARES^‡$ </td><td>Retrieval Quality Generation Quality</td><td>Context RelevanceFaithfulnessAnswer Relevance</td><td>AccuracyAccuracyAccuracy</td></tr><tr><td> $TruLens^‡$ </td><td>Retrieval Quality Generation Quality</td><\\n\\n[chunk_998af6d27c5bb68fcda8 page=14 kind=extracted_text]\\nA series of benchmark tests and tools have been proposed to facilitate the evaluation of RAG.These instruments furnish quantitative metrics that not only gauge RAG model performance but also enhance comprehension of the model’s capabilities across various evaluation aspects. Prominent benchmarks such as RGB, RECALL and CRUD [167]–[169] focus on appraising the essential abilities of RAG models. Concurrently, state-of-the-art automated tools like RAGAS [164], ARES [165], and TruLens<sup>8</sup> employ LLMs to adjudicate the quality scores. These tools and benchmarks collectively form a robust framework for the systematic evaluation of RAG models, as summarized in Table IV.\",\"excerpted\":true,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[\"SEARCH_EXCERPTS_USE_READ_FOR_FULL_EVIDENCE\"],\"hits\":[{\"chunk_id\":\"chunk_a6b43fcdf36ab187b09f\",\"source_chunk_id\":\"mineru_c5ddc9067cee4943ffa39416\",\"page_start\":13,\"page_end\":13,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_538720ac9a1915df3c1faf5f\",\"image_id\":\"image_4db209d9474fd459d148827f\",\"bbox\":[73,104,996,967],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[\"table_0d90b46321729e0d1689\"]},{\"chunk_id\":\"chunk_32286ed46e302f81d023\",\"source_chunk_id\":\"mineru_25897ca388354bb88c3b9dfe\",\"page_start\":12,\"page_end\":12,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_f7f576069ed6f6f13714fd45\",\"image_id\":null,\"bbox\":[73,541,493,662],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_26a35fa3bee915aad982\",\"source_chunk_id\":\"mineru_674c3d5bbf37bea180345aeb\",\"page_start\":14,\"page_end\":14,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_022a23ccff235d00dd1b605b\",\"image_id\":\"image_532cc5419883eb5e46660dc0\",\"bbox\":[147,103,841,315],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[\"table_5ad02dd81d16a4a99a36\"]},{\"chunk_id\":\"chunk_4f2f8c70f33fcd9965fb\",\"source_chunk_id\":\"mineru_c143b34c7bae7375b1b2ee0d\",\"page_start\":14,\"page_end\":14,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_9ef346f9f6137f734fff2ca5\",\"image_id\":null,\"bbox\":[73,343,493,450],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_c97b6399c1da16a83954\",\"source_chunk_id\":\"mineru_917b892d41a1ef9d517c67ec\",\"page_start\":15,\"page_end\":15,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_412c5375268e4f2252d2bf96\",\"image_id\":\"image_eafe98ce3408cd52e89cbba9\",\"bbox\":[148,103,846,441],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[\"table_1c81127e6df51d39fbdf\"]},{\"chunk_id\":\"chunk_998af6d27c5bb68fcda8\",\"source_chunk_id\":\"mineru_4f79399eb0b97cc09925b70e\",\"page_start\":14,\"page_end\":14,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_a3caae97bd464d7a1c07406a\",\"image_id\":null,\"bbox\":[73,486,493,669],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    },
+    {
+      "id": "call_f839f8c15bb64fd58e9a129a",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read_table\",\"document_id\":\"doc_e1d134ad8b86ba056fcf\",\"table_id\":\"table_0d90b46321729e0d1689\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_e1d134ad8b86ba056fcf\",\"filename\":\"2312.10997v5.pdf\",\"version\":\"825c01bb934cb3631e8c731dc8848557b60354f0d05478fafbc8f34b0cafff5e\",\"action\":\"read_table\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"table_id\":\"table_0d90b46321729e0d1689\",\"hits\":[{\"chunk_id\":\"chunk_a6b43fcdf36ab187b09f\",\"page_start\":13,\"page_end\":13,\"kind\":\"table\",\"engine\":\"mineru\",\"table_ids\":[\"table_0d90b46321729e0d1689\"]}],\"table\":{\"structure\":\"structured_table\",\"rows\":[[\"Task\",\"Sub Task\",\"Dataset\",\"Method\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[26], [30], [34], [42], [45], [50], [52], [59], [64], [82]\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[3], [4], [22], [27], [40], [43], [54], [62], [71], [112]\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[20], [44], [72]\"],[\"QA\",\"Single-hop\",\"Natural Qustion(NQ) [111]\",\"[13], [30], [34], [45], [50], [64]\"],[\"QA\",\"Single-hop\",\"TriviaQA(TQA) [113]\",\"[4], [27], [59], [62], [112]\"],[\"QA\",\"Single-hop\",\"TriviaQA(TQA) [113]\",\"[22], [25], [43], [44], [71], [72]\"],[\"QA\",\"Single-hop\",\"SQuAD [114]\",\"[20], [23], [30], [32], [45], [69], [112]\"],[\"QA\",\"Single-hop\",\"Web Questions(WebQ) [115]\",\"[3], [4], [13], [30], [50], [68]\"],[\"QA\",\"Single-hop\",\"PopQA [116]\",\"[7], [25], [67]\"],[\"QA\",\"Single-hop\",\"MS MARCO [117]\",\"[4], [40], [52]\"],[\"QA\",\"Multi-hop\",\"HotpotQA [118]\",\"[23], [26], [31], [34], [47], [51], [61], [82]\"],[\"QA\",\"Multi-hop\",\"HotpotQA [118]\",\"[7], [14], [22], [27], [59], [62], [69], [71], [91]\"],[\"QA\",\"Multi-hop\",\"2WikiMultiHopQA [119]\",\"[14], [24], [48], [59], [61], [91]\"],[\"QA\",\"Multi-hop\",\"MuSiQue [120]\",\"[14], [51], [61], [91]\"],[\"QA\",\"Long-form QA\",\"ELI5 [121]\",\"[27], [34], [43], [49], [51]\"],[\"QA\",\"Long-form QA\",\"NarrativeQA(NQA) [122]\",\"[45], [60], [63], [123]\"],[\"QA\",\"Long-form QA\",\"ASQA [124]\",\"[24], [57]\"],[\"QA\",\"Long-form QA\",\"QMSum(QM) [125]\",\"[60], [123]\"],[\"QA\",\"Domain QA\",\"Qasper [126]\",\"[60], [63]\"],[\"QA\",\"Domain QA\",\"COVID-QA [127]\",\"[35], [46]\"],[\"QA\",\"Domain QA\",\"CMB [128],MMCU_Medical [129]\",\"[81]\"],[\"QA\",\"Multi-Choice QA\",\"QuALITY [130]\",\"[60], [63]\"],[\"QA\",\"Multi-Choice QA\",\"ARC [131]\",\"[25], [67]\"],[\"QA\",\"Multi-Choice QA\",\"CommonsenseQA [132]\",\"[58], [66]\"],[\"QA\",\"Graph QA\",\"GraphQA [84]\",\"[84]\"],[\"Dialog\",\"Dialog Generation\",\"Wizard of Wikipedia (WoW) [133]\",\"[13], [27], [34], [42]\"],[\"Dialog\",\"Personal Dialog\",\"KBP [134]\",\"[74], [135]\"],[\"Dialog\",\"Personal Dialog\",\"DuleMon [136]\",\"[74]\"],[\"Dialog\",\"Task-oriented Dialog\",\"CamRest [137]\",\"[78], [79]\"],[\"Dialog\",\"Recommendation\",\"Amazon(Toys,Sport,Beauty) [138]\",\"[39], [40]\"],[\"IE\",\"Event Argument Extraction\",\"WikiEvent [139]\",\"[13], [27], [37], [42]\"],[\"IE\",\"Event Argument Extraction\",\"RAMS [140]\",\"[36], [37]\"],[\"IE\",\"Relation Extraction\",\"T-REx [141],ZsRE [142]\",\"[27], [51]\"],[\"Reasoning\",\"Commonsense Reasoning\",\"HellaSwag [143]\",\"[20], [66]\"],[\"Reasoning\",\"CoT Reasoning\",\"CoT Reasoning [144]\",\"[27]\"],[\"Reasoning\",\"Complex Reasoning\",\"CSQA [145]\",\"[55]\"],[\"Others\",\"Language Understanding\",\"MMLU [146]\",\"[7], [27], [28], [42], [43], [47], [72]\"],[\"Others\",\"Language Modeling\",\"WikiText-103 [147]\",\"[5], [29], [64], [71]\"],[\"Others\",\"Language Modeling\",\"StrategyQA [148]\",\"[14], [24], [48], [51], [55], [58]\"],[\"Others\",\"Fact Checking/Verification\",\"FEVER [149]\",\"[4], [13], [27], [34], [42], [50]\"],[\"Others\",\"Fact Checking/Verification\",\"PubHealth [150]\",\"[25], [67]\"],[\"Others\",\"Text Generation\",\"Biography [151]\",\"[67]\"],[\"Others\",\"Text Summarization\",\"WikiASP [152]\",\"[24]\"],[\"Others\",\"Text Summarization\",\"XSum [153]\",\"[17]\"],[\"Others\",\"Text Classification\",\"VioLens [154]\",\"[19]\"],[\"Others\",\"Text Classification\",\"TREC [155]\",\"[33]\"],[\"Others\",\"Sentiment\",\"SST-2 [156]\",\"[20], [33], [38]\"],[\"Others\",\"Code Search\",\"CodeSearchNet [157]\",\"[76]\"],[\"Others\",\"Robustness Evaluation\",\"NoMIRACL [56]\",\"[56]\"],[\"Others\",\"Math\",\"GSM8K [158]\",\"[73]\"],[\"Others\",\"Machine Translation\",\"JRC-Acquis [159]\",\"[17]\"]],\"complete\":true,\"columns\":4,\"source_table_id\":\"table_db4f9b878ec50fd0cfdf7d7a\",\"merged_cells\":[{\"row\":1,\"column\":0,\"rowspan\":25,\"colspan\":1,\"text\":\"QA\",\"header\":false},{\"row\":1,\"column\":1,\"rowspan\":10,\"colspan\":1,\"text\":\"Single-hop\",\"header\":false},{\"row\":1,\"column\":2,\"rowspan\":4,\"colspan\":1,\"text\":\"Natural Qustion(NQ) [111]\",\"header\":false},{\"row\":5,\"column\":2,\"rowspan\":2,\"colspan\":1,\"text\":\"TriviaQA(TQA) [113]\",\"header\":false},{\"row\":11,\"column\":1,\"rowspan\":4,\"colspan\":1,\"text\":\"Multi-hop\",\"header\":false},{\"row\":11,\"column\":2,\"rowspan\":2,\"colspan\":1,\"text\":\"HotpotQA [118]\",\"header\":false},{\"row\":15,\"column\":1,\"rowspan\":4,\"colspan\":1,\"text\":\"Long-form QA\",\"header\":false},{\"row\":19,\"column\":1,\"rowspan\":3,\"colspan\":1,\"text\":\"Domain QA\",\"header\":false},{\"row\":22,\"column\":1,\"rowspan\":3,\"colspan\":1,\"text\":\"Multi-Choice QA\",\"header\":false},{\"row\":26,\"column\":0,\"rowspan\":5,\"colspan\":1,\"text\":\"Dialog\",\"header\":false},{\"row\":27,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Personal Dialog\",\"header\":false},{\"row\":31,\"column\":0,\"rowspan\":3,\"colspan\":1,\"text\":\"IE\",\"header\":false},{\"row\":31,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Event Argument Extraction\",\"header\":false},{\"row\":34,\"column\":0,\"rowspan\":3,\"colspan\":1,\"text\":\"Reasoning\",\"header\":false},{\"row\":37,\"column\":0,\"rowspan\":15,\"colspan\":1,\"text\":\"Others\",\"header\":false},{\"row\":38,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Language Modeling\",\"header\":false},{\"row\":40,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Fact Checking/Verification\",\"header\":false},{\"row\":43,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Text Summarization\",\"header\":false},{\"row\":45,\"column\":1,\"rowspan\":2,\"colspan\":1,\"text\":\"Text Classification\",\"header\":false}],\"merge_semantics\":\"row/column are zero-based source coordinates. Repeated values in expanded rows covered by one rowspan belong to the SAME entity; aggregate its associated values across the entire span before comparing counts or totals.\"},\"evidence_format\":\"table_rows\",\"page_coverage\":[{\"page\":13,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"plausible\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}],\"reference\":{\"document_id\":\"doc_e1d134ad8b86ba056fcf\",\"page_start\":13,\"page_end\":13}}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 19
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T12:26:58.711Z",
+      "completedAt": "2026-11-01T12:29:36.032Z",
+      "elapsedMs": 157321
+    },
+    "sansuoClientRequestId": "53a15c36-da73-48ca-b274-091135759720",
+    "sansuoSources": [
+      {
+        "file_id": "a609ee1d-92f0-4fc2-98d4-3b3ed3f8738e",
+        "filename": "2312.10997v5.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1662567,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "document_id": "doc_e1d134ad8b86ba056fcf",
+      "chunk_id": "chunk_a6b43fcdf36ab187b09f",
+      "page_start": 13,
+      "page_end": 13,
+      "section_id": null,
+      "table_id": "table_0d90b46321729e0d1689",
+      "version": "825c01bb934cb3631e8c731dc8848557b60354f0d05478fafbc8f34b0cafff5e",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "user_id": "6ae7301277b9e14926a3e60c",
+      "conversation_id": "f123817f-c92e-41a8-839f-b3168e6ec840",
+      "recorded_at": "2026-11-01T12:28:09.840Z"
+    },
+    {
+      "document_id": "doc_e1d134ad8b86ba056fcf",
+      "chunk_id": "chunk_a6b43fcdf36ab187b09f",
+      "page_start": 13,
+      "page_end": 13,
+      "section_id": null,
+      "table_id": "table_0d90b46321729e0d1689",
+      "version": "825c01bb934cb3631e8c731dc8848557b60354f0d05478fafbc8f34b0cafff5e",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "user_id": "6ae7301277b9e14926a3e60c",
+      "conversation_id": "f123817f-c92e-41a8-839f-b3168e6ec840",
+      "recorded_at": "2026-11-01T12:28:13.721Z"
+    }
+  ]
+}

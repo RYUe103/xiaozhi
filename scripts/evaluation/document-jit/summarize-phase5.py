@@ -34,6 +34,9 @@ for arm in ['baseline','candidate']:
     if isinstance(ref,dict) and isinstance(ref.get('page_start'),int):tool_pages.update(range(ref['page_start'],ref.get('page_end',ref['page_start'])+1))
   answer=result.get('answer','')
   failure=result.get('message_error') or result.get('message_metadata',{}).get('sansuoModelFailure') or result.get('error_parts')
+  parse_state=result.get('message_metadata',{}).get('sansuoFileParse',{}).get('status')
+  if parse_state in ['failed','timeout']:failure=failure or {'code':'FILE_PARSE_'+parse_state.upper()}
+  if result.get('active'):failure=failure or {'code':'AGENT_STILL_ACTIVE'}
   warm_path=path.with_name(path.name+'.warm.json');warm=read(warm_path) if warm_path.exists() else None
   stage_ms=collections.Counter()
   for event in trace:

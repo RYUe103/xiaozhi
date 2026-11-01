@@ -1,0 +1,18 @@
+{
+  "parent_commit": "0730dedf00de985753e6ee70f1b09d5348b1396f",
+  "snapshot": "final: reverted r6 visual experiment; query routing, artifact signature, file-based layout result",
+  "files": {
+    "api/server/services/DocumentArtifactRepository.js": "ed1d2d0c2879e8b0173bb2c1c05772e17b1894cbfc68de13d579774d5456e986",
+    "api/server/services/DocumentArtifactRepository.spec.js": "20bb136f3ca6d766fbb54e1c17bf33e72a32b649c4e904027857b943b8fd1807",
+    "api/server/services/Files/Code/process.js": "346cc5cb539dc2bbac269d0aca614308aebfbedd8404c43871d54cd18a78dbbc",
+    "api/server/services/Files/Code/process.spec.js": "77a2d32ebb92510ed5ec97ed58592f13b4f75048bc7da928e8291fe211160133",
+    "api/server/services/Files/Pdf/render_pages.py": "eae576eece40dfd54413e6e7cb2bacc06528f8e6fa23bd95fafec40802e3d4c5",
+    "api/server/services/ModelTransportReliability.spec.js": "49d0b2df4dd16518f48fb725a87a57e722a129bcc366b92395232589c018588e",
+    "api/test/fixtures/sansuoPdfRenderMock.js": "ab2acb7cb3ad44027f71a5a59df697941495aaed5a5dc3dd87a4483d9b5e1dbc",
+    "scripts/evaluation/document-jit/phase5-live-cache.cjs": "4f078ad5f63c32fadb35ca3227197025a02ea7e5e4aa62b839f0a2e0adf9b595",
+    "scripts/evaluation/document-jit/run-phase5-fault.cjs": "75dee8b1c9278f0287c457048d3e4ebcd6065da859e0e2ba1057093b3bac2f32",
+    "scripts/evaluation/document-jit/run-phase5-regression.cjs": "ee38cf736b72e0721121490080b1caf22a90e48956244d4c808a658c61b497cd",
+    "scripts/evaluation/document-jit/summarize-phase5.py": "f4a94900b081434a606d3d325449f44de170953b099353495f88b1eecba4a4bc"
+  },
+  "r6_is_different_snapshot": true
+}

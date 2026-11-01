@@ -2269,6 +2269,19 @@ describe('SanSuo document upload preparse', () => {
     );
   });
 
+  it('preserves FITZ fallback results larger than the stdout limit', async () => {
+    const previous = process.env.SANSUO_TEST_LARGE_LAYOUT;
+    process.env.SANSUO_TEST_LARGE_LAYOUT = 'true';
+    try {
+      const { result, uploaded } = await parsePdfDirect(null, { visionFallback: true, mineruFirst: false });
+      expect(result).toMatchObject({ status: 'ready', parser: 'backend_fitz_vision_fallback' });
+      expect([...uploaded.keys()].some(name => name.endsWith('_visual_chunks.jsonl'))).toBe(true);
+    } finally {
+      if (previous === undefined) delete process.env.SANSUO_TEST_LARGE_LAYOUT;
+      else process.env.SANSUO_TEST_LARGE_LAYOUT = previous;
+    }
+  });
+
   it('can skip MinerU and use the fitz visual route directly', async () => {
     const { result } = await parsePdfDirect(null, {
       visionFallback: true,

@@ -1,0 +1,156 @@
+[
+  {
+    "arm": "baseline",
+    "batch": "r5",
+    "case": "academic",
+    "completed": true,
+    "core_gold_match": false,
+    "extra_fact_error": true,
+    "failure_stage": "tool_image_decode",
+    "source_review_note": "VL failed before image decoding; final falsely claims chart absent",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r5",
+    "case": "finance",
+    "completed": true,
+    "core_gold_match": false,
+    "extra_fact_error": false,
+    "failure_stage": "C",
+    "source_review_note": "Frozen gold says Gray at 1%; source color dispute retained. Strict gold mismatch.",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r5",
+    "case": "netflix",
+    "completed": true,
+    "core_gold_match": true,
+    "extra_fact_error": false,
+    "failure_stage": null,
+    "source_review_note": "Core answer matches frozen gold; Netflix cites alternative valid financial summary page 17 rather than gold page43",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r5",
+    "case": "phone",
+    "completed": true,
+    "core_gold_match": true,
+    "extra_fact_error": false,
+    "failure_stage": null,
+    "source_review_note": "Core answer matches frozen gold",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r5",
+    "case": "scan",
+    "completed": true,
+    "core_gold_match": true,
+    "extra_fact_error": null,
+    "failure_stage": null,
+    "source_review_note": "Core response matches target evidence; added activity details require source review",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r5",
+    "case": "table",
+    "completed": true,
+    "core_gold_match": true,
+    "extra_fact_error": false,
+    "failure_stage": null,
+    "source_review_note": "Core answer matches frozen gold",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "baseline",
+    "batch": "r5",
+    "case": "tree",
+    "completed": true,
+    "core_gold_match": true,
+    "extra_fact_error": true,
+    "failure_stage": "C",
+    "source_review_note": "Core branch correct but invented/miscounted leaves (source orange branch has five labelled leaves)",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r5",
+    "case": "academic",
+    "completed": true,
+    "core_gold_match": false,
+    "extra_fact_error": true,
+    "failure_stage": "C",
+    "source_review_note": "VL misread academic-year axis labels as months; Agent repeated visual error without high-resolution check",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r5",
+    "case": "finance",
+    "completed": true,
+    "core_gold_match": false,
+    "extra_fact_error": true,
+    "failure_stage": "C",
+    "source_review_note": "VL mismatched maroon color and Licenses/Permits; Agent asserted partial evidence as definite",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r5",
+    "case": "netflix",
+    "completed": true,
+    "core_gold_match": true,
+    "extra_fact_error": false,
+    "failure_stage": null,
+    "source_review_note": "Core answer matches frozen gold; Netflix cites alternative valid financial summary page 17 rather than gold page43",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r5",
+    "case": "phone",
+    "completed": true,
+    "core_gold_match": true,
+    "extra_fact_error": false,
+    "failure_stage": null,
+    "source_review_note": "Core answer matches frozen gold",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r5",
+    "case": "scan",
+    "completed": true,
+    "core_gold_match": false,
+    "extra_fact_error": true,
+    "failure_stage": "B",
+    "source_review_note": "query-only read had no selector, returned PAGE_TEXT_UNAVAILABLE; Agent incorrectly inferred no feedback in document",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r5",
+    "case": "table",
+    "completed": true,
+    "core_gold_match": true,
+    "extra_fact_error": false,
+    "failure_stage": null,
+    "source_review_note": "Core answer matches frozen gold",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  },
+  {
+    "arm": "candidate",
+    "batch": "r5",
+    "case": "tree",
+    "completed": true,
+    "core_gold_match": true,
+    "extra_fact_error": true,
+    "failure_stage": "C",
+    "source_review_note": "Core branch correct but invented/miscounted leaves (source orange branch has five labelled leaves)",
+    "reviewer": "Codex source/tool review, not independent human blind review"
+  }
+]

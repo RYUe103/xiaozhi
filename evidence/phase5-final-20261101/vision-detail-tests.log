@@ -1,0 +1,25 @@
+PASS api/server/services/DocumentPageVisionService.spec.js
+  ✓ returns question-specific page evidence and deduplicates concurrent calls (45 ms)
+  ✓ rejects invalid pages and regions before fetching any image (1 ms)
+  ✓ rechecks authorization on cache hit and preserves failure as unavailable (2 ms)
+  ✓ reports incomplete model output instead of claiming complete evidence (1 ms)
+  ✓ unparseable model output is partial and preserved without invented structure (1 ms)
+  ✓ visual evidence carries real original-page identity for persisted followups
+  ✓ persistent result cache avoids repeated VL after authorization and retains raw output (1 ms)
+  ✓ figure uses full page even when its verified cropped asset is available
+  ✓ reported uncertainty is partial evidence rather than full success
+  ✓ different questions on one page share in-flight rendering without conflating answers (1 ms)
+  ✓ uncertain series cannot become successful evidence merely through valid JSON
+  ✓ same-request cache restores reference and reports zero additional usage (1 ms)
+  ✓ model, scope and source changes invalidate persistent visual result
+  ✓ HTTP rejection is explicit and not cached or counted as successful evidence (1 ms)
+  ✓ passes region to original PDF renderer instead of cropping rendered region twice (1 ms)
+  ✓ original question qualifiers reach VL and are part of the result cache identity
+  ✓ one detail pass retains full-page context, original output and bounded uncertainty (2 ms)
+  ✓ invalid or absent model region never causes an automatic extra VL request
+
+Test Suites: 1 passed, 1 total
+Tests:       18 passed, 18 total
+Snapshots:   0 total
+Time:        0.232 s, estimated 1 s
+Ran all test suites matching api/server/services/DocumentPageVisionService.spec.js.

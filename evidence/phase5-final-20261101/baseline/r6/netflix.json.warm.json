@@ -1,0 +1,38 @@
+{
+  "elapsed_ms": 1656,
+  "active": false,
+  "answer": "文件解析失败，尚未启动模型：文件“NETFLIX_2015_10K.pdf”解析失败：pdf_vision_fallback_failed:stdout maxBuffer length exceeded",
+  "content": [
+    {
+      "type": "tool_call",
+      "tool_call": {
+        "id": "file-parse-ef539ba9-0135-47b0-8753-59286da822ad",
+        "name": "sansuo_file_parse",
+        "args": "{\"files\":1}",
+        "type": "tool_call",
+        "progress": 1,
+        "status": "failed",
+        "output": "文件“NETFLIX_2015_10K.pdf”解析失败：pdf_vision_fallback_failed:stdout maxBuffer length exceeded"
+      }
+    },
+    {
+      "type": "text",
+      "text": "文件解析失败，尚未启动模型：文件“NETFLIX_2015_10K.pdf”解析失败：pdf_vision_fallback_failed:stdout maxBuffer length exceeded"
+    }
+  ],
+  "metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "failed",
+      "files": 1,
+      "error": "文件“NETFLIX_2015_10K.pdf”解析失败：pdf_vision_fallback_failed:stdout maxBuffer length exceeded"
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T12:32:42.161Z",
+      "completedAt": "2026-11-01T12:32:42.224Z",
+      "elapsedMs": 63
+    },
+    "sansuoClientRequestId": "4a57b743-dca2-4107-b413-74a2fa3bb267"
+  },
+  "error": false
+}

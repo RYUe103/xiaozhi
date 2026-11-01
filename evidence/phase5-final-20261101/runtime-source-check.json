@@ -1,0 +1,82 @@
+{
+  "baseline": {
+    "api/app/clients/BaseClient.js": {
+      "sha256": "444491040d774a167e59030c381f5e32c0e03844c72f9363d5791194827df0f2",
+      "matches_expected": true
+    },
+    "api/server/controllers/agents/client.js": {
+      "sha256": "378fee3c2f708c53b298ab88c60588d4672da231398268e5958ca21fdf7106f9",
+      "matches_expected": true
+    },
+    "api/server/services/DocumentPageVisionService.js": {
+      "sha256": "a84ee059348c1aa9ab687eed783e4f19a3c5b976554b4e3bb9a5015dca6191f0",
+      "matches_expected": true
+    },
+    "api/server/services/DocumentToolResult.js": {
+      "sha256": "c97c7cfdfa9909a41489e81639b966aa1cac3f370bfd536c843a5aaa8dc34349",
+      "matches_expected": true
+    },
+    "api/server/services/DocumentVectorSearch.js": {
+      "sha256": "f931ee3ca41d1238071ba6ffbc1f6d1cb48d583c4ed57050f98120310031d6fa",
+      "matches_expected": true
+    },
+    "api/server/services/Endpoints/agents/sansuoToolPolicy.js": {
+      "sha256": "bfc638aa39f5b504c4dde83412a0efb93b48f163659aeb8d3ac60bba2348453e",
+      "matches_expected": true
+    },
+    "api/server/services/Files/Code/crud.js": {
+      "sha256": "43b5cf6744291ba267c84b79191c99705870392c3117e372e960384068aba8f4",
+      "matches_expected": true
+    },
+    "api/server/services/Files/Code/process.js": {
+      "sha256": "b24049c79c92369e3a0d5c1d720f77c96e3dbaf232d53ce281da6d0d4b65c9ee",
+      "matches_expected": true
+    },
+    "api/server/services/Files/Pdf/render_pages.py": {
+      "sha256": "2ec07cc4d59a0a1328987f753c96e6690858fcae61f555bbc8b9dc458e4cefaf",
+      "matches_expected": true
+    }
+  },
+  "candidate": {
+    "api/app/clients/BaseClient.js": {
+      "sha256": "cd8a90826ff5cbc587ee45ea0a859d1d1c44a498093da7819873bd1d5d2b9bc6",
+      "matches_expected": true
+    },
+    "api/server/controllers/agents/client.js": {
+      "sha256": "de82cfed819394bf2e2b3208de0a4221b7eacca75dd3b3a18c49e1222748a292",
+      "matches_expected": true
+    },
+    "api/server/services/DocumentPageVisionService.js": {
+      "sha256": "7f523ab634e90b07e53a77d961b87a61a2345f8aefd7b34296ba2154bf77d55c",
+      "matches_expected": true
+    },
+    "api/server/services/DocumentToolResult.js": {
+      "sha256": "cb167ea91a420e1ee9ff15b6b3a827128cbd764d181c857ec057f4103bb7ce70",
+      "matches_expected": true
+    },
+    "api/server/services/DocumentVectorSearch.js": {
+      "sha256": "66164f65bd18d9a01372dbac92de0decd12b0e6e9dd808bf395d240282cbc156",
+      "matches_expected": true
+    },
+    "api/server/services/Endpoints/agents/sansuoToolPolicy.js": {
+      "sha256": "7205213444caa854e09f192d44e4921f06a1f20f18e19098cf362994d46e7fd7",
+      "matches_expected": true
+    },
+    "api/server/services/Files/Code/crud.js": {
+      "sha256": "278e20327cdaa99c73e4205d79737e57fa7be81c0a321d4806e2ed6be520e1b8",
+      "matches_expected": true
+    },
+    "api/server/services/Files/Code/process.js": {
+      "sha256": "7d7b6789aa4596474978fafebefb1776274ba35be310ed40e6e665f2d5933bcf",
+      "matches_expected": true
+    },
+    "api/server/services/Files/Pdf/render_pages.py": {
+      "sha256": "8ece85fc77ee45da67ad9d87eb6dd526408130c8c0c956b86079828b6abdfcee",
+      "matches_expected": true
+    },
+    "api/server/services/ModelTransportReliability.js": {
+      "sha256": "f06ac3992c2558aa4d7cea24c53e01ca41fdeeaf63b46f58708641062efe6b46",
+      "matches_expected": true
+    }
+  }
+}

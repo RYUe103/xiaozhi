@@ -26,7 +26,9 @@ const lines = (buffer, onInvalid = () => {}) => Buffer.from(buffer).toString('ut
 function artifactSignature(artifact) {
   return digest([artifact.libreFileId, String(artifact.userId || ''), artifact.conversationId,
     artifact.sandboxSessionId, artifact.sandboxFileId, artifact.status || 'ready',
-    artifact.metadata?.rootSourceLibreFileId, artifact.metadata?.sourceHash || artifact.metadata?.contentHash || null]);
+    artifact.metadata?.rootSourceLibreFileId, artifact.metadata?.sourceHash || artifact.metadata?.contentHash || null,
+    artifact.metadata?.parseGeneration || null, artifact.metadata?.artifactSetStatus || null,
+    artifact.metadata?.parserVersion || null]);
 }
 function splitMarkdown(text, chunkChars = 4500, overlap = 300) {
   const source = String(text || '').trim();
@@ -313,6 +315,12 @@ class DocumentArtifactRepository {
   }
 
   async executeAsync(input = {}) {
+    // A query without a location is a search, not evidence that a page is empty.
+    // Preserve explicit selectors and continuation semantics; use all existing retrieval channels.
+    const queryOnlyRead = input.action === 'read' && String(input.query || '').trim() &&
+      !input.pages?.length && !input.page && !input.chunk_id && !input.section_id &&
+      !input.table_id && !input.continuation_token;
+    if (queryOnlyRead) input = { ...input, action: 'search' };
     const started = Date.now();
     const result = await this._executeAsync(input);
     this.trace.emit('EvidenceDelivery', { action: input.action || 'search', document_id: result.document_id,

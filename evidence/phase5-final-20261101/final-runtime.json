@@ -1,0 +1,28 @@
+{
+  "root": "/tmp/sansuo-phase5-candidate-20261101",
+  "environment": {
+    "PORT": "3185",
+    "SANSUO_MINERU_MODE": "cloud",
+    "SANSUO_MINERU_TIMEOUT_MS": "600000",
+    "SANSUO_DOCUMENT_PARSE_TIMEOUT_MS": "600000",
+    "SANSUO_VISION_MODEL": "qwen3-vl-plus",
+    "SANSUO_PDF_RENDER_PYTHON": "/opt/sansuo-pdf-venv/bin/python",
+    "SANSUO_MODEL_RELIABILITY_ENABLED": null,
+    "SANSUO_AGENT_DEADLINE_MS": null,
+    "PHASE5_MODEL_FAULT": null
+  },
+  "files": {
+    "api/server/services/DocumentArtifactRepository.js": "ed1d2d0c2879e8b0173bb2c1c05772e17b1894cbfc68de13d579774d5456e986",
+    "api/server/services/DocumentPageVisionService.js": "7f523ab634e90b07e53a77d961b87a61a2345f8aefd7b34296ba2154bf77d55c",
+    "api/server/services/Files/Code/process.js": "346cc5cb539dc2bbac269d0aca614308aebfbedd8404c43871d54cd18a78dbbc",
+    "api/server/services/Files/Pdf/render_pages.py": "eae576eece40dfd54413e6e7cb2bacc06528f8e6fa23bd95fafec40802e3d4c5",
+    "api/server/controllers/agents/client.js": "de82cfed819394bf2e2b3208de0a4221b7eacca75dd3b3a18c49e1222748a292",
+    "api/server/services/ModelTransportReliability.js": "f06ac3992c2558aa4d7cea24c53e01ca41fdeeaf63b46f58708641062efe6b46"
+  },
+  "effective_defaults": {
+    "agent_deadline_ms": 600000,
+    "reliability_enabled": "SanSuoMain endpoint (code, not environment flag)",
+    "model_timeout_ms": 120000,
+    "VL_timeout_ms": 60000
+  }
+}

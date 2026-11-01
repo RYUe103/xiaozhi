@@ -1,0 +1,39 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "a7e0a85a-1015-4b11-8ec3-41f04cbbbaf4",
+  "id": "mml:888",
+  "pdf_sha256": "16ee1cfbd58f9c6a3793c66ff5f4ec38dd864ac9fd7a9b7186f8af7db53f870b",
+  "elapsed_ms": 158894,
+  "active": false,
+  "upload_ms": 1040,
+  "answer": "根据文档信息，该 PDF 文件总共只有 **30 页**（`page_count: 30`），因此**不存在第 40-47 页**。\n\n由于文档内容在第 30 页结束，无法提供第 40-47 页中提到的应用程序数量。如果您指的是其他文档或特定的页码范围，请核对后重新提问。",
+  "tool_calls": [],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 3
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T12:28:35.969Z",
+      "completedAt": "2026-11-01T12:31:11.963Z",
+      "elapsedMs": 155994
+    },
+    "sansuoClientRequestId": "73b2cb70-7b2a-4734-8ef4-b63ed22fc4d4",
+    "sansuoSources": [
+      {
+        "file_id": "a28be79d-9606-4aa3-a626-606f78ca927d",
+        "filename": "mi_phone.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 31841340,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": []
+}
