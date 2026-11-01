@@ -1,0 +1,239 @@
+{
+  "scope_hash": null,
+  "conversation_id": "314e087d-a512-4c88-816e-34f1ca90329e",
+  "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+  "pdf_sha256": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+  "elapsed_ms": 143575,
+  "active": false,
+  "upload_ms": 153,
+  "answer": "根据所附文档（物理第 1 页），**无法确认**该问题的答案。\n\n所附 PDF 为一份关于“玛希隆大学国际学院化学课程维基百科写作作业试点项目”的学术海报/摘要。文档正文（第 1 页）仅概述了项目背景、方法与学生贡献结果，例如：\n- 共有 103 名学生参与项目；\n- 创建了 56 篇高质量文章，改进了 80 多篇文章；\n- 累计撰写达 364 页；\n- 学生完成了维基百科核心编辑与高级编辑的在线培训。\n\n全文**未提及**“2016-17 学年的 trimester（学期）”划分，也**没有任何关于上传至 Wikimedia Commons 的媒体数量或相关统计图表**。因此，无法依据当前文档回答该问题。",
+  "tool_calls": [
+    {
+      "id": "call_cdb2bdb8b4e1422bba0b0396",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"list\",\"document_id\":\"doc_213a4c187af237e134aa\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"documents\":[{\"document_id\":\"doc_213a4c187af237e134aa\",\"file_id\":\"12a02ddf-7aec-4d0c-8c69-7c8e306a9c7c\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"format\":\"pdf\",\"page_count\":1,\"page_count_source\":\"manifest\",\"chunk_count\":27,\"table_count\":0,\"section_count\":7,\"coverage_total\":1,\"coverage_truncated\":false,\"coverage_summary\":{\"text_pages\":1,\"summary_pages\":0},\"warnings\":[],\"version\":\"82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f\",\"status\":\"ready\"}]}"
+    },
+    {
+      "id": "call_f18958396be54d0ca41d4c97",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"document_id\":\"doc_213a4c187af237e134aa\",\"offset\":0}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"unavailable\",\"ok\":false,\"document_id\":\"doc_213a4c187af237e134aa\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f\",\"error\":{\"code\":\"PAGE_TEXT_UNAVAILABLE\",\"message\":\"当前范围没有可用内容。\"},\"message\":\"当前范围没有可用内容。\",\"inspection_available\":true,\"next_action\":{\"tool\":\"read_parsed_pdf\",\"action\":\"inspect_page\",\"document_id\":\"doc_213a4c187af237e134aa\",\"page\":null,\"query_required\":true},\"page_candidates\":[],\"page_coverage\":[{\"page\":1,\"hasExtractedText\":true,\"hasVisualPage\":false,\"hasVisualSummary\":false,\"textStatus\":\"available\",\"textQuality\":\"suspect\",\"visualStatus\":\"unavailable\",\"engines\":[\"mineru\"],\"warnings\":[\"PAGE_IMAGE_UNAVAILABLE\"],\"inspection_available\":true}]}"
+    },
+    {
+      "id": "call_e3ec0b1c8d134136b176200b",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_213a4c187af237e134aa\",\"mode\":\"auto\",\"page\":1,\"query\":\"trimester 2016-17 media uploaded Wikimedia Commons highest number\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"ok\":false,\"status\":\"unavailable\",\"error\":{\"code\":\"VISION_INSPECTION_FAILED\"},\"warnings\":[\"已解析正文不受影响\"]}"
+    },
+    {
+      "id": "call_8525e51ae0f645f4901ced0b",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_213a4c187af237e134aa\",\"query\":\"trimester 2016-17 media uploaded Wikimedia Commons\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_213a4c187af237e134aa\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f\",\"action\":\"search\",\"content\":\"[chunk_97e7a359a9beb1f2659c page=1 kind=extracted_text]\\n\\\\- Wikipedia writing assignment has been incorported into undergraduate chemistry classes at Mahidol University International College since September 2014.\\n\\n[chunk_59959697cbb52ab28e1a page=1 kind=extracted_text]\\nSuwannakhan A & Limpanuparb T. 2017. Wikipedia writing assignments: a one-year pilot program in chemistry classes at Mahidol University. Catalyst. 15(2): 65-79.\\n\\n[chunk_7674241f7929052797e3 page=1 kind=extracted_text]\\n\\\\- Fifty six high quality articles were created, and more than 81 articles were improved.\\n\\n[chunk_552c5bd9a13ccea7631b page=1 kind=extracted_text]\\n\\\\- Students completed online training: 1) The cores of Wikipedia 2) Editing\\n\\n[chunk_379b1dd5538f1f79de0c page=1 kind=extracted_text]\\n\\\\- Since the founding of Wikipedia in 2001, educators around the world have integrated the free encyclopedia which anyone can edit into their curriculum.\\n\\n[chunk_61cd32d4d10e42bc97ad page=1 kind=extracted_text]\\nREFERENCE\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_97e7a359a9beb1f2659c\",\"source_chunk_id\":\"mineru_9b7d5420b8b2733cf60f62a3\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_70ce4dc575af9e88af0d2d40\",\"image_id\":null,\"bbox\":[654,608,936,660],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_59959697cbb52ab28e1a\",\"source_chunk_id\":\"mineru_35bb681a7934de5de5f850ce\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_4169019c19c08a684d147983\",\"image_id\":null,\"bbox\":[654,883,939,937],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_7674241f7929052797e3\",\"source_chunk_id\":\"mineru_448bfe66387aab85dfbe4289\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_80a1d6889157fc4df59fe511\",\"image_id\":null,\"bbox\":[654,693,935,719],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_552c5bd9a13ccea7631b\",\"source_chunk_id\":\"mineru_1c8789088e02433c35f8b511\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_6281514061c407772df35df5\",\"image_id\":null,\"bbox\":[276,451,519,490],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_379b1dd5538f1f79de0c\",\"source_chunk_id\":\"mineru_e3a75fecbf1f851e57c57f4c\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_7c8da73e17b460e6db8cdf9a\",\"image_id\":null,\"bbox\":[60,231,694,258],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_61cd32d4d10e42bc97ad\",\"source_chunk_id\":\"mineru_9b5e4abae330174f9548ba9b\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_053bcbce93189772d2c1e47b\",\"image_id\":null,\"bbox\":[667,857,788,874],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    },
+    {
+      "id": "call_6d873bc042944046b7722fe8",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_213a4c187af237e134aa\",\"query\":\"Commons trimester media uploaded 2016 highest\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_213a4c187af237e134aa\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f\",\"action\":\"search\",\"content\":\"[chunk_f2a29ac6a5715e2789ef page=1 kind=extracted_text]\\n\\\\- Educators and students share free knowledge by contributing to Wikipedia and its sister projects in an academic setting.\\n\\n[chunk_81ec815481ed26692f11 page=1 kind=extracted_text]\\n\\\\- Students worked on text and illustration of their article to meet course requirements. - Students’ work was subject to peer review and scrutiny by other Wikipedians.\\n\\n[chunk_b716ba8dc4b258ba1cfe page=1 kind=extracted_text]\\n\\\\- Writing Wikipedia is an opportunity to teach students 21st century skills that most will use in their careers and personal lives such as information literacy, collaborative skill, and critial thinking.\\n\\n[chunk_7674241f7929052797e3 page=1 kind=extracted_text]\\n\\\\- Fifty six high quality articles were created, and more than 81 articles were improved.\\n\\n[chunk_97e7a359a9beb1f2659c page=1 kind=extracted_text]\\n\\\\- Wikipedia writing assignment has been incorported into undergraduate chemistry classes at Mahidol University International College since September 2014.\\n\\n[chunk_59959697cbb52ab28e1a page=1 kind=extracted_text]\\nSuwannakhan A & Limpanuparb T. 2017. Wikipedia writing assignments: a one-year pilot program in chemistry classes at Mahidol University. Catalyst. 15(2): 65-79.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_f2a29ac6a5715e2789ef\",\"source_chunk_id\":\"mineru_19bf2b85605e165f813b398c\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_4fc786f940c275384e360ef7\",\"image_id\":null,\"bbox\":[60,260,694,286],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_81ec815481ed26692f11\",\"source_chunk_id\":\"mineru_0c226aaf1aa7157da3b40060\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_7b6dabe8989d660d5ac6aeef\",\"image_id\":null,\"bbox\":[526,451,745,530],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_b716ba8dc4b258ba1cfe\",\"source_chunk_id\":\"mineru_e9fa8c9c69cee73c3c5899ab\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_95f9f184473b1def0d0a29e5\",\"image_id\":null,\"bbox\":[60,287,694,315],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_7674241f7929052797e3\",\"source_chunk_id\":\"mineru_448bfe66387aab85dfbe4289\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_80a1d6889157fc4df59fe511\",\"image_id\":null,\"bbox\":[654,693,935,719],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_97e7a359a9beb1f2659c\",\"source_chunk_id\":\"mineru_9b7d5420b8b2733cf60f62a3\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_70ce4dc575af9e88af0d2d40\",\"image_id\":null,\"bbox\":[654,608,936,660],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_59959697cbb52ab28e1a\",\"source_chunk_id\":\"mineru_35bb681a7934de5de5f850ce\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_4169019c19c08a684d147983\",\"image_id\":null,\"bbox\":[654,883,939,937],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    },
+    {
+      "id": "call_f34e5784179346248a189bf0",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_213a4c187af237e134aa\",\"query\":\"trimester\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_213a4c187af237e134aa\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f\",\"action\":\"search\",\"content\":\"[chunk_a52d326139da7d32282c page=1 kind=extracted_text]\\nRESULTS\\n\\n[chunk_ac3de258678e1ec0db8a page=1 kind=extracted_text]\\nBACKGROUND\\n\\n[chunk_61cd32d4d10e42bc97ad page=1 kind=extracted_text]\\nREFERENCE\\n\\n[chunk_3e585c23fa957e8d5dc1 page=1 kind=extracted_text]\\n3) Advanced editing\\n\\n[chunk_e872b1b7ed1ae9386af3 page=1 kind=extracted_text]\\nto 364 written pages.\\n\\n[chunk_91f7f8028de6d871e0d0 page=1 kind=extracted_text]\\n\\\\- One hundred and three students participated in the program.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_a52d326139da7d32282c\",\"source_chunk_id\":\"mineru_ddd73344e098e1b82df2aa56\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_c713b0535c3ee67d78f8fd73\",\"image_id\":null,\"bbox\":[72,577,162,595],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_ac3de258678e1ec0db8a\",\"source_chunk_id\":\"mineru_5eff620e84c6e6dfd711b7c9\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_64f787e43ae3ce8d1b828226\",\"image_id\":null,\"bbox\":[75,200,228,217],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_61cd32d4d10e42bc97ad\",\"source_chunk_id\":\"mineru_9b5e4abae330174f9548ba9b\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_053bcbce93189772d2c1e47b\",\"image_id\":null,\"bbox\":[667,857,788,874],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_3e585c23fa957e8d5dc1\",\"source_chunk_id\":\"mineru_71ab0bd31062d2809640c9d5\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_fa359b5ca92e8a298d497033\",\"image_id\":null,\"bbox\":[289,491,424,503],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_e872b1b7ed1ae9386af3\",\"source_chunk_id\":\"mineru_48ece4ea3c5b82e0c0edac2d\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_49c1261d40b9b1fc2ec6de77\",\"image_id\":null,\"bbox\":[655,736,797,749],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_91f7f8028de6d871e0d0\",\"source_chunk_id\":\"mineru_9f5b659b28ae0d16e47f6f9b\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_880101a587e81e0022324252\",\"image_id\":null,\"bbox\":[654,663,934,690],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    },
+    {
+      "id": "call_9c23007b45b84f739ad84d0a",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_213a4c187af237e134aa\",\"query\":\"Commons media upload\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_213a4c187af237e134aa\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f\",\"action\":\"search\",\"content\":\"[chunk_3e585c23fa957e8d5dc1 page=1 kind=extracted_text]\\n3) Advanced editing\\n\\n[chunk_97e7a359a9beb1f2659c page=1 kind=extracted_text]\\n\\\\- Wikipedia writing assignment has been incorported into undergraduate chemistry classes at Mahidol University International College since September 2014.\\n\\n[chunk_61cd32d4d10e42bc97ad page=1 kind=extracted_text]\\nREFERENCE\\n\\n[chunk_59959697cbb52ab28e1a page=1 kind=extracted_text]\\nSuwannakhan A & Limpanuparb T. 2017. Wikipedia writing assignments: a one-year pilot program in chemistry classes at Mahidol University. Catalyst. 15(2): 65-79.\\n\\n[chunk_7674241f7929052797e3 page=1 kind=extracted_text]\\n\\\\- Fifty six high quality articles were created, and more than 81 articles were improved.\\n\\n[chunk_81ec815481ed26692f11 page=1 kind=extracted_text]\\n\\\\- Students worked on text and illustration of their article to meet course requirements. - Students’ work was subject to peer review and scrutiny by other Wikipedians.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_3e585c23fa957e8d5dc1\",\"source_chunk_id\":\"mineru_71ab0bd31062d2809640c9d5\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_fa359b5ca92e8a298d497033\",\"image_id\":null,\"bbox\":[289,491,424,503],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_97e7a359a9beb1f2659c\",\"source_chunk_id\":\"mineru_9b7d5420b8b2733cf60f62a3\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_70ce4dc575af9e88af0d2d40\",\"image_id\":null,\"bbox\":[654,608,936,660],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_61cd32d4d10e42bc97ad\",\"source_chunk_id\":\"mineru_9b5e4abae330174f9548ba9b\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_053bcbce93189772d2c1e47b\",\"image_id\":null,\"bbox\":[667,857,788,874],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_59959697cbb52ab28e1a\",\"source_chunk_id\":\"mineru_35bb681a7934de5de5f850ce\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_4169019c19c08a684d147983\",\"image_id\":null,\"bbox\":[654,883,939,937],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_7674241f7929052797e3\",\"source_chunk_id\":\"mineru_448bfe66387aab85dfbe4289\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_80a1d6889157fc4df59fe511\",\"image_id\":null,\"bbox\":[654,693,935,719],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_81ec815481ed26692f11\",\"source_chunk_id\":\"mineru_0c226aaf1aa7157da3b40060\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_7b6dabe8989d660d5ac6aeef\",\"image_id\":null,\"bbox\":[526,451,745,530],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    },
+    {
+      "id": "call_248e3bfd186a478c91b43086",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"document_id\":\"doc_213a4c187af237e134aa\",\"chunk_id\":\"chunk_114ed3382d7aff1388e9\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_213a4c187af237e134aa\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f\",\"action\":\"read\",\"content\":\"[chunk_114ed3382d7aff1388e9 page=1 kind=extracted_text]\\n\\u001b\\u001a\\u001e\\u0019\\u0018\\u001b\\u001a\\u0017\\u0016\\u0019\\u0015\\u001e\\u0014\\u0013\\u0018\\u001c\\u0012\\u0014\\u0011\\u0012\\u0019\\u0010 \\u0013\\u0018\\u0015\\u000f\\u0019\\u001e\\u000e\\u0019\\u0013\\u001a \\u0018\\u0019\\u0018\\u0015\\u000f\\u0012\\u001b\\u001b\\f\\u000b\\u001b\\u0019\\u0012\\u0018\\u001b \\u001c\\u001b\\u0012\\u001e\\u001b\\u0013\\u0016\\u001b\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_114ed3382d7aff1388e9\",\"source_chunk_id\":\"mineru_433454e50bcf9e51fe384409\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_0075ad1efb6a1250b01c1815\",\"image_id\":null,\"bbox\":[45,41,952,106],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    },
+    {
+      "id": "call_76a485f5dc404aafb19e8dea",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_213a4c187af237e134aa\",\"query\":\"trimester\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_213a4c187af237e134aa\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f\",\"action\":\"search\",\"content\":\"[chunk_a52d326139da7d32282c page=1 kind=extracted_text]\\nRESULTS\\n\\n[chunk_ac3de258678e1ec0db8a page=1 kind=extracted_text]\\nBACKGROUND\\n\\n[chunk_61cd32d4d10e42bc97ad page=1 kind=extracted_text]\\nREFERENCE\\n\\n[chunk_3e585c23fa957e8d5dc1 page=1 kind=extracted_text]\\n3) Advanced editing\\n\\n[chunk_e872b1b7ed1ae9386af3 page=1 kind=extracted_text]\\nto 364 written pages.\\n\\n[chunk_91f7f8028de6d871e0d0 page=1 kind=extracted_text]\\n\\\\- One hundred and three students participated in the program.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_a52d326139da7d32282c\",\"source_chunk_id\":\"mineru_ddd73344e098e1b82df2aa56\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_c713b0535c3ee67d78f8fd73\",\"image_id\":null,\"bbox\":[72,577,162,595],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_ac3de258678e1ec0db8a\",\"source_chunk_id\":\"mineru_5eff620e84c6e6dfd711b7c9\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_64f787e43ae3ce8d1b828226\",\"image_id\":null,\"bbox\":[75,200,228,217],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_61cd32d4d10e42bc97ad\",\"source_chunk_id\":\"mineru_9b5e4abae330174f9548ba9b\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_053bcbce93189772d2c1e47b\",\"image_id\":null,\"bbox\":[667,857,788,874],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_3e585c23fa957e8d5dc1\",\"source_chunk_id\":\"mineru_71ab0bd31062d2809640c9d5\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_fa359b5ca92e8a298d497033\",\"image_id\":null,\"bbox\":[289,491,424,503],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_e872b1b7ed1ae9386af3\",\"source_chunk_id\":\"mineru_48ece4ea3c5b82e0c0edac2d\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_49c1261d40b9b1fc2ec6de77\",\"image_id\":null,\"bbox\":[655,736,797,749],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_91f7f8028de6d871e0d0\",\"source_chunk_id\":\"mineru_9f5b659b28ae0d16e47f6f9b\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_880101a587e81e0022324252\",\"image_id\":null,\"bbox\":[654,663,934,690],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    },
+    {
+      "id": "call_29ef7a03d1034ef2b8a2272d",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_213a4c187af237e134aa\",\"query\":\"2016\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_213a4c187af237e134aa\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f\",\"action\":\"search\",\"content\":\"[chunk_61cd32d4d10e42bc97ad page=1 kind=extracted_text]\\nREFERENCE\\n\\n[chunk_a52d326139da7d32282c page=1 kind=extracted_text]\\nRESULTS\\n\\n[chunk_ac3de258678e1ec0db8a page=1 kind=extracted_text]\\nBACKGROUND\\n\\n[chunk_e872b1b7ed1ae9386af3 page=1 kind=extracted_text]\\nto 364 written pages.\\n\\n[chunk_7674241f7929052797e3 page=1 kind=extracted_text]\\n\\\\- Fifty six high quality articles were created, and more than 81 articles were improved.\\n\\n[chunk_59959697cbb52ab28e1a page=1 kind=extracted_text]\\nSuwannakhan A & Limpanuparb T. 2017. Wikipedia writing assignments: a one-year pilot program in chemistry classes at Mahidol University. Catalyst. 15(2): 65-79.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_61cd32d4d10e42bc97ad\",\"source_chunk_id\":\"mineru_9b5e4abae330174f9548ba9b\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_053bcbce93189772d2c1e47b\",\"image_id\":null,\"bbox\":[667,857,788,874],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_a52d326139da7d32282c\",\"source_chunk_id\":\"mineru_ddd73344e098e1b82df2aa56\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_c713b0535c3ee67d78f8fd73\",\"image_id\":null,\"bbox\":[72,577,162,595],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_ac3de258678e1ec0db8a\",\"source_chunk_id\":\"mineru_5eff620e84c6e6dfd711b7c9\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_64f787e43ae3ce8d1b828226\",\"image_id\":null,\"bbox\":[75,200,228,217],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_e872b1b7ed1ae9386af3\",\"source_chunk_id\":\"mineru_48ece4ea3c5b82e0c0edac2d\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_49c1261d40b9b1fc2ec6de77\",\"image_id\":null,\"bbox\":[655,736,797,749],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_7674241f7929052797e3\",\"source_chunk_id\":\"mineru_448bfe66387aab85dfbe4289\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_80a1d6889157fc4df59fe511\",\"image_id\":null,\"bbox\":[654,693,935,719],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_59959697cbb52ab28e1a\",\"source_chunk_id\":\"mineru_35bb681a7934de5de5f850ce\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_4169019c19c08a684d147983\",\"image_id\":null,\"bbox\":[654,883,939,937],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    },
+    {
+      "id": "call_b740c95cd3b842a9b8de4435",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"toc\",\"document_id\":\"doc_213a4c187af237e134aa\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_213a4c187af237e134aa\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f\",\"sections\":[{\"sectionId\":\"section_b7bd557c18505fef6a0e\",\"level\":1,\"title\":\"\\u001b\\u001a\\u001e\\u0019\\u0018\\u001b\\u001a\\u0017\\u0016\\u0019\\u0015\\u001e\\u0014\\u0013\\u0018\\u001c\\u0012\\u0014\\u0011\\u0012\\u0019\\u0010 \\u0013\\u0018\\u0015\\u000f\\u0019\\u001e\\u000e\\u0019\\u0013\\u001a \\u0018\\u0019\\u0018\\u0015\\u000f\\u0012\\u001b\\u001b\\f\\u000b\\u001b\\u0019\\u0012\\u0018\\u001b \\u001c\\u001b\\u0012\\u001e\\u001b\\u0013\\u0016\\u001b\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_114ed3382d7aff1388e9\",\"textOffset\":0},{\"sectionId\":\"section_eca52b215ce0a705048c\",\"level\":2,\"title\":\"BACKGROUND\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_ac3de258678e1ec0db8a\",\"textOffset\":0},{\"sectionId\":\"section_564bad08921dd932c642\",\"level\":2,\"title\":\"METHODOLOGY\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_4deb369370126895852d\",\"textOffset\":0},{\"sectionId\":\"section_21e5f3d4c8474d407e94\",\"level\":2,\"title\":\"RESULTS\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_a52d326139da7d32282c\",\"textOffset\":0},{\"sectionId\":\"section_ac57901f4fbdd760a80a\",\"level\":2,\"title\":\"Students’ contributions\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_98094868028ad8240b85\",\"textOffset\":0},{\"sectionId\":\"section_893f976c3b943e33e719\",\"level\":2,\"title\":\"CONCLUSIONS\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_d39581ca394a0136562e\",\"textOffset\":0},{\"sectionId\":\"section_b45268362a733ea7ad0a\",\"level\":2,\"title\":\"REFERENCE\",\"pageStart\":1,\"pageEnd\":1,\"chunkId\":\"chunk_61cd32d4d10e42bc97ad\",\"textOffset\":0}],\"section_count\":7,\"tables\":[],\"table_count\":0,\"next_catalog_offset\":null}"
+    },
+    {
+      "id": "call_7f294b4c4f5e4bf484342797",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read_adjacent\",\"chunk_id\":\"chunk_a52d326139da7d32282c\",\"document_id\":\"doc_213a4c187af237e134aa\",\"adjacent_count\":3}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_213a4c187af237e134aa\",\"filename\":\"academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf\",\"version\":\"82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f\",\"action\":\"read_adjacent\",\"content\":\"[chunk_81ec815481ed26692f11 page=1 kind=extracted_text]\\n\\\\- Students worked on text and illustration of their article to meet course requirements. - Students’ work was subject to peer review and scrutiny by other Wikipedians.\\n\\n[chunk_4fc88c54b0257eb2c274 page=1 kind=extracted_text]\\n\\\\- Students’ contributions were graded quantitatively and qualitatively.\\n\\n[chunk_f219f4357bdc03ae3feb page=1 kind=extracted_text]\\n\\\\- Exit survey was administered to determine studens’ perception of the program.\\n\\n[chunk_a52d326139da7d32282c page=1 kind=extracted_text]\\nRESULTS\\n\\n[chunk_98094868028ad8240b85 page=1 kind=extracted_text]\\nStudents’ contributions\\n\\n[chunk_d39581ca394a0136562e page=1 kind=extracted_text]\\nCONCLUSIONS\\n\\n[chunk_97e7a359a9beb1f2659c page=1 kind=extracted_text]\\n\\\\- Wikipedia writing assignment has been incorported into undergraduate chemistry classes at Mahidol University International College since September 2014.\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_81ec815481ed26692f11\",\"source_chunk_id\":\"mineru_0c226aaf1aa7157da3b40060\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_7b6dabe8989d660d5ac6aeef\",\"image_id\":null,\"bbox\":[526,451,745,530],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_4fc88c54b0257eb2c274\",\"source_chunk_id\":\"mineru_008050d9ebac8badb97289d5\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_fb629f0d92931111b62f1bfd\",\"image_id\":null,\"bbox\":[751,451,931,490],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_f219f4357bdc03ae3feb\",\"source_chunk_id\":\"mineru_ed60d4317c8ec137b5a0d096\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_c232bfc6e7a629b49a62888d\",\"image_id\":null,\"bbox\":[751,490,936,530],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_a52d326139da7d32282c\",\"source_chunk_id\":\"mineru_ddd73344e098e1b82df2aa56\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_c713b0535c3ee67d78f8fd73\",\"image_id\":null,\"bbox\":[72,577,162,595],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_98094868028ad8240b85\",\"source_chunk_id\":\"mineru_b7959d9d5491baea4b97dceb\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_6fa60e3d292156ed40e7bcfa\",\"image_id\":null,\"bbox\":[59,605,246,619],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_d39581ca394a0136562e\",\"source_chunk_id\":\"mineru_91892a82c615a7da810c53c7\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_14952d05e0dc5d02f131ba3a\",\"image_id\":null,\"bbox\":[665,578,818,595],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_97e7a359a9beb1f2659c\",\"source_chunk_id\":\"mineru_9b7d5420b8b2733cf60f62a3\",\"page_start\":1,\"page_end\":1,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_70ce4dc575af9e88af0d2d40\",\"image_id\":null,\"bbox\":[654,608,936,660],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 16
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T11:20:31.816Z",
+      "completedAt": "2026-11-01T11:22:51.138Z",
+      "elapsedMs": 139322
+    },
+    "sansuoClientRequestId": "525fee5b-e24b-4aeb-843a-c95284c541a6",
+    "sansuoSources": [
+      {
+        "file_id": "12a02ddf-7aec-4d0c-8c69-7c8e306a9c7c",
+        "filename": "academic--DUDE_65b9e17aa028acda5ec3d594f2327ad0.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1073408,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "document_id": "doc_213a4c187af237e134aa",
+      "chunk_id": "chunk_97e7a359a9beb1f2659c",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae7207f4b0ca98cba1941bf",
+      "conversation_id": "314e087d-a512-4c88-816e-34f1ca90329e",
+      "recorded_at": "2026-11-01T11:21:13.749Z"
+    },
+    {
+      "document_id": "doc_213a4c187af237e134aa",
+      "chunk_id": "chunk_f2a29ac6a5715e2789ef",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae7207f4b0ca98cba1941bf",
+      "conversation_id": "314e087d-a512-4c88-816e-34f1ca90329e",
+      "recorded_at": "2026-11-01T11:21:21.451Z"
+    },
+    {
+      "document_id": "doc_213a4c187af237e134aa",
+      "chunk_id": "chunk_a52d326139da7d32282c",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae7207f4b0ca98cba1941bf",
+      "conversation_id": "314e087d-a512-4c88-816e-34f1ca90329e",
+      "recorded_at": "2026-11-01T11:21:34.718Z"
+    },
+    {
+      "document_id": "doc_213a4c187af237e134aa",
+      "chunk_id": "chunk_3e585c23fa957e8d5dc1",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae7207f4b0ca98cba1941bf",
+      "conversation_id": "314e087d-a512-4c88-816e-34f1ca90329e",
+      "recorded_at": "2026-11-01T11:21:45.515Z"
+    },
+    {
+      "document_id": "doc_213a4c187af237e134aa",
+      "chunk_id": "chunk_114ed3382d7aff1388e9",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae7207f4b0ca98cba1941bf",
+      "conversation_id": "314e087d-a512-4c88-816e-34f1ca90329e",
+      "recorded_at": "2026-11-01T11:21:49.219Z"
+    },
+    {
+      "document_id": "doc_213a4c187af237e134aa",
+      "chunk_id": "chunk_a52d326139da7d32282c",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae7207f4b0ca98cba1941bf",
+      "conversation_id": "314e087d-a512-4c88-816e-34f1ca90329e",
+      "recorded_at": "2026-11-01T11:21:57.559Z"
+    },
+    {
+      "document_id": "doc_213a4c187af237e134aa",
+      "chunk_id": "chunk_61cd32d4d10e42bc97ad",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae7207f4b0ca98cba1941bf",
+      "conversation_id": "314e087d-a512-4c88-816e-34f1ca90329e",
+      "recorded_at": "2026-11-01T11:22:09.562Z"
+    },
+    {
+      "document_id": "doc_213a4c187af237e134aa",
+      "chunk_id": "chunk_81ec815481ed26692f11",
+      "page_start": 1,
+      "page_end": 1,
+      "section_id": null,
+      "table_id": null,
+      "version": "82161115395614bddeb57e0f5b79fbdc4c902b4bfb38c67c4b616b26395cc99f",
+      "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+      "user_id": "6ae7207f4b0ca98cba1941bf",
+      "conversation_id": "314e087d-a512-4c88-816e-34f1ca90329e",
+      "recorded_at": "2026-11-01T11:22:18.929Z"
+    }
+  ]
+}

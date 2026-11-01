@@ -1,0 +1,42 @@
+{
+  "scope": "real persisted artifacts/cache with tool-level calls; isolated database mutations restored",
+  "checks": [
+    {
+      "name": "persisted_visual_hit",
+      "ok": false,
+      "imageCalls": 1,
+      "modelCalls": 0,
+      "status": "unavailable"
+    },
+    {
+      "name": "revocation_before_cached_visual_read",
+      "ok": true,
+      "code": "DOCUMENT_ACCESS_DENIED"
+    },
+    {
+      "name": "source_metadata_change_rejects_cached_visual",
+      "ok": true,
+      "code": "DOCUMENT_VERSION_MISMATCH"
+    },
+    {
+      "name": "vector_warm_reuse",
+      "ok": true,
+      "first_calls": 0,
+      "second_calls": 0,
+      "total_ms": 1,
+      "second_ms": 0
+    }
+  ],
+  "events": [
+    {
+      "stage": "PageVision",
+      "page": 1,
+      "mode": "auto",
+      "cache": "miss",
+      "status": "unavailable",
+      "elapsed_ms": 1,
+      "usage": null,
+      "error": "VISION_INSPECTION_FAILED"
+    }
+  ]
+}

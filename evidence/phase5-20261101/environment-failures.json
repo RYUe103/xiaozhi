@@ -1,0 +1,12 @@
+{
+  "r1": {
+    "both_arms": "UPLOAD_HTTP_500 due isolated codeapi auth_configuration_invalid",
+    "root_cause": "test launcher used legacy instead of supported legacy-api-key",
+    "fix": "isolated codeapi environment only; no business change",
+    "records_preserved": true
+  },
+  "startup": {
+    "both_arms": "missing client/dist/index.html",
+    "fix": "read-only symlink to existing frontend distribution"
+  }
+}

@@ -94,6 +94,7 @@ async function getCodeOutputDownloadStream(fileIdentifier, identity, req) {
       httpAgent: codeServerHttpAgent,
       httpsAgent: codeServerHttpsAgent,
       timeout: 15000,
+      ...(req?._sansuoModelSignal ? { signal: req._sansuoModelSignal } : {}),
     };
 
     const response = await axios(options);

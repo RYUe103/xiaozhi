@@ -350,6 +350,9 @@ function registerSanSuoPdfReadTool(req, agent, read) {
         'action 支持 list、info、toc、search、read、read_table、read_adjacent、visual_page、visual_search、inspect_page；视觉摘要与正文分离，续读使用 continuation_token。' +
         '正文或表格不足、乱码、图例不清或需核对原页时，先检索正文或图注定位物理页，再调用本工具 read_parsed_pdf，action=inspect_page，指定 document_id、page、具体 query 和 mode 查看原图；视觉识别不等于已验证全文 OCR。' +
         '多份 PDF 必须使用 list 返回的 document_id；只使用返回的 chunk_id、section_id、table_id 继续读取。' +
+        '搜索命中页不等于问题已核对：跨页问题应覆盖所有子问题，需要时read_adjacent；continuation_token表示证据尚有续文。证据充分时直接回答，避免重复相同读取。' +
+        'inspect_page的status=ok仅说明输出结构完整，并非独立事实验证；partial、uncertainties或unavailable不得用于确定性补全图例、数字或单位。不清楚时说明限制，不能猜测。' +
+        'inspect_page的query应保留用户原问题的年份、比较范围和需要回答的属性，不要缩成几个主题关键词。整页小字看不清且返回resolution_limited时，可依据刚读到的页面布局用region核对；不得猜MinerU bbox坐标系。回答不要附加没有证据支持的数量。' +
         'read_table可带query聚焦具体型号或术语；表格rows为原始行列，保留行号。不能根据其他型号推断空白单元格。需要多步、批量或精确小数运算时，可把已核实且带页码的数据交给execute_code计算，简单计算可直接完成。',
       parameters: {
         type: 'object',

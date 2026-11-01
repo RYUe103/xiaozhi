@@ -21,15 +21,13 @@ function compactDocumentResult(result) {
       table: data,
       evidence_format: 'table_rows',
       page_coverage,
-      reference: reference && {
-        document_id: reference.document_id,
-        page_start: reference.page_start,
-        page_end: reference.page_end,
-      },
+      ...(reference ? { reference } : {}),
     };
   }
   return {
     ...body,
+    ...(reference ? { reference } : {}),
+    ...(page_coverage ? { page_coverage } : {}),
     ...(table ? { table } : {}),
     ...(retrieval?.warnings?.length ? { retrieval_warnings: retrieval.warnings } : {}),
   };

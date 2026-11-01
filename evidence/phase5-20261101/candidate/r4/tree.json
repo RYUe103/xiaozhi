@@ -1,0 +1,101 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "69251ea8-c2d3-4a7f-b1ed-6e820a6fd665",
+  "id": "mml:76",
+  "pdf_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+  "elapsed_ms": 125177,
+  "active": false,
+  "upload_ms": 155,
+  "answer": "根据文档第 2 页的 **Fig. 1 \"Technology tree of RAG research\"**（RAG 研究技术树），该树状图包含三个主要分支，各分支的叶子节点（代表具体方法）数量如下：\n\n* **Pre-training（预训练，橙色分支）**：**4 个**叶子节点（InstructRetro, CoG, Retro++, RAVEN）\n* **Fine-tuning（微调，青色分支）**：21 个叶子节点\n* **Inference（推理，蓝色分支）**：36 个叶子节点\n\n因此，叶子节点最少的分支是 **Pre-training（预训练）**。\n\n```mermaid\nflowchart LR\n    Root[\"Retrieval-Augmented Generation\"]\n    PT[\"Pre-training (4 leaves)\"]\n    FT[\"Fine-tuning (21 leaves)\"]\n    Inf[\"Inference (36 leaves)\"]\n    \n    Root --> PT\n    Root --> FT\n    Root --> Inf\n```\n*解释示意图：Figure 1 技术树的三支结构，Pre-training 分支的叶子节点数量最少。*",
+  "tool_calls": [
+    {
+      "id": "call_6e044eaff24d45d082df0a51",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_4fcfa95b323437813756\",\"mode\":\"figure\",\"page\":2,\"query\":\"Figure 1 Technology tree of RAG research branches leafs\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_4fcfa95b323437813756\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_1a784f00c326d4d2c431__file_33a3ed654de3fb5f9836\",\"region\":null,\"visual_result_id\":\"vision_cc91872d8aab93c1c8e3236044e4c826\",\"vision_version\":\"inspect-page-v6-bounded-region\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"1d4f8cdd16e19f4d4479e97f7320678fa91d10f52cd72f405b3ed1349fd767bb\",\"user_id\":\"6ae725c5807a4bb6450575b3\",\"conversation_id\":\"69251ea8-c2d3-4a7f-b1ed-6e820a6fd665\",\"status\":\"partial\"},\"visual_result_id\":\"vision_cc91872d8aab93c1c8e3236044e4c826\",\"ok\":false,\"status\":\"partial\",\"document_id\":\"doc_4fcfa95b323437813756\",\"assessment\":{\"parsing_complete\":true,\"factual_verification\":\"not_independently_verified\",\"uncertainty_reported\":true},\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"Figure 1 shows a technology tree with three main branches: 'Pre-training' (orange), 'Fine-tuning' (teal), and 'Inference' (blue), rooted in 'Retrieval—Augmented Generation'. Leaf nodes are method names (e.g., RAG, Atlas, UniMS-RAG, RADA, etc.) grouped under each branch; no numerical values are labeled on leaves.\",\"evidence_text\":\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. [...] The figure visually depicts a tree with root 'Retrieval—Augmented Generation', three colored branches labeled 'Pre-training' (orange), 'Fine-tuning' (teal), and 'Inference' (blue), and numerous leaf nodes containing method acronyms (e.g., RAG, Atlas, Zemi, R-QA, PROMPTAGATOR, RA-DIT, Self-RAG, CT-RAG, UniMS-RAG, G-Retriever, CRAG, RADA, RAPTOR, BGM, etc.). A legend box in bottom-right confirms color mapping: teal = Fine-tuning, orange = Pre-training, blue = Inference.\",\"cells\":[],\"series\":[{\"legend\":\"Fine-tuning\",\"series\":\"Teal branch and its leaf methods\",\"value\":null,\"unit\":null,\"certainty\":\"确定\",\"color_or_symbol\":\"teal\",\"axes\":\"不适用\",\"binding_evidence\":\"Label 'Fine-tuning' directly above teal branch; legend box explicitly maps teal to 'Fine-tuning'\"},{\"legend\":\"Pre-training\",\"series\":\"Orange branch and its leaf methods\",\"value\":null,\"unit\":null,\"certainty\":\"确定\",\"color_or_symbol\":\"orange\",\"axes\":\"不适用\",\"binding_evidence\":\"Label 'Pre-training' directly above orange branch; legend box explicitly maps orange to 'Pre-training'\"},{\"legend\":\"Inference\",\"series\":\"Blue branch and its leaf methods\",\"value\":null,\"unit\":null,\"certainty\":\"确定\",\"color_or_symbol\":\"blue\",\"axes\":\"不适用\",\"binding_evidence\":\"Label 'Inference' directly above blue branch; legend box explicitly maps blue to 'Inference'\"}],\"uncertainties\":[\"Exact count of leaf nodes is not labeled; enumeration requires manual counting and is not provided in figure text\",\"No numerical values or units appear on any leaf node or branch; all leaf labels are method names only\",\"Temporal ordering (e.g., which leaf appeared in 2023 vs 2024) is indicated by vertical axis but exact assignment of each leaf to year is ambiguous for some nodes near dashed lines (e.g., 'RAG-e2e' straddles 2023/2024 line); binding to year not explicitly labeled per leaf\"]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"Figure 1 shows a technology tree with three main branches: 'Pre-training' (orange), 'Fine-tuning' (teal), and 'Inference' (blue), rooted in 'Retrieval—Augmented Generation'. Leaf nodes are method names (e.g., RAG, Atlas, UniMS-RAG, RADA, etc.) grouped under each branch; no numerical values are labeled on leaves.\\\",\\n  \\\"evidence_text\\\": \\\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. [...] The figure visually depicts a tree with root 'Retrieval—Augmented Generation', three colored branches labeled 'Pre-training' (orange), 'Fine-tuning' (teal), and 'Inference' (blue), and numerous leaf nodes containing method acronyms (e.g., RAG, Atlas, Zemi, R-QA, PROMPTAGATOR, RA-DIT, Self-RAG, CT-RAG, UniMS-RAG, G-Retriever, CRAG, RADA, RAPTOR, BGM, etc.). A legend box in bottom-right confirms color mapping: teal = Fine-tuning, orange = Pre-training, blue = Inference.\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Fine-tuning\\\",\\n      \\\"series\\\": \\\"Teal branch and its leaf methods\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\",\\n      \\\"color_or_symbol\\\": \\\"teal\\\",\\n      \\\"axes\\\": \\\"不适用\\\",\\n      \\\"binding_evidence\\\": \\\"Label 'Fine-tuning' directly above teal branch; legend box explicitly maps teal to 'Fine-tuning'\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Pre-training\\\",\\n      \\\"series\\\": \\\"Orange branch and its leaf methods\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\",\\n      \\\"color_or_symbol\\\": \\\"orange\\\",\\n      \\\"axes\\\": \\\"不适用\\\",\\n      \\\"binding_evidence\\\": \\\"Label 'Pre-training' directly above orange branch; legend box explicitly maps orange to 'Pre-training'\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Inference\\\",\\n      \\\"series\\\": \\\"Blue branch and its leaf methods\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\",\\n      \\\"color_or_symbol\\\": \\\"blue\\\",\\n      \\\"axes\\\": \\\"不适用\\\",\\n      \\\"binding_evidence\\\": \\\"Label 'Inference' directly above blue branch; legend box explicitly maps blue to 'Inference'\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": [\\n    \\\"Exact count of leaf nodes is not labeled; enumeration requires manual counting and is not provided in figure text\\\",\\n    \\\"No numerical values or units appear on any leaf node or branch; all leaf labels are method names only\\\",\\n    \\\"Temporal ordering (e.g., which leaf appeared in 2023 vs 2024) is indicated by vertical axis but exact assignment of each leaf to year is ambiguous for some nodes near dashed lines (e.g., 'RAG-e2e' straddles 2023/2024 line); binding to year not explicitly labeled per leaf\\\"\\n  ]\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_1a784f00c326d4d2c431__file_33a3ed654de3fb5f9836\",\"region\":null,\"renderer_version\":\"fitz-bounded-region-v2\",\"dpi\":180,\"resolution_limited\":false},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\",\"VISION_RESULT_PARTIAL\"],\"telemetry\":{\"elapsed_ms\":15579,\"usage\":{\"prompt_tokens\":3557,\"completion_tokens\":684,\"total_tokens\":4241,\"completion_tokens_details\":{\"text_tokens\":684},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":1047,\"cached_tokens\":0}},\"finish_reason\":\"stop\",\"attempts\":[{\"attempt\":1,\"phase\":\"headers\",\"status\":200,\"elapsed_ms\":15050},{\"attempt\":1,\"phase\":\"complete\",\"bytes\":3220,\"elapsed_ms\":15059}]}}"
+    },
+    {
+      "id": "call_18472ff84972407fbcde46e1",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_4fcfa95b323437813756\",\"mode\":\"figure\",\"page\":2,\"query\":\"Count the leaf nodes under each branch: Pre-training orange branch, Fine-tuning teal branch, Inference blue branch. List all leaf method names under each branch.\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_4fcfa95b323437813756\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_1a784f00c326d4d2c431__file_33a3ed654de3fb5f9836\",\"region\":null,\"visual_result_id\":\"vision_f25308b7fc4ec9e8bb479d6ee1657ff2\",\"vision_version\":\"inspect-page-v6-bounded-region\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"1d4f8cdd16e19f4d4479e97f7320678fa91d10f52cd72f405b3ed1349fd767bb\",\"user_id\":\"6ae725c5807a4bb6450575b3\",\"conversation_id\":\"69251ea8-c2d3-4a7f-b1ed-6e820a6fd665\",\"status\":\"ok\"},\"visual_result_id\":\"vision_f25308b7fc4ec9e8bb479d6ee1657ff2\",\"ok\":true,\"status\":\"ok\",\"document_id\":\"doc_4fcfa95b323437813756\",\"assessment\":{\"parsing_complete\":true,\"factual_verification\":\"not_independently_verified\",\"uncertainty_reported\":false},\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"Pre-training (orange): InstructRetro, CoG, Retro++, RAVEN — 4 leaf nodes; Fine-tuning (teal): UniMS-RAG, CT-RAG, BEQ, RAST, Self-RAG, LM-Indexer, RA-DIT, Dual-Feedback-ToD, MK-ToD, RAG-Robust, Retrieve-and-Sample, SANTA, SUGRE, AAR, FLARE, UPRIS, R-GQA, Zemi, Atlas, RAG-e2e, PROMPTAGATOR, RAG — 21 leaf nodes; Inference (blue): G-Retriever, CRAG, IAG, FILCO, ARM-RAG, PRCA, Token-Elimination, KALMV, ITRG, KGP, LLM-R, ITER-RETGEN, COQ, LLM-IE, ICRAIM, DSP, GenRead, RADA, RAPTOR, BGM, HyKGE, PaperQA, DRAGON-AI, CREA-ICL, 1-PAGER, FABULA, QLM-Doc-ranking, SKR, Recomp, KnownledGPT, IRCOT, PGRA, PKG, SCM4LLMs, Filter-Retanker, RePLUG, RECITE — 36 leaf nodes\",\"evidence_text\":\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. ... [caption continues] The figure shows a tree with three main branches labeled 'Pre-training' (orange), 'Fine-tuning' (teal), and 'Inference' (blue), each terminating in leaf nodes (green ovals with method names). The legend in bottom-right confirms: orange = Pre-training, teal = Fine-tuning, blue = Inference.\",\"cells\":[],\"series\":[{\"legend\":\"Pre-training\",\"series\":\"orange branch\",\"value\":\"4\",\"unit\":\"leaf nodes\",\"certainty\":\"确定\",\"color_or_symbol\":\"orange line\",\"axes\":\"不适用\",\"binding_evidence\":\"Label 'Pre-training' in orange text directly above orange branch; legend box shows orange bar labeled 'Pre-training'\"},{\"legend\":\"Fine-tuning\",\"series\":\"teal branch\",\"value\":\"21\",\"unit\":\"leaf nodes\",\"certainty\":\"确定\",\"color_or_symbol\":\"teal line\",\"axes\":\"不适用\",\"binding_evidence\":\"Label 'Fine-tuning' in teal text directly above teal branch; legend box shows teal bar labeled 'Fine-tuning'\"},{\"legend\":\"Inference\",\"series\":\"blue branch\",\"value\":\"36\",\"unit\":\"leaf nodes\",\"certainty\":\"确定\",\"color_or_symbol\":\"blue line\",\"axes\":\"不适用\",\"binding_evidence\":\"Label 'Inference' in blue text directly above blue branch; legend box shows blue bar labeled 'Inference'\"}],\"uncertainties\":[]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"Pre-training (orange): InstructRetro, CoG, Retro++, RAVEN — 4 leaf nodes; Fine-tuning (teal): UniMS-RAG, CT-RAG, BEQ, RAST, Self-RAG, LM-Indexer, RA-DIT, Dual-Feedback-ToD, MK-ToD, RAG-Robust, Retrieve-and-Sample, SANTA, SUGRE, AAR, FLARE, UPRIS, R-GQA, Zemi, Atlas, RAG-e2e, PROMPTAGATOR, RAG — 21 leaf nodes; Inference (blue): G-Retriever, CRAG, IAG, FILCO, ARM-RAG, PRCA, Token-Elimination, KALMV, ITRG, KGP, LLM-R, ITER-RETGEN, COQ, LLM-IE, ICRAIM, DSP, GenRead, RADA, RAPTOR, BGM, HyKGE, PaperQA, DRAGON-AI, CREA-ICL, 1-PAGER, FABULA, QLM-Doc-ranking, SKR, Recomp, KnownledGPT, IRCOT, PGRA, PKG, SCM4LLMs, Filter-Retanker, RePLUG, RECITE — 36 leaf nodes\\\",\\n  \\\"evidence_text\\\": \\\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. ... [caption continues] The figure shows a tree with three main branches labeled 'Pre-training' (orange), 'Fine-tuning' (teal), and 'Inference' (blue), each terminating in leaf nodes (green ovals with method names). The legend in bottom-right confirms: orange = Pre-training, teal = Fine-tuning, blue = Inference.\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Pre-training\\\",\\n      \\\"series\\\": \\\"orange branch\\\",\\n      \\\"value\\\": \\\"4\\\",\\n      \\\"unit\\\": \\\"leaf nodes\\\",\\n      \\\"certainty\\\": \\\"确定\\\",\\n      \\\"color_or_symbol\\\": \\\"orange line\\\",\\n      \\\"axes\\\": \\\"不适用\\\",\\n      \\\"binding_evidence\\\": \\\"Label 'Pre-training' in orange text directly above orange branch; legend box shows orange bar labeled 'Pre-training'\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Fine-tuning\\\",\\n      \\\"series\\\": \\\"teal branch\\\",\\n      \\\"value\\\": \\\"21\\\",\\n      \\\"unit\\\": \\\"leaf nodes\\\",\\n      \\\"certainty\\\": \\\"确定\\\",\\n      \\\"color_or_symbol\\\": \\\"teal line\\\",\\n      \\\"axes\\\": \\\"不适用\\\",\\n      \\\"binding_evidence\\\": \\\"Label 'Fine-tuning' in teal text directly above teal branch; legend box shows teal bar labeled 'Fine-tuning'\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Inference\\\",\\n      \\\"series\\\": \\\"blue branch\\\",\\n      \\\"value\\\": \\\"36\\\",\\n      \\\"unit\\\": \\\"leaf nodes\\\",\\n      \\\"certainty\\\": \\\"确定\\\",\\n      \\\"color_or_symbol\\\": \\\"blue line\\\",\\n      \\\"axes\\\": \\\"不适用\\\",\\n      \\\"binding_evidence\\\": \\\"Label 'Inference' in blue text directly above blue branch; legend box shows blue bar labeled 'Inference'\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_1a784f00c326d4d2c431__file_33a3ed654de3fb5f9836\",\"region\":null,\"renderer_version\":\"fitz-bounded-region-v2\",\"dpi\":180,\"resolution_limited\":false},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\"],\"telemetry\":{\"elapsed_ms\":16026,\"usage\":{\"prompt_tokens\":3577,\"completion_tokens\":699,\"total_tokens\":4276,\"completion_tokens_details\":{\"text_tokens\":699},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":1067,\"cached_tokens\":0}},\"finish_reason\":\"stop\",\"attempts\":[{\"attempt\":1,\"phase\":\"headers\",\"status\":200,\"elapsed_ms\":16001},{\"attempt\":1,\"phase\":\"complete\",\"bytes\":2906,\"elapsed_ms\":16008}]}}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 19
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T11:43:01.628Z",
+      "completedAt": "2026-11-01T11:45:02.598Z",
+      "elapsedMs": 120970
+    },
+    "sansuoClientRequestId": "2fd6b5c0-c390-45e7-8f99-13c94fc4b309",
+    "sansuoSources": [
+      {
+        "file_id": "e75c6fef-f30f-4edf-8261-930df9ed4480",
+        "filename": "2312.10997v5.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1662567,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_4fcfa95b323437813756",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_1a784f00c326d4d2c431__file_33a3ed654de3fb5f9836",
+      "region": null,
+      "visual_result_id": "vision_cc91872d8aab93c1c8e3236044e4c826",
+      "vision_version": "inspect-page-v6-bounded-region",
+      "vision_model": "qwen3-vl-plus",
+      "version": "1d4f8cdd16e19f4d4479e97f7320678fa91d10f52cd72f405b3ed1349fd767bb",
+      "user_id": "6ae725c5807a4bb6450575b3",
+      "conversation_id": "69251ea8-c2d3-4a7f-b1ed-6e820a6fd665",
+      "status": "partial",
+      "recorded_at": "2026-11-01T11:44:38.468Z"
+    },
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_4fcfa95b323437813756",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_1a784f00c326d4d2c431__file_33a3ed654de3fb5f9836",
+      "region": null,
+      "visual_result_id": "vision_f25308b7fc4ec9e8bb479d6ee1657ff2",
+      "vision_version": "inspect-page-v6-bounded-region",
+      "vision_model": "qwen3-vl-plus",
+      "version": "1d4f8cdd16e19f4d4479e97f7320678fa91d10f52cd72f405b3ed1349fd767bb",
+      "user_id": "6ae725c5807a4bb6450575b3",
+      "conversation_id": "69251ea8-c2d3-4a7f-b1ed-6e820a6fd665",
+      "status": "ok",
+      "recorded_at": "2026-11-01T11:44:58.735Z"
+    }
+  ]
+}

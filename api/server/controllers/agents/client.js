@@ -51,6 +51,7 @@ const { resolveConfigServers } = require('~/server/services/MCP');
 const BaseClient = require('~/app/clients/BaseClient');
 const { getMCPManager } = require('~/config');
 const db = require('~/models');
+const { createModelFetch, classifyModelError, deadlineError, failureMessage } = require('~/server/services/ModelTransportReliability');
 
 class AgentClient extends BaseClient {
   constructor(options = {}) {
@@ -610,9 +611,21 @@ class AgentClient extends BaseClient {
     const appConfig = this.options.req.config;
     const balanceConfig = getBalanceConfig(appConfig);
     const transactionsConfig = getTransactionsConfig(appConfig);
+    const req = this.options.req;
+    const reliable = (req?.body?.endpoint || this.options.endpoint) === 'SanSuoMain';
+    const parentSignal = abortController?.signal;
+    const runController = new AbortController();
+    const configuredBudget = Number(process.env.SANSUO_AGENT_DEADLINE_MS) || 600000;
+    const deadline = (Number(req?._sansuoProcessStartedAtMs) || Date.now()) + Math.max(1000, Math.min(configuredBudget, 900000));
+    const deadlineTimer = reliable ? setTimeout(() => runController.abort(deadlineError()), Math.max(1, deadline - Date.now())) : null;
+    const modelEvent = (data) => require('~/server/services/DocumentJitTrace').runtimeEvent('ModelTransport', `${req?.user?.id}:${this.conversationId}`, data);
     try {
       if (!abortController) {
         abortController = new AbortController();
+      }
+      if (reliable) {
+        abortController = { signal: AbortSignal.any([abortController.signal, runController.signal]) };
+        req._sansuoModelSignal = abortController.signal;
       }
 
       /** @type {AppConfig['endpoints']['agents']} */
@@ -672,13 +685,30 @@ class AgentClient extends BaseClient {
        * @param {BaseMessage[]} messages
        */
       const runAgents = async (messages) => {
-        const agents = [this.options.agent];
+        let agents = [this.options.agent];
         // Include additional agents when:
         // - agentConfigs has agents (from addedConvo parallel execution or agent handoffs)
         // - Agents without incoming edges become start nodes and run in parallel automatically
         if (this.agentConfigs && this.agentConfigs.size > 0) {
           agents.push(...this.agentConfigs.values());
         }
+        if (reliable) agents = agents.map(agent => ({
+          ...agent,
+          model_parameters: {
+            ...agent.model_parameters,
+            maxRetries: 0,
+            configuration: {
+              ...agent.model_parameters?.configuration,
+              maxRetries: 0,
+              fetch: createModelFetch({
+                fetchImpl: agent.model_parameters?.configuration?.fetch || fetch,
+                signal: abortController.signal,
+                deadline,
+                emit: modelEvent,
+              }),
+            },
+          },
+        }));
 
         // TODO: needs to be added as part of AgentContext initialization
         // const noSystemModelRegex = [/\b(o1-preview|o1-mini|amazon\.titan-text)\b/gi];
@@ -775,6 +805,9 @@ class AgentClient extends BaseClient {
 
       const hideSequentialOutputs = config.configurable.hide_sequential_outputs;
       await runAgents(initialMessages);
+      if (reliable && !parentSignal?.aborted && !this.contentParts.some(part => part.type === ContentTypes.TEXT && String(typeof part.text === 'string' ? part.text : part.text?.value || '').trim())) {
+        throw Object.assign(new Error('Model returned no final answer'), { code: 'MODEL_EMPTY_ANSWER' });
+      }
 
       /** @deprecated Agent Chain */
       if (hideSequentialOutputs) {
@@ -791,6 +824,16 @@ class AgentClient extends BaseClient {
         });
       }
     } catch (err) {
+      if (reliable) {
+        const details = err.code === 'MODEL_EMPTY_ANSWER' ? { code: err.code, retryable: false } : classifyModelError(runController.signal.aborted ? runController.signal.reason : err);
+        req._sansuoModelFailure = details;
+        modelEvent({ phase: 'agent_failed', ...details });
+        if (!parentSignal?.aborted) {
+          const message = failureMessage(details);
+          this.contentParts.push({ type: ContentTypes.ERROR, [ContentTypes.ERROR]: message });
+          this.contentParts.push({ type: ContentTypes.TEXT, [ContentTypes.TEXT]: message });
+        }
+      } else {
       logger.error(
         '[api/server/controllers/agents/client.js #sendCompletion] Operation aborted',
         err,
@@ -805,7 +848,9 @@ class AgentClient extends BaseClient {
           [ContentTypes.ERROR]: `An error occurred while processing the request${err?.message ? `: ${err.message}` : ''}`,
         });
       }
+      }
     } finally {
+      if (deadlineTimer) clearTimeout(deadlineTimer);
       /** Capture calibration state from the run for persistence on the response message.
        *  Runs in finally so values are captured even on abort. */
       const ratio = this.run?.getCalibrationRatio() ?? 0;
@@ -826,7 +871,8 @@ class AgentClient extends BaseClient {
 
         /** Skip token spending if aborted - the abort handler (abortMiddleware.js) handles it
         This prevents double-spending when user aborts via `/api/agents/chat/abort` */
-        const wasAborted = abortController?.signal?.aborted;
+        // An internal model deadline is not handled by the user-abort middleware.
+        const wasAborted = reliable ? parentSignal?.aborted : abortController?.signal?.aborted;
         if (!wasAborted) {
           await this.recordCollectedUsage({
             context: 'message',

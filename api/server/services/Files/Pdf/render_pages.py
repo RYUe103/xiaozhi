@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import math
 from pathlib import Path
 
 
@@ -14,6 +15,8 @@ def main():
     parser.add_argument('--layout', action='store_true')
     parser.add_argument('--metadata-only', action='store_true')
     parser.add_argument('--text-only', action='store_true')
+    parser.add_argument('--region', default='', help='Normalized displayed-page x0,y0,x1,y1')
+    parser.add_argument('--max-pixels', type=int, default=8000000)
     parser.add_argument(
         '--pages',
         default='',
@@ -30,6 +33,11 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
     pages = []
     scale = max(96, min(int(args.dpi), 240)) / 72.0
+    region = [float(x) for x in args.region.split(',')] if args.region else None
+    if region and (len(region) != 4 or not all(math.isfinite(x) and 0 <= x <= 1 for x in region)
+                   or region[0] >= region[2] or region[1] >= region[3]):
+        raise ValueError('Invalid normalized region')
+    max_pixels = max(10000, min(args.max_pixels, 40000000))
     document = fitz.open(args.input)
     document_page_count = document.page_count
     try:
@@ -52,8 +60,16 @@ def main():
             page = document.load_page(page_number - 1)
             pixmap = None
             image_name = None
+            render_scale = scale
+            clip = page.rect
+            if region:
+                clip = fitz.Rect(page.rect.x0 + region[0] * page.rect.width,
+                                 page.rect.y0 + region[1] * page.rect.height,
+                                 page.rect.x0 + region[2] * page.rect.width,
+                                 page.rect.y0 + region[3] * page.rect.height)
             if not args.text_only:
-                pixmap = page.get_pixmap(matrix=fitz.Matrix(scale, scale), alpha=False)
+                render_scale = min(scale, math.sqrt(max_pixels / (clip.width * clip.height)) * 0.999)
+                pixmap = page.get_pixmap(matrix=fitz.Matrix(render_scale, render_scale), clip=clip, alpha=False)
                 image_name = f'page_{page_number:04d}.png'
                 pixmap.save(str(output_dir / image_name))
             text = (page.get_text('text', sort=True) or '').strip()
@@ -102,7 +118,12 @@ def main():
                 'image_name': image_name,
                 'width': pixmap.width if pixmap else None,
                 'height': pixmap.height if pixmap else None,
-                'dpi': int(args.dpi),
+                'dpi': round(render_scale * 72, 3),
+                'requested_dpi': int(args.dpi),
+                'resolution_limited': render_scale < scale,
+                'region': region,
+                'coordinate_system': 'normalized_displayed_page',
+                'renderer_version': 'fitz-bounded-region-v2',
                 'status': 'text_only' if args.text_only else 'ready',
                 'tables': tables,
                 'table_status': table_status,

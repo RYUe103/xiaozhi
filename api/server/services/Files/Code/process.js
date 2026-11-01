@@ -114,7 +114,8 @@ function getSanSuoMineruUploadFilename(sourceFile = {}) {
   return `sansuo_${identifier}.pdf`;
 }
 
-async function renderSanSuoPdfPages(sourceBuffer, requestedPages = [], { textOnly = false } = {}) {
+async function renderSanSuoPdfPages(sourceBuffer, requestedPages = [], { textOnly = false, signal, region, dpi = SANSUO_PDF_VISION_FALLBACK_DPI } = {}) {
+  signal?.throwIfAborted();
   const tempDir = path.join('/tmp', `sansuo-pdf-render-${crypto.randomUUID()}`);
   const inputPath = path.join(tempDir, 'source.pdf');
   const outputDir = path.join(tempDir, 'pages');
@@ -131,16 +132,17 @@ async function renderSanSuoPdfPages(sourceBuffer, requestedPages = [], { textOnl
       '--output-dir',
       outputDir,
       '--dpi',
-      String(SANSUO_PDF_VISION_FALLBACK_DPI),
+      String(dpi),
     ];
     if (textOnly) args.push('--text-only', '--layout');
+    if (region) args.push('--region', ['x0', 'y0', 'x1', 'y1'].map(k => region[k]).join(','));
     if (normalizedPages.length) {
       args.push('--pages', normalizedPages.join(','));
     }
     const { stdout } = await execFileAsync(
       process.env.SANSUO_PDF_RENDER_PYTHON || 'python3',
       args,
-      { timeout: SANSUO_DOCUMENT_PARSE_TIMEOUT_MS, maxBuffer: 1024 * 1024 },
+      { timeout: SANSUO_DOCUMENT_PARSE_TIMEOUT_MS, maxBuffer: 1024 * 1024, ...(signal ? { signal } : {}) },
     );
     const result = JSON.parse(String(stdout || '{}').trim());
     const pages = Array.isArray(result.pages) ? result.pages : [];
@@ -290,7 +292,10 @@ async function ensureSanSuoPdfPageArtifacts({
   conversationId,
   messageId,
   pages = [],
+  region,
 }) {
+  const signal = req?._sansuoModelSignal;
+  signal?.throwIfAborted();
   const requestedPages = Array.from(
     new Set(pages.map(Number).filter((page) => Number.isInteger(page) && page > 0)),
   )
@@ -326,7 +331,9 @@ async function ensureSanSuoPdfPageArtifacts({
   if (expectedSourceHash && actualSourceHash !== expectedSourceHash) {
     throw new Error('DOCUMENT_VERSION_MISMATCH');
   }
-  const rendered = await renderSanSuoPdfPages(sourceBuffer, requestedPages);
+  signal?.throwIfAborted();
+  const rendered = await renderSanSuoPdfPages(sourceBuffer, requestedPages, { signal, region,
+    dpi: region ? 240 : SANSUO_PDF_VISION_FALLBACK_DPI });
   const sourceName = String(sourceFile.filename || sourceFile.name || 'document.pdf').replace(
     /[^\w.\-\u3400-\u9fff ]+/g,
     '_',
@@ -349,7 +356,9 @@ async function ensureSanSuoPdfPageArtifacts({
   const records = [];
   try {
     for (const page of rendered.pages) {
-      const name = `${prefixName}_review_page_${String(page.page).padStart(4, '0')}.png`;
+      signal?.throwIfAborted();
+      const regionId = region ? `_region_${crypto.createHash('sha256').update(JSON.stringify(region)).digest('hex').slice(0, 12)}` : '';
+      const name = `${prefixName}${regionId}_review_page_${String(page.page).padStart(4, '0')}.png`;
       const pageBuffer = await fsp.readFile(path.join(rendered.outputDir, page.image_name));
       const imageSha256 = crypto.createHash('sha256').update(pageBuffer).digest('hex');
       const uploaded = await strategy.handleFileUpload({
@@ -364,7 +373,9 @@ async function ensureSanSuoPdfPageArtifacts({
         id: uploaded.file_id,
         name,
         toolCallId: `sansuo-pdf-page-review-${rootFileId}-${page.page}`,
-        artifactMetadata: { imageSha256, physicalPage: page.page, renderer: 'fitz', dpi: SANSUO_PDF_VISION_FALLBACK_DPI },
+        artifactMetadata: { imageSha256, physicalPage: page.page, renderer: 'fitz', dpi: page.dpi,
+          rendererVersion: page.renderer_version, region: region || null,
+          resolutionLimited: page.resolution_limited, imageWidth: page.width, imageHeight: page.height },
         conversationId,
         messageId,
         session_id: uploaded.storage_session_id,

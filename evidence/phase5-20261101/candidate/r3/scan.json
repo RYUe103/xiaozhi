@@ -1,0 +1,60 @@
+{
+  "scope_hash": null,
+  "conversation_id": "21b0e40d-2224-41ae-9569-34fe4d207632",
+  "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+  "pdf_sha256": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0",
+  "elapsed_ms": 288665,
+  "active": false,
+  "upload_ms": 539,
+  "answer": "依据所附文档，来宾市政协“建设铸牢中华民族共同体意识示范区委员行动”在兴宾区街道社区的落地方式、6月2日宣讲评价及融合成效如下（内容主要出自文档第81页，基层阵地建设补充自第75页）：\n\n### 1. 在街道社区的具体落地方式\n* **多支部联动+主题党日融合（第81页）**：6月2日，兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部，在瑞民社区共同开展政协委员宣讲分享会，并结合传统节日举办“粽情端午话清廉·重温初心明使命”主题党日活动，将政治引领与民俗文化相结合。\n* **委员“现身说法”式宣讲（第81页）**：政协委员不照本宣科，而是结合自身实际工作经历，深入浅出地宣讲建设示范区及铸牢中华民族共同体意识的重大意义，并现场号召群众参与优秀传统文化传承、地方古迹挖掘保护，为共有精神家园注入“兴宾因子”。\n* **设立社区委员工作室（第75页）**：除集中宣讲外，兴宾区还将履职触角直接延伸至网格。例如6月1日在河西街道缤纷社区挂牌成立“和事佬”政协委员工作室与黄繁平政协委员工作室，实现常态化、近距离服务与调解。\n\n### 2. 6月2日宣讲活动的群众评价\n活动现场反响热烈，在场群众对委员们的宣讲给予了高度认可，评价其**“既有高度又有深度，既通俗易懂又深入浅出”**，赢得了阵阵好评（第81页）。\n\n### 3. 促进民族融合与增强向心力的成效\n根据河西街道瑞民社区党总支书记、主任胡自杰的现场总结，该活动在凝聚共识与促进交融方面取得了以下实质成效（第81页）：\n* **有效激发向心力与凝聚力**：通过典型人物的树立、宣传与面对面宣讲，切实激发了社区内广大党员、干部及群众的向心力和凝聚力。\n* **实质性推进民族互融**：活动打破了交流壁垒，直接推进了社区内各民族的“互促、互进、互融”，增强了基层社区的团结底色。\n* **形成长效传播机制**：社区以此次活动为契机，明确表态将进一步讲好民族团结故事、传播好声音，将单次活动转化为持续的思想引领与文化浸润。\n\n以下为该行动在基层街道社区落地路径及成效的解释示意图：\n\n```mermaid\nflowchart TD\n    A[\"兴宾区政协'委员行动'\"] --> B[\"街道社区基层落地\"]\n    B --> C[\"河西街道瑞民社区\"]\n    B --> D[\"河西街道缤纷社区\"]\n    C --> E[\"6月2日联合宣讲与主题党日\"]\n    D --> F[\"6月1日挂牌委员工作室\"]\n    E --> G[\"委员结合亲身经历宣讲\"]\n    E --> H[\"号召传承文化与保护古迹\"]\n    F --> I[\"设立'和事佬'工作室\"]\n    F --> J[\"设立黄繁平委员工作室\"]\n    G --> K[\"群众评价: 有高度深度、通俗易懂\"]\n    H --> L[\"成效: 激发向心力与凝聚力\"]\n    I --> M[\"成效: 推进各民族互促互进互融\"]\n    J --> M\n```",
+  "tool_calls": [
+    {
+      "id": "call_736dfbd0ff7f4fc483be5ae2",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"search\",\"document_id\":\"doc_79b4452f846287af0cdb\",\"query\":\"瑞民社区 河西街道 6月2日 宣讲 评价 融合 成效\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_79b4452f846287af0cdb\",\"filename\":\"41489021-892f-5f2a-9c49-d0515dad08a2.pdf\",\"version\":\"01ff21f72501ab6c2098e02dfe15875ca169bfded9b1ced099d5241c093c5d58\",\"action\":\"search\",\"content\":\"[chunk_bbded5c9c46fb13376dd page=81 kind=extracted_text]\\n宣讲活动既有高度又有深度，既通俗易懂又深入浅出，获得在场群众的阵阵好评。“感谢政协委员来到瑞民社区开展宣讲活动，今后我们将进一步讲好民族团结故事，传播民族团结好声音。通过典型人物的树立、宣传、宣讲，激发广大党员、干部群众的向心力和凝聚力，推进社区各民族互促互进互融。”河西街道瑞民社区党总支书记、主任胡自杰说道。\\n\\n[chunk_cf34aae953a6df3ec621 page=81 kind=extracted_text]\\n6月2日，来宾市兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部，在河西街道瑞民社区开展“铸牢中华民族共同体意识”政协委员宣讲分享会和“粽情端午话清廉·重温初心明使命”主题党日活动。\\n\\n[chunk_795d31ce5465255b91fb page=81 kind=extracted_text]\\n参加活动的政协委员们，结合自身经历和工作实际，宣讲了“铸牢中华民族共同体意识”和“广西建设铸牢中华民族共同体意识示范区”的重大意义，号召大家积极参与实施中华民族优秀传统文化传承发展工程，加强对地方文化古迹的挖掘与保护，发挥地域特色弘扬民族优秀文化和民族精神，为构筑中华民族共有精神家园注入“兴宾因子”、彰显“兴宾特色”，在铸牢中华民族共同体意识的思想自觉、行动自觉上实现新提高。\\n\\n[chunk_fe2758bdd16819f55da9 page=81 kind=extracted_text]\\n兴宾区政协委员开展宣讲会和主题党日活动 唱响“铸牢中华民族共同体意识”政协强音\\n\\n[chunk_885b241120d89b0588c6 page=75 kind=extracted_text]\\n6月1日，兴宾区河西街道缤纷社区“和事佬”政协委员工作室与黄繁平政协委员工作室分别挂牌成立。\\n\\n[chunk_82b3d107a02378f7e64d page=8 kind=extracted_text]\\n兴宾区政协委员开展宣讲会和主题党日活动\\n——唱响“铸牢中华民族共同体意识”政协强音（黎慧梅） 76\\n把“书香政协”打造成履职为民的靓丽名片——象州县政协以“4+14+\\n2+1+N”开展委员读书实践活动纪实（潘照春 韦冠林 郑南瑛 黄炳壮） 76\\n武宣县政协：召开乡镇政协工作联络站工作交流会（罗阳斌 潘晓宁） 80\\n忻城县政协：强化学习培训提升履职成效（卢国武 罗金城） 81\\n金秀瑶族自治县政协：“双线发力”推动履职和读书活动双促进(曾铭鑫) 82\\n委员“动”起来工作“活”起来\\n——合山市政协着力提升委员履职质效侧记（黄冲 吴伯伦） 83\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_bbded5c9c46fb13376dd\",\"source_chunk_id\":\"mineru_2cdb6ed5126eea4106c4f9d6\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_342eca763c51851387a4234f\",\"image_id\":null,\"bbox\":[508,241,904,415],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_cf34aae953a6df3ec621\",\"source_chunk_id\":\"mineru_98d2f3602479bdb72002c5b6\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_de2c126f906a286cb7bee2b2\",\"image_id\":null,\"bbox\":[92,241,486,357],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_795d31ce5465255b91fb\",\"source_chunk_id\":\"mineru_dacb2d48e1c9229e1cd29d92\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_4785938f36bf6aaa266cdc23\",\"image_id\":null,\"bbox\":[92,358,487,572],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_fe2758bdd16819f55da9\",\"source_chunk_id\":\"mineru_d5c37159dda3840ca90d305d\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_eefb3cc2eba38d7b3a95fcf4\",\"image_id\":null,\"bbox\":[136,123,860,190],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_885b241120d89b0588c6\",\"source_chunk_id\":\"mineru_df8f4576cc4063e58be29254\",\"page_start\":75,\"page_end\":75,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_34a8827c489386e462b7611d\",\"image_id\":null,\"bbox\":[94,214,486,270],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_82b3d107a02378f7e64d\",\"source_chunk_id\":\"mineru_e9631d153aff1aacfe74d657\",\"page_start\":8,\"page_end\":8,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_d4a2d3c82f5b6a4c5213d9d3\",\"image_id\":null,\"bbox\":[93,702,594,853],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 74
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T11:26:28.693Z",
+      "completedAt": "2026-11-01T11:31:05.169Z",
+      "elapsedMs": 276476
+    },
+    "sansuoClientRequestId": "336dd210-6ecc-4f02-a5d9-5a282ab14f6f",
+    "sansuoSources": [
+      {
+        "file_id": "a230e9eb-8d95-4668-9b8e-395d1d7ef309",
+        "filename": "41489021-892f-5f2a-9c49-d0515dad08a2.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 33875317,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "document_id": "doc_79b4452f846287af0cdb",
+      "chunk_id": "chunk_bbded5c9c46fb13376dd",
+      "page_start": 81,
+      "page_end": 81,
+      "section_id": null,
+      "table_id": null,
+      "version": "01ff21f72501ab6c2098e02dfe15875ca169bfded9b1ced099d5241c093c5d58",
+      "source_hash": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0",
+      "user_id": "6ae721e38099365b1aa07752",
+      "conversation_id": "21b0e40d-2224-41ae-9569-34fe4d207632",
+      "recorded_at": "2026-11-01T11:30:06.246Z"
+    }
+  ]
+}

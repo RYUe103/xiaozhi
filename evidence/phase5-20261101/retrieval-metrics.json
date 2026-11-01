@@ -1,0 +1,7697 @@
+[
+  {
+    "arm": "baseline",
+    "batch": "r2",
+    "case": "phone",
+    "expected_physical_pages": [],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "7784d9df-937f-4293-8270-34fe6dd1f2be",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            9,
+            5,
+            11,
+            14,
+            20,
+            26,
+            26,
+            6,
+            10,
+            15
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "7784d9df-937f-4293-8270-34fe6dd1f2be",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            2,
+            3,
+            4,
+            4,
+            6,
+            6,
+            7,
+            7,
+            8
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "7784d9df-937f-4293-8270-34fe6dd1f2be",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            9,
+            26,
+            20,
+            19,
+            14,
+            4,
+            11,
+            23,
+            23
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "7784d9df-937f-4293-8270-34fe6dd1f2be",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            20,
+            6,
+            8,
+            8,
+            10,
+            10,
+            12,
+            12,
+            14
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "7784d9df-937f-4293-8270-34fe6dd1f2be",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            27,
+            5,
+            5,
+            27,
+            26,
+            8,
+            10
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "7784d9df-937f-4293-8270-34fe6dd1f2be",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "7784d9df-937f-4293-8270-34fe6dd1f2be",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20,
+            26,
+            8,
+            9
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "7784d9df-937f-4293-8270-34fe6dd1f2be",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "baseline",
+    "batch": "r3",
+    "case": "academic",
+    "expected_physical_pages": [
+      1
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "8ba1b4f2baffc3bf1106",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "4383a4bdcc9d3fae69df",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "578b825d490ccf52903a",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "d277aad66351adbba83a",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "11fb8fee330e00ffd330",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "20627c06feee318585f0",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "25dc48a8d7c194992b02",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "8e939a51381e15a4549e",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "25dc48a8d7c194992b02",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "da6e2f539726fabd1f8c",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "8ba1b4f2baffc3bf1106",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "4383a4bdcc9d3fae69df",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "578b825d490ccf52903a",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "d277aad66351adbba83a",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "11fb8fee330e00ffd330",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "20627c06feee318585f0",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "25dc48a8d7c194992b02",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "8e939a51381e15a4549e",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "25dc48a8d7c194992b02",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "da6e2f539726fabd1f8c",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "8ba1b4f2baffc3bf1106",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "4383a4bdcc9d3fae69df",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "578b825d490ccf52903a",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "d277aad66351adbba83a",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "11fb8fee330e00ffd330",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "20627c06feee318585f0",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "25dc48a8d7c194992b02",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "8e939a51381e15a4549e",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "25dc48a8d7c194992b02",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "da6e2f539726fabd1f8c",
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "60401a42-48f2-44ee-a427-47eae13175f1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": []
+    },
+    "tool_evidence": [
+      {
+        "action": "list",
+        "pages": [],
+        "reference": null,
+        "truncated": null,
+        "error": null
+      },
+      {
+        "action": "read",
+        "pages": [],
+        "reference": null,
+        "truncated": null,
+        "error": {
+          "code": "PAGE_TEXT_UNAVAILABLE",
+          "message": "当前范围没有可用内容。"
+        }
+      },
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": null,
+        "truncated": null,
+        "error": {
+          "code": "VISION_INSPECTION_FAILED"
+        }
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "read",
+        "pages": [
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "toc",
+        "pages": [],
+        "reference": null,
+        "truncated": null,
+        "error": null
+      },
+      {
+        "action": "read_adjacent",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "baseline",
+    "batch": "r3",
+    "case": "finance",
+    "expected_physical_pages": [
+      2
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "d9065a4b-b317-4294-b4b4-47236c7caec1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            4,
+            1,
+            2,
+            3,
+            4,
+            5,
+            3
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "d9065a4b-b317-4294-b4b4-47236c7caec1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7c5689177546b4aa0afc",
+          "trace_id": "d9065a4b-b317-4294-b4b4-47236c7caec1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "d9065a4b-b317-4294-b4b4-47236c7caec1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "d9065a4b-b317-4294-b4b4-47236c7caec1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7c5689177546b4aa0afc",
+          "trace_id": "d9065a4b-b317-4294-b4b4-47236c7caec1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "d9065a4b-b317-4294-b4b4-47236c7caec1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            5,
+            1,
+            1,
+            2,
+            1,
+            2,
+            6
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "d9065a4b-b317-4294-b4b4-47236c7caec1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            2,
+            5,
+            1,
+            6,
+            1,
+            3,
+            2
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "7c5689177546b4aa0afc",
+          "trace_id": "d9065a4b-b317-4294-b4b4-47236c7caec1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            2,
+            5,
+            1,
+            5,
+            1,
+            6,
+            3
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "d9065a4b-b317-4294-b4b4-47236c7caec1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            1,
+            2,
+            3,
+            5,
+            5,
+            4,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "d9065a4b-b317-4294-b4b4-47236c7caec1",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "visual_page",
+        "pages": [],
+        "reference": null,
+        "truncated": null,
+        "error": {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。"
+        }
+      },
+      {
+        "action": "visual_page",
+        "pages": [],
+        "reference": null,
+        "truncated": null,
+        "error": {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。"
+        }
+      },
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_81743d1da61eafff0362",
+          "page": 1,
+          "page_start": 1,
+          "page_end": 1,
+          "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+          "source_hash": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+          "image_id": "sansuo_hidden__upload_8d77116d809cc65d04dd__file_9da346dd63ff751517af",
+          "region": null,
+          "visual_result_id": "vision_9f6067173b6276f92c2ff4d5f0dae48c",
+          "vision_version": "inspect-page-v4-crosscheck",
+          "vision_model": "qwen3-vl-plus",
+          "version": "c7b7d48fc030fa1f7959fddf8b1d7d76d8435ef6a0e2d1bdd2e5be1dfb81639c",
+          "user_id": "6ae71f73f8e96f86bb1c054e",
+          "conversation_id": "8935c318-4e9b-4bda-b886-9b01f8c8c98b",
+          "status": "partial"
+        },
+        "truncated": null,
+        "error": null
+      },
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_81743d1da61eafff0362",
+          "page": 2,
+          "page_start": 2,
+          "page_end": 2,
+          "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+          "source_hash": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+          "image_id": "sansuo_hidden__upload_9609744d7e5160544434__file_9cf1e5b891db246c9474",
+          "region": null,
+          "visual_result_id": "vision_280e3bda93026a8ccb8b1a0dc75faad3",
+          "vision_version": "inspect-page-v4-crosscheck",
+          "vision_model": "qwen3-vl-plus",
+          "version": "c7b7d48fc030fa1f7959fddf8b1d7d76d8435ef6a0e2d1bdd2e5be1dfb81639c",
+          "user_id": "6ae71f73f8e96f86bb1c054e",
+          "conversation_id": "8935c318-4e9b-4bda-b886-9b01f8c8c98b",
+          "status": "partial"
+        },
+        "truncated": null,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "baseline",
+    "batch": "r3",
+    "case": "netflix",
+    "expected_physical_pages": [
+      43
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "2a561a704083dda905bd",
+          "trace_id": "7988bd91-a6b1-4267-a473-b03bf7c079cf",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            17,
+            27,
+            28,
+            40,
+            41,
+            51,
+            12,
+            27,
+            28,
+            50
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "6c5bb4c8f10857f9ea67",
+          "trace_id": "7988bd91-a6b1-4267-a473-b03bf7c079cf",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            12,
+            17,
+            27,
+            27,
+            28,
+            28,
+            1,
+            2,
+            3,
+            3
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "810e69539afb7404d4b3",
+          "trace_id": "7988bd91-a6b1-4267-a473-b03bf7c079cf",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            66,
+            34,
+            72,
+            72,
+            33,
+            39,
+            39,
+            40,
+            41,
+            46
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "2a561a704083dda905bd",
+          "trace_id": "7988bd91-a6b1-4267-a473-b03bf7c079cf",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            27,
+            12,
+            28,
+            28,
+            27,
+            34,
+            9,
+            3,
+            26,
+            12
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "6c5bb4c8f10857f9ea67",
+          "trace_id": "7988bd91-a6b1-4267-a473-b03bf7c079cf",
+          "recall_at_6": 0.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            12,
+            28,
+            27,
+            27,
+            28,
+            26,
+            12,
+            68,
+            42,
+            43
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "810e69539afb7404d4b3",
+          "trace_id": "7988bd91-a6b1-4267-a473-b03bf7c079cf",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            72,
+            72,
+            70,
+            71,
+            33,
+            34,
+            33,
+            4,
+            45,
+            39
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "2a561a704083dda905bd",
+          "trace_id": "7988bd91-a6b1-4267-a473-b03bf7c079cf",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ]
+        },
+        {
+          "query_hash": "6c5bb4c8f10857f9ea67",
+          "trace_id": "7988bd91-a6b1-4267-a473-b03bf7c079cf",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ]
+        },
+        {
+          "query_hash": "810e69539afb7404d4b3",
+          "trace_id": "7988bd91-a6b1-4267-a473-b03bf7c079cf",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ]
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "7988bd91-a6b1-4267-a473-b03bf7c079cf",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            27,
+            12,
+            34,
+            28,
+            27,
+            28,
+            34,
+            3,
+            72,
+            39
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "7988bd91-a6b1-4267-a473-b03bf7c079cf",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            17,
+            27,
+            27,
+            34,
+            39,
+            34,
+            34,
+            72,
+            72,
+            40
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "baseline",
+    "batch": "r3",
+    "case": "phone",
+    "expected_physical_pages": [],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "22cc5b6d-1187-498b-88d4-29d1a4a80fa1",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            9,
+            5,
+            11,
+            14,
+            20,
+            26,
+            26,
+            6,
+            10,
+            15
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "22cc5b6d-1187-498b-88d4-29d1a4a80fa1",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            2,
+            3,
+            4,
+            4,
+            6,
+            6,
+            7,
+            7,
+            8
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "22cc5b6d-1187-498b-88d4-29d1a4a80fa1",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            9,
+            26,
+            20,
+            19,
+            14,
+            4,
+            11,
+            23,
+            23
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "22cc5b6d-1187-498b-88d4-29d1a4a80fa1",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            20,
+            6,
+            8,
+            8,
+            10,
+            10,
+            12,
+            12,
+            14
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "22cc5b6d-1187-498b-88d4-29d1a4a80fa1",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            27,
+            5,
+            5,
+            27,
+            26,
+            8,
+            10
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "22cc5b6d-1187-498b-88d4-29d1a4a80fa1",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "22cc5b6d-1187-498b-88d4-29d1a4a80fa1",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20,
+            26,
+            8,
+            9
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "22cc5b6d-1187-498b-88d4-29d1a4a80fa1",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "baseline",
+    "batch": "r3",
+    "case": "scan",
+    "expected_physical_pages": [
+      65,
+      81
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "d6df4fd57cdcbc8c7b2c",
+          "trace_id": "fdfc4d6e-58eb-4183-8970-f9d742f42622",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            8,
+            65,
+            49,
+            67,
+            65,
+            88,
+            66,
+            67,
+            66,
+            65
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "d5f55e176a92249c8deb",
+          "trace_id": "fdfc4d6e-58eb-4183-8970-f9d742f42622",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            8,
+            49,
+            66,
+            65,
+            66,
+            88,
+            65,
+            67,
+            86,
+            65
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "a72b27242e870a45db58",
+          "trace_id": "fdfc4d6e-58eb-4183-8970-f9d742f42622",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            8,
+            19,
+            90,
+            65,
+            67,
+            65,
+            8,
+            81,
+            81,
+            76
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "d6df4fd57cdcbc8c7b2c",
+          "trace_id": "fdfc4d6e-58eb-4183-8970-f9d742f42622",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            49,
+            65,
+            66,
+            66,
+            65,
+            67,
+            67,
+            65,
+            71,
+            66
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "d5f55e176a92249c8deb",
+          "trace_id": "fdfc4d6e-58eb-4183-8970-f9d742f42622",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            49,
+            66,
+            66,
+            65,
+            65,
+            67,
+            81,
+            65,
+            67,
+            71
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "a72b27242e870a45db58",
+          "trace_id": "fdfc4d6e-58eb-4183-8970-f9d742f42622",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            81,
+            81,
+            81,
+            8,
+            90,
+            67,
+            65,
+            65,
+            8,
+            65
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "d6df4fd57cdcbc8c7b2c",
+          "trace_id": "fdfc4d6e-58eb-4183-8970-f9d742f42622",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            81,
+            66,
+            81,
+            8,
+            66,
+            49,
+            65,
+            76,
+            67,
+            81
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "d5f55e176a92249c8deb",
+          "trace_id": "fdfc4d6e-58eb-4183-8970-f9d742f42622",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            66,
+            81,
+            81,
+            66,
+            49,
+            67,
+            65,
+            65,
+            67,
+            71
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "a72b27242e870a45db58",
+          "trace_id": "fdfc4d6e-58eb-4183-8970-f9d742f42622",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            71,
+            66,
+            8,
+            81,
+            49,
+            75,
+            76,
+            10
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "fdfc4d6e-58eb-4183-8970-f9d742f42622",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            49,
+            8,
+            66,
+            65,
+            66,
+            65,
+            67,
+            65,
+            81,
+            81
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "fdfc4d6e-58eb-4183-8970-f9d742f42622",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            81,
+            81,
+            81,
+            65,
+            65,
+            67,
+            66,
+            66,
+            8,
+            8
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [],
+    "frozen_text_fragments": [
+      {
+        "type": "text",
+        "source_page": 81,
+        "exact_normalized_fragment_delivered": false
+      },
+      {
+        "type": "title",
+        "source_page": 65,
+        "exact_normalized_fragment_delivered": false
+      },
+      {
+        "type": "text",
+        "source_page": 81,
+        "exact_normalized_fragment_delivered": false
+      }
+    ],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "baseline",
+    "batch": "r3",
+    "case": "table",
+    "expected_physical_pages": [
+      13
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "6fb4e615c3e193c744fc",
+          "trace_id": "7a99daec-4c40-48dd-92e6-6218f5c527ae",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            1,
+            7,
+            9,
+            12,
+            14,
+            2,
+            9,
+            2,
+            5,
+            15
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "59b2007d48a8a74384ea",
+          "trace_id": "7a99daec-4c40-48dd-92e6-6218f5c527ae",
+          "recall_at_6": 0.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            4,
+            5,
+            7,
+            2,
+            12,
+            13,
+            2,
+            6,
+            4
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "6fb4e615c3e193c744fc",
+          "trace_id": "7a99daec-4c40-48dd-92e6-6218f5c527ae",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            12,
+            7,
+            1,
+            2,
+            9,
+            14,
+            5,
+            11,
+            3,
+            2
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "59b2007d48a8a74384ea",
+          "trace_id": "7a99daec-4c40-48dd-92e6-6218f5c527ae",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            12,
+            2,
+            4,
+            1,
+            2,
+            2,
+            5,
+            7,
+            15,
+            12
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "6fb4e615c3e193c744fc",
+          "trace_id": "7a99daec-4c40-48dd-92e6-6218f5c527ae",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            6,
+            17,
+            17,
+            7,
+            13,
+            19,
+            18,
+            14,
+            14,
+            7
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "59b2007d48a8a74384ea",
+          "trace_id": "7a99daec-4c40-48dd-92e6-6218f5c527ae",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            6,
+            17,
+            13,
+            20,
+            7,
+            14,
+            16,
+            14,
+            2,
+            9
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "7a99daec-4c40-48dd-92e6-6218f5c527ae",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            7,
+            12,
+            2,
+            14,
+            15,
+            11,
+            1,
+            2,
+            5,
+            4
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "7a99daec-4c40-48dd-92e6-6218f5c527ae",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            13,
+            12,
+            12,
+            7,
+            2,
+            14,
+            15,
+            11,
+            1,
+            2
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "read",
+        "pages": [
+          13
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "baseline",
+    "batch": "r3",
+    "case": "tree",
+    "expected_physical_pages": [
+      2
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "2d0c78eb-7d8f-4325-9a0c-66948f3e5fc7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            2,
+            5,
+            16,
+            11,
+            1,
+            10,
+            14,
+            14,
+            2
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "c144578ed5a38f712475",
+          "trace_id": "2d0c78eb-7d8f-4325-9a0c-66948f3e5fc7",
+          "recall_at_6": 0.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            4,
+            8,
+            4,
+            5,
+            8,
+            8,
+            1,
+            2,
+            11,
+            18
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "27c65c326ba7ea427642",
+          "trace_id": "2d0c78eb-7d8f-4325-9a0c-66948f3e5fc7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            5,
+            15,
+            1,
+            2,
+            7,
+            11,
+            18,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "2d0c78eb-7d8f-4325-9a0c-66948f3e5fc7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            5,
+            10,
+            3,
+            2,
+            2,
+            5,
+            2,
+            10,
+            11
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "c144578ed5a38f712475",
+          "trace_id": "2d0c78eb-7d8f-4325-9a0c-66948f3e5fc7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            18,
+            8,
+            8,
+            2,
+            8,
+            1,
+            4,
+            11,
+            5,
+            4
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "27c65c326ba7ea427642",
+          "trace_id": "2d0c78eb-7d8f-4325-9a0c-66948f3e5fc7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            18,
+            15,
+            2,
+            5,
+            7,
+            1,
+            11,
+            9,
+            8,
+            10
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "2d0c78eb-7d8f-4325-9a0c-66948f3e5fc7",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            8,
+            11,
+            18,
+            9,
+            17,
+            3,
+            19,
+            12,
+            18,
+            8
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "c144578ed5a38f712475",
+          "trace_id": "2d0c78eb-7d8f-4325-9a0c-66948f3e5fc7",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            11,
+            8,
+            8,
+            8,
+            8,
+            12,
+            11,
+            18,
+            20,
+            9
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "27c65c326ba7ea427642",
+          "trace_id": "2d0c78eb-7d8f-4325-9a0c-66948f3e5fc7",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            8,
+            11,
+            8,
+            18,
+            11,
+            10,
+            12,
+            12,
+            11,
+            8
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "2d0c78eb-7d8f-4325-9a0c-66948f3e5fc7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            11,
+            18,
+            2,
+            8,
+            8,
+            1,
+            5,
+            5,
+            3,
+            2
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "2d0c78eb-7d8f-4325-9a0c-66948f3e5fc7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            1,
+            4,
+            2,
+            11,
+            11,
+            8,
+            8,
+            8,
+            7
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_bcb6031efd67082b0f36",
+          "page": 2,
+          "page_start": 2,
+          "page_end": 2,
+          "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "image_id": "sansuo_hidden__upload_1056a07870580f4cac1e__file_c708985b40a6b490a5d4",
+          "region": null,
+          "visual_result_id": "vision_af7af58ca13313892e815c080ff79ba3",
+          "vision_version": "inspect-page-v4-crosscheck",
+          "vision_model": "qwen3-vl-plus",
+          "version": "f5fcdd95f114f5a20211d5f24cc57824dbd60a496a82ff6e6d46a860778e85f2",
+          "user_id": "6ae72112c44244c6f91ad510",
+          "conversation_id": "3a8e7b84-eb7e-414c-bbfa-507fd6704026",
+          "status": "ok"
+        },
+        "truncated": null,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "baseline",
+    "batch": "r4",
+    "case": "academic",
+    "expected_physical_pages": [
+      1
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "8ba1b4f2baffc3bf1106",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "571e48cc6a6c4eb23b8e",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "61b3bf35a3c79163c0ca",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "890a930d957d911ebe3f",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "13c530af4914293c7349",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "6aa9f1a43424d37b1dfb",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "8ba1b4f2baffc3bf1106",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "571e48cc6a6c4eb23b8e",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "61b3bf35a3c79163c0ca",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "890a930d957d911ebe3f",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "13c530af4914293c7349",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "6aa9f1a43424d37b1dfb",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "8ba1b4f2baffc3bf1106",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "571e48cc6a6c4eb23b8e",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "61b3bf35a3c79163c0ca",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "890a930d957d911ebe3f",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "13c530af4914293c7349",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "6aa9f1a43424d37b1dfb",
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "b9d70e5a-2127-47fc-a5af-d4314d896708",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "read",
+        "pages": [
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": null,
+        "truncated": null,
+        "error": {
+          "code": "VISION_INSPECTION_FAILED"
+        }
+      },
+      {
+        "action": "read",
+        "pages": [
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "baseline",
+    "batch": "r4",
+    "case": "finance",
+    "expected_physical_pages": [
+      2
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "bacfa684-c4d9-4cee-8bf1-c6f82dd29a04",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            4,
+            1,
+            2,
+            3,
+            4,
+            5,
+            3
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "bacfa684-c4d9-4cee-8bf1-c6f82dd29a04",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "cce7d641235db66f1177",
+          "trace_id": "bacfa684-c4d9-4cee-8bf1-c6f82dd29a04",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "bacfa684-c4d9-4cee-8bf1-c6f82dd29a04",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "bacfa684-c4d9-4cee-8bf1-c6f82dd29a04",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "cce7d641235db66f1177",
+          "trace_id": "bacfa684-c4d9-4cee-8bf1-c6f82dd29a04",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "bacfa684-c4d9-4cee-8bf1-c6f82dd29a04",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            5,
+            1,
+            1,
+            2,
+            1,
+            2,
+            6
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "bacfa684-c4d9-4cee-8bf1-c6f82dd29a04",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            2,
+            5,
+            1,
+            6,
+            1,
+            3,
+            2
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "cce7d641235db66f1177",
+          "trace_id": "bacfa684-c4d9-4cee-8bf1-c6f82dd29a04",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            1,
+            2,
+            5,
+            1,
+            5,
+            3,
+            4
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "bacfa684-c4d9-4cee-8bf1-c6f82dd29a04",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            1,
+            2,
+            3,
+            5,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "bacfa684-c4d9-4cee-8bf1-c6f82dd29a04",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            2,
+            2,
+            1,
+            1,
+            3
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_44f7cac06c89661f7f05",
+          "page": 2,
+          "page_start": 2,
+          "page_end": 2,
+          "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+          "source_hash": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+          "image_id": "sansuo_hidden__upload_f97c9191949bdd71d776__file_cfad48aec57f1787330b",
+          "region": null,
+          "visual_result_id": "vision_54795f30a7ca046210d6ea4749486a56",
+          "vision_version": "inspect-page-v4-crosscheck",
+          "vision_model": "qwen3-vl-plus",
+          "version": "fde0725be30cc53850921a423dc726d930b2bc8a053b804bad38c4b471f1041e",
+          "user_id": "6ae7253f155eb97f2e40a425",
+          "conversation_id": "104c89ac-5f3d-4a44-9a8a-3bc596d4554a",
+          "status": "partial"
+        },
+        "truncated": null,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "baseline",
+    "batch": "r4",
+    "case": "phone",
+    "expected_physical_pages": [],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "7121859a-2cf0-4e9c-be9f-6451efb7aed5",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            9,
+            5,
+            11,
+            14,
+            20,
+            26,
+            26,
+            6,
+            10,
+            15
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "7121859a-2cf0-4e9c-be9f-6451efb7aed5",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            2,
+            3,
+            4,
+            4,
+            6,
+            6,
+            7,
+            7,
+            8
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "a3005508-9e64-4948-9d5d-09c60fad8c74",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            9,
+            5,
+            11,
+            14,
+            20,
+            26,
+            26,
+            6,
+            10,
+            15
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "a3005508-9e64-4948-9d5d-09c60fad8c74",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            2,
+            3,
+            4,
+            4,
+            6,
+            6,
+            7,
+            7,
+            8
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "7121859a-2cf0-4e9c-be9f-6451efb7aed5",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            9,
+            26,
+            20,
+            14,
+            4,
+            23,
+            19,
+            11,
+            26
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "7121859a-2cf0-4e9c-be9f-6451efb7aed5",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            12,
+            14,
+            20,
+            20,
+            6,
+            6,
+            8,
+            8,
+            10
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "a3005508-9e64-4948-9d5d-09c60fad8c74",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            9,
+            26,
+            20,
+            14,
+            4,
+            23,
+            19,
+            11,
+            26
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "a3005508-9e64-4948-9d5d-09c60fad8c74",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            12,
+            14,
+            20,
+            20,
+            6,
+            6,
+            8,
+            8,
+            10
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "7121859a-2cf0-4e9c-be9f-6451efb7aed5",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [],
+          "warnings": [
+            "VECTOR_TIMEOUT"
+          ]
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "7121859a-2cf0-4e9c-be9f-6451efb7aed5",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            27,
+            27,
+            9,
+            11,
+            19,
+            21,
+            13
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "a3005508-9e64-4948-9d5d-09c60fad8c74",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            9,
+            27,
+            7,
+            27,
+            27,
+            9,
+            11,
+            19,
+            21
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "a3005508-9e64-4948-9d5d-09c60fad8c74",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            27,
+            27,
+            9,
+            11,
+            19,
+            21,
+            13
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "7121859a-2cf0-4e9c-be9f-6451efb7aed5",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            4,
+            11,
+            9,
+            9,
+            14,
+            26,
+            6,
+            20,
+            13
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "a3005508-9e64-4948-9d5d-09c60fad8c74",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            4,
+            11,
+            9,
+            9,
+            14,
+            26,
+            6,
+            20,
+            13
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "7121859a-2cf0-4e9c-be9f-6451efb7aed5",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            5,
+            4,
+            11,
+            9,
+            9,
+            14,
+            26
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "a3005508-9e64-4948-9d5d-09c60fad8c74",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            5,
+            4,
+            11,
+            9,
+            9,
+            14,
+            26,
+            20
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "baseline",
+    "batch": "r4",
+    "case": "tree",
+    "expected_physical_pages": [
+      2
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "9b21fd10-927c-4bb2-b346-ef66e8f827aa",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            2,
+            5,
+            16,
+            11,
+            1,
+            10,
+            14,
+            14,
+            2
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "56cbcd1a49a3834e1541",
+          "trace_id": "9b21fd10-927c-4bb2-b346-ef66e8f827aa",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            8,
+            4,
+            8,
+            5,
+            8,
+            14,
+            4,
+            5,
+            8,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "9b21fd10-927c-4bb2-b346-ef66e8f827aa",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            5,
+            10,
+            3,
+            2,
+            2,
+            5,
+            2,
+            10,
+            11
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "56cbcd1a49a3834e1541",
+          "trace_id": "9b21fd10-927c-4bb2-b346-ef66e8f827aa",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            8,
+            18,
+            8,
+            8,
+            2,
+            10,
+            8,
+            5,
+            4,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "9b21fd10-927c-4bb2-b346-ef66e8f827aa",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            8,
+            11,
+            18,
+            9,
+            17,
+            3,
+            19,
+            12,
+            18,
+            8
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "56cbcd1a49a3834e1541",
+          "trace_id": "9b21fd10-927c-4bb2-b346-ef66e8f827aa",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            8,
+            11,
+            8,
+            8,
+            8,
+            12,
+            9,
+            18,
+            14,
+            20
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "9b21fd10-927c-4bb2-b346-ef66e8f827aa",
+          "recall_at_6": 0.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            11,
+            8,
+            8,
+            18,
+            8,
+            4,
+            8,
+            5,
+            1,
+            2
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "9b21fd10-927c-4bb2-b346-ef66e8f827aa",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            1,
+            11,
+            11,
+            8,
+            8,
+            8,
+            8,
+            4,
+            5
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_dad40f13db97b86b02b8",
+          "page": 2,
+          "page_start": 2,
+          "page_end": 2,
+          "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "image_id": "sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736",
+          "region": null,
+          "visual_result_id": "vision_b8d19b96ef9ce4464d33b11344414591",
+          "vision_version": "inspect-page-v4-crosscheck",
+          "vision_model": "qwen3-vl-plus",
+          "version": "806c43486df6ccebc028437dd30b0d815bf079a88658c3c2d55b51707b1207b5",
+          "user_id": "6ae725eba2a54cf678f7af3d",
+          "conversation_id": "a12a8f3f-a75f-457b-ab6e-0d1ae3801afa",
+          "status": "ok"
+        },
+        "truncated": null,
+        "error": null
+      },
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_dad40f13db97b86b02b8",
+          "page": 2,
+          "page_start": 2,
+          "page_end": 2,
+          "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "image_id": "sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736",
+          "region": null,
+          "visual_result_id": "vision_d25ba2417c8f4824efc39ab59eb0f7c3",
+          "vision_version": "inspect-page-v4-crosscheck",
+          "vision_model": "qwen3-vl-plus",
+          "version": "806c43486df6ccebc028437dd30b0d815bf079a88658c3c2d55b51707b1207b5",
+          "user_id": "6ae725eba2a54cf678f7af3d",
+          "conversation_id": "a12a8f3f-a75f-457b-ab6e-0d1ae3801afa",
+          "status": "partial"
+        },
+        "truncated": null,
+        "error": null
+      },
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_dad40f13db97b86b02b8",
+          "page": 2,
+          "page_start": 2,
+          "page_end": 2,
+          "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "image_id": "sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736",
+          "region": null,
+          "visual_result_id": "vision_b330705ce7624d70ec33e0e5f85ad9e6",
+          "vision_version": "inspect-page-v4-crosscheck",
+          "vision_model": "qwen3-vl-plus",
+          "version": "806c43486df6ccebc028437dd30b0d815bf079a88658c3c2d55b51707b1207b5",
+          "user_id": "6ae725eba2a54cf678f7af3d",
+          "conversation_id": "a12a8f3f-a75f-457b-ab6e-0d1ae3801afa",
+          "status": "ok"
+        },
+        "truncated": null,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r2",
+    "case": "phone",
+    "expected_physical_pages": [],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "4f314d13-c720-4842-900c-80e25784e837",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            9,
+            5,
+            11,
+            14,
+            20,
+            26,
+            26,
+            6,
+            10,
+            15
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "4f314d13-c720-4842-900c-80e25784e837",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            2,
+            3,
+            4,
+            4,
+            6,
+            6,
+            7,
+            7,
+            8
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "4f314d13-c720-4842-900c-80e25784e837",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            9,
+            26,
+            20,
+            19,
+            14,
+            4,
+            11,
+            23,
+            23
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "4f314d13-c720-4842-900c-80e25784e837",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            20,
+            6,
+            8,
+            8,
+            10,
+            10,
+            12,
+            12,
+            14
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "4f314d13-c720-4842-900c-80e25784e837",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            27,
+            5,
+            5,
+            27,
+            26,
+            8,
+            10
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "4f314d13-c720-4842-900c-80e25784e837",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "4f314d13-c720-4842-900c-80e25784e837",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20,
+            26,
+            8,
+            8
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "4f314d13-c720-4842-900c-80e25784e837",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r3",
+    "case": "academic",
+    "expected_physical_pages": [
+      1
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "aa56bb2744af6f2cf12f",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "da2e4bd949123321ad4d",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "638ccf0aa76e4dd8fd4e",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "d6d677fbeb58785d6f0f",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "25dc48a8d7c194992b02",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "101f309b12ba17c23655",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "aa56bb2744af6f2cf12f",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "da2e4bd949123321ad4d",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "638ccf0aa76e4dd8fd4e",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "d6d677fbeb58785d6f0f",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "25dc48a8d7c194992b02",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": "101f309b12ba17c23655",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "aa56bb2744af6f2cf12f",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "da2e4bd949123321ad4d",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "638ccf0aa76e4dd8fd4e",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "d6d677fbeb58785d6f0f",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "25dc48a8d7c194992b02",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "101f309b12ba17c23655",
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "0063e03a-aa03-4074-8fad-41ce982239ea",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "read",
+        "pages": [
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "read",
+        "pages": [
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": null,
+        "truncated": null,
+        "error": {
+          "code": "VISION_INSPECTION_FAILED",
+          "category": "MODEL_UNKNOWN_ERROR",
+          "http_status": null,
+          "cause": null,
+          "retryable": false
+        }
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "read",
+        "pages": [
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r3",
+    "case": "finance",
+    "expected_physical_pages": [
+      2
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            4,
+            1,
+            2,
+            3,
+            4,
+            5,
+            3
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7c5689177546b4aa0afc",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "6635a6061507cd94f1ba",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "bd9c969bf948d9619703",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "9d5248ac0125996a8846",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "edd65c1eb800e76e9920",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "24c9277e2f904bb940de",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            3,
+            1,
+            2,
+            2,
+            2,
+            3,
+            4,
+            4,
+            5
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7c5689177546b4aa0afc",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "6635a6061507cd94f1ba",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "bd9c969bf948d9619703",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "9d5248ac0125996a8846",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "edd65c1eb800e76e9920",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "24c9277e2f904bb940de",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            6,
+            2,
+            5
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            5,
+            1,
+            1,
+            2,
+            1,
+            2,
+            6
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            2,
+            5,
+            1,
+            6,
+            1,
+            3,
+            2
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "7c5689177546b4aa0afc",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            2,
+            5,
+            1,
+            5,
+            1,
+            6,
+            3
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "6635a6061507cd94f1ba",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": []
+        },
+        {
+          "query_hash": "9d5248ac0125996a8846",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": []
+        },
+        {
+          "query_hash": "bd9c969bf948d9619703",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            2,
+            5,
+            1,
+            3,
+            1,
+            6,
+            4
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "edd65c1eb800e76e9920",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            2,
+            5,
+            1,
+            3,
+            1,
+            6,
+            4
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "24c9277e2f904bb940de",
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            2,
+            1,
+            5,
+            1,
+            6,
+            5,
+            3
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            1,
+            2,
+            3,
+            5,
+            5,
+            4,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            2,
+            1,
+            3,
+            5,
+            4,
+            4,
+            3
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "dda3949a-a8dd-4b28-8cfc-c7de761130f7",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "search",
+        "pages": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          1
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "visual_search",
+        "pages": [],
+        "reference": null,
+        "truncated": null,
+        "error": {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。"
+        }
+      },
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_71e7af7eb77da2baef3b",
+          "page": 2,
+          "page_start": 2,
+          "page_end": 2,
+          "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+          "source_hash": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+          "image_id": "sansuo_hidden__upload_695dc775d23a2f5ceec7__file_6138f490340742320a7b",
+          "region": null,
+          "visual_result_id": "vision_30c65472c03b7553fc928cb658cf5a9b",
+          "vision_version": "inspect-page-v5-binding-evidence",
+          "vision_model": "qwen3-vl-plus",
+          "version": "47b7941d8a11b3d34703f0e7a8a2f4977bbb47466cb8e6989d461950b21f6a1d",
+          "user_id": "6ae71f7debeff600d0240fcc",
+          "conversation_id": "7e43a201-5935-4d77-b96b-bd61303bfd75",
+          "status": "partial"
+        },
+        "truncated": null,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r3",
+    "case": "netflix",
+    "expected_physical_pages": [
+      43
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "2a561a704083dda905bd",
+          "trace_id": "8ee31b76-3fc9-4318-b20d-2ab4b88668a5",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            17,
+            27,
+            28,
+            40,
+            41,
+            51,
+            12,
+            27,
+            28,
+            50
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "6c5bb4c8f10857f9ea67",
+          "trace_id": "8ee31b76-3fc9-4318-b20d-2ab4b88668a5",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            12,
+            17,
+            27,
+            27,
+            28,
+            28,
+            1,
+            2,
+            3,
+            3
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "810e69539afb7404d4b3",
+          "trace_id": "8ee31b76-3fc9-4318-b20d-2ab4b88668a5",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            66,
+            34,
+            72,
+            72,
+            33,
+            39,
+            39,
+            40,
+            41,
+            46
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "2a561a704083dda905bd",
+          "trace_id": "8ee31b76-3fc9-4318-b20d-2ab4b88668a5",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            27,
+            12,
+            28,
+            28,
+            27,
+            34,
+            9,
+            3,
+            26,
+            12
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "6c5bb4c8f10857f9ea67",
+          "trace_id": "8ee31b76-3fc9-4318-b20d-2ab4b88668a5",
+          "recall_at_6": 0.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            12,
+            28,
+            27,
+            27,
+            28,
+            26,
+            12,
+            68,
+            42,
+            43
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "810e69539afb7404d4b3",
+          "trace_id": "8ee31b76-3fc9-4318-b20d-2ab4b88668a5",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            72,
+            72,
+            70,
+            71,
+            33,
+            34,
+            33,
+            4,
+            45,
+            39
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "2a561a704083dda905bd",
+          "trace_id": "8ee31b76-3fc9-4318-b20d-2ab4b88668a5",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ]
+        },
+        {
+          "query_hash": "6c5bb4c8f10857f9ea67",
+          "trace_id": "8ee31b76-3fc9-4318-b20d-2ab4b88668a5",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ]
+        },
+        {
+          "query_hash": "810e69539afb7404d4b3",
+          "trace_id": "8ee31b76-3fc9-4318-b20d-2ab4b88668a5",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ]
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "8ee31b76-3fc9-4318-b20d-2ab4b88668a5",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            27,
+            12,
+            34,
+            28,
+            27,
+            28,
+            34,
+            3,
+            72,
+            39
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "8ee31b76-3fc9-4318-b20d-2ab4b88668a5",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            17,
+            27,
+            27,
+            34,
+            39,
+            34,
+            34,
+            72,
+            72,
+            40
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r3",
+    "case": "phone",
+    "expected_physical_pages": [],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "1c712d33-6750-4fef-8602-398fee9a795a",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            9,
+            5,
+            11,
+            14,
+            20,
+            26,
+            26,
+            6,
+            10,
+            15
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "1c712d33-6750-4fef-8602-398fee9a795a",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            2,
+            3,
+            4,
+            4,
+            6,
+            6,
+            7,
+            7,
+            8
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "1c712d33-6750-4fef-8602-398fee9a795a",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            9,
+            26,
+            20,
+            19,
+            14,
+            4,
+            11,
+            23,
+            23
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "1c712d33-6750-4fef-8602-398fee9a795a",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            20,
+            6,
+            8,
+            8,
+            10,
+            10,
+            12,
+            12,
+            14
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "1c712d33-6750-4fef-8602-398fee9a795a",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            27,
+            5,
+            5,
+            27,
+            26,
+            8,
+            10
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "1c712d33-6750-4fef-8602-398fee9a795a",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "1c712d33-6750-4fef-8602-398fee9a795a",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20,
+            26,
+            8,
+            9
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "1c712d33-6750-4fef-8602-398fee9a795a",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r3",
+    "case": "scan",
+    "expected_physical_pages": [
+      65,
+      81
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "d6df4fd57cdcbc8c7b2c",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            8,
+            65,
+            49,
+            67,
+            65,
+            88,
+            66,
+            67,
+            66,
+            65
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "d5f55e176a92249c8deb",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            8,
+            49,
+            66,
+            65,
+            66,
+            88,
+            65,
+            67,
+            86,
+            65
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "a72b27242e870a45db58",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            8,
+            19,
+            90,
+            65,
+            67,
+            65,
+            8,
+            81,
+            81,
+            76
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "8e50300f996edb84ca00",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            75,
+            8,
+            14,
+            15,
+            67,
+            19,
+            23,
+            32
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "2221434cc01356ffb59f",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            75,
+            8,
+            49,
+            67,
+            79,
+            19,
+            89,
+            5
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "bc5756cabbfdce4d88ef",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            81,
+            60,
+            71,
+            8,
+            20,
+            30,
+            49,
+            84
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "d6df4fd57cdcbc8c7b2c",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            49,
+            65,
+            66,
+            66,
+            65,
+            67,
+            67,
+            65,
+            71,
+            66
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "d5f55e176a92249c8deb",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            49,
+            66,
+            66,
+            65,
+            65,
+            67,
+            81,
+            65,
+            67,
+            71
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "a72b27242e870a45db58",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            81,
+            81,
+            81,
+            8,
+            90,
+            67,
+            65,
+            65,
+            8,
+            65
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "8e50300f996edb84ca00",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            75,
+            8,
+            75,
+            76,
+            74,
+            55,
+            50,
+            45
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "2221434cc01356ffb59f",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            75,
+            79,
+            75,
+            8,
+            49,
+            89,
+            81,
+            89
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "bc5756cabbfdce4d88ef",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            72,
+            79,
+            81,
+            8,
+            28,
+            38,
+            30,
+            86
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "d6df4fd57cdcbc8c7b2c",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            81,
+            66,
+            81,
+            8,
+            66,
+            49,
+            65,
+            76,
+            67,
+            81
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "d5f55e176a92249c8deb",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            66,
+            81,
+            81,
+            66,
+            49,
+            67,
+            65,
+            65,
+            67,
+            71
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "a72b27242e870a45db58",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            71,
+            66,
+            8,
+            81,
+            49,
+            75,
+            76,
+            10
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "8e50300f996edb84ca00",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            75,
+            32,
+            82,
+            81,
+            31,
+            31,
+            71,
+            14
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "2221434cc01356ffb59f",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            32,
+            82,
+            81,
+            75,
+            14,
+            31,
+            31,
+            89
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "bc5756cabbfdce4d88ef",
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            82,
+            81,
+            32,
+            81,
+            31,
+            75,
+            71,
+            31,
+            66
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            49,
+            8,
+            66,
+            65,
+            66,
+            65,
+            67,
+            65,
+            81,
+            81
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            75,
+            8,
+            89,
+            81,
+            75,
+            79,
+            81,
+            83
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            81,
+            81,
+            81,
+            65,
+            65,
+            67,
+            66,
+            66,
+            8,
+            8
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "34fc611b-7418-4686-aabd-72e2e382147e",
+          "recall_at_6": 0.5,
+          "recall_at_10": 0.5,
+          "top10_pages": [
+            81,
+            81,
+            81,
+            81,
+            75,
+            8,
+            89,
+            75,
+            79,
+            83
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "search",
+        "pages": [
+          81,
+          81,
+          81,
+          81,
+          75,
+          8
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [
+      {
+        "type": "text",
+        "source_page": 81,
+        "exact_normalized_fragment_delivered": true
+      },
+      {
+        "type": "title",
+        "source_page": 65,
+        "exact_normalized_fragment_delivered": false
+      },
+      {
+        "type": "text",
+        "source_page": 81,
+        "exact_normalized_fragment_delivered": true
+      }
+    ],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r3",
+    "case": "table",
+    "expected_physical_pages": [
+      13
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "6fb4e615c3e193c744fc",
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            1,
+            7,
+            9,
+            12,
+            14,
+            2,
+            9,
+            2,
+            5,
+            15
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "59b2007d48a8a74384ea",
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 0.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            4,
+            5,
+            7,
+            2,
+            12,
+            13,
+            2,
+            6,
+            4
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "f3019bb0565df5f3b42a",
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            12,
+            13,
+            6,
+            7,
+            8,
+            14,
+            14,
+            14,
+            15,
+            2
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "6fb4e615c3e193c744fc",
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            12,
+            7,
+            1,
+            2,
+            9,
+            14,
+            5,
+            11,
+            3,
+            2
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "59b2007d48a8a74384ea",
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            12,
+            2,
+            4,
+            1,
+            2,
+            2,
+            5,
+            7,
+            15,
+            12
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "f3019bb0565df5f3b42a",
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 0.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            12,
+            2,
+            15,
+            14,
+            2,
+            14,
+            14,
+            8,
+            7,
+            13
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "6fb4e615c3e193c744fc",
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": [
+            "VECTOR_TIMEOUT"
+          ]
+        },
+        {
+          "query_hash": "59b2007d48a8a74384ea",
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            6,
+            17,
+            13,
+            20,
+            7,
+            14,
+            16,
+            14,
+            2,
+            9
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "f3019bb0565df5f3b42a",
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            17,
+            7,
+            18,
+            14,
+            16,
+            9,
+            17,
+            5,
+            7,
+            16
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            7,
+            2,
+            12,
+            15,
+            14,
+            11,
+            1,
+            2,
+            5,
+            4
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            7,
+            14,
+            6,
+            14,
+            13,
+            15,
+            12,
+            2,
+            8,
+            2
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            13,
+            12,
+            12,
+            2,
+            7,
+            15,
+            14,
+            11,
+            1,
+            2
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "65a5a223-faa8-400c-8615-20b5636bf5fe",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            13,
+            12,
+            14,
+            14,
+            14,
+            15,
+            6,
+            8,
+            7,
+            2
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "search",
+        "pages": [
+          13,
+          12,
+          14,
+          14,
+          14,
+          15
+        ],
+        "reference": null,
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "read_table",
+        "pages": [
+          13
+        ],
+        "reference": {
+          "document_id": "doc_bb67ae3a92a08e9bc99b",
+          "page_start": 13,
+          "page_end": 13
+        },
+        "truncated": false,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r3",
+    "case": "tree",
+    "expected_physical_pages": [
+      2
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "162b83cd-9042-4813-a151-d4303f0ba5fd",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            2,
+            5,
+            16,
+            11,
+            1,
+            10,
+            14,
+            14,
+            2
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "c144578ed5a38f712475",
+          "trace_id": "162b83cd-9042-4813-a151-d4303f0ba5fd",
+          "recall_at_6": 0.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            4,
+            8,
+            4,
+            5,
+            8,
+            8,
+            1,
+            2,
+            11,
+            18
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "27c65c326ba7ea427642",
+          "trace_id": "162b83cd-9042-4813-a151-d4303f0ba5fd",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            5,
+            15,
+            1,
+            2,
+            7,
+            11,
+            18,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "162b83cd-9042-4813-a151-d4303f0ba5fd",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            5,
+            10,
+            3,
+            2,
+            2,
+            5,
+            2,
+            10,
+            11
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "c144578ed5a38f712475",
+          "trace_id": "162b83cd-9042-4813-a151-d4303f0ba5fd",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            18,
+            8,
+            8,
+            2,
+            8,
+            1,
+            4,
+            11,
+            5,
+            4
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "27c65c326ba7ea427642",
+          "trace_id": "162b83cd-9042-4813-a151-d4303f0ba5fd",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            18,
+            15,
+            2,
+            5,
+            7,
+            1,
+            11,
+            9,
+            8,
+            10
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "162b83cd-9042-4813-a151-d4303f0ba5fd",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            8,
+            11,
+            18,
+            9,
+            17,
+            3,
+            19,
+            12,
+            18,
+            8
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "c144578ed5a38f712475",
+          "trace_id": "162b83cd-9042-4813-a151-d4303f0ba5fd",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            11,
+            8,
+            8,
+            8,
+            8,
+            12,
+            11,
+            18,
+            20,
+            9
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "27c65c326ba7ea427642",
+          "trace_id": "162b83cd-9042-4813-a151-d4303f0ba5fd",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            8,
+            11,
+            8,
+            18,
+            11,
+            10,
+            12,
+            12,
+            11,
+            8
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "162b83cd-9042-4813-a151-d4303f0ba5fd",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            11,
+            18,
+            2,
+            8,
+            8,
+            1,
+            5,
+            5,
+            3,
+            2
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "162b83cd-9042-4813-a151-d4303f0ba5fd",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            1,
+            4,
+            2,
+            5,
+            2,
+            11,
+            11,
+            8,
+            8
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_5cb33cb3668c3d49ee49",
+          "page": 2,
+          "page_start": 2,
+          "page_end": 2,
+          "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "image_id": "sansuo_hidden__upload_5ed7117023fc0187cd3f__file_21b933eafc9a4d56dc38",
+          "region": null,
+          "visual_result_id": "vision_e0a361c7023ad7314d77f5329c800572",
+          "vision_version": "inspect-page-v5-binding-evidence",
+          "vision_model": "qwen3-vl-plus",
+          "version": "2fda2a9c20955b085a20954bca3bda3f1e6b2d31553ee5fe11ce1378372a3dc3",
+          "user_id": "6ae7208531276841dc0e9aec",
+          "conversation_id": "26238526-881e-4578-bca0-bccacdc265d1",
+          "status": "partial"
+        },
+        "truncated": null,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r4",
+    "case": "academic",
+    "expected_physical_pages": [
+      1
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "8ba1b4f2baffc3bf1106",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "b49f2976cf4d5de631c1",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "8ba1b4f2baffc3bf1106",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "b49f2976cf4d5de631c1",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "0eb8ecdf6dbbe10d5678",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "26e1f0416a760480755e",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "8ba1b4f2baffc3bf1106",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "b49f2976cf4d5de631c1",
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "356480e7-55d2-434a-98c0-0facca4479a4",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "search",
+        "pages": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "reference": {
+          "document_id": "doc_2598333d3482f519c8a1",
+          "chunk_id": "chunk_5b8e9fde7dcb5443eeaa",
+          "page_start": 1,
+          "page_end": 1,
+          "section_id": null,
+          "table_id": null,
+          "version": "cce2d82f7d7a99720109e97a1b4f3a41485a1351bc178068e77f712dd8f41bc7",
+          "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+          "user_id": "6ae7259c7e212062731393cb",
+          "conversation_id": "197f9ae6-7d14-4b87-aa56-3e187d12b844"
+        },
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "read",
+        "pages": [
+          1
+        ],
+        "reference": {
+          "document_id": "doc_2598333d3482f519c8a1",
+          "chunk_id": "chunk_5b8e9fde7dcb5443eeaa",
+          "page_start": 1,
+          "page_end": 1,
+          "section_id": null,
+          "table_id": null,
+          "version": "cce2d82f7d7a99720109e97a1b4f3a41485a1351bc178068e77f712dd8f41bc7",
+          "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+          "user_id": "6ae7259c7e212062731393cb",
+          "conversation_id": "197f9ae6-7d14-4b87-aa56-3e187d12b844"
+        },
+        "truncated": false,
+        "error": null
+      },
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_2598333d3482f519c8a1",
+          "page": 1,
+          "page_start": 1,
+          "page_end": 1,
+          "source_sha256": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+          "source_hash": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+          "image_id": "sansuo_hidden__upload_1714319249dbfddd1190__file_b90c8011fdea33ab3fcb",
+          "region": null,
+          "visual_result_id": "vision_ac19c20c14adabddcdd34b6a3982ed31",
+          "vision_version": "inspect-page-v6-bounded-region",
+          "vision_model": "qwen3-vl-plus",
+          "version": "cce2d82f7d7a99720109e97a1b4f3a41485a1351bc178068e77f712dd8f41bc7",
+          "user_id": "6ae7259c7e212062731393cb",
+          "conversation_id": "197f9ae6-7d14-4b87-aa56-3e187d12b844",
+          "status": "ok"
+        },
+        "truncated": null,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r4",
+    "case": "finance",
+    "expected_physical_pages": [
+      2
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "e23573af-b6f6-48c3-a61c-6bfdfe78e215",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            4,
+            1,
+            2,
+            3,
+            4,
+            5,
+            3
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "e23573af-b6f6-48c3-a61c-6bfdfe78e215",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7c5689177546b4aa0afc",
+          "trace_id": "e23573af-b6f6-48c3-a61c-6bfdfe78e215",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            4,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "e23573af-b6f6-48c3-a61c-6bfdfe78e215",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "e23573af-b6f6-48c3-a61c-6bfdfe78e215",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "7c5689177546b4aa0afc",
+          "trace_id": "e23573af-b6f6-48c3-a61c-6bfdfe78e215",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            3,
+            4,
+            5,
+            1,
+            2,
+            1,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "1261f9cb2d7b6154e70d",
+          "trace_id": "e23573af-b6f6-48c3-a61c-6bfdfe78e215",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            5,
+            1,
+            1,
+            2,
+            1,
+            2,
+            6
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "7301ca3ff03a103e174c",
+          "trace_id": "e23573af-b6f6-48c3-a61c-6bfdfe78e215",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            2,
+            5,
+            1,
+            6,
+            1,
+            3,
+            2
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "7c5689177546b4aa0afc",
+          "trace_id": "e23573af-b6f6-48c3-a61c-6bfdfe78e215",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            2,
+            5,
+            1,
+            5,
+            1,
+            6,
+            3
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "e23573af-b6f6-48c3-a61c-6bfdfe78e215",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            2,
+            1,
+            1,
+            2,
+            3,
+            5,
+            5,
+            4,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "e23573af-b6f6-48c3-a61c-6bfdfe78e215",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_5d127cdb54f43398e002",
+          "page": 2,
+          "page_start": 2,
+          "page_end": 2,
+          "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+          "source_hash": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+          "image_id": "sansuo_hidden__upload_132bc985311111e3eb66__file_e8b0a54088419a339761",
+          "region": null,
+          "visual_result_id": "vision_13ba6ae05f48d0c65ad31d6fb4a010b6",
+          "vision_version": "inspect-page-v6-bounded-region",
+          "vision_model": "qwen3-vl-plus",
+          "version": "c2782e595dc347de4434bd69d84b1454c5f2b1cd55f09d7783c045534a49817a",
+          "user_id": "6ae7253051b8cbe3cf1effb6",
+          "conversation_id": "2b29fa56-f29f-477e-866e-b185788c94ab",
+          "status": "partial"
+        },
+        "truncated": null,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r4",
+    "case": "phone",
+    "expected_physical_pages": [],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "fbb2cf6e-16af-4576-8a19-865552ffeef4",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            9,
+            5,
+            11,
+            14,
+            20,
+            26,
+            26,
+            6,
+            10,
+            15
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "fbb2cf6e-16af-4576-8a19-865552ffeef4",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            2,
+            3,
+            4,
+            4,
+            6,
+            6,
+            7,
+            7,
+            8
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "78da7b0c-eb95-440c-a690-87d193aeddb7",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            9,
+            5,
+            11,
+            14,
+            20,
+            26,
+            26,
+            6,
+            10,
+            15
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "78da7b0c-eb95-440c-a690-87d193aeddb7",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            2,
+            3,
+            4,
+            4,
+            6,
+            6,
+            7,
+            7,
+            8
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "fbb2cf6e-16af-4576-8a19-865552ffeef4",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            9,
+            26,
+            20,
+            19,
+            14,
+            4,
+            11,
+            23,
+            23
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "fbb2cf6e-16af-4576-8a19-865552ffeef4",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            20,
+            6,
+            8,
+            8,
+            10,
+            10,
+            12,
+            12,
+            14
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "78da7b0c-eb95-440c-a690-87d193aeddb7",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            9,
+            26,
+            20,
+            19,
+            14,
+            4,
+            11,
+            23,
+            23
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "78da7b0c-eb95-440c-a690-87d193aeddb7",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            20,
+            6,
+            8,
+            8,
+            10,
+            10,
+            12,
+            12,
+            14
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "fbb2cf6e-16af-4576-8a19-865552ffeef4",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            27,
+            5,
+            5,
+            27,
+            26,
+            8,
+            10
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "fbb2cf6e-16af-4576-8a19-865552ffeef4",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "38dc83e047848a965d13",
+          "trace_id": "78da7b0c-eb95-440c-a690-87d193aeddb7",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            27,
+            5,
+            5,
+            27,
+            26,
+            8,
+            10
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "01c6d24aa197a14b6a44",
+          "trace_id": "78da7b0c-eb95-440c-a690-87d193aeddb7",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "fbb2cf6e-16af-4576-8a19-865552ffeef4",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20,
+            26,
+            8,
+            9
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "78da7b0c-eb95-440c-a690-87d193aeddb7",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20,
+            26,
+            8,
+            9
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "fbb2cf6e-16af-4576-8a19-865552ffeef4",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": null,
+          "trace_id": "78da7b0c-eb95-440c-a690-87d193aeddb7",
+          "recall_at_6": null,
+          "recall_at_10": null,
+          "top10_pages": [
+            27,
+            27,
+            27,
+            5,
+            4,
+            9,
+            6,
+            11,
+            14,
+            20
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  },
+  {
+    "arm": "candidate",
+    "batch": "r4",
+    "case": "tree",
+    "expected_physical_pages": [
+      2
+    ],
+    "channels": {
+      "Keyword": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "98633d63-7db7-45d0-97de-34b14dbd1a3d",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            2,
+            5,
+            16,
+            11,
+            1,
+            10,
+            14,
+            14,
+            2
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "56cbcd1a49a3834e1541",
+          "trace_id": "98633d63-7db7-45d0-97de-34b14dbd1a3d",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            8,
+            4,
+            8,
+            5,
+            8,
+            14,
+            4,
+            5,
+            8,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "BM25": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "98633d63-7db7-45d0-97de-34b14dbd1a3d",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            1,
+            5,
+            10,
+            3,
+            2,
+            2,
+            5,
+            2,
+            10,
+            11
+          ],
+          "warnings": null
+        },
+        {
+          "query_hash": "56cbcd1a49a3834e1541",
+          "trace_id": "98633d63-7db7-45d0-97de-34b14dbd1a3d",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            8,
+            18,
+            8,
+            8,
+            2,
+            10,
+            8,
+            5,
+            4,
+            1
+          ],
+          "warnings": null
+        }
+      ],
+      "Vector": [
+        {
+          "query_hash": "a2aab825861006748ec3",
+          "trace_id": "98633d63-7db7-45d0-97de-34b14dbd1a3d",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            8,
+            11,
+            18,
+            9,
+            17,
+            3,
+            19,
+            12,
+            18,
+            8
+          ],
+          "warnings": []
+        },
+        {
+          "query_hash": "56cbcd1a49a3834e1541",
+          "trace_id": "98633d63-7db7-45d0-97de-34b14dbd1a3d",
+          "recall_at_6": 0.0,
+          "recall_at_10": 0.0,
+          "top10_pages": [
+            8,
+            11,
+            8,
+            8,
+            8,
+            12,
+            9,
+            18,
+            14,
+            20
+          ],
+          "warnings": []
+        }
+      ],
+      "RRF": [
+        {
+          "query_hash": null,
+          "trace_id": "98633d63-7db7-45d0-97de-34b14dbd1a3d",
+          "recall_at_6": 0.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            11,
+            8,
+            8,
+            18,
+            8,
+            4,
+            8,
+            5,
+            1,
+            2
+          ],
+          "warnings": null
+        }
+      ],
+      "Rerank": [
+        {
+          "query_hash": null,
+          "trace_id": "98633d63-7db7-45d0-97de-34b14dbd1a3d",
+          "recall_at_6": 1.0,
+          "recall_at_10": 1.0,
+          "top10_pages": [
+            2,
+            1,
+            11,
+            11,
+            8,
+            8,
+            8,
+            18,
+            4,
+            8
+          ],
+          "warnings": null
+        }
+      ]
+    },
+    "tool_evidence": [
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_4fcfa95b323437813756",
+          "page": 2,
+          "page_start": 2,
+          "page_end": 2,
+          "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "image_id": "sansuo_hidden__upload_1a784f00c326d4d2c431__file_33a3ed654de3fb5f9836",
+          "region": null,
+          "visual_result_id": "vision_cc91872d8aab93c1c8e3236044e4c826",
+          "vision_version": "inspect-page-v6-bounded-region",
+          "vision_model": "qwen3-vl-plus",
+          "version": "1d4f8cdd16e19f4d4479e97f7320678fa91d10f52cd72f405b3ed1349fd767bb",
+          "user_id": "6ae725c5807a4bb6450575b3",
+          "conversation_id": "69251ea8-c2d3-4a7f-b1ed-6e820a6fd665",
+          "status": "partial"
+        },
+        "truncated": null,
+        "error": null
+      },
+      {
+        "action": "inspect_page",
+        "pages": [],
+        "reference": {
+          "type": "original_pdf_page",
+          "block_id": null,
+          "table_id": null,
+          "parser_version": null,
+          "document_id": "doc_4fcfa95b323437813756",
+          "page": 2,
+          "page_start": 2,
+          "page_end": 2,
+          "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+          "image_id": "sansuo_hidden__upload_1a784f00c326d4d2c431__file_33a3ed654de3fb5f9836",
+          "region": null,
+          "visual_result_id": "vision_f25308b7fc4ec9e8bb479d6ee1657ff2",
+          "vision_version": "inspect-page-v6-bounded-region",
+          "vision_model": "qwen3-vl-plus",
+          "version": "1d4f8cdd16e19f4d4479e97f7320678fa91d10f52cd72f405b3ed1349fd767bb",
+          "user_id": "6ae725c5807a4bb6450575b3",
+          "conversation_id": "69251ea8-c2d3-4a7f-b1ed-6e820a6fd665",
+          "status": "ok"
+        },
+        "truncated": null,
+        "error": null
+      }
+    ],
+    "frozen_text_fragments": [],
+    "notes": [
+      "Trace may include followup; each query retained. No search means recall not applicable, not zero.",
+      "Exact fragment checks can miss equivalent OCR; cannot assess visual truth.",
+      "Alternative valid pages (e.g. duplicate financial table) need source adjudication."
+    ]
+  }
+]

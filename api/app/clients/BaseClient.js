@@ -1696,6 +1696,9 @@ async function downloadCodeApiFile(file, req) {
     {
       method: 'GET',
       headers: authHeaders,
+      signal: req?._sansuoModelSignal
+        ? AbortSignal.any([req._sansuoModelSignal, AbortSignal.timeout(30000)])
+        : AbortSignal.timeout(30000),
     },
   );
   if (!response.ok) {
@@ -2188,10 +2191,12 @@ async function buildSanSuoPreparsedFileTextContext({
     let visionStoreReady;
     const readyVisionStore = () => visionStoreReady ||= visionCollection.createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 });
     req._sansuoPageVision = new DocumentPageVisionService({ repository,
+      requestQuestion: req.body?.text,
       resultStore: {
         get: async (key) => { await readyVisionStore(); return (await visionCollection.findOne({ _id: key, ...visionStoreScope, expiresAt: { $gt: new Date() } }))?.result || null; },
         set: async (key, result) => { await readyVisionStore(); await visionCollection.updateOne({ _id: key, ...visionStoreScope }, { $set: { result, ...visionStoreScope, expiresAt: new Date(Date.now() + 7 * 86400000) } }, { upsert: true }); },
-      }, baseURL: getQwenBaseURL(), apiKey: process.env.QWEN_API_KEY, model: SANSUO_VISION_MODEL,
+      }, signal: () => req._sansuoModelSignal,
+      baseURL: getQwenBaseURL(), apiKey: process.env.QWEN_API_KEY, model: SANSUO_VISION_MODEL,
       getImage: async (document, block) => {
         const record = records.find(r => r.metadata?.rootSourceLibreFileId === document.fileId && r.metadata?.sourceHash === document.sourceHash && r.metadata?.mineruImage?.image_id === block.image_id);
         if (!record) return null;
@@ -2200,20 +2205,25 @@ async function buildSanSuoPreparsedFileTextContext({
         if (sha256 !== record.metadata.mineruImage.sha256) throw new Error('IMAGE_VERSION_MISMATCH');
         return { id: record.libreFileId, bytes, blockImage: true };
       },
-      getPage: async (document, page) => {
+      getPage: async (document, page, options = {}) => {
         const sourceFile = pdfRoots.find((root) => root.file_id === document.fileId);
         if (!sourceFile || !conversationId || conversationId === 'new') throw new Error('DOCUMENT_ACCESS_DENIED');
-        let item = getSanSuoPdfPageItems(records, document.fileId).find((p) => p.page === page && /\.png$/i.test(p.imageFile.name) && p.record.metadata?.sourceHash === document.sourceHash);
+        const region = options.region || null;
+        let item = getSanSuoPdfPageItems(records, document.fileId).find((p) => p.page === page && /\.png$/i.test(p.imageFile.name) && p.record.metadata?.sourceHash === document.sourceHash
+          && p.record.metadata?.rendererVersion === 'fitz-bounded-region-v2'
+          && JSON.stringify(p.record.metadata?.region || null) === JSON.stringify(region));
         if (!item) {
           const rendered = await ensureSanSuoPdfPageArtifacts({ req, conversationId, messageId: req.body?.messageId,
-            sourceFile: { ...sourceFile, metadata: { ...sourceFile.metadata, sha256: document.sourceHash } }, pages: [page] });
+            sourceFile: { ...sourceFile, metadata: { ...sourceFile.metadata, sha256: document.sourceHash } }, pages: [page], region });
           records.push(...rendered);
           item = getSanSuoPdfPageItems(rendered, document.fileId).find((p) => p.page === page);
         }
         if (!item) throw new Error('PAGE_IMAGE_UNAVAILABLE');
         const bytes = await downloadCodeApiFile(item.imageFile, req);
         if (item.record.metadata?.imageSha256 && require('crypto').createHash('sha256').update(bytes).digest('hex') !== item.record.metadata.imageSha256) throw new Error('IMAGE_VERSION_MISMATCH');
-        return { id: item.record.libreFileId, bytes };
+        return { id: item.record.libreFileId, bytes, regionRendered: Boolean(region),
+          resolutionLimited: item.record.metadata?.resolutionLimited,
+          rendererVersion: item.record.metadata?.rendererVersion, dpi: item.record.metadata?.dpi };
       } });
     repository.pageVisionAvailable = Boolean(getQwenBaseURL() && process.env.QWEN_API_KEY && SANSUO_VISION_MODEL);
     if (repository.pageVisionAvailable) for (const doc of repository.documents.values()) for (const page of doc.pageCoverage) page.inspection_available = Boolean(doc.sourceHash);
@@ -5020,7 +5030,7 @@ class BaseClient {
             traceId: getSanSuoMessageTraceId(userMessage),
             fileType: 'document',
             stage: 'main_model_completion',
-            status: 'success',
+            status: this.options.req?._sansuoModelFailure ? 'failed' : 'success',
             elapsedMs: Date.now() - mainModelStartedAt,
             model: this.modelOptions?.model ?? this.model ?? null,
           });
@@ -5095,6 +5105,9 @@ class BaseClient {
         sansuoClientRequestId,
       };
     }
+    if (this.options.req?._sansuoModelFailure) {
+      metadata = { ...metadata, sansuoModelFailure: this.options.req._sansuoModelFailure };
+    }
 
     /** @type {TMessage} */
     const responseMessage = {
@@ -5108,6 +5121,7 @@ class BaseClient {
       promptTokens,
       iconURL: this.options.iconURL,
       endpoint: this.options.endpoint,
+      ...(this.options.req?._sansuoModelFailure ? { error: true } : {}),
       ...(this.metadata ?? {}),
       metadata: Object.keys(metadata ?? {}).length > 0 ? metadata : undefined,
     };

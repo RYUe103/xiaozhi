@@ -101,3 +101,10 @@
 
 - 发布核对：本地提交8028d780559cd5c3b0d5bcbd5a2610a19d059e71，共194文件；依赖软链接未提交。GitHub ls-remote与独立IPv4 HTTPS探测均连接超时，不能声明远端已更新。
 - push最终结果：退出128，could not read Username for https://github.com（terminal prompts disabled）；当前CLI无可用认证，gh未安装。需恢复GitHub认证及网络后重试普通push；未强推，原测试结果保持不变。
+
+## 2026-11-01 Phase 5 实时 Agent 验收续记
+
+- 在隔离 candidate/baseline 上完成 r3、r4；r4 两臂各7题均结束并保留原始回答、工具输出、事件和计时。候选海报已走自动定位、inspect_page、FITZ按需渲染和真实 Qwen VL，核心学期命中但附加数值错误；财务视觉输出被正确标记 partial；跨页扫描证据片段已到达但最终答案仍需事实盲评。
+- 修复大页渲染像素上限、视觉原问题上下文、内部 deadline 不应被用户 abort 逻辑吞掉、导出解析任务字段、缓存测试身份头。缓存/撤权/源版本与向量热查真实检查通过。
+- 相关16套测试303项通过；Agent 原 client.test 的14项历史 memory/subagent失败由基线客户端复现，单独保留。r5仍在运行，未把未结束结果写成结论。
+- 报告入口：`evidence/phase5-20261101/REPORT.md`；阶段实现入口已更新。当前不满足生产部署门槛，未提交、未推送、未改生产配置。

@@ -1,3 +1,15 @@
+# Phase 5：真实 Agent 稳定性、准确率和性能（2026-11-01，实施中）
+
+本节及 `evidence/phase5-20261101/REPORT.md` 为本轮入口。下方旧阶段文字保留历史语境；其中“未持久化视觉结果”“未保存云端 ZIP”等已被后续 MinerU 实施替代，不能视为当前状态。当前基线为 `f345e17`（远端已核对），不将历史 B6 定点成绩与本轮混算。
+
+本轮沿用现有 Repository、MinerU/FITZ/Qwen VL 与 read_parsed_pdf。新增模型 HTTP 有界瞬时重试；已交付的流不重播，不重跑工具图。无法恢复时保存明确失败文本及 error 标志。视觉识别保留原始输出，图例绑定缺证据或截断为 partial，结构完整不代表事实正确。
+
+A0 海报旧失败发生在 VL 之前：180DPI 渲染超过 4000 万像素解码上限。FITZ 现按像素预算渲染整页，局部区域从 PDF 直接重渲染，并绑定 source hash、renderer version、region 与实际 DPI。布局坐标导出仍是可选辅助；不把未经验证的 MinerU bbox 直接当裁剪坐标。
+
+真实 r4 海报 Agent 自动定位 → inspect_page → FITZ → Qwen VL 已取得正确学期，但附加数值仍有事实错误。缓存/撤权/源版本变化工具级真实验证已通过。当前不能据此宣称全部准确率或性能验收完成，更不能部署内网生产。最终逐批结果及未完成项以独立报告为准。
+
+---
+
 # MinerU 云端与按需视觉读取实施记录
 
 更新：2026-11-01。本地分支/HEAD与GitHub远端已核对为ff2304f；main为5fe1760。首次远端请求超时，后续重查成功，证据为remote-check.json（临时工作副本无origin remote，使用明确仓库URL核对）。代码恢复点/对照基线：`ff2304fb7853673393b5e69eec2fdcbc6db3b3b0`；分支 `codex/pdf-page-vision-wip-20261031`。开发副本 `/tmp/xiaozhi-publish-20261031`。以下为本轮事实；后文历史段落中的“ZIP 未保存、视觉结果无引用、只有合成 PDF 测试”等说法已被本轮实现取代，历史失败没有删除。

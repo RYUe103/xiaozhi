@@ -77,7 +77,7 @@ async function main() {
   const messages = await db.getMessages({ user: identity, conversationId });
   const assistant = messages.filter((m) => !m.isCreatedByUser).sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)).at(-1);
   const sourceUserMessage = messages.find(m => m.isCreatedByUser);
-  const result = { scope_hash: sourceUserMessage?.metadata?.sansuoJit?.scope_hash || null, conversation_id: conversationId, id: question.id, pdf_sha256: digest, elapsed_ms: first.elapsed_ms, active: first.active, upload_ms: Date.now() - uploadAt - first.elapsed_ms,
+  const result = { message_error: Boolean(assistant?.error), error_parts: (assistant?.content || []).filter(c => c.type === 'error'), scope_hash: sourceUserMessage?.metadata?.sansuoJit?.scope_hash || null, conversation_id: conversationId, id: question.id, pdf_sha256: digest, elapsed_ms: first.elapsed_ms, active: first.active, upload_ms: Date.now() - uploadAt - first.elapsed_ms,
     answer: (assistant?.content || []).filter((c) => c.type === 'text').map((c) => typeof c.text === 'string' ? c.text : c.text?.value || '').join('\n') || assistant?.text || '',
     tool_calls: (assistant?.content || []).filter((c) => c.type === 'tool_call').map((c) => c.tool_call),
     message_metadata: assistant?.metadata || {},
@@ -91,7 +91,13 @@ async function main() {
     fs.writeFileSync(process.argv[5]+'.followup.json',JSON.stringify(followup,null,2),{flag:'wx'});
   }
 
-  if (!result.answer || /文件解析失败|文件解析超时/.test(result.answer)) process.exitCode = 2;
+  if (process.env.SANSUO_TEST_WARM_REPEAT === 'true' && assistant?.messageId) {
+    const warm = await ask(question.question + '\n\n请依据所附文档回答并引用 PDF 物理页码；无法确认请明确说明。', assistant.messageId);
+    const updated = await db.getMessages({ user: identity, conversationId });
+    const last = updated.filter(m => !m.isCreatedByUser).sort((a,b) => new Date(a.createdAt)-new Date(b.createdAt)).at(-1);
+    fs.writeFileSync(process.argv[5]+'.warm.json', JSON.stringify({ ...warm, answer: last?.text || '', content: last?.content, metadata: last?.metadata, error: last?.error }, null, 2), { flag: 'wx' });
+  }
+  if (!result.answer || result.message_error || /文件解析失败|文件解析超时/.test(result.answer)) process.exitCode = 2;
   console.log(JSON.stringify({ phase: 'finished', elapsed_ms: result.elapsed_ms, active: result.active, answer_chars: result.answer.length,
     tool_count: result.tool_calls.length, reference_count: result.references.length, result_path: process.argv[5] }));
 }

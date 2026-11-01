@@ -109,3 +109,13 @@ describe('JIT embedding provider and scoped incremental cache', () => {
  const fetchImpl=jest.fn();const p=new DocumentVectorSearch({endpoint:'https://example.invalid',apiKey:'test',model:'embedding',fetchImpl,maxEmbeddingCalls:1});
  await expect(p.search({userId:'u',conversationId:'c',document:{documentId:'d',records:[{id:'1',text:'text'}]},query:'question'})).rejects.toThrow('VECTOR_REQUEST_BUDGET_EXCEEDED');expect(fetchImpl).not.toHaveBeenCalled();
  });
+test('source SHA or parser generation changes invalidate identical-text embeddings',async()=>{
+ const store=new Map();const fetchImpl=jest.fn(async(_u,init)=>({ok:true,json:async()=>({data:JSON.parse(init.body).input.map((_,index)=>({index,embedding:[1,0]}))})}));
+ const provider=new DocumentVectorSearch({endpoint:'https://example.invalid',apiKey:'test',model:'embed',fetchImpl,cache:{get:async(k,s)=>store.get(s+k),set:async(k,s,v)=>store.set(s+k,v)}});
+ const document={documentId:'d',version:'v',sourceHash:'sha1',bindingVersion:'g1',records:[{id:'r',text:'same content',parser_version:'v1'}]};
+ const input={userId:'u',conversationId:'c',document,query:'question'};
+ await provider.search(input);expect(fetchImpl).toHaveBeenCalledTimes(2);
+ await provider.search(input);expect(fetchImpl).toHaveBeenCalledTimes(2);
+ document.sourceHash='sha2';await provider.search(input);expect(fetchImpl).toHaveBeenCalledTimes(4);
+ document.records[0].parser_version='v2';await provider.search(input);expect(fetchImpl).toHaveBeenCalledTimes(6);
+});

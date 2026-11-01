@@ -68,3 +68,42 @@ test('reported uncertainty is partial evidence rather than full success',async()
 test('different questions on one page share in-flight rendering without conflating answers',async()=>{
  const {service,getPage,fetchImpl}=setup();await Promise.all([service.inspect(input),service.inspect({...input,query:'其他参数是多少？'})]);expect(getPage).toHaveBeenCalledTimes(1);expect(fetchImpl).toHaveBeenCalledTimes(2);
 });
+
+test('uncertain series cannot become successful evidence merely through valid JSON',async()=>{
+ const content=JSON.stringify({answer:'3%',evidence_text:'3%',cells:[],series:[{legend:'A',series:'A',value:'3',unit:'%',certainty:'不确定'}],uncertainties:[]});
+ const fetchImpl=jest.fn().mockResolvedValue({ok:true,json:async()=>({choices:[{finish_reason:'stop',message:{content}}]})});
+ const result=await setup({fetchImpl}).service.inspect({...input,mode:'figure'});
+ expect(result.status).toBe('partial');expect(result.assessment.parsing_complete).toBe(true);expect(result.assessment.factual_verification).toBe('not_independently_verified');expect(result.raw_model_output).toBe(content);
+});
+test('same-request cache restores reference and reports zero additional usage',async()=>{
+ const {service,repository,fetchImpl}=setup();const first=await service.inspect(input);repository.previousReference=null;
+ const hit=await service.inspect(input);expect(hit.telemetry).toMatchObject({cache_hit:true,usage:null,elapsed_ms:0});expect(repository.previousReference).toEqual(first.reference);expect(fetchImpl).toHaveBeenCalledTimes(1);
+});
+test('model, scope and source changes invalidate persistent visual result',async()=>{
+ const store=new Map();const resultStore={get:async k=>store.get(k),set:async(k,v)=>store.set(k,v)};
+ await setup({resultStore}).service.inspect(input);
+ for(const change of ['user','conversation','source','model']){
+  const next=setup({resultStore,...(change==='model'?{model:'new-model'}:{})});
+  if(change==='user')next.repository.userId='other';if(change==='conversation')next.repository.conversationId='other';if(change==='source')next.repository.documents.get('doc').sourceHash='new';
+  await next.service.inspect(input);expect(next.fetchImpl).toHaveBeenCalledTimes(1);
+ }
+});
+test('HTTP rejection is explicit and not cached or counted as successful evidence',async()=>{
+ const fetchImpl=jest.fn().mockResolvedValue(new Response('denied',{status:403}));const {service}=setup({fetchImpl});
+ const result=await service.inspect(input);expect(result).toMatchObject({status:'unavailable',error:{code:'VISION_AUTH_REJECTED',http_status:403},telemetry:{usage:null}});expect(fetchImpl).toHaveBeenCalledTimes(1);
+});
+test('passes region to original PDF renderer instead of cropping rendered region twice',async()=>{
+ const region={x0:0.3,y0:0.5,x1:0.6,y1:0.9};const {service,getPage}=setup();
+ const image=await getPage();getPage.mockClear();getPage.mockResolvedValue({...image,regionRendered:true,rendererVersion:'fitz-bounded-region-v2',dpi:240});
+ const result=await service.inspect({...input,region});expect(result.status).toBe('ok');expect(getPage.mock.calls[0][2]).toEqual({region});expect(result.source).toMatchObject({region,renderer_version:'fitz-bounded-region-v2',dpi:240});
+});
+
+test('original question qualifiers reach VL and are part of the result cache identity', async () => {
+ const store=new Map();const resultStore={get:async k=>store.get(k),set:async(k,v)=>store.set(k,v)};
+ const first=setup({resultStore,requestQuestion:'Compare only the 2022 observations, in volts.'});
+ await first.service.inspect(input);
+ expect(JSON.parse(first.fetchImpl.mock.calls[0][1].body).messages[0].content[0].text).toContain('Compare only the 2022 observations, in volts.');
+ const second=setup({resultStore,requestQuestion:'Compare only the 2023 observations, in volts.'});
+ await second.service.inspect(input);
+ expect(second.fetchImpl).toHaveBeenCalledTimes(1);
+});

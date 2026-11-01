@@ -1,0 +1,2473 @@
+{
+  "batches": [
+    {
+      "arm": "baseline",
+      "batch": "r1",
+      "n": 1,
+      "completed": 0,
+      "p50_ms": null,
+      "p95_ms": null,
+      "includes_failed_runs": true,
+      "quantile": "nearest-rank; descriptive small sample, not SLA"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r2",
+      "n": 1,
+      "completed": 1,
+      "p50_ms": 91795,
+      "p95_ms": 91795,
+      "includes_failed_runs": true,
+      "quantile": "nearest-rank; descriptive small sample, not SLA"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r3",
+      "n": 7,
+      "completed": 7,
+      "p50_ms": 86571,
+      "p95_ms": 221052,
+      "includes_failed_runs": true,
+      "quantile": "nearest-rank; descriptive small sample, not SLA"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r4",
+      "n": 7,
+      "completed": 7,
+      "p50_ms": 125115,
+      "p95_ms": 294569,
+      "includes_failed_runs": true,
+      "quantile": "nearest-rank; descriptive small sample, not SLA"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r1",
+      "n": 1,
+      "completed": 0,
+      "p50_ms": null,
+      "p95_ms": null,
+      "includes_failed_runs": true,
+      "quantile": "nearest-rank; descriptive small sample, not SLA"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r2",
+      "n": 1,
+      "completed": 1,
+      "p50_ms": 75268,
+      "p95_ms": 75268,
+      "includes_failed_runs": true,
+      "quantile": "nearest-rank; descriptive small sample, not SLA"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r3",
+      "n": 7,
+      "completed": 7,
+      "p50_ms": 105418,
+      "p95_ms": 288665,
+      "includes_failed_runs": true,
+      "quantile": "nearest-rank; descriptive small sample, not SLA"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r4",
+      "n": 7,
+      "completed": 7,
+      "p50_ms": 125177,
+      "p95_ms": 281000,
+      "includes_failed_runs": true,
+      "quantile": "nearest-rank; descriptive small sample, not SLA"
+    }
+  ],
+  "runs": [
+    {
+      "arm": "baseline",
+      "batch": "r1",
+      "case": "phone",
+      "id": "mml:888",
+      "completed": false,
+      "error": "UPLOAD_HTTP_500"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r2",
+      "case": "phone",
+      "id": "mml:888",
+      "completed": true,
+      "elapsed_ms": 91795,
+      "upload_ms": 1591,
+      "answer": "根据您提供的附件文档《mi_phone.pdf》，该文件总共只有 **30页**（物理页码 1-30）。因此，文档中**不存在第 40-47 页**的内容，无法为您统计该页码范围内提到的 applications 数量。\n\n若您是指文档中实际存在的页码（例如第 27 页明确提到了 `Application Steps and Important Dates` 以及住房申请流程 `Apply for your preferred themed engagement communities in your housing application`），请核对并提供正确的页码范围，我将立即为您提取详细信息。",
+      "failure": null,
+      "model_tokens_initial": 0,
+      "model_calls_initial": 0,
+      "rerank_tokens_initial": 1900,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 14,
+            "chars": 27887,
+            "total_tokens": 5887
+          },
+          "warnings": [],
+          "elapsed_ms": 2296
+        },
+        {
+          "usage": {
+            "calls": 15,
+            "chars": 27924,
+            "total_tokens": 5898
+          },
+          "warnings": [],
+          "elapsed_ms": 342
+        }
+      ],
+      "tool_actions": {},
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1026,
+        "Keyword": 25,
+        "BM25": 28,
+        "Vector": 2638,
+        "RRF": 0,
+        "Rerank": 1546,
+        "EvidenceDelivery": 5366,
+        "ModelEnd": 16446
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "925e7b5a85e20abf4d68"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r3",
+      "case": "academic",
+      "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+      "completed": true,
+      "elapsed_ms": 143575,
+      "upload_ms": 153,
+      "answer": "根据所附文档（物理第 1 页），**无法确认**该问题的答案。\n\n所附 PDF 为一份关于“玛希隆大学国际学院化学课程维基百科写作作业试点项目”的学术海报/摘要。文档正文（第 1 页）仅概述了项目背景、方法与学生贡献结果，例如：\n- 共有 103 名学生参与项目；\n- 创建了 56 篇高质量文章，改进了 80 多篇文章；\n- 累计撰写达 364 页；\n- 学生完成了维基百科核心编辑与高级编辑的在线培训。\n\n全文**未提及**“2016-17 学年的 trimester（学期）”划分，也**没有任何关于上传至 Wikimedia Commons 的媒体数量或相关统计图表**。因此，无法依据当前文档回答该问题。",
+      "failure": null,
+      "model_tokens_initial": 105700,
+      "model_calls_initial": 12,
+      "rerank_tokens_initial": 0,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 4,
+            "chars": 2289,
+            "total_tokens": 585
+          },
+          "warnings": [],
+          "elapsed_ms": 678
+        },
+        {
+          "usage": {
+            "calls": 5,
+            "chars": 2355,
+            "total_tokens": 604
+          },
+          "warnings": [],
+          "elapsed_ms": 253
+        },
+        {
+          "usage": {
+            "calls": 6,
+            "chars": 2413,
+            "total_tokens": 620
+          },
+          "warnings": [],
+          "elapsed_ms": 200
+        },
+        {
+          "usage": {
+            "calls": 7,
+            "chars": 2463,
+            "total_tokens": 636
+          },
+          "warnings": [],
+          "elapsed_ms": 173
+        },
+        {
+          "usage": {
+            "calls": 8,
+            "chars": 2503,
+            "total_tokens": 650
+          },
+          "warnings": [],
+          "elapsed_ms": 170
+        },
+        {
+          "usage": {
+            "calls": 9,
+            "chars": 2548,
+            "total_tokens": 663
+          },
+          "warnings": [],
+          "elapsed_ms": 218
+        },
+        {
+          "usage": {
+            "calls": 10,
+            "chars": 2593,
+            "total_tokens": 675
+          },
+          "warnings": [],
+          "elapsed_ms": 164
+        },
+        {
+          "usage": {
+            "calls": 11,
+            "chars": 2642,
+            "total_tokens": 688
+          },
+          "warnings": [],
+          "elapsed_ms": 189
+        },
+        {
+          "usage": {
+            "calls": 12,
+            "chars": 2651,
+            "total_tokens": 692
+          },
+          "warnings": [],
+          "elapsed_ms": 355
+        },
+        {
+          "usage": {
+            "calls": 13,
+            "chars": 2671,
+            "total_tokens": 697
+          },
+          "warnings": [],
+          "elapsed_ms": 273
+        },
+        {
+          "usage": {
+            "calls": 13,
+            "chars": 2671,
+            "total_tokens": 697
+          },
+          "warnings": [],
+          "elapsed_ms": 24
+        },
+        {
+          "usage": {
+            "calls": 14,
+            "chars": 2675,
+            "total_tokens": 702
+          },
+          "warnings": [],
+          "elapsed_ms": 424
+        }
+      ],
+      "tool_actions": {
+        "list": 1,
+        "read": 2,
+        "inspect_page": 1,
+        "search": 6,
+        "toc": 1,
+        "read_adjacent": 1
+      },
+      "errors": [
+        {
+          "code": "PAGE_TEXT_UNAVAILABLE",
+          "message": "当前范围没有可用内容。"
+        },
+        {
+          "code": "VISION_INSPECTION_FAILED"
+        }
+      ],
+      "visual_attempts_in_initial_tools": 1,
+      "visual_statuses": {
+        "unavailable": 1
+      },
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 4796,
+        "Keyword": 7,
+        "BM25": 16,
+        "Vector": 3121,
+        "RRF": 2,
+        "Rerank": 4289,
+        "EvidenceDelivery": 12422,
+        "ModelEnd": 118628,
+        "ToolOutput": 11365,
+        "AgentToolEnd": 11543,
+        "AgentToolBatchEnd": 11409
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "7ca0757ad25eccd3c3c1"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r3",
+      "case": "finance",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "completed": true,
+      "elapsed_ms": 86571,
+      "upload_ms": 414,
+      "answer": "根据第 2 页的 `GENERAL FUND REVENUES FY 2016` 饼图及对应数据表，占比最小的部分对应的类别是 **Licenses/Permits**（许可证/许可费），其在图表中标注的百分比为 **1%**（对应金额 $76,000）。",
+      "failure": null,
+      "model_tokens_initial": 13358,
+      "model_calls_initial": 2,
+      "rerank_tokens_initial": 3175,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 5,
+            "chars": 10482,
+            "total_tokens": 5748
+          },
+          "warnings": [],
+          "elapsed_ms": 1695
+        },
+        {
+          "usage": {
+            "calls": 6,
+            "chars": 10533,
+            "total_tokens": 5756
+          },
+          "warnings": [],
+          "elapsed_ms": 198
+        },
+        {
+          "usage": {
+            "calls": 7,
+            "chars": 10576,
+            "total_tokens": 5763
+          },
+          "warnings": [],
+          "elapsed_ms": 146
+        }
+      ],
+      "tool_actions": {
+        "visual_page": 2,
+        "inspect_page": 2
+      },
+      "errors": [
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。"
+        },
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。"
+        }
+      ],
+      "visual_attempts_in_initial_tools": 2,
+      "visual_statuses": {
+        "partial": 2
+      },
+      "visual_tokens_initial_lower_bound": 7841,
+      "tool_reference_pages": [
+        1,
+        2
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1404,
+        "Keyword": 3,
+        "BM25": 7,
+        "Vector": 2039,
+        "RRF": 0,
+        "Rerank": 2280,
+        "EvidenceDelivery": 5873,
+        "ModelEnd": 211391,
+        "ToolOutput": 36562,
+        "AgentToolEnd": 36700,
+        "AgentToolBatchEnd": 61026,
+        "PageVision": 36377
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "55a1948d49f34d874dcd"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r3",
+      "case": "netflix",
+      "id": "mml:1021",
+      "completed": true,
+      "elapsed_ms": 70403,
+      "upload_ms": 178,
+      "answer": "根据所附文件第 17 页的财务数据摘要表，Netflix 在 FY2015（截至 2015 年 12 月 31 日）的营运资本（Working capital）为 **1,902,216**（单位为千美元）。",
+      "failure": null,
+      "model_tokens_initial": 0,
+      "model_calls_initial": 0,
+      "rerank_tokens_initial": 3884,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 216
+        },
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 202
+        },
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 181
+        }
+      ],
+      "tool_actions": {},
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1221,
+        "Keyword": 6,
+        "BM25": 6,
+        "Vector": 599,
+        "RRF": 0,
+        "Rerank": 2088,
+        "EvidenceDelivery": 4408,
+        "ModelEnd": 13362
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "7d60ecfc0c58607f6f7c"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r3",
+      "case": "phone",
+      "id": "mml:888",
+      "completed": true,
+      "elapsed_ms": 64252,
+      "upload_ms": 609,
+      "answer": "根据文档元数据，该 PDF 文件总共只有 **30 页**（`page_count: 30`），因此**不存在第 40-47 页**，无法为您统计这些页面中提到的 applications 数量。\n\n如果您是指文档中其他页码范围（例如第 20-27 页涉及住房申请与主题社区的内容），或需要查看现有页面中关于 \"applications\" 的信息，请提供正确的页码范围，我将为您进一步检索。",
+      "failure": null,
+      "model_tokens_initial": 0,
+      "model_calls_initial": 0,
+      "rerank_tokens_initial": 1900,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 14,
+            "chars": 27887,
+            "total_tokens": 5887
+          },
+          "warnings": [],
+          "elapsed_ms": 2503
+        },
+        {
+          "usage": {
+            "calls": 15,
+            "chars": 27924,
+            "total_tokens": 5898
+          },
+          "warnings": [],
+          "elapsed_ms": 270
+        }
+      ],
+      "tool_actions": {},
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 986,
+        "Keyword": 3,
+        "BM25": 4,
+        "Vector": 2773,
+        "RRF": 0,
+        "Rerank": 1261,
+        "EvidenceDelivery": 5131,
+        "ModelEnd": 8538
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "4931c4631d06ad4c5779"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r3",
+      "case": "scan",
+      "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+      "completed": true,
+      "elapsed_ms": 221052,
+      "upload_ms": 578,
+      "answer": "根据您提供的文档内容，关于来宾市政协在兴宾区街道社区推动“建设铸牢中华民族共同体意识示范区委员行动”的落地方式、6月2日活动的评价及具体成效，具体情况如下：\n\n### 1. 在街道社区的具体落地方式\n该行动在兴宾区街道社区主要通过**联合基层党组织开展政协委员宣讲分享会与主题党日活动**的形式落地。\n* **具体案例**：6月2日，兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部，在河西街道瑞民社区开展了“铸牢中华民族共同体意识”政协委员宣讲分享会和“粽情端午话清廉·重温初心明使命”主题党日活动（见文档第81页）。\n* **宣讲内容**：政协委员结合自身经历和工作实际，宣讲建设该示范区的重大意义，并号召群众积极参与实施中华民族优秀传统文化传承发展工程，加强对地方文化古迹的挖掘与保护，发挥地域特色弘扬民族优秀文化和民族精神（见文档第81页）。\n* **行动框架**：这属于市政协系统“建设铸牢中华民族共同体意识示范区委员行动”中“四大行动”（大学习大宣讲、“我倡议我承诺我践行”、乡村振兴、助力创建全国民族团结进步示范市）的基层实践（见文档第65、67页）。\n\n### 2. 关于6月2日宣讲的评价及具体成效\n* **宣讲评价**：**文档中未提及**参与者或社区群众对6月2日那场宣讲的具体评价反馈（如满意度、现场反响等）。\n* **促进融合与向心力的成效**：**文档中未提供**该活动在促进不同民族融合方面的具体已取得的成效数据或实际案例。文档第81页仅阐述了该活动的**预期目标与号召方向**，即希望“为构筑中华民族共有精神家园注入‘兴宾因子’、彰显‘兴宾特色’，在铸牢中华民族共同体意识的思想自觉、行动自觉上实现新提高”。\n\n综上所述，文档详细记录了该行动在基层的**组织形式与宣讲内容**，但并未包含关于群众具体评价或民族团结融合量化成效的后续反馈信息。",
+      "failure": null,
+      "model_tokens_initial": 0,
+      "model_calls_initial": 0,
+      "rerank_tokens_initial": 3098,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 75,
+            "chars": 82034,
+            "total_tokens": 49230
+          },
+          "warnings": [],
+          "elapsed_ms": 11585
+        },
+        {
+          "usage": {
+            "calls": 76,
+            "chars": 82069,
+            "total_tokens": 49254
+          },
+          "warnings": [],
+          "elapsed_ms": 698
+        },
+        {
+          "usage": {
+            "calls": 77,
+            "chars": 82094,
+            "total_tokens": 49274
+          },
+          "warnings": [],
+          "elapsed_ms": 646
+        }
+      ],
+      "tool_actions": {},
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1911,
+        "Keyword": 16,
+        "BM25": 19,
+        "Vector": 12929,
+        "RRF": 0,
+        "Rerank": 2926,
+        "EvidenceDelivery": 18615,
+        "ModelEnd": 25518
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "c5de4a6252eea4c20db3"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r3",
+      "case": "table",
+      "id": "mml:80",
+      "completed": true,
+      "elapsed_ms": 96342,
+      "upload_ms": 125,
+      "answer": "根据第 13 页的 Table II（DOWNSTREAM TASKS AND DATASETS OF RAG），Method 列中引用编号的数量代表该数据集对应的方法数。经逐行统计，**恰好包含三种方法（三个引用编号）的数据集**如下：\n\n| Dataset | Methods（引用编号） |\n|---|---|\n| **PopQA** [116] | [7], [25], [67] |\n| **MS MARCO** [117] | [4], [40], [52] |\n| **SST-2** [156] | [20], [33], [38] |\n\n其余数据集的方法数均不为 3（如 Natural Question 有 4 行引用、TriviaQA 有 2 行引用、SQuAD 有 7 个引用等）。\n\n**引用来源：** PDF 第 13 页，Table II \"DOWNSTREAM TASKS AND DATASETS OF RAG\"。",
+      "failure": null,
+      "model_tokens_initial": 5100,
+      "model_calls_initial": 1,
+      "rerank_tokens_initial": 3616,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 37,
+            "chars": 116559,
+            "total_tokens": 33344
+          },
+          "warnings": [],
+          "elapsed_ms": 12826
+        },
+        {
+          "usage": {
+            "calls": 38,
+            "chars": 116603,
+            "total_tokens": 33352
+          },
+          "warnings": [],
+          "elapsed_ms": 522
+        }
+      ],
+      "tool_actions": {
+        "read": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1085,
+        "Keyword": 5,
+        "BM25": 6,
+        "Vector": 13348,
+        "RRF": 0,
+        "Rerank": 1315,
+        "EvidenceDelivery": 16036,
+        "ModelEnd": 52506,
+        "ToolOutput": 21,
+        "AgentToolEnd": 37,
+        "AgentToolBatchEnd": 27
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "0b48dd63ae3c07d316f2"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r3",
+      "case": "tree",
+      "id": "mml:76",
+      "completed": true,
+      "elapsed_ms": 84526,
+      "upload_ms": 157,
+      "answer": "在 PDF 第 2 页的 **Fig. 1（RAG 研究技术树）** 中，叶子节点最少的分支是 **Pre-training（预训练阶段）**，该分支仅包含 **3 个** 叶节点（RAVEN、CoG、Retro++），明显少于 Fine-tuning（12 个）和 Inference（40+ 个）分支。\n\n> 依据：PDF 第 2 页 Fig. 1 原图及图注说明。",
+      "failure": null,
+      "model_tokens_initial": 4507,
+      "model_calls_initial": 1,
+      "rerank_tokens_initial": 2900,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 37,
+            "chars": 116575,
+            "total_tokens": 33352
+          },
+          "warnings": [],
+          "elapsed_ms": 12561
+        },
+        {
+          "usage": {
+            "calls": 38,
+            "chars": 116613,
+            "total_tokens": 33360
+          },
+          "warnings": [],
+          "elapsed_ms": 464
+        },
+        {
+          "usage": {
+            "calls": 39,
+            "chars": 116654,
+            "total_tokens": 33368
+          },
+          "warnings": [],
+          "elapsed_ms": 383
+        }
+      ],
+      "tool_actions": {
+        "inspect_page": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 1,
+      "visual_statuses": {
+        "ok": 1
+      },
+      "visual_tokens_initial_lower_bound": 4170,
+      "tool_reference_pages": [
+        2
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1288,
+        "Keyword": 7,
+        "BM25": 11,
+        "Vector": 13408,
+        "RRF": 0,
+        "Rerank": 3185,
+        "EvidenceDelivery": 18200,
+        "ModelEnd": 10719,
+        "PageVision": 16864,
+        "ToolOutput": 16895,
+        "AgentToolEnd": 16909,
+        "AgentToolBatchEnd": 16901
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "baa0ac49b7cda8be7375"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r4",
+      "case": "academic",
+      "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+      "completed": true,
+      "elapsed_ms": 64105,
+      "upload_ms": 126,
+      "answer": "依据所提供的 PDF 文档（仅 1 页的学术海报），**无法确认** 2016-17 学年哪个 trimester 上传到 Wikimedia Commons 的媒体数量最多。\n\n文档的解析正文中仅包含以下信息：\n- 自 2014 年 9 月起，马希隆大学国际学院（MUIC）的本科化学课程引入了维基百科写作作业。\n- 学生完成了在线培训，56 篇高质量文章被创建，超过 81 篇文章得到改进。\n- 包含 \"RESULTS\" 和 \"REFERENCE\" 标题，以及一条参考文献（Suwannakhan A & Limpanuparb T. 2017）。\n\n文档中**没有出现** \"Wikimedia Commons\"、\"media uploaded\"、\"trimester\" 或 \"2016-17\" 等关键词。相关数据可能存在于海报的图表或图片中，但当前解析工具未能提取出这些视觉内容中的具体数值，因此无法给出准确答案。",
+      "failure": [],
+      "model_tokens_initial": 40617,
+      "model_calls_initial": 6,
+      "rerank_tokens_initial": 1985,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 4,
+            "chars": 2289,
+            "total_tokens": 585
+          },
+          "warnings": [],
+          "elapsed_ms": 673
+        },
+        {
+          "usage": {
+            "calls": 5,
+            "chars": 2355,
+            "total_tokens": 604
+          },
+          "warnings": [],
+          "elapsed_ms": 140
+        },
+        {
+          "usage": {
+            "calls": 6,
+            "chars": 2413,
+            "total_tokens": 620
+          },
+          "warnings": [],
+          "elapsed_ms": 172
+        },
+        {
+          "usage": {
+            "calls": 7,
+            "chars": 2455,
+            "total_tokens": 628
+          },
+          "warnings": [],
+          "elapsed_ms": 187
+        },
+        {
+          "usage": {
+            "calls": 8,
+            "chars": 2509,
+            "total_tokens": 638
+          },
+          "warnings": [],
+          "elapsed_ms": 187
+        },
+        {
+          "usage": {
+            "calls": 9,
+            "chars": 2551,
+            "total_tokens": 646
+          },
+          "warnings": [],
+          "elapsed_ms": 218
+        },
+        {
+          "usage": {
+            "calls": 10,
+            "chars": 2578,
+            "total_tokens": 661
+          },
+          "warnings": [],
+          "elapsed_ms": 172
+        },
+        {
+          "usage": {
+            "calls": 11,
+            "chars": 2585,
+            "total_tokens": 664
+          },
+          "warnings": [],
+          "elapsed_ms": 643
+        }
+      ],
+      "tool_actions": {
+        "search": 3,
+        "read": 2,
+        "inspect_page": 1
+      },
+      "errors": [
+        {
+          "code": "VISION_INSPECTION_FAILED"
+        }
+      ],
+      "visual_attempts_in_initial_tools": 1,
+      "visual_statuses": {
+        "unavailable": 1
+      },
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 3984,
+        "Keyword": 4,
+        "BM25": 7,
+        "Vector": 2392,
+        "RRF": 1,
+        "Rerank": 5329,
+        "EvidenceDelivery": 11828,
+        "ModelEnd": 39816,
+        "ToolOutput": 11161,
+        "AgentToolEnd": 11245,
+        "AgentToolBatchEnd": 11190
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "ac2f32fa2d793a29535e"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r4",
+      "case": "finance",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "completed": true,
+      "elapsed_ms": 70281,
+      "upload_ms": 103,
+      "answer": "根据 PDF 第 2 页的“GENERAL FUND REVENUES FY 2016”饼图及图例，**最小占比为 1%**，对应类别为 **Licenses/Permits**（图例中为粉色方块）。\n\n表格数据也印证了这一点：Licenses/Permits 预算为 $76,000，占总额 $5,561,940 的约 1.37%，四舍五入后饼图标注为 1%，是所有类别中最小的部分。",
+      "failure": [],
+      "model_tokens_initial": 6110,
+      "model_calls_initial": 1,
+      "rerank_tokens_initial": 3175,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 5,
+            "chars": 10482,
+            "total_tokens": 5748
+          },
+          "warnings": [],
+          "elapsed_ms": 1734
+        },
+        {
+          "usage": {
+            "calls": 6,
+            "chars": 10533,
+            "total_tokens": 5756
+          },
+          "warnings": [],
+          "elapsed_ms": 175
+        },
+        {
+          "usage": {
+            "calls": 7,
+            "chars": 10571,
+            "total_tokens": 5763
+          },
+          "warnings": [],
+          "elapsed_ms": 189
+        }
+      ],
+      "tool_actions": {
+        "inspect_page": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 1,
+      "visual_statuses": {
+        "partial": 1
+      },
+      "visual_tokens_initial_lower_bound": 4795,
+      "tool_reference_pages": [
+        2
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1339,
+        "Keyword": 4,
+        "BM25": 7,
+        "Vector": 2098,
+        "RRF": 0,
+        "Rerank": 2220,
+        "EvidenceDelivery": 5721,
+        "ModelEnd": 46366,
+        "PageVision": 34998,
+        "ToolOutput": 35036,
+        "AgentToolEnd": 35059,
+        "AgentToolBatchEnd": 35048
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "4e580ed696208b4ca44b"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r4",
+      "case": "netflix",
+      "id": "mml:1021",
+      "completed": true,
+      "elapsed_ms": 87022,
+      "upload_ms": 794,
+      "answer": "Netflix 在 FY2015 的营运资本（Working Capital）为 **1,902,216**（千美元）。\n\n**数据来源**：\n- 见 PDF 第 17 页的财务数据摘要表格（*Selected Consolidated Financial Data*）。该表格表头明确标注单位为 `(in thousands)`，在 `Working capital (1)` 一行中，`2015` 列对应的数值为 `1,902,216`。",
+      "failure": [],
+      "model_tokens_initial": 0,
+      "model_calls_initial": 0,
+      "rerank_tokens_initial": 3884,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 168
+        },
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 146
+        },
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 142
+        }
+      ],
+      "tool_actions": {},
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 2767,
+        "Keyword": 11,
+        "BM25": 15,
+        "Vector": 905,
+        "RRF": 0,
+        "Rerank": 4891,
+        "EvidenceDelivery": 9481,
+        "ModelEnd": 28760
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": 15500,
+      "warm_answer": "根据所附文档 **第17页** 的《Selected Consolidated Financial Data》表格，Netflix 在 FY2015 的营运资本（Working capital）为 **1,902,216**（单位：千美元）。\n\n*(注：该表格表头已明确标注单位为 `(in thousands)`，故直接取表中对应数值即可。)*",
+      "scope_hash": "1ed7aeb31473872108cb"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r4",
+      "case": "phone",
+      "id": "mml:888",
+      "completed": true,
+      "elapsed_ms": 294569,
+      "upload_ms": 480,
+      "answer": "根据您提供的文档 `mi_phone.pdf`，该文件总共只有 **30 页**（物理页码范围 1-30）。\n\n因此，文档中**不存在第 40-47 页**，无法回答该范围内的应用（applications）数量。\n\n如果您是指文档中关于“申请（Application）”的内容，相关信息出现在以下页面：\n*   **第 27 页**：提到了 \"Application Steps and Important Dates\"（申请步骤和重要日期）。\n*   **第 4 页**：提到了 \"Apply for your preferred themed engagement communities in your housing application\"（在住宿申请中选择您喜欢的主题社区）。\n\n请确认您是否查阅了错误的页码范围或错误的文档。",
+      "failure": [],
+      "model_tokens_initial": 0,
+      "model_calls_initial": 0,
+      "rerank_tokens_initial": 2136,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 4,
+            "chars": 8676,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_TIMEOUT"
+          ],
+          "elapsed_ms": 15076
+        },
+        {
+          "usage": {
+            "calls": 19,
+            "chars": 37518,
+            "total_tokens": 6819
+          },
+          "warnings": [],
+          "elapsed_ms": 8114
+        }
+      ],
+      "tool_actions": {},
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 8880,
+        "Keyword": 8,
+        "BM25": 12,
+        "Vector": 23738,
+        "RRF": 0,
+        "Rerank": 4055,
+        "EvidenceDelivery": 37049,
+        "ModelEnd": 35150
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": 12367,
+      "warm_answer": "依据您上传的文档 `mi_phone.pdf`，该文档总共只有 **30 页**（物理页码 1-30）。\n\n因此，**不存在第 40-47 页**，我无法为您统计该页码范围内的 applications 数量。\n\n请确认您是否查阅了其他文档，或是指向了错误的页码范围。",
+      "scope_hash": "0d910d345e415357acc0"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r4",
+      "case": "scan",
+      "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+      "completed": true,
+      "elapsed_ms": 228335,
+      "upload_ms": 556,
+      "answer": "根据您提供的文档，来宾市兴宾区政协在街道社区推动“建设铸牢中华民族共同体意识示范区委员行动”的具体落地方式、群众评价及成效如下（主要依据文档 **第81页** 内容）：\n\n### 📍 具体落地方式（以6月2日活动为例）\n在兴宾区河西街道瑞民社区，该行动通过**“宣讲分享会 + 主题党日活动”**的融合模式开展，由兴宾区政协机关党支部联合来宾农商行兴宾党支部、瑞民社区党总支部共同组织。\n\n1.  **理论宣讲与号召**：政协委员结合自身经历和工作实际，宣讲“铸牢中华民族共同体意识”及广西建设示范区的重大意义；号召群众参与中华优秀传统文化传承发展工程，挖掘保护地方文化古迹，弘扬民族优秀文化。\n2.  **民俗互动与文化体验**：开展“粽情端午话清廉·重温初心明使命”主题党日，通过现场包粽子、民俗互动、向异地扶贫搬迁户赠送粽子等形式，让基层百姓亲身体验传统文化魅力。\n\n### 🗣️ 群众对宣讲的评价\n文档明确记载，该场宣讲活动**“既有高度又有深度，既通俗易懂又深入浅出，获得在场群众的阵阵好评”**。\n\n河西街道瑞民社区党总支书记、主任胡自杰表示，感谢政协委员进社区宣讲，今后将进一步讲好民族团结故事，通过典型人物的树立与宣传激发党员群众的向心力。\n\n### 🌟 促进民族融合与增强向心力的成效\n1.  **激发凝聚力**：通过典型宣讲，有效激发了广大党员、干部群众的**向心力和凝聚力**。\n2.  **推动民族互融**：直接推进了社区**各民族的“互促互进互融”**，为构筑中华民族共有精神家园注入了“兴宾因子”、彰显了“兴宾特色”。\n3.  **增强文化自信**：民俗互动活动极大增强了基层群众的**文化自信和民族自豪感**，实现了思想自觉与行动自觉的新提高。\n\n---\n\n### 📊 活动落地与成效解释示意图\n\n```mermaid\nflowchart TD\n    Event[\"6月2日瑞民社区联合活动\"] --> Act1[\"政协委员宣讲分享会\"]\n    Event --> Act2[\"主题党日活动\\n(粽情端午话清廉)\"]\n    \n    Act1 --> Content1[\"结合自身经历宣讲重大意义\"]\n    Act1 --> Content2[\"号召传承文化/保护古迹\"]\n    \n    Act2 --> Content3[\"现场包粽子/民俗互动\"]\n    Act2 --> Content4[\"向异地搬迁户赠粽子\"]\n    \n    Content1 & Content2 & Content3 & Content4 --> Outcome[\"落地成效\"]\n    \n    Outcome --> Eval[\"群众评价：有高度深度/通俗易懂/阵阵好评\"]\n    Outcome --> Effect1[\"激发向心力与凝聚力\"]\n    Outcome --> Effect2[\"推进各民族互促互进互融\"]\n    Outcome --> Effect3[\"增强文化自信与民族自豪感\"]\n```\n\n> **引用来源**：以上内容均提取自附件 PDF **第81页**《兴宾区政协委员开展宣讲会和主题党日活动 唱响“铸牢中华民族共同体意识”政协强音》一文。",
+      "failure": [],
+      "model_tokens_initial": 4891,
+      "model_calls_initial": 1,
+      "rerank_tokens_initial": 3138,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 75,
+            "chars": 82211,
+            "total_tokens": 49447
+          },
+          "warnings": [],
+          "elapsed_ms": 13194
+        },
+        {
+          "usage": {
+            "calls": 76,
+            "chars": 82246,
+            "total_tokens": 49471
+          },
+          "warnings": [],
+          "elapsed_ms": 799
+        },
+        {
+          "usage": {
+            "calls": 77,
+            "chars": 82271,
+            "total_tokens": 49491
+          },
+          "warnings": [],
+          "elapsed_ms": 774
+        }
+      ],
+      "tool_actions": {
+        "read": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1874,
+        "Keyword": 10,
+        "BM25": 12,
+        "Vector": 14767,
+        "RRF": 0,
+        "Rerank": 2843,
+        "EvidenceDelivery": 20371,
+        "ModelEnd": 40525,
+        "ToolOutput": 38,
+        "AgentToolEnd": 81,
+        "AgentToolBatchEnd": 50
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "ffbef8279f474cfa0054"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r4",
+      "case": "table",
+      "id": "mml:80",
+      "completed": true,
+      "elapsed_ms": 204022,
+      "upload_ms": 182,
+      "answer": "根据文档第 13 页的 **TABLE II**（DOWNSTREAM TASKS AND DATASETS OF RAG），`Method` 列以参考文献编号的形式列出应用于该数据集的方法。经逐行统计，恰好包含 **三种方法**（即三个引用编号）的数据集共有以下三个：\n\n1. **PopQA [116]**（对应方法引用：`[7], [25], [67]`）\n2. **MS MARCO [117]**（对应方法引用：`[4], [40], [52]`）\n3. **SST-2 [156]**（对应方法引用：`[20], [33], [38]`）\n\n> **注**：表中部分数据集（如 Natural Question、TriviaQA、HotpotQA）因跨越多行合并单元格，累计引用数远超 3 个；而 ASQA、Qasper、KBP 等多为 2 个，其余大量数据集仅对应 1 个方法引用。",
+      "failure": [],
+      "model_tokens_initial": 12624,
+      "model_calls_initial": 2,
+      "rerank_tokens_initial": 6782,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 37,
+            "chars": 116559,
+            "total_tokens": 33344
+          },
+          "warnings": [],
+          "elapsed_ms": 20535
+        },
+        {
+          "usage": {
+            "calls": 38,
+            "chars": 116603,
+            "total_tokens": 33352
+          },
+          "warnings": [],
+          "elapsed_ms": 451
+        },
+        {
+          "usage": {
+            "calls": 39,
+            "chars": 116611,
+            "total_tokens": 33355
+          },
+          "warnings": [],
+          "elapsed_ms": 675
+        }
+      ],
+      "tool_actions": {
+        "search": 1,
+        "read_table": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [
+        13
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 860,
+        "Keyword": 6,
+        "BM25": 9,
+        "Vector": 21661,
+        "RRF": 0,
+        "Rerank": 3032,
+        "EvidenceDelivery": 25851,
+        "ModelEnd": 140123,
+        "ToolOutput": 2757,
+        "AgentToolEnd": 2789,
+        "AgentToolBatchEnd": 2768
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "c482b003bc9eb0270629"
+    },
+    {
+      "arm": "baseline",
+      "batch": "r4",
+      "case": "tree",
+      "id": "mml:76",
+      "completed": true,
+      "elapsed_ms": 125115,
+      "upload_ms": 117,
+      "answer": "根据文档第 2 页的 **Fig. 1. Technology tree of RAG research**（RAG 研究技术树图），该树形图包含三大主干分支，分别对应 RAG 涉及的三个阶段：\n\n| 分支名称 | 叶节点（方法名）数量 |\n|---|---|\n| **Pre-training（预训练）** | 4 个 |\n| **Fine-tuning（微调）** | 23 个 |\n| **Inference（推理）** | 38 个 |\n\n其中 **Pre-training（预训练）** 分支的叶节点最少，仅有 **4 个**，分别是：InstructRetro、RAVEN、CoG、Retro++。\n\n> 引用：PDF 物理页码 **第 2 页**，Fig. 1 及其图注。",
+      "failure": [],
+      "model_tokens_initial": 27939,
+      "model_calls_initial": 4,
+      "rerank_tokens_initial": 3015,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 37,
+            "chars": 116575,
+            "total_tokens": 33352
+          },
+          "warnings": [],
+          "elapsed_ms": 6063
+        },
+        {
+          "usage": {
+            "calls": 38,
+            "chars": 116630,
+            "total_tokens": 33362
+          },
+          "warnings": [],
+          "elapsed_ms": 369
+        }
+      ],
+      "tool_actions": {
+        "inspect_page": 3
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 3,
+      "visual_statuses": {
+        "ok": 2,
+        "partial": 1
+      },
+      "visual_tokens_initial_lower_bound": 10890,
+      "tool_reference_pages": [
+        2
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 854,
+        "Keyword": 2,
+        "BM25": 4,
+        "Vector": 6432,
+        "RRF": 0,
+        "Rerank": 2046,
+        "EvidenceDelivery": 9588,
+        "ModelEnd": 43924,
+        "PageVision": 31106,
+        "ToolOutput": 31190,
+        "AgentToolEnd": 31228,
+        "AgentToolBatchEnd": 31452
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "561d185d4f26bf51a6bb"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r1",
+      "case": "phone",
+      "id": "mml:888",
+      "completed": false,
+      "error": "UPLOAD_HTTP_500"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r2",
+      "case": "phone",
+      "id": "mml:888",
+      "completed": true,
+      "elapsed_ms": 75268,
+      "upload_ms": 1433,
+      "answer": "根据您提供的文档 `mi_phone.pdf` 的解析信息，该文档**总共只有 30 页**（`page_count: 30`）。\n\n因此，文档中**不存在第 40-47 页**，无法为您统计该页码范围内提及的 applications 数量。\n\n如果您是指文档中关于“Application”的内容，目前可见的解析文本中在第 27 页提到了：\n*   **\"Application Steps and Important Dates\"**\n*   **\"APPLYING FOR HOUSING & THEMED ENGAGEMENT COMMUNITIES\"**\n*   **\"Apply for your preferred themed engagement communities in your housing application.\"**\n\n如果您需要查阅文档中其他特定页码的内容，请提供有效的页码范围（1-30）。",
+      "failure": null,
+      "model_tokens_initial": 0,
+      "model_calls_initial": 0,
+      "rerank_tokens_initial": 1892,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 14,
+            "chars": 27887,
+            "total_tokens": 5887
+          },
+          "warnings": [],
+          "elapsed_ms": 2942
+        },
+        {
+          "usage": {
+            "calls": 15,
+            "chars": 27924,
+            "total_tokens": 5898
+          },
+          "warnings": [],
+          "elapsed_ms": 249
+        }
+      ],
+      "tool_actions": {},
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1284,
+        "Keyword": 27,
+        "BM25": 29,
+        "Vector": 3191,
+        "RRF": 1,
+        "Rerank": 1358,
+        "EvidenceDelivery": 5985,
+        "ModelTransport": 8302,
+        "ModelEnd": 7035
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "a934d1134ac22dd42b4e"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r3",
+      "case": "academic",
+      "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+      "completed": true,
+      "elapsed_ms": 105418,
+      "upload_ms": 143,
+      "answer": "无法确认。所附文档（仅1页的学术海报/摘要，**物理页码为第1页**）的解析正文中**并未包含**关于“2016-17学年”、“学期（trimester）”或“上传至维基共享资源（Wikimedia Commons）的媒体数量”的任何数据或图表信息。\n\n该文档主要介绍了玛希隆大学国际学院（Mahidol University International College）自2014年9月起将维基百科写作任务纳入本科化学课程的试点项目概况。文档中明确列出的量化结果仅包括（均位于第1页）：\n- 参与学生：103名\n- 创建的高质量文章：56篇\n- 改进的文章：80余篇\n- 累计撰写页数：364页\n\n若需获取按学期细分的维基共享资源媒体上传数据，建议查阅文档末尾引用的完整同行评议论文：`Suwannakhan A & Limpanuparb T. 2017. Wikipedia writing assignments: a one-year pilot program in chemistry classes at Mahidol University. Catalyst. 15(2): 65-79.`（第1页）。当前所附海报/摘要未提供该维度的统计信息。",
+      "failure": null,
+      "model_tokens_initial": 70435,
+      "model_calls_initial": 9,
+      "rerank_tokens_initial": 1696,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 4,
+            "chars": 2289,
+            "total_tokens": 585
+          },
+          "warnings": [],
+          "elapsed_ms": 867
+        },
+        {
+          "usage": {
+            "calls": 5,
+            "chars": 2355,
+            "total_tokens": 604
+          },
+          "warnings": [],
+          "elapsed_ms": 160
+        },
+        {
+          "usage": {
+            "calls": 6,
+            "chars": 2405,
+            "total_tokens": 618
+          },
+          "warnings": [],
+          "elapsed_ms": 153
+        },
+        {
+          "usage": {
+            "calls": 7,
+            "chars": 2455,
+            "total_tokens": 634
+          },
+          "warnings": [],
+          "elapsed_ms": 212
+        },
+        {
+          "usage": {
+            "calls": 8,
+            "chars": 2496,
+            "total_tokens": 649
+          },
+          "warnings": [],
+          "elapsed_ms": 183
+        },
+        {
+          "usage": {
+            "calls": 9,
+            "chars": 2527,
+            "total_tokens": 662
+          },
+          "warnings": [],
+          "elapsed_ms": 147
+        },
+        {
+          "usage": {
+            "calls": 10,
+            "chars": 2536,
+            "total_tokens": 666
+          },
+          "warnings": [],
+          "elapsed_ms": 254
+        },
+        {
+          "usage": {
+            "calls": 11,
+            "chars": 2558,
+            "total_tokens": 671
+          },
+          "warnings": [],
+          "elapsed_ms": 235
+        }
+      ],
+      "tool_actions": {
+        "search": 5,
+        "read": 3,
+        "inspect_page": 1
+      },
+      "errors": [
+        {
+          "code": "VISION_INSPECTION_FAILED",
+          "category": "MODEL_UNKNOWN_ERROR",
+          "http_status": null,
+          "cause": null,
+          "retryable": false
+        }
+      ],
+      "visual_attempts_in_initial_tools": 1,
+      "visual_statuses": {
+        "unavailable": 1
+      },
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 5869,
+        "Keyword": 3,
+        "BM25": 7,
+        "Vector": 2211,
+        "RRF": 1,
+        "Rerank": 6599,
+        "EvidenceDelivery": 14844,
+        "ModelTransport": 86683,
+        "ModelEnd": 79007,
+        "ToolOutput": 13978,
+        "AgentToolEnd": 14098,
+        "AgentToolBatchEnd": 14015,
+        "PageVision": 2554
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "1bc6b914c326a924d24e"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r3",
+      "case": "finance",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "completed": true,
+      "elapsed_ms": 113482,
+      "upload_ms": 163,
+      "answer": "根据对 PDF 第 2 页\"GENERAL FUND REVENUES FY 2016\"饼图及图例的核对：\n\n饼图中最小的扇区标注为 **1%**，对应的收入类别是 **Licenses/Permits（许可证/许可费）**，金额为 $76,000，占总收入 $5,561,940 的约 1.37%（四舍五入标注为 1%）。该类别在图例中对应的颜色为**粉红色方块**。\n\n> 引用：PDF 第 2 页，GENERAL FUND REVENUES FY 2016 饼图及下方图例。",
+      "failure": null,
+      "model_tokens_initial": 16511,
+      "model_calls_initial": 2,
+      "rerank_tokens_initial": 6571,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 5,
+            "chars": 10482,
+            "total_tokens": 5748
+          },
+          "warnings": [],
+          "elapsed_ms": 1845
+        },
+        {
+          "usage": {
+            "calls": 6,
+            "chars": 10533,
+            "total_tokens": 5756
+          },
+          "warnings": [],
+          "elapsed_ms": 145
+        },
+        {
+          "usage": {
+            "calls": 7,
+            "chars": 10576,
+            "total_tokens": 5763
+          },
+          "warnings": [],
+          "elapsed_ms": 206
+        },
+        {
+          "usage": {
+            "calls": 9,
+            "chars": 10661,
+            "total_tokens": 5770
+          },
+          "warnings": [],
+          "elapsed_ms": 254
+        },
+        {
+          "usage": {
+            "calls": 10,
+            "chars": 10692,
+            "total_tokens": 5776
+          },
+          "warnings": [],
+          "elapsed_ms": 149
+        },
+        {
+          "usage": {
+            "calls": 10,
+            "chars": 10692,
+            "total_tokens": 5784
+          },
+          "warnings": [],
+          "elapsed_ms": 235
+        },
+        {
+          "usage": {
+            "calls": 11,
+            "chars": 10734,
+            "total_tokens": 5791
+          },
+          "warnings": [],
+          "elapsed_ms": 342
+        },
+        {
+          "usage": {
+            "calls": 12,
+            "chars": 10780,
+            "total_tokens": 5798
+          },
+          "warnings": [],
+          "elapsed_ms": 192
+        }
+      ],
+      "tool_actions": {
+        "search": 1,
+        "visual_search": 1,
+        "inspect_page": 1
+      },
+      "errors": [
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。"
+        }
+      ],
+      "visual_attempts_in_initial_tools": 1,
+      "visual_statuses": {
+        "partial": 1
+      },
+      "visual_tokens_initial_lower_bound": 5880,
+      "tool_reference_pages": [
+        2
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 2946,
+        "Keyword": 3,
+        "BM25": 11,
+        "Vector": 3368,
+        "RRF": 1,
+        "Rerank": 4395,
+        "EvidenceDelivery": 10827,
+        "ModelTransport": 75076,
+        "ModelEnd": 70621,
+        "ToolOutput": 59224,
+        "AgentToolEnd": 59293,
+        "AgentToolBatchEnd": 62134,
+        "PageVisionTransport": 106945,
+        "PageVision": 53911
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "2b648104a09e58647f03"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r3",
+      "case": "netflix",
+      "id": "mml:1021",
+      "completed": true,
+      "elapsed_ms": 81233,
+      "upload_ms": 170,
+      "answer": "根据文档第 **17** 页的财务数据摘要表格，Netflix 在 FY2015（截至 2015 年 12 月 31 日）的营运资金（Working capital）为 **1,902,216**（单位：千美元）。\n\n> 📖 **引用来源**：PDF 第 17 页表格 `As of December 31,` 下方明确标注单位为 `(in thousands)`，`Working capital (1)` 行对应 `2015` 列的数值为 `1,902,216`。",
+      "failure": null,
+      "model_tokens_initial": 0,
+      "model_calls_initial": 0,
+      "rerank_tokens_initial": 3884,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 169
+        },
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 149
+        },
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 157
+        }
+      ],
+      "tool_actions": {},
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1410,
+        "Keyword": 9,
+        "BM25": 13,
+        "Vector": 475,
+        "RRF": 0,
+        "Rerank": 2289,
+        "EvidenceDelivery": 4735,
+        "ModelTransport": 24042,
+        "ModelEnd": 23244
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "bfa5dd486c0975f77894"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r3",
+      "case": "phone",
+      "id": "mml:888",
+      "completed": true,
+      "elapsed_ms": 80920,
+      "upload_ms": 465,
+      "answer": "根据您提供的文档 `mi_phone.pdf` 的解析元数据，该文件总共只有 **30 页**（`page_count: 30`）。\n\n因此，**文档中不存在第 40-47 页**，无法回答该页码范围内提及的应用程序（applications）数量。\n\n**补充说明：**\n*   **文件内容**：尽管文件名为 `mi_phone.pdf`，但文档内容实际上是 **NYU（纽约大学）的新生住宿指南**（包含 \"Guide to First-Year Living\"、\"Faculty Fellows in Residence\"、\"Themed Engagement Communities\" 等内容）。\n*   **关于申请（Application）**：文档中确实提到了申请相关的内容，主要位于 **第 27 页**，标题为 \"Application Steps and Important Dates\" 以及 \"Applying for Housing & Themed Engagement Communities\"。\n\n如果您原本打算上传的是小米手机说明书或其他包含第 40-47 页的文件，请重新上传正确的文档。",
+      "failure": null,
+      "model_tokens_initial": 0,
+      "model_calls_initial": 0,
+      "rerank_tokens_initial": 1900,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 14,
+            "chars": 27887,
+            "total_tokens": 5887
+          },
+          "warnings": [],
+          "elapsed_ms": 2118
+        },
+        {
+          "usage": {
+            "calls": 15,
+            "chars": 27924,
+            "total_tokens": 5898
+          },
+          "warnings": [],
+          "elapsed_ms": 484
+        }
+      ],
+      "tool_actions": {},
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1128,
+        "Keyword": 3,
+        "BM25": 4,
+        "Vector": 2602,
+        "RRF": 0,
+        "Rerank": 1293,
+        "EvidenceDelivery": 5182,
+        "ModelTransport": 19512,
+        "ModelEnd": 18632
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "b161f8b17536a8a00a7e"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r3",
+      "case": "scan",
+      "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+      "completed": true,
+      "elapsed_ms": 288665,
+      "upload_ms": 539,
+      "answer": "依据所附文档，来宾市政协“建设铸牢中华民族共同体意识示范区委员行动”在兴宾区街道社区的落地方式、6月2日宣讲评价及融合成效如下（内容主要出自文档第81页，基层阵地建设补充自第75页）：\n\n### 1. 在街道社区的具体落地方式\n* **多支部联动+主题党日融合（第81页）**：6月2日，兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部，在瑞民社区共同开展政协委员宣讲分享会，并结合传统节日举办“粽情端午话清廉·重温初心明使命”主题党日活动，将政治引领与民俗文化相结合。\n* **委员“现身说法”式宣讲（第81页）**：政协委员不照本宣科，而是结合自身实际工作经历，深入浅出地宣讲建设示范区及铸牢中华民族共同体意识的重大意义，并现场号召群众参与优秀传统文化传承、地方古迹挖掘保护，为共有精神家园注入“兴宾因子”。\n* **设立社区委员工作室（第75页）**：除集中宣讲外，兴宾区还将履职触角直接延伸至网格。例如6月1日在河西街道缤纷社区挂牌成立“和事佬”政协委员工作室与黄繁平政协委员工作室，实现常态化、近距离服务与调解。\n\n### 2. 6月2日宣讲活动的群众评价\n活动现场反响热烈，在场群众对委员们的宣讲给予了高度认可，评价其**“既有高度又有深度，既通俗易懂又深入浅出”**，赢得了阵阵好评（第81页）。\n\n### 3. 促进民族融合与增强向心力的成效\n根据河西街道瑞民社区党总支书记、主任胡自杰的现场总结，该活动在凝聚共识与促进交融方面取得了以下实质成效（第81页）：\n* **有效激发向心力与凝聚力**：通过典型人物的树立、宣传与面对面宣讲，切实激发了社区内广大党员、干部及群众的向心力和凝聚力。\n* **实质性推进民族互融**：活动打破了交流壁垒，直接推进了社区内各民族的“互促、互进、互融”，增强了基层社区的团结底色。\n* **形成长效传播机制**：社区以此次活动为契机，明确表态将进一步讲好民族团结故事、传播好声音，将单次活动转化为持续的思想引领与文化浸润。\n\n以下为该行动在基层街道社区落地路径及成效的解释示意图：\n\n```mermaid\nflowchart TD\n    A[\"兴宾区政协'委员行动'\"] --> B[\"街道社区基层落地\"]\n    B --> C[\"河西街道瑞民社区\"]\n    B --> D[\"河西街道缤纷社区\"]\n    C --> E[\"6月2日联合宣讲与主题党日\"]\n    D --> F[\"6月1日挂牌委员工作室\"]\n    E --> G[\"委员结合亲身经历宣讲\"]\n    E --> H[\"号召传承文化与保护古迹\"]\n    F --> I[\"设立'和事佬'工作室\"]\n    F --> J[\"设立黄繁平委员工作室\"]\n    G --> K[\"群众评价: 有高度深度、通俗易懂\"]\n    H --> L[\"成效: 激发向心力与凝聚力\"]\n    I --> M[\"成效: 推进各民族互促互进互融\"]\n    J --> M\n```",
+      "failure": null,
+      "model_tokens_initial": 4796,
+      "model_calls_initial": 1,
+      "rerank_tokens_initial": 5584,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 75,
+            "chars": 81937,
+            "total_tokens": 49213
+          },
+          "warnings": [],
+          "elapsed_ms": 9832
+        },
+        {
+          "usage": {
+            "calls": 76,
+            "chars": 81972,
+            "total_tokens": 49237
+          },
+          "warnings": [],
+          "elapsed_ms": 606
+        },
+        {
+          "usage": {
+            "calls": 77,
+            "chars": 81997,
+            "total_tokens": 49257
+          },
+          "warnings": [],
+          "elapsed_ms": 720
+        },
+        {
+          "usage": {
+            "calls": 78,
+            "chars": 82023,
+            "total_tokens": 49282
+          },
+          "warnings": [],
+          "elapsed_ms": 744
+        },
+        {
+          "usage": {
+            "calls": 79,
+            "chars": 82041,
+            "total_tokens": 49297
+          },
+          "warnings": [],
+          "elapsed_ms": 634
+        },
+        {
+          "usage": {
+            "calls": 80,
+            "chars": 82054,
+            "total_tokens": 49308
+          },
+          "warnings": [],
+          "elapsed_ms": 641
+        }
+      ],
+      "tool_actions": {
+        "search": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 3404,
+        "Keyword": 16,
+        "BM25": 20,
+        "Vector": 13177,
+        "RRF": 0,
+        "Rerank": 3539,
+        "EvidenceDelivery": 20965,
+        "ModelTransport": 81185,
+        "ModelEnd": 79215,
+        "ToolOutput": 4937,
+        "AgentToolEnd": 4956,
+        "AgentToolBatchEnd": 4946
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "eb9dbea6d118a2694e3e"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r3",
+      "case": "table",
+      "id": "mml:80",
+      "completed": true,
+      "elapsed_ms": 161050,
+      "upload_ms": 154,
+      "answer": "根据文档第13页的 **Table II (DOWNSTREAM TASKS AND DATASETS OF RAG)**，在“Method”列中恰好包含 **3个方法（即3篇引用文献）** 的数据集共有以下三个：\n\n1. **PopQA** `[116]`（对应方法文献：`[7], [25], [67]`）\n2. **MS MARCO** `[117]`（对应方法文献：`[4], [40], [52]`）\n3. **SST-2** `[156]`（对应方法文献：`[20], [33], [38]`）\n\n> 💡 补充说明：`Natural Questions (NQ)` 数据集在表中因内容较长被拆分为4个物理行展示，其中第3个子行恰好也列出了3个方法（`[20], [44], [72]`），但该数据集整体汇总的方法总数远超三个。若按独立数据集条目统计，符合“恰好三个方法”的即为上述三项。",
+      "failure": null,
+      "model_tokens_initial": 12728,
+      "model_calls_initial": 2,
+      "rerank_tokens_initial": 6841,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 16,
+            "chars": 76451,
+            "total_tokens": 15289
+          },
+          "warnings": [
+            "VECTOR_TIMEOUT"
+          ],
+          "elapsed_ms": 20517
+        },
+        {
+          "usage": {
+            "calls": 38,
+            "chars": 124534,
+            "total_tokens": 33315
+          },
+          "warnings": [],
+          "elapsed_ms": 5209
+        },
+        {
+          "usage": {
+            "calls": 39,
+            "chars": 124542,
+            "total_tokens": 33318
+          },
+          "warnings": [],
+          "elapsed_ms": 543
+        }
+      ],
+      "tool_actions": {
+        "search": 1,
+        "read_table": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [
+        13
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 940,
+        "Keyword": 6,
+        "BM25": 8,
+        "Vector": 26269,
+        "RRF": 1,
+        "Rerank": 4042,
+        "EvidenceDelivery": 31552,
+        "ModelTransport": 82896,
+        "ModelEnd": 80473,
+        "ToolOutput": 2745,
+        "AgentToolEnd": 2779,
+        "AgentToolBatchEnd": 2757
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "eadb1ddc106d823746f8"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r3",
+      "case": "tree",
+      "id": "mml:76",
+      "completed": true,
+      "elapsed_ms": 97816,
+      "upload_ms": 149,
+      "answer": "根据文档第 2 页的 **Fig. 1. Technology tree of RAG research**（RAG 研究技术树），叶子节点最少的分支是 **Pre-training（预训练）** 分支。\n\n该树状图包含三个主要分支，其叶子节点（代表具体方法/模型）数量如下：\n* **Pre-training**（橙色主干）：5 个叶子（InstructRetro, RAVEN, CoG, TIGER, Retro++）\n* **Fine-tuning**（青色主干）：21 个叶子\n* **Inference**（蓝色主干）：37 个叶子\n\n因此，**Pre-training** 分支的叶子数量最少。",
+      "failure": null,
+      "model_tokens_initial": 4506,
+      "model_calls_initial": 1,
+      "rerank_tokens_initial": 2860,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 37,
+            "chars": 116575,
+            "total_tokens": 33352
+          },
+          "warnings": [],
+          "elapsed_ms": 18470
+        },
+        {
+          "usage": {
+            "calls": 38,
+            "chars": 116613,
+            "total_tokens": 33360
+          },
+          "warnings": [],
+          "elapsed_ms": 472
+        },
+        {
+          "usage": {
+            "calls": 39,
+            "chars": 116654,
+            "total_tokens": 33368
+          },
+          "warnings": [],
+          "elapsed_ms": 409
+        }
+      ],
+      "tool_actions": {
+        "inspect_page": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 1,
+      "visual_statuses": {
+        "partial": 1
+      },
+      "visual_tokens_initial_lower_bound": 4594,
+      "tool_reference_pages": [
+        2
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1292,
+        "Keyword": 3,
+        "BM25": 3,
+        "Vector": 19351,
+        "RRF": 0,
+        "Rerank": 2029,
+        "EvidenceDelivery": 23123,
+        "ModelTransport": 17351,
+        "ModelEnd": 15551,
+        "PageVisionTransport": 46341,
+        "PageVision": 23820,
+        "ToolOutput": 23847,
+        "AgentToolEnd": 23864,
+        "AgentToolBatchEnd": 23854
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "01ff27d1ffb3a40652d0"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r4",
+      "case": "academic",
+      "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+      "completed": true,
+      "elapsed_ms": 38148,
+      "upload_ms": 110,
+      "answer": "根据文档第 1 页的 **Figure 4**（柱状图显示上传至 Wikimedia Commons 的媒体数量），在 2016-17 学年中，上传媒体数量最高的学期是 **第三学期（2016/17 T3）**，该学期共上传了约 **175** 个媒体文件。",
+      "failure": [],
+      "model_tokens_initial": 17053,
+      "model_calls_initial": 3,
+      "rerank_tokens_initial": 793,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 4,
+            "chars": 2289,
+            "total_tokens": 585
+          },
+          "warnings": [],
+          "elapsed_ms": 623
+        },
+        {
+          "usage": {
+            "calls": 5,
+            "chars": 2355,
+            "total_tokens": 604
+          },
+          "warnings": [],
+          "elapsed_ms": 298
+        },
+        {
+          "usage": {
+            "calls": 6,
+            "chars": 2413,
+            "total_tokens": 620
+          },
+          "warnings": [],
+          "elapsed_ms": 158
+        },
+        {
+          "usage": {
+            "calls": 7,
+            "chars": 2463,
+            "total_tokens": 636
+          },
+          "warnings": [],
+          "elapsed_ms": 240
+        }
+      ],
+      "tool_actions": {
+        "search": 1,
+        "read": 1,
+        "inspect_page": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 1,
+      "visual_statuses": {
+        "ok": 1
+      },
+      "visual_tokens_initial_lower_bound": 3743,
+      "tool_reference_pages": [
+        1
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 2958,
+        "Keyword": 1,
+        "BM25": 2,
+        "Vector": 1319,
+        "RRF": 0,
+        "Rerank": 2757,
+        "EvidenceDelivery": 7097,
+        "ModelTransport": 16823,
+        "ModelEnd": 13937,
+        "ToolOutput": 11404,
+        "AgentToolEnd": 11428,
+        "AgentToolBatchEnd": 11416,
+        "PageVisionTransport": 13591,
+        "PageVision": 7912
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "cca93a41c11b2950f4ed"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r4",
+      "case": "finance",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "completed": true,
+      "elapsed_ms": 79369,
+      "upload_ms": 141,
+      "answer": "Based on the **General Fund Revenues FY 2016** pie chart on **page 2**, the smallest portion is **1%**, which corresponds to the **Licenses/Permits** category (represented by a pink color in the chart legend). \n\nThis aligns with the revenue table on the same page, where Licenses/Permits accounts for $76,000 out of the total $5,561,940, making it the lowest individual revenue source.",
+      "failure": [],
+      "model_tokens_initial": 6441,
+      "model_calls_initial": 1,
+      "rerank_tokens_initial": 3175,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 5,
+            "chars": 10482,
+            "total_tokens": 5748
+          },
+          "warnings": [],
+          "elapsed_ms": 1862
+        },
+        {
+          "usage": {
+            "calls": 6,
+            "chars": 10533,
+            "total_tokens": 5756
+          },
+          "warnings": [],
+          "elapsed_ms": 151
+        },
+        {
+          "usage": {
+            "calls": 7,
+            "chars": 10576,
+            "total_tokens": 5763
+          },
+          "warnings": [],
+          "elapsed_ms": 453
+        }
+      ],
+      "tool_actions": {
+        "inspect_page": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 1,
+      "visual_statuses": {
+        "partial": 1
+      },
+      "visual_tokens_initial_lower_bound": 5096,
+      "tool_reference_pages": [
+        2
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1091,
+        "Keyword": 1,
+        "BM25": 2,
+        "Vector": 2466,
+        "RRF": 1,
+        "Rerank": 2092,
+        "EvidenceDelivery": 5708,
+        "ModelTransport": 49294,
+        "ModelEnd": 46108,
+        "PageVisionTransport": 72376,
+        "PageVision": 36655,
+        "ToolOutput": 36701,
+        "AgentToolEnd": 36738,
+        "AgentToolBatchEnd": 36730
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "39b29c308c64368d493c"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r4",
+      "case": "netflix",
+      "id": "mml:1021",
+      "completed": true,
+      "elapsed_ms": 80024,
+      "upload_ms": 136,
+      "answer": "根据文档第 **17** 页的 `Selected Financial Data`（精选财务数据）表格，Netflix 在 2015 财年（截至 2015 年 12 月 31 日）的营运资本（Working capital）为 **1,902,216**（单位：千美元）。\n\n*(注：原表格已明确标注单位为 `(in thousands)`，故直接提取该数值即符合题目要求。)*",
+      "failure": [],
+      "model_tokens_initial": 0,
+      "model_calls_initial": 0,
+      "rerank_tokens_initial": 3884,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 191
+        },
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 152
+        },
+        {
+          "usage": {
+            "calls": 0,
+            "chars": 0,
+            "total_tokens": 0
+          },
+          "warnings": [
+            "VECTOR_INDEX_BUDGET_EXCEEDED"
+          ],
+          "elapsed_ms": 140
+        }
+      ],
+      "tool_actions": {},
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 2954,
+        "Keyword": 7,
+        "BM25": 11,
+        "Vector": 1074,
+        "RRF": 0,
+        "Rerank": 4251,
+        "EvidenceDelivery": 9164,
+        "ModelTransport": 28164,
+        "ModelEnd": 26574
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": 13878,
+      "warm_answer": "根据 Netflix 2015 年 10-K 文件第 **17** 页的财务数据摘要表（Selected Financial Data），Netflix 在 2015 财年（截至 2015 年 12 月 31 日）的营运资本（Working capital）为 **1,902,216** 千美元。\n\n*(注：表格中金额单位已注明为千美元 `(in thousands)`，该数值即为以千为单位的结果。)*",
+      "scope_hash": "24338cb1c7e9baced786"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r4",
+      "case": "phone",
+      "id": "mml:888",
+      "completed": true,
+      "elapsed_ms": 281000,
+      "upload_ms": 517,
+      "answer": "根据文档元数据，该 PDF 文件总共只有 **30 页**，不存在第 40-47 页，因此无法回答该范围内提及的应用程序（applications）数量。",
+      "failure": [],
+      "model_tokens_initial": 4233,
+      "model_calls_initial": 1,
+      "rerank_tokens_initial": 1900,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 14,
+            "chars": 27887,
+            "total_tokens": 5887
+          },
+          "warnings": [],
+          "elapsed_ms": 15442
+        },
+        {
+          "usage": {
+            "calls": 15,
+            "chars": 27924,
+            "total_tokens": 5898
+          },
+          "warnings": [],
+          "elapsed_ms": 1032
+        }
+      ],
+      "tool_actions": {},
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 2584,
+        "Keyword": 25,
+        "BM25": 27,
+        "Vector": 17091,
+        "RRF": 0,
+        "Rerank": 6668,
+        "EvidenceDelivery": 26589,
+        "ModelTransport": 62416,
+        "ModelEnd": 42003
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": 12412,
+      "warm_answer": "依据所附文档 `mi_phone.pdf`，该文件总共只有 **30 页**（根据解析元数据确认），不存在第 40-47 页，因此无法回答该范围内提及的 applications（应用程序/申请）数量。",
+      "scope_hash": "8a57c0b91252cb01ee1b"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r4",
+      "case": "scan",
+      "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+      "completed": true,
+      "elapsed_ms": 231242,
+      "upload_ms": 455,
+      "answer": "根据文档第 81 页内容，来宾市政协推动的“建设铸牢中华民族共同体意识示范区委员行动”在兴宾区街道社区的落地情况如下：\n\n### 1. 具体落地方式（以 6 月 2 日活动为例）\n* **组织形式**：采用**支部联建**模式。由兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部共同开展。\n* **活动载体**：在河西街道瑞民社区举办**“铸牢中华民族共同体意识”政协委员宣讲分享会**，并结合“粽情端午话清廉·重温初心明使命”主题党日活动同步推进。\n* **宣讲内容**：政协委员结合自身经历和工作实际，宣讲建设示范区的重要意义；号召群众参与中华民族优秀传统文化传承发展工程，加强对地方文化古迹的挖掘与保护，发挥地域特色弘扬民族优秀文化，为构筑中华民族共有精神家园注入“兴宾因子”。\n\n### 2. 群众对宣讲的评价\n现场群众对宣讲给予高度认可，评价其**“既有高度又有深度，既通俗易懂又深入浅出”**，并获得了在场群众的阵阵好评。\n\n### 3. 在促进民族融合与增强向心力方面的成效\n河西街道瑞民社区党总支书记、主任胡自杰指出，活动通过典型人物的树立、宣传与宣讲，取得了以下成效：\n* **激发向心力与凝聚力**：有效激发了广大党员、干部群众的向心力和凝聚力。\n* **推进民族互融**：进一步讲好民族团结故事、传播好声音，切实推进了社区各民族的**互促、互进、互融**。\n\n---\n\n### 📊 解释示意图：兴宾区“委员行动”社区落地路径与成效\n\n```mermaid\nflowchart TD\n    A[\"兴宾区政协机关党支部\"] --> D[\"支部联建\"]\n    B[\"来宾农商行兴宾党支部\"] --> D\n    C[\"河西街道瑞民社区党总支部\"] --> D\n    D --> E[\"政协委员宣讲分享会\"]\n    D --> F[\"主题党日活动\"]\n    E --> G[\"结合经历宣讲重大意义\"]\n    E --> H[\"号召文化传承与古迹保护\"]\n    G --> I[\"群众评价: 既有高度深度\\n又通俗易懂, 获阵阵好评\"]\n    H --> I\n    I --> J[\"激发党员干部群众\\n向心力与凝聚力\"]\n    J --> K[\"推进社区各民族\\n互促互进互融\"]\n```",
+      "failure": [],
+      "model_tokens_initial": 5040,
+      "model_calls_initial": 1,
+      "rerank_tokens_initial": 3098,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 75,
+            "chars": 81938,
+            "total_tokens": 49210
+          },
+          "warnings": [],
+          "elapsed_ms": 10140
+        },
+        {
+          "usage": {
+            "calls": 76,
+            "chars": 81973,
+            "total_tokens": 49234
+          },
+          "warnings": [],
+          "elapsed_ms": 759
+        },
+        {
+          "usage": {
+            "calls": 77,
+            "chars": 81995,
+            "total_tokens": 49252
+          },
+          "warnings": [],
+          "elapsed_ms": 674
+        }
+      ],
+      "tool_actions": {
+        "read_adjacent": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [
+        81
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1525,
+        "Keyword": 16,
+        "BM25": 17,
+        "Vector": 11573,
+        "RRF": 0,
+        "Rerank": 2261,
+        "EvidenceDelivery": 16393,
+        "ModelTransport": 33501,
+        "ModelEnd": 31853,
+        "ToolOutput": 23,
+        "AgentToolEnd": 35,
+        "AgentToolBatchEnd": 29
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "bc6ad8610acc59f997c4"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r4",
+      "case": "table",
+      "id": "mml:80",
+      "completed": true,
+      "elapsed_ms": 172815,
+      "upload_ms": 122,
+      "answer": "根据 Table II（第 13 页），Method 列中引用编号恰好为 3 个的数据集如下：\n\n| 数据集 | Method（引用编号） |\n|---|---|\n| **PopQA** [116] | [7], [25], [67] |\n| **MS MARCO** [117] | [4], [40], [52] |\n| **SST-2** [156] | [20], [33], [38] |\n\n其余数据集的引用编号数量均不为 3（如 Natural Question 有 4 行合并共涉及 20+ 篇文献，SQuAD 有 7 个，ASQA 仅 2 个等）。\n\n> 来源：Table II \"DOWNSTREAM TASKS AND DATASETS OF RAG\"，PDF 第 13 页。",
+      "failure": [],
+      "model_tokens_initial": 26962,
+      "model_calls_initial": 3,
+      "rerank_tokens_initial": 7256,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 37,
+            "chars": 116559,
+            "total_tokens": 33344
+          },
+          "warnings": [],
+          "elapsed_ms": 7774
+        },
+        {
+          "usage": {
+            "calls": 38,
+            "chars": 116603,
+            "total_tokens": 33352
+          },
+          "warnings": [],
+          "elapsed_ms": 383
+        },
+        {
+          "usage": {
+            "calls": 39,
+            "chars": 116648,
+            "total_tokens": 33366
+          },
+          "warnings": [],
+          "elapsed_ms": 393
+        },
+        {
+          "usage": {
+            "calls": 40,
+            "chars": 116681,
+            "total_tokens": 33373
+          },
+          "warnings": [],
+          "elapsed_ms": 365
+        },
+        {
+          "usage": {
+            "calls": 41,
+            "chars": 116733,
+            "total_tokens": 33382
+          },
+          "warnings": [],
+          "elapsed_ms": 541
+        }
+      ],
+      "tool_actions": {
+        "search": 1,
+        "read_table": 1
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 0,
+      "visual_statuses": {},
+      "visual_tokens_initial_lower_bound": 0,
+      "tool_reference_pages": [
+        13
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 2275,
+        "Keyword": 8,
+        "BM25": 12,
+        "Vector": 9456,
+        "RRF": 0,
+        "Rerank": 3156,
+        "EvidenceDelivery": 15225,
+        "ModelTransport": 129346,
+        "ModelEnd": 126057,
+        "ToolOutput": 4745,
+        "AgentToolEnd": 4769,
+        "AgentToolBatchEnd": 5007
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "031e1f62e0e2cf03e1dd"
+    },
+    {
+      "arm": "candidate",
+      "batch": "r4",
+      "case": "tree",
+      "id": "mml:76",
+      "completed": true,
+      "elapsed_ms": 125177,
+      "upload_ms": 155,
+      "answer": "根据文档第 2 页的 **Fig. 1 \"Technology tree of RAG research\"**（RAG 研究技术树），该树状图包含三个主要分支，各分支的叶子节点（代表具体方法）数量如下：\n\n* **Pre-training（预训练，橙色分支）**：**4 个**叶子节点（InstructRetro, CoG, Retro++, RAVEN）\n* **Fine-tuning（微调，青色分支）**：21 个叶子节点\n* **Inference（推理，蓝色分支）**：36 个叶子节点\n\n因此，叶子节点最少的分支是 **Pre-training（预训练）**。\n\n```mermaid\nflowchart LR\n    Root[\"Retrieval-Augmented Generation\"]\n    PT[\"Pre-training (4 leaves)\"]\n    FT[\"Fine-tuning (21 leaves)\"]\n    Inf[\"Inference (36 leaves)\"]\n    \n    Root --> PT\n    Root --> FT\n    Root --> Inf\n```\n*解释示意图：Figure 1 技术树的三支结构，Pre-training 分支的叶子节点数量最少。*",
+      "failure": [],
+      "model_tokens_initial": 11600,
+      "model_calls_initial": 2,
+      "rerank_tokens_initial": 3055,
+      "vector_events_initial": [
+        {
+          "usage": {
+            "calls": 37,
+            "chars": 116575,
+            "total_tokens": 33352
+          },
+          "warnings": [],
+          "elapsed_ms": 10250
+        },
+        {
+          "usage": {
+            "calls": 38,
+            "chars": 116630,
+            "total_tokens": 33362
+          },
+          "warnings": [],
+          "elapsed_ms": 370
+        }
+      ],
+      "tool_actions": {
+        "inspect_page": 2
+      },
+      "errors": [],
+      "visual_attempts_in_initial_tools": 2,
+      "visual_statuses": {
+        "partial": 1,
+        "ok": 1
+      },
+      "visual_tokens_initial_lower_bound": 8517,
+      "tool_reference_pages": [
+        2
+      ],
+      "stage_elapsed_ms_with_followup": {
+        "QueryProcessor": 1218,
+        "Keyword": 5,
+        "BM25": 6,
+        "Vector": 10620,
+        "RRF": 0,
+        "Rerank": 2738,
+        "EvidenceDelivery": 14877,
+        "ModelTransport": 20565,
+        "ModelEnd": 18178,
+        "PageVisionTransport": 62118,
+        "PageVision": 31605,
+        "ToolOutput": 31656,
+        "AgentToolEnd": 31677,
+        "AgentToolBatchEnd": 31665
+      },
+      "model_retry_events_with_followup": [],
+      "visual_cache_hits_with_followup": 0,
+      "warm_ms": null,
+      "warm_answer": null,
+      "scope_hash": "20eaab2763de06ca05b7"
+    }
+  ],
+  "notes": [
+    "Answers and historical failures preserved; accuracy requires separate frozen-gold/source adjudication.",
+    "Stage totals may include followup and overlap; do not add them together.",
+    "No pooling best answers across snapshots."
+  ]
+}

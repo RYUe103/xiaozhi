@@ -73,7 +73,9 @@ class DocumentVectorSearch {
     if (!records.length) return [];
     if (records.length > 2000) throw new Error('VECTOR_INDEX_BUDGET_EXCEEDED');
     if (!String(query || '').trim() || String(query).length > 8000) throw new Error('VECTOR_QUERY_INVALID');
-    const scope = fingerprint([userId, conversationId, document.documentId, this.endpoint, this.model, this.revision]);
+    const scope = fingerprint([userId, conversationId, document.documentId, document.sourceHash,
+      document.bindingVersion, records.map(record => [record.parser_version, record.engine]),
+      this.endpoint, this.model, this.revision]);
     // Segment embedding inputs without truncating the evidence returned by the Repository.
     const segments = records.flatMap((record, recordIndex) => {
       const result = [];

@@ -1,0 +1,139 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "a12a8f3f-a75f-457b-ab6e-0d1ae3801afa",
+  "id": "mml:76",
+  "pdf_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+  "elapsed_ms": 125115,
+  "active": false,
+  "upload_ms": 117,
+  "answer": "根据文档第 2 页的 **Fig. 1. Technology tree of RAG research**（RAG 研究技术树图），该树形图包含三大主干分支，分别对应 RAG 涉及的三个阶段：\n\n| 分支名称 | 叶节点（方法名）数量 |\n|---|---|\n| **Pre-training（预训练）** | 4 个 |\n| **Fine-tuning（微调）** | 23 个 |\n| **Inference（推理）** | 38 个 |\n\n其中 **Pre-training（预训练）** 分支的叶节点最少，仅有 **4 个**，分别是：InstructRetro、RAVEN、CoG、Retro++。\n\n> 引用：PDF 物理页码 **第 2 页**，Fig. 1 及其图注。",
+  "tool_calls": [
+    {
+      "id": "call_68cef11db60340e482188720",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_dad40f13db97b86b02b8\",\"mode\":\"figure\",\"page\":2,\"query\":\"Fig. 1. Technology tree of RAG research\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_dad40f13db97b86b02b8\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736\",\"region\":null,\"visual_result_id\":\"vision_b8d19b96ef9ce4464d33b11344414591\",\"vision_version\":\"inspect-page-v4-crosscheck\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"806c43486df6ccebc028437dd30b0d815bf079a88658c3c2d55b51707b1207b5\",\"user_id\":\"6ae725eba2a54cf678f7af3d\",\"conversation_id\":\"a12a8f3f-a75f-457b-ab6e-0d1ae3801afa\",\"status\":\"ok\"},\"visual_result_id\":\"vision_b8d19b96ef9ce4464d33b11344414591\",\"ok\":true,\"status\":\"ok\",\"document_id\":\"doc_dad40f13db97b86b02b8\",\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"Fig. 1 shows a technology tree of RAG research, structured as a branching diagram with three main stages: Pre-training (orange branch), Fine-tuning (teal branch), and Inference (blue branch), rooted in 'Retrieval—Augmented Generation'. The vertical axis marks years (2020, 2023, 2024) with model milestones: GPT-3 (2020), ChatGPT (2023), GPT-4 (2023/2024). Each branch contains numerous method names (e.g., RAG, RAG-e2e, UniMS-RAG, RADA, CRAG, etc.). A legend in the bottom-right indicates 'Augmentation Stage' with three colored bars: teal = Fine-tuning, orange = Pre-training, blue = Inference.\",\"evidence_text\":\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. With the emergence of LLMs, research on RAG initially focused on leveraging the powerful in context learning abilities of LLMs, primarily concentrating on the inference stage. Subsequent research has delved deeper, gradually integrating more with the fine-tuning of LLMs. Researchers have also been exploring ways to enhance language models in the pre-training stage through retrieval-augmented techniques.\",\"cells\":[],\"series\":[{\"legend\":\"Fine-tuning\",\"series\":\"teal branch\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Pre-training\",\"series\":\"orange branch\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Inference\",\"series\":\"blue branch\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"}],\"uncertainties\":[]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"Fig. 1 shows a technology tree of RAG research, structured as a branching diagram with three main stages: Pre-training (orange branch), Fine-tuning (teal branch), and Inference (blue branch), rooted in 'Retrieval—Augmented Generation'. The vertical axis marks years (2020, 2023, 2024) with model milestones: GPT-3 (2020), ChatGPT (2023), GPT-4 (2023/2024). Each branch contains numerous method names (e.g., RAG, RAG-e2e, UniMS-RAG, RADA, CRAG, etc.). A legend in the bottom-right indicates 'Augmentation Stage' with three colored bars: teal = Fine-tuning, orange = Pre-training, blue = Inference.\\\",\\n  \\\"evidence_text\\\": \\\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. With the emergence of LLMs, research on RAG initially focused on leveraging the powerful in context learning abilities of LLMs, primarily concentrating on the inference stage. Subsequent research has delved deeper, gradually integrating more with the fine-tuning of LLMs. Researchers have also been exploring ways to enhance language models in the pre-training stage through retrieval-augmented techniques.\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Fine-tuning\\\",\\n      \\\"series\\\": \\\"teal branch\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Pre-training\\\",\\n      \\\"series\\\": \\\"orange branch\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Inference\\\",\\n      \\\"series\\\": \\\"blue branch\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736\",\"region\":null},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\"],\"telemetry\":{\"elapsed_ms\":9813,\"usage\":{\"prompt_tokens\":3398,\"completion_tokens\":444,\"total_tokens\":3842,\"completion_tokens_details\":{\"text_tokens\":444},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":888,\"cached_tokens\":0}},\"finish_reason\":\"stop\"}}"
+    },
+    {
+      "id": "call_1a5dd1ec900545488ef33df9",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_dad40f13db97b86b02b8\",\"mode\":\"figure\",\"page\":2,\"query\":\"Count the exact number of method names (leaves) on each of the three branches: Pre-training, Fine-tuning, and Inference. List them and give the count for each branch.\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_dad40f13db97b86b02b8\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736\",\"region\":null,\"visual_result_id\":\"vision_d25ba2417c8f4824efc39ab59eb0f7c3\",\"vision_version\":\"inspect-page-v4-crosscheck\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"806c43486df6ccebc028437dd30b0d815bf079a88658c3c2d55b51707b1207b5\",\"user_id\":\"6ae725eba2a54cf678f7af3d\",\"conversation_id\":\"a12a8f3f-a75f-457b-ab6e-0d1ae3801afa\",\"status\":\"partial\"},\"visual_result_id\":\"vision_d25ba2417c8f4824efc39ab59eb0f7c3\",\"ok\":false,\"status\":\"partial\",\"document_id\":\"doc_dad40f13db97b86b02b8\",\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"\",\"evidence_text\":\"\",\"cells\":[],\"series\":[],\"uncertainties\":[\"视觉输出未通过结构校验\"]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"Pre-training: 3; Fine-tuning: 10; Inference: 24\\\",\\n  \\\"evidence_text\\\": \\\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference.\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Fine-tuning\\\",\\n      \\\"series\\\": \\\"method names (leaves)\\\",\\n      \\\"value\\\": 10,\\n      \\\"unit\\\": \\\"count\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Pre-training\\\",\\n      \\\"series\\\": \\\"method names (leaves)\\\",\\n      \\\"value\\\": 3,\\n      \\\"unit\\\": \\\"count\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Inference\\\",\\n      \\\"series\\\": \\\"method names (leaves)\\\",\\n      \\\"value\\\": 24,\\n      \\\"unit\\\": \\\"count\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736\",\"region\":null},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\",\"VISION_RESULT_INVALID_SCHEMA\",\"VISION_RESULT_PARTIAL\"],\"telemetry\":{\"elapsed_ms\":5810,\"usage\":{\"prompt_tokens\":3425,\"completion_tokens\":223,\"total_tokens\":3648,\"completion_tokens_details\":{\"text_tokens\":223},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":915,\"cached_tokens\":0}},\"finish_reason\":\"stop\"}}"
+    },
+    {
+      "id": "call_e19844e1f7f04222827efcce",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_dad40f13db97b86b02b8\",\"mode\":\"text\",\"page\":2,\"query\":\"list all method names on each branch of the tree: Pre-training, Fine-tuning, Inference\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_dad40f13db97b86b02b8\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736\",\"region\":null,\"visual_result_id\":\"vision_b330705ce7624d70ec33e0e5f85ad9e6\",\"vision_version\":\"inspect-page-v4-crosscheck\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"806c43486df6ccebc028437dd30b0d815bf079a88658c3c2d55b51707b1207b5\",\"user_id\":\"6ae725eba2a54cf678f7af3d\",\"conversation_id\":\"a12a8f3f-a75f-457b-ab6e-0d1ae3801afa\",\"status\":\"ok\"},\"visual_result_id\":\"vision_b330705ce7624d70ec33e0e5f85ad9e6\",\"ok\":true,\"status\":\"ok\",\"document_id\":\"doc_dad40f13db97b86b02b8\",\"page\":2,\"mode\":\"text\",\"result\":{\"answer\":\"{\\\"Pre-training\\\": [\\\"InstructRetro\\\", \\\"RAVEN\\\", \\\"CoG\\\", \\\"Retro++\\\"], \\\"Fine-tuning\\\": [\\\"UniMS-RAG\\\", \\\"CT-RAG\\\", \\\"BEQ\\\", \\\"CoN\\\", \\\"EAR\\\", \\\"RAST\\\", \\\"Dual-Feedback-ToD\\\", \\\"Self-RAG\\\", \\\"LM-Indexer\\\", \\\"RA-DIT\\\", \\\"SANTA\\\", \\\"SUGRE\\\", \\\"AAR\\\", \\\"FLARE\\\", \\\"RRR\\\", \\\"Self-Mem\\\", \\\"UPRISE\\\", \\\"R-GQA\\\", \\\"Zemi\\\", \\\"Atlas\\\", \\\"RAG-e2e\\\", \\\"PROMPTAGATOR\\\", \\\"RAG\\\"], \\\"Inference\\\": [\\\"G-Retriever\\\", \\\"CRAG\\\", \\\"IAG\\\", \\\"FILCO\\\", \\\"ARM-RAG\\\", \\\"PRCA\\\", \\\"Token-Elimination\\\", \\\"KALMV\\\", \\\"ITRG\\\", \\\"KGP\\\", \\\"LLM-R\\\", \\\"ITER-RETGEN\\\", \\\"LLM-IE\\\", \\\"COQ\\\", \\\"ICRALM\\\", \\\"DSP\\\", \\\"GenRead\\\", \\\"RECITE\\\", \\\"RADA\\\", \\\"RAPTOR\\\", \\\"BGM\\\", \\\"HyKGE\\\", \\\"PaperQA\\\", \\\"DRAGON-AI\\\", \\\"CREA-ICL\\\", \\\"1-PAGER\\\", \\\"FABULA\\\", \\\"ToC\\\", \\\"QLM-Doc-ranking\\\", \\\"SKR\\\", \\\"Recomp\\\", \\\"KnowledGPT\\\", \\\"IRCOT\\\", \\\"PGRA\\\", \\\"PKG\\\", \\\"SCM4LLMs\\\", \\\"Filter-Retanker\\\", \\\"RePLUG\\\"]}\",\"evidence_text\":\"Figure 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. ... (visible labels on the tree: Pre-training branch (orange) contains InstructRetro, RAVEN, CoG, Retro++; Fine-tuning branch (teal/green) contains UniMS-RAG, CT-RAG, BEQ, CoN, EAR, RAST, Dual-Feedback-ToD, Self-RAG, LM-Indexer, RA-DIT, SANTA, SUGRE, AAR, FLARE, RRR, Self-Mem, UPRISE, R-GQA, Zemi, Atlas, RAG-e2e, PROMPTAGATOR, RAG; Inference branch (blue) contains G-Retriever, CRAG, IAG, FILCO, ARM-RAG, PRCA, Token-Elimination, KALMV, ITRG, KGP, LLM-R, ITER-RETGEN, LLM-IE, COQ, ICRALM, DSP, GenRead, RECITE, RADA, RAPTOR, BGM, HyKGE, PaperQA, DRAGON-AI, CREA-ICL, 1-PAGER, FABULA, ToC, QLM-Doc-ranking, SKR, Recomp, KnowledGPT, IRCOT, PGRA, PKG, SCM4LLMs, Filter-Retanker, RePLUG).\",\"cells\":[],\"series\":[],\"uncertainties\":[]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"{\\\\\\\"Pre-training\\\\\\\": [\\\\\\\"InstructRetro\\\\\\\", \\\\\\\"RAVEN\\\\\\\", \\\\\\\"CoG\\\\\\\", \\\\\\\"Retro++\\\\\\\"], \\\\\\\"Fine-tuning\\\\\\\": [\\\\\\\"UniMS-RAG\\\\\\\", \\\\\\\"CT-RAG\\\\\\\", \\\\\\\"BEQ\\\\\\\", \\\\\\\"CoN\\\\\\\", \\\\\\\"EAR\\\\\\\", \\\\\\\"RAST\\\\\\\", \\\\\\\"Dual-Feedback-ToD\\\\\\\", \\\\\\\"Self-RAG\\\\\\\", \\\\\\\"LM-Indexer\\\\\\\", \\\\\\\"RA-DIT\\\\\\\", \\\\\\\"SANTA\\\\\\\", \\\\\\\"SUGRE\\\\\\\", \\\\\\\"AAR\\\\\\\", \\\\\\\"FLARE\\\\\\\", \\\\\\\"RRR\\\\\\\", \\\\\\\"Self-Mem\\\\\\\", \\\\\\\"UPRISE\\\\\\\", \\\\\\\"R-GQA\\\\\\\", \\\\\\\"Zemi\\\\\\\", \\\\\\\"Atlas\\\\\\\", \\\\\\\"RAG-e2e\\\\\\\", \\\\\\\"PROMPTAGATOR\\\\\\\", \\\\\\\"RAG\\\\\\\"], \\\\\\\"Inference\\\\\\\": [\\\\\\\"G-Retriever\\\\\\\", \\\\\\\"CRAG\\\\\\\", \\\\\\\"IAG\\\\\\\", \\\\\\\"FILCO\\\\\\\", \\\\\\\"ARM-RAG\\\\\\\", \\\\\\\"PRCA\\\\\\\", \\\\\\\"Token-Elimination\\\\\\\", \\\\\\\"KALMV\\\\\\\", \\\\\\\"ITRG\\\\\\\", \\\\\\\"KGP\\\\\\\", \\\\\\\"LLM-R\\\\\\\", \\\\\\\"ITER-RETGEN\\\\\\\", \\\\\\\"LLM-IE\\\\\\\", \\\\\\\"COQ\\\\\\\", \\\\\\\"ICRALM\\\\\\\", \\\\\\\"DSP\\\\\\\", \\\\\\\"GenRead\\\\\\\", \\\\\\\"RECITE\\\\\\\", \\\\\\\"RADA\\\\\\\", \\\\\\\"RAPTOR\\\\\\\", \\\\\\\"BGM\\\\\\\", \\\\\\\"HyKGE\\\\\\\", \\\\\\\"PaperQA\\\\\\\", \\\\\\\"DRAGON-AI\\\\\\\", \\\\\\\"CREA-ICL\\\\\\\", \\\\\\\"1-PAGER\\\\\\\", \\\\\\\"FABULA\\\\\\\", \\\\\\\"ToC\\\\\\\", \\\\\\\"QLM-Doc-ranking\\\\\\\", \\\\\\\"SKR\\\\\\\", \\\\\\\"Recomp\\\\\\\", \\\\\\\"KnowledGPT\\\\\\\", \\\\\\\"IRCOT\\\\\\\", \\\\\\\"PGRA\\\\\\\", \\\\\\\"PKG\\\\\\\", \\\\\\\"SCM4LLMs\\\\\\\", \\\\\\\"Filter-Retanker\\\\\\\", \\\\\\\"RePLUG\\\\\\\"]}\\\",\\n  \\\"evidence_text\\\": \\\"Figure 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. ... (visible labels on the tree: Pre-training branch (orange) contains InstructRetro, RAVEN, CoG, Retro++; Fine-tuning branch (teal/green) contains UniMS-RAG, CT-RAG, BEQ, CoN, EAR, RAST, Dual-Feedback-ToD, Self-RAG, LM-Indexer, RA-DIT, SANTA, SUGRE, AAR, FLARE, RRR, Self-Mem, UPRISE, R-GQA, Zemi, Atlas, RAG-e2e, PROMPTAGATOR, RAG; Inference branch (blue) contains G-Retriever, CRAG, IAG, FILCO, ARM-RAG, PRCA, Token-Elimination, KALMV, ITRG, KGP, LLM-R, ITER-RETGEN, LLM-IE, COQ, ICRALM, DSP, GenRead, RECITE, RADA, RAPTOR, BGM, HyKGE, PaperQA, DRAGON-AI, CREA-ICL, 1-PAGER, FABULA, ToC, QLM-Doc-ranking, SKR, Recomp, KnowledGPT, IRCOT, PGRA, PKG, SCM4LLMs, Filter-Retanker, RePLUG).\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736\",\"region\":null},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\"],\"telemetry\":{\"elapsed_ms\":15483,\"usage\":{\"prompt_tokens\":2729,\"completion_tokens\":671,\"total_tokens\":3400,\"completion_tokens_details\":{\"text_tokens\":671},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":219,\"cached_tokens\":0}},\"finish_reason\":\"stop\"}}"
+    },
+    {
+      "id": "call_0eec2700e20a4c0482c907c3",
+      "name": "execute_code",
+      "args": "{\"code\":\"\\npre_training = [\\\"InstructRetro\\\", \\\"RAVEN\\\", \\\"CoG\\\", \\\"Retro++\\\"]\\nfine_tuning = [\\\"UniMS-RAG\\\", \\\"CT-RAG\\\", \\\"BEQ\\\", \\\"CoN\\\", \\\"EAR\\\", \\\"RAST\\\", \\\"Dual-Feedback-ToD\\\", \\\"Self-RAG\\\", \\\"LM-Indexer\\\", \\\"RA-DIT\\\", \\\"SANTA\\\", \\\"SUGRE\\\", \\\"AAR\\\", \\\"FLARE\\\", \\\"RRR\\\", \\\"Self-Mem\\\", \\\"UPRISE\\\", \\\"R-GQA\\\", \\\"Zemi\\\", \\\"Atlas\\\", \\\"RAG-e2e\\\", \\\"PROMPTAGATOR\\\", \\\"RAG\\\"]\\ninference = [\\\"G-Retriever\\\", \\\"CRAG\\\", \\\"IAG\\\", \\\"FILCO\\\", \\\"ARM-RAG\\\", \\\"PRCA\\\", \\\"Token-Elimination\\\", \\\"KALMV\\\", \\\"ITRG\\\", \\\"KGP\\\", \\\"LLM-R\\\", \\\"ITER-RETGEN\\\", \\\"LLM-IE\\\", \\\"COQ\\\", \\\"ICRALM\\\", \\\"DSP\\\", \\\"GenRead\\\", \\\"RECITE\\\", \\\"RADA\\\", \\\"RAPTOR\\\", \\\"BGM\\\", \\\"HyKGE\\\", \\\"PaperQA\\\", \\\"DRAGON-AI\\\", \\\"CREA-ICL\\\", \\\"1-PAGER\\\", \\\"FABULA\\\", \\\"ToC\\\", \\\"QLM-Doc-ranking\\\", \\\"SKR\\\", \\\"Recomp\\\", \\\"KnowledGPT\\\", \\\"IRCOT\\\", \\\"PGRA\\\", \\\"PKG\\\", \\\"SCM4LLMs\\\", \\\"Filter-Retanker\\\", \\\"RePLUG\\\"]\\n\\nprint(f\\\"Pre-training: {len(pre_training)} leaves\\\")\\nprint(f\\\"Fine-tuning: {len(fine_tuning)} leaves\\\")\\nprint(f\\\"Inference: {len(inference)} leaves\\\")\\n\\ncounts = {\\\"Pre-training\\\": len(pre_training), \\\"Fine-tuning\\\": len(fine_tuning), \\\"Inference\\\": len(inference)}\\nmin_branch = min(counts, key=counts.get)\\nprint(f\\\"\\\\nBranch with least leaves: {min_branch} ({counts[min_branch]} leaves)\\\")\\n\",\"lang\":\"py\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "Error: Execution error:\n\nCodeAPI request failed: POST http://127.0.0.1:5058/v1/exec returned 500, body: {\"session_id\":\"exec_581b14894a41a6b6fdbb\",\"stdout\":\"\",\"stderr\":\"connect ECONNREFUSED 127.0.0.1:8090\",\"files\":[],\"outputFiles\":[],\"generatedFiles\":[],\"inputFiles\":[]}\n Please fix your mistakes."
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 19
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T11:43:40.094Z",
+      "completedAt": "2026-11-01T11:45:41.406Z",
+      "elapsedMs": 121312
+    },
+    "sansuoClientRequestId": "a391ee8b-eb72-487b-aad9-adb374c7429f",
+    "sansuoSources": [
+      {
+        "file_id": "fc5e47f1-a4bf-40c5-8564-b2c338f68d92",
+        "filename": "2312.10997v5.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1662567,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_dad40f13db97b86b02b8",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736",
+      "region": null,
+      "visual_result_id": "vision_b8d19b96ef9ce4464d33b11344414591",
+      "vision_version": "inspect-page-v4-crosscheck",
+      "vision_model": "qwen3-vl-plus",
+      "version": "806c43486df6ccebc028437dd30b0d815bf079a88658c3c2d55b51707b1207b5",
+      "user_id": "6ae725eba2a54cf678f7af3d",
+      "conversation_id": "a12a8f3f-a75f-457b-ab6e-0d1ae3801afa",
+      "status": "ok",
+      "recorded_at": "2026-11-01T11:44:44.306Z"
+    },
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_dad40f13db97b86b02b8",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736",
+      "region": null,
+      "visual_result_id": "vision_d25ba2417c8f4824efc39ab59eb0f7c3",
+      "vision_version": "inspect-page-v4-crosscheck",
+      "vision_model": "qwen3-vl-plus",
+      "version": "806c43486df6ccebc028437dd30b0d815bf079a88658c3c2d55b51707b1207b5",
+      "user_id": "6ae725eba2a54cf678f7af3d",
+      "conversation_id": "a12a8f3f-a75f-457b-ab6e-0d1ae3801afa",
+      "status": "partial",
+      "recorded_at": "2026-11-01T11:44:59.959Z"
+    },
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_dad40f13db97b86b02b8",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_1e26b4ab203d23d512fe__file_38f23f9da9f4609a7736",
+      "region": null,
+      "visual_result_id": "vision_b330705ce7624d70ec33e0e5f85ad9e6",
+      "vision_version": "inspect-page-v4-crosscheck",
+      "vision_model": "qwen3-vl-plus",
+      "version": "806c43486df6ccebc028437dd30b0d815bf079a88658c3c2d55b51707b1207b5",
+      "user_id": "6ae725eba2a54cf678f7af3d",
+      "conversation_id": "a12a8f3f-a75f-457b-ab6e-0d1ae3801afa",
+      "status": "ok",
+      "recorded_at": "2026-11-01T11:45:19.143Z"
+    }
+  ]
+}

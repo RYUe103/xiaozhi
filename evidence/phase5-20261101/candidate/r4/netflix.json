@@ -1,0 +1,39 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "199e1376-e2d0-4806-b8de-4e535d9961f5",
+  "id": "mml:1021",
+  "pdf_sha256": "b22ca874ef08f383bd0b1071677d44f4a242af668f855f00dc9c6d4ac94148e2",
+  "elapsed_ms": 80024,
+  "active": false,
+  "upload_ms": 136,
+  "answer": "根据文档第 **17** 页的 `Selected Financial Data`（精选财务数据）表格，Netflix 在 2015 财年（截至 2015 年 12 月 31 日）的营运资本（Working capital）为 **1,902,216**（单位：千美元）。\n\n*(注：原表格已明确标注单位为 `(in thousands)`，故直接提取该数值即符合题目要求。)*",
+  "tool_calls": [],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 65
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T11:48:05.741Z",
+      "completedAt": "2026-11-01T11:49:23.537Z",
+      "elapsedMs": 77796
+    },
+    "sansuoClientRequestId": "998d19b0-8755-491e-a169-92a507dccae9",
+    "sansuoSources": [
+      {
+        "file_id": "09fc3c39-3903-4b8c-b228-c2df227992ff",
+        "filename": "NETFLIX_2015_10K.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 578489,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": []
+}

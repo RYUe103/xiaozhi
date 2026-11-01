@@ -1,0 +1,69 @@
+{
+  "scope_hash": null,
+  "conversation_id": "3a8e7b84-eb7e-414c-bbfa-507fd6704026",
+  "id": "mml:76",
+  "pdf_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+  "elapsed_ms": 84526,
+  "active": false,
+  "upload_ms": 157,
+  "answer": "在 PDF 第 2 页的 **Fig. 1（RAG 研究技术树）** 中，叶子节点最少的分支是 **Pre-training（预训练阶段）**，该分支仅包含 **3 个** 叶节点（RAVEN、CoG、Retro++），明显少于 Fine-tuning（12 个）和 Inference（40+ 个）分支。\n\n> 依据：PDF 第 2 页 Fig. 1 原图及图注说明。",
+  "tool_calls": [
+    {
+      "id": "call_d3e83cf7855f431a85c0f419",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_bcb6031efd67082b0f36\",\"mode\":\"figure\",\"page\":2,\"query\":\"Fig. 1 Technology tree of RAG research branches leafs\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_bcb6031efd67082b0f36\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_1056a07870580f4cac1e__file_c708985b40a6b490a5d4\",\"region\":null,\"visual_result_id\":\"vision_af7af58ca13313892e815c080ff79ba3\",\"vision_version\":\"inspect-page-v4-crosscheck\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"f5fcdd95f114f5a20211d5f24cc57824dbd60a496a82ff6e6d46a860778e85f2\",\"user_id\":\"6ae72112c44244c6f91ad510\",\"conversation_id\":\"3a8e7b84-eb7e-414c-bbfa-507fd6704026\",\"status\":\"ok\"},\"visual_result_id\":\"vision_af7af58ca13313892e815c080ff79ba3\",\"ok\":true,\"status\":\"ok\",\"document_id\":\"doc_bcb6031efd67082b0f36\",\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"The leaf nodes (terminal branches) of Fig. 1 are: UniMS-RAG, CT-RAG, BEQ, RAST, Self-RAG, LM-Indexer, RA-DIT, SANTA, SUGRE, AAR, FLARE, TIGER, RAVEN, CoG, Retro++, R-GQA, Zemi, Atlas, RAG-e2e, PROMPTAGATOR, RAG, G-Retriever, CRAG, IAG, FILCO, ARM-RAG, PRCA, Token-Elimination, KALMV, ITRG, KGP, LLM-R, ITER-RETGEN, COQ, LLM-IE, ICRAIM, DSP, GenRead, RADA, RAPTOR, BGM, HyKGE, PaperQA, DRAGON-AI, CREA-ICL, 1-PAGER, FABULA, QLM-Doc-ranking, SKR, ToC, Recomp, KnownledGPT, IRCOT, PGRA, PKG, SCM4LLMs, Filter-Retanker, RePLUG, RECITE.\",\"evidence_text\":\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. With the emergence of LLMs, research on RAG initially focused on leveraging the powerful in context learning abilities of LLMs, primarily concentrating on the inference stage. Subsequent research has delved deeper, gradually integrating more with the fine-tuning of LLMs. Researchers have also been exploring ways to enhance language models in the pre-training stage through retrieval-augmented techniques.\",\"cells\":[],\"series\":[{\"legend\":\"Fine-tuning\",\"series\":\"leaf nodes under Fine-tuning branch\",\"value\":\"UniMS-RAG, CT-RAG, BEQ, RAST, Self-RAG, LM-Indexer, RA-DIT, SANTA, SUGRE, AAR, FLARE, TIGER\",\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Pre-training\",\"series\":\"leaf nodes under Pre-training branch\",\"value\":\"RAVEN, CoG, Retro++\",\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Inference\",\"series\":\"leaf nodes under Inference branch\",\"value\":\"G-Retriever, CRAG, IAG, FILCO, ARM-RAG, PRCA, Token-Elimination, KALMV, ITRG, KGP, LLM-R, ITER-RETGEN, COQ, LLM-IE, ICRAIM, DSP, GenRead, RADA, RAPTOR, BGM, HyKGE, PaperQA, DRAGON-AI, CREA-ICL, 1-PAGER, FABULA, QLM-Doc-ranking, SKR, ToC, Recomp, KnownledGPT, IRCOT, PGRA, PKG, SCM4LLMs, Filter-Retanker, RePLUG, RECITE\",\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Augmentation Stage\",\"series\":\"not a data series; it is a legend label only, no leaf nodes directly labeled as 'Augmentation Stage'\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"}],\"uncertainties\":[]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"The leaf nodes (terminal branches) of Fig. 1 are: UniMS-RAG, CT-RAG, BEQ, RAST, Self-RAG, LM-Indexer, RA-DIT, SANTA, SUGRE, AAR, FLARE, TIGER, RAVEN, CoG, Retro++, R-GQA, Zemi, Atlas, RAG-e2e, PROMPTAGATOR, RAG, G-Retriever, CRAG, IAG, FILCO, ARM-RAG, PRCA, Token-Elimination, KALMV, ITRG, KGP, LLM-R, ITER-RETGEN, COQ, LLM-IE, ICRAIM, DSP, GenRead, RADA, RAPTOR, BGM, HyKGE, PaperQA, DRAGON-AI, CREA-ICL, 1-PAGER, FABULA, QLM-Doc-ranking, SKR, ToC, Recomp, KnownledGPT, IRCOT, PGRA, PKG, SCM4LLMs, Filter-Retanker, RePLUG, RECITE.\\\",\\n  \\\"evidence_text\\\": \\\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. With the emergence of LLMs, research on RAG initially focused on leveraging the powerful in context learning abilities of LLMs, primarily concentrating on the inference stage. Subsequent research has delved deeper, gradually integrating more with the fine-tuning of LLMs. Researchers have also been exploring ways to enhance language models in the pre-training stage through retrieval-augmented techniques.\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Fine-tuning\\\",\\n      \\\"series\\\": \\\"leaf nodes under Fine-tuning branch\\\",\\n      \\\"value\\\": \\\"UniMS-RAG, CT-RAG, BEQ, RAST, Self-RAG, LM-Indexer, RA-DIT, SANTA, SUGRE, AAR, FLARE, TIGER\\\",\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Pre-training\\\",\\n      \\\"series\\\": \\\"leaf nodes under Pre-training branch\\\",\\n      \\\"value\\\": \\\"RAVEN, CoG, Retro++\\\",\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Inference\\\",\\n      \\\"series\\\": \\\"leaf nodes under Inference branch\\\",\\n      \\\"value\\\": \\\"G-Retriever, CRAG, IAG, FILCO, ARM-RAG, PRCA, Token-Elimination, KALMV, ITRG, KGP, LLM-R, ITER-RETGEN, COQ, LLM-IE, ICRAIM, DSP, GenRead, RADA, RAPTOR, BGM, HyKGE, PaperQA, DRAGON-AI, CREA-ICL, 1-PAGER, FABULA, QLM-Doc-ranking, SKR, ToC, Recomp, KnownledGPT, IRCOT, PGRA, PKG, SCM4LLMs, Filter-Retanker, RePLUG, RECITE\\\",\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Augmentation Stage\\\",\\n      \\\"series\\\": \\\"not a data series; it is a legend label only, no leaf nodes directly labeled as 'Augmentation Stage'\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_1056a07870580f4cac1e__file_c708985b40a6b490a5d4\",\"region\":null},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\"],\"telemetry\":{\"elapsed_ms\":16864,\"usage\":{\"prompt_tokens\":3400,\"completion_tokens\":770,\"total_tokens\":4170,\"completion_tokens_details\":{\"text_tokens\":770},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":890,\"cached_tokens\":0}},\"finish_reason\":\"stop\"}}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 19
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T11:22:58.767Z",
+      "completedAt": "2026-11-01T11:24:20.204Z",
+      "elapsedMs": 81437
+    },
+    "sansuoClientRequestId": "937bc24e-3f2f-4a2a-bd3c-dd48e75350d2",
+    "sansuoSources": [
+      {
+        "file_id": "f649bc0f-e772-4aae-9101-169a8668b2b9",
+        "filename": "2312.10997v5.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1662567,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_bcb6031efd67082b0f36",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_1056a07870580f4cac1e__file_c708985b40a6b490a5d4",
+      "region": null,
+      "visual_result_id": "vision_af7af58ca13313892e815c080ff79ba3",
+      "vision_version": "inspect-page-v4-crosscheck",
+      "vision_model": "qwen3-vl-plus",
+      "version": "f5fcdd95f114f5a20211d5f24cc57824dbd60a496a82ff6e6d46a860778e85f2",
+      "user_id": "6ae72112c44244c6f91ad510",
+      "conversation_id": "3a8e7b84-eb7e-414c-bbfa-507fd6704026",
+      "status": "ok",
+      "recorded_at": "2026-11-01T11:24:16.951Z"
+    }
+  ]
+}

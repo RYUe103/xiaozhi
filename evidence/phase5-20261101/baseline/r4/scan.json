@@ -1,0 +1,62 @@
+{
+  "message_error": false,
+  "error_parts": [],
+  "scope_hash": null,
+  "conversation_id": "ed9d9c1a-592b-462b-a511-239bdb303465",
+  "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+  "pdf_sha256": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0",
+  "elapsed_ms": 228335,
+  "active": false,
+  "upload_ms": 556,
+  "answer": "根据您提供的文档，来宾市兴宾区政协在街道社区推动“建设铸牢中华民族共同体意识示范区委员行动”的具体落地方式、群众评价及成效如下（主要依据文档 **第81页** 内容）：\n\n### 📍 具体落地方式（以6月2日活动为例）\n在兴宾区河西街道瑞民社区，该行动通过**“宣讲分享会 + 主题党日活动”**的融合模式开展，由兴宾区政协机关党支部联合来宾农商行兴宾党支部、瑞民社区党总支部共同组织。\n\n1.  **理论宣讲与号召**：政协委员结合自身经历和工作实际，宣讲“铸牢中华民族共同体意识”及广西建设示范区的重大意义；号召群众参与中华优秀传统文化传承发展工程，挖掘保护地方文化古迹，弘扬民族优秀文化。\n2.  **民俗互动与文化体验**：开展“粽情端午话清廉·重温初心明使命”主题党日，通过现场包粽子、民俗互动、向异地扶贫搬迁户赠送粽子等形式，让基层百姓亲身体验传统文化魅力。\n\n### 🗣️ 群众对宣讲的评价\n文档明确记载，该场宣讲活动**“既有高度又有深度，既通俗易懂又深入浅出，获得在场群众的阵阵好评”**。\n\n河西街道瑞民社区党总支书记、主任胡自杰表示，感谢政协委员进社区宣讲，今后将进一步讲好民族团结故事，通过典型人物的树立与宣传激发党员群众的向心力。\n\n### 🌟 促进民族融合与增强向心力的成效\n1.  **激发凝聚力**：通过典型宣讲，有效激发了广大党员、干部群众的**向心力和凝聚力**。\n2.  **推动民族互融**：直接推进了社区**各民族的“互促互进互融”**，为构筑中华民族共有精神家园注入了“兴宾因子”、彰显了“兴宾特色”。\n3.  **增强文化自信**：民俗互动活动极大增强了基层群众的**文化自信和民族自豪感**，实现了思想自觉与行动自觉的新提高。\n\n---\n\n### 📊 活动落地与成效解释示意图\n\n```mermaid\nflowchart TD\n    Event[\"6月2日瑞民社区联合活动\"] --> Act1[\"政协委员宣讲分享会\"]\n    Event --> Act2[\"主题党日活动\\n(粽情端午话清廉)\"]\n    \n    Act1 --> Content1[\"结合自身经历宣讲重大意义\"]\n    Act1 --> Content2[\"号召传承文化/保护古迹\"]\n    \n    Act2 --> Content3[\"现场包粽子/民俗互动\"]\n    Act2 --> Content4[\"向异地搬迁户赠粽子\"]\n    \n    Content1 & Content2 & Content3 & Content4 --> Outcome[\"落地成效\"]\n    \n    Outcome --> Eval[\"群众评价：有高度深度/通俗易懂/阵阵好评\"]\n    Outcome --> Effect1[\"激发向心力与凝聚力\"]\n    Outcome --> Effect2[\"推进各民族互促互进互融\"]\n    Outcome --> Effect3[\"增强文化自信与民族自豪感\"]\n```\n\n> **引用来源**：以上内容均提取自附件 PDF **第81页**《兴宾区政协委员开展宣讲会和主题党日活动 唱响“铸牢中华民族共同体意识”政协强音》一文。",
+  "tool_calls": [
+    {
+      "id": "call_9c682939036340639b6744dc",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"document_id\":\"doc_f9776f7a83bf383f24d9\",\"page\":81}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_f9776f7a83bf383f24d9\",\"filename\":\"41489021-892f-5f2a-9c49-d0515dad08a2.pdf\",\"version\":\"0ac73af06b6bf1e0f337f093e314490cfe179466cf7288dc6382ca09c7a29b71\",\"action\":\"read\",\"content\":\"[chunk_99ff7a9cb546f896d4c3 page=81 kind=extracted_text]\\n兴宾区政协委员开展宣讲会和主题党日活动 唱响“铸牢中华民族共同体意识”政协强音\\n\\n[chunk_b0c0103a7e3fd629c5d4 page=81 kind=extracted_text]\\n黎慧梅\\n\\n[chunk_32535bddfcaaac79fdcd page=81 kind=extracted_text]\\n6月2日，来宾市兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部，在河西街道瑞民社区开展“铸牢中华民族共同体意识”政协委员宣讲分享会和“粽情端午话清廉·重温初心明使命”主题党日活动。\\n\\n[chunk_56e97092c8ec41fca05d page=81 kind=extracted_text]\\n参加活动的政协委员们，结合自身经历和工作实际，宣讲了“铸牢中华民族共同体意识”和“广西建设铸牢中华民族共同体意识示范区”的重大意义，号召大家积极参与实施中华民族优秀传统文化传承发展工程，加强对地方文化古迹的挖掘与保护，发挥地域特色弘扬民族优秀文化和民族精神，为构筑中华民族共有精神家园注入“兴宾因子”、彰显“兴宾特色”，在铸牢中华民族共同体意识的思想自觉、行动自觉上实现新提高。\\n\\n[chunk_480d6deeda56108f8394 page=81 kind=extracted_text]\\n宣讲活动既有高度又有深度，既通俗易懂又深入浅出，获得在场群众的阵阵好评。“感谢政协委员来到瑞民社区开展宣讲活动，今后我们将进一步讲好民族团结故事，传播民族团结好声音。通过典型人物的树立、宣传、宣讲，激发广大党员、干部群众的向心力和凝聚力，推进社区各民族互促互进互融。”河西街道瑞民社区党总支书记、主任胡自杰说道。\\n\\n[chunk_a64cbab12aabf9f18bd9 page=81 kind=extracted_text]\\n粽叶飘香四溢，端午情意满怀。在“粽情端午话清廉·重温初心明使命”主题党日活动环节，开展了丰富多彩的现场包粽子、民俗互动、向异地扶贫搬迁户赠送粽子，为社区群众打开了一扇了解中华优秀传统文化的大门，让基层百姓了解了中国传统文化的习俗，体验到传统文化魅力，极大增强了大家的文化自信和民族自豪感。\\n\\n[chunk_f10cd57d968c3548cb03 page=81 kind=extracted_text]\\n把 “书香政协” 打造成履职为民的靓丽名片\\n\\n[chunk_bde4841cb5dd5e0e0eb8 page=81 kind=extracted_text]\\n——象州县政协以“4+14+2+1+N”开展委员读书实践活动纪实\\n\\n[chunk_3ad95cd4f3534de1096c page=81 kind=extracted_text]\\n潘照春 韦冠林 郑南瑛 黄炳壮\\n\\n[chunk_eddd637edf039b538489 page=81 kind=extracted_text]\\n“在象州书城，只要听到朗读和翻书的声音，就能闻出带着‘政协味道’的书香来。”7月1日晚，在以“庆七一·颂党恩”红色经典诵读为主题的“书香象州·朗读者”读书打卡行动现场，谈到象州书城变身“网红打卡点”时，读书爱好者对主办方象州县政协赞不绝口。作为象州县“书香政协”委员读书实践活动基地，每周五晚上，“书香象州·朗读者”读书打卡行动都会如期在这里举行。参与读书打卡行动的除了政协委员，还有老、少、中、青各个年龄段的读者。活动以朗诵为主，也有读者以歌唱、舞蹈、乐器演奏、书法绘画等多元化的方式进行分享。\\n\\n[chunk_4d69b6865398ed3ab048 page=81 kind=extracted_text]\\n这是象州县政协高度重视载体建设，着力打造读书实践工作品牌的一个缩影。\\n\\n[chunk_0f6462fe21f4690d07f1 page=81 kind=extracted_text]\\n今年以来，象州县政协将委员读书与履职工作紧密结合，坚持党建引领，创新读书平台，营造浓厚氛围，注重学用相长，推动委员读书实践活动深入开展。\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_99ff7a9cb546f896d4c3\",\"source_chunk_id\":\"mineru_980c02e17a8381278594e19c\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_d98f1d5a6087585f8d72c9ea\",\"image_id\":null,\"bbox\":[136,123,860,190],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_b0c0103a7e3fd629c5d4\",\"source_chunk_id\":\"mineru_821da9e309455be3c4f147b0\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_2e6d6ad5fdf89f3b4b3950c1\",\"image_id\":null,\"bbox\":[460,209,544,226],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_32535bddfcaaac79fdcd\",\"source_chunk_id\":\"mineru_1d59fa31b67eb70b05706ba8\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_c5eb3ff6e7e475fb421f4055\",\"image_id\":null,\"bbox\":[92,241,486,357],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_56e97092c8ec41fca05d\",\"source_chunk_id\":\"mineru_b853a81713a7b199586d4588\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_a7e2aca514450c2c0062f055\",\"image_id\":null,\"bbox\":[92,358,487,572],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_480d6deeda56108f8394\",\"source_chunk_id\":\"mineru_7bab112aecddc7544d609efc\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_01c5b5108e821a63106488e2\",\"image_id\":null,\"bbox\":[508,241,904,415],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_a64cbab12aabf9f18bd9\",\"source_chunk_id\":\"mineru_2c2ae94904a158c13776269e\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_39650df495a68dbc4d930c48\",\"image_id\":null,\"bbox\":[509,416,905,572],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_f10cd57d968c3548cb03\",\"source_chunk_id\":\"mineru_95f235407f1d069dd87570b4\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_8f2910c3c82b60631b3bf2d3\",\"image_id\":null,\"bbox\":[136,612,860,644],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_bde4841cb5dd5e0e0eb8\",\"source_chunk_id\":\"mineru_42e19cdb89310b2636d8717a\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_da04fc716df0dd1b8c01c3f6\",\"image_id\":null,\"bbox\":[107,658,888,680],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_3ad95cd4f3534de1096c\",\"source_chunk_id\":\"mineru_fc5217e267b136275f9db6e2\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_9d0b3a8807975a9760c9b40b\",\"image_id\":null,\"bbox\":[353,694,644,712],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_eddd637edf039b538489\",\"source_chunk_id\":\"mineru_a5dc25ff18bd37ab2931b89b\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_5513a5c04efaa03825f3dc49\",\"image_id\":null,\"bbox\":[91,724,487,919],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_4d69b6865398ed3ab048\",\"source_chunk_id\":\"mineru_0a669485fb6ebdc73886920b\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_621f8c65b3991ebe9516d74a\",\"image_id\":null,\"bbox\":[509,802,902,840],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]},{\"chunk_id\":\"chunk_0f6462fe21f4690d07f1\",\"source_chunk_id\":\"mineru_ab92cc288709b31885a56953\",\"page_start\":81,\"page_end\":81,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_aff7836bfe55fef5d3b05142\",\"image_id\":null,\"bbox\":[509,841,904,918],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[]}]}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 74
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T11:51:03.507Z",
+      "completedAt": "2026-11-01T11:54:39.114Z",
+      "elapsedMs": 215607
+    },
+    "sansuoClientRequestId": "718f45ff-51f2-43a5-a602-12bffe12b392",
+    "sansuoSources": [
+      {
+        "file_id": "f3339c88-7793-4fe2-836c-5b5f1801432a",
+        "filename": "41489021-892f-5f2a-9c49-d0515dad08a2.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 33875317,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "document_id": "doc_f9776f7a83bf383f24d9",
+      "chunk_id": "chunk_99ff7a9cb546f896d4c3",
+      "page_start": 81,
+      "page_end": 81,
+      "section_id": null,
+      "table_id": null,
+      "version": "0ac73af06b6bf1e0f337f093e314490cfe179466cf7288dc6382ca09c7a29b71",
+      "source_hash": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0",
+      "user_id": "6ae727a65436efc5d78b56d6",
+      "conversation_id": "ed9d9c1a-592b-462b-a511-239bdb303465",
+      "recorded_at": "2026-11-01T11:54:17.764Z"
+    }
+  ]
+}

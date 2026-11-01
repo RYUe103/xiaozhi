@@ -1,0 +1,60 @@
+{
+  "scope_hash": null,
+  "conversation_id": "f7c634a6-947b-4d04-bc97-2c0a972b5de3",
+  "id": "mml:80",
+  "pdf_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+  "elapsed_ms": 96342,
+  "active": false,
+  "upload_ms": 125,
+  "answer": "根据第 13 页的 Table II（DOWNSTREAM TASKS AND DATASETS OF RAG），Method 列中引用编号的数量代表该数据集对应的方法数。经逐行统计，**恰好包含三种方法（三个引用编号）的数据集**如下：\n\n| Dataset | Methods（引用编号） |\n|---|---|\n| **PopQA** [116] | [7], [25], [67] |\n| **MS MARCO** [117] | [4], [40], [52] |\n| **SST-2** [156] | [20], [33], [38] |\n\n其余数据集的方法数均不为 3（如 Natural Question 有 4 行引用、TriviaQA 有 2 行引用、SQuAD 有 7 个引用等）。\n\n**引用来源：** PDF 第 13 页，Table II \"DOWNSTREAM TASKS AND DATASETS OF RAG\"。",
+  "tool_calls": [
+    {
+      "id": "call_d1eef9bca92f403584bd1769",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"read\",\"document_id\":\"doc_6d0e0418851817b70931\",\"page\":13}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"status\":\"ok\",\"ok\":true,\"document_id\":\"doc_6d0e0418851817b70931\",\"filename\":\"2312.10997v5.pdf\",\"version\":\"612ca7c009e8c8c9033fb95d436742ce3fc547e6908f8ed87d5cb119b82e2e02\",\"action\":\"read\",\"content\":\"[chunk_3dc49621a390c71482e2 page=13 kind=extracted_text]\\n<table><tr><td>Task</td><td>Sub Task</td><td>Dataset</td><td>Method</td></tr><tr><td rowspan=\\\"25\\\">QA</td><td rowspan=\\\"10\\\">Single-hop</td><td rowspan=\\\"4\\\">Natural Qustion(NQ) [111]</td><td>[26], [30], [34], [42], [45], [50], [52], [59], [64], [82]</td></tr><tr><td>[3], [4], [22], [27], [40], [43], [54], [62], [71], [112]</td></tr><tr><td>[20], [44], [72]</td></tr><tr><td>[13], [30], [34], [45], [50], [64]</td></tr><tr><td rowspan=\\\"2\\\">TriviaQA(TQA) [113]</td><td>[4], [27], [59], [62], [112]</td></tr><tr><td>[22], [25], [43], [44], [71], [72]</td></tr><tr><td>SQuAD [114]</td><td>[20], [23], [30], [32], [45], [69], [112]</td></tr><tr><td>Web Questions(WebQ) [115]</td><td>[3], [4], [13], [30], [50], [68]</td></tr><tr><td>PopQA [116]</td><td>[7], [25], [67]</td></tr><tr><td>MS MARCO [117]</td><td>[4], [40], [52]</td></tr><tr><td rowspan=\\\"4\\\">Multi-hop</td><td rowspan=\\\"2\\\">HotpotQA [118]</td><td>[23], [26], [31], [34], [47], [51], [61], [82]</td></tr><tr><td>[7], [14], [22], [27], [59], [62], [69], [71], [91]</td></tr><tr><td>2WikiMultiHopQA [119]</td><td>[14], [24], [48], [59], [61], [91]</td></tr><tr><td>MuSiQue [120]</td><td>[14], [51], [61], [91]</td></tr><tr><td rowspan=\\\"4\\\">Long-form QA</td><td>ELI5 [121]</td><td>[27], [34], [43], [49], [51]</td></tr><tr><td>NarrativeQA(NQA) [122]</td><td>[45], [60], [63], [123]</td></tr><tr><td>ASQA [124]</td><td>[24], [57]</td></tr><tr><td>QMSum(QM) [125]</td><td>[60], [123]</td></tr><tr><td rowspan=\\\"3\\\">Domain QA</td><td>Qasper [126]</td><td>[60], [63]</td></tr><tr><td>COVID-QA [127]</td><td>[35], [46]</td></tr><tr><td>CMB [128],MMCU_Medical [129]</td><td>[81]</td></tr><tr><td rowspan=\\\"3\\\">Multi-Choice QA</td><td>QuALITY [130]</td><td>[60], [63]</td></tr><tr><td>ARC [131]</td><td>[25], [67]</td></tr><tr><td>CommonsenseQA [132]</td><td>[58], [66]</td></tr><tr><td>Graph QA</td><td>GraphQA [84]</td><td>[84]</td></tr><tr><td rowspan=\\\"5\\\">Dialog</td><td>Dialog Generation</td><td>Wizard of Wikipedia (WoW) [133]</td><td>[13], [27], [34], [42]</td></tr><tr><td rowspan=\\\"2\\\">Personal Dialog</td><td>KBP [134]</td><td>[74], [135]</td></tr><tr><td>DuleMon [136]</td><td>[74]</td></tr><tr><td>Task-oriented Dialog</td><td>CamRest [137]</td><td>[78], [79]</td></tr><tr><td>Recommendation</td><td>Amazon(Toys,Sport,Beauty) [138]</td><td>[39], [40]</td></tr><tr><td rowspan=\\\"3\\\">IE</td><td rowspan=\\\"2\\\">Event Argument Extraction</td><td>WikiEvent [139]</td><td>[13], [27], [37], [42]</td></tr><tr><td>RAMS [140]</td><td>[36], [37]</td></tr><tr><td>Relation Extraction</td><td>T-REx [141],ZsRE [142]</td><td>[27], [51]</td></tr><tr><td rowspan=\\\"3\\\">Reasoning</td><td>Commonsense Reasoning</td><td>HellaSwag [143]</td><td>[20], [66]</td></tr><tr><td>CoT Reasoning</td><td>CoT Reasoning [144]</td><td>[27]</td></tr><tr><td>Complex Reasoning</td><td>CSQA [145]</td><td>[55]</td></tr><tr><td rowspan=\\\"15\\\">Others</td><td>Language Understanding</td><td>MMLU [146]</td><td>[7], [27], [28], [42], [43], [47], [72]</td></tr><tr><td rowspan=\\\"2\\\">Language Modeling</td><td>WikiText-103 [147]</td><td>[5], [29], [64], [71]</td></tr><tr><td>StrategyQA [148]</td><td>[14], [24], [48], [51], [55], [58]</td></tr><tr><td rowspan=\\\"2\\\">Fact Checking/Verification</td><td>FEVER [149]</td><td>[4], [13], [27], [34], [42], [50]</td></tr><tr><td>PubHealth [150]</td><td>[25], [67]</td></tr><tr><td>Text Generation</td><td>Biography [151]</td><td>[67]</td></tr><tr><td rowspan=\\\"2\\\">Text Summarization</td><td>WikiASP [152]</td><td>[24]</td></tr><tr><td>XSum [153]</td><td>[17]</td></tr><tr><td rowspan=\\\"2\\\">Text Classification</td><td>VioLens [154]</td><td>[19]</td></tr><tr><td>TREC [155]</td><td>[33]</td></tr><tr><td>Sentiment</td><td>SST-2 [156]</td><td>[20], [33], [38]</td></tr><tr><td>Code Search</td><td>CodeSearchNet [157]</td><td>[76]</td></tr><tr><td>Robustness Evaluation</td><td>NoMIRACL [56]</td><td>[56]</td></tr><tr><td>Math</td><td>GSM8K [158]</td><td>[73]</td></tr><tr><td>Machine Translation</td><td>JRC-Acquis [159]</td><td>[17]</td></tr></table>\\n\\nTABLE II\\n\\nDOWNSTREAM TASKS AND DATASETS OF RAG\",\"excerpted\":false,\"offset\":0,\"truncated\":false,\"next_offset\":null,\"continuation_token\":null,\"warnings\":[],\"hits\":[{\"chunk_id\":\"chunk_3dc49621a390c71482e2\",\"source_chunk_id\":\"mineru_f06ca5a3b99b397ff31cb0bf\",\"page_start\":13,\"page_end\":13,\"kind\":\"extracted_text\",\"engine\":\"mineru\",\"block_id\":\"block_a7993458bfa84973e43a1952\",\"image_id\":\"image_a9fa4c6e3dfc5cce91e0b915\",\"bbox\":[73,104,996,967],\"coordinate_system\":\"unknown\",\"geometry_verified\":false,\"table_ids\":[\"table_14b745030131a9e45fdc\"]}]}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 19
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T11:24:26.588Z",
+      "completedAt": "2026-11-01T11:25:58.812Z",
+      "elapsedMs": 92224
+    },
+    "sansuoClientRequestId": "22d226b9-864c-4f1f-9b4b-9e5048353360",
+    "sansuoSources": [
+      {
+        "file_id": "b591591f-3258-4c15-b5e6-ea4d3164df87",
+        "filename": "2312.10997v5.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1662567,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "document_id": "doc_6d0e0418851817b70931",
+      "chunk_id": "chunk_3dc49621a390c71482e2",
+      "page_start": 13,
+      "page_end": 13,
+      "section_id": null,
+      "table_id": "table_14b745030131a9e45fdc",
+      "version": "612ca7c009e8c8c9033fb95d436742ce3fc547e6908f8ed87d5cb119b82e2e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "user_id": "6ae7216acfae287994f55bbf",
+      "conversation_id": "f7c634a6-947b-4d04-bc97-2c0a972b5de3",
+      "recorded_at": "2026-11-01T11:25:25.764Z"
+    }
+  ]
+}

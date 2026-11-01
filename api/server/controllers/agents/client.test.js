@@ -12,6 +12,7 @@ jest.mock('@librechat/agents', () => ({
 
 jest.mock('@librechat/api', () => ({
   ...jest.requireActual('@librechat/api'),
+  createTokenCounter: jest.fn(() => () => 1),
   createRun: jest.fn(),
   checkAccess: jest.fn(),
   initializeAgent: jest.fn(),
@@ -2800,5 +2801,44 @@ describe('AgentClient - finalizeSubagentContent', () => {
     expect(client.contentParts[1].tool_call.subagent_content).toEqual([
       expect.objectContaining({ type: 'text', text: 'B' }),
     ]);
+  });
+});
+
+describe('SanSuoMain failure lifecycle', () => {
+  function setup(processStream) {
+    createRun.mockResolvedValue({ Graph: {}, processStream, getCalibrationRatio: () => 0 });
+    const req = { user: { id: 'test-user' }, body: { endpoint: 'SanSuoMain' },
+      config: { endpoints: { [EModelEndpoint.agents]: {} } } };
+    const client = new AgentClient({ req, res: {}, agent: { id: 'test-agent', endpoint: EModelEndpoint.openAI,
+      provider: EModelEndpoint.openAI, model_parameters: { model: 'test-model' } },
+      contentParts: [], collectedUsage: [], artifactPromises: [] });
+    client.conversationId = 'test-conversation';
+    client.responseMessageId = 'test-response';
+    client.runMemory = jest.fn().mockResolvedValue(undefined);
+    client.recordCollectedUsage = jest.fn().mockResolvedValue(undefined);
+    return { client, req };
+  }
+  test('internal deadline persists explicit failure and still records collected usage', async () => {
+    let req;
+    const processStream = jest.fn(() => new Promise((resolve, reject) => {
+      const signal = req._sansuoModelSignal;
+      if (signal.aborted) reject(signal.reason);
+      else signal.addEventListener('abort', () => reject(signal.reason), { once: true });
+    }));
+    const state = setup(processStream); req = state.req;
+    req._sansuoProcessStartedAtMs = Date.now() - 900001;
+    await state.client.chatCompletion({ payload: [{ role: 'user', content: 'test' }] });
+    expect(req._sansuoModelFailure.code).toBe('MODEL_TIMEOUT');
+    expect(state.client.contentParts.some(p => p.type === 'text' && p.text.includes('本次回答未完成'))).toBe(true);
+    expect(state.client.recordCollectedUsage).toHaveBeenCalledTimes(1);
+    expect(processStream).toHaveBeenCalledTimes(1);
+  });
+  test('empty completion is an explicit failure without replaying graph', async () => {
+    const processStream = jest.fn().mockResolvedValue(undefined);
+    const { client, req } = setup(processStream);
+    await client.chatCompletion({ payload: [{ role: 'user', content: 'test' }] });
+    expect(req._sansuoModelFailure.code).toBe('MODEL_EMPTY_ANSWER');
+    expect(client.contentParts.some(p => p.type === 'error')).toBe(true);
+    expect(processStream).toHaveBeenCalledTimes(1);
   });
 });
