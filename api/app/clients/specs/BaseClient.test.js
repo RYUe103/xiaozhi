@@ -2309,6 +2309,24 @@ describe('BaseClient', () => {
       expect(message.fileContext).toContain('旧文档尾部标记');
     });
 
+    test('binds document readers from metadata before model inference without eager downloads', async () => {
+      TestClient.options.req = { user: { id: 'user-123' }, body: { sansuoMode: 'deep' } };
+      TestClient.options.agent = { tools: [], toolDefinitions: [], toolRegistry: new Map() };
+      getFiles.mockResolvedValue([{ file_id: 'history-pdf', user: 'user-123', filename: 'history.pdf', type: 'application/pdf' }]);
+      getSanSuoFiles.mockResolvedValue([{ libreFileId: 'chunks', userId: 'user-123', conversationId: 'history-conversation', status: 'ready',
+        displayFilename: 'history_mineru_chunks.jsonl', sandboxSessionId: 's', sandboxFileId: 'b',
+        metadata: { rootSourceLibreFileId: 'history-pdf' } }]);
+      mockNodeFetch.mockClear();
+      const hiddenUserContexts = [];
+      await TestClient.prepareSanSuoDocumentTools({ conversationId: 'history-conversation', userMessage: { metadata: {} }, hiddenUserContexts });
+      expect(TestClient.options.agent.toolDefinitions.map(t => t.name)).toContain('read_parsed_pdf');
+      expect(TestClient.options.agent.toolRegistry.has('read_parsed_pdf')).toBe(true);
+      const result = JSON.parse(await TestClient.options.req._sansuoPdfReadTool.invoke({ action: 'list' }));
+      expect(result.documents[0].file_id).toBe('history-pdf');
+      expect(mockNodeFetch).not.toHaveBeenCalled();
+      expect(hiddenUserContexts.join('')).toContain('没有读取正文');
+    });
+
     test('answers a ready DOCX from persisted context without forcing execute_code', async () => {
       TestClient.options.endpoint = 'SanSuoMain';
       TestClient.clientName = EModelEndpoint.agents;
