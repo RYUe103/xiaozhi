@@ -1,0 +1,100 @@
+PASS api/server/controllers/agents/client.test.js
+  AgentClient - initial code file sessions
+    ○ skipped passes primed code files to createRun before the first tool call
+  AgentClient - titleConvo
+    titleConvo method
+      ○ skipped should throw error if run is not initialized
+      ○ skipped should use titlePrompt from endpoint config
+      ○ skipped should use titlePromptTemplate from endpoint config
+      ○ skipped should use titleMethod from endpoint config
+      ○ skipped should use titleModel from endpoint config when provided
+      ○ skipped should handle missing endpoint config gracefully
+      ○ skipped should use agent model when titleModel is not provided
+      ○ skipped should not use titleModel when it equals CURRENT_MODEL constant
+      ○ skipped should pass all required parameters to generateTitle
+      ○ skipped should record collected usage after title generation
+      ○ skipped should return the generated title
+      ○ skipped should sanitize the generated title by removing think blocks
+      ○ skipped should return fallback title when sanitization results in empty string
+      ○ skipped should handle errors gracefully and return undefined
+      ○ skipped should skip title generation when titleConvo is set to false
+      ○ skipped should skip title generation for temporary chats
+      ○ skipped should skip title generation when titleConvo is false in all config
+      ○ skipped should skip title generation when titleConvo is false for custom endpoint scenario
+      ○ skipped should pass titleEndpoint configuration to generateTitle
+      ○ skipped should use all config when endpoint config is missing
+      ○ skipped should prioritize all config over endpoint config for title settings
+      ○ skipped should use all config with titleEndpoint and verify provider switch
+      ○ skipped should test all titleMethod options from all config
+      Azure-specific title generation
+        ○ skipped should use OPENAI provider for Azure serverless endpoints
+        ○ skipped should use AZURE provider for Azure endpoints with instanceName
+        ○ skipped should handle Azure titleModel with CURRENT_MODEL constant
+        ○ skipped should handle Azure with multiple model groups
+        ○ skipped should use all config as fallback for Azure endpoints
+    getOptions method - GPT-5+ model handling
+      ○ skipped should move maxTokens to modelKwargs.max_completion_tokens for GPT-5 models
+      ○ skipped should move maxTokens to modelKwargs.max_output_tokens for GPT-5 models with useResponsesApi
+      ○ skipped should handle GPT-5+ models with existing modelKwargs
+      ○ skipped should not modify maxTokens for non-GPT-5+ models
+      ○ skipped should handle various GPT-5+ model formats
+      ○ skipped should not swap max token param for older models when using useResponsesApi
+      ○ skipped should not transform if maxTokens is null or undefined
+    buildMessages with MCP server instructions
+      ○ skipped should await MCP instructions and not include [object Promise] in agent instructions
+      ○ skipped should handle MCP instructions with ephemeral agent
+      ○ skipped should handle empty MCP instructions gracefully
+      ○ skipped should handle MCP instructions error gracefully
+    runMemory method
+      ○ skipped should filter out image URLs from message content
+      ○ skipped should handle messages with only text content
+      ○ skipped should handle mixed content types correctly
+      ○ skipped should preserve original messages without mutation
+      ○ skipped should handle message window size correctly
+      ○ skipped should return early if processMemory is not set
+    getMessagesForConversation - mapMethod and mapCondition
+      ○ skipped should apply mapMethod to all messages when mapCondition is not provided
+      ○ skipped should apply mapMethod only to messages where mapCondition returns true
+      ○ skipped should not apply mapMethod when mapCondition returns false for all messages
+      ○ skipped should not call mapMethod when mapMethod is null
+      ○ skipped should handle mapCondition with complex logic
+      ○ skipped should preserve message order after applying mapMethod with mapCondition
+      ○ skipped should work with summary option alongside mapMethod and mapCondition
+      ○ skipped should handle empty messages array
+      ○ skipped should handle undefined mapCondition explicitly
+    buildMessages - memory context for parallel agents
+      ○ skipped should only pass memory context to the primary agent by default
+      ○ skipped should pass memory context to parallel agents when automatic memory updates are enabled
+      ○ skipped should not modify parallel agents when no memory context is available
+      ○ skipped should handle parallel agents without existing instructions when memory stays primary-only
+      ○ skipped should not modify agentConfigs when none exist
+      ○ skipped should handle empty agentConfigs map
+    useMemory method - prelimAgent assignment
+      ○ skipped should use current agent when memory config agent.id matches current agent id
+      ○ skipped should load different agent when memory config agent.id differs from current agent id
+      ○ skipped should return existing memories without auto-processing when memory agent is not enabled
+      ○ skipped should not initialize auto-processing when no memories exist
+      ○ skipped should return existing memories without auto-processing when memory agent config lacks explicit enablement
+      ○ skipped should return undefined when loading memories fails without auto-processing
+      ○ skipped should create ephemeral agent when no id but model and provider are specified
+  AgentClient - explicit memory hard path
+    ○ skipped directly writes explicit set-memory requests before invoking the memory agent
+    ○ skipped directly deletes explicit forget-memory requests before invoking the memory agent
+  AgentClient - finalizeSubagentContent
+    ○ skipped attaches aggregated subagent_content to the matching subagent tool_call part
+    ○ skipped ignores tool_call parts whose name is not SUBAGENT
+    ○ skipped is a safe no-op when the aggregator map is empty or missing
+    ○ skipped discards aggregators keyed by a tool_call_id not present in contentParts
+    ○ skipped keeps per-parent tool_call aggregators isolated for parallel subagents
+  SanSuoMain failure lifecycle
+    ✓ internal deadline persists explicit failure and still records collected usage (14 ms)
+    ✓ empty completion is an explicit failure without replaying graph
+
+Test Suites: 1 passed, 1 total
+Tests:       75 skipped, 2 passed, 77 total
+Snapshots:   0 total
+Time:        2.514 s, estimated 4 s
+Ran all test suites matching api/server/controllers/agents/client.test.js with tests matching "SanSuoMain failure lifecycle".
+Jest did not exit one second after the test run has completed.
+
+'This usually means that there are asynchronous operations that weren't stopped in your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.

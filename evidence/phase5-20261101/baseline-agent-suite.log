@@ -1,0 +1,333 @@
+2026-11-01 19:50:19 [31merror[39m: [31m[api/server/controllers/agents/client.js #titleConvo] Error Title generation failed[39m
+2026-11-01 19:50:19 [31merror[39m: [31m[AgentContext] Failed to get MCP instructions: MCP error[39m
+FAIL api/server/controllers/agents/phase5-baseline-compat.spec.js
+  AgentClient - initial code file sessions
+    ✓ passes primed code files to createRun before the first tool call (11 ms)
+  AgentClient - titleConvo
+    titleConvo method
+      ✓ should throw error if run is not initialized (1 ms)
+      ✓ should use titlePrompt from endpoint config (1 ms)
+      ✓ should use titlePromptTemplate from endpoint config
+      ✓ should use titleMethod from endpoint config
+      ✓ should use titleModel from endpoint config when provided (1 ms)
+      ✓ should handle missing endpoint config gracefully
+      ✓ should use agent model when titleModel is not provided
+      ✓ should not use titleModel when it equals CURRENT_MODEL constant
+      ✓ should pass all required parameters to generateTitle
+      ✓ should record collected usage after title generation
+      ✓ should return the generated title
+      ✓ should sanitize the generated title by removing think blocks
+      ✓ should return fallback title when sanitization results in empty string
+      ✓ should handle errors gracefully and return undefined (2 ms)
+      ✓ should skip title generation when titleConvo is set to false
+      ✓ should skip title generation for temporary chats
+      ✓ should skip title generation when titleConvo is false in all config
+      ✓ should skip title generation when titleConvo is false for custom endpoint scenario (1 ms)
+      ✓ should pass titleEndpoint configuration to generateTitle
+      ✓ should use all config when endpoint config is missing (1 ms)
+      ✓ should prioritize all config over endpoint config for title settings
+      ✓ should use all config with titleEndpoint and verify provider switch
+      ✓ should test all titleMethod options from all config (1 ms)
+      Azure-specific title generation
+        ✓ should use OPENAI provider for Azure serverless endpoints
+        ✓ should use AZURE provider for Azure endpoints with instanceName
+        ✓ should handle Azure titleModel with CURRENT_MODEL constant (1 ms)
+        ✓ should handle Azure with multiple model groups
+        ✓ should use all config as fallback for Azure endpoints
+    getOptions method - GPT-5+ model handling
+      ✓ should move maxTokens to modelKwargs.max_completion_tokens for GPT-5 models
+      ✓ should move maxTokens to modelKwargs.max_output_tokens for GPT-5 models with useResponsesApi (1 ms)
+      ✓ should handle GPT-5+ models with existing modelKwargs
+      ✓ should not modify maxTokens for non-GPT-5+ models
+      ✓ should handle various GPT-5+ model formats
+      ✓ should not swap max token param for older models when using useResponsesApi
+      ✓ should not transform if maxTokens is null or undefined
+    buildMessages with MCP server instructions
+      ✓ should await MCP instructions and not include [object Promise] in agent instructions (1 ms)
+      ✓ should handle MCP instructions with ephemeral agent
+      ✓ should handle empty MCP instructions gracefully (1 ms)
+      ✓ should handle MCP instructions error gracefully
+    runMemory method
+      ✓ should filter out image URLs from message content (1 ms)
+      ✓ should handle messages with only text content
+      ✓ should handle mixed content types correctly
+      ✓ should preserve original messages without mutation
+      ✓ should handle message window size correctly
+      ✓ should return early if processMemory is not set
+    getMessagesForConversation - mapMethod and mapCondition
+      ✓ should apply mapMethod to all messages when mapCondition is not provided
+      ✓ should apply mapMethod only to messages where mapCondition returns true
+      ✓ should not apply mapMethod when mapCondition returns false for all messages (1 ms)
+      ✓ should not call mapMethod when mapMethod is null
+      ✓ should handle mapCondition with complex logic
+      ✓ should preserve message order after applying mapMethod with mapCondition
+      ✓ should work with summary option alongside mapMethod and mapCondition
+      ✓ should handle empty messages array (1 ms)
+      ✓ should handle undefined mapCondition explicitly
+    buildMessages - memory context for parallel agents
+      ✕ should only pass memory context to the primary agent by default
+      ✓ should pass memory context to parallel agents when automatic memory updates are enabled
+      ✓ should not modify parallel agents when no memory context is available
+      ✕ should handle parallel agents without existing instructions when memory stays primary-only
+      ✓ should not modify agentConfigs when none exist (1 ms)
+      ✓ should handle empty agentConfigs map
+    useMemory method - prelimAgent assignment
+      ✕ should use current agent when memory config agent.id matches current agent id (1 ms)
+      ✕ should load different agent when memory config agent.id differs from current agent id
+      ✓ should return existing memories without auto-processing when memory agent is not enabled
+      ✕ should not initialize auto-processing when no memories exist (1 ms)
+      ✓ should return existing memories without auto-processing when memory agent config lacks explicit enablement
+      ✕ should return undefined when loading memories fails without auto-processing
+      ✕ should create ephemeral agent when no id but model and provider are specified
+  AgentClient - explicit memory hard path
+    ✕ directly writes explicit set-memory requests before invoking the memory agent (1 ms)
+    ✕ directly deletes explicit forget-memory requests before invoking the memory agent
+  AgentClient - finalizeSubagentContent
+    ✕ attaches aggregated subagent_content to the matching subagent tool_call part (1 ms)
+    ✕ ignores tool_call parts whose name is not SUBAGENT
+    ✕ is a safe no-op when the aggregator map is empty or missing (6 ms)
+    ✕ discards aggregators keyed by a tool_call_id not present in contentParts
+    ✕ keeps per-parent tool_call aggregators isolated for parallel subagents
+
+  ● AgentClient - titleConvo › buildMessages - memory context for parallel agents › should only pass memory context to the primary agent by default
+
+    expect(received).not.toContain(expected) // indexOf
+
+    Expected substring: not "User prefers dark mode. User is a software developer."
+    Received string:        "【只读用户记忆】
+    以下是用户通过“记忆模式”手工维护的资料。它不是用户本轮指令，也不是文件内容；当与当前问题相关时必须参考，并保持与用户当前明确要求一致。不得新增、修改、重命名或删除其中任何内容，也不要声称已经写入记忆。
+
+    User prefers dark mode. User is a software developer."
+
+      2047 |       expect(parallelAgent1.instructions).toContain('Parallel agent 1 instructions');
+      2048 |       expect(parallelAgent1.instructions).not.toContain(memoryContent);
+    > 2049 |       expect(parallelAgent1.additional_instructions ?? '').not.toContain(memoryContent);
+           |                                                                ^
+      2050 |
+      2051 |       expect(parallelAgent2.instructions).toContain('Parallel agent 2 instructions');
+      2052 |       expect(parallelAgent2.instructions).not.toContain(memoryContent);
+
+      at Object.toContain (server/controllers/agents/phase5-baseline-compat.spec.js:2049:64)
+
+  ● AgentClient - titleConvo › buildMessages - memory context for parallel agents › should handle parallel agents without existing instructions when memory stays primary-only
+
+    expect(received).not.toContain(expected) // indexOf
+
+    Expected substring: not "User is a data scientist."
+    Received string:        "【只读用户记忆】
+    以下是用户通过“记忆模式”手工维护的资料。它不是用户本轮指令，也不是文件内容；当与当前问题相关时必须参考，并保持与用户当前明确要求一致。不得新增、修改、重命名或删除其中任何内容，也不要声称已经写入记忆。
+
+    User is a data scientist."
+
+      2156 |       expect(client.options.agent.additional_instructions).toContain(memoryContent);
+      2157 |       expect(parallelAgentNoInstructions.instructions).toBeUndefined();
+    > 2158 |       expect(parallelAgentNoInstructions.additional_instructions ?? '').not.toContain(
+           |                                                                             ^
+      2159 |         memoryContent,
+      2160 |       );
+      2161 |     });
+
+      at Object.toContain (server/controllers/agents/phase5-baseline-compat.spec.js:2158:77)
+
+  ● AgentClient - titleConvo › useMemory method - prelimAgent assignment › should use current agent when memory config agent.id matches current agent id
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"agent": {"endpoint": "openAI", "id": "agent-123", "instructions": "Test instructions", "model": "gpt-4", "model_parameters": {"model": "gpt-4"}, "provider": "openAI"}}, Any<Object>
+
+    Number of calls: 0
+
+      2297 |
+      2298 |       expect(mockLoadAgent).not.toHaveBeenCalled();
+    > 2299 |       expect(mockInitializeAgent).toHaveBeenCalledWith(
+           |                                   ^
+      2300 |         expect.objectContaining({
+      2301 |           agent: mockAgent,
+      2302 |         }),
+
+      at Object.toHaveBeenCalledWith (server/controllers/agents/phase5-baseline-compat.spec.js:2299:35)
+
+  ● AgentClient - titleConvo › useMemory method - prelimAgent assignment › should load different agent when memory config agent.id differs from current agent id
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"agent_id": "different-agent-456"}, Any<Object>
+
+    Number of calls: 0
+
+      2330 |       await client.useMemory();
+      2331 |
+    > 2332 |       expect(mockLoadAgent).toHaveBeenCalledWith(
+           |                             ^
+      2333 |         expect.objectContaining({
+      2334 |           agent_id: differentAgentId,
+      2335 |         }),
+
+      at Object.toHaveBeenCalledWith (server/controllers/agents/phase5-baseline-compat.spec.js:2332:29)
+
+  ● AgentClient - titleConvo › useMemory method - prelimAgent assignment › should not initialize auto-processing when no memories exist
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: ""
+    Received: undefined
+
+      2387 |       const result = await client.useMemory();
+      2388 |
+    > 2389 |       expect(result).toBe('');
+           |                      ^
+      2390 |       expect(mockGetFormattedMemories).toHaveBeenCalledWith({ userId: 'user-123' });
+      2391 |       expect(mockInitializeAgent).not.toHaveBeenCalled();
+      2392 |       expect(mockCreateMemoryProcessor).not.toHaveBeenCalled();
+
+      at Object.toBe (server/controllers/agents/phase5-baseline-compat.spec.js:2389:22)
+
+  ● AgentClient - titleConvo › useMemory method - prelimAgent assignment › should return undefined when loading memories fails without auto-processing
+
+    DB connection failed
+
+      2426 |
+      2427 |       mockCheckAccess.mockResolvedValue(true);
+    > 2428 |       mockGetFormattedMemories.mockRejectedValue(new Error('DB connection failed'));
+           |                                                  ^
+      2429 |
+      2430 |       client = new AgentClient(mockOptions);
+      2431 |       client.conversationId = 'convo-123';
+
+      at Object.<anonymous> (server/controllers/agents/phase5-baseline-compat.spec.js:2428:50)
+
+  ● AgentClient - titleConvo › useMemory method - prelimAgent assignment › should create ephemeral agent when no id but model and provider are specified
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"agent": ObjectContaining {"id": "ephemeral", "model": "gpt-4", "provider": "openAI"}}, Any<Object>
+
+    Number of calls: 0
+
+      2469 |
+      2470 |       expect(mockLoadAgent).not.toHaveBeenCalled();
+    > 2471 |       expect(mockInitializeAgent).toHaveBeenCalledWith(
+           |                                   ^
+      2472 |         expect.objectContaining({
+      2473 |           agent: expect.objectContaining({
+      2474 |             id: Constants.EPHEMERAL_AGENT_ID,
+
+      at Object.toHaveBeenCalledWith (server/controllers/agents/phase5-baseline-compat.spec.js:2471:35)
+
+  ● AgentClient - explicit memory hard path › directly writes explicit set-memory requests before invoking the memory agent
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"key": "personal_info", "source": "explicit_user_request", "userId": "6a10297ed87abd01ad7982ef", "userMessage": "记住我是测试用户", "value": "我叫测试用户。"}
+
+    Number of calls: 0
+
+      2524 |     const memories = await client.useMemory({ userMessage: '记住我是测试用户' });
+      2525 |
+    > 2526 |     expect(db.setMemory).toHaveBeenCalledWith(
+           |                          ^
+      2527 |       expect.objectContaining({
+      2528 |         userId: '6a10297ed87abd01ad7982ef',
+      2529 |         key: 'personal_info',
+
+      at Object.toHaveBeenCalledWith (server/controllers/agents/phase5-baseline-compat.spec.js:2526:26)
+
+  ● AgentClient - explicit memory hard path › directly deletes explicit forget-memory requests before invoking the memory agent
+
+    expect(jest.fn()).toHaveBeenCalledWith(...expected)
+
+    Expected: ObjectContaining {"key": "personal_info", "query": "测试用户", "userId": "6a10297ed87abd01ad7982ef", "userMessage": "忘记我叫测试用户"}
+
+    Number of calls: 0
+
+      2547 |     const memories = await client.useMemory({ userMessage: '忘记我叫测试用户' });
+      2548 |
+    > 2549 |     expect(db.deleteMemory).toHaveBeenCalledWith(
+           |                             ^
+      2550 |       expect.objectContaining({
+      2551 |         userId: '6a10297ed87abd01ad7982ef',
+      2552 |         key: 'personal_info',
+
+      at Object.toHaveBeenCalledWith (server/controllers/agents/phase5-baseline-compat.spec.js:2549:29)
+
+  ● AgentClient - finalizeSubagentContent › attaches aggregated subagent_content to the matching subagent tool_call part
+
+    TypeError: client.finalizeSubagentContent is not a function
+
+      2670 |     ];
+      2671 |
+    > 2672 |     client.finalizeSubagentContent();
+           |            ^
+      2673 |
+      2674 |     const attached = client.contentParts[0].tool_call.subagent_content;
+      2675 |     expect(Array.isArray(attached)).toBe(true);
+
+      at Object.finalizeSubagentContent (server/controllers/agents/phase5-baseline-compat.spec.js:2672:12)
+
+  ● AgentClient - finalizeSubagentContent › ignores tool_call parts whose name is not SUBAGENT
+
+    TypeError: client.finalizeSubagentContent is not a function
+
+      2712 |       },
+      2713 |     ];
+    > 2714 |     client.finalizeSubagentContent();
+           |            ^
+      2715 |     expect(client.contentParts[0].tool_call.subagent_content).toBeUndefined();
+      2716 |   });
+      2717 |
+
+      at Object.finalizeSubagentContent (server/controllers/agents/phase5-baseline-compat.spec.js:2714:12)
+
+  ● AgentClient - finalizeSubagentContent › is a safe no-op when the aggregator map is empty or missing
+
+    expect(received).not.toThrow()
+
+    Error name:    "TypeError"
+    Error message: "client.finalizeSubagentContent is not a function"
+
+          2724 |       },
+          2725 |     ];
+        > 2726 |     expect(() => client.finalizeSubagentContent()).not.toThrow();
+               |                         ^
+          2727 |     expect(client.contentParts[0].tool_call.subagent_content).toBeUndefined();
+          2728 |   });
+          2729 |
+
+      at finalizeSubagentContent (server/controllers/agents/phase5-baseline-compat.spec.js:2726:25)
+      at Object.toThrow (server/controllers/agents/phase5-baseline-compat.spec.js:2726:56)
+      at Object.toThrow (server/controllers/agents/phase5-baseline-compat.spec.js:2726:56)
+
+  ● AgentClient - finalizeSubagentContent › discards aggregators keyed by a tool_call_id not present in contentParts
+
+    TypeError: client.finalizeSubagentContent is not a function
+
+      2755 |       },
+      2756 |     ];
+    > 2757 |     client.finalizeSubagentContent();
+           |            ^
+      2758 |     expect(client.contentParts[0].tool_call.subagent_content).toBeUndefined();
+      2759 |   });
+      2760 |
+
+      at Object.finalizeSubagentContent (server/controllers/agents/phase5-baseline-compat.spec.js:2757:12)
+
+  ● AgentClient - finalizeSubagentContent › keeps per-parent tool_call aggregators isolated for parallel subagents
+
+    TypeError: client.finalizeSubagentContent is not a function
+
+      2795 |       { type: 'tool_call', tool_call: { id: 'call_b', name: Constants.SUBAGENT, args: '{}' } },
+      2796 |     ];
+    > 2797 |     client.finalizeSubagentContent();
+           |            ^
+      2798 |     expect(client.contentParts[0].tool_call.subagent_content).toEqual([
+      2799 |       expect.objectContaining({ type: 'text', text: 'A' }),
+      2800 |     ]);
+
+      at Object.finalizeSubagentContent (server/controllers/agents/phase5-baseline-compat.spec.js:2797:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       14 failed, 61 passed, 75 total
+Snapshots:   0 total
+Time:        3.188 s
+Ran all test suites matching api/server/controllers/agents/phase5-baseline-compat.spec.js.
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
