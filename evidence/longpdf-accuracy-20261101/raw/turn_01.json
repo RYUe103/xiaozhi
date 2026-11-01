@@ -1,0 +1,3322 @@
+{
+  "id": "turn_01",
+  "question": "请从材料中找出文化路校园交通整治这件事，说明谁推动、主要解决什么问题。",
+  "conversation_id": "210fdd6d-2796-4d79-95e6-0bf86cd258b6",
+  "parent_message_id": "00000000-0000-0000-0000-000000000000",
+  "request_id": "0a1b367c-0796-4a32-9951-f166d284954b",
+  "started_at": "2026-11-01T14:17:21.593Z",
+  "http_status": 200,
+  "active_at_end": false,
+  "messages": [
+    {
+      "_id": "6ae74a0129b56c8c8fb058aa",
+      "messageId": "bad8c46a-a206-42fc-aee9-26cb9eb7c5fe",
+      "user": "6ae73548fbae1de9b1b18ae2",
+      "__v": 0,
+      "conversationId": "210fdd6d-2796-4d79-95e6-0bf86cd258b6",
+      "createdAt": "2026-11-01T14:17:37.697Z",
+      "endpoint": "SanSuoMain",
+      "error": false,
+      "expiredAt": null,
+      "files": [
+        {
+          "file_id": "2275a06f-4911-464b-a1fc-45aa78df957f",
+          "bytes": 33875317,
+          "context": "message_attachment",
+          "createdAt": "2026-11-01T12:49:13.242Z",
+          "filename": "41489021-892f-5f2a-9c49-d0515dad08a2.pdf",
+          "filepath": "/uploads/6ae73548fbae1de9b1b18ae2/f44df096-a3f4-48b5-988d-ce199cbe7fed__41489021-892f-5f2a-9c49-d0515dad08a2.pdf",
+          "metadata": {
+            "codeEnvRef": {
+              "kind": "user",
+              "id": "6ae73548fbae1de9b1b18ae2",
+              "storage_session_id": "upload_8155c7ce9f366c1aaada",
+              "file_id": "file_a68c19eb447091ec87b9"
+            },
+            "sha256": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0"
+          },
+          "object": "file",
+          "source": "local",
+          "type": "application/pdf",
+          "updatedAt": "2026-11-01T14:17:21.615Z",
+          "usage": 2,
+          "user": "6ae73548fbae1de9b1b18ae2",
+          "conversationId": "210fdd6d-2796-4d79-95e6-0bf86cd258b6"
+        }
+      ],
+      "isCreatedByUser": true,
+      "metadata": {
+        "sansuoClientRequestId": "0a1b367c-0796-4a32-9951-f166d284954b",
+        "sansuoMode": "deep",
+        "sansuoFileParse": {
+          "status": "completed",
+          "files": 1,
+          "artifacts": 74
+        }
+      },
+      "model": null,
+      "parentMessageId": "00000000-0000-0000-0000-000000000000",
+      "sender": "User",
+      "text": "请从材料中找出文化路校园交通整治这件事，说明谁推动、主要解决什么问题。",
+      "tokenCount": 1646,
+      "unfinished": false,
+      "updatedAt": "2026-11-01T14:17:58.726Z"
+    },
+    {
+      "_id": "6ae74a1629b56c8c8fb058ac",
+      "messageId": "9d80c461-e63c-4190-b47f-8ff8fadfbee4",
+      "user": "6ae73548fbae1de9b1b18ae2",
+      "__v": 0,
+      "attachments": [],
+      "content": [
+        {
+          "type": "think",
+          "think": "用户希望从提供的材料中找出关于“文化路校园交通整治”的信息，具体包括：\n1. 谁推动的？\n2. 主要解决什么问题？\n\n根据提供的文本片段（来自 page=72 的多个 chunk），我可以提取以下信息：\n- **谁推动**：市政协第三活动小组（由九三学社、教育、体育、医药卫生4个界别组成）。市政协委员、第三活动小组联络员李宏福介绍并参与了调研和现场办公。\n- **主要解决什么问题**：解决市城区校园周边安全隐患，特别是文化路上下学时段的道路拥堵问题。具体表现为家长随意停车、掉头、车辆过斑马线不礼让行人造成的交通瘫痪，以及道路交通安全隐患。\n\n整理回答：\n- 推动方：市政协第三活动小组（由九三学社、教育、体育、医药卫生4个界别组成），联合交警部门。\n- 解决问题：文化路校园周边交通安全隐患及上下学时段道路拥堵问题。该路段有三所学校（市第八中学、市民族中学、市民族小学），师生8000余人，周边小区多，上下学时家长随意停车、掉头及车辆不礼让行人易造成交通瘫痪。整治后通过新增提示牌、限速标志、实线改虚线等措施改善了状况。\n\n根据规则，如果涉及流程或架构可以画Mermaid图。这里是一个“问题发现-调研-协商-解决”的过程，可以画一个简单的流程图作为解释示意图。\n\nMermaid图构思：\nflowchart TD\n    A[\"收集提案\"] --> B[\"第三活动小组调研\"]\n    B --> C[\"发现拥堵与安全隐患\"]\n    C --> D[\"与交警部门现场办公协商\"]\n    D --> E[\"实施整治措施\"]\n    E --> F[\"交通秩序改善\"]\n\n检查规则：节点ID用简单字母，标签用双引号，不生成多余样式。\n符合规则。\n\n现在组织语言回答。\n1. 推动主体：市政协第三活动小组（联合交警部门）。\n2. 解决的问题：文化路校园周边交通安全隐患及拥堵。具体包括三所学校上下学时段家长随意停车、掉头、车辆不礼让行人导致的交通瘫痪。\n3. 附加Mermaid流程图。\n4. 不需要调用工具，信息已足够。直接输出。 \n结构：\n- 推动方\n- 解决的主要问题\n- 解释示意图（Mermaid）\n- 具体措施及成效（简要补充）\n完成。 \n检查Mermaid语法：\n```mermaid\nflowchart TD\n    A[\"收集提案\"] --> B[\"第三活动小组调研\"]\n    B --> C[\"发现拥堵与安全隐患\"]\n    C --> D[\"与交警部门现场协商\"]\n    D --> E[\"落实交通整治措施\"]\n    E --> F[\"校园周边交通改善\"]\n```\n符合所有要求。准备输出。 \n注意：用户提到“文化路校园交通整治这件事”，材料中明确提到“市政协第三活动小组推动解决校园周边安全隐患见闻”。\n回答将直接、清晰。 \n输出。 \n（自我核对：材料中确实提到“由九三学社、教育、体育、医药卫生4个界别组成的市政协第三活动小组”，以及“交警部门对文化路进行严管...”。信息准确。） \n生成回复。 \n```mermaid\nflowchart TD\n    A[\"收集相关提案\"] --> B[\"市政协第三活动小组调研\"]\n    B --> C[\"发现拥堵与安全隐患\"]\n    C --> D[\"与交警部门现场办公协商\"]\n    D --> E[\"实施交通严管与设施优化\"]\n    E --> F[\"校园周边秩序改善\"]\n```\n没问题。 \n最终输出。 \n（注：遵循“默认只生成flowchart TD/LR或sequenceDiagram”等规则，节点ID简单，标签双引号包裹。） \n结束思考。 \n输出回答。 \n[Done]"
+        },
+        {
+          "type": "text",
+          "text": "根据材料内容，关于“文化路校园交通整治”的相关信息如下：\n\n**🔹 谁推动的**\n主要由**市政协第三活动小组**（由九三学社、教育、体育、医药卫生4个界别组成）推动。该小组结合委员读书实践活动开展专题调研，并由小组联络员李宏福等委员牵头，联合**交警部门**共同现场办公与协商落实。\n\n**🔹 主要解决什么问题**\n核心解决**市城区校园周边交通安全隐患及上下学时段道路拥堵问题**。具体痛点包括：\n1. **路段压力大**：文化路全长约1000米，分布有市第八中学、市民族中学和市民族小学3所学校，在校师生超8000人，且周边住宅小区密集。\n2. **交通秩序混乱**：上下学时段部分家长随意停车、掉头，以及过往车辆经过斑马线不礼让行人，极易造成道路拥堵甚至瘫痪。\n3. **安全隐患突出**：师生密集通行与机动车混行存在较大道路交通安全风险。\n\n---\n\n### 📊 整治推动流程（解释示意图）\n```mermaid\nflowchart TD\n    A[\"收集相关提案\"] --> B[\"市政协第三活动小组实地调研\"]\n    B --> C[\"发现拥堵与安全隐患\"]\n    C --> D[\"与交警部门现场办公协商\"]\n    D --> E[\"实施严管与标志标线优化\"]\n    E --> F[\"校园周边交通秩序改善\"]\n```\n\n**💡 补充成效**：经协商整治，交警部门在路口两端新增“学校密集路段，请车辆合理绕行”及“限速30km/h”等提示牌，并将学校门口交通标识线由实线改为虚线，3所学校门口的交通安全及拥堵情况得到极大改善。"
+        }
+      ],
+      "conversationId": "210fdd6d-2796-4d79-95e6-0bf86cd258b6",
+      "createdAt": "2026-11-01T14:17:58.713Z",
+      "endpoint": "SanSuoMain",
+      "error": false,
+      "expiredAt": null,
+      "isCreatedByUser": false,
+      "metadata": {
+        "sansuoMode": "deep",
+        "sansuoFileParse": {
+          "status": "completed",
+          "files": 1,
+          "artifacts": 74
+        },
+        "sansuoProcessTiming": {
+          "startedAt": "2026-11-01T14:17:21.610Z",
+          "completedAt": "2026-11-01T14:17:52.378Z",
+          "elapsedMs": 30768
+        },
+        "sansuoClientRequestId": "0a1b367c-0796-4a32-9951-f166d284954b",
+        "sansuoSources": [
+          {
+            "file_id": "2275a06f-4911-464b-a1fc-45aa78df957f",
+            "filename": "41489021-892f-5f2a-9c49-d0515dad08a2.pdf",
+            "type": "application/pdf",
+            "source": "local",
+            "bytes": 33875317,
+            "status": "ready",
+            "kind": "file"
+          }
+        ]
+      },
+      "model": "qwen3.6-plus",
+      "parentMessageId": "bad8c46a-a206-42fc-aee9-26cb9eb7c5fe",
+      "sender": "三所小智",
+      "text": "根据材料内容，关于“文化路校园交通整治”的相关信息如下：\n\n**🔹 谁推动的**\n主要由**市政协第三活动小组**（由九三学社、教育、体育、医药卫生4个界别组成）推动。该小组结合委员读书实践活动开展专题调研，并由小组联络员李宏福等委员牵头，联合**交警部门**共同现场办公与协商落实。\n\n**🔹 主要解决什么问题**\n核心解决**市城区校园周边交通安全隐患及上下学时段道路拥堵问题**。具体痛点包括：\n1. **路段压力大**：文化路全长约1000米，分布有市第八中学、市民族中学和市民族小学3所学校，在校师生超8000人，且周边住宅小区密集。\n2. **交通秩序混乱**：上下学时段部分家长随意停车、掉头，以及过往车辆经过斑马线不礼让行人，极易造成道路拥堵甚至瘫痪。\n3. **安全隐患突出**：师生密集通行与机动车混行存在较大道路交通安全风险。\n\n---\n\n### 📊 整治推动流程（解释示意图）\n```mermaid\nflowchart TD\n    A[\"收集相关提案\"] --> B[\"市政协第三活动小组实地调研\"]\n    B --> C[\"发现拥堵与安全隐患\"]\n    C --> D[\"与交警部门现场办公协商\"]\n    D --> E[\"实施严管与标志标线优化\"]\n    E --> F[\"校园周边交通秩序改善\"]\n```\n\n**💡 补充成效**：经协商整治，交警部门在路口两端新增“学校密集路段，请车辆合理绕行”及“限速30km/h”等提示牌，并将学校门口交通标识线由实线改为虚线，3所学校门口的交通安全及拥堵情况得到极大改善。",
+      "tokenCount": 1192,
+      "unfinished": false,
+      "updatedAt": "2026-11-01T14:17:58.713Z"
+    }
+  ],
+  "message_id": "9d80c461-e63c-4190-b47f-8ff8fadfbee4",
+  "answer": "根据材料内容，关于“文化路校园交通整治”的相关信息如下：\n\n**🔹 谁推动的**\n主要由**市政协第三活动小组**（由九三学社、教育、体育、医药卫生4个界别组成）推动。该小组结合委员读书实践活动开展专题调研，并由小组联络员李宏福等委员牵头，联合**交警部门**共同现场办公与协商落实。\n\n**🔹 主要解决什么问题**\n核心解决**市城区校园周边交通安全隐患及上下学时段道路拥堵问题**。具体痛点包括：\n1. **路段压力大**：文化路全长约1000米，分布有市第八中学、市民族中学和市民族小学3所学校，在校师生超8000人，且周边住宅小区密集。\n2. **交通秩序混乱**：上下学时段部分家长随意停车、掉头，以及过往车辆经过斑马线不礼让行人，极易造成道路拥堵甚至瘫痪。\n3. **安全隐患突出**：师生密集通行与机动车混行存在较大道路交通安全风险。\n\n---\n\n### 📊 整治推动流程（解释示意图）\n```mermaid\nflowchart TD\n    A[\"收集相关提案\"] --> B[\"市政协第三活动小组实地调研\"]\n    B --> C[\"发现拥堵与安全隐患\"]\n    C --> D[\"与交警部门现场办公协商\"]\n    D --> E[\"实施严管与标志标线优化\"]\n    E --> F[\"校园周边交通秩序改善\"]\n```\n\n**💡 补充成效**：经协商整治，交警部门在路口两端新增“学校密集路段，请车辆合理绕行”及“限速30km/h”等提示牌，并将学校门口交通标识线由实线改为虚线，3所学校门口的交通安全及拥堵情况得到极大改善。",
+  "error": false,
+  "tools": [],
+  "completed": true,
+  "elapsed_ms": 38184,
+  "trace_events": [
+    {
+      "stage": "QueryProcessor",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542644519,
+      "query_hash": "0850b145cd85243bc901",
+      "query_chars": 35,
+      "method": "semantic_reformulation",
+      "query_count": 3,
+      "variants": [
+        {
+          "query_hash": "0850b145cd85243bc901",
+          "query_chars": 35
+        },
+        {
+          "query_hash": "2157eb0b0cd024879484",
+          "query_chars": 14
+        },
+        {
+          "query_hash": "a8c9b0e6a0b3d7e1633e",
+          "query_chars": 16
+        }
+      ],
+      "elapsed_ms": 1869,
+      "usage": {
+        "prompt_tokens": 130,
+        "completion_tokens": 36,
+        "total_tokens": 166,
+        "completion_tokens_details": {
+          "text_tokens": 36
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 130
+        }
+      },
+      "finish_reason": "stop"
+    },
+    {
+      "stage": "Keyword",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542644528,
+      "query_hash": "0850b145cd85243bc901",
+      "query_chars": 35,
+      "elapsed_ms": 5,
+      "hits": [
+        {
+          "id": "chunk_64842ecb34c85e94c905",
+          "page": 72,
+          "score": 16,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_96c19c9655b2b268622b",
+          "page": 72,
+          "score": 11,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_4c408ef93a5b999c24f4",
+          "page": 42,
+          "score": 10,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_1f815bea625f8a8fb668",
+          "page": 72,
+          "score": 10,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_7216fff31b66706fa914",
+          "page": 27,
+          "score": 9,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_5b574c1ced70f0be404c",
+          "page": 38,
+          "score": 9,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_fc7e879672bd482f73bf",
+          "page": 8,
+          "score": 8,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_8e8e1e415ea4c318f4e2",
+          "page": 19,
+          "score": 8,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_eb31e315b3aef5bf2ca8",
+          "page": 26,
+          "score": 8,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_ae41d28d15d3215c0bbb",
+          "page": 11,
+          "score": 7,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_a997a311b3fabbd94ae3",
+          "page": 51,
+          "score": 7,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_0b08fe220d2b92930c53",
+          "page": 72,
+          "score": 7,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_d6eb927719dc2bf8b8e4",
+          "page": 77,
+          "score": 7,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_7cb6db2851721ca7161c",
+          "page": 79,
+          "score": 7,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_4c583c990427d5fffddf",
+          "page": 89,
+          "score": 7,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_d2287498735b2e7370e1",
+          "page": 11,
+          "score": 6,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_c342693fd338fea20e71",
+          "page": 17,
+          "score": 6,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_a4117570d88a79967cd2",
+          "page": 18,
+          "score": 6,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_fcc58b043dd088398622",
+          "page": 19,
+          "score": 6,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_b337109b7d40cb9943e9",
+          "page": 19,
+          "score": 6,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_ac7f2ecae22437a2eead",
+          "page": 21,
+          "score": 6,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_7ecc178091563f9299a1",
+          "page": 22,
+          "score": 6,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_3fa52eaabd5ceb110617",
+          "page": 27,
+          "score": 6,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_ead1b51142faeda416f9",
+          "page": 31,
+          "score": 6,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_8f9f82978169c4d8638f",
+          "page": 38,
+          "score": 6,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_80b05cad14459ee05e7e",
+          "page": 50,
+          "score": 6,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_31119737f8069af14847",
+          "page": 51,
+          "score": 6,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_aa2b1121b5e8f4177dae",
+          "page": 72,
+          "score": 6,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_d16bb38aaeb5e0442e3c",
+          "page": 72,
+          "score": 6,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_59fcef22686e87419bae",
+          "page": 72,
+          "score": 6,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        }
+      ]
+    },
+    {
+      "stage": "BM25",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542644530,
+      "query_hash": "0850b145cd85243bc901",
+      "query_chars": 35,
+      "elapsed_ms": 7,
+      "hits": [
+        {
+          "id": "chunk_64842ecb34c85e94c905",
+          "page": 72,
+          "score": 31.746226075886593,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_96c19c9655b2b268622b",
+          "page": 72,
+          "score": 31.343592104171087,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_1f815bea625f8a8fb668",
+          "page": 72,
+          "score": 29.400215300916194,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_4c408ef93a5b999c24f4",
+          "page": 42,
+          "score": 25.468805446954974,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_a997a311b3fabbd94ae3",
+          "page": 51,
+          "score": 22.96252262264404,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_0b08fe220d2b92930c53",
+          "page": 72,
+          "score": 21.978573284017152,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_59fcef22686e87419bae",
+          "page": 72,
+          "score": 18.300767782013004,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_d6eb927719dc2bf8b8e4",
+          "page": 77,
+          "score": 18.30052762097942,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_80b05cad14459ee05e7e",
+          "page": 50,
+          "score": 16.988903571014642,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_7cb6db2851721ca7161c",
+          "page": 79,
+          "score": 16.53365260495751,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_aa2b1121b5e8f4177dae",
+          "page": 72,
+          "score": 16.21477026353631,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_d16bb38aaeb5e0442e3c",
+          "page": 72,
+          "score": 16.169690650086814,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_5b574c1ced70f0be404c",
+          "page": 38,
+          "score": 14.673231839863895,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_4c583c990427d5fffddf",
+          "page": 89,
+          "score": 14.433932156911983,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_7216fff31b66706fa914",
+          "page": 27,
+          "score": 14.334721706678,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_8a2794b8b359b2074754",
+          "page": 42,
+          "score": 14.332877913013743,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_6cba1331c21954c336f1",
+          "page": 57,
+          "score": 13.855551749606722,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_eb31e315b3aef5bf2ca8",
+          "page": 26,
+          "score": 13.00415048761416,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_d8ec3f9bb0b3f118ca84",
+          "page": 51,
+          "score": 12.123508188133238,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_4c0832d542edfa1c4067",
+          "page": 15,
+          "score": 12.116916173394134,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_8f9f82978169c4d8638f",
+          "page": 38,
+          "score": 11.574386831752673,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_a9c23fe557e54c4dd736",
+          "page": 72,
+          "score": 11.534070402693294,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_a45f2b21838f679366a6",
+          "page": 89,
+          "score": 11.260101364971877,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_4a0f0055824e3c8c4c76",
+          "page": 20,
+          "score": 11.199526113495342,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_3fa52eaabd5ceb110617",
+          "page": 27,
+          "score": 11.031848584761716,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_a4117570d88a79967cd2",
+          "page": 18,
+          "score": 10.658047085969605,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_b337109b7d40cb9943e9",
+          "page": 19,
+          "score": 10.413575411897535,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_76499732481ba8aada37",
+          "page": 61,
+          "score": 10.410730901593428,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_d2287498735b2e7370e1",
+          "page": 11,
+          "score": 10.362086197495419,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_f34d9e067c2017c074a1",
+          "page": 70,
+          "score": 10.248620094509374,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        }
+      ]
+    },
+    {
+      "stage": "Vector",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542654971,
+      "query_hash": "0850b145cd85243bc901",
+      "query_chars": 35,
+      "elapsed_ms": 10441,
+      "hits": [
+        {
+          "id": "chunk_64842ecb34c85e94c905",
+          "page": 72,
+          "score": 0.7117421710404417,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_1f815bea625f8a8fb668",
+          "page": 72,
+          "score": 0.692198628793262,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_96c19c9655b2b268622b",
+          "page": 72,
+          "score": 0.6882364671356384,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_d6eb927719dc2bf8b8e4",
+          "page": 77,
+          "score": 0.6486620384815335,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_0b08fe220d2b92930c53",
+          "page": 72,
+          "score": 0.634163292268165,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_881eacc37ac8b7633878",
+          "page": 72,
+          "score": 0.6192012624361047,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_a9c23fe557e54c4dd736",
+          "page": 72,
+          "score": 0.5907524746545822,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_aa2b1121b5e8f4177dae",
+          "page": 72,
+          "score": 0.5869495896670779,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_59fcef22686e87419bae",
+          "page": 72,
+          "score": 0.5767356752757198,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_648dfea7fa54821bd7f2",
+          "page": 26,
+          "score": 0.5695233920925996,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_7cb6db2851721ca7161c",
+          "page": 79,
+          "score": 0.5588716819009035,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_63c4bd68bfbd57174ba4",
+          "page": 84,
+          "score": 0.5391242433052353,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_4b560dfbb71c26a6be0e",
+          "page": 43,
+          "score": 0.5328686170547158,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_fa95324276645f23d35a",
+          "page": 57,
+          "score": 0.5156880837827149,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_31119737f8069af14847",
+          "page": 51,
+          "score": 0.5121760132718943,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_e6fe76b24250f23564d0",
+          "page": 45,
+          "score": 0.5071664782180065,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_a7712a1df115e6a1e811",
+          "page": 45,
+          "score": 0.5021482086284254,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_13a92e965a6243af4000",
+          "page": 14,
+          "score": 0.4956385070892612,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_0e838bdb876b1ee6829a",
+          "page": 91,
+          "score": 0.49110531183982337,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_c7d044149952bffd2719",
+          "page": 32,
+          "score": 0.4879196984542695,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_e2f66c1c3c0caa807e86",
+          "page": 40,
+          "score": 0.48627624366419747,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_a5735ca77083efc112ca",
+          "page": 77,
+          "score": 0.4847903363955104,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_23d1662dee72e2088db1",
+          "page": 91,
+          "score": 0.4824453961432009,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_12f7e09caf3d1c2b6dec",
+          "page": 28,
+          "score": 0.47698837621518525,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_beff62e497c35b05b023",
+          "page": 31,
+          "score": 0.4761513818475886,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_c474996bbd5a11a93ba3",
+          "page": 40,
+          "score": 0.47537861347768207,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_56d71481d2108ff15bfe",
+          "page": 78,
+          "score": 0.47373771613925153,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_b59865db96c331f13abd",
+          "page": 36,
+          "score": 0.4735856176193718,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_d8ec3f9bb0b3f118ca84",
+          "page": 51,
+          "score": 0.4735294290074563,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_142db1f6a7935d9e0ab1",
+          "page": 53,
+          "score": 0.46696545091175745,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        }
+      ],
+      "warnings": [],
+      "usage": {
+        "calls": 75,
+        "chars": 82284,
+        "total_tokens": 49239
+      }
+    },
+    {
+      "stage": "Keyword",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542654974,
+      "query_hash": "2157eb0b0cd024879484",
+      "query_chars": 14,
+      "elapsed_ms": 1,
+      "hits": [
+        {
+          "id": "chunk_64842ecb34c85e94c905",
+          "page": 72,
+          "score": 14,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_1f815bea625f8a8fb668",
+          "page": 72,
+          "score": 10,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_96c19c9655b2b268622b",
+          "page": 72,
+          "score": 10,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_4d419ff2d96c9a7d49e7",
+          "page": 26,
+          "score": 6,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_8f9f82978169c4d8638f",
+          "page": 38,
+          "score": 6,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_0b08fe220d2b92930c53",
+          "page": 72,
+          "score": 6,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_fc7e879672bd482f73bf",
+          "page": 8,
+          "score": 5,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_13a92e965a6243af4000",
+          "page": 14,
+          "score": 4,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_57cf0174c68b52c2dddf",
+          "page": 17,
+          "score": 4,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_8e8e1e415ea4c318f4e2",
+          "page": 19,
+          "score": 4,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_3c33441aea0544119d09",
+          "page": 20,
+          "score": 4,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_3fa52eaabd5ceb110617",
+          "page": 27,
+          "score": 4,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_12c9bf495052bd12f5f2",
+          "page": 33,
+          "score": 4,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_177897b60e7d2612a2dc",
+          "page": 41,
+          "score": 4,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_96491738f4e143cc34ee",
+          "page": 41,
+          "score": 4,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_bf51afc531234e16d6a0",
+          "page": 43,
+          "score": 4,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_ed25b7228e97de09ec42",
+          "page": 62,
+          "score": 4,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_aa2b1121b5e8f4177dae",
+          "page": 72,
+          "score": 4,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_59fcef22686e87419bae",
+          "page": 72,
+          "score": 4,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_32bb592c39631f6b834a",
+          "page": 82,
+          "score": 4,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_68ded6d4f395ab9381c2",
+          "page": 86,
+          "score": 4,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_c6073a1924b538b9dbdf",
+          "page": 14,
+          "score": 3,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_97cd781955130010d57c",
+          "page": 18,
+          "score": 3,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_eb31e315b3aef5bf2ca8",
+          "page": 26,
+          "score": 3,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_d6eb927719dc2bf8b8e4",
+          "page": 77,
+          "score": 3,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_7cb6db2851721ca7161c",
+          "page": 79,
+          "score": 3,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_49a5edc65b89d29c8da5",
+          "page": 3,
+          "score": 2,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_a2f0b0779a89a2e63902",
+          "page": 3,
+          "score": 2,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_d9eca6b4758e663b8812",
+          "page": 5,
+          "score": 2,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_2f9084d43c5a83240911",
+          "page": 5,
+          "score": 2,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        }
+      ]
+    },
+    {
+      "stage": "BM25",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542654974,
+      "query_hash": "2157eb0b0cd024879484",
+      "query_chars": 14,
+      "elapsed_ms": 1,
+      "hits": [
+        {
+          "id": "chunk_1f815bea625f8a8fb668",
+          "page": 72,
+          "score": 29.400215300916194,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_64842ecb34c85e94c905",
+          "page": 72,
+          "score": 28.515556679430105,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_96c19c9655b2b268622b",
+          "page": 72,
+          "score": 25.70326708983965,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_0b08fe220d2b92930c53",
+          "page": 72,
+          "score": 19.983016726070694,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_59fcef22686e87419bae",
+          "page": 72,
+          "score": 14.397665347165972,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_8f9f82978169c4d8638f",
+          "page": 38,
+          "score": 11.574386831752673,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_4d419ff2d96c9a7d49e7",
+          "page": 26,
+          "score": 11.545321095943866,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_aa2b1121b5e8f4177dae",
+          "page": 72,
+          "score": 11.316945978867166,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_d6eb927719dc2bf8b8e4",
+          "page": 77,
+          "score": 9.183911812415467,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_3fa52eaabd5ceb110617",
+          "page": 27,
+          "score": 8.92076452146193,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_7cb6db2851721ca7161c",
+          "page": 79,
+          "score": 8.489575457224626,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_bf51afc531234e16d6a0",
+          "page": 43,
+          "score": 8.358108477601021,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_57cf0174c68b52c2dddf",
+          "page": 17,
+          "score": 8.344216633480027,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_32bb592c39631f6b834a",
+          "page": 82,
+          "score": 7.948182597789893,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_12c9bf495052bd12f5f2",
+          "page": 33,
+          "score": 7.714901008759369,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_177897b60e7d2612a2dc",
+          "page": 41,
+          "score": 7.036293449574473,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_648dfea7fa54821bd7f2",
+          "page": 26,
+          "score": 6.809651780681006,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_0e838bdb876b1ee6829a",
+          "page": 91,
+          "score": 6.357241573935982,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_68ded6d4f395ab9381c2",
+          "page": 86,
+          "score": 6.118068631781805,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_881eacc37ac8b7633878",
+          "page": 72,
+          "score": 6.08282422756276,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_eb31e315b3aef5bf2ca8",
+          "page": 26,
+          "score": 6.069928824986553,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_d74e27d7abd37ef82005",
+          "page": 6,
+          "score": 5.9802989634946275,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_96491738f4e143cc34ee",
+          "page": 41,
+          "score": 5.95235294296946,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_991eb8f544a844858e10",
+          "page": 41,
+          "score": 5.707924458593972,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_523c899f07e43c19aa80",
+          "page": 81,
+          "score": 5.706925908289435,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_b712f6739ea98b4f96d7",
+          "page": 41,
+          "score": 5.676024756027363,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_13a92e965a6243af4000",
+          "page": 14,
+          "score": 5.594624643752887,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_fc7e879672bd482f73bf",
+          "page": 8,
+          "score": 5.428478565126242,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_8e2c0392a8457645c3c7",
+          "page": 88,
+          "score": 5.264150410118351,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_066be03356ebca2c612f",
+          "page": 39,
+          "score": 5.250543275784939,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        }
+      ]
+    },
+    {
+      "stage": "Vector",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542655621,
+      "query_hash": "2157eb0b0cd024879484",
+      "query_chars": 14,
+      "elapsed_ms": 647,
+      "hits": [
+        {
+          "id": "chunk_96c19c9655b2b268622b",
+          "page": 72,
+          "score": 0.7297425857070722,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_64842ecb34c85e94c905",
+          "page": 72,
+          "score": 0.6729387393150393,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_1f815bea625f8a8fb668",
+          "page": 72,
+          "score": 0.6508160475524408,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_0b08fe220d2b92930c53",
+          "page": 72,
+          "score": 0.6133494313386973,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_d6eb927719dc2bf8b8e4",
+          "page": 77,
+          "score": 0.564282591486289,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_648dfea7fa54821bd7f2",
+          "page": 26,
+          "score": 0.5426056828196938,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_881eacc37ac8b7633878",
+          "page": 72,
+          "score": 0.5371641521914196,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_a9c23fe557e54c4dd736",
+          "page": 72,
+          "score": 0.49257239693243,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_aa2b1121b5e8f4177dae",
+          "page": 72,
+          "score": 0.4890029508604984,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_59fcef22686e87419bae",
+          "page": 72,
+          "score": 0.48714192896424785,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_7cb6db2851721ca7161c",
+          "page": 79,
+          "score": 0.45862248836062974,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_0e838bdb876b1ee6829a",
+          "page": 91,
+          "score": 0.4546957994449915,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_23d1662dee72e2088db1",
+          "page": 91,
+          "score": 0.4466007612265333,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_63c4bd68bfbd57174ba4",
+          "page": 84,
+          "score": 0.43254024536449825,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_4b560dfbb71c26a6be0e",
+          "page": 43,
+          "score": 0.43208860705707125,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_fa95324276645f23d35a",
+          "page": 57,
+          "score": 0.43089771950134126,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_56d71481d2108ff15bfe",
+          "page": 78,
+          "score": 0.41988087974875377,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_05d3c208ec4225aa5660",
+          "page": 77,
+          "score": 0.40889807933291783,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_a7712a1df115e6a1e811",
+          "page": 45,
+          "score": 0.4084581251158119,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_f256e951b186bd8f1aad",
+          "page": 50,
+          "score": 0.4045155588155724,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_c7d044149952bffd2719",
+          "page": 32,
+          "score": 0.4037547726409812,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_044bfc2eb74527941aa4",
+          "page": 79,
+          "score": 0.40355829167332263,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_c474996bbd5a11a93ba3",
+          "page": 40,
+          "score": 0.40163224244029627,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_8b3d3416bcdb9f0e1f19",
+          "page": 40,
+          "score": 0.40114750960442486,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_a5735ca77083efc112ca",
+          "page": 77,
+          "score": 0.3975882813411574,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_e2f66c1c3c0caa807e86",
+          "page": 40,
+          "score": 0.39580920390487956,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_13a92e965a6243af4000",
+          "page": 14,
+          "score": 0.3942490615027187,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_31119737f8069af14847",
+          "page": 51,
+          "score": 0.38926491581165623,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_b59865db96c331f13abd",
+          "page": 36,
+          "score": 0.38826754586934487,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_d0224086a1eb247421a6",
+          "page": 34,
+          "score": 0.3861852066846543,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        }
+      ],
+      "warnings": [],
+      "usage": {
+        "calls": 76,
+        "chars": 82298,
+        "total_tokens": 49249
+      }
+    },
+    {
+      "stage": "Keyword",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542655623,
+      "query_hash": "a8c9b0e6a0b3d7e1633e",
+      "query_chars": 16,
+      "elapsed_ms": 1,
+      "hits": [
+        {
+          "id": "chunk_64842ecb34c85e94c905",
+          "page": 72,
+          "score": 16,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_8e8e1e415ea4c318f4e2",
+          "page": 19,
+          "score": 14,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_ac7f2ecae22437a2eead",
+          "page": 21,
+          "score": 14,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_a4117570d88a79967cd2",
+          "page": 18,
+          "score": 12,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_1babd6ad91621c300e55",
+          "page": 27,
+          "score": 12,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_a997a311b3fabbd94ae3",
+          "page": 51,
+          "score": 12,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_1f815bea625f8a8fb668",
+          "page": 72,
+          "score": 10,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_96c19c9655b2b268622b",
+          "page": 72,
+          "score": 10,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_7216fff31b66706fa914",
+          "page": 27,
+          "score": 9,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_5b574c1ced70f0be404c",
+          "page": 38,
+          "score": 9,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_4c408ef93a5b999c24f4",
+          "page": 42,
+          "score": 9,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_eb31e315b3aef5bf2ca8",
+          "page": 26,
+          "score": 7,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_d6eb927719dc2bf8b8e4",
+          "page": 77,
+          "score": 7,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_7cb6db2851721ca7161c",
+          "page": 79,
+          "score": 7,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_ead1b51142faeda416f9",
+          "page": 31,
+          "score": 6,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_59fcef22686e87419bae",
+          "page": 72,
+          "score": 6,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_0b08fe220d2b92930c53",
+          "page": 72,
+          "score": 6,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_a45f2b21838f679366a6",
+          "page": 89,
+          "score": 6,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_fc7e879672bd482f73bf",
+          "page": 8,
+          "score": 5,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_15afa22fa9a35d295eb0",
+          "page": 70,
+          "score": 5,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_ae41d28d15d3215c0bbb",
+          "page": 11,
+          "score": 4,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_d72e4a5338553dc6c7a1",
+          "page": 13,
+          "score": 4,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_c342693fd338fea20e71",
+          "page": 17,
+          "score": 4,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_f8120557bf06e553fa21",
+          "page": 18,
+          "score": 4,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_80b39d8a38ed3ca09593",
+          "page": 18,
+          "score": 4,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_fcc58b043dd088398622",
+          "page": 19,
+          "score": 4,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_b337109b7d40cb9943e9",
+          "page": 19,
+          "score": 4,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_4a0f0055824e3c8c4c76",
+          "page": 20,
+          "score": 4,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_1c4bd11d58fd7caf2401",
+          "page": 21,
+          "score": 4,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        },
+        {
+          "id": "chunk_7ecc178091563f9299a1",
+          "page": 22,
+          "score": 4,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "keyword"
+        }
+      ]
+    },
+    {
+      "stage": "BM25",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542655623,
+      "query_hash": "a8c9b0e6a0b3d7e1633e",
+      "query_chars": 16,
+      "elapsed_ms": 1,
+      "hits": [
+        {
+          "id": "chunk_64842ecb34c85e94c905",
+          "page": 72,
+          "score": 31.746226075886593,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_1f815bea625f8a8fb668",
+          "page": 72,
+          "score": 29.400215300916194,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_a997a311b3fabbd94ae3",
+          "page": 51,
+          "score": 26.260275461872528,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_96c19c9655b2b268622b",
+          "page": 72,
+          "score": 25.70326708983965,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_0b08fe220d2b92930c53",
+          "page": 72,
+          "score": 19.983016726070694,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_a4117570d88a79967cd2",
+          "page": 18,
+          "score": 19.79405362871268,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_59fcef22686e87419bae",
+          "page": 72,
+          "score": 18.300767782013004,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_d6eb927719dc2bf8b8e4",
+          "page": 77,
+          "score": 18.30052762097942,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_4c408ef93a5b999c24f4",
+          "page": 42,
+          "score": 18.09402180852078,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_ac7f2ecae22437a2eead",
+          "page": 21,
+          "score": 17.72444619353165,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_1babd6ad91621c300e55",
+          "page": 27,
+          "score": 17.095129629972487,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_7cb6db2851721ca7161c",
+          "page": 79,
+          "score": 16.53365260495751,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_5b574c1ced70f0be404c",
+          "page": 38,
+          "score": 14.673231839863895,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_7216fff31b66706fa914",
+          "page": 27,
+          "score": 14.334721706678,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_aa2b1121b5e8f4177dae",
+          "page": 72,
+          "score": 12.905424742228007,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_eb31e315b3aef5bf2ca8",
+          "page": 26,
+          "score": 11.938682419062788,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_8e8e1e415ea4c318f4e2",
+          "page": 19,
+          "score": 11.734762726522515,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_a45f2b21838f679366a6",
+          "page": 89,
+          "score": 11.260101364971877,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_648dfea7fa54821bd7f2",
+          "page": 26,
+          "score": 9.859909105158511,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_ead1b51142faeda416f9",
+          "page": 31,
+          "score": 9.773726453301817,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_8f9f82978169c4d8638f",
+          "page": 38,
+          "score": 9.765470678948816,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_19e78dde15e3e2b3c2c4",
+          "page": 39,
+          "score": 9.54721185267519,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_15afa22fa9a35d295eb0",
+          "page": 70,
+          "score": 9.26311613373731,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_dda924d20e400c4baaeb",
+          "page": 43,
+          "score": 8.78145725270951,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_a9c23fe557e54c4dd736",
+          "page": 72,
+          "score": 8.580098938405191,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_452a21c71d524fd1f874",
+          "page": 43,
+          "score": 8.557181057483678,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_4a0f0055824e3c8c4c76",
+          "page": 20,
+          "score": 8.520155819287428,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_3fa52eaabd5ceb110617",
+          "page": 27,
+          "score": 8.47956852711894,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_d8ec3f9bb0b3f118ca84",
+          "page": 51,
+          "score": 7.751657531119392,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        },
+        {
+          "id": "chunk_f8120557bf06e553fa21",
+          "page": 18,
+          "score": 7.639693234817164,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "bm25"
+        }
+      ]
+    },
+    {
+      "stage": "Vector",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542656298,
+      "query_hash": "a8c9b0e6a0b3d7e1633e",
+      "query_chars": 16,
+      "elapsed_ms": 675,
+      "hits": [
+        {
+          "id": "chunk_96c19c9655b2b268622b",
+          "page": 72,
+          "score": 0.7418220095197312,
+          "rank": 1,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_64842ecb34c85e94c905",
+          "page": 72,
+          "score": 0.6977952772683514,
+          "rank": 2,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_1f815bea625f8a8fb668",
+          "page": 72,
+          "score": 0.6784805100801232,
+          "rank": 3,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_0b08fe220d2b92930c53",
+          "page": 72,
+          "score": 0.630344199251239,
+          "rank": 4,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_d6eb927719dc2bf8b8e4",
+          "page": 77,
+          "score": 0.6151527917734608,
+          "rank": 5,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_881eacc37ac8b7633878",
+          "page": 72,
+          "score": 0.5796477723116239,
+          "rank": 6,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_648dfea7fa54821bd7f2",
+          "page": 26,
+          "score": 0.5574346147318828,
+          "rank": 7,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_a9c23fe557e54c4dd736",
+          "page": 72,
+          "score": 0.5328735195348149,
+          "rank": 8,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_59fcef22686e87419bae",
+          "page": 72,
+          "score": 0.5157906026626841,
+          "rank": 9,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_aa2b1121b5e8f4177dae",
+          "page": 72,
+          "score": 0.5040539761441332,
+          "rank": 10,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_7cb6db2851721ca7161c",
+          "page": 79,
+          "score": 0.4869776286227355,
+          "rank": 11,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_0e838bdb876b1ee6829a",
+          "page": 91,
+          "score": 0.4765599854648275,
+          "rank": 12,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_63c4bd68bfbd57174ba4",
+          "page": 84,
+          "score": 0.46667299715381355,
+          "rank": 13,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_23d1662dee72e2088db1",
+          "page": 91,
+          "score": 0.456520346621378,
+          "rank": 14,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_56d71481d2108ff15bfe",
+          "page": 78,
+          "score": 0.45474368423577977,
+          "rank": 15,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_fa95324276645f23d35a",
+          "page": 57,
+          "score": 0.4414868086256046,
+          "rank": 16,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_4b560dfbb71c26a6be0e",
+          "page": 43,
+          "score": 0.44108956755965184,
+          "rank": 17,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_a7712a1df115e6a1e811",
+          "page": 45,
+          "score": 0.4288120879304239,
+          "rank": 18,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_a5735ca77083efc112ca",
+          "page": 77,
+          "score": 0.42839652001643,
+          "rank": 19,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_31119737f8069af14847",
+          "page": 51,
+          "score": 0.4250874397718212,
+          "rank": 20,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_e2f66c1c3c0caa807e86",
+          "page": 40,
+          "score": 0.42191699562066354,
+          "rank": 21,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_15afa22fa9a35d295eb0",
+          "page": 70,
+          "score": 0.4191765582773727,
+          "rank": 22,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_c7d044149952bffd2719",
+          "page": 32,
+          "score": 0.4130398052712724,
+          "rank": 23,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_05d3c208ec4225aa5660",
+          "page": 77,
+          "score": 0.40948847259862137,
+          "rank": 24,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_13a92e965a6243af4000",
+          "page": 14,
+          "score": 0.4088820652720192,
+          "rank": 25,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_c474996bbd5a11a93ba3",
+          "page": 40,
+          "score": 0.4039893185963125,
+          "rank": 26,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_b59865db96c331f13abd",
+          "page": 36,
+          "score": 0.4024619473154906,
+          "rank": 27,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_be71c801a9b679c4b854",
+          "page": 69,
+          "score": 0.400175430257446,
+          "rank": 28,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_d8ec3f9bb0b3f118ca84",
+          "page": 51,
+          "score": 0.3974689903710274,
+          "rank": 29,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        },
+        {
+          "id": "chunk_4ccec2ea8ec71439be7e",
+          "page": 91,
+          "score": 0.39648216124854707,
+          "rank": 30,
+          "kind": "extracted_text",
+          "engine": "mineru",
+          "source": "vector"
+        }
+      ],
+      "warnings": [],
+      "usage": {
+        "calls": 77,
+        "chars": 82314,
+        "total_tokens": 49258
+      }
+    },
+    {
+      "stage": "RRF",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542656301,
+      "elapsed_ms": 0,
+      "candidates": 30,
+      "hits": [
+        {
+          "id": "chunk_64842ecb34c85e94c905",
+          "page": 72,
+          "score": 0.04891591750396616,
+          "ranks": {
+            "keyword": 1,
+            "bm25": 1,
+            "vector": 2
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_96c19c9655b2b268622b",
+          "page": 72,
+          "score": 0.04839549075403121,
+          "ranks": {
+            "keyword": 2,
+            "bm25": 3,
+            "vector": 1
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_1f815bea625f8a8fb668",
+          "page": 72,
+          "score": 0.04787506400409626,
+          "ranks": {
+            "keyword": 3,
+            "bm25": 2,
+            "vector": 3
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_0b08fe220d2b92930c53",
+          "page": 72,
+          "score": 0.04640151515151515,
+          "ranks": {
+            "keyword": 6,
+            "bm25": 4,
+            "vector": 4
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_d6eb927719dc2bf8b8e4",
+          "page": 77,
+          "score": 0.04524201288907172,
+          "ranks": {
+            "keyword": 8,
+            "bm25": 6,
+            "vector": 5
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_59fcef22686e87419bae",
+          "page": 72,
+          "score": 0.04395604395604395,
+          "ranks": {
+            "keyword": 10,
+            "bm25": 5,
+            "vector": 10
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_7cb6db2851721ca7161c",
+          "page": 79,
+          "score": 0.043502633799770284,
+          "ranks": {
+            "keyword": 9,
+            "bm25": 7,
+            "vector": 11
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_aa2b1121b5e8f4177dae",
+          "page": 72,
+          "score": 0.04124682874721392,
+          "ranks": {
+            "keyword": 23,
+            "bm25": 8,
+            "vector": 9
+          },
+          "sources": [
+            "keyword",
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_eb31e315b3aef5bf2ca8",
+          "page": 26,
+          "score": 0.029211087420042643,
+          "ranks": {
+            "keyword": 7,
+            "bm25": 10
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_648dfea7fa54821bd7f2",
+          "page": 26,
+          "score": 0.027912386121341344,
+          "ranks": {
+            "bm25": 17,
+            "vector": 7
+          },
+          "sources": [
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_4c408ef93a5b999c24f4",
+          "page": 42,
+          "score": 0.027783137179239824,
+          "ranks": {
+            "keyword": 11,
+            "bm25": 13
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_8f9f82978169c4d8638f",
+          "page": 38,
+          "score": 0.027479766610201392,
+          "ranks": {
+            "keyword": 17,
+            "bm25": 9
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_a997a311b3fabbd94ae3",
+          "page": 51,
+          "score": 0.027402402402402402,
+          "ranks": {
+            "keyword": 14,
+            "bm25": 12
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_a9c23fe557e54c4dd736",
+          "page": 72,
+          "score": 0.027364110201042444,
+          "ranks": {
+            "bm25": 19,
+            "vector": 8
+          },
+          "sources": [
+            "bm25",
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_7216fff31b66706fa914",
+          "page": 27,
+          "score": 0.027222222222222224,
+          "ranks": {
+            "keyword": 12,
+            "bm25": 15
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_5b574c1ced70f0be404c",
+          "page": 38,
+          "score": 0.027212143650499815,
+          "ranks": {
+            "keyword": 13,
+            "bm25": 14
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_3fa52eaabd5ceb110617",
+          "page": 27,
+          "score": 0.026742734890354787,
+          "ranks": {
+            "keyword": 19,
+            "bm25": 11
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_a4117570d88a79967cd2",
+          "page": 18,
+          "score": 0.02649122807017544,
+          "ranks": {
+            "keyword": 15,
+            "bm25": 16
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_ac7f2ecae22437a2eead",
+          "page": 21,
+          "score": 0.02506265664160401,
+          "ranks": {
+            "keyword": 16,
+            "bm25": 24
+          },
+          "sources": [
+            "keyword",
+            "bm25"
+          ]
+        },
+        {
+          "id": "chunk_d8ec3f9bb0b3f118ca84",
+          "page": 51,
+          "score": 0.02399425287356322,
+          "ranks": {
+            "bm25": 20,
+            "vector": 27
+          },
+          "sources": [
+            "bm25",
+            "vector"
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "Rerank",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542657527,
+      "elapsed_ms": 1225,
+      "candidate_limit": 20,
+      "excerpt_chars": 1200,
+      "usage": {
+        "prompt_tokens": 2150,
+        "completion_tokens": 31,
+        "total_tokens": 2181,
+        "completion_tokens_details": {
+          "text_tokens": 31
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 2150
+        }
+      },
+      "finish_reason": "stop",
+      "hits": [
+        {
+          "id": "chunk_64842ecb34c85e94c905",
+          "page": 72,
+          "rrf_score": 0.04891591750396616,
+          "rerank_rank": 1,
+          "ranks": {
+            "keyword": 1,
+            "bm25": 1,
+            "vector": 2
+          }
+        },
+        {
+          "id": "chunk_96c19c9655b2b268622b",
+          "page": 72,
+          "rrf_score": 0.04839549075403121,
+          "rerank_rank": 2,
+          "ranks": {
+            "keyword": 2,
+            "bm25": 3,
+            "vector": 1
+          }
+        },
+        {
+          "id": "chunk_59fcef22686e87419bae",
+          "page": 72,
+          "rrf_score": 0.04395604395604395,
+          "rerank_rank": 3,
+          "ranks": {
+            "keyword": 10,
+            "bm25": 5,
+            "vector": 10
+          }
+        },
+        {
+          "id": "chunk_aa2b1121b5e8f4177dae",
+          "page": 72,
+          "rrf_score": 0.04124682874721392,
+          "rerank_rank": 4,
+          "ranks": {
+            "keyword": 23,
+            "bm25": 8,
+            "vector": 9
+          }
+        },
+        {
+          "id": "chunk_1f815bea625f8a8fb668",
+          "page": 72,
+          "rrf_score": 0.04787506400409626,
+          "rerank_rank": 5,
+          "ranks": {
+            "keyword": 3,
+            "bm25": 2,
+            "vector": 3
+          }
+        },
+        {
+          "id": "chunk_0b08fe220d2b92930c53",
+          "page": 72,
+          "rrf_score": 0.04640151515151515,
+          "rerank_rank": 6,
+          "ranks": {
+            "keyword": 6,
+            "bm25": 4,
+            "vector": 4
+          }
+        },
+        {
+          "id": "chunk_a9c23fe557e54c4dd736",
+          "page": 72,
+          "rrf_score": 0.027364110201042444,
+          "rerank_rank": 7,
+          "ranks": {
+            "bm25": 19,
+            "vector": 8
+          }
+        },
+        {
+          "id": "chunk_d6eb927719dc2bf8b8e4",
+          "page": 77,
+          "rrf_score": 0.04524201288907172,
+          "rerank_rank": 8,
+          "ranks": {
+            "keyword": 8,
+            "bm25": 6,
+            "vector": 5
+          }
+        },
+        {
+          "id": "chunk_7cb6db2851721ca7161c",
+          "page": 79,
+          "rrf_score": 0.043502633799770284,
+          "rerank_rank": 9,
+          "ranks": {
+            "keyword": 9,
+            "bm25": 7,
+            "vector": 11
+          }
+        },
+        {
+          "id": "chunk_eb31e315b3aef5bf2ca8",
+          "page": 26,
+          "rrf_score": 0.029211087420042643,
+          "rerank_rank": 10,
+          "ranks": {
+            "keyword": 7,
+            "bm25": 10
+          }
+        },
+        {
+          "id": "chunk_648dfea7fa54821bd7f2",
+          "page": 26,
+          "rrf_score": 0.027912386121341344,
+          "rerank_rank": 11,
+          "ranks": {
+            "bm25": 17,
+            "vector": 7
+          }
+        },
+        {
+          "id": "chunk_4c408ef93a5b999c24f4",
+          "page": 42,
+          "rrf_score": 0.027783137179239824,
+          "rerank_rank": 12,
+          "ranks": {
+            "keyword": 11,
+            "bm25": 13
+          }
+        },
+        {
+          "id": "chunk_8f9f82978169c4d8638f",
+          "page": 38,
+          "rrf_score": 0.027479766610201392,
+          "rerank_rank": 13,
+          "ranks": {
+            "keyword": 17,
+            "bm25": 9
+          }
+        },
+        {
+          "id": "chunk_a997a311b3fabbd94ae3",
+          "page": 51,
+          "rrf_score": 0.027402402402402402,
+          "rerank_rank": 14,
+          "ranks": {
+            "keyword": 14,
+            "bm25": 12
+          }
+        },
+        {
+          "id": "chunk_7216fff31b66706fa914",
+          "page": 27,
+          "rrf_score": 0.027222222222222224,
+          "rerank_rank": 15,
+          "ranks": {
+            "keyword": 12,
+            "bm25": 15
+          }
+        },
+        {
+          "id": "chunk_5b574c1ced70f0be404c",
+          "page": 38,
+          "rrf_score": 0.027212143650499815,
+          "rerank_rank": 16,
+          "ranks": {
+            "keyword": 13,
+            "bm25": 14
+          }
+        },
+        {
+          "id": "chunk_3fa52eaabd5ceb110617",
+          "page": 27,
+          "rrf_score": 0.026742734890354787,
+          "rerank_rank": 17,
+          "ranks": {
+            "keyword": 19,
+            "bm25": 11
+          }
+        },
+        {
+          "id": "chunk_a4117570d88a79967cd2",
+          "page": 18,
+          "rrf_score": 0.02649122807017544,
+          "rerank_rank": 18,
+          "ranks": {
+            "keyword": 15,
+            "bm25": 16
+          }
+        },
+        {
+          "id": "chunk_ac7f2ecae22437a2eead",
+          "page": 21,
+          "rrf_score": 0.02506265664160401,
+          "rerank_rank": 19,
+          "ranks": {
+            "keyword": 16,
+            "bm25": 24
+          }
+        },
+        {
+          "id": "chunk_d8ec3f9bb0b3f118ca84",
+          "page": 51,
+          "rrf_score": 0.02399425287356322,
+          "rerank_rank": 20,
+          "ranks": {
+            "bm25": 20,
+            "vector": 27
+          }
+        }
+      ]
+    },
+    {
+      "stage": "EvidenceDelivery",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542657536,
+      "action": "search",
+      "document_id": "doc_881c221bed8c56946358",
+      "elapsed_ms": 15791,
+      "content_chars": 1034,
+      "pages": [
+        72,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "truncated": false,
+      "continuation_available": false
+    },
+    {
+      "stage": "VisualPreparationSkipped",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542657539,
+      "reason": "ON_DEMAND_PAGE_VISION"
+    },
+    {
+      "stage": "DocumentReferenceRestored",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542657552,
+      "type": "text",
+      "visual_result_id": null,
+      "page": null
+    },
+    {
+      "stage": "VisualPreparationSkipped",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542657666,
+      "reason": "ON_DEMAND_PAGE_VISION"
+    },
+    {
+      "stage": "ModelTransport",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "attempt": 1,
+      "phase": "headers",
+      "status": 200,
+      "elapsed_ms": 731
+    },
+    {
+      "stage": "ModelTransport",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "attempt": 1,
+      "phase": "complete",
+      "bytes": 105327,
+      "elapsed_ms": 20991
+    },
+    {
+      "stage": "ModelEnd",
+      "scope_hash": "c7d065167d119ce5bab8",
+      "trace_id": "4c43d22a-d9fe-44e1-a1f8-7bc0a18ccd94",
+      "at": 1793542678690,
+      "run_id": "9d80c461-e63c-4190-b47f-8ff8fadfbee4",
+      "model": "qwen3.6-plus",
+      "elapsed_ms": 20999,
+      "finish_reason": "stop",
+      "usage": {
+        "input_tokens": 4281,
+        "output_tokens": 1192,
+        "total_tokens": 5473,
+        "input_token_details": {},
+        "output_token_details": {
+          "reasoning": 812
+        }
+      },
+      "tool_calls": []
+    }
+  ],
+  "timings": [],
+  "parse_job_after": {
+    "_id": "6ae749f1cdc4766e0d31c5b4",
+    "attempts": 1,
+    "completedAt": "2026-11-01T12:52:09.698Z",
+    "startedAt": "2026-11-01T12:49:13.254Z",
+    "status": "ready",
+    "evaluationReuse": {
+      "sourceFileId": "f44df096-a3f4-48b5-988d-ce199cbe7fed",
+      "sourceJobId": "6ae7354929b56c8c8fafd9d5",
+      "notNewParse": true
+    }
+  }
+}

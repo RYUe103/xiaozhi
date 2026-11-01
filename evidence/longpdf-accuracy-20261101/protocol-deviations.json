@@ -1,0 +1,34 @@
+[
+  {
+    "type": "harness_preflight",
+    "detail": "首次Mongo user字符串未匹配ObjectId，模型未调用。修正类型后新目录r2运行，原失败保留。"
+  },
+  {
+    "type": "frozen_question_defect",
+    "ids": [
+      "longpdf_009",
+      "turn_04",
+      "turn_05",
+      "turn_06",
+      "turn_10"
+    ],
+    "detail": "原始物理页84写上坪村，冻结题和gold误写上平村。保留原运行作为探索，受影响题排除可靠分母。",
+    "image": "review-images/p084.png"
+  },
+  {
+    "type": "observability_limit",
+    "detail": "自动预检索EvidenceDelivery仅页码及字符数，工具输出有原文；不将重建原文伪装成实捕。"
+  },
+  {
+    "type": "fixture_reuse",
+    "detail": "隔离库新增文件和ready任务元数据别名，复用同用户同SHA同代际存储对象；新ID引入冷索引成本，不代表热缓存。"
+  },
+  {
+    "type": "frozen_gold_defect",
+    "ids": [
+      "longpdf_017"
+    ],
+    "detail": "物理页91为防溺水宣传册，冻结gold误写防疫。实际回答识别正确，不能据错误gold扣分；保留gold原样，单列探索性结果并排除可靠分母。",
+    "image": "review-images/p091.png"
+  }
+]

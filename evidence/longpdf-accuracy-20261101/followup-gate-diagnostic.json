@@ -1,0 +1,66 @@
+{
+  "method": "Read-only evaluation of exact frozen helper source; no model request, no business edit",
+  "source": "api/app/clients/BaseClient.js",
+  "rows": [
+    {
+      "id": "turn_01",
+      "question": "请从材料中找出文化路校园交通整治这件事，说明谁推动、主要解决什么问题。",
+      "continuation_gate": false,
+      "pdf_question_gate": true
+    },
+    {
+      "id": "turn_02",
+      "question": "刚才那项整治具体改了哪些交通设施，限速是多少？",
+      "continuation_gate": true,
+      "pdf_question_gate": false
+    },
+    {
+      "id": "turn_03",
+      "question": "请给上一轮这些整改措施的原文依据和出处，别只重复结论。",
+      "continuation_gate": false,
+      "pdf_question_gate": false
+    },
+    {
+      "id": "turn_04",
+      "question": "材料中象州上平村也有一件通过委员读书履职改善生活的事，具体是什么？",
+      "continuation_gate": false,
+      "pdf_question_gate": true
+    },
+    {
+      "id": "turn_05",
+      "question": "比较刚才这两个事件，哪些是已落实的措施，哪些还只是下一步资金计划？",
+      "continuation_gate": false,
+      "pdf_question_gate": false
+    },
+    {
+      "id": "turn_06",
+      "question": "把象州的读书平台组织方式与上平村的这个事联系起来，说明平台怎样转化为履职，给出平台构成。",
+      "continuation_gate": false,
+      "pdf_question_gate": false
+    },
+    {
+      "id": "turn_07",
+      "question": "换个关注点，金秀如何开展线上线下读书？活动规模有哪些数据？",
+      "continuation_gate": false,
+      "pdf_question_gate": false
+    },
+    {
+      "id": "turn_08",
+      "question": "据刚才这些数字，能否断言金秀有2500多名不同委员参加，而且全部80多名线上委员都参加了线下活动？为什么？",
+      "continuation_gate": true,
+      "pdf_question_gate": false
+    },
+    {
+      "id": "turn_09",
+      "question": "文化路这次整改安装交通标志实际花了多少钱？材料能确定吗？",
+      "continuation_gate": false,
+      "pdf_question_gate": true
+    },
+    {
+      "id": "turn_10",
+      "question": "回到最初的交通问题：30万元是不是用于文化路交通标志的已支出费用？请纠正可能的混淆并重述限速及相关依据。",
+      "continuation_gate": false,
+      "pdf_question_gate": false
+    }
+  ]
+}

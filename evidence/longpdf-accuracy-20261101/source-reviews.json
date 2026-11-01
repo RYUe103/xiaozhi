@@ -1,0 +1,289 @@
+{
+  "longpdf_001": {
+    "rating": "部分正确",
+    "core_correct": true,
+    "complete": false,
+    "citation": "正确",
+    "hallucination": false,
+    "notes": "问题四项均正确且引用p3正确；按冻结gold严格完整性，省略主分会场背景。该额外要求并非问题显式所问，属gold过细风险，单列核心正确。"
+  },
+  "longpdf_002": {
+    "rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "95/31/53/11和截止时间正确；未在最终答案注明原页。"
+  },
+  "longpdf_003": {
+    "rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "36/12/6准确；额外示意图无新增事实。"
+  },
+  "longpdf_004": {
+    "rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "地点、展期、140/60/80及首次展览附加事实均有原页支持。"
+  },
+  "longpdf_005": {
+    "rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "两次会议各项人数日期与差值正确；最终未标注来源物理页。"
+  },
+  "longpdf_006": {
+    "rating": "部分正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": true,
+    "failure_categories": [
+      "无依据附加内容",
+      "跨页关系错误"
+    ],
+    "notes": "所问78/67/85.9%、95/82/86.3%和差值正确。附加履职积极性提高、质量优化未获证实；结尾将满意率100%同五届一次办理指标并列，但p25的100%属四届六次，主体归属混淆。"
+  },
+  "longpdf_007": {
+    "rating": "部分正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": true,
+    "failure_categories": [
+      "无依据附加内容"
+    ],
+    "notes": "问题、4000/不少于2000万元及10.13亿元/930个项目正确。但把经费安排表述为直接填补缺口并提高申报通过率，超出已验证原文；未标作推论，也未给原页引用。"
+  },
+  "longpdf_008": {
+    "rating": "部分正确",
+    "core_correct": false,
+    "complete": false,
+    "citation": "缺失",
+    "hallucination": true,
+    "failure_categories": [
+      "无依据附加内容",
+      "理解错误"
+    ],
+    "notes": "调研148/20/20/652、培训40余名及内容正确，但遗漏莫宇宁；图中写收入尚未实质性增长，把没有增收证据当作没有增长。"
+  },
+  "longpdf_009": {
+    "rating": "无法判定",
+    "exploratory_rating": "部分正确",
+    "core_correct": false,
+    "complete": false,
+    "citation": "错误",
+    "hallucination": true,
+    "eligible_ai_accuracy": false,
+    "notes": "冻结题把原页上坪村误写为上平村，排除可靠分母。回答遗漏p84已亮100多盏太阳能灯，引用p89其他事件替代；不能将受污染题全部归罪Agent。"
+  },
+  "longpdf_010": {
+    "rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "两地平台及102/6万多人次、15/2500余人次/80余名准确，区分人数人次。末尾风格比较属分析推断，不能作为已测量成效；不影响所问数据结论。"
+  },
+  "longpdf_011": {
+    "rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "三类质量与抄送、联合督办、专项通报完整，按报告提出要求表述。"
+  },
+  "longpdf_012": {
+    "rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "障碍与宣传、保障、风险机制及政府点评完整；三权分立按原文表述，未用常识改写。"
+  },
+  "longpdf_013": {
+    "rating": "部分正确",
+    "core_correct": true,
+    "complete": false,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "调研协商整改效果顺序与数字正确；冻结gold要求的5月观察时间未交代。未把结果外推到所有学校。"
+  },
+  "longpdf_014": {
+    "rating": "部分正确",
+    "core_correct": true,
+    "complete": false,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "服务侧重点及共同作用正确；冻结gold的6月1日揭牌时间未提及。问题未显式问日期，属于gold过细导致严格完整性扣分，核心正确另计。"
+  },
+  "longpdf_015": {
+    "rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "准确区分规划评审、未认定、5至10年未来建设周期。未给页码。"
+  },
+  "longpdf_016": {
+    "rating": "部分正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "部分正确",
+    "hallucination": true,
+    "failure_categories": [
+      "无依据附加内容"
+    ],
+    "notes": "35/67及32件准确。但11件未立案提案的转送方式仅称通常，图中又当成该事件确定流程，并称流程均摘自5/18/25页，超出原文证据；满意率分母也不应概括为一律立案数。"
+  },
+  "longpdf_017": {
+    "rating": "无法判定",
+    "exploratory_rating": "部分正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "正确",
+    "hallucination": true,
+    "eligible_ai_accuracy": false,
+    "notes": "6500/1000/2000/9500和主体正确，原页是防溺水宣传册，冻结gold误记防疫，应排除可靠分母，不惩罚模型正确识别。附注当地唯一另一所小学含混地合并两地事件背景，原文为寨堡屯活动当地唯一一所小学。"
+  },
+  "longpdf_018": {
+    "rating": "无法判定",
+    "exploratory_rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "正确明确材料未提供所问信息，没有编造票价/名单/增收比例；缺失性gold独立全篇复核待完成，不纳入可靠分母。"
+  },
+  "longpdf_019": {
+    "rating": "无法判定",
+    "exploratory_rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "notes": "正确明确材料未提供所问信息，没有编造票价/名单/增收比例；缺失性gold独立全篇复核待完成，不纳入可靠分母。"
+  },
+  "longpdf_020": {
+    "rating": "无法判定",
+    "exploratory_rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "正确",
+    "hallucination": false,
+    "notes": "正确明确材料未提供所问信息，没有编造票价/名单/增收比例；缺失性gold独立全篇复核待完成，不纳入可靠分母。"
+  },
+  "turn_01": {
+    "rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "consistent": true,
+    "notes": "主体、四界别、交通问题准确；首次无历史引用。"
+  },
+  "turn_02": {
+    "rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "consistent": true,
+    "notes": "自然指代恢复正确，30km/h和标线改动一致。"
+  },
+  "turn_03": {
+    "rating": "未完成",
+    "core_correct": false,
+    "complete": false,
+    "citation": "未完成",
+    "hallucination": false,
+    "consistent": null,
+    "failure_categories": [
+      "模型超时"
+    ],
+    "notes": "要求原文依据后模型流持续120秒超时，619499字节已传输，未形成答案。真实非注入；stream_started抑制重试。"
+  },
+  "turn_04": {
+    "rating": "无法判定",
+    "exploratory_rating": "部分正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": true,
+    "consistent": true,
+    "eligible_ai_accuracy": false,
+    "notes": "受上平/上坪拼写缺陷影响，排除可靠分母。自然检索后正确取得100多盏灯；正文将投资30万元仍未来，但图和促进效果表述失去未来限定。"
+  },
+  "turn_05": {
+    "rating": "无法判定",
+    "exploratory_rating": "部分正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": true,
+    "consistent": false,
+    "eligible_ai_accuracy": false,
+    "notes": "受先前地名缺陷影响，可靠分母排除。正确区分100多盏灯已亮和30万元未来计划，但把原文既有平坦水泥路写成此次已修建措施；这是追加未经证明的因果归属。"
+  },
+  "turn_06": {
+    "rating": "无法判定",
+    "exploratory_rating": "部分正确",
+    "core_correct": true,
+    "complete": false,
+    "citation": "缺失",
+    "hallucination": false,
+    "consistent": true,
+    "eligible_ai_accuracy": false,
+    "notes": "四基地与读书联系民意正确，但未覆盖冻结gold要求的完整4+14+2+1+N。未新调用工具，使用已有材料。地名缺陷下单列探索结果。"
+  },
+  "turn_07": {
+    "rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": false,
+    "consistent": true,
+    "failure_categories": [
+      "工具未注册",
+      "工具策略冲突"
+    ],
+    "notes": "最终数据及平台准确，但3次read_parsed_pdf不存在，sandbox直读PDF被拒；4次execute_code中最终读取既有MinerU Markdown恢复，耗时156.87秒，不能标工具链全成功。"
+  },
+  "turn_08": {
+    "rating": "部分正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": true,
+    "consistent": true,
+    "notes": "正确区分人次与人数，不能推断线上线下交集。但补充县级政协通常两三百人、不可能2500名，用外部常识代替本材料证据，且忽略活动向群众开放。"
+  },
+  "turn_09": {
+    "rating": "无法判定",
+    "exploratory_rating": "完全正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "正确",
+    "hallucination": false,
+    "consistent": true,
+    "notes": "正确拒答标志费用；补充的滨江小学200万元及p77引用已在运行后原图复核正确。缺失性gold仍待全篇独立核验，排除正式分母。"
+  },
+  "turn_10": {
+    "rating": "无法判定",
+    "exploratory_rating": "部分正确",
+    "core_correct": true,
+    "complete": true,
+    "citation": "缺失",
+    "hallucination": true,
+    "consistent": false,
+    "eligible_ai_accuracy": false,
+    "notes": "正确区分30万元未来村庄计划与文化路限速30km/h；但沿用上轮200万元后声称材料唯一较大金额，明显与4000万元等相矛盾，跨轮扩张错误。受地名缺陷另列。"
+  }
+}

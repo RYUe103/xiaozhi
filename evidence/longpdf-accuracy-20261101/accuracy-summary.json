@@ -1,0 +1,70 @@
+{
+  "independent": {
+    "run": 20,
+    "completed": 20,
+    "ratings": {
+      "部分正确": 7,
+      "完全正确": 8,
+      "无法判定": 5
+    },
+    "formal_human_verified_denominator": 0,
+    "formal_accuracy": null,
+    "ai_image_reviewed_denominator": 15,
+    "ai_provisional_full_correct": 8,
+    "ai_provisional_core_correct": 14,
+    "ai_provisional_complete": 11,
+    "ai_provisional_hallucinations": 4,
+    "pending_excluded": 5,
+    "citation_ratings": {
+      "正确": 3,
+      "缺失": 15,
+      "错误": 1,
+      "部分正确": 1
+    }
+  },
+  "cross_page": {
+    "run": 6,
+    "completed": 6,
+    "ratings": {
+      "完全正确": 2,
+      "部分正确": 3,
+      "无法判定": 1
+    },
+    "formal_human_verified_denominator": 0,
+    "formal_accuracy": null,
+    "ai_image_reviewed_denominator": 5,
+    "ai_provisional_full_correct": 2,
+    "ai_provisional_core_correct": 4,
+    "ai_provisional_complete": 4,
+    "ai_provisional_hallucinations": 3,
+    "pending_excluded": 1,
+    "citation_ratings": {
+      "缺失": 5,
+      "错误": 1
+    }
+  },
+  "multiturn": {
+    "run": 10,
+    "completed": 9,
+    "ratings": {
+      "完全正确": 3,
+      "未完成": 1,
+      "无法判定": 5,
+      "部分正确": 1
+    },
+    "formal_human_verified_denominator": 0,
+    "formal_accuracy": null,
+    "ai_image_reviewed_denominator": 5,
+    "ai_provisional_full_correct": 3,
+    "ai_provisional_core_correct": 4,
+    "ai_provisional_complete": 4,
+    "ai_provisional_hallucinations": 1,
+    "pending_excluded": 5,
+    "citation_ratings": {
+      "缺失": 8,
+      "未完成": 1,
+      "正确": 1
+    }
+  },
+  "grading": "AI逐题来源复核暂评；独立人工复核待完成。pending不入准确率分母。"
+}

@@ -1,0 +1,37 @@
+{
+  "independent": {
+    "n": 20,
+    "mean_s": 48.73745,
+    "p50_s": 45.423,
+    "p90_s": 63.542,
+    "p95_s": 78.923,
+    "min_s": 26.95,
+    "max_s": 88.477,
+    "main_calls": 31,
+    "main_tokens_trace_lower_bound": 222887,
+    "billed_prompt_tokens": 190561,
+    "billed_completion_tokens": 32326,
+    "embedding_calls": 1546,
+    "embedding_tokens": 985557,
+    "tool_calls": 12,
+    "vision_tool_calls": 0
+  },
+  "multiturn": {
+    "n": 10,
+    "mean_s": 50.9687,
+    "p50_s": 31.609,
+    "p90_s": 124.336,
+    "p95_s": 140.603,
+    "min_s": 16.71,
+    "max_s": 156.87,
+    "main_calls": 19,
+    "main_tokens_trace_lower_bound": 104032,
+    "billed_prompt_tokens": 236007,
+    "billed_completion_tokens": 16857,
+    "embedding_calls": 88,
+    "embedding_tokens": 49426,
+    "tool_calls": 9,
+    "vision_tool_calls": 0
+  },
+  "note": "已解析资产；独立题新授权绑定造成冷向量索引；同会话追问另列。分位数为线性插值描述统计，非SLA。未完成请求亦保留。"
+}

@@ -1,0 +1,108 @@
+{
+  "at": "2026-11-01T14:52:57.695766+00:00",
+  "gold_hash_checks": {
+    "artifact-audit.json": true,
+    "scoring-rules.json": true,
+    "questions.json": true,
+    "source-freeze.json": true,
+    "inference-manifest.json": true,
+    "multiturn-questions.json": true
+  },
+  "frozen_review_images_unchanged": true,
+  "business_files_checked": 1623,
+  "business_changed": [],
+  "runtime_changed": [],
+  "runtime_workcopy_differences_at_start": [
+    "api/server/services/DocumentArtifactRepository.spec.js",
+    "api/server/services/DocumentPageVisionService.spec.js",
+    "api/server/services/Files/Code/process.spec.js",
+    "api/server/services/ModelTransportReliability.spec.js",
+    "api/test/fixtures/sansuoPdfRenderMock.js"
+  ],
+  "independent_conversations": 20,
+  "multiturn_conversations": 1,
+  "parent_chain": [
+    {
+      "id": "turn_01",
+      "request_parent_correct": true,
+      "persisted_parent_correct": true,
+      "conversation": "210fdd6d-2796-4d79-95e6-0bf86cd258b6"
+    },
+    {
+      "id": "turn_02",
+      "request_parent_correct": true,
+      "persisted_parent_correct": true,
+      "conversation": "210fdd6d-2796-4d79-95e6-0bf86cd258b6"
+    },
+    {
+      "id": "turn_03",
+      "request_parent_correct": true,
+      "persisted_parent_correct": true,
+      "conversation": "210fdd6d-2796-4d79-95e6-0bf86cd258b6"
+    },
+    {
+      "id": "turn_04",
+      "request_parent_correct": true,
+      "persisted_parent_correct": true,
+      "conversation": "210fdd6d-2796-4d79-95e6-0bf86cd258b6"
+    },
+    {
+      "id": "turn_05",
+      "request_parent_correct": true,
+      "persisted_parent_correct": true,
+      "conversation": "210fdd6d-2796-4d79-95e6-0bf86cd258b6"
+    },
+    {
+      "id": "turn_06",
+      "request_parent_correct": true,
+      "persisted_parent_correct": true,
+      "conversation": "210fdd6d-2796-4d79-95e6-0bf86cd258b6"
+    },
+    {
+      "id": "turn_07",
+      "request_parent_correct": true,
+      "persisted_parent_correct": true,
+      "conversation": "210fdd6d-2796-4d79-95e6-0bf86cd258b6"
+    },
+    {
+      "id": "turn_08",
+      "request_parent_correct": true,
+      "persisted_parent_correct": true,
+      "conversation": "210fdd6d-2796-4d79-95e6-0bf86cd258b6"
+    },
+    {
+      "id": "turn_09",
+      "request_parent_correct": true,
+      "persisted_parent_correct": true,
+      "conversation": "210fdd6d-2796-4d79-95e6-0bf86cd258b6"
+    },
+    {
+      "id": "turn_10",
+      "request_parent_correct": true,
+      "persisted_parent_correct": true,
+      "conversation": "210fdd6d-2796-4d79-95e6-0bf86cd258b6"
+    }
+  ],
+  "historical_gold_checks": [
+    {
+      "path": "evidence/mineru-vision-20261101/assets-run-1/frozen-gold.original.json",
+      "tracked_in_HEAD": true,
+      "same_as_HEAD": true,
+      "sha256": "43cfd8064a83364f670ce657c48922a4717d23837c77a61cfe2e5c76edf5dec8"
+    },
+    {
+      "path": "evidence/phase5-20261101/frozen-question-subset.json",
+      "tracked_in_HEAD": true,
+      "same_as_HEAD": true,
+      "sha256": "2a92fb5bbcacb1ac988fbe45ada4e9269c40b772fcd287565c675a0a0bc246fb"
+    },
+    {
+      "path": "evidence/mineru-vision-20261101/frozen-question-subset.json",
+      "tracked_in_HEAD": true,
+      "same_as_HEAD": true,
+      "sha256": "2a92fb5bbcacb1ac988fbe45ada4e9269c40b772fcd287565c675a0a0bc246fb"
+    }
+  ],
+  "source_pdf_sha256": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0",
+  "source_pdf_matches_gold": true
+}
