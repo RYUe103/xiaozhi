@@ -113,7 +113,7 @@ function prepareSanSuoDeepCodeCapability(req, endpointOption, agent) {
   return true;
 }
 
-function restrictSanSuoDeepToolSurface(req, endpointOption, agentConfig) {
+function restrictSanSuoDeepToolSurface(req, endpointOption, agentConfig, capabilities) {
   if (req?.body?.sansuoMode !== 'deep' || !isSanSuoMainRequest(req, endpointOption, agentConfig)) {
     return false;
   }
@@ -121,15 +121,18 @@ function restrictSanSuoDeepToolSurface(req, endpointOption, agentConfig) {
   const definitions = Array.isArray(agentConfig?.toolDefinitions)
     ? agentConfig.toolDefinitions
     : [];
+  // The compatibility shim must not restore a capability denied by native loading.
+  const codeEnabled = capabilities?.has(EXECUTE_CODE_TOOL) === true;
   const filteredDefinitions = definitions.filter(
-    (definition) => !INCOMPATIBLE_CODE_TOOLS.has(definition?.name),
+    (definition) => !INCOMPATIBLE_CODE_TOOLS.has(definition?.name) &&
+      (codeEnabled || definition?.name !== EXECUTE_CODE_TOOL),
   );
   const removedDefinitionCount = definitions.length - filteredDefinitions.length;
   if (removedDefinitionCount > 0) {
     agentConfig.toolDefinitions = filteredDefinitions;
   }
 
-  const addedExecuteCode = !filteredDefinitions.some(
+  const addedExecuteCode = codeEnabled && !filteredDefinitions.some(
     (definition) => definition?.name === EXECUTE_CODE_TOOL,
   );
   if (addedExecuteCode) {
@@ -143,7 +146,8 @@ function restrictSanSuoDeepToolSurface(req, endpointOption, agentConfig) {
         removedRegistryCount += 1;
       }
     }
-    agentConfig.toolRegistry.set(EXECUTE_CODE_TOOL, SANSUO_EXECUTE_CODE_DEFINITION);
+    if (codeEnabled) agentConfig.toolRegistry.set(EXECUTE_CODE_TOOL, SANSUO_EXECUTE_CODE_DEFINITION);
+    else if (agentConfig.toolRegistry.delete(EXECUTE_CODE_TOOL)) removedRegistryCount += 1;
   }
 
   return addedExecuteCode || removedDefinitionCount > 0 || removedRegistryCount > 0;

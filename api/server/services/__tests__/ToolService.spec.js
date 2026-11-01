@@ -107,6 +107,7 @@ function createEndpointsConfig(capabilities) {
 
 describe('ToolService - Action Capability Gating', () => {
   it('loads the request-local DOCX reader without code resources or auth', async () => {
+    mockGetEndpointsConfig.mockResolvedValue(createEndpointsConfig(['tools']));
     const reader = { name: 'read_parsed_docx', invoke: jest.fn() };
     const result = await loadToolsForExecution({
       req: { ...createMockReq([]), _sansuoDocxReadTool: reader, _sansuoDocumentToolBindings: new Map([['a', new Set(['read_parsed_docx'])]]) },
@@ -119,6 +120,7 @@ describe('ToolService - Action Capability Gating', () => {
   });
 
   it('loads the request-local PDF reader without code resources or auth', async () => {
+    mockGetEndpointsConfig.mockResolvedValue(createEndpointsConfig(['tools']));
     const reader = { name: 'read_parsed_pdf', invoke: jest.fn() };
     const result = await loadToolsForExecution({
       req: { ...createMockReq([]), _sansuoPdfReadTool: reader, _sansuoDocumentToolBindings: new Map([['a', new Set(['read_parsed_pdf'])]]) },
@@ -130,7 +132,18 @@ describe('ToolService - Action Capability Gating', () => {
     expect(mockGetSanSuoFiles).not.toHaveBeenCalled();
   });
 
+  it('rechecks native tool capability before loading an already bound reader', async () => {
+    mockGetEndpointsConfig.mockResolvedValue(createEndpointsConfig(['execute_code']));
+    const reader = { name: 'read_parsed_pdf', invoke: jest.fn() };
+    const result = await loadToolsForExecution({ req: { ...createMockReq(['tools']), _sansuoPdfReadTool: reader,
+      _sansuoDocumentToolBindings: new Map([['a', new Set(['read_parsed_pdf'])]]) },
+      agent: { id: 'a', tools: [] }, toolRegistry: new Map([['read_parsed_pdf', {}]]),
+      toolNames: ['read_parsed_pdf'], actionsEnabled: false });
+    expect(result.loadedTools).not.toContain(reader);
+  });
+
   it('does not lend a private document reader to an unbound Agent', async () => {
+    mockGetEndpointsConfig.mockResolvedValue(createEndpointsConfig(['tools']));
     const reader = { name: 'read_parsed_pdf', invoke: jest.fn() };
     const result = await loadToolsForExecution({ req: { ...createMockReq([]), _sansuoPdfReadTool: reader,
       _sansuoDocumentToolBindings: new Map([['owner', new Set(['read_parsed_pdf'])]]) },

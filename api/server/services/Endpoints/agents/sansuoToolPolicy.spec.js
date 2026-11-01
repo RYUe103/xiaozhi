@@ -107,7 +107,7 @@ describe('SanSuo tool policy', () => {
       toolRegistry,
     };
 
-    expect(restrictSanSuoDeepToolSurface(req, {}, config)).toBe(true);
+    expect(restrictSanSuoDeepToolSurface(req, {}, config, new Set(['execute_code']))).toBe(true);
     expect(config.toolDefinitions.map((tool) => tool.name)).toEqual([
       'execute_code',
       'read_parsed_pdf',
@@ -126,11 +126,20 @@ describe('SanSuo tool policy', () => {
       ]),
     };
 
-    expect(restrictSanSuoDeepToolSurface(req, {}, config)).toBe(true);
+    expect(restrictSanSuoDeepToolSurface(req, {}, config, new Set(['execute_code']))).toBe(true);
     expect(config.toolDefinitions.map((tool) => tool.name)).toEqual(['execute_code']);
     expect(config.toolDefinitions[0].parameters.required).toEqual(['code']);
     expect(config.toolDefinitions[0].parameters.properties.language).toBeDefined();
     expect([...config.toolRegistry.keys()]).toEqual(['execute_code']);
+  });
+
+  it('never restores execute_code after native capability denial', () => {
+    const req = { body: { endpoint: 'SanSuoMain', sansuoMode: 'deep' } };
+    const config = { toolDefinitions: [{ name: 'execute_code' }, { name: 'bash_tool' }],
+      toolRegistry: new Map([['execute_code', {}], ['bash_tool', {}]]) };
+    restrictSanSuoDeepToolSurface(req, {}, config, new Set(['tools']));
+    expect(config.toolDefinitions).toEqual([]);
+    expect(config.toolRegistry.size).toBe(0);
   });
 
   it('does not alter non-deep or non-SanSuo agent tool surfaces', () => {

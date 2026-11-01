@@ -44,6 +44,7 @@ jest.mock('~/server/controllers/agents/callbacks', () => ({
 const mockLoadToolsForExecution = jest.fn();
 jest.mock('~/server/services/ToolService', () => ({
   loadAgentTools: jest.fn(),
+  resolveAgentCapabilities: jest.fn(async () => new Set(['tools', 'execute_code'])),
   loadToolsForExecution: (...args) => mockLoadToolsForExecution(...args),
 }));
 

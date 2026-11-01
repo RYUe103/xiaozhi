@@ -1273,8 +1273,10 @@ async function loadToolsForExecution({
   // These request-local readers only serve already authorized persisted document text.
   // Return before code resources/auth loading when it is the only requested tool.
   const documentReaders = [req._sansuoDocxReadTool, req._sansuoPdfReadTool].filter(Boolean);
+  const documentCapabilities = documentReaders.length
+    ? await resolveAgentCapabilities(req, appConfig || {}, agent?.id) : new Set();
   for (const reader of documentReaders) {
-    if (toolNames.includes(reader.name) && toolRegistry?.has(reader.name) &&
+    if (documentCapabilities.has(AgentCapabilities.tools) && toolNames.includes(reader.name) && toolRegistry?.has(reader.name) &&
         req._sansuoDocumentToolBindings?.get(agent?.id)?.has(reader.name)) {
       allLoadedTools.push(reader);
       toolNames = toolNames.filter((name) => name !== reader.name);

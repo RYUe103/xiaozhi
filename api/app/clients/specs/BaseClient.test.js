@@ -3,6 +3,8 @@ const { initializeFakeClient } = require('./FakeClient');
 const { buildPdfDocument, buildWordDocument } = require('~/server/services/DocumentContextService');
 
 const mockNodeFetch = jest.fn();
+const mockDocumentCapabilities = jest.fn(async () => new Set(['tools']));
+jest.mock('~/server/services/ToolService', () => ({ resolveAgentCapabilities: (...args) => mockDocumentCapabilities(...args) }));
 jest.mock(
   'node-fetch',
   () =>
@@ -2325,6 +2327,85 @@ describe('BaseClient', () => {
       expect(result.documents[0].file_id).toBe('history-pdf');
       expect(mockNodeFetch).not.toHaveBeenCalled();
       expect(hiddenUserContexts.join('')).toContain('没有读取正文');
+      mockNodeFetch.mockResolvedValue({ ok: true, buffer: async () => Buffer.from(JSON.stringify({ chunk_id: 'p1', page_start: 1, page_end: 1, text: 'Original persisted evidence.' }) + '\n') });
+      const evidence = JSON.parse(await TestClient.options.req._sansuoPdfReadTool.invoke({ action: 'read', document_id: result.documents[0].document_id, pages: [1] }));
+      expect(evidence.content).toContain('Original persisted evidence.');
+      expect(mockNodeFetch).toHaveBeenCalledTimes(1);
+    });
+
+    test('does not bind document tools when native effective capability is denied', async () => {
+      TestClient.options.req = { user: { id: 'user-123' }, body: { sansuoMode: 'deep' }, config: { endpoints: { agents: { capabilities: ['tools'] } } } };
+      TestClient.options.agent = { id: 'restricted', tools: [], toolDefinitions: [], toolRegistry: new Map() };
+      getFiles.mockResolvedValue([{ file_id: 'word', user: 'user-123', filename: 'word.docx' }]);
+      getSanSuoFiles.mockResolvedValue([{ libreFileId: 'text', userId: 'user-123', conversationId: 'c', status: 'ready',
+        displayFilename: 'word_docx_blocks.jsonl', sandboxSessionId: 's', sandboxFileId: 'b', metadata: { rootSourceLibreFileId: 'word' } }]);
+      mockDocumentCapabilities.mockResolvedValueOnce(new Set());
+      await TestClient.prepareSanSuoDocumentTools({ conversationId: 'c', userMessage: {}, hiddenUserContexts: [] });
+      expect(TestClient.options.agent.toolDefinitions).toEqual([]);
+      expect(TestClient.options.req._sansuoDocumentToolBindings.size).toBe(0);
+      expect(mockNodeFetch).not.toHaveBeenCalled();
+    });
+
+    test.each(['blocks', 'reading_pack'])('lazy Word %s reads preserve references without eager content', async format => {
+      TestClient.options.req = { user: { id: 'user-123' }, body: { sansuoMode: 'deep' } };
+      TestClient.options.agent = { id: 'word-agent', tools: [], toolDefinitions: [], toolRegistry: new Map() };
+      getFiles.mockResolvedValue([{ file_id: 'word', user: 'user-123', filename: 'word.docx' }]);
+      getSanSuoFiles.mockResolvedValue([{ libreFileId: 'word-text', userId: 'user-123', conversationId: 'word-conversation', status: 'ready',
+        displayFilename: format === 'blocks' ? 'word_docx_blocks.jsonl' : 'word_docx_reading_pack.md', sandboxSessionId: 's', sandboxFileId: 'b',
+        metadata: { rootSourceLibreFileId: 'word' } }]);
+      const body = format === 'blocks' ? JSON.stringify({ type: 'text', paragraph_index: 1, text: 'Legacy original evidence.' }) : 'Legacy original evidence.';
+      mockNodeFetch.mockResolvedValue({ ok: true, buffer: async () => Buffer.from(body) });
+      const message = { metadata: {} };
+      const persist = jest.spyOn(TestClient, 'persistSanSuoDocumentReferences').mockResolvedValue(null);
+      await TestClient.prepareSanSuoDocumentTools({ conversationId: 'word-conversation', userMessage: message, hiddenUserContexts: [] });
+      expect(mockNodeFetch).not.toHaveBeenCalled();
+      const tool = TestClient.options.req._sansuoDocxReadTool;
+      const result = JSON.parse(await tool.invoke({ action: 'read' }));
+      expect(result.content).toContain('Legacy original evidence.');
+      expect(result.reference.version).toEqual(expect.any(String));
+      expect(message.metadata.sansuoDocumentReferences).toHaveLength(1);
+      if (format === 'reading_pack') expect(result.reference.paragraph_start).not.toBe(1);
+      getMessages.mockResolvedValue([{ metadata: message.metadata }]);
+      const next = JSON.parse(await tool.invoke({ action: 'read_adjacent' }));
+      expect(next.status).toBe('ok');
+      expect(persist).toHaveBeenCalledTimes(2);
+      expect(mockNodeFetch).toHaveBeenCalledTimes(1);
+      persist.mockRestore();
+    });
+
+    test('Word inspect_image persists versioned references and reuses successful request results', async () => {
+      TestClient.options.req = { user: { id: 'user-123' }, body: { sansuoMode: 'deep' } };
+      TestClient.options.agent = { id: 'word-agent', tools: [], toolDefinitions: [], toolRegistry: new Map() };
+      getFiles.mockResolvedValue([{ file_id: 'word', user: 'user-123', filename: 'word.docx' }]);
+      const record = (id, name) => ({ libreFileId: id, userId: 'user-123', conversationId: 'word-conversation', status: 'ready',
+        displayFilename: name, sandboxSessionId: 's', sandboxFileId: id, metadata: { rootSourceLibreFileId: 'word' } });
+      getSanSuoFiles.mockResolvedValue([record('text', 'word_docx_blocks.jsonl'), record('image', 'word_docx_image_0001.png')]);
+      mockNodeFetch.mockImplementation(async url => ({ ok: true,
+        buffer: async () => Buffer.from(String(url).includes('image') ? 'fixture-image' : JSON.stringify({ type: 'text', text: '正文' })),
+        json: async () => ({ choices: [{ finish_reason: 'stop', message: { content: '可见测试文字' } }], usage: { total_tokens: 10 } }),
+      }));
+      const priorBase = process.env.QWEN_BASE_URL, priorKey = process.env.QWEN_API_KEY;
+      process.env.QWEN_BASE_URL = 'https://vision.example.test/v1'; process.env.QWEN_API_KEY = 'test-key';
+      const message = { metadata: {} };
+      const persist = jest.spyOn(TestClient, 'persistSanSuoDocumentReferences').mockResolvedValue(null);
+      try {
+        await TestClient.prepareSanSuoDocumentTools({ conversationId: 'word-conversation', userMessage: message, hiddenUserContexts: [] });
+        expect(mockNodeFetch).not.toHaveBeenCalled();
+        const tool = TestClient.options.req._sansuoDocxReadTool;
+        const args = { action: 'inspect_image', image_id: 'image', query: '读取可见文字' };
+        const first = JSON.parse(await tool.invoke(args));
+        expect(first.status).toBe('ok');
+        expect(first.reference.image_id).toBe('image');
+        const cached = JSON.parse(await tool.invoke(args));
+        expect(cached.cache_hit).toBe(true);
+        expect(persist).toHaveBeenCalledTimes(2);
+        expect(message.metadata.sansuoDocumentReferences).toHaveLength(2);
+        expect(mockNodeFetch.mock.calls.filter(([url]) => String(url).includes('chat/completions'))).toHaveLength(1);
+      } finally {
+        if (priorBase === undefined) delete process.env.QWEN_BASE_URL; else process.env.QWEN_BASE_URL = priorBase;
+        if (priorKey === undefined) delete process.env.QWEN_API_KEY; else process.env.QWEN_API_KEY = priorKey;
+        persist.mockRestore();
+      }
     });
 
     test('answers a ready DOCX from persisted context without forcing execute_code', async () => {

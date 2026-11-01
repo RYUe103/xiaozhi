@@ -26,7 +26,7 @@ const {
   createToolEndCallback,
   getDefaultHandlers,
 } = require('~/server/controllers/agents/callbacks');
-const { loadAgentTools, loadToolsForExecution } = require('~/server/services/ToolService');
+const { loadAgentTools, loadToolsForExecution, resolveAgentCapabilities } = require('~/server/services/ToolService');
 const { filterFilesByAgentAccess } = require('~/server/services/Files/permissions');
 const {
   getSkillToolDeps,
@@ -445,7 +445,8 @@ const initializeClient = async ({ req, res, signal, endpointOption }) => {
     },
   );
 
-  if (restrictSanSuoDeepToolSurface(req, sansuoEndpointOption, primaryConfig)) {
+  const primaryCapabilities = await resolveAgentCapabilities(req, appConfig, primaryAgent.id);
+  if (restrictSanSuoDeepToolSurface(req, sansuoEndpointOption, primaryConfig, primaryCapabilities)) {
     const supportedToolNames = (primaryConfig.toolDefinitions ?? []).map((tool) => tool.name);
     logger.info(
       `[SanSuoMain] restricted deep-mode tool surface to supported tools: ${supportedToolNames.join(',') || 'none'}`,
