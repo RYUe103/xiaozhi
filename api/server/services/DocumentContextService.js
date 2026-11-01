@@ -47,6 +47,10 @@ function normalizePdfChunk(value = {}, index = 0, documentId = '') {
     text,
     engine: value.engine,
     sourceArtifact: value.sourceArtifact,
+    block_id: value.block_id, source_document_id: value.source_document_id, source_sha256: value.source_sha256,
+    title_level: value.title_level, page_rect: value.page_rect, layout_lines: value.layout_lines, raw_type: value.raw_type, reading_order: value.reading_order, parser_version: value.parser_version,
+    bbox: value.bbox, coordinate_system: value.coordinate_system, geometry_verified: value.geometry_verified,
+    image_id: value.image_id, image_path: value.image_path, table_id: value.table_id, source_block_index: value.source_block_index,
   };
 }
 
@@ -69,6 +73,11 @@ function parsePdfChunks(buffer, documentId) {
 function extractHeadings(records, documentId) {
   const headings = [];
   for (const record of records) {
+    if (Number.isInteger(record.title_level) && record.title_level > 0 && record.title_level <= 6 && record.text.length < 1000) {
+      headings.push({ sectionId: stableId('section', documentId, record.chunkId, record.text), level: record.title_level,
+        title: record.text, pageStart: record.pageStart, pageEnd: record.pageEnd, chunkId: record.chunkId, textOffset: 0 });
+      continue;
+    }
     let textOffset = 0;
     for (const line of record.text.split(/\r?\n/)) {
       const lineOffset = record.text.indexOf(line, textOffset);

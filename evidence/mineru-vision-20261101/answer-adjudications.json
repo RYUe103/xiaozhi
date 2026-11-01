@@ -1,0 +1,312 @@
+[
+  {
+    "variant": "baseline",
+    "batch": "batch2",
+    "file": "agent-batch2-academic.json",
+    "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "未满足原gold，保留实际回答",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "baseline",
+    "batch": "batch2",
+    "file": "agent-batch2-finance-final.json",
+    "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "原gold为Gray at 1%；候选1%/Licenses-Permits类别已识别，但颜色不同，严格保留为不通过；原页色块存在标注争议，未改gold",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "baseline",
+    "batch": "batch2",
+    "file": "agent-batch2-netflix.json",
+    "id": "mml:1021",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "baseline",
+    "batch": "batch2",
+    "file": "agent-batch2-paper-table.json",
+    "id": "mml:80",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "baseline",
+    "batch": "batch2",
+    "file": "agent-batch2-paper-tree.json",
+    "id": "mml:76",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": "附加叶子数量存在不可靠/错误计数；全答复不可判完全正确"
+  },
+  {
+    "variant": "baseline",
+    "batch": "batch2",
+    "file": "agent-batch2-phone-crosspage.json",
+    "id": "mml:888",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch2",
+    "file": "agent-batch2-academic.json",
+    "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "未满足原gold，保留实际回答",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch2",
+    "file": "agent-batch2-finance-final.json",
+    "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "原gold为Gray at 1%；候选1%/Licenses-Permits类别已识别，但颜色不同，严格保留为不通过；原页色块存在标注争议，未改gold",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch2",
+    "file": "agent-batch2-netflix.json",
+    "id": "mml:1021",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "未满足原gold，保留实际回答",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch2",
+    "file": "agent-batch2-paper-table.json",
+    "id": "mml:80",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "未满足原gold，保留实际回答",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch2",
+    "file": "agent-batch2-paper-tree.json",
+    "id": "mml:76",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": "附加叶子数量存在不可靠/错误计数；全答复不可判完全正确"
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch2",
+    "file": "agent-batch2-phone-crosspage.json",
+    "id": "mml:888",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch3",
+    "file": "agent-batch3-academic.json",
+    "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "未满足原gold，保留实际回答",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch3",
+    "file": "agent-batch3-finance-final.json",
+    "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "原gold为Gray at 1%；候选1%/Licenses-Permits类别已识别，但颜色不同，严格保留为不通过；原页色块存在标注争议，未改gold",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch3",
+    "file": "agent-batch3-netflix.json",
+    "id": "mml:1021",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch3",
+    "file": "agent-batch3-paper-table.json",
+    "id": "mml:80",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "未满足原gold，保留实际回答",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch3",
+    "file": "agent-batch3-paper-tree.json",
+    "id": "mml:76",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": "附加叶子数量存在不可靠/错误计数；全答复不可判完全正确"
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch3",
+    "file": "agent-batch3-phone-crosspage.json",
+    "id": "mml:888",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch3",
+    "file": "agent-batch3-scan-crosspage.json",
+    "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "未满足原gold，保留实际回答",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch4",
+    "file": "agent-batch4-finance-final.json",
+    "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "原gold为Gray at 1%；候选1%/Licenses-Permits类别已识别，但颜色不同，严格保留为不通过；原页色块存在标注争议，未改gold",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch4",
+    "file": "agent-batch4-netflix.json",
+    "id": "mml:1021",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "未满足原gold，保留实际回答",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch4",
+    "file": "agent-batch4-scan-crosspage.json",
+    "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "未满足原gold，保留实际回答",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch5",
+    "file": "agent-batch5-academic.json",
+    "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "未满足原gold，保留实际回答",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch5",
+    "file": "agent-batch5-finance-final.json",
+    "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "原gold为Gray at 1%；候选1%/Licenses-Permits类别已识别，但颜色不同，严格保留为不通过；原页色块存在标注争议，未改gold",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch5",
+    "file": "agent-batch5-netflix.json",
+    "id": "mml:1021",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch5",
+    "file": "agent-batch5-paper-table.json",
+    "id": "mml:80",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch5",
+    "file": "agent-batch5-paper-tree.json",
+    "id": "mml:76",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "无最终答案；batch5树图与phone已在DB确认Connection error，其余详见原日志",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch5",
+    "file": "agent-batch5-phone-crosspage.json",
+    "id": "mml:888",
+    "required_answer_matches_frozen_gold": false,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "无最终答案；batch5树图与phone已在DB确认Connection error，其余详见原日志",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch5",
+    "file": "agent-batch5-scan-crosspage.json",
+    "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "本轮编码Agent人工阅读输出与冻结答案，非独立盲评",
+    "reason": "核心答案符合冻结gold；此判定不等同所有附加表述均正确",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch6",
+    "file": "agent-batch6-scan-crosspage.json",
+    "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "编码Agent对照冻结gold；扫描件另直接核对原页，非独立人工盲评",
+    "reason": "扫描件覆盖社区实践、评价与民族互融；phone正确指出30页文档不存在40–47页",
+    "additional_fact_issue": null
+  },
+  {
+    "variant": "candidate",
+    "batch": "batch6",
+    "file": "agent-batch6-phone-crosspage.json",
+    "id": "mml:888",
+    "required_answer_matches_frozen_gold": true,
+    "reviewer": "编码Agent对照冻结gold；扫描件另直接核对原页，非独立人工盲评",
+    "reason": "扫描件覆盖社区实践、评价与民族互融；phone正确指出30页文档不存在40–47页",
+    "additional_fact_issue": null
+  }
+]

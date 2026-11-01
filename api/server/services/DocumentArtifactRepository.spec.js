@@ -132,3 +132,15 @@ describe('authorized DocumentArtifactRepository', () => {
     expect(next.offset).toBe(first.next_offset);
   });
 });
+test('visual followup uses physical page despite newly materialized image artifacts',()=>{
+ const {repo,doc}=fixture();doc.sourceHash='hash';
+ repo.previousReference={document_id:doc.documentId,visual_result_id:'v',source_sha256:'hash',page_start:3,version:'old-render-state',user_id:'u',conversation_id:'c'};
+ expect(repo.execute({action:'read',document_id:doc.documentId}).content).toContain('后部证据');
+ doc.sourceHash='changed';expect(repo.execute({action:'read',document_id:doc.documentId}).error.code).toBe('HISTORICAL_REFERENCE_STALE');
+});
+test('uncommitted generation cannot replace available evidence',async()=>{
+ const {repo}=fixture();await repo.load({roots:[{file_id:'x',metadata:{sha256:'sha'}}],artifacts:[
+  {libreFileId:'partial',displayFilename:'x_mineru_chunks.jsonl',metadata:{rootSourceLibreFileId:'x',sourceHash:'sha',parseGeneration:'incomplete'}}
+ ],download:async()=>Buffer.from(JSON.stringify({text:'wrong partial',page:1}))});
+ const doc=[...repo.documents.values()].find(d=>d.fileId==='x');expect(doc.records).toHaveLength(0);expect(doc.warnings).toContainEqual({code:'INCOMPLETE_OR_SUPERSEDED_PARSE_IGNORED'});
+});

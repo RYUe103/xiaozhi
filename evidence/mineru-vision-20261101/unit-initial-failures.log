@@ -1,0 +1,109 @@
+PASS api/server/services/DocumentArtifactRepository.spec.js
+PASS api/server/services/DocumentTables.spec.js
+PASS api/server/services/DocumentPageVisionService.spec.js
+FAIL api/server/services/Files/Code/process.spec.js
+  ● SanSuo document upload preparse › calls MinerU directly and persists page-aware PDF artifacts without /exec
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 6
+    Received: 8
+
+      2164 |     });
+      2165 |     expect(result.status).toBe('ready');
+    > 2166 |     expect(result.saved).toBe(6);
+           |                          ^
+      2167 |     const request = mockAxios.mock.calls[0][0];
+      2168 |     expect(request.url).toBe('http://mineru.test/pdf_parse');
+      2169 |     const multipart = request.data.getBuffer().toString();
+
+      at Object.toBe (server/services/Files/Code/process.spec.js:2166:26)
+
+  ● SanSuo document upload preparse › preserves full Markdown when the content list is sparse without inventing pages
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 1
+    Received:   1
+
+      2207 |       .split('\n')
+      2208 |       .map(JSON.parse);
+    > 2209 |     expect(chunks.length).toBeGreaterThan(1);
+           |                           ^
+      2210 |     expect(chunks.every((chunk) => chunk.page_start == null)).toBe(true);
+      2211 |     expect(uploaded.get('策划书_preparse_mineru.md').toString()).toBe(markdown);
+      2212 |   });
+
+      at Object.toBeGreaterThan (server/services/Files/Code/process.spec.js:2209:27)
+
+  ● SanSuo document upload preparse › persists returned image bytes and reports unsupported remote images without fetching them
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "ready"
+    Received: "failed"
+
+      2220 |       },
+      2221 |     });
+    > 2222 |     expect(result.status).toBe('ready');
+           |                           ^
+      2223 |     expect(result.missingImages).toEqual(['remote.png']);
+      2224 |     expect(uploaded.get('策划书_preparse_mineru_images__figure.png').toString()).toBe(
+      2225 |       'png-image-test',
+
+      at Object.toBe (server/services/Files/Code/process.spec.js:2222:27)
+
+  ● SanSuo document upload preparse › fails explicitly for invalid/empty/timeout/HTTP results without sandbox fallback
+
+    expect(received).toMatchObject(expected)
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "reason": "invalid_mineru_response",
+    +   "reason": "Cannot set properties of null (setting 'page_count_warning')",
+        "status": "failed",
+      }
+
+      2237 |     async (payload, reject, reason) => {
+      2238 |       const { result } = await parsePdfDirect(payload, { reject });
+    > 2239 |       expect(result).toMatchObject({ status: 'failed', reason });
+           |                      ^
+      2240 |       expect(mockAxios).toHaveBeenCalledTimes(1);
+      2241 |       expect(mockAxios.mock.calls[0][0].url).toBe('http://mineru.test/pdf_parse');
+      2242 |     },
+
+      at toMatchObject (server/services/Files/Code/process.spec.js:2239:22)
+
+  ● SanSuo document upload preparse › does not report ready when text artifacts could not be persisted
+
+    expect(received).toMatchObject(expected)
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+        "reason": "missing_readable_pdf_artifact",
+    -   "saved": 4,
+    +   "saved": 6,
+        "status": "failed",
+      }
+
+      2360 |   it('does not report ready when text artifacts could not be persisted', async () => {
+      2361 |     const { result } = await parsePdfDirect({ md_content: '正文' }, { failTextUploads: true });
+    > 2362 |     expect(result).toMatchObject({
+           |                    ^
+      2363 |       status: 'failed',
+      2364 |       reason: 'missing_readable_pdf_artifact',
+      2365 |       saved: 4,
+
+      at Object.toMatchObject (server/services/Files/Code/process.spec.js:2362:20)
+
+PASS api/server/services/Files/Code/mineruCloud.spec.js
+
+Test Suites: 1 failed, 4 passed, 5 total
+Tests:       5 failed, 147 passed, 152 total
+Snapshots:   0 total
+Time:        1.29 s
+Ran all test suites matching api/server/services/Files/Code/mineruCloud.spec.js|api/server/services/Files/Code/process.spec.js|api/server/services/DocumentPageVisionService.spec.js|api/server/services/DocumentArtifactRepository.spec.js|api/server/services/DocumentTables.spec.js.

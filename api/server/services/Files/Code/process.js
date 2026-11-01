@@ -114,7 +114,7 @@ function getSanSuoMineruUploadFilename(sourceFile = {}) {
   return `sansuo_${identifier}.pdf`;
 }
 
-async function renderSanSuoPdfPages(sourceBuffer, requestedPages = []) {
+async function renderSanSuoPdfPages(sourceBuffer, requestedPages = [], { textOnly = false } = {}) {
   const tempDir = path.join('/tmp', `sansuo-pdf-render-${crypto.randomUUID()}`);
   const inputPath = path.join(tempDir, 'source.pdf');
   const outputDir = path.join(tempDir, 'pages');
@@ -133,6 +133,7 @@ async function renderSanSuoPdfPages(sourceBuffer, requestedPages = []) {
       '--dpi',
       String(SANSUO_PDF_VISION_FALLBACK_DPI),
     ];
+    if (textOnly) args.push('--text-only', '--layout');
     if (normalizedPages.length) {
       args.push('--pages', normalizedPages.join(','));
     }
@@ -158,11 +159,11 @@ async function renderSanSuoPdfPages(sourceBuffer, requestedPages = []) {
 }
 
 async function buildSanSuoPdfVisionFallbackArtifacts(sourceBuffer, sourceName, prefixName, fallbackReason = 'mineru_failed_or_disabled') {
-  const rendered = await renderSanSuoPdfPages(sourceBuffer);
+  const rendered = await renderSanSuoPdfPages(sourceBuffer, [], { textOnly: true });
   try {
     const pages = rendered.pages;
     const artifacts = [];
-    for (const page of pages) {
+    for (const page of pages.filter(page => page.image_name)) {
       const imagePath = path.join(rendered.outputDir, page.image_name);
       artifacts.push({
         name: `${prefixName}_visual_page_${String(page.page).padStart(4, '0')}.png`,
@@ -173,17 +174,17 @@ async function buildSanSuoPdfVisionFallbackArtifacts(sourceBuffer, sourceName, p
     const pagesName = `${prefixName}_visual_pages.jsonl`;
     const chunksName = `${prefixName}_visual_chunks.jsonl`;
     const manifestName = `${prefixName}_visual_manifest.json`;
-    const chunks = pages
-      .filter((page) => page.text)
-      .map((page) => ({
-        chunk_id: `visual-p${page.page}-1`,
-        page_start: page.page,
-        page_end: page.page,
-        text: page.text,
-        text_chars: page.text_chars,
-        source: sourceName,
-        reader: 'fitz_text',
+    const chunks = pages.flatMap(page => {
+      const blocks = page.layout_blocks?.length ? page.layout_blocks.map((block, index) => ({
+        text: block.lines.map(line => line.spans.map(span => span.text).join('')).join('\n'),
+        block_id: `fitz-p${page.page}-b${index + 1}`, bbox: block.bbox, coordinate_system: 'pdf_points',
+        page_rect: page.page_rect, layout_lines: block.lines, geometry_verified: true,
+      })) : [{ text: page.text }];
+      return blocks.filter(block => block.text).map((block, index) => ({ ...block,
+        chunk_id: `visual-p${page.page}-${index + 1}`, page_start: page.page, page_end: page.page,
+        text_chars: block.text.length, source: sourceName, reader: 'fitz_text',
       }));
+    });
     artifacts.push({
       name: pagesName,
       buffer: Buffer.from(pages.map((page) => JSON.stringify(page)).join('\n') + '\n'),
@@ -205,13 +206,14 @@ async function buildSanSuoPdfVisionFallbackArtifacts(sourceBuffer, sourceName, p
             parser_engine: 'fitz',
             document_page_count: rendered.documentPageCount,
             page_count: rendered.documentPageCount,
-            quality: chunks.length === rendered.documentPageCount ? 'text_available' : 'partial_text',
+            quality: pages.filter(p => p.text).length === rendered.documentPageCount ? 'text_available' : 'partial_text',
             indexed_pages: pages.length,
-            text_pages: chunks.length,
+            text_pages: pages.filter(p => p.text).length,
             visual_batch_size: 20,
             logical_batch_pages: 20,
             dpi: SANSUO_PDF_VISION_FALLBACK_DPI,
             status: 'ready',
+            visual_preparation: 'on_demand',
             pages: pagesName,
             chunks: chunksName,
           },
@@ -224,6 +226,7 @@ async function buildSanSuoPdfVisionFallbackArtifacts(sourceBuffer, sourceName, p
     return {
       artifacts,
       pages: pages.length,
+      images: pages.filter(page => page.image_name).length,
       chunks: chunks.length,
       cleanup: rendered.cleanup,
     };
@@ -347,9 +350,11 @@ async function ensureSanSuoPdfPageArtifacts({
   try {
     for (const page of rendered.pages) {
       const name = `${prefixName}_review_page_${String(page.page).padStart(4, '0')}.png`;
+      const pageBuffer = await fsp.readFile(path.join(rendered.outputDir, page.image_name));
+      const imageSha256 = crypto.createHash('sha256').update(pageBuffer).digest('hex');
       const uploaded = await strategy.handleFileUpload({
         req,
-        stream: fs.createReadStream(path.join(rendered.outputDir, page.image_name)),
+        stream: Readable.from(pageBuffer),
         filename: name,
         kind: 'user',
         id: req.user.id,
@@ -359,6 +364,7 @@ async function ensureSanSuoPdfPageArtifacts({
         id: uploaded.file_id,
         name,
         toolCallId: `sansuo-pdf-page-review-${rootFileId}-${page.page}`,
+        artifactMetadata: { imageSha256, physicalPage: page.page, renderer: 'fitz', dpi: SANSUO_PDF_VISION_FALLBACK_DPI },
         conversationId,
         messageId,
         session_id: uploaded.storage_session_id,
@@ -896,7 +902,7 @@ function buildSanSuoTabularArtifacts(buffer, sourceName, prefixName, parseKind) 
   }));
 }
 
-function buildSanSuoMineruArtifacts(payload, sourceName) {
+function buildSanSuoMineruArtifacts(payload, sourceName, identity = {}) {
   if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
     throw new Error('invalid_mineru_response');
   }
@@ -909,10 +915,10 @@ function buildSanSuoMineruArtifacts(payload, sourceName) {
     try {
       contentList = JSON.parse(contentList);
     } catch {
-      contentList = [contentList];
+      throw new Error('invalid_mineru_content_list');
     }
   }
-  if (!Array.isArray(contentList)) contentList = [contentList];
+  if (!Array.isArray(contentList)) throw new Error('invalid_mineru_content_list');
   // A known local mock placeholder is a failed parse, never document evidence.
   // Let the existing real FITZ fallback run; this does not change the MinerU service.
   if (contentList.some((item) => item?.note === 'local_mineru_mock_no_ocr')) {
@@ -962,16 +968,17 @@ function buildSanSuoMineruArtifacts(payload, sourceName) {
       start = end - 350;
     }
   };
-  for (const item of contentList) appendChunks(textOf(item), pageOf(item));
+  const structure = require('./mineruStructure').buildMineruStructure(payload, contentList, sourceName, identity);
+  chunks.push(...structure.chunks);
   const contentText = contentList.map(textOf).filter(Boolean).join('\n\n');
   const markdown = md.trim() || contentText;
   if (!markdown.trim()) throw new Error('empty_mineru_content');
-  const contentChars = chunks.reduce((sum, chunk) => sum + chunk.text_chars, 0);
-  if (!chunks.length || contentChars < markdown.length * 0.5) {
-    // Sparse content_list must not hide the authoritative Markdown.
-    // Unknown page numbers stay unknown instead of being fabricated.
+  if (!chunks.length || chunks.reduce((sum, c) => sum + c.text.length, 0) < markdown.length * 0.5) {
+    // Legacy sparse lists cannot provide trustworthy page locations for all Markdown.
+    // Retain blocks separately, and index the authoritative text once with unknown pages.
     chunks.length = 0;
     appendChunks(markdown);
+    structure.warnings = ['SPARSE_CONTENT_LIST_MARKDOWN_FALLBACK'];
   }
   const artifacts = [];
   const add = (name, value) =>
@@ -987,6 +994,9 @@ function buildSanSuoMineruArtifacts(payload, sourceName) {
   );
   add(prefix + '_mineru_content_list.json', contentList);
   add(prefix + '_mineru_result.json', payload);
+  add(prefix + '_mineru_blocks.json', { ...structure, chunks: undefined });
+  if (payload.rawArchive) artifacts.push({ name: prefix + '_mineru_original.zip', buffer: payload.rawArchive, artifactKind: 'pdf_parse_original_archive' });
+  add(prefix + '_mineru_provenance.json', { ...payload.provenance, source_sha256: structure.source_sha256, output_files: payload.output_files || [], main_artifacts: payload.main_artifacts || null });
   const missingImages = [];
   const images = Array.isArray(payload.images)
     ? payload.images.map((image, index) => [
@@ -1016,7 +1026,8 @@ function buildSanSuoMineruArtifacts(payload, sourceName) {
       continue;
     }
     artifacts.push({
-      name: prefix + '_mineru_images__' + name,
+      name: prefix + '_mineru_images__' + structure.images.find(image => image.original_path === originalName)?.image_id + path.extname(name),
+      artifactMetadata: { mineruImage: structure.images.find(image => image.original_path === originalName) },
       buffer,
       artifactKind: 'pdf_extracted_image',
     });
@@ -1030,7 +1041,7 @@ function buildSanSuoMineruArtifacts(payload, sourceName) {
     page_count:
       Number(payload.page_count) ||
       (pages.length ? pages.reduce((max, page) => Math.max(max, page), 0) : null),
-    page_count_source: payload.page_count ? 'mineru' : 'content_list_max_page',
+    page_count_source: payload.page_count ? (payload.page_count_source || 'mineru') : 'content_list_max_page',
   };
   add(prefix + '_profile.json', profile);
   add(prefix + '_smart_manifest.json', {
@@ -1153,8 +1164,23 @@ async function preparseSanSuoPdfOnUpload({
       elapsedMs: Date.now() - mineruStartedAt,
       httpStatus: response?.status || null,
     });
+    if (!response?.data || typeof response.data !== 'object' || Array.isArray(response.data)) throw new Error('invalid_mineru_response');
+    // Count physical pages independently; content_list maximum cannot prove completeness.
+    const metadataDir = await fsp.mkdtemp('/tmp/sansuo-pdf-metadata-');
+    try {
+      const input = path.join(metadataDir, 'source.pdf');
+      await fsp.writeFile(input, sourceBuffer);
+      const { stdout } = await execFileAsync(process.env.SANSUO_PDF_RENDER_PYTHON || 'python3',
+        [getSanSuoPdfVisionRenderScript(), '--input', input, '--output-dir', metadataDir, '--metadata-only'],
+        { timeout: 30000, maxBuffer: 1024 * 1024 });
+      response.data.page_count = JSON.parse(stdout).document_page_count;
+      response.data.page_count_source = 'fitz_source_pdf';
+    } catch {
+      // Unknown completeness remains explicit; parsed evidence is still useful.
+      response.data.page_count_warning = 'PHYSICAL_PAGE_COUNT_UNAVAILABLE';
+    } finally { await fsp.rm(metadataDir, { recursive: true, force: true }); }
     const artifactBuildStartedAt = Date.now();
-    const { artifacts, missingImages } = buildSanSuoMineruArtifacts(response?.data, sourceName);
+    const { artifacts, missingImages } = buildSanSuoMineruArtifacts(response?.data, sourceName, { sourceHash, documentId: sourceFiles[0].file_id });
     logSanSuoFileTiming({
       traceId,
       fileType: 'pdf',
@@ -1166,8 +1192,14 @@ async function preparseSanSuoPdfOnUpload({
     });
     // Persist sequentially to avoid buffering concurrent copies of a large response.
     const saved = [];
+    const parseGeneration = crypto.randomUUID();
+    const persistedImageMapping = [];
     const persistStartedAt = Date.now();
     for (const artifact of artifacts) {
+      const commitManifest = /_smart_manifest\.json$/.test(artifact.name);
+      if (commitManifest && (saved.length !== artifacts.length - 1 || missingImages.length)) continue;
+      if (commitManifest) artifact.buffer = Buffer.from(JSON.stringify({ ...JSON.parse(artifact.buffer.toString('utf8')),
+        parse_generation: parseGeneration, source_sha256: sourceHash, artifact_set_status: 'complete', image_artifacts: persistedImageMapping }));
       try {
         const uploaded = await strategy.handleFileUpload({
           req,
@@ -1186,11 +1218,16 @@ async function preparseSanSuoPdfOnUpload({
           session_id: uploaded.storage_session_id,
           sourceFiles,
           artifactKind: artifact.artifactKind,
+          artifactMetadata: { ...artifact.artifactMetadata, parseGeneration, ...(commitManifest ? { artifactSetStatus: 'complete' } : {}) },
           recommendedReader: artifact.artifactKind === 'pdf_extracted_image' ? 'vision' : 'backend',
           reusable: true,
           visibility: 'tool',
         });
-        if (record) saved.push(artifact.name);
+        if (record) {
+          saved.push(artifact.name);
+          if (artifact.artifactMetadata?.mineruImage) persistedImageMapping.push({ ...artifact.artifactMetadata.mineruImage,
+            image_artifact_id: record.libreFileId, storage_filename: artifact.name });
+        }
       } catch {
         logger.warn('[SanSuoPdfPreparse] artifact persistence failed', { filename: artifact.name });
       }
@@ -1225,8 +1262,9 @@ async function preparseSanSuoPdfOnUpload({
       saved: saved.length,
     });
     return {
-      status: readableArtifacts.length ? 'ready' : 'failed',
-      ...(readableArtifacts.length ? {} : { reason: 'missing_readable_pdf_artifact' }),
+      status: readableArtifacts.length && saved.length === artifacts.length && !missingImages.length ? 'ready' : 'failed',
+      partial: readableArtifacts.length > 0 && (saved.length !== artifacts.length || missingImages.length > 0),
+      ...(readableArtifacts.length ? (saved.length === artifacts.length && !missingImages.length ? {} : { reason: 'partial_artifact_persistence' }) : { reason: 'missing_readable_pdf_artifact' }),
       artifacts: saved,
       saved: saved.length,
       readableArtifacts,
@@ -1239,6 +1277,7 @@ async function preparseSanSuoPdfOnUpload({
         : error?.response?.status
           ? 'mineru_http_' + error.response.status
           : error?.message || 'mineru_parse_failed';
+    if (error?.diagnostics) logSanSuoFileTiming({ traceId, fileType: 'pdf', stage: 'mineru_failure', status: 'failed', ...error.diagnostics }, 'warn');
     if (isSanSuoPdfVisionFallbackEnabled() && sourceBuffer?.length) {
       try {
         const fallbackStartedAt = Date.now();
@@ -1268,7 +1307,7 @@ async function preparseSanSuoPdfOnUpload({
         const savedImages = saved.filter((name) => /_visual_page_\d+\.png$/i.test(name));
         const ready =
           readableArtifacts.some((name) => /_visual_manifest\.json$/i.test(name)) &&
-          savedImages.length === fallback.pages;
+          savedImages.length === fallback.images;
         logSanSuoFileTiming({
           traceId,
           fileType: 'pdf',
@@ -1419,6 +1458,7 @@ async function preparseSanSuoDocxOnUpload({
           session_id: uploaded.storage_session_id,
           sourceFiles,
           artifactKind: artifact.artifactKind,
+          artifactMetadata: artifact.artifactMetadata,
           recommendedReader: artifact.recommendedReader,
           reusable: true,
           visibility: 'tool',
@@ -1647,6 +1687,7 @@ async function preparseSanSuoStructuredFileOnUpload({
           session_id: uploaded.storage_session_id,
           sourceFiles,
           artifactKind: artifact.artifactKind,
+          artifactMetadata: artifact.artifactMetadata,
           recommendedReader: artifact.recommendedReader,
           reusable: true,
           visibility: 'tool',
@@ -2434,6 +2475,7 @@ async function recordSanSuoHiddenCodeOutput({
   session_id,
   sourceFiles = [],
   artifactKind,
+  artifactMetadata = {},
   recommendedReader,
   reusable = true,
   visibility = 'tool',
@@ -2479,6 +2521,7 @@ async function recordSanSuoHiddenCodeOutput({
       lastAccessedAt: new Date(),
       gcState: 'active',
       metadata: {
+        ...artifactMetadata,
         isIntermediate: true,
         visibility,
         reusable: reusable !== false,
@@ -2520,6 +2563,13 @@ async function recordSanSuoHiddenCodeOutput({
     return {
       hidden: true,
       intermediate: true,
+      libreFileId: syntheticLibreFileId,
+      displayFilename: safeName,
+      originalFilename: name,
+      sandboxSessionId: session_id,
+      sandboxFileId: id,
+      metadata: { ...artifactMetadata, rootSourceLibreFileId: sourceFiles.find(file => file?.file_id)?.file_id || null,
+        sourceHash: sourceFiles.find(file => file?.file_id)?.metadata?.sha256 || null, artifactKind: resolvedArtifactKind, codeEnvRef },
       filename: safeName,
       sandbox_session_id: session_id,
       sandbox_file_id: id,

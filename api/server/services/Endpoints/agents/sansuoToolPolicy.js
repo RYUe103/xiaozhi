@@ -348,7 +348,7 @@ function registerSanSuoPdfReadTool(req, agent, read) {
       description:
         '按需查阅当前聊天中已完成持久解析的 PDF，不执行代码、不启动沙箱、不重新解析。' +
         'action 支持 list、info、toc、search、read、read_table、read_adjacent、visual_page、visual_search、inspect_page；视觉摘要与正文分离，续读使用 continuation_token。' +
-        '正文或表格不足、乱码、图例不清或需核对原页时，先定位物理页，再用 inspect_page 指定 document_id、page、具体 query 和 mode 查看原图；视觉识别不等于已验证全文 OCR。' +
+        '正文或表格不足、乱码、图例不清或需核对原页时，先检索正文或图注定位物理页，再调用本工具 read_parsed_pdf，action=inspect_page，指定 document_id、page、具体 query 和 mode 查看原图；视觉识别不等于已验证全文 OCR。' +
         '多份 PDF 必须使用 list 返回的 document_id；只使用返回的 chunk_id、section_id、table_id 继续读取。' +
         'read_table可带query聚焦具体型号或术语；表格rows为原始行列，保留行号。不能根据其他型号推断空白单元格。需要多步、批量或精确小数运算时，可把已核实且带页码的数据交给execute_code计算，简单计算可直接完成。',
       parameters: {
@@ -362,6 +362,7 @@ function registerSanSuoPdfReadTool(req, agent, read) {
           query: { type: 'string' },
           page: { type: 'integer', minimum: 1, maximum: 100000 },
           mode: { type: 'string', enum: ['auto', 'text', 'table', 'figure', 'formula'] },
+          block_id: { type: 'string', description: '检索返回的 MinerU 块 ID，可读取已验证映射的图块；图例或坐标轴上下文不全时省略此项读取原页。不能与 region 同用。' },
           region: { type: 'object', description: '旋转后页面图像的归一化坐标，左上角为原点，范围 0 到 1。', properties: { x0: { type: 'number' }, y0: { type: 'number' }, x1: { type: 'number' }, y1: { type: 'number' } }, required: ['x0', 'y0', 'x1', 'y1'] },
           pages: { type: 'array', items: { type: 'integer' } },
           chunk_id: { type: 'string' },
@@ -380,11 +381,12 @@ function registerSanSuoPdfReadTool(req, agent, read) {
       },
     };
     const schema = z.object({
-      action: z.enum(['list', 'info', 'toc', 'search', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page']),
+      action: z.enum(['list', 'info', 'toc', 'search', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page']).optional(),
       document_id: z.string().max(200).optional(),
       query: z.string().max(1000).optional(),
-      page: z.number().int().min(1).max(100000).optional(),
+      page: z.preprocess(value => typeof value === 'string' && /^[1-9][0-9]*$/.test(value) ? Number(value) : value, z.number().int().min(1).max(100000)).optional(),
       mode: z.enum(['auto', 'text', 'table', 'figure', 'formula']).optional(),
+      block_id: z.string().optional(),
       region: z.object({ x0: z.number().min(0).max(1), y0: z.number().min(0).max(1), x1: z.number().min(0).max(1), y1: z.number().min(0).max(1) }).strict().optional(),
       pages: z.array(z.number().int().min(1).max(100000)).max(30).optional(),
       chunk_id: z.string().max(200).optional(),
@@ -406,6 +408,7 @@ function registerSanSuoPdfReadTool(req, agent, read) {
       schema,
       func: async (args) => {
         try {
+          if (!args.action) return JSON.stringify({ ok: false, status: 'unavailable', error: { code: 'ACTION_REQUIRED', message: '请补充 action。读取原图必须调用 read_parsed_pdf，设置 action: inspect_page，并同时提供 document_id、page 和 query。' }, supplied_page: args.page || null });
           const t = Date.now();
           const result = await read(args);
           const projection = req._sansuoJitCompact === false ? result : require('../../DocumentToolResult').compactDocumentResult(result);

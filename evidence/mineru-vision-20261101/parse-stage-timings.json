@@ -1,0 +1,2908 @@
+[
+  {
+    "source_sha256": "16ee1cfbd58f9c6a3793c66ff5f4ec38dd864ac9fd7a9b7186f8af7db53f870b",
+    "root_file_id": "36b7aedf-f737-4b77-9b55-8528322c843b",
+    "stored_at": "2026-11-01T01:07:28.768Z",
+    "cloud_timings": {
+      "create_ms": 777,
+      "upload_ms": 16891,
+      "poll_ms": 42178,
+      "download_ms": 7864,
+      "convert_ms": 2846,
+      "total_ms": 70557
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 17850
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 20043
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 59847
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-11-01T01:06:16.985Z",
+        "traceId": "file-36b7aedf-f737-4b77-9b55-8528322c843b",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 7,
+        "fileId": "36b7aedf-f737-4b77-9b55-8528322c843b",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:06:16.997Z",
+        "traceId": "file-36b7aedf-f737-4b77-9b55-8528322c843b",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 8,
+        "queueWaitMs": 14,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:06:17.395Z",
+        "traceId": "file-36b7aedf-f737-4b77-9b55-8528322c843b",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 398,
+        "sourceBytes": 31841340,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:07:28.098Z",
+        "traceId": "file-36b7aedf-f737-4b77-9b55-8528322c843b",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 70701,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:07:28.518Z",
+        "traceId": "file-36b7aedf-f737-4b77-9b55-8528322c843b",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 107,
+        "artifacts": 89,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:07:29.368Z",
+        "traceId": "file-36b7aedf-f737-4b77-9b55-8528322c843b",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 847,
+        "artifacts": 89,
+        "saved": 89,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:07:29.369Z",
+        "traceId": "file-36b7aedf-f737-4b77-9b55-8528322c843b",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 72372,
+        "artifacts": 89,
+        "saved": 89,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:07:29.372Z",
+        "traceId": "file-36b7aedf-f737-4b77-9b55-8528322c843b",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 72375,
+        "artifacts": 89,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0",
+    "root_file_id": "7733d8ce-bff3-492d-a684-7a24df884601",
+    "stored_at": "2026-11-01T00:48:56.679Z",
+    "cloud_timings": {
+      "create_ms": 164,
+      "upload_ms": 5666,
+      "poll_ms": 174128,
+      "download_ms": 11532,
+      "convert_ms": 4170,
+      "total_ms": 195660
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 6029
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 8192
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 10368
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 179957
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-11-01T00:45:39.552Z",
+        "traceId": "file-7733d8ce-bff3-492d-a684-7a24df884601",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 2,
+        "fileId": "7733d8ce-bff3-492d-a684-7a24df884601",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:45:39.558Z",
+        "traceId": "file-7733d8ce-bff3-492d-a684-7a24df884601",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 3,
+        "queueWaitMs": 7,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:45:39.902Z",
+        "traceId": "file-7733d8ce-bff3-492d-a684-7a24df884601",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 343,
+        "sourceBytes": 33875317,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:48:55.724Z",
+        "traceId": "file-7733d8ce-bff3-492d-a684-7a24df884601",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 195820,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:48:56.282Z",
+        "traceId": "file-7733d8ce-bff3-492d-a684-7a24df884601",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 239,
+        "artifacts": 74,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:48:57.364Z",
+        "traceId": "file-7733d8ce-bff3-492d-a684-7a24df884601",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 1082,
+        "artifacts": 74,
+        "saved": 74,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:48:57.365Z",
+        "traceId": "file-7733d8ce-bff3-492d-a684-7a24df884601",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 197806,
+        "artifacts": 74,
+        "saved": 74,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:48:57.368Z",
+        "traceId": "file-7733d8ce-bff3-492d-a684-7a24df884601",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 197810,
+        "artifacts": 74,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+    "root_file_id": "0556843e-b72a-487f-800b-30565f10e089",
+    "stored_at": "2026-10-31T23:43:12.791Z",
+    "cloud_timings": {
+      "create_ms": 124,
+      "upload_ms": 668,
+      "poll_ms": 76832,
+      "download_ms": 405,
+      "convert_ms": 609,
+      "total_ms": 78638
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 910
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3033
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 11551
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 77624
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T23:41:53.597Z",
+        "traceId": "file-0556843e-b72a-487f-800b-30565f10e089",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 5,
+        "fileId": "0556843e-b72a-487f-800b-30565f10e089",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:41:53.602Z",
+        "traceId": "file-0556843e-b72a-487f-800b-30565f10e089",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 3,
+        "queueWaitMs": 10,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:41:53.681Z",
+        "traceId": "file-0556843e-b72a-487f-800b-30565f10e089",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 79,
+        "sourceBytes": 1662567,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:43:12.330Z",
+        "traceId": "file-0556843e-b72a-487f-800b-30565f10e089",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 78648,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:43:12.637Z",
+        "traceId": "file-0556843e-b72a-487f-800b-30565f10e089",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 41,
+        "artifacts": 19,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:43:12.920Z",
+        "traceId": "file-0556843e-b72a-487f-800b-30565f10e089",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 283,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:43:12.921Z",
+        "traceId": "file-0556843e-b72a-487f-800b-30565f10e089",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 79319,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:43:12.922Z",
+        "traceId": "file-0556843e-b72a-487f-800b-30565f10e089",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 79320,
+        "artifacts": 19,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+    "root_file_id": "8fdbc2cb-b10c-4e13-9fc4-568f34b1c19d",
+    "stored_at": "2026-10-31T23:33:14.457Z",
+    "cloud_timings": {
+      "create_ms": 198,
+      "upload_ms": 489,
+      "poll_ms": 50062,
+      "download_ms": 853,
+      "convert_ms": 270,
+      "total_ms": 51872
+    },
+    "states": [
+      {
+        "state": "pending",
+        "elapsed_ms": 922
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 50749
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T23:32:22.189Z",
+        "traceId": "file-8fdbc2cb-b10c-4e13-9fc4-568f34b1c19d",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 5,
+        "fileId": "8fdbc2cb-b10c-4e13-9fc4-568f34b1c19d",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:32:22.199Z",
+        "traceId": "file-8fdbc2cb-b10c-4e13-9fc4-568f34b1c19d",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 7,
+        "queueWaitMs": 12,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:32:22.233Z",
+        "traceId": "file-8fdbc2cb-b10c-4e13-9fc4-568f34b1c19d",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 33,
+        "sourceBytes": 173992,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:33:14.112Z",
+        "traceId": "file-8fdbc2cb-b10c-4e13-9fc4-568f34b1c19d",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 51878,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:33:14.372Z",
+        "traceId": "file-8fdbc2cb-b10c-4e13-9fc4-568f34b1c19d",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 18,
+        "artifacts": 16,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:33:14.549Z",
+        "traceId": "file-8fdbc2cb-b10c-4e13-9fc4-568f34b1c19d",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 177,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:33:14.550Z",
+        "traceId": "file-8fdbc2cb-b10c-4e13-9fc4-568f34b1c19d",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 52350,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:33:14.552Z",
+        "traceId": "file-8fdbc2cb-b10c-4e13-9fc4-568f34b1c19d",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 52353,
+        "artifacts": 16,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+    "root_file_id": "a11e0e0a-4f94-4d85-8e2f-042eb92fc53d",
+    "stored_at": "2026-10-31T20:13:19.416Z",
+    "cloud_timings": {
+      "create_ms": 284,
+      "upload_ms": 1236,
+      "poll_ms": 4329,
+      "download_ms": 681,
+      "convert_ms": 1113,
+      "total_ms": 7643
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 1625
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3745
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 5849
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T20:13:11.125Z",
+        "traceId": "file-a11e0e0a-4f94-4d85-8e2f-042eb92fc53d",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 2,
+        "fileId": "a11e0e0a-4f94-4d85-8e2f-042eb92fc53d",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:11.134Z",
+        "traceId": "file-a11e0e0a-4f94-4d85-8e2f-042eb92fc53d",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 7,
+        "queueWaitMs": 11,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:11.206Z",
+        "traceId": "file-a11e0e0a-4f94-4d85-8e2f-042eb92fc53d",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 72,
+        "sourceBytes": 1662567,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:18.859Z",
+        "traceId": "file-a11e0e0a-4f94-4d85-8e2f-042eb92fc53d",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 7653,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:19.272Z",
+        "traceId": "file-a11e0e0a-4f94-4d85-8e2f-042eb92fc53d",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 47,
+        "artifacts": 19,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:19.545Z",
+        "traceId": "file-a11e0e0a-4f94-4d85-8e2f-042eb92fc53d",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 273,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:19.545Z",
+        "traceId": "file-a11e0e0a-4f94-4d85-8e2f-042eb92fc53d",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 8411,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:19.546Z",
+        "traceId": "file-a11e0e0a-4f94-4d85-8e2f-042eb92fc53d",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 8412,
+        "artifacts": 19,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+    "root_file_id": "1528b1c2-432f-40bd-b4c3-b0dd9850b87a",
+    "stored_at": "2026-10-31T18:12:53.041Z",
+    "cloud_timings": {
+      "create_ms": 201,
+      "upload_ms": 361,
+      "poll_ms": 15682,
+      "download_ms": 745,
+      "convert_ms": 347,
+      "total_ms": 17336
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 665
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 2792
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 16244
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T18:12:35.023Z",
+        "traceId": "file-1528b1c2-432f-40bd-b4c3-b0dd9850b87a",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 5,
+        "fileId": "1528b1c2-432f-40bd-b4c3-b0dd9850b87a",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:12:35.034Z",
+        "traceId": "file-1528b1c2-432f-40bd-b4c3-b0dd9850b87a",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 9,
+        "queueWaitMs": 14,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:12:35.047Z",
+        "traceId": "file-1528b1c2-432f-40bd-b4c3-b0dd9850b87a",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 12,
+        "sourceBytes": 173992,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:12:52.389Z",
+        "traceId": "file-1528b1c2-432f-40bd-b4c3-b0dd9850b87a",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 17341,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:12:52.888Z",
+        "traceId": "file-1528b1c2-432f-40bd-b4c3-b0dd9850b87a",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 34,
+        "artifacts": 16,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:12:53.233Z",
+        "traceId": "file-1528b1c2-432f-40bd-b4c3-b0dd9850b87a",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 344,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:12:53.234Z",
+        "traceId": "file-1528b1c2-432f-40bd-b4c3-b0dd9850b87a",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 18199,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:12:53.240Z",
+        "traceId": "file-1528b1c2-432f-40bd-b4c3-b0dd9850b87a",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 18206,
+        "artifacts": 16,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+    "root_file_id": "84c38e8c-8b2e-4ca8-88ca-adcfd9b47ea3",
+    "stored_at": "2026-10-31T23:26:31.542Z",
+    "cloud_timings": {
+      "create_ms": 145,
+      "upload_ms": 505,
+      "poll_ms": 23406,
+      "download_ms": 818,
+      "convert_ms": 697,
+      "total_ms": 25571
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 767
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 2870
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 4983
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 24056
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T23:26:05.454Z",
+        "traceId": "file-84c38e8c-8b2e-4ca8-88ca-adcfd9b47ea3",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 2,
+        "fileId": "84c38e8c-8b2e-4ca8-88ca-adcfd9b47ea3",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:05.462Z",
+        "traceId": "file-84c38e8c-8b2e-4ca8-88ca-adcfd9b47ea3",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 5,
+        "queueWaitMs": 10,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:05.513Z",
+        "traceId": "file-84c38e8c-8b2e-4ca8-88ca-adcfd9b47ea3",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 50,
+        "sourceBytes": 1662567,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:31.096Z",
+        "traceId": "file-84c38e8c-8b2e-4ca8-88ca-adcfd9b47ea3",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 25582,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:31.410Z",
+        "traceId": "file-84c38e8c-8b2e-4ca8-88ca-adcfd9b47ea3",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 41,
+        "artifacts": 19,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:31.678Z",
+        "traceId": "file-84c38e8c-8b2e-4ca8-88ca-adcfd9b47ea3",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 268,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:31.678Z",
+        "traceId": "file-84c38e8c-8b2e-4ca8-88ca-adcfd9b47ea3",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 26215,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:31.681Z",
+        "traceId": "file-84c38e8c-8b2e-4ca8-88ca-adcfd9b47ea3",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 26219,
+        "artifacts": 19,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+    "root_file_id": "1a2f377f-0d4a-4066-875d-b5fe30ba42fa",
+    "stored_at": "2026-10-31T18:06:18.204Z",
+    "cloud_timings": {
+      "create_ms": 377,
+      "upload_ms": 423,
+      "poll_ms": 15059,
+      "download_ms": 742,
+      "convert_ms": 301,
+      "total_ms": 16902
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 920
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3063
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 9436
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 15859
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T18:06:00.793Z",
+        "traceId": "file-1a2f377f-0d4a-4066-875d-b5fe30ba42fa",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 28,
+        "fileId": "1a2f377f-0d4a-4066-875d-b5fe30ba42fa",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:06:00.804Z",
+        "traceId": "file-1a2f377f-0d4a-4066-875d-b5fe30ba42fa",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 6,
+        "queueWaitMs": 14,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:06:00.827Z",
+        "traceId": "file-1a2f377f-0d4a-4066-875d-b5fe30ba42fa",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 22,
+        "sourceBytes": 173992,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:06:17.739Z",
+        "traceId": "file-1a2f377f-0d4a-4066-875d-b5fe30ba42fa",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 16910,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:06:18.094Z",
+        "traceId": "file-1a2f377f-0d4a-4066-875d-b5fe30ba42fa",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 21,
+        "artifacts": 16,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:06:18.330Z",
+        "traceId": "file-1a2f377f-0d4a-4066-875d-b5fe30ba42fa",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 236,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:06:18.331Z",
+        "traceId": "file-1a2f377f-0d4a-4066-875d-b5fe30ba42fa",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 17526,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:06:18.353Z",
+        "traceId": "file-1a2f377f-0d4a-4066-875d-b5fe30ba42fa",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 17549,
+        "artifacts": 16,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "16ee1cfbd58f9c6a3793c66ff5f4ec38dd864ac9fd7a9b7186f8af7db53f870b",
+    "root_file_id": "3f41495f-b9d7-4a00-8e48-2333faeac983",
+    "stored_at": "2026-10-31T23:45:16.221Z",
+    "cloud_timings": {
+      "create_ms": 134,
+      "upload_ms": 11317,
+      "poll_ms": 32017,
+      "download_ms": 6475,
+      "convert_ms": 4655,
+      "total_ms": 54598
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 11567
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 13677
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 30667
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 43468
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T23:44:19.139Z",
+        "traceId": "file-3f41495f-b9d7-4a00-8e48-2333faeac983",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 1,
+        "fileId": "3f41495f-b9d7-4a00-8e48-2333faeac983",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:44:19.143Z",
+        "traceId": "file-3f41495f-b9d7-4a00-8e48-2333faeac983",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 2,
+        "queueWaitMs": 5,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:44:19.440Z",
+        "traceId": "file-3f41495f-b9d7-4a00-8e48-2333faeac983",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 296,
+        "sourceBytes": 31841340,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:45:14.314Z",
+        "traceId": "file-3f41495f-b9d7-4a00-8e48-2333faeac983",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 54871,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:45:15.404Z",
+        "traceId": "file-3f41495f-b9d7-4a00-8e48-2333faeac983",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 255,
+        "artifacts": 89,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:45:17.534Z",
+        "traceId": "file-3f41495f-b9d7-4a00-8e48-2333faeac983",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 2129,
+        "artifacts": 89,
+        "saved": 89,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:45:17.535Z",
+        "traceId": "file-3f41495f-b9d7-4a00-8e48-2333faeac983",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 58391,
+        "artifacts": 89,
+        "saved": 89,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:45:17.538Z",
+        "traceId": "file-3f41495f-b9d7-4a00-8e48-2333faeac983",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 58395,
+        "artifacts": 89,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "b22ca874ef08f383bd0b1071677d44f4a242af668f855f00dc9c6d4ac94148e2",
+    "root_file_id": "da928bc8-b599-48cf-ad65-b9ea87226f54",
+    "stored_at": "2026-11-01T00:52:41.362Z",
+    "cloud_timings": {
+      "create_ms": 233,
+      "upload_ms": 551,
+      "poll_ms": 121144,
+      "download_ms": 1524,
+      "convert_ms": 1549,
+      "total_ms": 125001
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 1066
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3238
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 5447
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 121928
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-11-01T00:50:35.774Z",
+        "traceId": "file-da928bc8-b599-48cf-ad65-b9ea87226f54",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 6,
+        "fileId": "da928bc8-b599-48cf-ad65-b9ea87226f54",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:50:35.783Z",
+        "traceId": "file-da928bc8-b599-48cf-ad65-b9ea87226f54",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 7,
+        "queueWaitMs": 14,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:50:35.805Z",
+        "traceId": "file-da928bc8-b599-48cf-ad65-b9ea87226f54",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 22,
+        "sourceBytes": 578489,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:52:40.818Z",
+        "traceId": "file-da928bc8-b599-48cf-ad65-b9ea87226f54",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 125011,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:52:41.240Z",
+        "traceId": "file-da928bc8-b599-48cf-ad65-b9ea87226f54",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 129,
+        "artifacts": 65,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:52:41.914Z",
+        "traceId": "file-da928bc8-b599-48cf-ad65-b9ea87226f54",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 674,
+        "artifacts": 65,
+        "saved": 65,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:52:41.914Z",
+        "traceId": "file-da928bc8-b599-48cf-ad65-b9ea87226f54",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 126131,
+        "artifacts": 65,
+        "saved": 65,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:52:41.916Z",
+        "traceId": "file-da928bc8-b599-48cf-ad65-b9ea87226f54",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 126133,
+        "artifacts": 65,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+    "root_file_id": "2f5ec2e7-751e-4704-bab2-e6dfc06eab40",
+    "stored_at": "2026-10-31T23:26:33.469Z",
+    "cloud_timings": {
+      "create_ms": 142,
+      "upload_ms": 435,
+      "poll_ms": 25584,
+      "download_ms": 403,
+      "convert_ms": 939,
+      "total_ms": 27503
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 725
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 2832
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 4947
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 26161
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T23:26:05.460Z",
+        "traceId": "file-2f5ec2e7-751e-4704-bab2-e6dfc06eab40",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 5,
+        "fileId": "2f5ec2e7-751e-4704-bab2-e6dfc06eab40",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:05.465Z",
+        "traceId": "file-2f5ec2e7-751e-4704-bab2-e6dfc06eab40",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 4,
+        "queueWaitMs": 10,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:05.519Z",
+        "traceId": "file-2f5ec2e7-751e-4704-bab2-e6dfc06eab40",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 54,
+        "sourceBytes": 1662567,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:33.034Z",
+        "traceId": "file-2f5ec2e7-751e-4704-bab2-e6dfc06eab40",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 27514,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:33.368Z",
+        "traceId": "file-2f5ec2e7-751e-4704-bab2-e6dfc06eab40",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 42,
+        "artifacts": 19,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:33.591Z",
+        "traceId": "file-2f5ec2e7-751e-4704-bab2-e6dfc06eab40",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 223,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:33.592Z",
+        "traceId": "file-2f5ec2e7-751e-4704-bab2-e6dfc06eab40",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 28127,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:26:33.594Z",
+        "traceId": "file-2f5ec2e7-751e-4704-bab2-e6dfc06eab40",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 28129,
+        "artifacts": 19,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0",
+    "root_file_id": "c1ff4451-5486-461e-8bf1-3e5d4640e8cd",
+    "stored_at": "2026-11-01T01:09:18.901Z",
+    "cloud_timings": {
+      "create_ms": 574,
+      "upload_ms": 16983,
+      "poll_ms": 145196,
+      "download_ms": 13526,
+      "convert_ms": 4057,
+      "total_ms": 180337
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 17760
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 20050
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 64133
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 162753
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-11-01T01:06:17.006Z",
+        "traceId": "file-c1ff4451-5486-461e-8bf1-3e5d4640e8cd",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 2,
+        "fileId": "c1ff4451-5486-461e-8bf1-3e5d4640e8cd",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:06:17.015Z",
+        "traceId": "file-c1ff4451-5486-461e-8bf1-3e5d4640e8cd",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 8,
+        "queueWaitMs": 11,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:06:17.596Z",
+        "traceId": "file-c1ff4451-5486-461e-8bf1-3e5d4640e8cd",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 580,
+        "sourceBytes": 33875317,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:09:18.089Z",
+        "traceId": "file-c1ff4451-5486-461e-8bf1-3e5d4640e8cd",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 180492,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:09:18.620Z",
+        "traceId": "file-c1ff4451-5486-461e-8bf1-3e5d4640e8cd",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 207,
+        "artifacts": 74,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:09:19.474Z",
+        "traceId": "file-c1ff4451-5486-461e-8bf1-3e5d4640e8cd",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 854,
+        "artifacts": 74,
+        "saved": 74,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:09:19.475Z",
+        "traceId": "file-c1ff4451-5486-461e-8bf1-3e5d4640e8cd",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 182459,
+        "artifacts": 74,
+        "saved": 74,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T01:09:19.478Z",
+        "traceId": "file-c1ff4451-5486-461e-8bf1-3e5d4640e8cd",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 182463,
+        "artifacts": 74,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "b22ca874ef08f383bd0b1071677d44f4a242af668f855f00dc9c6d4ac94148e2",
+    "root_file_id": "fb0053be-1070-4418-a9ae-4cdfd7660bfe",
+    "stored_at": "2026-10-31T23:36:51.235Z",
+    "cloud_timings": {
+      "create_ms": 313,
+      "upload_ms": 380,
+      "poll_ms": 51561,
+      "download_ms": 588,
+      "convert_ms": 1543,
+      "total_ms": 54386
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 814
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 2934
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 9378
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 52255
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T23:35:56.317Z",
+        "traceId": "file-fb0053be-1070-4418-a9ae-4cdfd7660bfe",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 4,
+        "fileId": "fb0053be-1070-4418-a9ae-4cdfd7660bfe",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:35:56.325Z",
+        "traceId": "file-fb0053be-1070-4418-a9ae-4cdfd7660bfe",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 4,
+        "queueWaitMs": 12,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:35:56.342Z",
+        "traceId": "file-fb0053be-1070-4418-a9ae-4cdfd7660bfe",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 16,
+        "sourceBytes": 578489,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:36:50.739Z",
+        "traceId": "file-fb0053be-1070-4418-a9ae-4cdfd7660bfe",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 54396,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:36:51.131Z",
+        "traceId": "file-fb0053be-1070-4418-a9ae-4cdfd7660bfe",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 114,
+        "artifacts": 65,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:36:51.767Z",
+        "traceId": "file-fb0053be-1070-4418-a9ae-4cdfd7660bfe",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 635,
+        "artifacts": 65,
+        "saved": 65,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:36:51.768Z",
+        "traceId": "file-fb0053be-1070-4418-a9ae-4cdfd7660bfe",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 55442,
+        "artifacts": 65,
+        "saved": 65,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:36:51.769Z",
+        "traceId": "file-fb0053be-1070-4418-a9ae-4cdfd7660bfe",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 55444,
+        "artifacts": 65,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+    "root_file_id": "21fc1464-1708-410e-a248-a16b467f8f1a",
+    "stored_at": "2026-10-31T23:42:00.156Z",
+    "cloud_timings": {
+      "create_ms": 146,
+      "upload_ms": 726,
+      "poll_ms": 4374,
+      "download_ms": 725,
+      "convert_ms": 177,
+      "total_ms": 6148
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 990
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3109
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 5246
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T23:41:53.587Z",
+        "traceId": "file-21fc1464-1708-410e-a248-a16b467f8f1a",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 2,
+        "fileId": "21fc1464-1708-410e-a248-a16b467f8f1a",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:41:53.594Z",
+        "traceId": "file-21fc1464-1708-410e-a248-a16b467f8f1a",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 5,
+        "queueWaitMs": 9,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:41:53.625Z",
+        "traceId": "file-21fc1464-1708-410e-a248-a16b467f8f1a",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 31,
+        "sourceBytes": 1073408,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:41:59.781Z",
+        "traceId": "file-21fc1464-1708-410e-a248-a16b467f8f1a",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 6154,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:42:00.086Z",
+        "traceId": "file-21fc1464-1708-410e-a248-a16b467f8f1a",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 6,
+        "artifacts": 16,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:42:00.248Z",
+        "traceId": "file-21fc1464-1708-410e-a248-a16b467f8f1a",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 162,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:42:00.249Z",
+        "traceId": "file-21fc1464-1708-410e-a248-a16b467f8f1a",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 6655,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:42:00.250Z",
+        "traceId": "file-21fc1464-1708-410e-a248-a16b467f8f1a",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 6656,
+        "artifacts": 16,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+    "root_file_id": "9d3cf591-adfc-4a9e-9b49-7b08427c9d94",
+    "stored_at": "2026-10-31T18:09:55.016Z",
+    "cloud_timings": {
+      "create_ms": 216,
+      "upload_ms": 635,
+      "poll_ms": 21368,
+      "download_ms": 624,
+      "convert_ms": 549,
+      "total_ms": 23394
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 958
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3081
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 13714
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 22221
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T18:09:30.969Z",
+        "traceId": "file-9d3cf591-adfc-4a9e-9b49-7b08427c9d94",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 5,
+        "fileId": "9d3cf591-adfc-4a9e-9b49-7b08427c9d94",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:09:30.981Z",
+        "traceId": "file-9d3cf591-adfc-4a9e-9b49-7b08427c9d94",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 7,
+        "queueWaitMs": 15,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:09:30.995Z",
+        "traceId": "file-9d3cf591-adfc-4a9e-9b49-7b08427c9d94",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 14,
+        "sourceBytes": 173992,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:09:54.398Z",
+        "traceId": "file-9d3cf591-adfc-4a9e-9b49-7b08427c9d94",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 23402,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:09:54.732Z",
+        "traceId": "file-9d3cf591-adfc-4a9e-9b49-7b08427c9d94",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 25,
+        "artifacts": 16,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:09:55.184Z",
+        "traceId": "file-9d3cf591-adfc-4a9e-9b49-7b08427c9d94",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 451,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:09:55.185Z",
+        "traceId": "file-9d3cf591-adfc-4a9e-9b49-7b08427c9d94",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 24204,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:09:55.188Z",
+        "traceId": "file-9d3cf591-adfc-4a9e-9b49-7b08427c9d94",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 24207,
+        "artifacts": 16,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+    "root_file_id": "d439c9df-8916-42ab-a57c-2b96ba461c3a",
+    "stored_at": "2026-10-31T23:28:41.867Z",
+    "cloud_timings": {
+      "create_ms": 168,
+      "upload_ms": 253,
+      "poll_ms": 12544,
+      "download_ms": 565,
+      "convert_ms": 220,
+      "total_ms": 13750
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 533
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3664
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 10860
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 12965
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T23:28:27.350Z",
+        "traceId": "file-d439c9df-8916-42ab-a57c-2b96ba461c3a",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 2,
+        "fileId": "d439c9df-8916-42ab-a57c-2b96ba461c3a",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:28:27.355Z",
+        "traceId": "file-d439c9df-8916-42ab-a57c-2b96ba461c3a",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 3,
+        "queueWaitMs": 7,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:28:27.474Z",
+        "traceId": "file-d439c9df-8916-42ab-a57c-2b96ba461c3a",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 118,
+        "sourceBytes": 1073408,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:28:41.232Z",
+        "traceId": "file-d439c9df-8916-42ab-a57c-2b96ba461c3a",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 13755,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:28:41.659Z",
+        "traceId": "file-d439c9df-8916-42ab-a57c-2b96ba461c3a",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 11,
+        "artifacts": 16,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:28:42.067Z",
+        "traceId": "file-d439c9df-8916-42ab-a57c-2b96ba461c3a",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 407,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:28:42.067Z",
+        "traceId": "file-d439c9df-8916-42ab-a57c-2b96ba461c3a",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 14711,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:28:42.071Z",
+        "traceId": "file-d439c9df-8916-42ab-a57c-2b96ba461c3a",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 14716,
+        "artifacts": 16,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "16ee1cfbd58f9c6a3793c66ff5f4ec38dd864ac9fd7a9b7186f8af7db53f870b",
+    "root_file_id": "fbffef07-68ae-404d-9ce6-b17cab06bd3c",
+    "stored_at": "2026-10-31T23:29:10.719Z",
+    "cloud_timings": {
+      "create_ms": 127,
+      "upload_ms": 14066,
+      "poll_ms": 17934,
+      "download_ms": 5346,
+      "convert_ms": 3240,
+      "total_ms": 40713
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 14290
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 16725
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 24387
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 32127
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T23:28:28.446Z",
+        "traceId": "file-fbffef07-68ae-404d-9ce6-b17cab06bd3c",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 3,
+        "fileId": "fbffef07-68ae-404d-9ce6-b17cab06bd3c",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:28:28.454Z",
+        "traceId": "file-fbffef07-68ae-404d-9ce6-b17cab06bd3c",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 5,
+        "queueWaitMs": 10,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:28:28.954Z",
+        "traceId": "file-fbffef07-68ae-404d-9ce6-b17cab06bd3c",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 500,
+        "sourceBytes": 31841340,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:29:09.825Z",
+        "traceId": "file-fbffef07-68ae-404d-9ce6-b17cab06bd3c",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 40865,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:29:10.331Z",
+        "traceId": "file-fbffef07-68ae-404d-9ce6-b17cab06bd3c",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 124,
+        "artifacts": 89,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:29:11.584Z",
+        "traceId": "file-fbffef07-68ae-404d-9ce6-b17cab06bd3c",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 1252,
+        "artifacts": 89,
+        "saved": 89,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:29:11.585Z",
+        "traceId": "file-fbffef07-68ae-404d-9ce6-b17cab06bd3c",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 43131,
+        "artifacts": 89,
+        "saved": 89,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:29:11.587Z",
+        "traceId": "file-fbffef07-68ae-404d-9ce6-b17cab06bd3c",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 43133,
+        "artifacts": 89,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+    "root_file_id": "936dfd8b-d7af-430e-bd4b-c1f1ffe11d14",
+    "stored_at": "2026-11-01T00:55:11.263Z",
+    "cloud_timings": {
+      "create_ms": 192,
+      "upload_ms": 1229,
+      "poll_ms": 37396,
+      "download_ms": 821,
+      "convert_ms": 658,
+      "total_ms": 40296
+    },
+    "states": [
+      {
+        "state": "pending",
+        "elapsed_ms": 1619
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 38817
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-11-01T00:54:30.533Z",
+        "traceId": "file-936dfd8b-d7af-430e-bd4b-c1f1ffe11d14",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 3,
+        "fileId": "936dfd8b-d7af-430e-bd4b-c1f1ffe11d14",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:54:30.536Z",
+        "traceId": "file-936dfd8b-d7af-430e-bd4b-c1f1ffe11d14",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 2,
+        "queueWaitMs": 6,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:54:30.578Z",
+        "traceId": "file-936dfd8b-d7af-430e-bd4b-c1f1ffe11d14",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 42,
+        "sourceBytes": 1662567,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:55:10.884Z",
+        "traceId": "file-936dfd8b-d7af-430e-bd4b-c1f1ffe11d14",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 40306,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:55:11.171Z",
+        "traceId": "file-936dfd8b-d7af-430e-bd4b-c1f1ffe11d14",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 38,
+        "artifacts": 19,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:55:11.372Z",
+        "traceId": "file-936dfd8b-d7af-430e-bd4b-c1f1ffe11d14",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 201,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:55:11.372Z",
+        "traceId": "file-936dfd8b-d7af-430e-bd4b-c1f1ffe11d14",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 40836,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:55:11.374Z",
+        "traceId": "file-936dfd8b-d7af-430e-bd4b-c1f1ffe11d14",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 40838,
+        "artifacts": 19,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+    "root_file_id": "cf2ad791-f6a1-469a-a86b-330a49428963",
+    "stored_at": "2026-10-31T23:36:27.796Z",
+    "cloud_timings": {
+      "create_ms": 122,
+      "upload_ms": 869,
+      "poll_ms": 28209,
+      "download_ms": 829,
+      "convert_ms": 664,
+      "total_ms": 30693
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 1145
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3256
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 11966
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 29200
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T23:35:56.411Z",
+        "traceId": "file-cf2ad791-f6a1-469a-a86b-330a49428963",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 8,
+        "fileId": "cf2ad791-f6a1-469a-a86b-330a49428963",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:35:56.446Z",
+        "traceId": "file-cf2ad791-f6a1-469a-a86b-330a49428963",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 21,
+        "queueWaitMs": 43,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:35:56.532Z",
+        "traceId": "file-cf2ad791-f6a1-469a-a86b-330a49428963",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 85,
+        "sourceBytes": 1662567,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:36:27.237Z",
+        "traceId": "file-cf2ad791-f6a1-469a-a86b-330a49428963",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 30703,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:36:27.577Z",
+        "traceId": "file-cf2ad791-f6a1-469a-a86b-330a49428963",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 46,
+        "artifacts": 19,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:36:27.914Z",
+        "traceId": "file-cf2ad791-f6a1-469a-a86b-330a49428963",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 336,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:36:27.915Z",
+        "traceId": "file-cf2ad791-f6a1-469a-a86b-330a49428963",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 31468,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:36:27.916Z",
+        "traceId": "file-cf2ad791-f6a1-469a-a86b-330a49428963",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 31470,
+        "artifacts": 19,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+    "root_file_id": "24af708c-6ee4-4e2a-9372-fef5d0c29bb9",
+    "stored_at": "2026-10-31T18:18:13.230Z",
+    "cloud_timings": {
+      "create_ms": 199,
+      "upload_ms": 128,
+      "poll_ms": 10872,
+      "download_ms": 671,
+      "convert_ms": 458,
+      "total_ms": 12328
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 434
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 2547
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 8902
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 11199
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T18:18:00.170Z",
+        "traceId": "file-24af708c-6ee4-4e2a-9372-fef5d0c29bb9",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 7,
+        "fileId": "24af708c-6ee4-4e2a-9372-fef5d0c29bb9",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:18:00.182Z",
+        "traceId": "file-24af708c-6ee4-4e2a-9372-fef5d0c29bb9",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 10,
+        "queueWaitMs": 17,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:18:00.198Z",
+        "traceId": "file-24af708c-6ee4-4e2a-9372-fef5d0c29bb9",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 14,
+        "sourceBytes": 173992,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:18:12.535Z",
+        "traceId": "file-24af708c-6ee4-4e2a-9372-fef5d0c29bb9",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 12336,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:18:13.075Z",
+        "traceId": "file-24af708c-6ee4-4e2a-9372-fef5d0c29bb9",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 33,
+        "artifacts": 16,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:18:13.362Z",
+        "traceId": "file-24af708c-6ee4-4e2a-9372-fef5d0c29bb9",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 286,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:18:13.363Z",
+        "traceId": "file-24af708c-6ee4-4e2a-9372-fef5d0c29bb9",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 13180,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T18:18:13.368Z",
+        "traceId": "file-24af708c-6ee4-4e2a-9372-fef5d0c29bb9",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 13186,
+        "artifacts": 16,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+    "root_file_id": "c46672e5-47be-418b-9a03-c14bd74c96c6",
+    "stored_at": "2026-11-01T00:54:37.893Z",
+    "cloud_timings": {
+      "create_ms": 214,
+      "upload_ms": 998,
+      "poll_ms": 4630,
+      "download_ms": 953,
+      "convert_ms": 196,
+      "total_ms": 6991
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 1438
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3638
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 5842
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-11-01T00:54:30.525Z",
+        "traceId": "file-c46672e5-47be-418b-9a03-c14bd74c96c6",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 3,
+        "fileId": "c46672e5-47be-418b-9a03-c14bd74c96c6",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:54:30.531Z",
+        "traceId": "file-c46672e5-47be-418b-9a03-c14bd74c96c6",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 4,
+        "queueWaitMs": 8,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:54:30.558Z",
+        "traceId": "file-c46672e5-47be-418b-9a03-c14bd74c96c6",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 27,
+        "sourceBytes": 1073408,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:54:37.554Z",
+        "traceId": "file-c46672e5-47be-418b-9a03-c14bd74c96c6",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 6996,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:54:37.818Z",
+        "traceId": "file-c46672e5-47be-418b-9a03-c14bd74c96c6",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 6,
+        "artifacts": 16,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:54:37.975Z",
+        "traceId": "file-c46672e5-47be-418b-9a03-c14bd74c96c6",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 157,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:54:37.976Z",
+        "traceId": "file-c46672e5-47be-418b-9a03-c14bd74c96c6",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 7445,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:54:37.977Z",
+        "traceId": "file-c46672e5-47be-418b-9a03-c14bd74c96c6",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 7446,
+        "artifacts": 16,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+    "root_file_id": "5412f142-9779-4b9f-8ea4-2254357edefa",
+    "stored_at": "2026-11-01T00:46:04.195Z",
+    "cloud_timings": {
+      "create_ms": 381,
+      "upload_ms": 679,
+      "poll_ms": 22724,
+      "download_ms": 643,
+      "convert_ms": 310,
+      "total_ms": 24737
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 1210
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3549
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 14641
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 23784
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-11-01T00:45:38.772Z",
+        "traceId": "file-5412f142-9779-4b9f-8ea4-2254357edefa",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 6,
+        "fileId": "5412f142-9779-4b9f-8ea4-2254357edefa",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:45:38.788Z",
+        "traceId": "file-5412f142-9779-4b9f-8ea4-2254357edefa",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 13,
+        "queueWaitMs": 19,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:45:38.918Z",
+        "traceId": "file-5412f142-9779-4b9f-8ea4-2254357edefa",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 129,
+        "sourceBytes": 173992,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:46:03.662Z",
+        "traceId": "file-5412f142-9779-4b9f-8ea4-2254357edefa",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 24743,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:46:04.037Z",
+        "traceId": "file-5412f142-9779-4b9f-8ea4-2254357edefa",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 33,
+        "artifacts": 16,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:46:04.292Z",
+        "traceId": "file-5412f142-9779-4b9f-8ea4-2254357edefa",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 255,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:46:04.293Z",
+        "traceId": "file-5412f142-9779-4b9f-8ea4-2254357edefa",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 25504,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:46:04.297Z",
+        "traceId": "file-5412f142-9779-4b9f-8ea4-2254357edefa",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 25509,
+        "artifacts": 16,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+    "root_file_id": "fa146da3-67b0-48b8-814a-bcb30b421e0f",
+    "stored_at": "2026-11-01T00:51:51.620Z",
+    "cloud_timings": {
+      "create_ms": 218,
+      "upload_ms": 788,
+      "poll_ms": 72495,
+      "download_ms": 916,
+      "convert_ms": 784,
+      "total_ms": 75201
+    },
+    "states": [
+      {
+        "state": "pending",
+        "elapsed_ms": 1194
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 47053
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 73501
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-11-01T00:50:35.779Z",
+        "traceId": "file-fa146da3-67b0-48b8-814a-bcb30b421e0f",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 7,
+        "fileId": "fa146da3-67b0-48b8-814a-bcb30b421e0f",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:50:35.786Z",
+        "traceId": "file-fa146da3-67b0-48b8-814a-bcb30b421e0f",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 5,
+        "queueWaitMs": 14,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:50:35.855Z",
+        "traceId": "file-fa146da3-67b0-48b8-814a-bcb30b421e0f",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 69,
+        "sourceBytes": 1662567,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:51:51.069Z",
+        "traceId": "file-fa146da3-67b0-48b8-814a-bcb30b421e0f",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 75213,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:51:51.436Z",
+        "traceId": "file-fa146da3-67b0-48b8-814a-bcb30b421e0f",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 55,
+        "artifacts": 19,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:51:51.765Z",
+        "traceId": "file-fa146da3-67b0-48b8-814a-bcb30b421e0f",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 328,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:51:51.765Z",
+        "traceId": "file-fa146da3-67b0-48b8-814a-bcb30b421e0f",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 75979,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-11-01T00:51:51.767Z",
+        "traceId": "file-fa146da3-67b0-48b8-814a-bcb30b421e0f",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 75981,
+        "artifacts": 19,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+    "root_file_id": "a7516abc-14c4-4fab-8519-c3de62c60d05",
+    "stored_at": "2026-10-31T20:13:19.419Z",
+    "cloud_timings": {
+      "create_ms": 298,
+      "upload_ms": 934,
+      "poll_ms": 4589,
+      "download_ms": 783,
+      "convert_ms": 1081,
+      "total_ms": 7685
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 1354
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3506
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 5821
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T20:13:11.130Z",
+        "traceId": "file-a7516abc-14c4-4fab-8519-c3de62c60d05",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 6,
+        "fileId": "a7516abc-14c4-4fab-8519-c3de62c60d05",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:11.136Z",
+        "traceId": "file-a7516abc-14c4-4fab-8519-c3de62c60d05",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 4,
+        "queueWaitMs": 12,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:11.185Z",
+        "traceId": "file-a7516abc-14c4-4fab-8519-c3de62c60d05",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 49,
+        "sourceBytes": 1662567,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:18.883Z",
+        "traceId": "file-a7516abc-14c4-4fab-8519-c3de62c60d05",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 7696,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:19.223Z",
+        "traceId": "file-a7516abc-14c4-4fab-8519-c3de62c60d05",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 45,
+        "artifacts": 19,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:19.543Z",
+        "traceId": "file-a7516abc-14c4-4fab-8519-c3de62c60d05",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 320,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:19.543Z",
+        "traceId": "file-a7516abc-14c4-4fab-8519-c3de62c60d05",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 8407,
+        "artifacts": 19,
+        "saved": 19,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T20:13:19.546Z",
+        "traceId": "file-a7516abc-14c4-4fab-8519-c3de62c60d05",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 8410,
+        "artifacts": 19,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  },
+  {
+    "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+    "root_file_id": "8e675435-51d8-4f5f-8333-14eecb8ea915",
+    "stored_at": "2026-10-31T23:23:25.519Z",
+    "cloud_timings": {
+      "create_ms": 382,
+      "upload_ms": 383,
+      "poll_ms": 21735,
+      "download_ms": 1610,
+      "convert_ms": 293,
+      "total_ms": 24403
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 863
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 3140
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 15832
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 22500
+      }
+    ],
+    "pipeline_timings": [
+      {
+        "timestamp": "2026-10-31T23:23:00.612Z",
+        "traceId": "file-8e675435-51d8-4f5f-8333-14eecb8ea915",
+        "fileType": "pdf",
+        "stage": "upload_enqueue",
+        "status": "pending",
+        "elapsedMs": 13,
+        "fileId": "8e675435-51d8-4f5f-8333-14eecb8ea915",
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:23:00.627Z",
+        "traceId": "file-8e675435-51d8-4f5f-8333-14eecb8ea915",
+        "fileType": "pdf",
+        "stage": "job_claim",
+        "status": "success",
+        "elapsedMs": 10,
+        "queueWaitMs": 21,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:23:00.660Z",
+        "traceId": "file-8e675435-51d8-4f5f-8333-14eecb8ea915",
+        "fileType": "pdf",
+        "stage": "source_download",
+        "status": "success",
+        "elapsedMs": 32,
+        "sourceBytes": 173992,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:23:25.079Z",
+        "traceId": "file-8e675435-51d8-4f5f-8333-14eecb8ea915",
+        "fileType": "pdf",
+        "stage": "mineru_request",
+        "status": "success",
+        "elapsedMs": 24417,
+        "httpStatus": 200,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:23:25.429Z",
+        "traceId": "file-8e675435-51d8-4f5f-8333-14eecb8ea915",
+        "fileType": "pdf",
+        "stage": "artifact_build",
+        "status": "success",
+        "elapsedMs": 21,
+        "artifacts": 16,
+        "missingImages": 0,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:23:25.613Z",
+        "traceId": "file-8e675435-51d8-4f5f-8333-14eecb8ea915",
+        "fileType": "pdf",
+        "stage": "artifact_persist",
+        "status": "success",
+        "elapsedMs": 183,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:23:25.614Z",
+        "traceId": "file-8e675435-51d8-4f5f-8333-14eecb8ea915",
+        "fileType": "pdf",
+        "stage": "preparse_total",
+        "status": "success",
+        "elapsedMs": 24986,
+        "artifacts": 16,
+        "saved": 16,
+        "event_kind": "[SanSuoFileTiming]"
+      },
+      {
+        "timestamp": "2026-10-31T23:23:25.617Z",
+        "traceId": "file-8e675435-51d8-4f5f-8333-14eecb8ea915",
+        "fileType": "pdf",
+        "stage": "parse_job_total",
+        "status": "success",
+        "elapsedMs": 24990,
+        "artifacts": 16,
+        "attempt": 1,
+        "event_kind": "[SanSuoFileTiming]"
+      }
+    ]
+  }
+]

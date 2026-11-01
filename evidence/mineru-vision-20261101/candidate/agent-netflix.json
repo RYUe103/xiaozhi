@@ -1,0 +1,20 @@
+{
+  "id": "mml:1021",
+  "pdf_sha256": "b22ca874ef08f383bd0b1071677d44f4a242af668f855f00dc9c6d4ac94148e2",
+  "elapsed_ms": 2109196,
+  "active": false,
+  "upload_ms": 211,
+  "answer": "文件解析失败，尚未启动模型：文件解析超时，请稍后重试",
+  "tool_calls": [
+    {
+      "id": "file-parse-650ca56d-4342-43b8-83d0-50a3be8a9724",
+      "name": "sansuo_file_parse",
+      "args": "{\"files\":1}",
+      "type": "tool_call",
+      "progress": 1,
+      "status": "failed",
+      "output": "文件解析超时，请稍后重试"
+    }
+  ],
+  "references": []
+}

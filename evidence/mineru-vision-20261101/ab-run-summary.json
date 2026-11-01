@@ -1,0 +1,3375 @@
+{
+  "gold_sha256": "43cfd8064a83364f670ce657c48922a4717d23837c77a61cfe2e5c76edf5dec8",
+  "measurement_notes": [
+    "P50/P95为小样本描述统计，nearest-rank；包含失败，不证明性能非退化",
+    "visual_results从实际tool输出去重，不冒充缓存miss次数；调用/命中以events.jsonl为准",
+    "全部问题gold原样，判断另存人工验收；不得把分批最佳答案拼为一次结果"
+  ],
+  "batches": [
+    {
+      "variant": "baseline",
+      "batch": "agent-batch2-",
+      "n": 6,
+      "p50_ms_nearest_rank": 128237,
+      "p95_ms_nearest_rank": 154007,
+      "includes_failures": true,
+      "host_sleep_contaminated": false,
+      "not_a_performance_nonregression_test": true,
+      "visual_results": 0,
+      "visual_tokens_in_outputs": 0
+    },
+    {
+      "variant": "candidate",
+      "batch": "agent-batch2-",
+      "n": 6,
+      "p50_ms_nearest_rank": 106654,
+      "p95_ms_nearest_rank": 181204,
+      "includes_failures": true,
+      "host_sleep_contaminated": false,
+      "not_a_performance_nonregression_test": true,
+      "visual_results": 5,
+      "visual_tokens_in_outputs": 15206
+    },
+    {
+      "variant": "candidate",
+      "batch": "agent-batch3-",
+      "n": 7,
+      "p50_ms_nearest_rank": 134738,
+      "p95_ms_nearest_rank": 1877503,
+      "includes_failures": true,
+      "host_sleep_contaminated": true,
+      "not_a_performance_nonregression_test": true,
+      "visual_results": 2,
+      "visual_tokens_in_outputs": 7833
+    },
+    {
+      "variant": "candidate",
+      "batch": "agent-batch4-",
+      "n": 3,
+      "p50_ms_nearest_rank": 744514,
+      "p95_ms_nearest_rank": 820766,
+      "includes_failures": true,
+      "host_sleep_contaminated": true,
+      "not_a_performance_nonregression_test": true,
+      "visual_results": 16,
+      "visual_tokens_in_outputs": 46580
+    },
+    {
+      "variant": "candidate",
+      "batch": "agent-batch5-",
+      "n": 7,
+      "p50_ms_nearest_rank": 165176,
+      "p95_ms_nearest_rank": 374623,
+      "includes_failures": true,
+      "host_sleep_contaminated": true,
+      "not_a_performance_nonregression_test": true,
+      "visual_results": 1,
+      "visual_tokens_in_outputs": 4386
+    },
+    {
+      "variant": "candidate",
+      "batch": "agent-batch6-",
+      "n": 2,
+      "p50_ms_nearest_rank": 85649,
+      "p95_ms_nearest_rank": 256946,
+      "includes_failures": true,
+      "host_sleep_contaminated": false,
+      "not_a_performance_nonregression_test": true,
+      "visual_results": 0,
+      "visual_tokens_in_outputs": 0
+    }
+  ],
+  "runs": [
+    {
+      "variant": "baseline",
+      "file": "agent-batch2-academic.json",
+      "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+      "gold": "2016-17 T3",
+      "elapsed_ms": 128237,
+      "upload_ms": 301,
+      "answer": "根据所提供的 PDF 文档内容，**无法确认**2016-17 学年哪个学期（trimester）上传至 Wikimedia Commons 的媒体数量最多。\n\n文档中已提取的正文（物理页码 1）仅提及以下相关信息：\n- 维基百科写作任务自 2014 年 9 月起纳入玛希隆大学国际学院本科化学课程；\n- 创建了 56 篇高质量文章，改进了 80 余篇；\n- 学生完成了在线培训（维基百科核心、编辑、高级编辑）；\n- 引用文献为 Suwannakhan & Limpanuparb (2017) 在 *Catalyst* 期刊发表的论文。\n\n全文未出现按学期（trimester）划分的 Wikimedia Commons 媒体上传数量统计或相关图表数据。若该信息存在于海报的图表/图片区域，因当前 OCR 与视觉摘要均未提取到该细节，故无法作答。",
+      "tool_actions": {
+        "read_parsed_pdf:search": 4,
+        "read_parsed_pdf:read": 2,
+        "read_parsed_pdf:list": 1,
+        "read_parsed_pdf:inspect_page": 1
+      },
+      "trace_scope_hashes": [
+        "8ff55d95fed5609a1bdb"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1681,
+          1369,
+          1129,
+          2943
+        ],
+        "Keyword": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "BM25": [
+          2,
+          1,
+          0,
+          0,
+          1,
+          2,
+          3,
+          1,
+          1,
+          0
+        ],
+        "Vector": [
+          1318,
+          253,
+          319,
+          500,
+          301,
+          247,
+          5495,
+          3989,
+          6516,
+          211
+        ],
+        "RRF": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Rerank": [
+          921,
+          1177,
+          924,
+          5005
+        ],
+        "EvidenceDelivery": [
+          4243,
+          3681,
+          2321,
+          13,
+          10,
+          8,
+          23975,
+          226
+        ],
+        "ModelEnd": [
+          10193,
+          14110,
+          4756,
+          5025,
+          3369,
+          6251,
+          4894,
+          8172,
+          8181
+        ],
+        "ToolOutput": [
+          3689,
+          2340,
+          23,
+          17,
+          9,
+          23983,
+          232,
+          2766
+        ],
+        "AgentToolEnd": [
+          3702,
+          2353,
+          31,
+          29,
+          14,
+          23996,
+          246,
+          2776
+        ],
+        "AgentToolBatchEnd": [
+          3695,
+          2344,
+          28,
+          20,
+          11,
+          23989,
+          235,
+          2770
+        ]
+      },
+      "page_vision_miss_attempts": 1,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 1,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {
+        "miss": 1
+      },
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISION_INSPECTION_FAILED"
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "file": "agent-batch2-finance-final.json",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "gold": "Gray at 1%",
+      "elapsed_ms": 111585,
+      "upload_ms": 364,
+      "answer": "由于文档的持久解析产物中**未包含图表的视觉图像**，我**无法直接确认**该图表中具体使用了哪种颜色，也无法读取图表上直接标注的百分比数值。\n\n但根据文档 **第 2 页** 的 `GENERAL FUND REVENUES`（一般基金收入）汇总数据表，各项收入金额如下：\n* Sales & Use Tax: $1,800,000\n* Severance/Mineral Royalties: $752,000\n* Property Tax: $665,000\n* State Supplemental Funds: $620,000\n* Fuel/Cigarette Tax: $351,600\n* Franchise Fees: $350,000\n* Reserve Transfer: $261,000\n* Charges for Services: $220,200\n* Other Incl. Interest: $178,623\n* Grants: $169,266\n* Fines: $118,251\n* **Licenses/Permits: $76,000** （最小项）\n* **总计: $5,561,940**\n\n基于此表数据计算，金额最小的类别 **Licenses/Permits（许可证/许可费）** 占总收入的比例约为 **1.37%**（$76,000 ÷ $5,561,940）。若文档中的收入图表严格按此表数据生成，则代表最小扇区/区块的颜色应对应 **Licenses/Permits** 类别。",
+      "tool_actions": {
+        "read_parsed_pdf:inspect_page": 1,
+        "read_parsed_pdf:read": 1,
+        "read_parsed_pdf:search": 3
+      },
+      "trace_scope_hashes": [
+        "3ca154b8984b150d00aa"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1471,
+          1203,
+          1218
+        ],
+        "Keyword": [
+          10,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "BM25": [
+          10,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Vector": [
+          2619,
+          189,
+          206,
+          208,
+          195,
+          200,
+          199,
+          201,
+          179,
+          203
+        ],
+        "RRF": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "Rerank": [
+          1846,
+          2160,
+          1891,
+          1805
+        ],
+        "EvidenceDelivery": [
+          6422,
+          8,
+          3991,
+          3709,
+          2028
+        ],
+        "ModelEnd": [
+          12060,
+          2403,
+          3763,
+          7912,
+          3592,
+          41060
+        ],
+        "ToolOutput": [
+          462,
+          9,
+          4003,
+          3725,
+          2032
+        ],
+        "AgentToolEnd": [
+          483,
+          17,
+          4017,
+          3738,
+          2041
+        ],
+        "AgentToolBatchEnd": [
+          468,
+          11,
+          4007,
+          3731,
+          2034
+        ]
+      },
+      "page_vision_miss_attempts": 1,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 1,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {
+        "miss": 1
+      },
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISION_INSPECTION_FAILED"
+        },
+        {
+          "code": "PAGE_TEXT_UNAVAILABLE",
+          "message": "当前范围没有可用内容。"
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "file": "agent-batch2-netflix.json",
+      "id": "mml:1021",
+      "gold": "1902216.00",
+      "elapsed_ms": 138958,
+      "upload_ms": 260,
+      "answer": "根据 Netflix 2015 年 10-K 文件第 15 页的 `Consolidated Balance Sheets`（合并资产负债表）摘要表格，截至 2015 年 12 月 31 日（FY2015），Netflix 的营运资金（Working capital）为 **1,902,216**（单位：千美元）。",
+      "tool_actions": {
+        "read_parsed_pdf:search": 1,
+        "read_parsed_pdf:read": 1
+      },
+      "trace_scope_hashes": [
+        "ac9caf10c0348d45f8cd"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1075
+        ],
+        "Keyword": [
+          2,
+          0,
+          1,
+          0
+        ],
+        "BM25": [
+          3,
+          0,
+          2,
+          0
+        ],
+        "Vector": [
+          2762,
+          15590,
+          1499,
+          287
+        ],
+        "RRF": [
+          0,
+          2
+        ],
+        "Rerank": [
+          2053,
+          1996
+        ],
+        "EvidenceDelivery": [
+          23108,
+          2303,
+          27
+        ],
+        "ModelEnd": [
+          13208,
+          11190,
+          17760
+        ],
+        "ToolOutput": [
+          2309,
+          34
+        ],
+        "AgentToolEnd": [
+          2319,
+          49
+        ],
+        "AgentToolBatchEnd": [
+          2311,
+          37
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "baseline",
+      "file": "agent-batch2-paper-table.json",
+      "id": "mml:80",
+      "gold": "['POPQA', 'MS MARCO', 'SST-2']",
+      "elapsed_ms": 141761,
+      "upload_ms": 218,
+      "answer": "Based on **Table II** (page 13), the datasets that have exactly three methods listed are:\n\n1. **PopQA** `[116]` → Methods: `[7], [25], [67]`\n2. **MS MARCO** `[117]` → Methods: `[4], [40], [52]`\n3. **SST-2** `[156]` → Methods: `[20], [33], [38]`\n\n*(Source: Table II, page 13 of the provided document)*",
+      "tool_actions": {
+        "read_parsed_pdf:search": 1,
+        "read_parsed_pdf:read_table": 1
+      },
+      "trace_scope_hashes": [
+        "93ac88a59fecc4275398"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1091
+        ],
+        "Keyword": [
+          2,
+          0,
+          0
+        ],
+        "BM25": [
+          3,
+          0,
+          0
+        ],
+        "Vector": [
+          16148,
+          266,
+          395
+        ],
+        "RRF": [
+          0,
+          0
+        ],
+        "Rerank": [
+          2184,
+          865
+        ],
+        "EvidenceDelivery": [
+          19937,
+          1274,
+          8
+        ],
+        "ModelEnd": [
+          13266,
+          3921,
+          44382
+        ],
+        "ToolOutput": [
+          1282,
+          12
+        ],
+        "AgentToolEnd": [
+          1294,
+          19
+        ],
+        "AgentToolBatchEnd": [
+          1285,
+          14
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "baseline",
+      "file": "agent-batch2-paper-tree.json",
+      "id": "mml:76",
+      "gold": "Pre-training",
+      "elapsed_ms": 154007,
+      "upload_ms": 172,
+      "answer": "根据文档内容，具有树状结构的图是 **Figure 1（RAG 研究的技术树，Technology tree of RAG research）**，位于第 2 页。\n\n由于当前解析产物中该图片的视觉内容不可用，我无法直接通过视觉清点图中的“叶子”数量。但根据图注（Page 2）及正文描述，该树的三大主干分支分别为：\n1. **Pre-training（预训练）**\n2. **Fine-tuning（微调）**\n3. **Inference（推理）**\n\n结合文档第 6 页的汇总表（Table I）统计，**Pre-training（预训练）** 分支下收录的研究方法/论文数量最少（仅约 7 项），远少于 Fine-tuning（约 24 项）和 Inference（约 40 项）。因此，若以图中叶子代表相关研究工作，**Pre-training 分支的叶子最少**。\n\n> **引用来源**：`2312.10997v5.pdf` 第 2 页（Fig. 1 图注及正文段落）；第 6 页（Table I 方法汇总）。",
+      "tool_actions": {
+        "read_parsed_pdf:inspect_page": 1,
+        "read_parsed_pdf:read": 2,
+        "read_parsed_pdf:search": 2,
+        "read_parsed_pdf:read_table": 1
+      },
+      "trace_scope_hashes": [
+        "af325530bced2da4c65c"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1140,
+          1319,
+          1071
+        ],
+        "Keyword": [
+          4,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "BM25": [
+          5,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Vector": [
+          20961,
+          242,
+          269,
+          254,
+          261,
+          251,
+          244,
+          243,
+          244
+        ],
+        "RRF": [
+          2,
+          0,
+          0
+        ],
+        "Rerank": [
+          1378,
+          2099,
+          2116
+        ],
+        "EvidenceDelivery": [
+          24306,
+          10,
+          8,
+          4205,
+          9,
+          3933
+        ],
+        "ModelEnd": [
+          14746,
+          2295,
+          2971,
+          6946,
+          17612,
+          3646,
+          17855
+        ],
+        "ToolOutput": [
+          586,
+          12,
+          12,
+          4216,
+          15,
+          3940
+        ],
+        "AgentToolEnd": [
+          592,
+          24,
+          22,
+          4231,
+          26,
+          3953
+        ],
+        "AgentToolBatchEnd": [
+          588,
+          15,
+          15,
+          4220,
+          17,
+          3945
+        ]
+      },
+      "page_vision_miss_attempts": 1,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 1,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {
+        "miss": 1
+      },
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISION_INSPECTION_FAILED"
+        },
+        {
+          "code": "PAGE_TEXT_UNAVAILABLE",
+          "message": "当前范围没有可用内容。"
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "file": "agent-batch2-phone-crosspage.json",
+      "id": "mml:888",
+      "gold": "Not answerable",
+      "elapsed_ms": 74652,
+      "upload_ms": 1236,
+      "answer": "根据文档信息，该 PDF 文件总共只有 **30 页**（已解析的页面包括第 1–24 页、第 26–27 页和第 30 页）。因此，**第 40–47 页在该文档中不存在**，无法统计这些页面上提及的应用程序数量。\n\n如果您指的是文档中某个特定章节或页码范围内的\"applications\"（例如\"Application Steps and Important Dates\"出现在第 27 页），请提供更准确的页码或章节名称，我将为您进一步核实。",
+      "tool_actions": {
+        "read_parsed_pdf:info": 1
+      },
+      "trace_scope_hashes": [
+        "6f4161925b52fc4ea0a9"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1272
+        ],
+        "Keyword": [
+          2,
+          1
+        ],
+        "BM25": [
+          4,
+          1
+        ],
+        "Vector": [
+          15963,
+          748
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          1050
+        ],
+        "EvidenceDelivery": [
+          19212,
+          24
+        ],
+        "ModelEnd": [
+          7888,
+          5923
+        ],
+        "ToolOutput": [
+          25
+        ],
+        "AgentToolEnd": [
+          39
+        ],
+        "AgentToolBatchEnd": [
+          27
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-academic.json",
+      "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+      "gold": "2016-17 T3",
+      "elapsed_ms": 4595000,
+      "upload_ms": 280,
+      "answer": "文件解析失败，尚未启动模型：文件解析超时，请稍后重试",
+      "tool_actions": {},
+      "trace_scope_hashes": [],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          71468,
+          2265
+        ],
+        "convert": [
+          13247,
+          494003,
+          48437,
+          50291
+        ],
+        "poll": [
+          418661
+        ],
+        "create": [
+          169
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch2-academic.json",
+      "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+      "gold": "2016-17 T3",
+      "elapsed_ms": 53389,
+      "upload_ms": 254,
+      "answer": "根据对所附 PDF（仅 1 页）的全文检索和逐块阅读，文档中**未包含**关于\"2016-17 学年各学期（trimester）上传至 Wikimedia Commons 的媒体数量\"的数据。已解析的正文仅提及：\n\n- 自 2014 年 9 月起在 Mahidol University International College 的化学课程中引入 Wikipedia 写作任务；\n- 学生完成了文本与插图创作、在线培训、同伴评审；\n- 共创建 56 篇高质量文章，改进 81 篇以上文章。（PDF 第 1 页）\n\n文档中既未出现\"trimester\"一词，也没有 Wikimedia Commons 媒体上传数量的分学期统计。因此**无法确认**2016-17 学年哪个学期上传的媒体数量最高。\n\n如需进一步确认，可能需要查看该海报的原始高分辨率图像（当前视觉摘要提取失败），或参考论文的完整版本（Suwannakhan A & Limpanuparb T. 2017. *Catalyst* 15(2): 65-79）。",
+      "tool_actions": {
+        "read_parsed_pdf:search": 1,
+        "read_parsed_pdf:read": 1,
+        "read_parsed_pdf:inspect_page": 1
+      },
+      "trace_scope_hashes": [
+        "8fe9033933dfa823d9c3"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1268,
+          1267
+        ],
+        "Keyword": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "BM25": [
+          4,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "Vector": [
+          2800,
+          227,
+          389,
+          265,
+          215,
+          666
+        ],
+        "RRF": [
+          0,
+          1
+        ],
+        "Rerank": [
+          1337,
+          593
+        ],
+        "EvidenceDelivery": [
+          6070,
+          3034,
+          17
+        ],
+        "ModelEnd": [
+          12708,
+          2294,
+          2700,
+          8179
+        ],
+        "ToolOutput": [
+          3058,
+          64,
+          2722
+        ],
+        "AgentToolEnd": [
+          3084,
+          77,
+          2728
+        ],
+        "AgentToolBatchEnd": [
+          3068,
+          69,
+          2725
+        ]
+      },
+      "page_vision_miss_attempts": 1,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 1,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {
+        "miss": 1
+      },
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISION_INSPECTION_FAILED"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch2-finance-final.json",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "gold": "Gray at 1%",
+      "elapsed_ms": 99253,
+      "upload_ms": 293,
+      "answer": "根据文档第 2 页的 `GENERAL FUND REVENUES FY 2016` 饼图，占比最小的部分是 **1%**，对应的类别为 **Reserve**（对应表格中的 `Reserve Transfer` 项）。",
+      "tool_actions": {
+        "read_parsed_pdf:visual_page": 1,
+        "read_parsed_pdf:search": 1,
+        "read_parsed_pdf:inspect_page": 3
+      },
+      "trace_scope_hashes": [
+        "4f54076ae4f0a520f141"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1534,
+          1225
+        ],
+        "Keyword": [
+          11,
+          6,
+          0,
+          1,
+          0,
+          0
+        ],
+        "BM25": [
+          12,
+          7,
+          1,
+          2,
+          1,
+          0
+        ],
+        "Vector": [
+          2582,
+          656,
+          197,
+          220,
+          219,
+          185
+        ],
+        "RRF": [
+          1,
+          0
+        ],
+        "Rerank": [
+          1847,
+          1832
+        ],
+        "EvidenceDelivery": [
+          6950,
+          8,
+          3704
+        ],
+        "ModelEnd": [
+          10719,
+          4824,
+          4082,
+          3221,
+          6005,
+          19068
+        ],
+        "ToolOutput": [
+          10,
+          3722,
+          3650,
+          8781,
+          2666
+        ],
+        "AgentToolEnd": [
+          31,
+          3733,
+          3662,
+          8790,
+          2691
+        ],
+        "AgentToolBatchEnd": [
+          17,
+          3725,
+          3656,
+          8785,
+          2673
+        ],
+        "PageVision": [
+          3609,
+          8735,
+          2634
+        ]
+      },
+      "page_vision_miss_attempts": 3,
+      "vl_confirmed_responses": 3,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 8869,
+      "vl_cache_events": {
+        "miss": 3
+      },
+      "visual_results": 3,
+      "visual_tokens_in_unique_outputs": 8869,
+      "visual_elapsed_ms_in_unique_outputs": 14978,
+      "visual_pages": [
+        1,
+        2
+      ],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 inspect_page，传入已定位的物理页 page 和具体 query，读取真实原页。"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch2-netflix.json",
+      "id": "mml:1021",
+      "gold": "1902216.00",
+      "elapsed_ms": 181204,
+      "upload_ms": 402,
+      "answer": "文件解析失败，尚未启动模型：文件解析超时，请稍后重试",
+      "tool_actions": {},
+      "trace_scope_hashes": [],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          71468,
+          2265
+        ],
+        "convert": [
+          13247,
+          494003,
+          48437,
+          50291
+        ],
+        "poll": [
+          418661
+        ],
+        "create": [
+          169
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch2-paper-table.json",
+      "id": "mml:80",
+      "gold": "['POPQA', 'MS MARCO', 'SST-2']",
+      "elapsed_ms": 137526,
+      "upload_ms": 189,
+      "answer": "依据文档第 13 页的 **Table II**（DOWNSTREAM TASKS AND DATASETS OF RAG），统计表格中各数据集对应行的 `Method` 列参考文献数量，恰好列出 **3 个方法**的数据集（按行条目）如下：\n\n* **Natural Questions (NQ)**（表中原文拼写为 `Natural Qustion`，其中某一行 Single-hop QA 条目）\n* **PopQA**\n* **MS MARCO**\n* **SST-2**\n\n> 📖 **注**：Table II 将同一数据集在不同下游任务或实验设置下的评估结果分拆为多行。此处“恰好三个方法”指该数据集在**单行条目**的 Method 列中明确列出了 3 篇参考文献引用。若需核对原始表格排版与引用编号，可参阅原文档 **第 13 页**。",
+      "tool_actions": {
+        "read_parsed_pdf:search": 1,
+        "read_parsed_pdf:read_table": 1
+      },
+      "trace_scope_hashes": [
+        "f3125f8e77897da7daaf"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          877
+        ],
+        "Keyword": [
+          1,
+          1,
+          0
+        ],
+        "BM25": [
+          1,
+          1,
+          1
+        ],
+        "Vector": [
+          21244,
+          457,
+          485
+        ],
+        "RRF": [
+          1,
+          0
+        ],
+        "Rerank": [
+          1286,
+          1853
+        ],
+        "EvidenceDelivery": [
+          24155,
+          2352,
+          13
+        ],
+        "ModelEnd": [
+          17720,
+          4268,
+          62028
+        ],
+        "ToolOutput": [
+          2364,
+          20
+        ],
+        "AgentToolEnd": [
+          2376,
+          55
+        ],
+        "AgentToolBatchEnd": [
+          2368,
+          25
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch2-paper-tree.json",
+      "id": "mml:76",
+      "gold": "Pre-training",
+      "elapsed_ms": 111318,
+      "upload_ms": 226,
+      "answer": "根据论文第 2 页的 **Fig. 1（Technology tree of RAG research）**，该树形图包含三个主要分支，其末端节点（leaf nodes / 模型名称）数量分别为：\n\n* **Pre-training（预训练分支）**：4 个（InstructRetro, RAVEN, CoG, Retro++）\n* **Fine-tuning（微调分支）**：16 个\n* **Inference（推理分支）**：23 个\n\n因此，叶子节点最少的分支是 **Pre-training（预训练）**。",
+      "tool_actions": {
+        "read_parsed_pdf:inspect_page": 2,
+        "read_parsed_pdf:search": 1,
+        "read_parsed_pdf:visual_search": 1
+      },
+      "trace_scope_hashes": [
+        "66e62082e78a1db8cce9"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1248,
+          1313,
+          1105
+        ],
+        "Keyword": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "BM25": [
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "Vector": [
+          21259,
+          8238,
+          420,
+          429,
+          228,
+          241,
+          238,
+          223
+        ],
+        "RRF": [
+          0,
+          0,
+          0
+        ],
+        "Rerank": [
+          1905,
+          902
+        ],
+        "EvidenceDelivery": [
+          33363,
+          3137,
+          1581
+        ],
+        "ModelEnd": [
+          9702,
+          4215,
+          3814,
+          4591,
+          5114
+        ],
+        "PageVision": [
+          9897,
+          5875
+        ],
+        "ToolOutput": [
+          9925,
+          3147,
+          1582,
+          5908
+        ],
+        "AgentToolEnd": [
+          9938,
+          3161,
+          1589,
+          5939
+        ],
+        "AgentToolBatchEnd": [
+          9929,
+          3152,
+          1584,
+          5914
+        ]
+      },
+      "page_vision_miss_attempts": 2,
+      "vl_confirmed_responses": 2,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 6337,
+      "vl_cache_events": {
+        "miss": 2
+      },
+      "visual_results": 2,
+      "visual_tokens_in_unique_outputs": 6337,
+      "visual_elapsed_ms_in_unique_outputs": 15772,
+      "visual_pages": [
+        2
+      ],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 inspect_page，传入已定位的物理页 page 和具体 query，读取真实原页。"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch2-phone-crosspage.json",
+      "id": "mml:888",
+      "gold": "Not answerable",
+      "elapsed_ms": 106654,
+      "upload_ms": 1028,
+      "answer": "根据您提供的文档 `mi_phone.pdf`，该文件总共只有 **30 页**（物理页码范围为 1-30）。因此，**不存在第 40-47 页**，无法统计该范围内的 applications 数量。\n\n如果您是指文档中关于 **Application（申请）** 的相关内容，主要出现在 **第 27 页**：\n*   该页标题为 \"Application Steps and Important Dates\"（申请步骤与重要日期）。\n*   文中提到 \"Apply for your preferred themed engagement communities in your housing application\"（在您的住房申请中申请您首选的主题参与社区）。\n\n请确认您是否引用了错误的页码或文档。",
+      "tool_actions": {},
+      "trace_scope_hashes": [],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          71468,
+          2265
+        ],
+        "convert": [
+          13247,
+          494003,
+          48437,
+          50291
+        ],
+        "poll": [
+          418661
+        ],
+        "create": [
+          169
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch3-academic.json",
+      "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+      "gold": "2016-17 T3",
+      "elapsed_ms": 119157,
+      "upload_ms": 167,
+      "answer": "基于所提供的 PDF 文档（单页学术海报），**无法确认**该信息。\n\n文档的解析正文中仅提及了“56篇高质量文章被创建”、“超过81篇文章被改进”以及“364页书面内容”等数据，**并未出现**“Wikimedia Commons”、“trimester（学期/ trimester）”或“media uploaded（上传媒体）”等相关文字记录。由于该信息极可能位于海报的图表或视觉区块中，而当前环境的视觉摘要与原页图像均不可用，故无法从附件中提取并核实该问题的答案。",
+      "tool_actions": {
+        "read_parsed_pdf:search": 8,
+        "read_parsed_pdf:read": 3,
+        "read_parsed_pdf:inspect_page": 1,
+        "read_parsed_pdf:list": 1,
+        "read_parsed_pdf:visual_search": 1
+      },
+      "trace_scope_hashes": [
+        "2dc88a66273bf5efb4c7"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1467,
+          951,
+          1147,
+          1149
+        ],
+        "Keyword": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        "BM25": [
+          2,
+          1,
+          1,
+          1,
+          0,
+          3,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        "Vector": [
+          1122,
+          254,
+          177,
+          166,
+          256,
+          196,
+          23,
+          150,
+          172,
+          450,
+          259,
+          261,
+          426,
+          246,
+          181
+        ],
+        "RRF": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Rerank": [
+          878,
+          836,
+          809,
+          2116
+        ],
+        "EvidenceDelivery": [
+          3763,
+          2430,
+          2351,
+          9,
+          9,
+          3455,
+          469,
+          274,
+          9,
+          277,
+          8,
+          444,
+          259,
+          198
+        ],
+        "ModelEnd": [
+          4699,
+          3597,
+          3092,
+          4952,
+          5884,
+          2764,
+          7292,
+          17253,
+          3638,
+          4346,
+          3581,
+          4622,
+          7670,
+          3353,
+          17336
+        ],
+        "ToolOutput": [
+          2445,
+          2356,
+          14,
+          2533,
+          14,
+          3468,
+          477,
+          286,
+          15,
+          289,
+          9,
+          453,
+          259,
+          208
+        ],
+        "AgentToolEnd": [
+          2458,
+          2372,
+          28,
+          2543,
+          26,
+          3483,
+          486,
+          308,
+          32,
+          305,
+          17,
+          465,
+          275,
+          224
+        ],
+        "AgentToolBatchEnd": [
+          2452,
+          2363,
+          17,
+          2536,
+          18,
+          3473,
+          481,
+          293,
+          19,
+          295,
+          11,
+          457,
+          262,
+          212
+        ]
+      },
+      "page_vision_miss_attempts": 1,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 1,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {
+        "miss": 1
+      },
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISION_INSPECTION_FAILED"
+        },
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 inspect_page，传入已定位的物理页 page 和具体 query，读取真实原页。"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch3-finance-final.json",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "gold": "Gray at 1%",
+      "elapsed_ms": 112926,
+      "upload_ms": 174,
+      "answer": "Based on the parsed content from **page 2** of the document, I can provide the following analysis:\n\n## Data from the General Fund Revenues Table (FY 2016)\n\nThe table on page 2 lists the following revenue categories and amounts:\n\n| Category | Amount |\n|----------|--------|\n| Sales & Use Tax | $1,800,000 |\n| Severance/Mineral Royalties | $752,000 |\n| Property Tax | $665,000 |\n| Franchise Fees | $350,000 |\n| Fuel/Cigarette Tax | $351,600 |\n| **Licenses/Permits** | **$76,000** |\n| Fines | $118,251 |\n| Other Incl. Interest | $178,623 |\n| Grants | $169,266 |\n| Charges for Services | $220,200 |\n| State Supplemental Funds | $620,000 |\n| Reserve Transfer | $261,000 |\n| **Total** | **$5,561,940** |\n\n## Answer\n\nThe **smallest revenue category is \"Licenses/Permits\" at $76,000**, which corresponds to approximately **1.37%** of the total general fund revenues ($76,000 ÷ $5,561,940).\n\n## ⚠️ Limitation Regarding Chart Colors\n\nThe document's parsed text on page 2 includes legend labels (e.g., \"Sales Tax,\" \"Property Tax,\" \"Fuel/Cigarette Tax,\" etc.) with what appear to be colored square markers (rendered as `□` and `■` in the text extraction). However, **the actual visual chart image is not available in the parsed content**, so I **cannot confirm which specific color** corresponds to the \"Licenses/Permits\" category in the original chart.\n\nIf you need the exact color identification, please refer to the original PDF page 2 directly, where the pie/bar chart and its color-coded legend should be visible.",
+      "tool_actions": {
+        "read_parsed_pdf:visual_page": 1,
+        "read_parsed_pdf:read": 1
+      },
+      "trace_scope_hashes": [
+        "7059ef181a821b2b03fa"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1140
+        ],
+        "Keyword": [
+          17,
+          10,
+          0
+        ],
+        "BM25": [
+          18,
+          11,
+          1
+        ],
+        "Vector": [
+          2445,
+          172,
+          179
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          2215
+        ],
+        "EvidenceDelivery": [
+          6234,
+          8,
+          11
+        ],
+        "ModelEnd": [
+          10374,
+          2990,
+          19807,
+          19612
+        ],
+        "ToolOutput": [
+          9,
+          19
+        ],
+        "AgentToolEnd": [
+          23,
+          26
+        ],
+        "AgentToolBatchEnd": [
+          14,
+          16,
+          21
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 inspect_page，传入已定位的物理页 page 和具体 query，读取真实原页。"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch3-netflix.json",
+      "id": "mml:1021",
+      "gold": "1902216.00",
+      "elapsed_ms": 102191,
+      "upload_ms": 149,
+      "answer": "根据 Netflix 2015 年 10-K 年报中的财务数据摘要，Netflix 在 2015 财年（截至 2015 年 12 月 31 日）的营运资本（Working capital）为 **1,902,216**（单位：千美元）。\n\n📖 **出处引用**：`NETFLIX_2015_10K.pdf` **第 17 页** 的五年财务数据对比表（表头明确标注单位为 `in thousands`，对应 `2015` 列的 `Working capital` 行）。",
+      "tool_actions": {},
+      "trace_scope_hashes": [
+        "fdfcd7ebd89ba9e45c1f"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1136
+        ],
+        "Keyword": [
+          4,
+          2,
+          1
+        ],
+        "BM25": [
+          5,
+          3,
+          1
+        ],
+        "Vector": [
+          30288,
+          301,
+          254
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          2312
+        ],
+        "EvidenceDelivery": [
+          34710
+        ],
+        "ModelEnd": [
+          10608
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch3-paper-table.json",
+      "id": "mml:80",
+      "gold": "['POPQA', 'MS MARCO', 'SST-2']",
+      "elapsed_ms": 134738,
+      "upload_ms": 291,
+      "answer": "Based on **Table II** (page 13), the datasets that have exactly three methods (represented by three reference citations in the `Method` column) are:\n\n* **PopQA** `[116]` → Methods: `[7], [25], [67]`\n* **MS MARCO** `[117]` → Methods: `[4], [40], [52]",
+      "tool_actions": {
+        "read_parsed_pdf:search": 1,
+        "read_parsed_pdf:read_table": 1
+      },
+      "trace_scope_hashes": [
+        "eeb23cb31962e953ff94"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1300
+        ],
+        "Keyword": [
+          5,
+          1,
+          0
+        ],
+        "BM25": [
+          7,
+          1,
+          0
+        ],
+        "Vector": [
+          15937,
+          444,
+          487
+        ],
+        "RRF": [
+          0,
+          0
+        ],
+        "Rerank": [
+          2245,
+          2115
+        ],
+        "EvidenceDelivery": [
+          20201,
+          2620,
+          11
+        ],
+        "ModelEnd": [
+          14228,
+          3028
+        ],
+        "ToolOutput": [
+          2634,
+          15
+        ],
+        "AgentToolEnd": [
+          2657,
+          25
+        ],
+        "AgentToolBatchEnd": [
+          2643,
+          18
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch3-paper-tree.json",
+      "id": "mml:76",
+      "gold": "Pre-training",
+      "elapsed_ms": 142036,
+      "upload_ms": 193,
+      "answer": "根据论文第 2 页的 **Fig. 1. Technology tree of RAG research**（RAG 研究技术树），该树状图包含三个主要分支：\n\n| 分支名称 | 叶子节点（方法/论文）数量 |\n|:---|:---|\n| **Pre-training**（预训练） | **3** |\n| Fine-tuning（微调） | 12 |\n| Inference（推理） | 24 |\n\n叶子节点最少的分支是 **Pre-training（预训练）**，仅有 3 个叶子节点。\n\n> 说明：叶子节点数量基于对第 2 页 Fig. 1 原图的视觉识别统计，由于图中节点密集且存在部分重叠，计数可能存在微小偏差，但 Pre-training 分支明显远少于其他两个分支，结论可靠。",
+      "tool_actions": {
+        "read_parsed_pdf:inspect_page": 2
+      },
+      "trace_scope_hashes": [
+        "13a513103ea574840655"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1292
+        ],
+        "Keyword": [
+          5,
+          1,
+          0
+        ],
+        "BM25": [
+          7,
+          1,
+          0
+        ],
+        "Vector": [
+          17705,
+          381,
+          377
+        ],
+        "RRF": [
+          1
+        ],
+        "Rerank": [
+          1828
+        ],
+        "EvidenceDelivery": [
+          21837
+        ],
+        "ModelEnd": [
+          6908,
+          9640,
+          5350
+        ],
+        "PageVision": [
+          12971,
+          5188
+        ],
+        "ToolOutput": [
+          12992,
+          5211
+        ],
+        "AgentToolEnd": [
+          13000,
+          5223
+        ],
+        "AgentToolBatchEnd": [
+          12996,
+          5215
+        ]
+      },
+      "page_vision_miss_attempts": 2,
+      "vl_confirmed_responses": 2,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 7833,
+      "vl_cache_events": {
+        "miss": 2
+      },
+      "visual_results": 2,
+      "visual_tokens_in_unique_outputs": 7833,
+      "visual_elapsed_ms_in_unique_outputs": 18159,
+      "visual_pages": [
+        2
+      ],
+      "visual_partial": 1,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch3-phone-crosspage.json",
+      "id": "mml:888",
+      "gold": "Not answerable",
+      "elapsed_ms": 1877503,
+      "upload_ms": 528,
+      "answer": "根据您提供的文档 `mi_phone.pdf`，该文件总共只有 **30 页**（由解析元数据 `\"page_count\": 30` 确认）。\n\n因此，**文档中不存在第 40-47 页**，无法回答关于这些页码中提及的“applications”数量的问题。\n\n如果您是指文档的其他页码范围，或者可能混淆了文件名/文档，请提供更多信息，我将很乐意为您重新查找。",
+      "tool_actions": {},
+      "trace_scope_hashes": [
+        "79bd6e4ed38df23210e6"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1055
+        ],
+        "Keyword": [
+          4,
+          2
+        ],
+        "BM25": [
+          5,
+          4
+        ],
+        "Vector": [
+          174949,
+          65
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          4
+        ],
+        "EvidenceDelivery": [
+          176250
+        ],
+        "ModelEnd": [
+          1642116
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch3-scan-crosspage.json",
+      "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+      "gold": "来宾市政协通过发起“建设铸牢中华民族共同体意识示范区委员行动”，旨在为民族团结贡献政协的智慧和力量。在兴宾区，这一行动转化为具体的社区实践，如兴宾区政协机关党支部联合相关单位在河西街道瑞民社区举办了“铸牢中华民族共同体意识”宣讲分享会。此类活动通过深入浅出的宣讲获得了群众好评，不仅传播了民族团结的声音，还通过树立典型人物激发了社区党员和群众的向心力，有效推进了社区内各民族之间的互促、互进与互融。",
+      "elapsed_ms": 210197,
+      "upload_ms": 667,
+      "answer": "根据我对所附PDF文档的技术检测，该文档是由 Aspose.PDF 创建的扫描型PDF（91页，33.8MB），**内部没有可提取的文本层**（pdftotext、pdfplumber、PyPDF2、Ghostscript 等工具均无法提取到任何文字内容），属于纯图像型扫描件。\n\n在当前沙箱环境中，**OCR图像识别功能已被禁用**，因此我无法直接读取该PDF中的具体内容。\n\n### 关于您问题的回答\n\n由于无法从文档中提取文字，我**无法确认**以下信息：\n1. 来宾市政协\"建设铸牢中华民族共同体意识示范区委员行动\"在兴宾区街道社区的具体落地方式\n2. 6月2日活动的具体内容及群众对宣讲的评价\n3. 该活动在促进民族融合、增强向心力方面的具体成效\n\n### 建议\n\n如果您能提供以下任一帮助，我将可以为您详细解答：\n- 将PDF中相关页面的文字内容复制粘贴给我\n- 提供该文档的文本版本（Word/TXT）\n- 告知文档中相关内容的具体页码，我可以尝试其他读取方式\n\n**引用说明**：因文档为扫描件且无法进行OCR识别，未能获取原文内容，故无法提供PDF物理页码引用。",
+      "tool_actions": {},
+      "trace_scope_hashes": [
+        "4afcb03a1259c6f9ad2b"
+      ],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          16299,
+          19798,
+          7433,
+          5718,
+          4798,
+          7775,
+          6369,
+          13095,
+          8574,
+          10000,
+          8886,
+          14965
+        ],
+        "AgentToolBatchEnd": [
+          40,
+          6722,
+          5253,
+          5507,
+          31,
+          5546,
+          45,
+          7104,
+          55,
+          6186,
+          8034
+        ],
+        "AgentToolEnd": [
+          6728,
+          5256,
+          5517,
+          5553,
+          7110,
+          6188,
+          8038
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch4-finance-final.json",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "gold": "Gray at 1%",
+      "elapsed_ms": 84140,
+      "upload_ms": 241,
+      "answer": "根据文档第 2 页的 **\"GENERAL FUND REVENUES FY 2016\"** 饼图及图例：\n\n* **最小占比类别**：**Licenses/Permits（许可证/许可费）**，占比为 **1%**。\n* **对应颜色**：图例中该类别对应的色块为 **棕色（深红褐色）**。\n\n因此，代表最小部分的百分比类别是 **1%**（Licenses/Permits）。\n\n> 引用来源：PDF 第 2 页饼图及图例（视觉识别确认）。",
+      "tool_actions": {
+        "read_parsed_pdf:visual_search": 1,
+        "read_parsed_pdf:inspect_page": 8
+      },
+      "trace_scope_hashes": [
+        "725b16282d8770d2dabf"
+      ],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          4584,
+          11327,
+          12375,
+          2859,
+          8970,
+          7663
+        ],
+        "QueryProcessor": [
+          940
+        ],
+        "Keyword": [
+          2,
+          0
+        ],
+        "BM25": [
+          3,
+          0
+        ],
+        "Vector": [
+          1,
+          0
+        ],
+        "RRF": [
+          0
+        ],
+        "EvidenceDelivery": [
+          963
+        ],
+        "ToolOutput": [
+          965,
+          15,
+          17,
+          18,
+          20,
+          3806,
+          4238,
+          12483,
+          3099
+        ],
+        "AgentToolEnd": [
+          985,
+          43,
+          44,
+          47,
+          48,
+          3835,
+          4272,
+          12498,
+          3114
+        ],
+        "AgentToolBatchEnd": [
+          974,
+          16,
+          16,
+          16,
+          17,
+          17,
+          17,
+          4244,
+          4244,
+          4244,
+          4245,
+          4245,
+          4245,
+          12489,
+          3103
+        ],
+        "PageVision": [
+          3767,
+          4208,
+          12455,
+          3072
+        ]
+      },
+      "page_vision_miss_attempts": 4,
+      "vl_confirmed_responses": 4,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 11834,
+      "vl_cache_events": {
+        "miss": 4
+      },
+      "visual_results": 4,
+      "visual_tokens_in_unique_outputs": 11834,
+      "visual_elapsed_ms_in_unique_outputs": 23502,
+      "visual_pages": [
+        1,
+        2,
+        4
+      ],
+      "visual_partial": 2,
+      "errors": [
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 inspect_page，传入已定位的物理页 page 和具体 query，读取真实原页。"
+        },
+        {
+          "code": "VISION_CONCURRENCY_LIMIT"
+        },
+        {
+          "code": "VISION_CONCURRENCY_LIMIT"
+        },
+        {
+          "code": "VISION_CONCURRENCY_LIMIT"
+        },
+        {
+          "code": "VISION_CONCURRENCY_LIMIT"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch4-netflix.json",
+      "id": "mml:1021",
+      "gold": "1902216.00",
+      "elapsed_ms": 820766,
+      "upload_ms": 295,
+      "answer": "文件解析失败，尚未启动模型：文件解析超时，请稍后重试",
+      "tool_actions": {},
+      "trace_scope_hashes": [
+        "06aea03a4ea5ce3621b5"
+      ],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          71468,
+          2265
+        ],
+        "convert": [
+          13247,
+          494003,
+          48437,
+          50291
+        ],
+        "poll": [
+          418661
+        ],
+        "create": [
+          169
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch4-scan-crosspage.json",
+      "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+      "gold": "来宾市政协通过发起“建设铸牢中华民族共同体意识示范区委员行动”，旨在为民族团结贡献政协的智慧和力量。在兴宾区，这一行动转化为具体的社区实践，如兴宾区政协机关党支部联合相关单位在河西街道瑞民社区举办了“铸牢中华民族共同体意识”宣讲分享会。此类活动通过深入浅出的宣讲获得了群众好评，不仅传播了民族团结的声音，还通过树立典型人物激发了社区党员和群众的向心力，有效推进了社区内各民族之间的互促、互进与互融。",
+      "elapsed_ms": 744514,
+      "upload_ms": 712,
+      "answer": "根据所附《来宾政协》期刊目录（**第8页**），第76页刊登有《兴宾区政协委员开展宣讲会和主题党日活动——唱响“铸牢中华民族共同体意识”政协强音》一文，该标题与您询问的“建设铸牢中华民族共同体意识示范区委员行动”在兴宾区街道社区的落地情况高度吻合。\n\n然而，由于当前文档第76页的文本解析与图像读取受限，系统无法提取该页正文内容。因此，关于您提到的**“6月2日”活动的具体落地方式、群众对宣讲的具体评价，以及活动在促进不同民族融合、增强向心力方面取得的确切成效或数据，无法从所附文档中核实与确认**。\n\n如需获取该场活动的详细过程、现场反馈及成效总结，请查阅该期刊第76页原文。",
+      "tool_actions": {
+        "read_parsed_pdf:search": 1,
+        "read_parsed_pdf:inspect_page": 15,
+        "read_parsed_pdf:visual_search": 1
+      },
+      "trace_scope_hashes": [
+        "416ca18eadae617a28f8"
+      ],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          4070,
+          5354,
+          4659,
+          6035,
+          6036,
+          4308,
+          4213,
+          5525,
+          5937,
+          5924,
+          4102,
+          9630,
+          8803,
+          10729,
+          17502,
+          13004,
+          10677,
+          34464
+        ],
+        "QueryProcessor": [
+          1655
+        ],
+        "Keyword": [
+          15,
+          0,
+          1,
+          2,
+          1,
+          0
+        ],
+        "BM25": [
+          16,
+          1,
+          1,
+          2,
+          1,
+          0
+        ],
+        "Vector": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "RRF": [
+          1,
+          0
+        ],
+        "EvidenceDelivery": [
+          1696,
+          11
+        ],
+        "ToolOutput": [
+          1697,
+          10644,
+          6643,
+          5394,
+          11,
+          8482,
+          4967,
+          8514,
+          8916,
+          5145,
+          8964,
+          5722,
+          6511,
+          5920,
+          13,
+          7,
+          13
+        ],
+        "AgentToolEnd": [
+          1711,
+          10660,
+          6658,
+          5405,
+          17,
+          8496,
+          4985,
+          8530,
+          8935,
+          5168,
+          8981,
+          5747,
+          6529,
+          5937,
+          28,
+          16,
+          37
+        ],
+        "AgentToolBatchEnd": [
+          1706,
+          10651,
+          6647,
+          5399,
+          13,
+          8487,
+          4974,
+          8520,
+          8923,
+          5153,
+          8971,
+          5737,
+          6516,
+          5925,
+          16,
+          10,
+          19
+        ],
+        "PageVision": [
+          10597,
+          6628,
+          5375,
+          8460,
+          4938,
+          8480,
+          8885,
+          5119,
+          8928,
+          5692,
+          6480,
+          5897
+        ]
+      },
+      "page_vision_miss_attempts": 12,
+      "vl_confirmed_responses": 12,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 34746,
+      "vl_cache_events": {
+        "miss": 12
+      },
+      "visual_results": 12,
+      "visual_tokens_in_unique_outputs": 34746,
+      "visual_elapsed_ms_in_unique_outputs": 85479,
+      "visual_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        74,
+        75,
+        76,
+        77
+      ],
+      "visual_partial": 9,
+      "errors": [
+        {
+          "code": "PAGE_TEXT_UNAVAILABLE",
+          "message": "当前范围没有可用内容。"
+        },
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 inspect_page，传入已定位的物理页 page 和具体 query，读取真实原页。"
+        },
+        {
+          "code": "VISION_BUDGET_EXCEEDED"
+        },
+        {
+          "code": "VISION_BUDGET_EXCEEDED"
+        },
+        {
+          "code": "VISION_BUDGET_EXCEEDED"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch5-academic.json",
+      "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+      "gold": "2016-17 T3",
+      "elapsed_ms": 51902,
+      "upload_ms": 170,
+      "answer": "无法确认。所附 PDF 文档仅 1 页，内容为马希隆大学国际学院（Mahidol University International College）化学课程维基百科写作试点项目的海报摘要，其中仅提及参与学生人数（103人）、创建的高质量文章数（56篇）、改进文章数（81篇以上）及相当于 364 页的书面贡献等，**并未包含任何关于“2016-17 学年各学期（trimester）上传至 Wikimedia Commons 的媒体数量”的数据或图表**。因此无法依据该文档回答该问题。",
+      "tool_actions": {
+        "read_parsed_pdf:search": 2,
+        "read_parsed_pdf:read": 1,
+        "read_parsed_pdf:visual_search": 1,
+        "read_parsed_pdf:inspect_page": 1
+      },
+      "trace_scope_hashes": [
+        "85d3edfa8e4dd72ccd9b"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1363,
+          1381,
+          1060,
+          1302
+        ],
+        "Keyword": [
+          3,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "BM25": [
+          6,
+          1,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "Vector": [
+          1421,
+          301,
+          226,
+          206,
+          216,
+          260,
+          322
+        ],
+        "RRF": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "Rerank": [
+          972,
+          1977,
+          801
+        ],
+        "EvidenceDelivery": [
+          4105,
+          3605,
+          2313,
+          9,
+          1913
+        ],
+        "ModelEnd": [
+          4681,
+          2723,
+          2763,
+          3950,
+          8773,
+          5489
+        ],
+        "ToolOutput": [
+          3618,
+          2327,
+          15,
+          1914,
+          2649
+        ],
+        "AgentToolEnd": [
+          3633,
+          2344,
+          27,
+          1930,
+          2666
+        ],
+        "AgentToolBatchEnd": [
+          3625,
+          2332,
+          17,
+          1918,
+          2653
+        ]
+      },
+      "page_vision_miss_attempts": 1,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 1,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {
+        "miss": 1
+      },
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。"
+        },
+        {
+          "code": "VISION_INSPECTION_FAILED"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch5-finance-final.json",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "gold": "Gray at 1%",
+      "elapsed_ms": 88544,
+      "upload_ms": 236,
+      "answer": "Based on the General Fund Revenues FY 2016 pie chart on **page 2**, the smallest portion is **1%**, which corresponds to the **Licenses/Permits** category. This category is represented by a **pink** square in the chart's legend.",
+      "tool_actions": {
+        "read_parsed_pdf:visual_page": 1,
+        "read_parsed_pdf:inspect_page": 1
+      },
+      "trace_scope_hashes": [
+        "b686ccff63a83ea92db1"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1211
+        ],
+        "Keyword": [
+          8,
+          5,
+          0
+        ],
+        "BM25": [
+          9,
+          7,
+          1
+        ],
+        "Vector": [
+          2639,
+          202,
+          187
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          2656
+        ],
+        "EvidenceDelivery": [
+          7097,
+          10
+        ],
+        "ModelEnd": [
+          7788,
+          3578,
+          20415
+        ],
+        "ToolOutput": [
+          12,
+          23165
+        ],
+        "AgentToolEnd": [
+          37,
+          23179
+        ],
+        "AgentToolBatchEnd": [
+          20,
+          23169
+        ],
+        "PageVision": [
+          23140
+        ]
+      },
+      "page_vision_miss_attempts": 1,
+      "vl_confirmed_responses": 1,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 4386,
+      "vl_cache_events": {
+        "miss": 1
+      },
+      "visual_results": 1,
+      "visual_tokens_in_unique_outputs": 4386,
+      "visual_elapsed_ms_in_unique_outputs": 23140,
+      "visual_pages": [
+        2
+      ],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch5-netflix.json",
+      "id": "mml:1021",
+      "gold": "1902216.00",
+      "elapsed_ms": 165176,
+      "upload_ms": 187,
+      "answer": "根据文档第 17 页的“Selected Financial Data”表格，Netflix 在 2015 财年（截至 2015 年 12 月 31 日）的营运资金（Working capital）为 **1,902,216**（单位：千美元）。",
+      "tool_actions": {},
+      "trace_scope_hashes": [
+        "2db958fa2b74c9f8e289"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1206
+        ],
+        "Keyword": [
+          3,
+          0,
+          0
+        ],
+        "BM25": [
+          4,
+          0,
+          0
+        ],
+        "Vector": [
+          18924,
+          244,
+          239
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          2264
+        ],
+        "EvidenceDelivery": [
+          23504
+        ],
+        "ModelEnd": [
+          13294
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch5-paper-table.json",
+      "id": "mml:80",
+      "gold": "['POPQA', 'MS MARCO', 'SST-2']",
+      "elapsed_ms": 186553,
+      "upload_ms": 207,
+      "answer": "根据 Table II（位于 PDF 第 13 页），逐行统计各数据集对应的 Method（引用编号）数量后，**恰好包含 3 个方法**的数据集如下：\n\n| 数据集 | 对应的方法引用 |\n|---|---|\n| **PopQA** | `[7], [25], [67]` |\n| **MS MARCO** | `[4], [40], [52]` |\n| **SST-2** | `[20], [33], [38]` |\n\n> **说明**：表中部分数据集（如 Natural Question、TriviaQA、HotpotQA）跨越多行，每行对应不同的方法集合；若按整数据集合并去重，它们的方法总数均远超 3 个。因此上述三个数据集是表中唯一在对应行中恰好列出 3 个方法引用的条目。\n\n**引用页码**：Table II 位于 PDF **第 13 页**。",
+      "tool_actions": {
+        "read_parsed_pdf:read": 1
+      },
+      "trace_scope_hashes": [
+        "1e4aadc044678773ce0b"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1064
+        ],
+        "Keyword": [
+          1,
+          1
+        ],
+        "BM25": [
+          2,
+          1
+        ],
+        "Vector": [
+          18981,
+          492
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          2180
+        ],
+        "EvidenceDelivery": [
+          22957,
+          10
+        ],
+        "ModelEnd": [
+          22710,
+          63524
+        ],
+        "ToolOutput": [
+          17
+        ],
+        "AgentToolEnd": [
+          39
+        ],
+        "AgentToolBatchEnd": [
+          22
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch5-paper-tree.json",
+      "id": "mml:76",
+      "gold": "Pre-training",
+      "elapsed_ms": 374623,
+      "upload_ms": 196,
+      "answer": "",
+      "tool_actions": {
+        "read_parsed_pdf:visual_page": 1,
+        "read_parsed_pdf:inspect_page": 1
+      },
+      "trace_scope_hashes": [
+        "a5919e7b39bca433341b"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1367
+        ],
+        "Keyword": [
+          3,
+          0,
+          1
+        ],
+        "BM25": [
+          4,
+          1,
+          1
+        ],
+        "Vector": [
+          22765,
+          490,
+          722
+        ],
+        "RRF": [
+          1
+        ],
+        "Rerank": [
+          2211
+        ],
+        "EvidenceDelivery": [
+          27794,
+          11
+        ],
+        "ModelEnd": [
+          5730,
+          5721
+        ],
+        "ToolOutput": [
+          12,
+          60585
+        ],
+        "AgentToolEnd": [
+          32,
+          60603
+        ],
+        "AgentToolBatchEnd": [
+          18,
+          60593
+        ]
+      },
+      "page_vision_miss_attempts": 1,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 1,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {
+        "miss": 1
+      },
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。"
+        },
+        {
+          "code": "VISION_TIMEOUT"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch5-phone-crosspage.json",
+      "id": "mml:888",
+      "gold": "Not answerable",
+      "elapsed_ms": 117867,
+      "upload_ms": 667,
+      "answer": "",
+      "tool_actions": {},
+      "trace_scope_hashes": [
+        "ae4d8cd9f28841a87b46"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          73
+        ],
+        "Keyword": [
+          1
+        ],
+        "BM25": [
+          1
+        ],
+        "Vector": [
+          65
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          73
+        ],
+        "EvidenceDelivery": [
+          310
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch5-scan-crosspage.json",
+      "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+      "gold": "来宾市政协通过发起“建设铸牢中华民族共同体意识示范区委员行动”，旨在为民族团结贡献政协的智慧和力量。在兴宾区，这一行动转化为具体的社区实践，如兴宾区政协机关党支部联合相关单位在河西街道瑞民社区举办了“铸牢中华民族共同体意识”宣讲分享会。此类活动通过深入浅出的宣讲获得了群众好评，不仅传播了民族团结的声音，还通过树立典型人物激发了社区党员和群众的向心力，有效推进了社区内各民族之间的互促、互进与互融。",
+      "elapsed_ms": 292992,
+      "upload_ms": 878,
+      "answer": "依据文档内容，来宾市政协推动“建设铸牢中华民族共同体意识示范区委员行动”在兴宾区街道社区的具体落地方式、6月2日活动的评价及成效如下（核心内容均出自 **PDF 第81页**）：\n\n**1. 街道社区的具体落地方式**\n以河西街道瑞民社区为例，主要通过**“多支部联动+委员宣讲+主题党日”**的形式落地：\n* **组织联动**：由兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部共同策划开展。\n* **活动载体**：举办“铸牢中华民族共同体意识”政协委员宣讲分享会，并结合传统节日开展“粽情端午话清廉·重温初心明使命”主题党日活动。\n* **内容结合**：政协委员结合自身经历和工作实际进行分享，同时号召群众积极参与中华民族优秀传统文化传承发展工程，挖掘保护地方文化古迹，发挥地域特色弘扬民族优秀文化。\n\n**2. 群众对宣讲的评价**\n文档明确记载，该场宣讲活动**“既有高度又有深度，既通俗易懂又深入浅出，获得在场群众的阵阵好评”**。\n\n**3. 促进民族融合与增强向心力的成效**\n* **激发向心力与凝聚力**：通过典型人物的树立、宣传与宣讲，有效激发了广大党员、干部群众的向心力和凝聚力。\n* **推进各民族互融**：切实推进了社区内各民族的“互促互进互融”。\n* **提升思想与行动自觉**：引导各界群众为构筑中华民族共有精神家园注入“兴宾因子”、彰显“兴宾特色”，使大家在铸牢中华民族共同体意识的思想自觉和行动自觉上实现了新提高。\n\n*(补充说明：除宣讲与党日活动外，文档 **第75页** 还提及兴宾区政协在街道社区落地了政协委员工作室，如缤纷社区“和事佬”工作室和黄繁平委员工作室，通过提供法律服务、调解化解矛盾纠纷实现“小事不出社区、大事不出街道”，这也是该行动在基层社区常态化落地的重要方式之一。)*",
+      "tool_actions": {
+        "read_parsed_pdf:read": 1,
+        "read_parsed_pdf:search": 1
+      },
+      "trace_scope_hashes": [
+        "eb974eaf974952a40314"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1753,
+          1555
+        ],
+        "Keyword": [
+          17,
+          3,
+          2,
+          13,
+          1,
+          2
+        ],
+        "BM25": [
+          19,
+          4,
+          3,
+          14,
+          2,
+          2
+        ],
+        "Vector": [
+          16108,
+          253,
+          316,
+          365,
+          255,
+          267
+        ],
+        "RRF": [
+          0,
+          0
+        ],
+        "Rerank": [
+          1982,
+          1848
+        ],
+        "EvidenceDelivery": [
+          21319,
+          21,
+          4340
+        ],
+        "ModelEnd": [
+          15185,
+          9649,
+          42912
+        ],
+        "ToolOutput": [
+          27,
+          4353
+        ],
+        "AgentToolEnd": [
+          62,
+          4372
+        ],
+        "AgentToolBatchEnd": [
+          32,
+          4359
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch6-phone-crosspage.json",
+      "id": "mml:888",
+      "gold": "Not answerable",
+      "elapsed_ms": 85649,
+      "upload_ms": 1222,
+      "answer": "根据文档元数据，该 PDF 总共只有 **30 页**，因此不存在第 40-47 页。我无法为您统计该范围内的 applications 数量。\n\n如果您是指文档中关于“申请（Applying）”或“Applications”的其他页码（例如第 27 页提到了 Application Steps），请提供正确的页码范围，我将为您核实。",
+      "tool_actions": {},
+      "trace_scope_hashes": [
+        "62b3f8d16d840959d3d5"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1226
+        ],
+        "Keyword": [
+          15,
+          1
+        ],
+        "BM25": [
+          16,
+          2
+        ],
+        "Vector": [
+          3184,
+          400
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          1121
+        ],
+        "EvidenceDelivery": [
+          6064
+        ],
+        "ModelEnd": [
+          5920
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-batch6-scan-crosspage.json",
+      "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+      "gold": "来宾市政协通过发起“建设铸牢中华民族共同体意识示范区委员行动”，旨在为民族团结贡献政协的智慧和力量。在兴宾区，这一行动转化为具体的社区实践，如兴宾区政协机关党支部联合相关单位在河西街道瑞民社区举办了“铸牢中华民族共同体意识”宣讲分享会。此类活动通过深入浅出的宣讲获得了群众好评，不仅传播了民族团结的声音，还通过树立典型人物激发了社区党员和群众的向心力，有效推进了社区内各民族之间的互促、互进与互融。",
+      "elapsed_ms": 256946,
+      "upload_ms": 1219,
+      "answer": "根据文档内容，来宾市政协推动的“建设铸牢中华民族共同体意识示范区委员行动”在兴宾区街道社区的落地情况、6月2日活动的宣讲评价及融合成效如下（均依据 **PDF第81页**）：\n\n### 🔹 具体落地方式\n在兴宾区河西街道瑞民社区，该行动主要通过**“党建联建+宣讲分享+民俗实践”**的组合模式落地：\n1. **多支部联合共建**：兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部共同开展活动，形成履职合力。\n2. **政协委员宣讲分享会**：委员结合自身经历与工作实际，深入宣讲“铸牢中华民族共同体意识”及“广西建设铸牢中华民族共同体意识示范区”的重大意义，号召群众参与优秀传统文化传承、地方文化古迹挖掘保护，为构筑中华民族共有精神家园注入“兴宾因子”、彰显“兴宾特色”。\n3. **主题党日与民俗互动**：同步开展“粽情端午话清廉·重温初心明使命”活动，组织现场包粽子、民俗互动，并向异地扶贫搬迁户赠送粽子，以传统文化为纽带拉近社区距离。\n\n### 🔹 6月2日宣讲活动的评价\n现场群众对宣讲给予高度认可，评价其**“既有高度又有深度，既通俗易懂又深入浅出”**，赢得了阵阵好评（第81页）。宣讲成功将宏观政策与基层实际相结合，使理论传播更接地气、更易被群众接受。\n\n### 🔹 促进民族融合与增强向心力的成效\n1. **激发向心力与凝聚力**：河西街道瑞民社区党总支书记、主任胡自杰表示，通过典型人物的树立、宣传与宣讲，有效激发了广大党员、干部群众的向心力和凝聚力。\n2. **推进各民族互促互进互融**：活动以讲好民族团结故事、传播民族团结好声音为抓手，切实推进了社区内各民族的互促、互进与互融。\n3. **增强文化自信与民族自豪感**：包粽子、赠粽等民俗实践为基层百姓打开了了解中华优秀传统文化的大门，让群众亲身体验传统文化魅力，极大增强了文化自信和民族自豪感，从思想自觉与行动自觉上实现了新提高。\n\n---\n\n### 📊 活动落地与成效解释示意图\n```mermaid\nflowchart TD\n    A[\"6月2日瑞民社区联合活动\"] --> B[\"政协委员宣讲分享会\"]\n    A --> C[\"“粽情端午话清廉”主题党日\"]\n    B --> D[\"结合经历宣讲共同体意识重大意义\"]\n    C --> E[\"现场包粽子与民俗互动\"]\n    C --> F[\"向异地扶贫搬迁户赠送粽子\"]\n    D --> G[\"群众评价：既有高度又有深度\\n通俗易懂、深入浅出\"]\n    E --> H[\"体验传统文化魅力\"]\n    F --> H\n    G --> I[\"激发向心力与凝聚力\\n推进各民族互促互进互融\"]\n    H --> J[\"增强文化自信与民族自豪感\\n构筑共有精神家园\"]\n```\n*注：图示关系与节点内容均提炼自文档第81页原文，展示了“宣讲+民俗”双轨并行如何转化为社区民族融合与向心力提升的实际成效。*",
+      "tool_actions": {
+        "read_parsed_pdf:read": 1
+      },
+      "trace_scope_hashes": [
+        "734de9b28c7bdebff13d"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1750
+        ],
+        "Keyword": [
+          9,
+          3,
+          2
+        ],
+        "BM25": [
+          10,
+          3,
+          2
+        ],
+        "Vector": [
+          9429,
+          709,
+          646
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          2163
+        ],
+        "EvidenceDelivery": [
+          15544,
+          27
+        ],
+        "ModelEnd": [
+          15567,
+          42631
+        ],
+        "ToolOutput": [
+          34
+        ],
+        "AgentToolEnd": [
+          63
+        ],
+        "AgentToolBatchEnd": [
+          44
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-finance-final.json",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "gold": "Gray at 1%",
+      "elapsed_ms": 2124375,
+      "upload_ms": 176,
+      "answer": "",
+      "tool_actions": {},
+      "trace_scope_hashes": [],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          71468,
+          2265
+        ],
+        "convert": [
+          13247,
+          494003,
+          48437,
+          50291
+        ],
+        "poll": [
+          418661
+        ],
+        "create": [
+          169
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-finance-result-1.json",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "gold": "Gray at 1%",
+      "elapsed_ms": 76553,
+      "upload_ms": 319,
+      "answer": "基于提供的文档内容，我无法直接查看“general fund revenues chart”的视觉图像（PDF 视觉摘要不可用），因此无法确认图表中具体颜色与类别的对应关系。\n\n不过，根据第 2 页的 **GENERAL FUND REVENUES FY 2016** 表格数据，可以计算出各项收入占比：\n\n| 类别 | 金额 | 占比 |\n|---|---|---|\n| Sales & Use Tax | $1,800,000 | 32.4% |\n| Severance/Mineral Royalties | $752,000 | 13.5% |\n| Property Tax | $665,000 | 12.0% |\n| State Supplemental Funds | $620,000 | 11.1% |\n| Franchise Fees | $350,000 | 6.3% |\n| Fuel/Cigarette Tax | $351,600 | 6.3% |\n| Reserve Transfer | $261,000 | 4.7% |\n| Charges for Services | $220,200 | 4.0% |\n| Other Incl. Interest | $178,623 | 3.2% |\n| Grants | $169,266 | 3.0% |\n| Fines | $118,251 | 2.1% |\n| **Licenses/Permits** | **$76,000** | **1.4%** |\n| **总计** | **$5,561,940** | **100%** |\n\n**结论**：表格中金额最小的类别是 **Licenses/Permits（许可证/许可费）**，约为总额的 **1.4%**。如果文档中确实存在对应的饼图或柱状图，该类别应代表最小的扇区/条形。但由于无法获取原图，我无法确认其对应的具体颜色。",
+      "tool_actions": {
+        "read_parsed_pdf:visual_page": 1,
+        "read_parsed_pdf:search": 1,
+        "read_parsed_pdf:read": 1
+      },
+      "trace_scope_hashes": [
+        "68073d41b129d7894108"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1400,
+          1134
+        ],
+        "Keyword": [
+          10,
+          21,
+          1,
+          3,
+          0,
+          1
+        ],
+        "BM25": [
+          11,
+          22,
+          1,
+          3,
+          1,
+          1
+        ],
+        "Vector": [
+          2752,
+          196,
+          189,
+          203,
+          204,
+          367
+        ],
+        "RRF": [
+          0,
+          0
+        ],
+        "Rerank": [
+          2178,
+          2157
+        ],
+        "EvidenceDelivery": [
+          6815,
+          8,
+          4092,
+          10
+        ],
+        "ModelEnd": [
+          6921,
+          3113,
+          3947,
+          32230
+        ],
+        "ToolOutput": [
+          10,
+          4107,
+          14
+        ],
+        "AgentToolEnd": [
+          30,
+          4124,
+          22
+        ],
+        "AgentToolBatchEnd": [
+          16,
+          4110,
+          16
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "VISUAL_SUMMARY_UNAVAILABLE",
+          "message": "当前范围没有可用内容。"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-finance-result-2.json",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "gold": "Gray at 1%",
+      "elapsed_ms": 69004,
+      "upload_ms": 217,
+      "answer": "根据已解析的文档内容，**无法确认图表中具体颜色对应的类别**，因为文档第 2 页的原始图表图像在解析过程中不可用（系统提示 `PAGE_IMAGE_UNAVAILABLE`），仅保留了结构化表格数据。\n\n不过，依据第 2 页的 **GENERAL FUND REVENUES FY 2016** 表格数据，可以明确金额最小的收入类别及其占比：\n- **最小类别**：`Licenses/Permits`（许可证/执照），金额为 `$76,000`\n- **对应占比**：`$76,000 / $5,561,940 ≈ 1.37%`\n\n若原图表为标准的饼图或柱状图，该类别（约 1.37%）通常对应图中面积/高度最小的色块。建议直接查阅原 PDF 第 2 页以核对具体图例颜色。",
+      "tool_actions": {
+        "read_parsed_pdf:inspect_page": 2,
+        "read_parsed_pdf:read": 1
+      },
+      "trace_scope_hashes": [
+        "99515653e253abf4d6ee"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1367
+        ],
+        "Keyword": [
+          8,
+          4,
+          0
+        ],
+        "BM25": [
+          9,
+          5,
+          0
+        ],
+        "Vector": [
+          2518,
+          210,
+          180
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          1861
+        ],
+        "EvidenceDelivery": [
+          6230,
+          12
+        ],
+        "ModelEnd": [
+          11021,
+          2554,
+          4425,
+          18929
+        ],
+        "ToolOutput": [
+          1,
+          13,
+          429
+        ],
+        "AgentToolEnd": [
+          28,
+          23,
+          449
+        ],
+        "AgentToolBatchEnd": [
+          8,
+          16,
+          432
+        ]
+      },
+      "page_vision_miss_attempts": 1,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 1,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {
+        "miss": 1
+      },
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": [
+        {
+          "code": "INVALID_INSPECTION"
+        },
+        {
+          "code": "PAGE_TEXT_UNAVAILABLE",
+          "message": "当前范围没有可用内容。"
+        },
+        {
+          "code": "VISION_INSPECTION_FAILED"
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-finance-result-3.json",
+      "id": "ohr:acb5da22-516c-429d-9bf2-5e055b367fe0",
+      "gold": "Gray at 1%",
+      "elapsed_ms": 162376,
+      "upload_ms": 153,
+      "answer": "Based on the pie chart on **page 2** of the document, the smallest portion in the General Fund Revenues FY 2016 chart is **1%**, which corresponds to the **Licenses/Permits** category.",
+      "tool_actions": {
+        "read_parsed_pdf:inspect_page": 1
+      },
+      "trace_scope_hashes": [
+        "5fd845867b4ea363408d"
+      ],
+      "trace_stage_elapsed_ms": {
+        "QueryProcessor": [
+          1465
+        ],
+        "Keyword": [
+          11,
+          11,
+          1
+        ],
+        "BM25": [
+          12,
+          12,
+          1
+        ],
+        "Vector": [
+          2666,
+          180,
+          199
+        ],
+        "RRF": [
+          0
+        ],
+        "Rerank": [
+          2123
+        ],
+        "EvidenceDelivery": [
+          6753
+        ],
+        "ModelEnd": [
+          93843,
+          16870
+        ],
+        "PageVision": [
+          24858
+        ],
+        "ToolOutput": [
+          24883
+        ],
+        "AgentToolEnd": [
+          24911
+        ],
+        "AgentToolBatchEnd": [
+          24891
+        ]
+      },
+      "page_vision_miss_attempts": 1,
+      "vl_confirmed_responses": 1,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 3950,
+      "vl_cache_events": {
+        "miss": 1
+      },
+      "visual_results": 1,
+      "visual_tokens_in_unique_outputs": 3950,
+      "visual_elapsed_ms_in_unique_outputs": 24858,
+      "visual_pages": [
+        2
+      ],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-netflix.json",
+      "id": "mml:1021",
+      "gold": "1902216.00",
+      "elapsed_ms": 2109196,
+      "upload_ms": 211,
+      "answer": "文件解析失败，尚未启动模型：文件解析超时，请稍后重试",
+      "tool_actions": {},
+      "trace_scope_hashes": [],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          71468,
+          2265
+        ],
+        "convert": [
+          13247,
+          494003,
+          48437,
+          50291
+        ],
+        "poll": [
+          418661
+        ],
+        "create": [
+          169
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-paper-table.json",
+      "id": "mml:80",
+      "gold": "['POPQA', 'MS MARCO', 'SST-2']",
+      "elapsed_ms": 4013823,
+      "upload_ms": 213,
+      "answer": "",
+      "tool_actions": {},
+      "trace_scope_hashes": [],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          71468,
+          2265
+        ],
+        "convert": [
+          13247,
+          494003,
+          48437,
+          50291
+        ],
+        "poll": [
+          418661
+        ],
+        "create": [
+          169
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-paper-tree.json",
+      "id": "mml:76",
+      "gold": "Pre-training",
+      "elapsed_ms": 4018415,
+      "upload_ms": 228,
+      "answer": "",
+      "tool_actions": {},
+      "trace_scope_hashes": [],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          71468,
+          2265
+        ],
+        "convert": [
+          13247,
+          494003,
+          48437,
+          50291
+        ],
+        "poll": [
+          418661
+        ],
+        "create": [
+          169
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-phone-crosspage.json",
+      "id": "mml:888",
+      "gold": "Not answerable",
+      "elapsed_ms": 2676599,
+      "upload_ms": 4594473,
+      "answer": "根据文档元数据，**mi_phone.pdf 总共只有 30 页**，因此不存在第 40-47 页。\n\n如果您是指文档中关于 \"applications\"（申请）的内容，它们主要出现在以下位置：\n*   **第 5 页**：提到了填写 NYU Housing application 以及 Themed Engagement Community 的申请流程（\"Applying for these communities simply means you will fill out the themed engagement community section of your NYU Housing application.\"）。\n*   **第 30 页**：提供了 Residential Life & Housing Services 的联系方式，用于咨询申请相关事宜。\n\n如果您记错了页码范围或指的是其他文档，请提供更多信息，我将很乐意为您查找。",
+      "tool_actions": {},
+      "trace_scope_hashes": [],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          71468,
+          2265
+        ],
+        "convert": [
+          13247,
+          494003,
+          48437,
+          50291
+        ],
+        "poll": [
+          418661
+        ],
+        "create": [
+          169
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    },
+    {
+      "variant": "candidate",
+      "file": "agent-result-3.json",
+      "id": "citevqa:41489021-892f-5f2a-9c49-d0515dad08a2_xhop_0",
+      "gold": "来宾市政协通过发起“建设铸牢中华民族共同体意识示范区委员行动”，旨在为民族团结贡献政协的智慧和力量。在兴宾区，这一行动转化为具体的社区实践，如兴宾区政协机关党支部联合相关单位在河西街道瑞民社区举办了“铸牢中华民族共同体意识”宣讲分享会。此类活动通过深入浅出的宣讲获得了群众好评，不仅传播了民族团结的声音，还通过树立典型人物激发了社区党员和群众的向心力，有效推进了社区内各民族之间的互促、互进与互融。",
+      "elapsed_ms": 573836,
+      "upload_ms": null,
+      "answer": "根据《来宾政协》文档第 81 页的报道，来宾市政协推动的“建设铸牢中华民族共同体意识示范区委员行动”在兴宾区街道社区的落地情况如下：\n\n### 1. 具体落地方式（以6月2日活动为例）\n该行动在兴宾区主要通过**“政协机关+金融机构+社区党组织”联动**的方式，在基层社区开展宣讲与民俗实践相结合的活动。具体形式包括：\n* **联合共建**：6月2日，兴宾区政协机关党支部联合来宾农商行兴宾党支部、河西街道瑞民社区党总支部，在河西街道瑞民社区共同举办活动。\n* **委员宣讲**：开展“铸牢中华民族共同体意识”政协委员宣讲分享会，委员们**结合自身经历和工作实际**，宣讲建设示范区的重大意义。\n* **文化传承号召**：号召群众参与中华民族优秀传统文化传承发展工程，加强对地方文化古迹的挖掘与保护，发挥地域特色弘扬民族精神，为构筑中华民族共有精神家园注入“兴宾因子”。\n* **主题党日实践**：举办“粽情端午话清廉·重温初心明使命”主题党日活动，通过**现场包粽子、民俗互动**以及**向异地扶贫搬迁户赠送粽子**等接地气的形式，将民族团结融入传统节日氛围中。\n\n### 2. 对宣讲的评价\n河西街道瑞民社区党总支书记、主任胡自杰对活动给予了高度评价。他指出，通过典型人物的树立、宣传与宣讲，有效**激发了广大党员、干部群众的向心力和凝聚力**，让理论宣讲真正走进了基层群众心里。\n\n### 3. 促进民族融合与增强向心力的成效\n* **推进民族互融**：活动切实推进了社区各民族的**互促、互进、互融**，打破了民族间的隔阂，增强了社区共同体的紧密联系。\n* **增强文化自信**：活动为社区群众打开了了解中华优秀传统文化的大门，让基层百姓在互动中了解传统习俗、体验文化魅力，**极大增强了大家的文化自信和民族自豪感**。\n\n### 解释示意图\n以下示意图展示了该行动在瑞民社区的落地路径及成效逻辑：\n\n```mermaid\nflowchart TD\n    A[\"6月2日瑞民社区活动\"] --> B[\"政协委员宣讲分享会\"]\n    A --> C[\"主题党日实践活动\"]\n    B --> D[\"结合自身经历宣讲重大意义\"]\n    B --> E[\"号召文化传承与古迹保护\"]\n    C --> F[\"包粽子与民俗互动\"]\n    C --> G[\"慰问异地扶贫搬迁户\"]\n    D & E & F & G --> H[\"激发向心力与凝聚力\"]\n    H --> I[\"推进社区各民族互促互进互融\"]\n    H --> J[\"增强文化自信与民族自豪感\"]\n```\n\n**引用来源**：上述内容均依据文档第 81 页《兴宾区政协委员开展宣讲会和主题党日活动 唱响“铸牢中华民族共同体意识”政协强音》一文整理。",
+      "tool_actions": {
+        "read_parsed_pdf:visual_page": 1,
+        "read_parsed_pdf:inspect_page": 2
+      },
+      "trace_scope_hashes": [],
+      "trace_stage_elapsed_ms": {
+        "ModelEnd": [
+          71468,
+          2265
+        ],
+        "convert": [
+          13247,
+          494003,
+          48437,
+          50291
+        ],
+        "poll": [
+          418661
+        ],
+        "create": [
+          169
+        ]
+      },
+      "page_vision_miss_attempts": 0,
+      "vl_confirmed_responses": 0,
+      "vision_attempts_without_usage": 0,
+      "vl_observed_tokens_lower_bound": 0,
+      "vl_cache_events": {},
+      "visual_results": 0,
+      "visual_tokens_in_unique_outputs": 0,
+      "visual_elapsed_ms_in_unique_outputs": 0,
+      "visual_pages": [],
+      "visual_partial": 0,
+      "errors": []
+    }
+  ]
+}

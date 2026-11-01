@@ -12,6 +12,8 @@ def main():
     parser.add_argument('--output-dir', required=True)
     parser.add_argument('--dpi', type=int, default=180)
     parser.add_argument('--layout', action='store_true')
+    parser.add_argument('--metadata-only', action='store_true')
+    parser.add_argument('--text-only', action='store_true')
     parser.add_argument(
         '--pages',
         default='',
@@ -31,6 +33,9 @@ def main():
     document = fitz.open(args.input)
     document_page_count = document.page_count
     try:
+        if args.metadata_only:
+            print(json.dumps({'document_page_count': document_page_count, 'pages': []}))
+            return
         requested_pages = []
         if args.pages:
             for value in args.pages.split(','):
@@ -45,9 +50,12 @@ def main():
         page_numbers = requested_pages if args.pages else range(1, document.page_count + 1)
         for page_number in page_numbers:
             page = document.load_page(page_number - 1)
-            pixmap = page.get_pixmap(matrix=fitz.Matrix(scale, scale), alpha=False)
-            image_name = f'page_{page_number:04d}.png'
-            pixmap.save(str(output_dir / image_name))
+            pixmap = None
+            image_name = None
+            if not args.text_only:
+                pixmap = page.get_pixmap(matrix=fitz.Matrix(scale, scale), alpha=False)
+                image_name = f'page_{page_number:04d}.png'
+                pixmap.save(str(output_dir / image_name))
             text = (page.get_text('text', sort=True) or '').strip()
             layout_blocks = []
             for block in (page.get_text('dict', sort=True).get('blocks', []) if args.layout else []):
@@ -92,10 +100,10 @@ def main():
                 'layout_blocks': layout_blocks,
                 'page_rect': list(page.rect),
                 'image_name': image_name,
-                'width': pixmap.width,
-                'height': pixmap.height,
+                'width': pixmap.width if pixmap else None,
+                'height': pixmap.height if pixmap else None,
                 'dpi': int(args.dpi),
-                'status': 'ready',
+                'status': 'text_only' if args.text_only else 'ready',
                 'tables': tables,
                 'table_status': table_status,
             })

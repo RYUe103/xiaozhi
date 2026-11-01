@@ -28,7 +28,7 @@ function resolveEmbeddingConfig(options = {}, env = process.env) {
 /** Reuses an OpenAI-compatible embedding provider; never queries the knowledge-base corpus. */
 class DocumentVectorSearch {
   constructor(options = {}) {
-    const { fetchImpl = fetch, cache = null, timeoutMs = 15000, searchTimeoutMs = 45000, maxEmbeddingCalls = 40, maxEmbeddingChars = 480000, cacheQueries = true } = options;
+    const { fetchImpl = fetch, cache = null, timeoutMs = 15000, searchTimeoutMs = 45000, maxEmbeddingCalls = 256, maxEmbeddingChars = 480000, cacheQueries = true } = options;
     Object.assign(this, resolveEmbeddingConfig(options));
     this.fetch = fetchImpl;
     this.cache = cache;
@@ -87,26 +87,40 @@ class DocumentVectorSearch {
       if (ms <= 0) throw new Error('VECTOR_SEARCH_TIMEOUT');
       return ms;
     };
-    const vectors = [];
-    let newChars = 0;
+    // Check the complete missing index before spending provider calls. Fine-grained
+    // MinerU blocks routinely exceed the old 400-segment cold-start allowance.
     const batchSize = this.bailian ? 10 : 32;
-    for (let start = 0; start < segments.length; start += batchSize) {
+    const keys = segments.map(r => fingerprint([scope, r.id, r.kind, r.offset, r.text]));
+    const vectors = [];
+    for (let start = 0; start < keys.length; start += 50) {
       remaining();
-      const batch = segments.slice(start, start + batchSize);
-      const keys = batch.map((r) => fingerprint([scope, r.id, r.kind, r.offset, r.text]));
-      const values = await Promise.all(keys.map((key) => this.cache?.get(key, scope) || null));
-      const missing = batch.map((r, i) => ({ r, i })).filter((item) => !validVector(values[item.i]));
-      if (missing.length) {
-        newChars += missing.reduce((sum, x) => sum + x.r.text.length, 0);
-        if (newChars > 240000) throw new Error('VECTOR_INDEX_BUDGET_EXCEEDED');
-        const generated = await this.embed(missing.map((x) => x.r.text), remaining());
-        for (let i = 0; i < missing.length; i++) {
-          const target = missing[i].i;
-          values[target] = generated[i];
-          await this.cache?.set(keys[target], scope, generated[i]);
-        }
+      vectors.push(...await Promise.all(keys.slice(start, start + 50).map(key => this.cache?.get(key, scope) || null)));
+    }
+    remaining();
+    const missing = segments.map((r, i) => ({ r, i })).filter(item => !validVector(vectors[item.i]));
+    const newChars = missing.reduce((sum, item) => sum + item.r.text.length, 0);
+    if (newChars > 240000) throw new Error('VECTOR_INDEX_BUDGET_EXCEEDED');
+    const existingQuery = this.cacheQueries && this.queryVectors.get(fingerprint([scope, document.version, query]));
+    const queryCalls = existingQuery ? 0 : 1;
+    if (this.usage.calls + Math.ceil(missing.length / batchSize) + queryCalls > this.maxEmbeddingCalls ||
+        this.usage.chars + newChars + (queryCalls ? query.length : 0) > this.maxEmbeddingChars)
+      throw new Error('VECTOR_REQUEST_BUDGET_EXCEEDED');
+    // Four bounded batches; retain every segment and wait for in-flight work on failure.
+    for (let start = 0; start < missing.length; start += batchSize * 4) {
+      const jobs = [];
+      for (let offset = start; offset < Math.min(missing.length, start + batchSize * 4); offset += batchSize) {
+        const batch = missing.slice(offset, offset + batchSize);
+        jobs.push((async () => {
+          const generated = await this.embed(batch.map(x => x.r.text), remaining());
+          await Promise.all(batch.map(async (item, index) => {
+            vectors[item.i] = generated[index];
+            await this.cache?.set(keys[item.i], scope, generated[index]);
+          }));
+        })());
       }
-      vectors.push(...values);
+      const outcomes = await Promise.allSettled(jobs);
+      const failed = outcomes.find(result => result.status === 'rejected');
+      if (failed) throw failed.reason;
     }
     const queryKey = fingerprint([scope, document.version, query]);
     let q = this.cacheQueries ? this.queryVectors.get(queryKey) : null;

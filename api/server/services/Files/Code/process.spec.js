@@ -2163,7 +2163,7 @@ describe('SanSuo document upload preparse', () => {
       ],
     });
     expect(result.status).toBe('ready');
-    expect(result.saved).toBe(6);
+    expect(result.saved).toBe(8);
     const request = mockAxios.mock.calls[0][0];
     expect(request.url).toBe('http://mineru.test/pdf_parse');
     const multipart = request.data.getBuffer().toString();
@@ -2219,9 +2219,11 @@ describe('SanSuo document upload preparse', () => {
         'remote.png': 'http://example.test/private.png',
       },
     });
-    expect(result.status).toBe('ready');
+    expect(result.status).toBe('failed');
+    expect(result.partial).toBe(true);
     expect(result.missingImages).toEqual(['remote.png']);
-    expect(uploaded.get('策划书_preparse_mineru_images__figure.png').toString()).toBe(
+    const imageName = [...uploaded.keys()].find(name => /_mineru_images__image_/.test(name));
+    expect(uploaded.get(imageName).toString()).toBe(
       'png-image-test',
     );
     expect(mockAxios).toHaveBeenCalledTimes(1);
@@ -2324,6 +2326,8 @@ describe('SanSuo document upload preparse', () => {
         '设备手册_preparse_review_page_0009.png',
       ]);
       expect(records).toHaveLength(2);
+      expect(records[0]).toMatchObject({ displayFilename: uploaded[0], sandboxSessionId: 'review-session', metadata: { rootSourceLibreFileId: 'libre-pdf-review' } });
+      expect(records[0].libreFileId).toMatch(/^sansuo_hidden__/);
       expect(mockUpsertSanSuoFileRecord).toHaveBeenCalledTimes(2);
       expect(mockUpsertSanSuoFileRecord).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -2362,7 +2366,7 @@ describe('SanSuo document upload preparse', () => {
     expect(result).toMatchObject({
       status: 'failed',
       reason: 'missing_readable_pdf_artifact',
-      saved: 4,
+      saved: 5,
     });
   });
 

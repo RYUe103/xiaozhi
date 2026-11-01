@@ -2183,7 +2183,23 @@ async function buildSanSuoPreparsedFileTextContext({
       storage_session_id: record.sandboxSessionId, file_id: record.sandboxFileId, name: record.displayFilename,
     }, req) });
     const { DocumentPageVisionService } = require('~/server/services/DocumentPageVisionService');
-    req._sansuoPageVision = new DocumentPageVisionService({ repository, baseURL: getQwenBaseURL(), apiKey: process.env.QWEN_API_KEY, model: SANSUO_VISION_MODEL,
+    const visionCollection = require('mongoose').connection.collection('sansuo_page_vision_results');
+    const visionStoreScope = { userId: String(req.user.id), conversationId: String(conversationId) };
+    let visionStoreReady;
+    const readyVisionStore = () => visionStoreReady ||= visionCollection.createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 });
+    req._sansuoPageVision = new DocumentPageVisionService({ repository,
+      resultStore: {
+        get: async (key) => { await readyVisionStore(); return (await visionCollection.findOne({ _id: key, ...visionStoreScope, expiresAt: { $gt: new Date() } }))?.result || null; },
+        set: async (key, result) => { await readyVisionStore(); await visionCollection.updateOne({ _id: key, ...visionStoreScope }, { $set: { result, ...visionStoreScope, expiresAt: new Date(Date.now() + 7 * 86400000) } }, { upsert: true }); },
+      }, baseURL: getQwenBaseURL(), apiKey: process.env.QWEN_API_KEY, model: SANSUO_VISION_MODEL,
+      getImage: async (document, block) => {
+        const record = records.find(r => r.metadata?.rootSourceLibreFileId === document.fileId && r.metadata?.sourceHash === document.sourceHash && r.metadata?.mineruImage?.image_id === block.image_id);
+        if (!record) return null;
+        const bytes = await downloadCodeApiFile({ storage_session_id: record.sandboxSessionId, file_id: record.sandboxFileId, name: record.displayFilename }, req);
+        const sha256 = require('crypto').createHash('sha256').update(bytes).digest('hex');
+        if (sha256 !== record.metadata.mineruImage.sha256) throw new Error('IMAGE_VERSION_MISMATCH');
+        return { id: record.libreFileId, bytes, blockImage: true };
+      },
       getPage: async (document, page) => {
         const sourceFile = pdfRoots.find((root) => root.file_id === document.fileId);
         if (!sourceFile || !conversationId || conversationId === 'new') throw new Error('DOCUMENT_ACCESS_DENIED');
@@ -2195,8 +2211,12 @@ async function buildSanSuoPreparsedFileTextContext({
           item = getSanSuoPdfPageItems(rendered, document.fileId).find((p) => p.page === page);
         }
         if (!item) throw new Error('PAGE_IMAGE_UNAVAILABLE');
-        return { id: item.record.libreFileId, bytes: await downloadCodeApiFile(item.imageFile, req) };
+        const bytes = await downloadCodeApiFile(item.imageFile, req);
+        if (item.record.metadata?.imageSha256 && require('crypto').createHash('sha256').update(bytes).digest('hex') !== item.record.metadata.imageSha256) throw new Error('IMAGE_VERSION_MISMATCH');
+        return { id: item.record.libreFileId, bytes };
       } });
+    repository.pageVisionAvailable = Boolean(getQwenBaseURL() && process.env.QWEN_API_KEY && SANSUO_VISION_MODEL);
+    if (repository.pageVisionAvailable) for (const doc of repository.documents.values()) for (const page of doc.pageCoverage) page.inspection_available = Boolean(doc.sourceHash);
     req._sansuoJitTrace ||= repository.trace;
     req._sansuoDocumentRepository = repository;
     req._sansuoPdfReadSources = repository.documents;
@@ -3527,6 +3547,12 @@ async function buildSanSuoPdfVisualContext({
   conversationId,
   messageId,
 }) {
+  // Repository plus inspect_page is the question-driven path, including partial OCR.
+  // Eager summaries must not block the first response on every page in a scanned PDF.
+  if (req?._sansuoPageVision && req?._sansuoDocumentRepository?.documents?.size) {
+    req._sansuoDocumentRepository.trace?.emit('VisualPreparationSkipped', { reason: 'ON_DEMAND_PAGE_VISION' });
+    return { context: 'PDF 已进入按需读取链路。先检索解析正文、图注和结构化表格；需要精确核对扫描文字、数字、单位或图例时调用 read_parsed_pdf 并设置 action=inspect_page 读取原页。解析缺页或定位不明时明确说明，不把已有摘要当完整 OCR。', artifacts: [] };
+  }
   const { canDeferPdfVisualPreparation } = require('~/server/services/DocumentVisualPolicy');
   const fileIds = (attachments || []).filter(isPdfAttachment).map(file => file.file_id);
   const currentQuery = typeof req?.body?.text === 'string' ? req.body.text : messageText;
@@ -4672,7 +4698,8 @@ class BaseClient {
 
     if (
       isSanSuoDeepMode &&
-      (this.options.req?.body?._sansuoPersistedPdfContextReady === true ||
+      (this.options.req?._sansuoDocumentRepository?.documents?.size ||
+        this.options.req?.body?._sansuoPersistedPdfContextReady === true ||
         this.options.req?.body?._sansuoPersistedDocxContextReady === true)
     ) {
       const agents = [this.options.agent, ...(this.agentConfigs?.values() || [])];
@@ -4707,6 +4734,7 @@ class BaseClient {
       const pdfService = this.options.req?._sansuoDocumentRepository || null;
       if (this.options.req._sansuoDocumentRepository) {
         this.options.req._sansuoDocumentRepository.previousReference = previousDocumentReference;
+        this.options.req._sansuoDocumentRepository.trace?.emit('DocumentReferenceRestored', { type: previousDocumentReference?.type || 'text', visual_result_id: previousDocumentReference?.visual_result_id || null, page: previousDocumentReference?.page_start || null });
       }
       const wordService = this.options.req?._sansuoDocxReadSources?.size
         ? createWordDocumentContextService({
@@ -4758,7 +4786,7 @@ class BaseClient {
       if (pdfRegistered > 0) {
         hiddenUserContexts.push(
           '【PDF 按需补读】优先依据已注入的解析正文回答；需要目录、指定页、完整表格或相邻内容时使用 read_parsed_pdf。' +
-            '这是后端统一读取持久 PDF 产物：MinerU 正文、FITZ 文字层和独立 VL 视觉摘要；摘要不等于原文 OCR。' +
+            '这是后端统一读取持久 PDF 产物：MinerU 正文、FITZ 文字层和独立 VL 视觉摘要；摘要不等于原文 OCR。原页可以按需渲染，使用 action=inspect_page、document_id、page、query 进行精确读取；没有预生成摘要不代表原页不可读。不要在 execute_code 中重新解析 PDF。' +
             '多份 PDF 先 action=list，并始终使用 document_id；只能使用工具返回的 chunk_id、section_id、table_id 继续读取。' +
             '当前可查文档：' +
             JSON.stringify(pdfService.listDocuments().map(({ page_coverage, ...doc }) => doc)),

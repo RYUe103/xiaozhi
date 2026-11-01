@@ -1,0 +1,36 @@
+{
+  "scope_hash": null,
+  "conversation_id": "3af6ad76-604b-4164-ad37-00b4826c4f61",
+  "id": "mml:1021",
+  "pdf_sha256": "b22ca874ef08f383bd0b1071677d44f4a242af668f855f00dc9c6d4ac94148e2",
+  "elapsed_ms": 820766,
+  "active": false,
+  "upload_ms": 295,
+  "answer": "文件解析失败，尚未启动模型：文件解析超时，请稍后重试",
+  "tool_calls": [
+    {
+      "id": "file-parse-17844852-89ba-4b49-9b1a-f1c96c3f195f",
+      "name": "sansuo_file_parse",
+      "args": "{\"files\":1}",
+      "type": "tool_call",
+      "progress": 1,
+      "status": "failed",
+      "output": "文件解析超时，请稍后重试"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "failed",
+      "files": 1,
+      "error": "文件解析超时，请稍后重试"
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-11-01T00:30:01.193Z",
+      "completedAt": "2026-11-01T00:43:41.112Z",
+      "elapsedMs": 819919
+    },
+    "sansuoClientRequestId": "f614f3ef-c53b-4c8a-99b2-a8d01e28ed8c"
+  },
+  "references": []
+}

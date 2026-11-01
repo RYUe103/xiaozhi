@@ -1,0 +1,99 @@
+{
+  "scope_hash": null,
+  "conversation_id": "7dff5980-9fe7-4a27-8c48-540f0171fd85",
+  "id": "mml:76",
+  "pdf_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+  "elapsed_ms": 142036,
+  "active": false,
+  "upload_ms": 193,
+  "answer": "根据论文第 2 页的 **Fig. 1. Technology tree of RAG research**（RAG 研究技术树），该树状图包含三个主要分支：\n\n| 分支名称 | 叶子节点（方法/论文）数量 |\n|:---|:---|\n| **Pre-training**（预训练） | **3** |\n| Fine-tuning（微调） | 12 |\n| Inference（推理） | 24 |\n\n叶子节点最少的分支是 **Pre-training（预训练）**，仅有 3 个叶子节点。\n\n> 说明：叶子节点数量基于对第 2 页 Fig. 1 原图的视觉识别统计，由于图中节点密集且存在部分重叠，计数可能存在微小偏差，但 Pre-training 分支明显远少于其他两个分支，结论可靠。",
+  "tool_calls": [
+    {
+      "id": "call_2ac17650dc884d63a77e35f3",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_c66d149cfa87245134a5\",\"mode\":\"figure\",\"page\":2,\"query\":\"Technology tree of RAG research\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_c66d149cfa87245134a5\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_919df312f38c5e0bdfad__file_9a53ecd49c861a562301\",\"region\":null,\"visual_result_id\":\"vision_3cb928d4c7ee1bcd1198075736bb32b9\",\"vision_version\":\"inspect-page-v4-crosscheck\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"05efb353ec57ead36bdaaf9a25826e855bb31f6f925ed57bea128eeabef15a78\",\"user_id\":\"6ae67cc1495d06c47ef9bc69\",\"conversation_id\":\"7dff5980-9fe7-4a27-8c48-540f0171fd85\",\"status\":\"ok\"},\"visual_result_id\":\"vision_3cb928d4c7ee1bcd1198075736bb32b9\",\"ok\":true,\"status\":\"ok\",\"document_id\":\"doc_c66d149cfa87245134a5\",\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"The technology tree of RAG research (Fig. 1) shows three main stages: Pre-training (orange branch), Fine-tuning (teal branch), and Inference (blue branch), rooted in 'Retrieval—Augmented Generation'. The tree spans from ~2020 to 2024, with key LLM milestones (GPT-3, ChatGPT, GPT-4) marked on the left timeline. Each branch contains numerous method names (e.g., RAG, RAG-e2e, UniMS-RAG, RADA, CRAG, etc.), grouped under their respective stage. A legend in the bottom-right indicates: green rectangle = Augmentation Stage (but this appears to be a mislabeling; the actual color coding for stages is orange=Pre-training, teal=Fine-tuning, blue=Inference, as labeled above branches).\",\"evidence_text\":\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. With the emergence of LLMs, research on RAG initially focused on leveraging the powerful in context learning abilities of LLMs, primarily concentrating on the inference stage. Subsequent research has delved deeper, gradually integrating more with the fine-tuning of LLMs. Researchers have also been exploring ways to enhance language models in the pre-training stage through retrieval-augmented techniques.\",\"cells\":[],\"series\":[{\"legend\":\"Pre-training\",\"series\":\"orange branch\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Fine-tuning\",\"series\":\"teal branch\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Inference\",\"series\":\"blue branch\",\"value\":null,\"unit\":null,\"certainty\":\"确定\"},{\"legend\":\"Augmentation Stage\",\"series\":\"green rectangle in legend box\",\"value\":null,\"unit\":null,\"certainty\":\"不确定\"}],\"uncertainties\":[\"The legend box labeled 'Augmentation Stage' with three colored rectangles (green, orange, blue) appears inconsistent with the actual branch coloring: the green rectangle is labeled 'Augmentation Stage', but no branch in the tree is colored green; instead, the three stages are explicitly labeled above branches as 'Pre-training' (orange), 'Fine-tuning' (teal), and 'Inference' (blue). The green rectangle in the legend likely misrepresents or conflates a concept — the figure caption states 'Retrieval—Augmented Generation' is the root, and the parsed text discusses 'Retrieval', 'Generation', and 'Augmentation' as core components, but no green-colored data series exists in the tree. Thus, the mapping of the green legend entry to any visual series is uncertain.\",\"Exact year boundaries for method placements (e.g., whether 'RAG' belongs strictly to 2020 or spans 2020–2023) cannot be precisely determined from the image alone due to overlapping branches and lack of precise node timestamps beyond the vertical axis markers (2020, 2023, 2024).\",\"The label 'Augmentation Stage' in the legend does not correspond to a visually distinct colored branch; the root is labeled 'Retrieval—Augmented Generation', but augmentation is not represented as a separate temporal stage branch.\"]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"The technology tree of RAG research (Fig. 1) shows three main stages: Pre-training (orange branch), Fine-tuning (teal branch), and Inference (blue branch), rooted in 'Retrieval—Augmented Generation'. The tree spans from ~2020 to 2024, with key LLM milestones (GPT-3, ChatGPT, GPT-4) marked on the left timeline. Each branch contains numerous method names (e.g., RAG, RAG-e2e, UniMS-RAG, RADA, CRAG, etc.), grouped under their respective stage. A legend in the bottom-right indicates: green rectangle = Augmentation Stage (but this appears to be a mislabeling; the actual color coding for stages is orange=Pre-training, teal=Fine-tuning, blue=Inference, as labeled above branches).\\\",\\n  \\\"evidence_text\\\": \\\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference. With the emergence of LLMs, research on RAG initially focused on leveraging the powerful in context learning abilities of LLMs, primarily concentrating on the inference stage. Subsequent research has delved deeper, gradually integrating more with the fine-tuning of LLMs. Researchers have also been exploring ways to enhance language models in the pre-training stage through retrieval-augmented techniques.\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Pre-training\\\",\\n      \\\"series\\\": \\\"orange branch\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Fine-tuning\\\",\\n      \\\"series\\\": \\\"teal branch\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Inference\\\",\\n      \\\"series\\\": \\\"blue branch\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Augmentation Stage\\\",\\n      \\\"series\\\": \\\"green rectangle in legend box\\\",\\n      \\\"value\\\": null,\\n      \\\"unit\\\": null,\\n      \\\"certainty\\\": \\\"不确定\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": [\\n    \\\"The legend box labeled 'Augmentation Stage' with three colored rectangles (green, orange, blue) appears inconsistent with the actual branch coloring: the green rectangle is labeled 'Augmentation Stage', but no branch in the tree is colored green; instead, the three stages are explicitly labeled above branches as 'Pre-training' (orange), 'Fine-tuning' (teal), and 'Inference' (blue). The green rectangle in the legend likely misrepresents or conflates a concept — the figure caption states 'Retrieval—Augmented Generation' is the root, and the parsed text discusses 'Retrieval', 'Generation', and 'Augmentation' as core components, but no green-colored data series exists in the tree. Thus, the mapping of the green legend entry to any visual series is uncertain.\\\",\\n    \\\"Exact year boundaries for method placements (e.g., whether 'RAG' belongs strictly to 2020 or spans 2020–2023) cannot be precisely determined from the image alone due to overlapping branches and lack of precise node timestamps beyond the vertical axis markers (2020, 2023, 2024).\\\",\\n    \\\"The label 'Augmentation Stage' in the legend does not correspond to a visually distinct colored branch; the root is labeled 'Retrieval—Augmented Generation', but augmentation is not represented as a separate temporal stage branch.\\\"\\n  ]\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_919df312f38c5e0bdfad__file_9a53ecd49c861a562301\",\"region\":null},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\"],\"telemetry\":{\"elapsed_ms\":12971,\"usage\":{\"prompt_tokens\":3393,\"completion_tokens\":787,\"total_tokens\":4180,\"completion_tokens_details\":{\"text_tokens\":787},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":883,\"cached_tokens\":0}},\"finish_reason\":\"stop\"}}"
+    },
+    {
+      "id": "call_dcef4104cbfd411fb07d320a",
+      "name": "read_parsed_pdf",
+      "args": "{\"action\":\"inspect_page\",\"document_id\":\"doc_c66d149cfa87245134a5\",\"mode\":\"figure\",\"page\":2,\"query\":\"Count the number of leaf nodes (method names/papers) under each of the three branches: Pre-training, Fine-tuning, and Inference. List the exact count for each branch.\"}",
+      "type": "tool_call",
+      "progress": 1,
+      "output": "{\"reference\":{\"type\":\"original_pdf_page\",\"block_id\":null,\"table_id\":null,\"parser_version\":null,\"document_id\":\"doc_c66d149cfa87245134a5\",\"page\":2,\"page_start\":2,\"page_end\":2,\"source_sha256\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"source_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"image_id\":\"sansuo_hidden__upload_919df312f38c5e0bdfad__file_9a53ecd49c861a562301\",\"region\":null,\"visual_result_id\":\"vision_d6253a3763a77c80796aa2159c410a8e\",\"vision_version\":\"inspect-page-v4-crosscheck\",\"vision_model\":\"qwen3-vl-plus\",\"version\":\"05efb353ec57ead36bdaaf9a25826e855bb31f6f925ed57bea128eeabef15a78\",\"user_id\":\"6ae67cc1495d06c47ef9bc69\",\"conversation_id\":\"7dff5980-9fe7-4a27-8c48-540f0171fd85\",\"status\":\"partial\"},\"visual_result_id\":\"vision_d6253a3763a77c80796aa2159c410a8e\",\"ok\":false,\"status\":\"partial\",\"document_id\":\"doc_c66d149cfa87245134a5\",\"page\":2,\"mode\":\"figure\",\"result\":{\"answer\":\"\",\"evidence_text\":\"\",\"cells\":[],\"series\":[],\"uncertainties\":[\"视觉输出未通过结构校验\"]},\"raw_model_output\":\"{\\n  \\\"answer\\\": \\\"{\\\\\\\"Pre-training\\\\\\\": 3, \\\\\\\"Fine-tuning\\\\\\\": 12, \\\\\\\"Inference\\\\\\\": 24}\\\",\\n  \\\"evidence_text\\\": \\\"Fig. 1. Technology tree of RAG research. The stages of involving RAG mainly include pre-training, fine-tuning, and inference.\\\",\\n  \\\"cells\\\": [],\\n  \\\"series\\\": [\\n    {\\n      \\\"legend\\\": \\\"Fine-tuning\\\",\\n      \\\"series\\\": \\\"leaf nodes under Fine-tuning branch\\\",\\n      \\\"value\\\": 12,\\n      \\\"unit\\\": \\\"count\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Pre-training\\\",\\n      \\\"series\\\": \\\"leaf nodes under Pre-training branch\\\",\\n      \\\"value\\\": 3,\\n      \\\"unit\\\": \\\"count\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    },\\n    {\\n      \\\"legend\\\": \\\"Inference\\\",\\n      \\\"series\\\": \\\"leaf nodes under Inference branch\\\",\\n      \\\"value\\\": 24,\\n      \\\"unit\\\": \\\"count\\\",\\n      \\\"certainty\\\": \\\"确定\\\"\\n    }\\n  ],\\n  \\\"uncertainties\\\": []\\n}\",\"source\":{\"type\":\"original_pdf_page\",\"engine\":\"qwen_vl\",\"source_content_hash\":\"396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02\",\"page_image_id\":\"sansuo_hidden__upload_919df312f38c5e0bdfad__file_9a53ecd49c861a562301\",\"region\":null},\"warnings\":[\"视觉识别结果未经人工核验，不等同于完整 OCR 正文\",\"VISION_RESULT_INVALID_SCHEMA\",\"VISION_RESULT_PARTIAL\"],\"telemetry\":{\"elapsed_ms\":5188,\"usage\":{\"prompt_tokens\":3424,\"completion_tokens\":229,\"total_tokens\":3653,\"completion_tokens_details\":{\"text_tokens\":229},\"prompt_tokens_details\":{\"image_tokens\":2510,\"text_tokens\":914,\"cached_tokens\":0}},\"finish_reason\":\"stop\"}}"
+    }
+  ],
+  "message_metadata": {
+    "sansuoMode": "deep",
+    "sansuoFileParse": {
+      "status": "completed",
+      "files": 1,
+      "artifacts": 19
+    },
+    "sansuoProcessTiming": {
+      "startedAt": "2026-10-31T23:41:53.659Z",
+      "completedAt": "2026-10-31T23:44:12.438Z",
+      "elapsedMs": 138779
+    },
+    "sansuoClientRequestId": "d17f16eb-ebbd-4cb2-86d0-e2096dc16473",
+    "sansuoSources": [
+      {
+        "file_id": "0556843e-b72a-487f-800b-30565f10e089",
+        "filename": "2312.10997v5.pdf",
+        "type": "application/pdf",
+        "source": "local",
+        "bytes": 1662567,
+        "status": "ready",
+        "kind": "file"
+      }
+    ]
+  },
+  "references": [
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_c66d149cfa87245134a5",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_919df312f38c5e0bdfad__file_9a53ecd49c861a562301",
+      "region": null,
+      "visual_result_id": "vision_3cb928d4c7ee1bcd1198075736bb32b9",
+      "vision_version": "inspect-page-v4-crosscheck",
+      "vision_model": "qwen3-vl-plus",
+      "version": "05efb353ec57ead36bdaaf9a25826e855bb31f6f925ed57bea128eeabef15a78",
+      "user_id": "6ae67cc1495d06c47ef9bc69",
+      "conversation_id": "7dff5980-9fe7-4a27-8c48-540f0171fd85",
+      "status": "ok",
+      "recorded_at": "2026-10-31T23:43:55.177Z"
+    },
+    {
+      "type": "original_pdf_page",
+      "block_id": null,
+      "table_id": null,
+      "parser_version": null,
+      "document_id": "doc_c66d149cfa87245134a5",
+      "page": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "source_hash": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+      "image_id": "sansuo_hidden__upload_919df312f38c5e0bdfad__file_9a53ecd49c861a562301",
+      "region": null,
+      "visual_result_id": "vision_d6253a3763a77c80796aa2159c410a8e",
+      "vision_version": "inspect-page-v4-crosscheck",
+      "vision_model": "qwen3-vl-plus",
+      "version": "05efb353ec57ead36bdaaf9a25826e855bb31f6f925ed57bea128eeabef15a78",
+      "user_id": "6ae67cc1495d06c47ef9bc69",
+      "conversation_id": "7dff5980-9fe7-4a27-8c48-540f0171fd85",
+      "status": "partial",
+      "recorded_at": "2026-10-31T23:44:10.053Z"
+    }
+  ]
+}

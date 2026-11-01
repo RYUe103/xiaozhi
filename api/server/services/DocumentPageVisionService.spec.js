@@ -44,3 +44,27 @@ test('unparseable model output is partial and preserved without invented structu
   const result = await service.inspect(input);
   expect(result).toMatchObject({ ok: false, status: 'partial', raw_model_output: 'not json', result: { cells: [], series: [] } });
 });
+test('visual evidence carries real original-page identity for persisted followups', async()=>{
+ const {service,repository}=setup();const result=await service.inspect(input);
+ expect(result.reference).toMatchObject({document_id:'doc',page:2,source_sha256:'hash',image_id:'image',user_id:'u',conversation_id:'c',status:'ok'});
+ expect(result.reference.visual_result_id).toBe(result.visual_result_id);
+ expect(repository.previousReference).toEqual(result.reference);
+});
+test('persistent result cache avoids repeated VL after authorization and retains raw output',async()=>{
+ const store=new Map();const resultStore={get:async k=>store.get(k),set:async(k,v)=>store.set(k,v)};
+ const first=setup({resultStore});const a=await first.service.inspect(input);
+ const second=setup({resultStore});const b=await second.service.inspect(input);
+ expect(b.raw_model_output).toBe(a.raw_model_output);expect(b.telemetry.cache_hit).toBe(true);expect(second.fetchImpl).not.toHaveBeenCalled();expect(second.repository.checkAuthorization).toHaveBeenCalled();
+});
+test('figure uses full page even when its verified cropped asset is available',async()=>{
+ const getImage=jest.fn();const {service,repository,getPage}=setup({getImage});
+ repository.documents.get('doc').structuredBlocks=[{block_id:'b',page:2,source_sha256:'hash',image_mapping_verified:true,image_id:'i'}];
+ await service.inspect({...input,mode:'figure',block_id:'b'});expect(getImage).not.toHaveBeenCalled();expect(getPage).toHaveBeenCalled();
+});
+test('reported uncertainty is partial evidence rather than full success',async()=>{
+ const fetchImpl=jest.fn().mockResolvedValue({ok:true,json:async()=>({choices:[{finish_reason:'stop',message:{content:JSON.stringify({answer:'unclear',evidence_text:'1%',cells:[],series:[],uncertainties:['legend binding is unclear']})}}]})});
+ expect((await setup({fetchImpl}).service.inspect(input)).status).toBe('partial');
+});
+test('different questions on one page share in-flight rendering without conflating answers',async()=>{
+ const {service,getPage,fetchImpl}=setup();await Promise.all([service.inspect(input),service.inspect({...input,query:'其他参数是多少？'})]);expect(getPage).toHaveBeenCalledTimes(1);expect(fetchImpl).toHaveBeenCalledTimes(2);
+});

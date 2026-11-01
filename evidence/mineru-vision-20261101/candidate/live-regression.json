@@ -1,0 +1,28 @@
+{
+  "scope": "Live HTTP plain chat, synthetic DOCX and foreign-user message authorization",
+  "checks": [
+    {
+      "name": "plain_chat",
+      "ok": true,
+      "conversationId": "33c1f022-b046-4bca-b688-af9692dc93d1",
+      "elapsed_ms": 72593,
+      "answer": "15",
+      "active": false,
+      "tools": []
+    },
+    {
+      "name": "docx_read",
+      "ok": true,
+      "conversationId": "cf38fb1b-34dc-4754-a203-081ed8bbea9c",
+      "elapsed_ms": 4141,
+      "answer": "依据附件内容，样机 RX-481 的校验周期为 **17 天**。",
+      "active": false,
+      "tools": []
+    },
+    {
+      "name": "foreign_message_isolation",
+      "ok": true,
+      "http_status": 200
+    }
+  ]
+}

@@ -91,13 +91,23 @@ class DocumentArtifactRepository {
     let loadedBytes = 0;
     for (const root of roots) {
       if (root.user && String(root.user) !== this.userId) continue;
-      const related = artifacts.filter((a) => a.metadata?.rootSourceLibreFileId === root.file_id &&
+      let related = artifacts.filter((a) => a.metadata?.rootSourceLibreFileId === root.file_id &&
         (!a.userId || String(a.userId) === this.userId) && (!a.conversationId || String(a.conversationId) === this.conversationId));
       const warnings = [];
+      const expectedHash = root.metadata?.sha256 || root.metadata?.contentHash;
+      if (expectedHash) related = related.filter(a => !a.metadata?.sourceHash || a.metadata.sourceHash === expectedHash);
+      const committed = related.filter(a => a.metadata?.artifactSetStatus === 'complete' && a.metadata?.parseGeneration)
+        .sort((a,b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0))[0]?.metadata.parseGeneration;
+      if (related.some(a => a.metadata?.parseGeneration && a.metadata.parseGeneration !== committed)) warnings.push({ code: 'INCOMPLETE_OR_SUPERSEDED_PARSE_IGNORED' });
+      related = related.filter(a => {
+        if (a.metadata?.parseGeneration) return a.metadata.parseGeneration === committed;
+        const name = String(a.displayFilename || a.originalFilename || '');
+        return !committed || !/_(?:mineru|smart_manifest|profile)/i.test(name);
+      });
       const buffers = new Map();
       for (const a of related) {
         const name = String(a.displayFilename || a.originalFilename || '');
-        if (!/_(?:mineru(?:_chunks\.jsonl|\.md|_content_list\.json)|visual_(?:pages\.jsonl|chunks\.jsonl|manifest\.json)|smart_manifest\.json|profile\.json)$/i.test(name)) continue;
+        if (!/_(?:mineru(?:_chunks\.jsonl|\.md|_content_list\.json|_blocks\.json)|visual_(?:pages\.jsonl|chunks\.jsonl|manifest\.json)|smart_manifest\.json|profile\.json)$/i.test(name)) continue;
         try {
           const value = await download(a);
           loadedBytes += Buffer.byteLength(value);
@@ -114,12 +124,18 @@ class DocumentArtifactRepository {
         const invalid = () => warnings.push({ code: 'ARTIFACT_INVALID', artifact_id: item[1].artifact.libreFileId || null });
         try { return fn(item[1].value, invalid); } catch { invalid(); return null; }
       };
-      const mineru = parse(/_mineru_chunks\.jsonl$/i, lines);
+      let mineru = parse(/_mineru_chunks\.jsonl$/i, lines);
       const fitz = parse(/_visual_chunks\.jsonl$/i, lines);
       const pages = parse(/_visual_pages\.jsonl$/i, lines) || [];
-      const manifest = parse(/_visual_manifest\.json$/i, json) || parse(/_smart_manifest\.json$/i, json);
+      const manifest = committed ? parse(/_smart_manifest\.json$/i, json) : parse(/_visual_manifest\.json$/i, json) || parse(/_smart_manifest\.json$/i, json);
       const profile = parse(/_profile\.json$/i, json);
       if (manifest?.fallback_reason) warnings.push({ code: 'PARSER_FALLBACK', reason: manifest.fallback_reason });
+      const fitzPlausiblePages = new Set((fitz || pages).filter(r => assessPageTextQuality(r.text || '') === 'plausible').map(pageOf));
+      const replacedPages = new Set((mineru || []).filter(r => assessPageTextQuality(r.text || '') === 'suspect' && fitzPlausiblePages.has(pageOf(r))).map(pageOf));
+      if (replacedPages.size) {
+        warnings.push({ code: 'MINERU_SUSPECT_PAGES_REPLACED_WITH_FITZ', pages: [...replacedPages] });
+        mineru = mineru.filter(r => !replacedPages.has(pageOf(r)));
+      }
       const mineruPages = new Set((mineru || []).flatMap((r) => {
         const start = Number(pageOf(r));
         const end = Number(r.pageEnd ?? r.page_end ?? start);
@@ -147,7 +163,8 @@ class DocumentArtifactRepository {
           engine = 'mineru';
         }
       }
-      const contentList = parse(/_mineru_content_list\.json$/i, json);
+      const structure = parse(/_mineru_blocks\.json$/i, json);
+      const contentList = structure?.version === 'mineru-structure-v1' ? structure.blocks.map(b => ({ ...b.raw, block_id: b.block_id, table_id: b.table_id })) : parse(/_mineru_content_list\.json$/i, json);
       if (!records.length && Array.isArray(contentList)) {
         records = contentList.map((r) => ({ ...r, text: r.text || r.content || r.markdown || r.table_body || r.html || '' })); engine = 'mineru';
       }
@@ -177,6 +194,8 @@ class DocumentArtifactRepository {
       const document = this.add({ fileId: root.file_id, filename: root.filename || root.name, records, engine, pageRecords: pages, pageImages,
         pageCount: manifest?.document_page_count || manifest?.page_count || (profile?.page_count_source !== 'content_list_max_page' && (manifest?.profile?.page_count || profile?.page_count)) || index?.pageCount || null,
         summaries, warnings: [...warnings, ...(profile?.is_mock ? [{ code: 'MOCK_PARSER_OUTPUT', provider: profile.provider }] : [])], contentList, sourceHash, sourceArtifact: choose(/_(?:mineru|visual)_chunks\.jsonl$/i)?.[1].artifact.libreFileId || null });
+      document.structuredBlocks = structure?.blocks || [];
+      document.imageAssets = (structure?.images || []).map(image => ({ ...image, image_artifact_id: related.find(a => a.metadata?.mineruImage?.image_id === image.image_id)?.libreFileId || null }));
       document.artifactBindings = related.filter((a) => a.libreFileId).map((a) => ({ id: a.libreFileId, signature: artifactSignature(a) }));
     }
     return this;
@@ -382,6 +401,7 @@ class DocumentArtifactRepository {
 
   execute(input = {}, retrievalOverride = null) {
     let args = { ...input };
+    if (!args.pages && Number.isInteger(args.page) && ['read', 'read_table'].includes(args.action)) args.pages = [args.page];
     let continuationIds;
     const action = args.action || 'search';
     if (!['list', 'info', 'toc', 'search', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search'].includes(action)) return fail('ACTION_INVALID', '不支持的文档动作。');
@@ -413,8 +433,12 @@ class DocumentArtifactRepository {
     }
     const previous = this.previousReference?.document_id === document.documentId ? this.previousReference : null;
     const usesPrevious = !args.chunk_id && !args.section_id && !args.table_id && !args.pages && ['read', 'read_table', 'read_adjacent'].includes(args.action || action);
-    if (previous && usesPrevious && ((previous.version && previous.version !== document.version) ||
+    if (previous && usesPrevious && ((previous.visual_result_id ? previous.source_sha256 !== document.sourceHash : previous.version && previous.version !== document.version) ||
       (previous.user_id && previous.user_id !== this.userId) || (previous.conversation_id && previous.conversation_id !== this.conversationId))) return fail('HISTORICAL_REFERENCE_STALE', '历史引用的来源、会话或版本已变化，请重新检索。');
+    if (previous?.visual_result_id && usesPrevious && Number.isInteger(previous.page_start)) {
+      const radius = args.action === 'read_adjacent' ? Math.max(1, Math.min(3, args.adjacent_count || 1)) : 0;
+      args = { ...args, pages: Array.from({ length: radius * 2 + 1 }, (_, i) => previous.page_start - radius + i).filter(p => p > 0 && p <= document.pageCount) };
+    }
     let selected = [], warnings = previous && usesPrevious && !previous.version ? ['HISTORICAL_REFERENCE_VERSION_UNKNOWN'] : [], table = null, retrieval = null;
     const effectiveAction = args.action || action;
     if (effectiveAction === 'visual_page' || effectiveAction === 'visual_search') {
@@ -441,7 +465,7 @@ class DocumentArtifactRepository {
     } else if (effectiveAction === 'read_adjacent') {
       const center = document.records.findIndex((r) => r.chunkId === (args.chunk_id || previous?.chunk_id));
       const radius = Math.max(1, Math.min(3, args.adjacent_count || 1));
-      selected = center < 0 ? [] : document.records.slice(Math.max(0, center - radius), center + radius + 1);
+      selected = center < 0 ? document.records.filter(r => args.pages?.includes(r.pageStart)) : document.records.slice(Math.max(0, center - radius), center + radius + 1);
     } else if (effectiveAction === 'read') {
       const chunk = args.chunk_id || (!args.pages && !args.section_id ? previous?.chunk_id : null);
       const section = document.headings.find((h) => h.sectionId === (args.section_id || (!args.pages && !chunk ? previous?.section_id : null)));
@@ -468,7 +492,9 @@ class DocumentArtifactRepository {
       const recordsById = new Map([...document.records, ...document.visualRecords].map((r) => [r.id, r]));
       selected = continuationIds.map((id) => recordsById.get(id)).filter(Boolean);
     }
-    if (!selected.length) return { ...base, ...fail(effectiveAction.startsWith('visual') ? 'VISUAL_SUMMARY_UNAVAILABLE' : 'PAGE_TEXT_UNAVAILABLE', '当前范围没有可用内容。'), page_coverage: document.pageCoverage.filter((p) => !args.pages || args.pages.includes(p.page)).slice(0, 60) };
+    if (!selected.length) return { ...base, ...fail(effectiveAction.startsWith('visual') ? 'VISUAL_SUMMARY_UNAVAILABLE' : 'PAGE_TEXT_UNAVAILABLE', effectiveAction.startsWith('visual') && this.pageVisionAvailable ? '当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。' : '当前范围没有可用内容。'),
+      ...(this.pageVisionAvailable ? { inspection_available: true, next_action: { tool: 'read_parsed_pdf', action: 'inspect_page', document_id: document.documentId, page: args.page || args.pages?.[0] || null, query_required: true }, page_candidates: args.query ? searchRecords(document.records, args.query, { index: document.lexicalIndex, limit: 3 }).fused.slice(0,3).map(hit => ({ page: hit.record.pageStart, chunk_id: hit.record.chunkId, block_id: hit.record.block_id, text_excerpt: hit.record.text.slice(0,500) })) : [] } : {}),
+      page_coverage: document.pageCoverage.filter((p) => !args.pages || args.pages.includes(p.page)).slice(0, 60) };
     const max = Number(args.max_chars ?? (this.quality.compactDelivery ? (effectiveAction === 'search' ? 6000 : 12000) : 20000));
     if (!Number.isInteger(max) || max < 100 || max > 20000) return fail('READ_BUDGET_EXCEEDED', 'max_chars 必须为100至20000。');
     let excerpted = false;
@@ -522,13 +548,14 @@ class DocumentArtifactRepository {
     const selection = { ...args, action: effectiveAction, continuation_token: undefined, offset: undefined };
     const rankedIds = effectiveAction === 'search' || effectiveAction === 'visual_search' ? selected.map((r) => r.id) : undefined;
     const continuation = truncated ? this.sign({ document: document.documentId, version: document.version, selection, rankedIds, offset: next }) : null;
-    const includeTableStructure = table && !truncated && !offset && JSON.stringify([table.rows, table.cells, table.rowProvenance]).length <= max;
+    const deliveryCells = this.quality.compactDelivery ? (table?.cells || []).filter(cell => cell.rowspan > 1 || cell.colspan > 1) : table?.cells;
+    const includeTableStructure = table && !truncated && !offset && JSON.stringify([table.rows, deliveryCells, table.rowProvenance]).length <= max;
     if (table && !includeTableStructure) warnings.push('TABLE_STRUCTURE_METADATA_BUDGETED');
     return { ...base, action: effectiveAction, content, excerpted, offset, truncated, next_offset: truncated ? next : null, continuation_token: continuation,
       warnings, table_id: table?.tableId, table: table ? { structure: table.structure, rows: includeTableStructure ? table.rows : undefined,
-        cells: includeTableStructure ? table.cells : undefined, row_provenance: includeTableStructure ? table.rowProvenance : undefined,
+        cells: includeTableStructure ? deliveryCells : undefined, row_provenance: includeTableStructure ? table.rowProvenance : undefined,
         complete: table.complete, columns: table.columns, source_table_id: table.sourceTableId, selected_row_indexes: table.selectedRowIndexes, total_rows: table.totalRows, selection: table.selection, source_complete: table.sourceComplete } : undefined, page_coverage: document.pageCoverage.filter((p) => args.pages ? args.pages.includes(p.page) : delivered.some((r) => r.pageStart != null && p.page >= r.pageStart && p.page <= r.pageEnd)).slice(0, 60),
-      hits: delivered.map((r) => ({ chunk_id: r.chunkId || r.id, source_chunk_id: r.sourceChunkId, page_start: r.pageStart, page_end: r.pageEnd, kind: r.kind, engine: r.engine,
+      hits: delivered.map((r) => ({ chunk_id: r.chunkId || r.id, source_chunk_id: r.sourceChunkId, page_start: r.pageStart, page_end: r.pageEnd, kind: r.kind, engine: r.engine, block_id: r.block_id, image_id: r.image_id, bbox: r.bbox, coordinate_system: r.coordinate_system, page_rect: r.page_rect, geometry_verified: r.geometry_verified,
         table_ids: document.tables.filter((t) => t.chunkIds?.includes(r.chunkId)).map((t) => t.tableId) })),
       retrieval: retrieval ? { warnings: retrieval.warnings, keyword: retrieval.keyword.map((h) => ({ id: h.record.id, score: h.score, rank: h.rank })), bm25: retrieval.bm25.map((h) => ({ id: h.record.id, score: h.score, rank: h.rank })), vector: (retrieval.vector || []).map((h) => ({ id: h.record.id, score: h.score, rank: h.rank })), rrf: retrieval.fused.map((h) => ({ id: h.record.id, score: h.score, ranks: h.ranks, sources: h.sources })) } : undefined,
       reference: { document_id: document.documentId, chunk_id: delivered[0]?.chunkId || delivered[0]?.id, page_start: delivered[0]?.pageStart, page_end: delivered[0]?.pageEnd,

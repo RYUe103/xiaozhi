@@ -1,0 +1,46 @@
+{
+  "id": "ohr:finance/DUDE_2879a049d77aae9eccbedf4e9af7ac70",
+  "sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+  "status": "ok",
+  "elapsed_ms": 9959,
+  "blocks": 33,
+  "images": 7,
+  "mapped_blocks": 7,
+  "provenance": {
+    "provider": "mineru_cloud",
+    "protocol": "v4",
+    "adapter_version": "mineru-cloud-v4-assets-v2",
+    "model_requested": "vlm",
+    "model_reported": null,
+    "batch_id": "a6133a43-5382-4376-a239-7488176e93c5",
+    "state": "done",
+    "source_sha256": "d6aaf5331db77610f2c5b9acb1833fbc1453c8d328699a99ff132e35b67af1ef",
+    "archive_sha256": "3a5d7c9558ebfa2cf4937e4138ff136f0a23244819e8d5187ec002bc78849d30",
+    "timings": {
+      "create_ms": 110,
+      "upload_ms": 135,
+      "poll_ms": 9380,
+      "download_ms": 216,
+      "convert_ms": 115,
+      "total_ms": 9956
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 1147
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 3275
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 9625
+      }
+    ],
+    "conversion_status": "complete",
+    "warnings": [],
+    "page_index_convention": "zero_based_provider",
+    "bbox_coordinate_system": "unknown"
+  }
+}

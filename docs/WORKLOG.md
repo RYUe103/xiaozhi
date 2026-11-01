@@ -80,3 +80,21 @@
 - 实测主模型2114844、查询/重排209359、Embedding826589 tokens为已观测下界；VL usage缺失、一题达到trace256上限。有效44题P50 38.322秒、P95 1122.191秒，含快速故障/不同并发，非SLA。详细性能分组另有JSON。
 - 核对111项数据/锁/分组/原题/once-only完整性通过，12脚本语法/编译通过；不冒充Agent通过数。备份见该证据目录task-before、head、git-status-before。
 - 仍待54题、全量评分/来源复核、可靠分类型正确率。报告入口evidence/jit-benchmark-100-20261031/REPORT.md、逐题per-question.csv/json；task保持阻塞未完成。
+
+
+## 2026-11-01：MinerU云端与按需视觉实际实施及独立验收
+
+- 用户要求：沿用现有分支，以真实PDF/Agent证据验收，不改gold，不覆盖.env或内网生产。
+- 源码：加固ZIP/URL/DNS/资源限制，原ZIP与provenance、完整图片路径→artifact映射；统一结构块/父块chunks/表格合并；按需原页及视觉引用持久化；记录schema/截断partial；提交代际/图片hash；向量预检与4批并发。
+- 实际发现：云端_origin.pdf重写字节，六份hash均与输入不同，16个页面抽样渲染一致；改用认证batch+回传data_id绑定上传SHA，云端PDF另存hash。旧误拒绝失败保留。
+- 验证：14组270项单测、26文件语法检查；六份复杂真实PDF均有成功资产，首次5/6。真实财务完整Agent/FITZ/QwenVL/引用追问；扫描最新256.946s、0VL，向量9.429s/30候选，原为16.108s预算失败。普通聊天、合成Word、外用户隔离HTTP通过。
+- 未通过：图例与冻结gold分歧、VL/主模型网络失败；B5共同六题2/6，B6两题定点2/2不合并选优；普通文字非退化与全OCR/公式/表格精度、混合页缺失、真实更新恢复等未完，不能生产部署。
+- 恢复：HEAD ff2304f，开发副本/tmp/xiaozhi-publish-20261031，稳定备份evidence/mineru-vision-20261101/source-changes.tar.gz。原100题gold/结果未改；来源姓名旧评审另有纠正说明，旧记录保留。
+- 运行：仅本轮隔离3183/3184 API已停止；库/资产保留；3080配置接口200，生产/内网/.env未替换；没有提交推送。
+- 报告：docs/PDF_PAGE_VISION_IMPLEMENTATION.md及evidence/mineru-vision-20261101/REPORT.md，逐批真实结果、原始工具输出、脱敏事件、来源/源码hash和失败均保留。
+
+## 2026-11-01：用户授权推送本轮实施与验收证据
+
+- 提交范围：MinerU/Repository/按需视觉/检索代码、测试脚本、实施说明和脱敏真实Agent证据；保留所有失败及未完成事项。
+- 排除依赖软链接、原始PDF/ZIP大资产和服务凭据；未改生产配置。推送前代码与文档diff检查通过（原始休眠日志的行尾空白保留），163项证据约3.89MB，凭据模式扫描无命中。
+- 既有验证为14组270项测试通过；本轮仅发布，不重新运行付费Agent评测。远端提交结果在发布后独立核实。

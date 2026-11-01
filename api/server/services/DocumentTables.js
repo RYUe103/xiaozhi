@@ -94,7 +94,7 @@ function structuredTables(contentList, documentId) {
       const sourceTableId = item.table_id ?? item.tableId ?? null;
       pieces.push({ ...value, columns, tableId: tableId([documentId, sourceTableId, index, part]), sourceTableId,
         pageStart: pageOf(item), pageEnd: item.pageEnd ?? item.page_end ?? pageOf(item),
-        structure: 'structured_table', engine: item.engine === 'fitz' ? 'fitz' : 'mineru', chunkIds: [], sourceIndexes: [index],
+        structure: 'structured_table', engine: item.engine === 'fitz' ? 'fitz' : 'mineru', chunkIds: [], sourceIndexes: [index], blockIds: item.block_id ? [item.block_id] : [],
         complete: item.complete !== false && !value.warnings.length, readable: columns > 0 && !value.warnings.length });
     }
   }
@@ -110,6 +110,7 @@ function structuredTables(contentList, documentId) {
       previous.cells.push(...piece.cells.filter((cell) => cell.row >= skip).map((cell) => ({ ...cell, row: cell.row + rowOffset })));
       previous.pageEnd = piece.pageEnd;
       previous.sourceIndexes.push(...piece.sourceIndexes);
+      previous.blockIds.push(...piece.blockIds);
       previous.complete = previous.complete && piece.complete;
     } else {
       if (previous) { previous.warnings.push('TABLE_CONTINUATION_UNRESOLVED'); piece.warnings.push('TABLE_CONTINUATION_UNRESOLVED'); previous.complete = false; piece.complete = false; }
@@ -197,7 +198,7 @@ function buildDocumentTables(document, contentList) {
   for (const table of result) {
     const anchors = document.records.filter((record) => record.engine === table.engine &&
       record.pageStart != null && table.pageStart != null && record.pageStart <= table.pageEnd && record.pageEnd >= table.pageStart);
-    table.chunkIds = [...new Set([...(table.chunkIds || []), ...anchors.map((record) => record.chunkId)])];
+    table.chunkIds = [...new Set([...(table.chunkIds || []), ...anchors.filter(record => !table.blockIds?.length || table.blockIds.includes(record.block_id)).map((record) => record.chunkId)])];
     table.chunkId ||= table.chunkIds[0];
   }
   for (const table of markdown) {

@@ -96,3 +96,16 @@ describe('JIT embedding provider and scoped incremental cache', () => {
  const args={userId:'u',conversationId:'c',document,query:'question'};await p.search(args);const count=embed.mock.calls.length;await p.search(args);expect(embed.mock.calls.length).toBe(count);
  await p.search({...args,conversationId:'other'});expect(embed.mock.calls.length).toBeGreaterThan(count);
  });
+
+ test('indexes more than 400 MinerU blocks without losing tail evidence; concurrency stays bounded', async () => {
+ let active=0,peak=0;const input=[];
+ const fetchImpl=async (_url,request)=>{active++;peak=Math.max(peak,active);const texts=JSON.parse(request.body).input;input.push(...texts);await new Promise(resolve=>setTimeout(resolve,1));active--;return {ok:true,json:async()=>({data:texts.map((text,index)=>({index,embedding:text.includes('target')?[1,0]:[0,1]}))})};};
+ const p=new DocumentVectorSearch({endpoint:'https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings',apiKey:'test',model:'embedding',fetchImpl});
+ const records=Array.from({length:450},(_,i)=>({id:String(i),text:i===449?'target evidence':'other '+i}));
+ const hits=await p.search({userId:'u',conversationId:'c',document:{documentId:'d',records},query:'target'});
+ expect(hits[0].record.id).toBe('449');expect(input).toHaveLength(451);expect(peak).toBe(4);expect(active).toBe(0);
+ });
+ test('impossible cold index budget fails before making any paid request', async () => {
+ const fetchImpl=jest.fn();const p=new DocumentVectorSearch({endpoint:'https://example.invalid',apiKey:'test',model:'embedding',fetchImpl,maxEmbeddingCalls:1});
+ await expect(p.search({userId:'u',conversationId:'c',document:{documentId:'d',records:[{id:'1',text:'text'}]},query:'question'})).rejects.toThrow('VECTOR_REQUEST_BUDGET_EXCEEDED');expect(fetchImpl).not.toHaveBeenCalled();
+ });

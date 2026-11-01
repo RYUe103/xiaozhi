@@ -62,3 +62,12 @@ Mongo `LibreChat` 数据库的 `sansuofiles` 中，关联产物记录有 `sandbo
 - 18 个 `img_path` 与 `images` 键、独立图片产物是否逐项对应，以及图片是否完整可解码。
 - 两条 `table_body` 的实际格式、表头与单元格关系，以及跨页表格处理。
 - 内网运行代码与 GitHub 工作分支的差异，以及 Agent 实际使用哪些字段。
+
+
+## 2026-11-01 外网开发实现补充（不代表内网已升级）
+
+本轮工作副本增加 `_mineru_blocks.json`，将本说明列出的原始字段、bbox、阅读顺序、父块ID、表格/图像关联保留在统一结构中；不再只依赖扁平 Markdown。云端 ZIP 图片以完整规范化相对路径保存映射，实际存储名使用来源绑定 image ID，manifest 记录真实 artifact ID。内网旧版字符串 content_list 与 Data URL images 继续兼容。
+
+内网本样本的坐标、18个图片的精确匹配仍待内网运行验证；外网六份真实云端资产的验证不能替代内网验证。MinerU bbox 仍标未知，不自动作为精确裁剪坐标。FITZ原页使用实际上传PDF。
+
+云端 `_origin.pdf` 可能经过重写，不能把其文件SHA当上传PDF的SHA：六份真实资产字节均不同，16个抽样页面渲染相同。云端使用认证任务返回的 data_id 绑定上传SHA，另存云端PDF SHA；内网无云端任务字段时保持未知，不伪造。详见 `PDF_PAGE_VISION_IMPLEMENTATION.md`。

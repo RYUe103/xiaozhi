@@ -1,0 +1,50 @@
+{
+  "id": "mml:mi_phone.pdf",
+  "sha256": "16ee1cfbd58f9c6a3793c66ff5f4ec38dd864ac9fd7a9b7186f8af7db53f870b",
+  "status": "ok",
+  "elapsed_ms": 33619,
+  "blocks": 222,
+  "images": 80,
+  "mapped_blocks": 80,
+  "provenance": {
+    "provider": "mineru_cloud",
+    "protocol": "v4",
+    "adapter_version": "mineru-cloud-v4-assets-v2",
+    "model_requested": "vlm",
+    "model_reported": null,
+    "batch_id": "f90a57f1-c818-4981-a171-157f2826cf0f",
+    "state": "done",
+    "source_sha256": "16ee1cfbd58f9c6a3793c66ff5f4ec38dd864ac9fd7a9b7186f8af7db53f870b",
+    "archive_sha256": "0f20f339cbf0cf917aed76c97d1ff86fd063c6fdc6a7bf60faf9b6cd631e8242",
+    "timings": {
+      "create_ms": 109,
+      "upload_ms": 11999,
+      "poll_ms": 15284,
+      "download_ms": 5216,
+      "convert_ms": 961,
+      "total_ms": 33570
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 12202
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 14306
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 20755
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 27393
+      }
+    ],
+    "conversion_status": "complete",
+    "warnings": [],
+    "page_index_convention": "zero_based_provider",
+    "bbox_coordinate_system": "unknown"
+  }
+}

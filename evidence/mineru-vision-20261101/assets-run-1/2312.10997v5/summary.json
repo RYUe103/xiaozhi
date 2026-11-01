@@ -1,0 +1,50 @@
+{
+  "id": "mml:2312.10997v5.pdf",
+  "sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+  "status": "ok",
+  "elapsed_ms": 43369,
+  "blocks": 398,
+  "images": 10,
+  "mapped_blocks": 10,
+  "provenance": {
+    "provider": "mineru_cloud",
+    "protocol": "v4",
+    "adapter_version": "mineru-cloud-v4-assets-v2",
+    "model_requested": "vlm",
+    "model_reported": null,
+    "batch_id": "0fa68dbd-692c-4790-8535-50ec2dd22b9f",
+    "state": "done",
+    "source_sha256": "396a0fadeb4cd40f5c8ccc36b73a0815f6cb4d7f6bfa53b6c48c1f9aba7c7e02",
+    "archive_sha256": "6c38b98c3398895606d170d722c75be11c746838ea565482396aff3b4174e4b7",
+    "timings": {
+      "create_ms": 115,
+      "upload_ms": 581,
+      "poll_ms": 42203,
+      "download_ms": 242,
+      "convert_ms": 218,
+      "total_ms": 43360
+    },
+    "states": [
+      {
+        "state": "waiting-file",
+        "elapsed_ms": 801
+      },
+      {
+        "state": "pending",
+        "elapsed_ms": 2909
+      },
+      {
+        "state": "running",
+        "elapsed_ms": 9213
+      },
+      {
+        "state": "done",
+        "elapsed_ms": 42900
+      }
+    ],
+    "conversion_status": "complete",
+    "warnings": [],
+    "page_index_convention": "zero_based_provider",
+    "bbox_coordinate_system": "unknown"
+  }
+}

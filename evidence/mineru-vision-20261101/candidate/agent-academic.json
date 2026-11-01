@@ -1,0 +1,20 @@
+{
+  "id": "ohr:aacc1e7d-d191-44ff-8eda-38c8f6f64725",
+  "pdf_sha256": "6672d9096a1c2693db0728357fcba914c9e3bde14ee4fc5f181d7202edcadb86",
+  "elapsed_ms": 4595000,
+  "active": false,
+  "upload_ms": 280,
+  "answer": "文件解析失败，尚未启动模型：文件解析超时，请稍后重试",
+  "tool_calls": [
+    {
+      "id": "file-parse-aacffa7e-903e-40be-8f2c-b384a37f621e",
+      "name": "sansuo_file_parse",
+      "args": "{\"files\":1}",
+      "type": "tool_call",
+      "progress": 1,
+      "status": "failed",
+      "output": "文件解析超时，请稍后重试"
+    }
+  ],
+  "references": []
+}

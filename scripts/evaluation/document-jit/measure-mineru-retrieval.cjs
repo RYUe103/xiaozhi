@@ -1,0 +1,11 @@
+// Offline lexical evidence metric over actual cloud output; not a substitute for live Agent traces.
+const fs=require('fs'),path=require('path');const {buildMineruStructure}=require('../../../api/server/services/Files/Code/mineruStructure');const {DocumentArtifactRepository}=require('../../../api/server/services/DocumentArtifactRepository');
+const gold=JSON.parse(fs.readFileSync(process.argv[2])),dirs=process.argv[3].split(','),output=process.argv[4];if(fs.existsSync(output))throw Error('NEW_OUTPUT_REQUIRED');
+const results=[];
+for(const d of gold.documents){const name=d.filename.replace(/\.pdf$/,'');const file=dirs.map(dir=>path.join(dir,name,'result.json')).find(p=>fs.existsSync(p));if(!file)continue;const data=JSON.parse(fs.readFileSync(file));const s=buildMineruStructure(data,data.content_list,d.filename,{documentId:d.key,sourceHash:d.sha256});const repo=new DocumentArtifactRepository({userId:'offline-test',conversationId:d.key,secret:'offline-metric',quality:{compactDelivery:true}});const doc=repo.add({fileId:d.key,filename:d.filename,records:s.chunks,engine:'mineru',sourceHash:d.sha256,contentList:s.blocks.map(b=>({...b.raw,block_id:b.block_id,table_id:b.table_id}))});
+ for(const q of gold.questions.filter(q=>q.document_key===d.key)){
+  const start=performance.now();const r=repo.execute({action:'search',document_id:doc.documentId,query:q.question,limit:6});const pages=[...new Set((r.hits||[]).map(h=>h.page_start).filter(Boolean))];const required=q.physical_evidence_pages||q.evidence_pages||[];
+  results.push({id:q.id,category:q.category,required_pages:required,delivered_pages:pages,page_recall:required.length?required.filter(p=>pages.includes(p)).length/required.length:null,elapsed_ms:performance.now()-start,content_chars:r.content?.length||0,truncated:r.truncated,scope:'offline Keyword/BM25/RRF only; no Vector, reranker, Agent or answer quality'});
+ }
+}
+fs.writeFileSync(output,JSON.stringify(results,null,2),{flag:'wx'});console.log(JSON.stringify({questions:results.length,eligible:results.filter(r=>r.page_recall!==null).length,mean_annotated_page_recall:results.filter(r=>r.page_recall!==null).reduce((s,r)=>s+r.page_recall,0)/results.filter(r=>r.page_recall!==null).length}));

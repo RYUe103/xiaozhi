@@ -1,0 +1,142 @@
+PASS api/server/controllers/agents/filterAuthorizedTools.spec.js
+  ● Console
+
+    console.log
+      2026-11-01 09:05:08 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "toolB_mcp_forbiddenServer" — server "forbiddenServer" not accessible to user test-user-123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] MCP registry unavailable, filtering all MCP tools[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "toolA_mcp_someServer" — server "someServer" not accessible to user test-user-123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "attack_mcp_victimServer" — server "victimServer" not accessible to user test-user-123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "steal_mcp_nonexistent" — server "nonexistent" not accessible to user test-user-123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "tool_mcp_unauthorizedServer" — server "unauthorizedServer" not accessible to user test-user-123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "tool3_mcp_unknownServer" — server "unknownServer" not accessible to user test-user-123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] MCP registry unavailable, filtering all MCP tools[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "newTool_mcp_unknownServer" — server "unknownServer" not accessible to user test-user-123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] MCP registry unavailable, filtering all MCP tools[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "toolA_mcp_serverA" — server "serverA" not accessible to user test-user-123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] MCP registry unavailable, filtering all MCP tools[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected malformed MCP tool key "a_mcp_b_mcp_c" for user test-user-123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected malformed MCP tool key "attack_mcp_victimServer_mcp_authorizedServer" for user test-user-123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected malformed MCP tool key "a_mcp_b_mcp_c_mcp_d" for user test-user-123[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "attack_mcp_forbiddenServer" — server "forbiddenServer" not accessible to user 6ae690454271e15a7407e6ae[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] MCP registry unavailable, filtering all MCP tools[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "tool_mcp_someServer" — server "someServer" not accessible to user 6ae690454271e15a7407e6b3[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "toolB_mcp_forbiddenServer" — server "forbiddenServer" not accessible to user 6ae690454271e15a7407e6b7[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "attack_mcp_forbiddenServer" — server "forbiddenServer" not accessible to user 6ae690454271e15a7407e6c6[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "tool_mcp_forbiddenServer" — server "forbiddenServer" not accessible to user 6ae690454271e15a7407e6f1[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] MCP registry unavailable, filtering all MCP tools[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] Rejected MCP tool "oldTool_mcp_revokedServer" — server "revokedServer" not accessible to user 6ae690454271e15a7407e707[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-01 09:05:09 [33m[3mwarn[23m[39m: [33m[3m[filterAuthorizedTools] MCP registry unavailable, filtering all MCP tools[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+PASS api/server/services/Files/Code/process.spec.js
+PASS api/server/services/DocumentVectorSearch.spec.js
+PASS api/server/services/Files/Code/mineruCloud.spec.js
+PASS api/server/services/DocumentArtifactRepository.spec.js
+PASS api/server/services/Endpoints/agents/sansuoToolPolicy.spec.js
+PASS api/server/services/Files/permissions.spec.js
+PASS api/server/services/DocumentTables.spec.js
+PASS api/server/services/DocumentPageVisionService.spec.js
+PASS api/server/services/DocumentContextService.spec.js
+PASS api/server/services/DocumentVisualPolicy.spec.js
+PASS api/server/services/Files/Code/mineruStructure.spec.js
+PASS api/server/services/DocumentRetrieval.spec.js
+PASS api/server/services/DocumentToolResult.spec.js
+
+Test Suites: 14 passed, 14 total
+Tests:       270 passed, 270 total
+Snapshots:   0 total
+Time:        4.742 s, estimated 6 s
+Ran all test suites matching api/server/controllers/agents/filterAuthorizedTools.spec.js|api/server/services/DocumentVectorSearch.spec.js|api/server/services/DocumentRetrieval.spec.js|api/server/services/Files/Code/process.spec.js|api/server/services/Files/Code/mineruCloud.spec.js|api/server/services/Endpoints/agents/sansuoToolPolicy.spec.js|api/server/services/DocumentPageVisionService.spec.js|api/server/services/Files/permissions.spec.js|api/server/services/DocumentArtifactRepository.spec.js|api/server/services/DocumentTables.spec.js|api/server/services/DocumentContextService.spec.js|api/server/services/Files/Code/mineruStructure.spec.js|api/server/services/DocumentVisualPolicy.spec.js|api/server/services/DocumentToolResult.spec.js.

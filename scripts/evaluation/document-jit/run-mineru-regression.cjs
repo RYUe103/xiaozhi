@@ -1,0 +1,28 @@
+// Isolated live HTTP regressions. DOCX is an explicit synthetic fixture, not PDF quality evidence.
+const fs=require('fs'),crypto=require('crypto');const {createRequire}=require('module');
+const root=process.env.SANSUO_JIT_REPO_ROOT;const req=createRequire(root+'/api/package.json');req('module-alias')({base:root+'/api'});
+const mongoose=req('mongoose'),jwt=req('jsonwebtoken'),JSZip=req('jszip');req('@librechat/data-schemas').createModels(mongoose);const db=req(root+'/api/models');
+const base=process.env.SANSUO_TEST_BASE,mongo=process.env.SANSUO_TEST_MONGO;
+if(!/\/LibreChatMineruVision\w*$/.test(mongo)||!/^http:\/\/127\.0\.0\.1:3183$/.test(base))throw Error('ISOLATED_TARGET_REQUIRED');
+const report={scope:'Live HTTP plain chat, synthetic DOCX and foreign-user message authorization',checks:[]};let token,user;
+const request=(url,init={},auth=token)=>fetch(base+url,{...init,headers:{Authorization:'Bearer '+auth,'User-Agent':'Mozilla/5.0 Chrome/130.0.0.0 Safari/537.36',...init.headers},signal:AbortSignal.timeout(120000)});
+async function chat(text,files=[],conversationId=crypto.randomUUID()){
+ const at=Date.now();const response=await request('/api/agents/chat/SanSuoMain',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({endpoint:'SanSuoMain',endpointType:'custom',model:'qwen3.6-plus',spec:'sansuo-main',sansuoMode:'deep',ephemeralAgent:{execute_code:true},conversationId,parentMessageId:'00000000-0000-0000-0000-000000000000',text,files,messageId:crypto.randomUUID(),clientRequestId:crypto.randomUUID(),isContinued:false,isRegenerate:false})});
+ if(!response.ok)throw Error('CHAT_HTTP_'+response.status);const started=await response.json();const controller=new AbortController();
+ const stream=request('/api/agents/chat/stream/'+started.streamId,{signal:controller.signal}).then(async r=>{for await(const x of r.body){}}).catch(()=>{});
+ let active=true;for(let i=0;i<120&&active;i++){await new Promise(r=>setTimeout(r,1000));active=Boolean((await(await request('/api/agents/chat/status/'+conversationId)).json()).active);}controller.abort();await stream;
+ const messages=await db.getMessages({user:String(user._id),conversationId});const last=messages.filter(m=>!m.isCreatedByUser).sort((a,b)=>new Date(a.createdAt)-new Date(b.createdAt)).at(-1);
+ const answer=(last?.content||[]).filter(c=>c.type==='text').map(c=>typeof c.text==='string'?c.text:c.text?.value||'').join('\n')||last?.text||'';
+ return {conversationId,elapsed_ms:Date.now()-at,answer,active,tools:(last?.content||[]).filter(c=>c.type==='tool_call').map(c=>c.tool_call)};
+}
+(async()=>{
+ await mongoose.connect(mongo);user=await db.createUser({name:'MinerU regression',email:'regression-'+crypto.randomUUID()+'@example.invalid',provider:'local',role:'USER',emailVerified:true},undefined,true,true);
+ token=jwt.sign({id:String(user._id)},process.env.JWT_SECRET,{expiresIn:'1h'});
+ const plain=await chat('只回答 7 加 8 的结果。');report.checks.push({name:'plain_chat',ok:plain.answer.trim()==='15'&&!plain.active,...plain});
+ const zip=new JSZip();zip.file('[Content_Types].xml','<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>');zip.file('_rels/.rels','<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>');zip.file('word/document.xml','<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body><w:p><w:r><w:t>回归测试记录：样机 RX-481 的校验周期为 17 天。此文档仅用于测试。</w:t></w:r></w:p></w:body></w:document>');
+ const bytes=await zip.generateAsync({type:'nodebuffer'}),conversationId=crypto.randomUUID(),form=new FormData();form.append('file',new Blob([bytes],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}),'regression.docx');
+ for(const [k,v]of Object.entries({endpoint:'SanSuoMain',endpointType:'custom',file_id:crypto.randomUUID(),conversationId,message_file:'true',tool_resource:'execute_code'}))form.append(k,v);
+ const upload=await request('/api/files',{method:'POST',body:form});if(!upload.ok)throw Error('DOCX_UPLOAD_'+upload.status);const value=await upload.json();const word=await chat('依据附件，RX-481 的校验周期是多少？',[value.file||value],conversationId);report.checks.push({name:'docx_read',ok:/17/.test(word.answer)&&/天/.test(word.answer)&&!word.active,...word});
+ const foreign=await db.createUser({name:'Foreign regression',email:'foreign-'+crypto.randomUUID()+'@example.invalid',provider:'local',role:'USER',emailVerified:true},undefined,true,true);const foreignToken=jwt.sign({id:String(foreign._id)},process.env.JWT_SECRET,{expiresIn:'1h'});
+ const denied=await request('/api/messages?conversationId='+conversationId,{},foreignToken);const content=await denied.json();report.checks.push({name:'foreign_message_isolation',ok:denied.status===403||!content.messages?.length,http_status:denied.status});
+})().catch(error=>{report.error=error.message;process.exitCode=1;}).finally(async()=>{fs.writeFileSync(process.argv[2],JSON.stringify(report,null,2),{flag:'wx'});console.log(JSON.stringify({checks:report.checks.map(c=>({name:c.name,ok:c.ok,elapsed_ms:c.elapsed_ms})),error:report.error}));await mongoose.disconnect();process.exit(report.error||report.checks.some(c=>!c.ok)?1:0);});
