@@ -14,7 +14,7 @@ describe('request-scoped conversation document directory', () => {
   test('discovers multiple files without reading content or inspecting user language', async () => {
     const service = create(); await service.discover();
     expect(service.list('pdf')).toHaveLength(2); expect(load).not.toHaveBeenCalled();
-    expect(db.getSanSuoFiles).toHaveBeenCalledWith(expect.objectContaining({ userId: 'u', conversationId: 'c' }));
+    expect(db.getSanSuoFiles).toHaveBeenCalledWith(expect.objectContaining({ userId: 'u', conversationId: 'c' }), expect.objectContaining({ select: expect.any(String) }));
     const result = await service.execute('pdf', { action: 'list' });
     expect(result.documents).toHaveLength(2); expect(load).not.toHaveBeenCalled();
   });
@@ -52,5 +52,34 @@ describe('request-scoped conversation document directory', () => {
     expect((await s.execute('pdf', { action: 'read', document_id: id })).error.code).toBe('DOCUMENT_VERSION_MISMATCH');
     rows[0].metadata.parseGeneration = 'pending'; rows[1].metadata.parseGeneration = 'pending';
     const next = create(); await next.discover(); expect(next.list('pdf')).toHaveLength(0);
+  });
+  test('Word follows the same revocation path and does not borrow PDF resources', async () => {
+    roots = [root('word', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')];
+    rows = [{ ...artifact('word'), displayFilename: 'word_docx_blocks.jsonl' }];
+    const s = create(); await s.discover(); expect(s.list('pdf')).toHaveLength(0);
+    const id = s.list('docx')[0].document_id;
+    await s.execute('docx', { action: 'read', document_id: id });
+    rows[0].status = 'deleted';
+    expect((await s.execute('docx', { action: 'read', document_id: id })).error.code).toBe('DOCUMENT_ACCESS_DENIED');
+  });
+  test('revocation during download prevents the executor from running', async () => {
+    const execute = jest.fn();
+    load.mockImplementation(async () => { roots = []; return { execute }; });
+    const s = create(); await s.discover(); const id = s.list('pdf')[0].document_id;
+    expect((await s.execute('pdf', { action: 'read', document_id: id })).error.code).toBe('DOCUMENT_ACCESS_DENIED');
+    expect(execute).not.toHaveBeenCalled();
+  });
+  test('failed storage loads can recover within the request without re-parsing', async () => {
+    load.mockRejectedValueOnce(new Error('storage down'));
+    const s = create(); await s.discover(); const id = s.list('pdf')[0].document_id;
+    expect((await s.execute('pdf', { action: 'read', document_id: id })).status).toBe('unavailable');
+    expect((await s.execute('pdf', { action: 'read', document_id: id })).status).toBe('ok');
+    expect(load).toHaveBeenCalledTimes(2);
+  });
+  test('parser version replacement invalidates the loaded snapshot', async () => {
+    const s = create(); await s.discover(); const id = s.list('pdf')[0].document_id;
+    await s.execute('pdf', { action: 'read', document_id: id });
+    rows[0].metadata.parserVersion = 'v2';
+    expect((await s.execute('pdf', { action: 'read', document_id: id })).error.code).toBe('DOCUMENT_VERSION_MISMATCH');
   });
 });

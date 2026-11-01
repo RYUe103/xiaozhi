@@ -109,7 +109,8 @@ describe('ToolService - Action Capability Gating', () => {
   it('loads the request-local DOCX reader without code resources or auth', async () => {
     const reader = { name: 'read_parsed_docx', invoke: jest.fn() };
     const result = await loadToolsForExecution({
-      req: { ...createMockReq([]), _sansuoDocxReadTool: reader },
+      req: { ...createMockReq([]), _sansuoDocxReadTool: reader, _sansuoDocumentToolBindings: new Map([['a', new Set(['read_parsed_docx'])]]) },
+      agent: { id: 'a' }, toolRegistry: new Map([['read_parsed_docx', {}]]),
       toolNames: ['read_parsed_docx'],
     });
     expect(result.loadedTools).toEqual([reader]);
@@ -120,12 +121,22 @@ describe('ToolService - Action Capability Gating', () => {
   it('loads the request-local PDF reader without code resources or auth', async () => {
     const reader = { name: 'read_parsed_pdf', invoke: jest.fn() };
     const result = await loadToolsForExecution({
-      req: { ...createMockReq([]), _sansuoPdfReadTool: reader },
+      req: { ...createMockReq([]), _sansuoPdfReadTool: reader, _sansuoDocumentToolBindings: new Map([['a', new Set(['read_parsed_pdf'])]]) },
+      agent: { id: 'a' }, toolRegistry: new Map([['read_parsed_pdf', {}]]),
       toolNames: ['read_parsed_pdf'],
     });
     expect(result.loadedTools).toEqual([reader]);
     expect(mockLoadToolsUtil).not.toHaveBeenCalled();
     expect(mockGetSanSuoFiles).not.toHaveBeenCalled();
+  });
+
+  it('does not lend a private document reader to an unbound Agent', async () => {
+    const reader = { name: 'read_parsed_pdf', invoke: jest.fn() };
+    const result = await loadToolsForExecution({ req: { ...createMockReq([]), _sansuoPdfReadTool: reader,
+      _sansuoDocumentToolBindings: new Map([['owner', new Set(['read_parsed_pdf'])]]) },
+      agent: { id: 'other', tools: [] }, toolRegistry: new Map([['read_parsed_pdf', {}]]),
+      toolNames: ['read_parsed_pdf'], actionsEnabled: false });
+    expect(result.loadedTools).not.toContain(reader);
   });
 
   beforeEach(() => {

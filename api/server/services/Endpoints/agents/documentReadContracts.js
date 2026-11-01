@@ -1,6 +1,17 @@
 // Pure tool contracts: no request, user, Repository or file state.
 const DOCX_READ_TOOL = 'read_parsed_docx';
 const PDF_READ_TOOL = 'read_parsed_pdf';
+const { zodToJsonSchema } = require('zod-to-json-schema');
+function modelDefinition(definition, schema) {
+  const generated = zodToJsonSchema(schema, { target: 'openApi3', $refStrategy: 'none', effectStrategy: 'input' });
+  for (const [name, field] of Object.entries(generated.properties || {})) {
+    const description = definition.parameters.properties[name]?.description;
+    if (description) field.description = description;
+  }
+  if (definition.name === PDF_READ_TOOL) generated.required = ['action'];
+  return { ...definition, parameters: generated };
+}
+
 
 function createDocxReadContract() {
     const { z } = require('zod');
@@ -56,7 +67,7 @@ function createDocxReadContract() {
           paragraph_start == null || paragraph_end == null || paragraph_end >= paragraph_start,
         { message: 'paragraph_end must be greater than or equal to paragraph_start' },
       );
-  return { definition, schema };
+  return { definition: modelDefinition(definition, schema), schema };
 }
 
 function createPdfReadContract() {
@@ -122,7 +133,7 @@ function createPdfReadContract() {
       continuation_token: z.string().max(16384).optional(),
       include_visual_summary: z.boolean().optional(),
     });
-  return { definition, schema };
+  return { definition: modelDefinition(definition, schema), schema };
 }
 
 module.exports = { createDocxReadContract, createPdfReadContract };

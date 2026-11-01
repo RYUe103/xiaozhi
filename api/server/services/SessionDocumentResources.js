@@ -28,7 +28,9 @@ class SessionDocumentResources {
 
   async snapshot() {
     const rootHashes = new Map();
-    const rows = await this.db.getSanSuoFiles({ userId: this.userId, conversationId: this.conversationId });
+    const rows = await this.db.getSanSuoFiles({ userId: this.userId, conversationId: this.conversationId }, {
+      select: 'libreFileId userId conversationId status sandboxSessionId sandboxFileId displayFilename originalFilename createdAt metadata.rootSourceLibreFileId metadata.sourceHash metadata.contentHash metadata.parseGeneration metadata.artifactSetStatus metadata.parserVersion',
+    });
     const scoped = rows.filter(a => String(a.userId) === this.userId && a.conversationId === this.conversationId);
     const ids = [...new Set(scoped.map(a => a.metadata?.rootSourceLibreFileId).filter(Boolean))];
     if (!ids.length) return new Map();
