@@ -212,4 +212,8 @@ test('ranked search exhaustion never claims to enumerate original-text matches',
  expect(exact.match_count).toBe(3);
  expect(exact.matches[0].page_start).toBe(1);
  expect(exact.continuation_token).toBeTruthy();
+ expect(exact.matches[0].match_index).toBe(1);
+ const next = await repo.executeAsync({ action: 'find_exact', document_id: doc.documentId, continuation_token: exact.continuation_token });
+ expect(next.matches[0].match_index).toBe(2);
+ expect(next.matches[0].source_offset).toBeGreaterThan(exact.matches[0].source_offset);
 });

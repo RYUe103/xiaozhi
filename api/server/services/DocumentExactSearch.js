@@ -80,7 +80,7 @@ function exactSearch(records, args = {}, blocks = []) {
           deliveredChars += beforeText.length + end - start + afterText.length;
           const provenance = segments ? { chunk_ids: segments.map(s => s.record.chunkId || s.record.id), block_id: record._parentBlock, source_block_offset: start,
             source_segments: segments.map(s => ({ chunk_id: s.record.chunkId || s.record.id, source_offset: Math.max(start, s.start) - s.start, source_length: Math.min(end, s.end) - Math.max(start, s.start), page_start: s.record.pageStart, page_end: s.record.pageEnd })) } : {};
-          matches.push({ chunk_id: segments?.[0]?.record.chunkId || record.chunkId || record.id, page_start: segments?.[0]?.record.pageStart ?? record.pageStart ?? null, page_end: segments?.at(-1)?.record.pageEnd ?? record.pageEnd ?? record.pageStart ?? null,
+          matches.push({ match_index: total + 1, chunk_id: segments?.[0]?.record.chunkId || record.chunkId || record.id, page_start: segments?.[0]?.record.pageStart ?? record.pageStart ?? null, page_end: segments?.at(-1)?.record.pageEnd ?? record.pageEnd ?? record.pageStart ?? null,
             match_text: source.slice(start, end), context_before: beforeText, context_after: afterText,
             source_offset: segments ? null : start, source_length: end - start, offset_unit: 'utf16_code_units',
             ...provenance, next_action: { action: segments ? 'read_adjacent' : 'read', chunk_id: segments?.[0]?.record.chunkId || record.chunkId || record.id } });
