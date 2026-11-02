@@ -396,6 +396,7 @@ class DocumentArtifactRepository {
       const channels = action === 'visual_search'
         ? [{ name: 'visual', weight: 1, results: lexical.visual }, { name: 'vector', weight: this.quality.vectorWeight, results: lexical.vector }]
         : [{ name: 'bm25', weight: this.quality.bm25Weight, results: lexical.bm25 }, { name: 'vector', weight: this.quality.vectorWeight, results: lexical.vector }];
+      if (action !== 'visual_search' && input.include_visual_summary) channels.push({ name: 'visual_summary', weight: 1, results: lexical.visual });
       const weighted = weightedReciprocalRankFusion(channels, { k: this.quality.rrfK });
       const protectedChannels = action === 'visual_search' ? channels : [
         ...channels,

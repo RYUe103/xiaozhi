@@ -181,3 +181,9 @@ test('find_exact normalizes Unicode compatibility forms without changing source 
  expect(result.matches[0].match_text).toBe('温度：８０℃');
  expect(doc.records[0].text.slice(result.matches[0].source_offset, result.matches[0].source_offset + result.matches[0].source_length)).toBe(result.matches[0].match_text);
 });
+test('explicit visual-summary inclusion remains available without a vector provider', async () => {
+ const repo=new DocumentArtifactRepository({userId:'u',conversationId:'c',quality:{queryProcessing:false,rerank:false}});
+ const doc=repo.add({fileId:'f',records:[{page:1,text:'普通正文'}],summaries:[{page:2,summary:'扫描视觉特有词语'}]});
+ const result=await repo.executeAsync({action:'search',document_id:doc.documentId,query:'扫描视觉特有词语',include_visual_summary:true});
+ expect(result.content).toContain('扫描视觉特有词语');expect(result.hits[0].kind).toBe('visual_summary');
+});
