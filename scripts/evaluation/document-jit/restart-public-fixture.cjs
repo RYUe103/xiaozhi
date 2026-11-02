@@ -1,0 +1,10 @@
+const fs=require('fs'),cp=require('child_process'),crypto=require('crypto');
+const root='/tmp/sansuo-phase5-candidate-20261101',pid=Number(fs.readFileSync(root+'/server.pid','utf8'));
+if(fs.readlinkSync('/proc/'+pid+'/cwd')!==root)throw Error('WRONG_PROCESS');
+const env=Object.fromEntries(fs.readFileSync('/proc/'+pid+'/environ','utf8').split('\0').filter(Boolean).map(s=>[s.slice(0,s.indexOf('=')),s.slice(s.indexOf('=')+1)]));
+if(env.PORT!=='3185'||!env.MONGO_URI.endsWith('/LibreChatMineruVisionPhase5candidate20261101'))throw Error('ISOLATION');
+const file='/tmp/jit-benchmark100-pdfs/89aa7cbc-44af-5128-9a16-33bb0d24e244.pdf';
+const sha=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+if(sha!=='eb78d5cb7a90fc93ca8521541de85a30d5b160987c178cbe8689409e1b28987b')throw Error('PUBLIC_FIXTURE_HASH');
+env.SANSUO_MINERU_CLOUD_ALLOWED_SHA256=[...new Set([...(env.SANSUO_MINERU_CLOUD_ALLOWED_SHA256||'').split(','),sha])].filter(Boolean).join(',');
+process.kill(pid,'SIGTERM');setTimeout(()=>{const log=fs.openSync(root+'/server.log','a'),p=cp.spawn(process.execPath,['api/server/index.js'],{cwd:root,env,stdio:['ignore',log,log],detached:true});fs.writeFileSync(root+'/server.pid',String(p.pid));p.unref();console.log(JSON.stringify({candidate_restarted:true,added_public_sha256:sha,env_file_modified:false}));},1000);
