@@ -162,3 +162,22 @@ test('query-only read searches existing channels instead of returning missing pa
  const explicit=await repo.executeAsync({action:'read',document_id:doc.documentId,query:'检修周期',pages:[2]});
  expect(explicit.error.code).toBe('PAGE_TEXT_UNAVAILABLE');
 });
+
+test('find_exact locates immutable source text with page, chunk and bounded context', () => {
+ const { repo, doc } = fixture();
+ const result = repo.execute({ action: 'find_exact', document_id: doc.documentId, query: '检修周期为三个月', context_chars: 8 });
+ expect(result.status).toBe('ok');
+ expect(result.matches).toHaveLength(1);
+ expect(result.matches[0]).toMatchObject({ page_start: 3, chunk_id: doc.records[1].chunkId, match_text: '检修周期为三个月' });
+ expect(result.matches[0].context_before.length).toBeLessThanOrEqual(8);
+ expect(result.matches[0].context_after.length).toBeLessThanOrEqual(8);
+ expect(repo.execute({ action: 'find_exact', document_id: doc.documentId, query: '不存在的原文' }).matches).toEqual([]);
+});
+
+test('find_exact normalizes Unicode compatibility forms without changing source offset', () => {
+ const { repo, doc } = fixture();
+ doc.records[0].text += ' 温度：８０℃';
+ const result = repo.execute({ action: 'find_exact', document_id: doc.documentId, query: '温度：80℃', match_mode: 'nfkc' });
+ expect(result.matches[0].match_text).toBe('温度：８０℃');
+ expect(doc.records[0].text.slice(result.matches[0].source_offset, result.matches[0].source_offset + result.matches[0].source_length)).toBe(result.matches[0].match_text);
+});

@@ -1,6 +1,8 @@
+const { buildRetrievalContext } = require('./DocumentRetrievalContext');
+const { exactSearch } = require('./DocumentExactSearch');
 const crypto = require('crypto');
 const { buildPdfDocument } = require('./DocumentContextService');
-const { searchRecords, reciprocalRankFusion, tokenizeQuery, DocumentLexicalIndex } = require('./DocumentRetrieval');
+const { searchRecords, reciprocalRankFusion, weightedReciprocalRankFusion, protectDiverseCandidates, tokenizeQuery, DocumentLexicalIndex } = require('./DocumentRetrieval');
 const { buildDocumentTables } = require('./DocumentTables');
 const { DocumentQueryProcessor } = require('./DocumentQueryProcessor');
 const { DocumentEvidenceReranker } = require('./DocumentEvidenceReranker');
@@ -80,10 +82,12 @@ class DocumentArtifactRepository {
     this.vectorSearch = vectorSearch;
     this.lexicalCache = lexicalCache;
     this.authorize = authorize;
-    this.quality = { queryProcessing: true, candidateDepth: 30, compactDelivery: true, rerank: true, ...quality };
+    this.quality = { queryProcessing: true, candidateDepth: 60, rrfDepth: 40, rrfK: 60,
+      contextualRetrieval: false, fusionMode: 'weighted', candidateProtection: true, bm25Weight: 0.75, vectorWeight: 1, keywordUniqueCandidates: 4,
+      maxCandidatesPerPage: 4, compactDelivery: true, rerank: true, ...quality };
     this.trace = trace || new DocumentJitTrace({ sink: (event) => runtimeEvent(event.stage, [this.userId, this.conversationId].join(':'), event) });
     this.queryProcessor = new DocumentQueryProcessor({ enabled: this.quality.queryProcessing });
-    this.reranker = new DocumentEvidenceReranker(this.quality.rerankOptions || {});
+    this.reranker = new DocumentEvidenceReranker({ ...this.quality.rerankOptions, candidateLimit: Math.min(60, Math.max(1, this.quality.rrfDepth)) });
     this.budget = { maxCalls: 32, maxContentChars: 160000, ...budget };
     this.usage = { calls: 0, contentChars: 0 };
   }
@@ -240,6 +244,13 @@ class DocumentArtifactRepository {
     document.bindingVersion = digest([fileId, sourceHash, sourceArtifact]);
     document.tables = buildDocumentTables(document, [...(Array.isArray(contentList) ? contentList : []), ...pageRecords.flatMap((page) => page.tables || [])]);
     document.version = digest([document.records.map((r) => [r.chunkId, r.text]), document.visualRecords, document.pageCoverage, document.tables, sourceHash]);
+    if (this.quality.contextualRetrieval) {
+      try {
+        const context = buildRetrievalContext(document);
+        document.retrievalRecords = context.records;
+        document.retrievalIndex = { status: context.status, version: context.version, key: context.key };
+      } catch { document.retrievalIndex = { status: 'fallback', warning: 'CONTEXT_BUILD_FAILED' }; }
+    }
     this.documents.set(document.documentId, document);
     return document;
   }
@@ -343,10 +354,10 @@ class DocumentArtifactRepository {
     else {
       if (!document.lexicalIndex) {
         try {
-          document.lexicalIndex = await DocumentLexicalIndex.load([...document.records, ...document.visualRecords], {
+          document.lexicalIndex = await DocumentLexicalIndex.load([...(document.retrievalRecords || document.records), ...document.visualRecords], {
             cache: this.lexicalCache, userId: this.userId, conversationId: this.conversationId, documentId: document.documentId });
         } catch {
-          document.lexicalIndex = new DocumentLexicalIndex([...document.records, ...document.visualRecords]);
+          document.lexicalIndex = new DocumentLexicalIndex([...(document.retrievalRecords || document.records), ...document.visualRecords]);
           document.lexicalCacheWarning = 'LEXICAL_CACHE_UNAVAILABLE';
         }
       }
@@ -356,7 +367,7 @@ class DocumentArtifactRepository {
       const variants = [];
       for (const query of processed.queries) {
         const t = Date.now();
-        const variant = searchRecords([...document.records, ...document.visualRecords], query, {
+        const variant = searchRecords([...(document.retrievalRecords || document.records), ...document.visualRecords], query, {
           index: document.lexicalIndex, includeVisual: action === 'visual_search' || input.include_visual_summary, limit: depth });
         const pack = (hits) => hits.map(h => ({ id: h.record.id, page: h.record.pageStart, score: h.score, rank: h.rank, kind: h.record.kind, engine: h.record.engine, source: h.source }));
         this.trace.emit('Keyword', { ...this.trace.query(query), elapsed_ms: Date.now() - t, hits: pack(variant.keyword) });
@@ -381,8 +392,26 @@ class DocumentArtifactRepository {
       const lexical = { keyword: merge('keyword'), bm25: merge('bm25'), visual: merge('visual'), vector: merge('vector'),
         warnings: [...new Set(variants.flatMap(v => v.warnings))] };
       const rt = Date.now();
-      lexical.fused = reciprocalRankFusion(action === 'visual_search' ? [lexical.visual, lexical.vector] : [lexical.keyword, lexical.bm25, lexical.visual, lexical.vector]).slice(0, this.quality.rerank ? 20 : Math.min(12, input.limit || 6));
-      this.trace.emit('RRF', { elapsed_ms: Date.now() - rt, candidates: depth, hits: lexical.fused.map(h => ({ id: h.record.id, page: h.record.pageStart, score: h.score, ranks: h.ranks, sources: h.sources })) });
+      const rerankDepth = Math.min(60, Math.max(input.limit || 6, this.quality.rrfDepth));
+      const channels = action === 'visual_search'
+        ? [{ name: 'visual', weight: 1, results: lexical.visual }, { name: 'vector', weight: this.quality.vectorWeight, results: lexical.vector }]
+        : [{ name: 'bm25', weight: this.quality.bm25Weight, results: lexical.bm25 }, { name: 'vector', weight: this.quality.vectorWeight, results: lexical.vector }];
+      const weighted = weightedReciprocalRankFusion(channels, { k: this.quality.rrfK });
+      const protectedChannels = action === 'visual_search' ? channels : [
+        ...channels,
+        { name: 'keyword', maxProtected: this.quality.keywordUniqueCandidates, results: lexical.keyword },
+      ];
+      lexical.fused = this.quality.fusionMode === 'legacy'
+        ? reciprocalRankFusion(action === 'visual_search' ? [lexical.visual, lexical.vector] : [lexical.keyword, lexical.bm25, lexical.visual, lexical.vector]).slice(0, rerankDepth)
+        : !this.quality.candidateProtection ? weighted.slice(0, rerankDepth) : protectDiverseCandidates(weighted, protectedChannels, {
+        limit: this.quality.rerank ? rerankDepth : Math.min(12, input.limit || 6),
+
+        maxPerPage: this.quality.maxCandidatesPerPage,
+      });
+      this.trace.emit('RRF', { elapsed_ms: Date.now() - rt, candidates: depth, weighted: this.quality.fusionMode !== 'legacy', candidate_protection: this.quality.candidateProtection,
+        weights: { bm25: this.quality.bm25Weight, vector: this.quality.vectorWeight, k: this.quality.rrfK },
+        protected_candidates: lexical.fused.length,
+        hits: lexical.fused.map(h => ({ id: h.record.id, page: h.record.pageStart, score: h.score, ranks: h.ranks, sources: h.sources })) });
       if (this.quality.rerank) lexical.fused = (await this.reranker.rank(input.query, lexical.fused, this.trace)).slice(0, Math.min(12, input.limit || 6));
       if (document.lexicalCacheWarning) lexical.warnings.push(document.lexicalCacheWarning);
       result = this.execute(input, lexical);
@@ -407,24 +436,44 @@ class DocumentArtifactRepository {
     return { content: results.map((r) => r.content).filter(Boolean).join('\n\n'), hits: results.flatMap((r) => r.hits || []), scope: 'sampled_overview' };
   }
 
+  findExact(document, args = {}) {
+    let result;
+    try { result = exactSearch(document.records, args); }
+    catch (error) { return fail(error.message, '精确查找参数无效。'); }
+    const selection = { ...args, action: 'find_exact', offset: undefined, continuation_token: undefined };
+    const token = result.truncated ? this.sign({ document: document.documentId, version: document.version, selection, offset: result.next_offset }) : null;
+    const first = result.matches[0];
+    return { status: 'ok', ok: true, action: 'find_exact', document_id: document.documentId, filename: document.filename, version: document.version,
+      ...result, continuation_token: token,
+      content: result.matches.map(m => m.context_before + m.match_text + m.context_after).join('\n'),
+      hits: result.matches.map(m => ({ ...m, document_id: document.documentId })),
+      reference: first ? { document_id: document.documentId, chunk_id: first.chunk_id, page_start: first.page_start, page_end: first.page_end,
+        version: document.version, user_id: this.userId, conversation_id: this.conversationId } : undefined,
+      warning: '仅查解析原文块；未命中不代表全文不存在。跨块短语需拆分定位后 read_adjacent；无可靠文字页可 inspect_page。' };
+  }
+
   execute(input = {}, retrievalOverride = null) {
     let args = { ...input };
-    if (!args.pages && Number.isInteger(args.page) && ['read', 'read_table'].includes(args.action)) args.pages = [args.page];
+    if (!args.pages && Number.isInteger(args.page) && ['read', 'read_table', 'find_exact'].includes(args.action)) args.pages = [args.page];
     let continuationIds;
     const action = args.action || 'search';
-    if (!['list', 'info', 'toc', 'search', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search'].includes(action)) return fail('ACTION_INVALID', '不支持的文档动作。');
+    if (!['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search'].includes(action)) return fail('ACTION_INVALID', '不支持的文档动作。');
     if (action === 'list') return { status: 'ok', documents: this.listDocuments() };
     const document = args.document_id ? this.documents.get(args.document_id) : this.documents.size === 1 ? [...this.documents.values()][0] : null;
     if (!document) return { ...fail('DOCUMENT_NOT_FOUND', '请指定当前聊天可用的 document_id。'), documents: this.listDocuments() };
     if (args.continuation_token) {
       const payload = this.decode(args.continuation_token, document);
       if (payload.error) return payload;
-      if (action !== payload.selection.action && action !== 'read') return fail('CONTINUATION_ACTION_MISMATCH', '续读动作与原始读取不一致。');
+      if ((payload.selection.action === 'find_exact' && action !== 'find_exact') || (action !== payload.selection.action && action !== 'read')) return fail('CONTINUATION_ACTION_MISMATCH', '续读动作与原始读取不一致。');
+      if (payload.selection.action === 'find_exact' && ['query', 'match_mode', 'pages', 'chunk_id'].some(k => args[k] !== undefined && JSON.stringify(args[k]) !== JSON.stringify(payload.selection[k]))) return fail('CONTINUATION_SCOPE_MISMATCH', '续读条件与原始查找不一致。');
       continuationIds = payload.rankedIds;
       args = { ...payload.selection, offset: payload.offset, max_chars: args.max_chars ?? payload.selection.max_chars };
     }
     if (!input.continuation_token && Number(input.offset) > 0) return fail('CONTINUATION_REQUIRED', '继续读取必须使用服务端签发的 continuation_token。');
     const base = { status: 'ok', ok: true, document_id: document.documentId, filename: document.filename, version: document.version };
+    if (action === 'find_exact') {
+      return this.findExact(document, args);
+    }
     if (action === 'info') {
       const coverageOffset = Math.max(0, Math.floor(Number(args.coverage_offset) || 0));
       const coverage = document.pageCoverage.filter((p) => !args.pages || args.pages.includes(p.page));
@@ -493,11 +542,11 @@ class DocumentArtifactRepository {
       } else if (chunk) selected = document.records.filter((r) => r.chunkId === chunk);
       else selected = document.records.filter((r) => (args.pages || []).some((p) => r.pageStart != null && p >= r.pageStart && p <= r.pageEnd));
     } else {
-      retrieval = retrievalOverride || searchRecords([...document.records, ...document.visualRecords], args.query, { index: document.lexicalIndex, includeVisual: args.include_visual_summary, limit: Math.min(12, args.limit || 6) });
+      retrieval = retrievalOverride || searchRecords([...(document.retrievalRecords || document.records), ...document.visualRecords], args.query, { index: document.lexicalIndex, includeVisual: args.include_visual_summary, limit: Math.min(12, args.limit || 6) });
       selected = retrieval.fused.map((h) => h.record);
     }
     if (continuationIds) {
-      const recordsById = new Map([...document.records, ...document.visualRecords].map((r) => [r.id, r]));
+      const recordsById = new Map([...(document.retrievalRecords || document.records), ...document.visualRecords].map((r) => [r.id, r]));
       selected = continuationIds.map((id) => recordsById.get(id)).filter(Boolean);
     }
     if (!selected.length) return { ...base, ...fail(effectiveAction.startsWith('visual') ? 'VISUAL_SUMMARY_UNAVAILABLE' : 'PAGE_TEXT_UNAVAILABLE', effectiveAction.startsWith('visual') && this.pageVisionAvailable ? '当前没有预生成摘要；原始 PDF 页面仍可按需渲染。请调用 read_parsed_pdf 工具，设置 action=inspect_page、已定位的物理页 page 和具体 query，读取真实原页。' : '当前范围没有可用内容。'),

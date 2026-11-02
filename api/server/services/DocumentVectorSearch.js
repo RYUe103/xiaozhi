@@ -69,17 +69,17 @@ class DocumentVectorSearch {
   }
   async search({ userId, conversationId, document, query, limit = 12 }) {
     if (!userId || !conversationId) throw new Error('DOCUMENT_ACCESS_DENIED');
-    const records = [...document.records, ...(document.visualRecords || [])];
+    const records = [...(document.retrievalRecords || document.records), ...(document.visualRecords || [])];
     if (!records.length) return [];
     if (records.length > 2000) throw new Error('VECTOR_INDEX_BUDGET_EXCEEDED');
     if (!String(query || '').trim() || String(query).length > 8000) throw new Error('VECTOR_QUERY_INVALID');
     const scope = fingerprint([userId, conversationId, document.documentId, document.sourceHash,
-      document.bindingVersion, records.map(record => [record.parser_version, record.engine]),
+      document.bindingVersion, document.retrievalIndex?.key, records.map(record => [record.parser_version, record.engine]),
       this.endpoint, this.model, this.revision]);
     // Segment embedding inputs without truncating the evidence returned by the Repository.
     const segments = records.flatMap((record, recordIndex) => {
       const result = [];
-      for (let offset = 0; offset < record.text.length; offset += 6000) result.push({ ...record, recordIndex, offset, text: record.text.slice(offset, offset + 6000) });
+      for (let offset = 0; offset < record.text.length; offset += 6000) result.push({ ...record, recordIndex, offset, text: (record.retrievalContext?.text ? record.retrievalContext.text + '\n' : '') + record.text.slice(offset, offset + 6000) });
       return result;
     });
     if (segments.length > 5000) throw new Error('VECTOR_INDEX_BUDGET_EXCEEDED');
@@ -133,9 +133,12 @@ class DocumentVectorSearch {
         if (this.queryVectors.size > 128) this.queryVectors.delete(this.queryVectors.keys().next().value);
       }
     }
-    const scores = new Map();
-    segments.forEach((segment, i) => scores.set(segment.recordIndex, Math.max(scores.get(segment.recordIndex) ?? -Infinity, cosine(q, vectors[i]))));
-    return records.map((record, i) => ({ record, source: record.kind === 'visual_summary' ? 'vector_visual' : 'vector', score: scores.get(i) ?? -1 }))
+    const scores = new Map(), offsets = new Map();
+    segments.forEach((segment, i) => {
+      const score = cosine(q, vectors[i]);
+      if (score > (scores.get(segment.recordIndex) ?? -Infinity)) { scores.set(segment.recordIndex, score); offsets.set(segment.recordIndex, segment.offset); }
+    });
+    return records.map((record, i) => ({ record, source: record.kind === 'visual_summary' ? 'vector_visual' : 'vector', score: scores.get(i) ?? -1, source_offset: offsets.get(i) ?? null }))
       .sort((a, b) => b.score - a.score).slice(0, limit).map((r, i) => ({ ...r, rank: i + 1 }));
   }
 }

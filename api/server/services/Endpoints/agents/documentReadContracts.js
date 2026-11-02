@@ -76,7 +76,7 @@ function createPdfReadContract() {
       name: PDF_READ_TOOL,
       description:
         '按需查阅当前聊天中已完成持久解析的 PDF，不执行代码、不启动沙箱、不重新解析。' +
-        'action 支持 list、info、toc、search、read、read_table、read_adjacent、visual_page、visual_search、inspect_page；视觉摘要与正文分离，续读使用 continuation_token。' +
+        'action 支持 list、info、toc、search、find_exact、read、read_table、read_adjacent、visual_page、visual_search、inspect_page；find_exact只查不可变原文并返回真实chunk/page/上下文，视觉摘要与正文分离，续读使用 continuation_token。' +
         '正文或表格不足、乱码、图例不清或需核对原页时，先检索正文或图注定位物理页，再调用本工具 read_parsed_pdf，action=inspect_page，指定 document_id、page、具体 query 和 mode 查看原图；视觉识别不等于已验证全文 OCR。' +
         '多份 PDF 必须使用 list 返回的 document_id；只使用返回的 chunk_id、section_id、table_id 继续读取。' +
         '搜索命中页不等于问题已核对：跨页问题应覆盖所有子问题，需要时read_adjacent；continuation_token表示证据尚有续文。证据充分时直接回答，避免重复相同读取。' +
@@ -88,10 +88,11 @@ function createPdfReadContract() {
         properties: {
           action: {
             type: 'string',
-            enum: ['list', 'info', 'toc', 'search', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page'],
+            enum: ['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page'],
           },
           document_id: { type: 'string' },
           query: { type: 'string' },
+          context_chars: { type: 'integer', minimum: 0, maximum: 2000 },
           page: { type: 'integer', minimum: 1, maximum: 100000 },
           mode: { type: 'string', enum: ['auto', 'text', 'table', 'figure', 'formula'] },
           block_id: { type: 'string', description: '检索返回的 MinerU 块 ID，可读取已验证映射的图块；图例或坐标轴上下文不全时省略此项读取原页。不能与 region 同用。' },
@@ -113,9 +114,11 @@ function createPdfReadContract() {
       },
     };
     const schema = z.object({
-      action: z.enum(['list', 'info', 'toc', 'search', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page']).optional(),
+      action: z.enum(['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page']).optional(),
       document_id: z.string().max(200).optional(),
       query: z.string().max(1000).optional(),
+      match_mode: z.enum(['literal', 'nfkc']).optional(),
+      context_chars: z.number().int().min(0).max(2000).optional(),
       page: z.preprocess(value => typeof value === 'string' && /^[1-9][0-9]*$/.test(value) ? Number(value) : value, z.number().int().min(1).max(100000)).optional(),
       mode: z.enum(['auto', 'text', 'table', 'figure', 'formula']).optional(),
       block_id: z.string().optional(),
