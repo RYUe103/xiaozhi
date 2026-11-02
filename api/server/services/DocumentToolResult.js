@@ -1,6 +1,15 @@
 /** Model-facing projection; the full Repository result stays available to references and telemetry. */
 function compactDocumentResult(result) {
   if (!result || typeof result !== 'object') return result;
+  if (['read_full', 'scan_document'].includes(result.action) && !result.error) {
+    // The ordered tuples map each content segment to immutable source offsets.
+    // Field names occur once; hundreds of short MinerU blocks otherwise spend
+    // more context on repeated JSON keys than on original text.
+    const { hits, ...body } = result;
+    return { ...body, source_span_fields: ['chunk_id', 'page_start', 'page_end', 'source_offset', 'source_length', 'table_ids'],
+      source_spans: (hits || []).map(h => [h.chunk_id, h.page_start, h.page_end, h.source_offset, h.source_length, h.table_ids]),
+      content_separator: '\n\n', source_span_semantics: 'Content segments follow source_spans order, separated by content_separator. Offsets/lengths address original chunk text in UTF-16 code units; read(chunk_id) retrieves the parent.' };
+  }
   if (result.action === 'find_exact' && !result.error) {
     // Matches already contain original text, provenance and bounded context.
     // Avoid sending the same evidence again in content and hits.

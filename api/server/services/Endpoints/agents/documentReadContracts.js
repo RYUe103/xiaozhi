@@ -76,6 +76,7 @@ function createPdfReadContract() {
       name: PDF_READ_TOOL,
       description:
         '按需查阅当前聊天中已完成持久解析的 PDF，不执行代码、不启动沙箱、不重新解析。' +
+        '短文档可read_full完整阅读；长文档证据不足或需全面核查可scan_document按原文顺序分批读取。两者max_chars上限100000，受服务器实时上下文预算约束；其他读取仍上限20000。预算不足时缩小扫描批次或在下一轮续读，不能重复全文请求。扫描只发送原始解析文字，parsed_text_complete不代表OCR正确或图像已检查；必须核对coverage缺页/乱码状态。扫描续读使用同action、document_id及签名令牌，关键事实用chunk_id回读；不得把工作摘要替代原文引用。' +
         'action 支持 list、info、toc、search、find_exact、read、read_table、read_adjacent、visual_page、visual_search、inspect_page；find_exact只查不可变原文并返回真实chunk/page/上下文，视觉摘要与正文分离，续读使用 continuation_token。' +
         '正文或表格不足、乱码、图例不清或需核对原页时，先检索正文或图注定位物理页，再调用本工具 read_parsed_pdf，action=inspect_page，指定 document_id、page、具体 query 和 mode 查看原图；视觉识别不等于已验证全文 OCR。' +
         '多份 PDF 必须使用 list 返回的 document_id；只使用返回的 chunk_id、section_id、table_id 继续读取。' +
@@ -91,7 +92,7 @@ function createPdfReadContract() {
         properties: {
           action: {
             type: 'string',
-            enum: ['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page'],
+            enum: ['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page', 'read_full', 'scan_document'],
             description: 'search发现相关证据；find_exact按解析原文顺序逐字匹配和分页；read/read_adjacent核对正文；inspect_page核对原图。',
           },
           document_id: { type: 'string' },
@@ -109,7 +110,7 @@ function createPdfReadContract() {
           offset: { type: 'integer', enum: [0], description: '仅兼容首次读取；续读必须使用 continuation_token。' },
           coverage_offset: { type: 'integer', minimum: 0, maximum: 100000 },
           catalog_offset: { type: 'integer', minimum: 0, maximum: 100000 },
-          max_chars: { type: 'integer', minimum: 100, maximum: 20000 },
+          max_chars: { type: 'integer', minimum: 100, maximum: 100000 },
           limit: { type: 'integer', minimum: 1, maximum: 12 },
           continuation_token: { type: 'string' },
           include_visual_summary: { type: 'boolean' },
@@ -118,7 +119,7 @@ function createPdfReadContract() {
       },
     };
     const schema = z.object({
-      action: z.enum(['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page']).optional(),
+      action: z.enum(['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page', 'read_full', 'scan_document']).optional(),
       document_id: z.string().max(200).optional(),
       query: z.string().max(1000).optional(),
       match_mode: z.enum(['literal', 'nfkc']).optional(),
@@ -135,7 +136,7 @@ function createPdfReadContract() {
       offset: z.literal(0).optional(),
       coverage_offset: z.number().int().min(0).max(100000).optional(),
       catalog_offset: z.number().int().min(0).max(100000).optional(),
-      max_chars: z.number().int().min(100).max(20000).optional(),
+      max_chars: z.number().int().min(100).max(100000).optional(),
       limit: z.number().int().min(1).max(12).optional(),
       continuation_token: z.string().max(16384).optional(),
       include_visual_summary: z.boolean().optional(),

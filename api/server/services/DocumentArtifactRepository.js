@@ -59,7 +59,7 @@ function splitMarkdown(text, chunkChars = 4500, overlap = 300) {
         chunkId: `markdown-${records.length + 1}`,
         pageStart: null,
         pageEnd: null,
-        text: chunk,
+        text: chunk, source_text_id: 'markdown-original', source_text_offset: start + source.slice(start, end).indexOf(chunk),
       });
     }
     if (end >= source.length) {
@@ -72,7 +72,7 @@ function splitMarkdown(text, chunkChars = 4500, overlap = 300) {
 
 /** Request-scoped authorized snapshot. No network, VL or storage URLs are exposed by execute. */
 class DocumentArtifactRepository {
-  constructor({ userId, conversationId, secret, now = Date.now, previousReference = null, vectorSearch = null, lexicalCache = null, authorize = null, budget = {}, trace = null, quality = {} } = {}) {
+  constructor({ userId, conversationId, secret, now = Date.now, previousReference = null, vectorSearch = null, lexicalCache = null, authorize = null, budget = {}, trace = null, quality = {}, contextBudget = null } = {}) {
     if (!userId || !conversationId) throw new Error('DOCUMENT_ACCESS_DENIED');
     this.userId = String(userId);
     this.conversationId = String(conversationId);
@@ -91,6 +91,7 @@ class DocumentArtifactRepository {
     this.reranker = new DocumentEvidenceReranker({ ...this.quality.rerankOptions, candidateLimit: Math.min(60, Math.max(1, this.quality.rrfDepth)) });
     this.budget = { maxCalls: 32, maxContentChars: 160000, ...budget };
     this.usage = { calls: 0, contentChars: 0 };
+    this.contextBudget = contextBudget;
   }
 
   /** Inputs are obtained by server-owned user/conversation/root queries and authenticated storage. */
@@ -419,6 +420,8 @@ class DocumentArtifactRepository {
       if (document.lexicalCacheWarning) lexical.warnings.push(document.lexicalCacheWarning);
       result = this.execute(input, lexical);
     }
+    const deniedAfterRead = ['read_full', 'scan_document'].includes(action) ? await this.checkAuthorization(checked) : null;
+    if (deniedAfterRead) return deniedAfterRead;
     if (result?.content) {
       if (this.usage.contentChars + result.content.length > this.budget.maxContentChars) return fail('REQUEST_READ_BUDGET_EXCEEDED', '本轮文档读取预算不足。');
       this.usage.contentChars += result.content.length;
@@ -465,7 +468,7 @@ class DocumentArtifactRepository {
     if (!args.pages && Number.isInteger(args.page) && ['read', 'read_table', 'find_exact'].includes(args.action)) args.pages = [args.page];
     let continuationIds;
     const action = args.action || 'search';
-    if (!['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search'].includes(action)) return fail('ACTION_INVALID', '不支持的文档动作。');
+    if (!['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'read_full', 'scan_document'].includes(action)) return fail('ACTION_INVALID', '不支持的文档动作。');
     if (action === 'list') return { status: 'ok', documents: this.listDocuments() };
     const document = args.document_id ? this.documents.get(args.document_id) : this.documents.size === 1 ? [...this.documents.values()][0] : null;
     if (!document) return { ...fail('DOCUMENT_NOT_FOUND', '请指定当前聊天可用的 document_id。'), documents: this.listDocuments() };
@@ -474,11 +477,13 @@ class DocumentArtifactRepository {
       if (payload.error) return payload;
       if ((payload.selection.action === 'find_exact' && action !== 'find_exact') || (action !== payload.selection.action && action !== 'read')) return fail('CONTINUATION_ACTION_MISMATCH', '续读动作与原始读取不一致。');
       if (payload.selection.action === 'find_exact' && ['query', 'match_mode', 'pages', 'chunk_id'].some(k => args[k] !== undefined && JSON.stringify(args[k]) !== JSON.stringify(payload.selection[k]))) return fail('CONTINUATION_SCOPE_MISMATCH', '续读条件与原始查找不一致。');
+      if (['scan_document', 'read_full'].includes(payload.selection.action) && action !== payload.selection.action) return fail('CONTINUATION_ACTION_MISMATCH', '扫描续读必须使用原action。');
       continuationIds = payload.rankedIds;
       args = { ...payload.selection, offset: payload.offset, max_chars: args.max_chars ?? payload.selection.max_chars };
     }
     if (!input.continuation_token && Number(input.offset) > 0) return fail('CONTINUATION_REQUIRED', '继续读取必须使用服务端签发的 continuation_token。');
     const base = { status: 'ok', ok: true, document_id: document.documentId, filename: document.filename, version: document.version };
+    if (['read_full', 'scan_document'].includes(action)) return require('./DocumentSequentialRead').readSequential(this, document, { ...args, _continuation_token: input.continuation_token });
     if (action === 'find_exact') {
       return this.findExact(document, args);
     }

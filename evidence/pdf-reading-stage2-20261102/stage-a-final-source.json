@@ -1,0 +1,47 @@
+{
+  "base_sha": "59f412220bda922b1b0c161a764adbe4e6d51048",
+  "candidate": "uncommitted_stage_a_patch",
+  "files": [
+    {
+      "path": "api/app/clients/BaseClient.js",
+      "sha256": "1b0cb51bb72408c1e0b1ec025cd530b256714b21800681ecb4fbd897a56c9dc1"
+    },
+    {
+      "path": "api/server/controllers/agents/client.js",
+      "sha256": "d7cb2a9a61f892bcb283a79d0c45a2928b1598f713e4bcf251a0bccd3c1a6e2f"
+    },
+    {
+      "path": "api/server/services/DocumentArtifactRepository.js",
+      "sha256": "4dd31deff3f6c0359a976b03b823a7191644046e3fc185e8e213668ca1733360"
+    },
+    {
+      "path": "api/server/services/DocumentContextService.js",
+      "sha256": "0268cd14d59bf36cb072a55d22097af7c6f92381f474e70f67f49d5d676d599d"
+    },
+    {
+      "path": "api/server/services/DocumentToolResult.js",
+      "sha256": "b6e44674a9902bd31416dd694e171d8f723e2c0df8705496571e84185cd19ed2"
+    },
+    {
+      "path": "api/server/services/Endpoints/agents/documentReadContracts.js",
+      "sha256": "81cd9897d3104bf3cac012cf6d9f10d42b9f77e47d671040ad1d3599b46fd307"
+    },
+    {
+      "path": "api/server/services/DocumentReadBudget.js",
+      "sha256": "f87e9b9df160866ad65aedf065ebeae08eef7477ddafda066160df0d24a6d7f0"
+    },
+    {
+      "path": "api/server/services/DocumentSequentialRead.js",
+      "sha256": "dc0b12273b103153f728ec0485cc4058691549c41320baf74c569f9c5bbae9ca"
+    },
+    {
+      "path": "api/server/services/DocumentSequentialRead.spec.js",
+      "sha256": "1ebf46c57f73c7f1b1e05c9b313f66437fd3f3f4bb66739e3ee7ce7109042a84"
+    },
+    {
+      "path": "scripts/evaluation/document-jit/run-sequential-read-acceptance.cjs",
+      "sha256": "f01263ef31347f6333f58aeb3aab1521a0a9358d29cc9064a0522459f7e96644"
+    }
+  ],
+  "protected_query_rewrite_unchanged": true
+}

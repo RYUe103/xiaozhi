@@ -47,6 +47,7 @@ function normalizePdfChunk(value = {}, index = 0, documentId = '') {
     text,
     engine: value.engine,
     sourceArtifact: value.sourceArtifact,
+    source_text_id: value.source_text_id, source_text_offset: value.source_text_offset,
     block_id: value.block_id, source_document_id: value.source_document_id, source_sha256: value.source_sha256,
     title_level: value.title_level, page_rect: value.page_rect, layout_lines: value.layout_lines, raw_type: value.raw_type, reading_order: value.reading_order, parser_version: value.parser_version,
     bbox: value.bbox, coordinate_system: value.coordinate_system, geometry_verified: value.geometry_verified,

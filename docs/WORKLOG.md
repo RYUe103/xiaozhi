@@ -146,3 +146,37 @@ HEAD恢复点0730ded；独立证据evidence/phase5-final-20261101。r5已存在�
 下一步应针对精排/交付及模型证据利用失败验证，不能只扩候选池或堆调用。缺正式人工片段/引用标注、模型Contextual收益及发布机制、最新视觉跨轮、多用户并发与内网验收。不建议生产部署。全量100题未新增付费运行；本轮运行已结束，无后台待完成测试。
 
 证据：evidence/pdf-retrieval-upgrade-20261102/REPORT.md；实施记录docs/PDF_PAGE_VISION_IMPLEMENTATION.md及docs/pdf-retrieval-upgrade/八份文档。所有结果绑定各自业务SHA和实际文件哈希，本检查点不是全部目标成功声明。
+
+
+## 2026-11-02 第二阶段开始前检查点
+
+# PDF检索与JIT升级检查点（2026-11-02）
+
+范围：沿用原生Agent/Repository/MinerU/FITZ/VL，改进双路融合、候选保护、上下文索引实验和精确原文定位。验收使用冻结91页10轮及20独立题、新中文PDF、权限和HTTP回归，不改gold或生产配置。
+
+实际Git目录/tmp/xiaozhi-publish-20261031，分支codex/pdf-page-vision-wip-20261031。基线2911f67，最终业务恢复点c462db6；按逻辑本地提交，尚未推送。仅隔离3185更新，非主3080。
+
+已实现并保留证据：加权融合与候选保护、精排联动、可选标题索引（默认关闭）、find_exact字面/NFKC、签名续读/原文偏移、search范围与匹配序号、乱码partial。17组211项专项及最终真实HTTP7项通过；真实精确查找两轮序号1/2到3/4通过，早期失败保留。
+
+验收未全部通过：20独立题虽20/20完成，AI严格6/15，P50/P95为48.331/89.538秒；候选进入精排后仍会漏交付，模型漏事实/补造关系未解决。连续r4十轮完成但AI严格4/9；不得与独立题混算。上下文增强未证明收益，保持关闭。129页云端数字正确但造价措辞仍不严谨，旧FITZ失败保留。旧16测试失败与基线一致，未删除。
+
+下一步应针对精排/交付及模型证据利用失败验证，不能只扩候选池或堆调用。缺正式人工片段/引用标注、模型Contextual收益及发布机制、最新视觉跨轮、多用户并发与内网验收。不建议生产部署。全量100题未新增付费运行；本轮运行已结束，无后台待完成测试。
+
+证据：evidence/pdf-retrieval-upgrade-20261102/REPORT.md；实施记录docs/PDF_PAGE_VISION_IMPLEMENTATION.md及docs/pdf-retrieval-upgrade/八份文档。所有结果绑定各自业务SHA和实际文件哈希，本检查点不是全部目标成功声明。
+
+
+## 2026-11-02 第二阶段阶段A实施记录
+
+- 修改：新增 `DocumentReadBudget.js`、`DocumentSequentialRead.js`；扩展 PDF contract、Repository、DocumentToolResult、BaseClient 和 AgentClient。
+- 验证：stage-a-unit-r3 5 suites/70 tests passed；固定91页原块分布见 `evidence/pdf-reading-stage2-20261102/source-chunk-distribution.json`。
+- 真实隔离试跑：服务cwd/hash/HTTP均核对；三条 Agent 请求收到百炼 HTTP400 `Arrearage`，无工具调用，记录于 `capabilities-r1`，不能当作 Agent 验收。
+- 恢复点：59f4122；本轮未提交、未推送、未改主3080或生产配置。
+
+
+## 2026-11-02 第二阶段阶段A真实模型复验
+
+- 百炼账户恢复后，候选隔离服务 `/tmp/sansuo-phase5-candidate-20261101` HTTP 200，使用冻结91页 PDF、qwen3.6-plus。
+- 修复前 `capabilities-r2` 的 `read_full` 结果被模型侧约27k字符截断；随后改为保守24000字符预算，`read_full` 返回 `MODEL_CONTEXT_BUDGET_EXCEEDED`。
+- `capabilities-r3` 严格题完成8次工具调用，最终明确说明第83–91页未读取；未把partial当完整。
+- 原生ToolNode持久产物验收 `toolnode-real-storage-r2` 15/15通过、17批扫描无跳读/重复；服务回归 `stage-a-regression-r5` 18 suites/228 tests通过。
+- 本轮仍未提交、未推送、未部署主服务；阶段B/C/D待阶段A长文自动闭环策略另行评估。

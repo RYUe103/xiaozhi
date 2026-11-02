@@ -1,0 +1,18 @@
+{
+  "scope": "direct real Qwen provider diagnostic, not Agent acceptance",
+  "model": "qwen3.6-plus",
+  "probes": [
+    {
+      "schema": "full_pdf_tool",
+      "http_status": 400,
+      "error_code": "Arrearage"
+    },
+    {
+      "schema": "minimal_description",
+      "http_status": 400,
+      "error_code": "Arrearage"
+    }
+  ],
+  "provider_message": "Access denied, please make sure your account is in good standing.",
+  "no_credentials_stored": true
+}

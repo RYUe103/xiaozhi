@@ -224,3 +224,39 @@ ZIP预算：压缩归档100 MiB；通常单条目32 MiB，归档内原PDF独立1
 - 视觉结果采用结构化字段并保留原始输出，但字段正确性未被独立验证；跨页检索、重排多样性及证据交付问题仍待专项验证。
 - PDF `process.spec.js` 已通过；Word 和普通聊天端到端回归未运行。
 - 本分支没有部署、迁移生产数据或修改实际环境配置。完成上述验证并复核安全和性能后才可考虑上线。
+
+
+## PDF 阅读升级第二阶段（2026-11-02，阶段 A）
+
+### 已实现
+
+- 在现有 `read_parsed_pdf` 中增加 `read_full` 和 `scan_document`，没有新增工具注册或绕过 `SessionDocumentResources` 授权。
+- `read_full` 仅在原文能够在本轮服务端上下文和模型侧工具输出预算内完整放入时返回；放不下会明确返回 `MODEL_CONTEXT_BUDGET_EXCEEDED` 或 `FULL_READ_REQUIRES_SCAN`，不会静默截断。阶段 A 的真实 Qwen 运行发现 ToolNode 实际可见上限约 27k 字符，现按 24k 保守上限 fail-closed，长文档改用扫描。
+- `scan_document` 按原始记录顺序分批返回，签名令牌绑定用户、会话、文档版本和 action；返回 UTF-16 原文偏移、已完成/未读范围、物理页覆盖、缺字/疑似乱码状态。
+- 视觉页面、视觉摘要仍与原始文本分开；扫描结果明确 `document_verified: false` 和 `PAGE_IMAGES_NOT_CHECKED`。
+- 统一读取结果保留原始 `chunk_id`、页码、表格关联和 `source_hash`。模型投影把长列表压缩成一次字段说明加 source spans，避免 JSON 字段重复挤占上下文；父块仍可用原有 `read` 回读。
+- Agent 端使用部署 tokenizer 统计上下文，并预留模型输出、工具 schema 和安全余量；日志记录 `document_context_budget`，不把模型传来的 `remaining_tokens` 当作可信预算。
+
+### 审计与验证
+
+- 91 页冻结 PDF 的 MinerU 产物为 734 个原块、82249 字符，最大块 1199 字符，中位 78 字符，超过6000字符的块为0。该样本的漏事实不能归因于6000字符切片。
+- 70 项相关单元/安全/契约测试通过（`evidence/pdf-reading-stage2-20261102/stage-a-unit-r3.json`），覆盖全文顺序、续读无跳字、签名跨会话/版本拒绝、撤权复查、缺页/乱码 partial、表格来源和 ToolNode 输出预算。
+- 旧版冻结题组基线保留在 `evidence/pdf-reading-stage2-20261102/baseline-r1/`。其中两个已知视觉/多事实失败题在旧运行中仍完成回答，具体答案和工具轨迹未覆盖。
+- 付费恢复后隔离 Agent 真实运行见 `capabilities-r2/`：全文请求确实调用了 `read_full`，但旧实现被 ToolNode 截断；两轮 `scan_document` 成功连续续读（4896→9824），失败记录和修复前结果保存在同目录。
+
+### 未完成与边界
+
+- 阶段 B Child-Parent 检索、阶段 C 独立表格检索和多事实 coverage、阶段 D 视觉质量/缓存优化尚未开始；按要求等待阶段 A 的真实模型验收。
+- `read_full`/`scan_document` 的模型上下文只在隔离 Agent 运行中记录了服务端预算，Qwen 账户恢复前无法完成真实模型读取、跨轮续读和最终答案验收。
+- 当前运行目录仍未部署主服务；不建议生产发布。
+
+
+### 真实 Agent 阶段 A 复验（付费恢复后）
+
+- `capabilities-r2/`：固定全文题调用 `read_full` 后曾触发旧实现的 ToolNode 截断；同批 `scan_document` 两轮连续读取 0–4896、4896–9824，工具状态均为 partial。
+- `capabilities-r3/`：采用保守 24000 字符模型侧工具上限后，`read_full` 明确返回 `MODEL_CONTEXT_BUDGET_EXCEEDED`，Agent 改用扫描；严格提示下实际调用 8 次扫描，直到上下文预算耗尽，最终明确报告第83–91页未读取，没有声称全文完成。
+- 真实 Agent 运行耗时：普通全文 fallback 91.5s；严格扫描 123.2s。该耗时包含 Qwen 推理，不能作为稳定 SLA。
+- `toolnode-real-storage-r2.json`：真实持久 91 页产物经原生 ToolNode，15/15 检查通过，17 批 5000 字符扫描无跳过或重复；这是工具级/持久链路验收，不是模型答案准确率。
+- `stage-a-regression-r5.json`：原有18个服务测试套件共228项通过。
+
+当前阶段 A 的部署结论：原文全文读取、分批扫描、签名续读、预算 fail-closed、来源映射和权限/版本复查已实现并通过本地及隔离持久工具验证；真实 Agent 能正确暴露未完成范围，但自动完成整篇长文仍受模型上下文预算和多轮策略限制，不能宣称已达到生产部署门槛。阶段 B/C/D 暂不开始。

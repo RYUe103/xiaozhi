@@ -2272,6 +2272,10 @@ class BaseClient {
               }
             }
           }
+          if (entry.kind === 'pdf') {
+            service.contextBudget = req._sansuoDocumentReadBudget;
+            service.compactSequentialOutput = req._sansuoJitCompact !== false;
+          }
           const result = entry.kind === 'pdf' && args.action === 'inspect_page'
             ? await scoped._sansuoPageVision.inspect(args)
             : service.executeAsync ? await service.executeAsync(args) : service.execute(args);

@@ -653,6 +653,24 @@ class AgentClient extends BaseClient {
 
       const toolSet = buildToolSet(this.options.agent);
       const tokenCounter = createTokenCounter(this.getEncoding());
+      if (reliable) {
+        const { DocumentReadBudget } = require('~/server/services/DocumentReadBudget');
+        const agentsForBudget = [this.options.agent, ...(this.agentConfigs?.values() || [])];
+        const limits = [this.maxContextTokens, ...agentsForBudget.map(a => a.maxContextTokens)].filter(n => Number(n) > 0);
+        const ledger = new DocumentReadBudget({ maxContextTokens: limits.length ? Math.min(...limits) : 0,
+          count: text => tokenCounter(new HumanMessage(text)),
+          calibrationRatio: this.contextMeta?.calibrationRatio,
+          reserveTokens: Math.max(8192, ...agentsForBudget.map(a => Number(a.model_parameters?.max_tokens || a.model_parameters?.maxOutputTokens) || 0)),
+          maxToolResultChars: Math.min(400000, ...agentsForBudget.map(a => Number(a.maxToolResultChars) || 400000)) });
+        req._sansuoDocumentReadBudget = ledger;
+        config.callbacks = [...(config.callbacks || []), { name: 'SanSuoDocumentReadBudget',
+          handleLLMEnd: result => ledger.consume(JSON.stringify(result.generations || [])),
+          // Sequential reads already reserve synchronously; counting again here is
+          // conservative until the next model input refresh, including parallel tools.
+          handleToolEnd: output => ledger.consume(typeof output === 'string' ? output : JSON.stringify(output || '')),
+        }];
+      }
+
       let {
         messages: initialMessages,
         indexTokenCountMap,
@@ -701,7 +719,17 @@ class AgentClient extends BaseClient {
               ...agent.model_parameters?.configuration,
               maxRetries: 0,
               fetch: createModelFetch({
-                fetchImpl: agent.model_parameters?.configuration?.fetch || fetch,
+                fetchImpl: async (url, init) => {
+                  // Count the actual provider envelope after graph pruning and tool
+                  // schema conversion, including tool-call arguments and output reserve.
+                  const ledger = req._sansuoDocumentReadBudget;
+                  if (ledger) {
+                    try { ledger.observeRequest(JSON.parse(init.body)); }
+                    catch { ledger.ready = false; }
+                    modelEvent({ stage: 'document_context_budget', ...ledger.snapshot() });
+                  }
+                  return (agent.model_parameters?.configuration?.fetch || fetch)(url, init);
+                },
                 signal: abortController.signal,
                 deadline,
                 emit: modelEvent,

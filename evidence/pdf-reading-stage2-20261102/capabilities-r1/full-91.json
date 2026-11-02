@@ -1,0 +1,175 @@
+{
+  "id": "full-91",
+  "question": "请先用文档工具完整读取附件的解析原文（read_full），然后概括主要章节并列出来源页码。若工具预算不允许，明确报告限制，不要改用搜索假装已读全文。",
+  "conversation_id": "3e2a8670-26bf-4dae-b733-e293b01d00e9",
+  "parent_message_id": "00000000-0000-0000-0000-000000000000",
+  "request_id": "0d75ddfe-f20a-4f42-b442-c2e801c83d03",
+  "started_at": "2026-11-02T06:13:38.062Z",
+  "http_status": 200,
+  "active_at_end": false,
+  "messages": [
+    {
+      "_id": "6ae82a1229b56c8c8fb120d8",
+      "messageId": "1a0622ac-2170-472a-a4a1-bd2295ab18c9",
+      "user": "6ae73548fbae1de9b1b18ae2",
+      "__v": 0,
+      "conversationId": "3e2a8670-26bf-4dae-b733-e293b01d00e9",
+      "createdAt": "2026-11-02T06:13:38.435Z",
+      "endpoint": "SanSuoMain",
+      "error": false,
+      "expiredAt": null,
+      "files": [
+        {
+          "file_id": "4d2a1639-a054-4e53-bf17-83d9d6b4097e",
+          "bytes": 33875317,
+          "context": "message_attachment",
+          "createdAt": "2026-11-01T12:49:13.242Z",
+          "filename": "41489021-892f-5f2a-9c49-d0515dad08a2.pdf",
+          "filepath": "/uploads/6ae73548fbae1de9b1b18ae2/f44df096-a3f4-48b5-988d-ce199cbe7fed__41489021-892f-5f2a-9c49-d0515dad08a2.pdf",
+          "metadata": {
+            "codeEnvRef": {
+              "kind": "user",
+              "id": "6ae73548fbae1de9b1b18ae2",
+              "storage_session_id": "upload_8155c7ce9f366c1aaada",
+              "file_id": "file_a68c19eb447091ec87b9"
+            },
+            "sha256": "5be30160ab9d6cfe86e338111fd0f7dafaa00a6194efe854b3e3f3699c8cccd0"
+          },
+          "object": "file",
+          "source": "local",
+          "type": "application/pdf",
+          "updatedAt": "2026-11-02T06:13:38.152Z",
+          "usage": 2,
+          "user": "6ae73548fbae1de9b1b18ae2",
+          "conversationId": "3e2a8670-26bf-4dae-b733-e293b01d00e9"
+        }
+      ],
+      "isCreatedByUser": true,
+      "metadata": {
+        "sansuoClientRequestId": "0d75ddfe-f20a-4f42-b442-c2e801c83d03",
+        "sansuoMode": "deep",
+        "sansuoFileParse": {
+          "status": "completed",
+          "files": 1,
+          "artifacts": 74
+        }
+      },
+      "model": null,
+      "parentMessageId": "00000000-0000-0000-0000-000000000000",
+      "sender": "User",
+      "text": "请先用文档工具完整读取附件的解析原文（read_full），然后概括主要章节并列出来源页码。若工具预算不允许，明确报告限制，不要改用搜索假装已读全文。",
+      "tokenCount": 238,
+      "unfinished": false,
+      "updatedAt": "2026-11-02T06:13:39.510Z"
+    },
+    {
+      "_id": "6ae82a1329b56c8c8fb120da",
+      "user": "6ae73548fbae1de9b1b18ae2",
+      "messageId": "7e6e064e-62ed-4b00-9485-25b835041f29",
+      "__v": 0,
+      "attachments": [],
+      "content": [
+        {
+          "type": "error",
+          "error": "本次回答未完成：模型服务请求失败（MODEL_HTTP_ERROR）。已取得的证据不能视为完成核对的答案；请稍后重试。"
+        },
+        {
+          "type": "text",
+          "text": "本次回答未完成：模型服务请求失败（MODEL_HTTP_ERROR）。已取得的证据不能视为完成核对的答案；请稍后重试。"
+        }
+      ],
+      "conversationId": "3e2a8670-26bf-4dae-b733-e293b01d00e9",
+      "createdAt": "2026-11-02T06:13:39.500Z",
+      "endpoint": "SanSuoMain",
+      "error": true,
+      "expiredAt": null,
+      "isCreatedByUser": false,
+      "metadata": {
+        "sansuoMode": "deep",
+        "sansuoFileParse": {
+          "status": "completed",
+          "files": 1,
+          "artifacts": 74
+        },
+        "sansuoProcessTiming": {
+          "startedAt": "2026-11-02T06:13:38.143Z",
+          "completedAt": "2026-11-02T06:13:39.491Z",
+          "elapsedMs": 1348
+        },
+        "sansuoClientRequestId": "0d75ddfe-f20a-4f42-b442-c2e801c83d03",
+        "sansuoModelFailure": {
+          "code": "MODEL_HTTP_ERROR",
+          "retryable": false,
+          "status": 400,
+          "cause": null
+        }
+      },
+      "model": "qwen3.6-plus",
+      "parentMessageId": "1a0622ac-2170-472a-a4a1-bd2295ab18c9",
+      "sender": "三所小智",
+      "text": "本次回答未完成：模型服务请求失败（MODEL_HTTP_ERROR）。已取得的证据不能视为完成核对的答案；请稍后重试。",
+      "tokenCount": 39,
+      "unfinished": false,
+      "updatedAt": "2026-11-02T06:13:39.500Z"
+    }
+  ],
+  "message_id": "7e6e064e-62ed-4b00-9485-25b835041f29",
+  "answer": "本次回答未完成：模型服务请求失败（MODEL_HTTP_ERROR）。已取得的证据不能视为完成核对的答案；请稍后重试。",
+  "error": true,
+  "model_failure": {
+    "code": "MODEL_HTTP_ERROR",
+    "retryable": false,
+    "status": 400,
+    "cause": null
+  },
+  "tools": [],
+  "completed": false,
+  "elapsed_ms": 2178,
+  "trace_events": [
+    {
+      "stage": "document_context_budget",
+      "scope_hash": "f95f8592282221aa2c54",
+      "available": true,
+      "max_context_tokens": 120000,
+      "remaining_tokens": 100479,
+      "reserved_tokens": 18000,
+      "max_tool_result_chars": 144000,
+      "counting": "deployed_agent_tokenizer_with_safety_margin"
+    },
+    {
+      "stage": "ModelTransport",
+      "scope_hash": "f95f8592282221aa2c54",
+      "attempt": 1,
+      "phase": "failed",
+      "code": "MODEL_HTTP_ERROR",
+      "retryable": false,
+      "status": 400,
+      "cause": null,
+      "retry": false,
+      "delay_ms": 0,
+      "elapsed_ms": 1051
+    },
+    {
+      "stage": "ModelTransport",
+      "scope_hash": "f95f8592282221aa2c54",
+      "phase": "agent_failed",
+      "code": "MODEL_HTTP_ERROR",
+      "retryable": false,
+      "status": 400,
+      "cause": null
+    }
+  ],
+  "timings": [],
+  "parse_job_after": {
+    "_id": "6ae82a12ba2375fbe1393f4f",
+    "attempts": 1,
+    "completedAt": "2026-11-01T12:52:09.698Z",
+    "startedAt": "2026-11-01T12:49:13.254Z",
+    "status": "ready",
+    "evaluationReuse": {
+      "sourceFileId": "f44df096-a3f4-48b5-988d-ce199cbe7fed",
+      "sourceJobId": "6ae7354929b56c8c8fafd9d5",
+      "notNewParse": true
+    }
+  }
+}
