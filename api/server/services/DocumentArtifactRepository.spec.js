@@ -166,7 +166,10 @@ test('query-only read searches existing channels instead of returning missing pa
 test('find_exact locates immutable source text with page, chunk and bounded context', () => {
  const { repo, doc } = fixture();
  const result = repo.execute({ action: 'find_exact', document_id: doc.documentId, query: '检修周期为三个月', context_chars: 8 });
- expect(result.status).toBe('ok');
+ // This fixture has a scanned page without original text: literal matches are
+ // valid, but whole-document search coverage must stay explicitly partial.
+ expect(result.status).toBe('partial');
+ expect(result.scope_complete).toBe(false);
  expect(result.matches).toHaveLength(1);
  expect(result.matches[0]).toMatchObject({ page_start: 3, chunk_id: doc.records[1].chunkId, match_text: '检修周期为三个月' });
  expect(result.matches[0].context_before.length).toBeLessThanOrEqual(8);
@@ -186,4 +189,13 @@ test('explicit visual-summary inclusion remains available without a vector provi
  const doc=repo.add({fileId:'f',records:[{page:1,text:'普通正文'}],summaries:[{page:2,summary:'扫描视觉特有词语'}]});
  const result=await repo.executeAsync({action:'search',document_id:doc.documentId,query:'扫描视觉特有词语',include_visual_summary:true});
  expect(result.content).toContain('扫描视觉特有词语');expect(result.hits[0].kind).toBe('visual_summary');
+});
+test('C1 font-mapping garbage is suspect and an exact miss cannot claim complete scope', async () => {
+ const repo=new DocumentArtifactRepository({userId:'u',conversationId:'c',quality:{queryProcessing:false,rerank:false}});
+ const doc=repo.add({fileId:'f',records:[{page:1,text:'ó\u008d µ\u008e\u008e% ABC scrambled font glyphs'}],pageCount:1});
+ expect(doc.pageCoverage[0].textQuality).toBe('suspect');
+ const read=await repo.executeAsync({action:'read',pages:[1]});
+ expect(read.status).toBe('partial');expect(read.warnings).toContain('SOURCE_TEXT_SUSPECT_USE_ORIGINAL_PAGE_VERIFICATION');
+ const exact=await repo.executeAsync({action:'find_exact',query:'不存在'});
+ expect(exact.status).toBe('partial');expect(exact.scope_complete).toBe(false);expect(exact.match_count).toBe(0);
 });

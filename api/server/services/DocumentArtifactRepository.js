@@ -13,8 +13,9 @@ const fail = (code, message) => ({ status: 'unavailable', ok: false, error: { co
 const pageOf = (r) => r.pageStart ?? r.page_start ?? r.page ?? (r.page_idx != null ? Number(r.page_idx) + 1 : null);
 function assessPageTextQuality(text) {
   const value = String(text || '').trim();
+  const bad = (value.match(/[\uFFFD\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F\uE000-\uF8FF]/g) || []).length;
+  if (bad > 0) return 'suspect';
   if (value.length < 20) return 'unknown';
-  const bad = (value.match(/[\uFFFD\u0000-\u0008\u000B\u000C\u000E-\u001F\uE000-\uF8FF]/g) || []).length;
   const useful = (value.match(/[\p{L}\p{N}]/gu) || []).length;
   if (bad > 0 || useful / value.length < 0.35) return 'suspect';
   return 'plausible';
@@ -445,8 +446,13 @@ class DocumentArtifactRepository {
     const selection = { ...args, action: 'find_exact', offset: undefined, continuation_token: undefined };
     const token = result.truncated ? this.sign({ document: document.documentId, version: document.version, selection, offset: result.next_offset }) : null;
     const first = result.matches[0];
-    return { status: 'ok', ok: true, action: 'find_exact', document_id: document.documentId, filename: document.filename, version: document.version,
-      ...result, continuation_token: token,
+    const scopeRecords = document.records.filter(r => (!args.chunk_id || r.chunkId === args.chunk_id) &&
+      (!args.pages || args.pages.some(p => r.pageStart != null && p >= r.pageStart && p <= (r.pageEnd ?? r.pageStart))));
+    const suspect = scopeRecords.filter(r => assessPageTextQuality(r.text) === 'suspect');
+    const scopeIncomplete = suspect.length > 0 || document.pageCoverage.some(p => (!args.pages || args.pages.includes(p.page)) && !p.hasExtractedText);
+    return { status: scopeIncomplete ? 'partial' : 'ok', ok: true, action: 'find_exact', document_id: document.documentId, filename: document.filename, version: document.version,
+      ...result, continuation_token: token, source_text_quality: suspect.length ? 'suspect' : 'not_independently_verified',
+      scope_complete: !scopeIncomplete, suspect_chunks: suspect.length, warnings: scopeIncomplete ? ['SOURCE_TEXT_INCOMPLETE_OR_SUSPECT', 'NO_MATCH_DOES_NOT_PROVE_ABSENCE'] : [],
       content: result.matches.map(m => m.context_before + m.match_text + m.context_after).join('\n'),
       hits: result.matches.map(m => ({ ...m, document_id: document.documentId })),
       reference: first ? { document_id: document.documentId, chunk_id: first.chunk_id, page_start: first.page_start, page_end: first.page_end,
@@ -610,11 +616,13 @@ class DocumentArtifactRepository {
     const deliveryCells = this.quality.compactDelivery ? (table?.cells || []).filter(cell => cell.rowspan > 1 || cell.colspan > 1) : table?.cells;
     const includeTableStructure = table && !truncated && !offset && JSON.stringify([table.rows, deliveryCells, table.rowProvenance]).length <= max;
     if (table && !includeTableStructure) warnings.push('TABLE_STRUCTURE_METADATA_BUDGETED');
-    return { ...base, action: effectiveAction, content, excerpted, offset, truncated, next_offset: truncated ? next : null, continuation_token: continuation,
+    const suspectDelivered = delivered.some(r => r.kind !== 'visual_summary' && assessPageTextQuality(r.text) === 'suspect');
+    if (suspectDelivered) warnings.push('SOURCE_TEXT_SUSPECT_USE_ORIGINAL_PAGE_VERIFICATION');
+    return { ...base, status: suspectDelivered ? 'partial' : base.status, action: effectiveAction, content, excerpted, offset, truncated, next_offset: truncated ? next : null, continuation_token: continuation,
       warnings, table_id: table?.tableId, table: table ? { structure: table.structure, rows: includeTableStructure ? table.rows : undefined,
         cells: includeTableStructure ? deliveryCells : undefined, row_provenance: includeTableStructure ? table.rowProvenance : undefined,
         complete: table.complete, columns: table.columns, source_table_id: table.sourceTableId, selected_row_indexes: table.selectedRowIndexes, total_rows: table.totalRows, selection: table.selection, source_complete: table.sourceComplete } : undefined, page_coverage: document.pageCoverage.filter((p) => args.pages ? args.pages.includes(p.page) : delivered.some((r) => r.pageStart != null && p.page >= r.pageStart && p.page <= r.pageEnd)).slice(0, 60),
-      hits: delivered.map((r) => ({ chunk_id: r.chunkId || r.id, source_chunk_id: r.sourceChunkId, page_start: r.pageStart, page_end: r.pageEnd, kind: r.kind, engine: r.engine, block_id: r.block_id, image_id: r.image_id, bbox: r.bbox, coordinate_system: r.coordinate_system, page_rect: r.page_rect, geometry_verified: r.geometry_verified,
+      hits: delivered.map((r) => ({ chunk_id: r.chunkId || r.id, source_chunk_id: r.sourceChunkId, page_start: r.pageStart, page_end: r.pageEnd, kind: r.kind, text_quality: r.kind === 'visual_summary' ? 'visual_summary_not_ocr' : assessPageTextQuality(r.text), engine: r.engine, block_id: r.block_id, image_id: r.image_id, bbox: r.bbox, coordinate_system: r.coordinate_system, page_rect: r.page_rect, geometry_verified: r.geometry_verified,
         table_ids: document.tables.filter((t) => t.chunkIds?.includes(r.chunkId)).map((t) => t.tableId) })),
       retrieval: retrieval ? { warnings: retrieval.warnings, keyword: retrieval.keyword.map((h) => ({ id: h.record.id, score: h.score, rank: h.rank })), bm25: retrieval.bm25.map((h) => ({ id: h.record.id, score: h.score, rank: h.rank })), vector: (retrieval.vector || []).map((h) => ({ id: h.record.id, score: h.score, rank: h.rank })), rrf: retrieval.fused.map((h) => ({ id: h.record.id, score: h.score, ranks: h.ranks, sources: h.sources })) } : undefined,
       reference: { document_id: document.documentId, chunk_id: delivered[0]?.chunkId || delivered[0]?.id, page_start: delivered[0]?.pageStart, page_end: delivered[0]?.pageEnd,
