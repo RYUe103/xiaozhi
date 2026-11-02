@@ -1,0 +1,627 @@
+FAIL api/app/clients/specs/BaseClient.test.js
+  ● Console
+
+    console.log
+      2026-11-02 10:41:36 [31merror[39m: [31m[BaseClient] saveMessageToDatabase: client disposed before save, skipping[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [33m[3mwarn[23m[39m: [33m[3m[SanSuoNativeMemory][diagnostic] eligibility check endpoint=SanSuoMain sansuoMode= hasUserId=true memoryMode=manual hasMemoryConfig=true memoryDisabled=false[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoNativeMemory] read-only memory context ready[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [33m[3mwarn[23m[39m: [33m[3m[SanSuoNativeMemory][diagnostic] eligibility check endpoint=SanSuoMain sansuoMode= hasUserId=true memoryMode=off hasMemoryConfig=true memoryDisabled=false[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] assistant output files attached to response message[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [31merror[39m: [31m[BaseClient] Error mapping attachments for conversation this.options.attachments.map is not a function[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [33m[3mwarn[23m[39m: [33m[3m[SanSuoDocumentPreparse] deep request gate failed[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.923Z","traceId":"file-xlsx-root-1","fileType":"structured","stage":"persisted_text_load","status":"success","elapsedMs":1,"contextChars":24,"artifact":"人员_preparse_tabular_rows.jsonl"}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] reused persisted file reading context[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.923Z","traceId":"message-1793587296922","fileType":"document","stage":"persisted_text_context_total","status":"success","elapsedMs":1,"files":1,"contextChars":46}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.923Z","traceId":"message-1793587296922","fileType":"document","stage":"text_context_prepare","status":"success","elapsedMs":1,"contextChars":371,"cacheHit":false}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] file context after visual append[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.924Z","traceId":"message-1793587296922","fileType":"document","stage":"file_context_prepare_total","status":"success","elapsedMs":2,"attachments":1,"contextChars":371}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.924Z","traceId":"file-csv-root-1","fileType":"structured","stage":"persisted_text_load","status":"success","elapsedMs":0,"contextChars":25,"artifact":"数据_preparse_tabular_rows.jsonl"}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] reused persisted file reading context[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.925Z","traceId":"message-1793587296924","fileType":"document","stage":"persisted_text_context_total","status":"success","elapsedMs":1,"files":1,"contextChars":46}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.925Z","traceId":"message-1793587296924","fileType":"document","stage":"text_context_prepare","status":"success","elapsedMs":1,"contextChars":371,"cacheHit":false}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] file context after visual append[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.925Z","traceId":"message-1793587296924","fileType":"document","stage":"file_context_prepare_total","status":"success","elapsedMs":1,"attachments":1,"contextChars":371}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.926Z","traceId":"file-md-root-1","fileType":"structured","stage":"persisted_text_load","status":"success","elapsedMs":1,"contextChars":12,"artifact":"说明_preparse_text_blocks.jsonl"}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] reused persisted file reading context[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.926Z","traceId":"message-1793587296925","fileType":"document","stage":"persisted_text_context_total","status":"success","elapsedMs":1,"files":1,"contextChars":32}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.926Z","traceId":"message-1793587296925","fileType":"document","stage":"text_context_prepare","status":"success","elapsedMs":1,"contextChars":357,"cacheHit":false}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] file context after visual append[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.926Z","traceId":"message-1793587296925","fileType":"document","stage":"file_context_prepare_total","status":"success","elapsedMs":1,"attachments":1,"contextChars":357}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.927Z","traceId":"file-txt-root-1","fileType":"structured","stage":"persisted_text_load","status":"success","elapsedMs":0,"contextChars":5,"artifact":"记录_preparse_text_blocks.jsonl"}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] reused persisted file reading context[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.927Z","traceId":"message-1793587296927","fileType":"document","stage":"persisted_text_context_total","status":"success","elapsedMs":0,"files":1,"contextChars":26}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.927Z","traceId":"message-1793587296927","fileType":"document","stage":"text_context_prepare","status":"success","elapsedMs":0,"contextChars":351,"cacheHit":false}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] file context after visual append[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.928Z","traceId":"message-1793587296927","fileType":"document","stage":"file_context_prepare_total","status":"success","elapsedMs":1,"attachments":1,"contextChars":351}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoDocumentDirectory] ready {"conversationId":"history-conversation","documents":1,"elapsedMs":3,"tools":[{"names":["read_parsed_pdf"],"registry":["read_parsed_pdf"]}]}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.942Z","traceId":"message-1793587296942","fileType":"document","stage":"persisted_text_context_total","status":"empty","elapsedMs":5,"files":1}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoDocumentDirectory] ready {"conversationId":"c","documents":1,"elapsedMs":0,"tools":[{"id":"restricted","names":[],"registry":[]}]}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoDocumentDirectory] ready {"conversationId":"word-conversation","documents":1,"elapsedMs":0,"tools":[{"id":"word-agent","names":["read_parsed_docx"],"registry":["read_parsed_docx"]}]}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] selected persisted DOCX context in backend[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.945Z","traceId":"file-word","fileType":"docx","stage":"persisted_text_load","status":"success","elapsedMs":1,"contextChars":25,"artifact":"word_docx_blocks.jsonl"}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] reused persisted file reading context[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.945Z","traceId":"message-1793587296945","fileType":"document","stage":"persisted_text_context_total","status":"success","elapsedMs":1,"files":1,"contextChars":49}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoDocumentDirectory] ready {"conversationId":"word-conversation","documents":1,"elapsedMs":0,"tools":[{"id":"word-agent","names":["read_parsed_docx"],"registry":["read_parsed_docx"]}]}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] selected persisted DOCX context in backend[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.947Z","traceId":"file-word","fileType":"docx","stage":"persisted_text_load","status":"success","elapsedMs":1,"contextChars":25,"artifact":"word_docx_reading_pack.md"}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] reused persisted file reading context[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.947Z","traceId":"message-1793587296947","fileType":"document","stage":"persisted_text_context_total","status":"success","elapsedMs":1,"files":1,"contextChars":49}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoDocumentDirectory] ready {"conversationId":"word-conversation","documents":1,"elapsedMs":0,"tools":[{"id":"word-agent","names":["read_parsed_docx"],"registry":["read_parsed_docx"]}]}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] selected persisted DOCX context in backend[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.948Z","traceId":"file-word","fileType":"docx","stage":"persisted_text_load","status":"success","elapsedMs":0,"contextChars":2,"artifact":"word_docx_blocks.jsonl"}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] reused persisted file reading context[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.948Z","traceId":"message-1793587296948","fileType":"document","stage":"persisted_text_context_total","status":"success","elapsedMs":0,"files":1,"contextChars":26}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] vision summary request[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.959Z","traceId":"visual-image","fileType":"document","documentFileId":null,"imageIndex":null,"imageFile":"word_docx_image_0001.png","stage":"vision_image_download","status":"success","elapsedMs":0,"imageBytes":13}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.960Z","traceId":"visual-image","fileType":"document","documentFileId":null,"imageIndex":null,"imageFile":"word_docx_image_0001.png","stage":"vision_model","status":"success","elapsedMs":0,"summaryChars":6}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] vision summary success[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.960Z","traceId":"visual-image","fileType":"document","documentFileId":null,"imageIndex":null,"imageFile":"word_docx_image_0001.png","stage":"vision_total","status":"success","elapsedMs":11,"summaryChars":6}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoDocumentPreparse] deep request gate ready[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] selected response model profile[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoDocumentDirectory] ready {"conversationId":"b20ed59f-5f36-439e-9c0f-3e1da3ae6dd2","documents":0,"elapsedMs":0,"tools":[{"names":["execute_code","bash_tool"],"registry":["execute_code","bash_tool"]}]}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [33m[3mwarn[23m[39m: [33m[3m[SanSuoNativeMemory][diagnostic] eligibility check endpoint=SanSuoMain sansuoMode=deep hasUserId=true memoryMode=manual hasMemoryConfig=false memoryDisabled=false[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.962Z","traceId":"message-4275b2cd-059f-416d-8cad-abd5d5398cdc","fileType":"document","stage":"main_model_completion","status":"success","elapsedMs":0,"model":"qwen3.5-397b-a17b"}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoDocumentPreparse] deep request gate ready[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] selected response model profile[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoDocumentDirectory] ready {"conversationId":"conversation-pdf-ready","documents":0,"elapsedMs":0,"tools":[{"names":["execute_code","bash_tool","read_parsed_pdf"],"registry":["execute_code","bash_tool","read_parsed_pdf"]}]}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [33m[3mwarn[23m[39m: [33m[3m[SanSuoNativeMemory][diagnostic] eligibility check endpoint=SanSuoMain sansuoMode=deep hasUserId=true memoryMode=manual hasMemoryConfig=false memoryDisabled=false[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoFileTiming] {"timestamp":"2026-11-02T02:41:36.963Z","traceId":"message-6e4b383c-d345-41bc-8b53-97fe24836038","fileType":"document","stage":"main_model_completion","status":"success","elapsedMs":0,"model":"qwen3.5-397b-a17b"}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoMain] selected response model profile[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [32minfo[39m: [32m[SanSuoDocumentDirectory] ready {"conversationId":"conversation-pdf-ready","documents":0,"elapsedMs":0,"tools":[{"names":["execute_code","bash_tool","read_parsed_pdf"],"registry":["execute_code","bash_tool","read_parsed_pdf"]}]}[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2026-11-02 10:41:36 [33m[3mwarn[23m[39m: [33m[3m[SanSuoNativeMemory][diagnostic] eligibility check endpoint=SanSuoMain sansuoMode=deep hasUserId=true memoryMode=manual hasMemoryConfig=false memoryDisabled=false[23m[39m
+
+      at Console.log (../../../../Users/yooyoung/Documents/Codex/2026-05-12/files-mentioned-by-the-user-v58/LibreChat-main/packages/data-schemas/node_modules/winston/lib/winston/transports/console.js:87:23)
+
+  ● BaseClient › sendMessage file population › reuses persisted DOCX text context without reading the original file twice
+
+    expect(received).toContain(expected) // indexOf
+
+    Matcher error: received value must not be null nor undefined
+
+    Received has value: undefined
+
+      1511 |       await TestClient.addFileContextToMessage(secondMessage, [docxAttachment]);
+      1512 |
+    > 1513 |       expect(firstMessage.fileContext).toContain('[paragraph=1]\n第一段');
+           |                                        ^
+      1514 |       expect(firstMessage.fileContext).toContain('[paragraph=2]\n第二段');
+      1515 |       expect(secondMessage.fileContext).toBe(firstMessage.fileContext);
+      1516 |       expect(getSanSuoFiles).toHaveBeenCalledTimes(1);
+
+      at Object.toContain (app/clients/specs/BaseClient.test.js:1513:40)
+
+  ● BaseClient › sendMessage file population › DOCX visual questions reuse persisted images, select later images, and never reparse
+
+    expect(received).not.toContain(expected) // indexOf
+
+    Matcher error: received value must not be null nor undefined
+
+    Received has value: undefined
+
+      1565 |           persistVisualContext: false,
+      1566 |         });
+    > 1567 |         expect(plain.fileContext).not.toContain('Attached DOCX image');
+           |                                       ^
+      1568 |         expect(
+      1569 |           mockNodeFetch.mock.calls.some(([url]) => String(url).includes('chat/completions')),
+      1570 |         ).toBe(false);
+
+      at Object.toContain (app/clients/specs/BaseClient.test.js:1567:39)
+
+  ● BaseClient › sendMessage file population › missing DOCX visual artifacts do not trigger sandbox fallback
+
+    expect(received).toContain(expected) // indexOf
+
+    Matcher error: received value must not be null nor undefined
+
+    Received has value: undefined
+
+      1617 |         { persistVisualContext: false },
+      1618 |       );
+    > 1619 |       expect(message.fileContext).toContain('持久图片产物缺失或不可读取');
+           |                                   ^
+      1620 |       expect(mockNodeFetch.mock.calls.some(([url]) => /\/exec$/.test(String(url)))).toBe(false);
+      1621 |     });
+      1622 |
+
+      at Object.toContain (app/clients/specs/BaseClient.test.js:1619:35)
+
+  ● BaseClient › sendMessage file population › missing PDF artifacts never fall back to the generic sandbox reader
+
+    expect(received).toContain(expected) // indexOf
+
+    Matcher error: received value must not be null nor undefined
+
+    Received has value: undefined
+
+      1645 |         { persistVisualContext: false },
+      1646 |       );
+    > 1647 |       expect(message.fileContext).toContain('PDF 的后端持久页面产物缺失或不可读');
+           |                                   ^
+      1648 |       expect(mockNodeFetch.mock.calls.some(([url]) => /\/exec$/.test(String(url)))).toBe(false);
+      1649 |     });
+      1650 |
+
+      at Object.toContain (app/clients/specs/BaseClient.test.js:1647:35)
+
+  ● BaseClient › sendMessage file population › batches persisted fitz PDF pages by 20 and selects an explicitly requested page
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 2
+    Received length: 0
+    Received array:  []
+
+      1720 |           String(url).includes('chat/completions'),
+      1721 |         );
+    > 1722 |         expect(summaryCalls).toHaveLength(2);
+           |                              ^
+      1723 |         expect(JSON.parse(summaryCalls[0][1].body).messages[0].content).toHaveLength(41);
+      1724 |         expect(JSON.parse(summaryCalls[1][1].body).messages[0].content).toHaveLength(11);
+      1725 |         expect(summary.fileContext).toContain('Visual index: 25/25 pages');
+
+      at Object.toHaveLength (app/clients/specs/BaseClient.test.js:1722:30)
+
+  ● BaseClient › sendMessage file population › completes the fitz index in batches while exposing only the requested page
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 2
+    Received length: 0
+    Received array:  []
+
+      1820 |           String(url).includes('chat/completions'),
+      1821 |         );
+    > 1822 |         expect(calls).toHaveLength(2);
+           |                       ^
+      1823 |         expect(JSON.parse(calls[0][1].body).messages[0].content).toHaveLength(41);
+      1824 |         expect(JSON.parse(calls[1][1].body).messages[0].content).toHaveLength(11);
+      1825 |         expect(message.fileContext).toContain('Indexed page 23');
+
+      at Object.toHaveLength (app/clients/specs/BaseClient.test.js:1822:23)
+
+  ● BaseClient › sendMessage file population › retrieves a persisted fitz VL index within the current conversation and reviews only matching pages
+
+    expect(received).toMatchObject(expected)
+
+    Matcher error: received value must be a non-null object
+
+    Received has value: undefined
+
+      1926 |           .map(([filter]) => filter)
+      1927 |           .find((filter) => filter?.['metadata.artifactKind']?.$in?.includes('pdf_visual_summary'));
+    > 1928 |         expect(visualQuery).toMatchObject({
+           |                             ^
+      1929 |           userId: 'user-123',
+      1930 |           conversationId: 'conversation-index-reuse',
+      1931 |         });
+
+      at Object.toMatchObject (app/clients/specs/BaseClient.test.js:1928:29)
+
+  ● BaseClient › sendMessage file population › reuses persisted PDF MinerU Markdown context without reading the original file
+
+    expect(received).toContain(expected) // indexOf
+
+    Matcher error: received value must not be null nor undefined
+
+    Received has value: undefined
+
+      2051 |       await TestClient.addFileContextToMessage(message, [fixture.attachment]);
+      2052 |
+    > 2053 |       expect(message.fileContext).toContain(fixture.expectedText);
+           |                                   ^
+      2054 |       expect(getSanSuoFiles).toHaveBeenCalledWith(
+      2055 |         expect.objectContaining({
+      2056 |           userId: 'user-123',
+
+      at toContain (app/clients/specs/BaseClient.test.js:2053:35)
+
+  ● BaseClient › sendMessage file population › retrieves a relevant late MinerU chunk instead of truncating a long PDF prefix
+
+    expect(received).toContain(expected) // indexOf
+
+    Matcher error: received value must not be null nor undefined
+
+    Received has value: undefined
+
+      2095 |       await TestClient.addFileContextToMessage(message, [attachment]);
+      2096 |
+    > 2097 |       expect(message.fileContext).toContain('项目特别预算审批金额为五十万元');
+           |                                   ^
+      2098 |       expect([...TestClient.options.req._sansuoPdfReadSources.values()][0].records.some((r) => r.sourceChunkId === 'mineru-90')).toBe(true);
+      2099 |       expect(message.fileContext).toContain('do not call execute_code');
+      2100 |     });
+
+      at Object.toContain (app/clients/specs/BaseClient.test.js:2097:35)
+
+  ● BaseClient › sendMessage file population › selects a requested PDF page and its neighboring chunks when page metadata exists
+
+    expect(received).toContain(expected) // indexOf
+
+    Matcher error: received value must not be null nor undefined
+
+    Received has value: undefined
+
+      2132 |       await TestClient.addFileContextToMessage(message, [attachment]);
+      2133 |
+    > 2134 |       expect(message.fileContext).toContain('page=73 kind=extracted_text');
+           |                                   ^
+      2135 |       expect([...TestClient.options.req._sansuoPdfReadSources.values()][0].records.some((r) => r.sourceChunkId === 'p73-1')).toBe(true);
+      2136 |       expect(message.fileContext).toContain('第73页的独有条款内容');
+      2137 |       expect(message.fileContext).not.toContain('第1页普通内容');
+
+      at Object.toContain (app/clients/specs/BaseClient.test.js:2134:35)
+
+  ● BaseClient › sendMessage file population › reviews only the requested MinerU page image and ignores extracted figures
+
+    TypeError: Cannot read properties of undefined (reading '1')
+
+      2220 |           String(url).includes('chat/completions'),
+      2221 |         );
+    > 2222 |         const content = JSON.parse(visionCall[1].body).messages[0].content;
+           |                                              ^
+      2223 |         expect(content.filter((item) => item.type === 'image_url')).toHaveLength(1);
+      2224 |         expect(content.find((item) => item.type === 'text')?.text).toContain('页码：73');
+      2225 |         expect(message.fileContext).toContain('原始第73页确认条款');
+
+      at Object.<anonymous> (app/clients/specs/BaseClient.test.js:2222:46)
+
+  ● BaseClient › sendMessage file population › samples the beginning, middle, and end for a whole-document PDF summary
+
+    expect(received).toContain(expected) // indexOf
+
+    Matcher error: received value must not be null nor undefined
+
+    Received has value: undefined
+
+      2273 |       await TestClient.addFileContextToMessage(message, [attachment]);
+      2274 |
+    > 2275 |       expect(message.fileContext).toContain('首段覆盖标记');
+           |                                   ^
+      2276 |       expect(message.fileContext).toContain('中段覆盖标记');
+      2277 |       expect(message.fileContext).toContain('尾段覆盖标记');
+      2278 |     });
+
+      at Object.toContain (app/clients/specs/BaseClient.test.js:2275:35)
+
+  ● BaseClient › sendMessage file population › samples across legacy MinerU Markdown when chunks are unavailable
+
+    expect(received).toContain(expected) // indexOf
+
+    Matcher error: received value must not be null nor undefined
+
+    Received has value: undefined
+
+      2307 |       await TestClient.addFileContextToMessage(message, [attachment]);
+      2308 |
+    > 2309 |       expect(message.fileContext).toContain('旧文档首部标记');
+           |                                   ^
+      2310 |       expect(message.fileContext).toContain('旧文档中部标记');
+      2311 |       expect(message.fileContext).toContain('旧文档尾部标记');
+      2312 |     });
+
+      at Object.toContain (app/clients/specs/BaseClient.test.js:2309:35)
+
+  ● BaseClient › sendMessage file population › answers a ready DOCX from persisted context without forcing execute_code
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      2507 |       expect(completionOptions.sansuoForceCodeTool).toBeUndefined();
+      2508 |       expect(TestClient.options.req.body._sansuoForceCodeTool).not.toBe(true);
+    > 2509 |       expect(TestClient.options.req.body._sansuoPersistedDocxContextReady).toBe(true);
+           |                                                                            ^
+      2510 |       expect(TestClient.options.agent.tools).toEqual(
+      2511 |         expect.arrayContaining([
+      2512 |           'execute_code',
+
+      at Object.toBe (app/clients/specs/BaseClient.test.js:2509:76)
+
+  ● BaseClient › sendMessage file population › answers a ready PDF without execution (follow-up=false)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      2743 |         expect(completionOptions.sansuoForceCodeTool).toBeUndefined();
+      2744 |         expect(TestClient.options.req.body._sansuoForceCodeTool).not.toBe(true);
+    > 2745 |         expect(TestClient.options.req.body._sansuoPersistedPdfContextReady).toBe(true);
+           |                                                                             ^
+      2746 |         expect(TestClient.options.req.body._sansuoTaskRoute).toBeUndefined();
+      2747 |         expect(TestClient.options.agent.tools).toContain('execute_code');
+      2748 |         expect(TestClient.options.agent.toolDefinitions.map((tool) => tool.name)).toContain(
+
+      at toBe (app/clients/specs/BaseClient.test.js:2745:77)
+
+  ● BaseClient › sendMessage file population › answers a ready PDF without execution (follow-up=true)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      2743 |         expect(completionOptions.sansuoForceCodeTool).toBeUndefined();
+      2744 |         expect(TestClient.options.req.body._sansuoForceCodeTool).not.toBe(true);
+    > 2745 |         expect(TestClient.options.req.body._sansuoPersistedPdfContextReady).toBe(true);
+           |                                                                             ^
+      2746 |         expect(TestClient.options.req.body._sansuoTaskRoute).toBeUndefined();
+      2747 |         expect(TestClient.options.agent.tools).toContain('execute_code');
+      2748 |         expect(TestClient.options.agent.toolDefinitions.map((tool) => tool.name)).toContain(
+
+      at toBe (app/clients/specs/BaseClient.test.js:2745:77)
+
+PASS api/server/services/Endpoints/agents/initialize.spec.js (8.954 s)
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       16 failed, 86 passed, 102 total
+Snapshots:   0 total
+Time:        11.736 s
+Ran all test suites within paths "api/app/clients/specs/BaseClient.test.js", "api/server/services/Endpoints/agents/initialize.spec.js".
+Test results written to: evidence/pdf-retrieval-upgrade-20261102/permissions/legacy-baseclient.json
