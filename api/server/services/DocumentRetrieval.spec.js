@@ -83,3 +83,9 @@ test('protection cannot reorder fused scores or exceed a small pool', () => {
   expect(result).toHaveLength(3);
   expect(result.map(h => h.score)).toEqual(result.map(h => h.score).sort((a, b) => b - a));
 });
+test('same page may contain many distinct facts; a page quota alone cannot drop them', () => {
+ const records=Array.from({length:8},(_,i)=>({record:{id:String(i),pageStart:5,text:['太阳能路灯','人口与面积','水资源保护','会议日期','委员读书活动','工业产值','教育学校','铁路运输'][i]},source:'bm25'}));
+ const fused=weightedReciprocalRankFusion([{name:'bm25',results:records}]);
+ const result=protectDiverseCandidates(fused,[{name:'bm25',results:records}],{limit:8,maxPerPage:2});
+ expect(result).toHaveLength(8);
+});

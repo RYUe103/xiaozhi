@@ -10,3 +10,11 @@ test('text and table delivery retain original source reference and coverage',()=
   expect(result.reference).toEqual(reference);expect(result.page_coverage).toEqual([4,5]);
  }
 });
+
+test('exact lookup exposes original matches once and preserves signed continuation and reference', () => {
+ const {compactDocumentResult}=require('./DocumentToolResult');
+ const result={action:'find_exact',content:'original',hits:[{match_text:'original'}],matches:[{match_text:'original',source_offset:4}],continuation_token:'signed',reference:{chunk_id:'c'}};
+ const projected=compactDocumentResult(result);
+ expect(projected.content).toBeUndefined();expect(projected.hits).toBeUndefined();
+ expect(projected.matches).toBe(result.matches);expect(projected.continuation_token).toBe('signed');expect(projected.reference).toBe(result.reference);
+});

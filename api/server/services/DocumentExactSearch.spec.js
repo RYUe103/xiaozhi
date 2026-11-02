@@ -45,3 +45,7 @@ test('signed exact continuation rejects changed query, action, version and revok
  allowed = true; d.version = 'updated';
  expect((await repo.executeAsync(next)).error.code).toBe('DOCUMENT_VERSION_MISMATCH');
 });
+test('repeated adversarial text returns an explicit lower-bound count and supports later windows', () => {
+ const r=exactSearch([record('a'.repeat(12000))],{query:'a',limit:2,offset:10000});
+ expect(r.match_count_exact).toBe(false);expect(r.scan_truncated).toBe(true);expect(r.matches[0].source_offset).toBe(10000);expect(r.next_offset).toBe(10002);
+});

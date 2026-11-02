@@ -24,7 +24,10 @@ function exactSearch(records, args = {}) {
   if (args.pages && (!Array.isArray(args.pages) || args.pages.length > 30 || args.pages.some(p => !Number.isInteger(p) || p < 1))) throw Error('PAGES_INVALID');
   const matches = [];
   let total = 0;
-  for (const record of records) {
+  // Bound adversarial repetition while retaining a truthful lower bound.
+  const countLimit = 10000;
+  let countTruncated = false;
+  scan: for (const record of records) {
     if (args.chunk_id && ![record.chunkId, record.id].includes(args.chunk_id)) continue;
     if (args.pages && !args.pages.some(p => record.pageStart != null && p >= record.pageStart && p <= (record.pageEnd ?? record.pageStart))) continue;
     const source = String(record.text || ''), mapped = searchable(source, mode);
@@ -40,11 +43,12 @@ function exactSearch(records, args = {}) {
             next_action: { action: 'read', chunk_id: record.chunkId || record.id } });
         }
         total++;
+        if (total >= Math.max(countLimit, offset + limit + 1)) { countTruncated = true; break scan; }
       }
       at = mapped.text.indexOf(needle, at + 1);
     }
   }
-  return { matches, match_count: total, returned_count: matches.length, truncated: total > offset + matches.length, next_offset: total > offset + matches.length ? offset + matches.length : null,
+  return { matches, match_count: total, match_count_exact: !countTruncated, scan_truncated: countTruncated, returned_count: matches.length, truncated: total > offset + matches.length || countTruncated, next_offset: total > offset + matches.length ? offset + matches.length : null,
     match_mode: mode, search_scope: 'parsed_original_chunks', cross_chunk_search: false };
 }
 module.exports = { exactSearch, searchable };

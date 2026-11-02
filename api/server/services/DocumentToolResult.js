@@ -1,6 +1,12 @@
 /** Model-facing projection; the full Repository result stays available to references and telemetry. */
 function compactDocumentResult(result) {
   if (!result || typeof result !== 'object') return result;
+  if (result.action === 'find_exact' && !result.error) {
+    // Matches already contain original text, provenance and bounded context.
+    // Avoid sending the same evidence again in content and hits.
+    const { content, hits, ...exact } = result;
+    return exact;
+  }
   if (result.documents)
     return { ...result, documents: result.documents.map(({ page_coverage, ...doc }) => doc) };
   const { retrieval, reference, page_coverage, table, ...body } = result;

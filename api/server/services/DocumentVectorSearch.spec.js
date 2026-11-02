@@ -119,3 +119,18 @@ test('source SHA or parser generation changes invalidate identical-text embeddin
  document.sourceHash='sha2';await provider.search(input);expect(fetchImpl).toHaveBeenCalledTimes(4);
  document.records[0].parser_version='v2';await provider.search(input);expect(fetchImpl).toHaveBeenCalledTimes(6);
 });
+
+test('context prefixes every segment, retains original offset and invalidates its cache version', async () => {
+ const inputs=[],store=new Map();
+ const provider=new DocumentVectorSearch({endpoint:'https://example.invalid',apiKey:'test',model:'embedding',
+  cache:{get:async(k,s)=>store.get(s+k),set:async(k,s,v)=>store.set(s+k,v)},
+  fetchImpl:async(_url,args)=>{const texts=JSON.parse(args.body).input;inputs.push(texts);return {ok:true,json:async()=>({data:texts.map((text,index)=>({index,embedding:text.includes('needle')?[1,0]:[0,1]}))})};}});
+ const original={id:'a',text:'x'.repeat(6000)+'needle'};
+ const document={documentId:'d',records:[original],retrievalRecords:[{...original,retrievalContext:{text:'heading'}}],retrievalIndex:{key:'v1'}};
+ const request={userId:'u',conversationId:'c',document,query:'needle'};
+ const first=await provider.search(request);
+ expect(first[0].source_offset).toBe(6000);expect(inputs[0].every(t=>t.startsWith('heading\n'))).toBe(true);
+ expect(original.text).toBe('x'.repeat(6000)+'needle');
+ const count=inputs.length;await provider.search(request);expect(inputs.length).toBe(count);
+ document.retrievalIndex.key='v2';await provider.search(request);expect(inputs.length).toBe(count+2);
+});

@@ -159,7 +159,7 @@ function protectDiverseCandidates(fused = [], channels = [], { limit = 40, uniqu
     if (!memberships.has(id)) memberships.set(id, new Set());
     memberships.get(id).add(channel.name);
   }
-  const selected = new Set(), pages = new Map(), texts = new Set();
+  const selected = new Set(), pages = new Map(), texts = new Set(), pageTerms = new Map();
   const add = (item, relax = false) => {
     const id = idOf(item);
     if (!id || selected.has(id) || selected.size >= limit) return false;
@@ -168,9 +168,17 @@ function protectDiverseCandidates(fused = [], channels = [], { limit = 40, uniqu
     // Only collapse identical text at the same source location; equal wording on
     // another page can be separate evidence and must retain its provenance.
     const fingerprint = record.text ? hash([record.documentId, record.pageStart, record.pageEnd, record.text]) : id;
-    if (texts.has(fingerprint) || (!relax && page && (pages.get(page) || 0) >= maxPerPage)) return false;
+    if (texts.has(fingerprint)) return false;
+    const terms = new Set(tokenize(record.text || '').slice(0, 2000));
+    const homogeneous = terms.size > 0 && (pageTerms.get(page) || []).some(prior => {
+      let overlap = 0; for (const term of terms) if (prior.has(term)) overlap++;
+      return overlap / (terms.size + prior.size - overlap || 1) >= 0.85;
+    });
+    // Page coincidence alone is NOT redundant evidence. Dense relevant pages
+    // legitimately contain several distinct facts, tables and paragraphs.
+    if (!relax && page && homogeneous && (pages.get(page) || 0) >= maxPerPage) return false;
     selected.add(id); texts.add(fingerprint);
-    if (page) pages.set(page, (pages.get(page) || 0) + 1);
+    if (page) { pages.set(page, (pages.get(page) || 0) + 1); if (!pageTerms.has(page)) pageTerms.set(page, []); pageTerms.get(page).push(terms); }
     return true;
   };
   // Retain half the pool for strongest fused evidence before reservations.

@@ -5,6 +5,7 @@ const root = process.env.SANSUO_JIT_REPO_ROOT, req = createRequire(root + '/api/
 req('module-alias')({ base: root + '/api' });
 const { DocumentArtifactRepository } = req(root + '/api/server/services/DocumentArtifactRepository');
 const { DocumentEvidenceReranker } = req('/tmp/retrieval-upgrade-modules/DocumentEvidenceReranker.js');
+const { DocumentEvidenceReranker: BaselineReranker } = req('/tmp/retrieval-upgrade-modules/BaselineReranker.js');
 const { weightedReciprocalRankFusion, protectDiverseCandidates, reciprocalRankFusion } = req('/tmp/retrieval-upgrade-modules/DocumentRetrieval.js');
 const input = JSON.parse(fs.readFileSync(process.argv[2]));
 const rows = fs.readFileSync(process.argv[3], 'utf8').trim().split('\n').map(JSON.parse);
@@ -29,7 +30,7 @@ const output = { kind: 'real_qwen_tool_level_frozen_trace_rerank', input_sha256:
  for (const [mode, limit] of [['legacy',20],['weighted',40],['weighted',60]]) {
   const channels = [{ name: 'bm25', weight: .75, results: sets.bm25 }, { name: 'vector', weight: 1, results: sets.vector }];
   const candidates = mode === 'legacy' ? reciprocalRankFusion(Object.values(sets)).slice(0,limit) : protectDiverseCandidates(weightedReciprocalRankFusion(channels), [...channels,{name:'keyword',maxProtected:4,results:sets.keyword}],{limit});
-  const events = [], ranker = new DocumentEvidenceReranker({ candidateLimit: limit });
+  const events = [], ranker = new (mode === 'legacy' ? BaselineReranker : DocumentEvidenceReranker)({ candidateLimit: limit });
   const start = Date.now(); const ranked = await ranker.rank(input.question,candidates,{emit:(stage,e)=>events.push({stage,...e})});
   output.runs.push({mode,limit,elapsed_ms:Date.now()-start,usage:ranker.usage, input_sources:candidates.map(h=>h.record.sourceChunkId), delivered_sources:ranked.slice(0,6).map(h=>h.record.sourceChunkId), events});
  }
