@@ -199,3 +199,17 @@ test('C1 font-mapping garbage is suspect and an exact miss cannot claim complete
  const exact=await repo.executeAsync({action:'find_exact',query:'不存在'});
  expect(exact.status).toBe('partial');expect(exact.scope_complete).toBe(false);expect(exact.match_count).toBe(0);
 });
+
+test('ranked search exhaustion never claims to enumerate original-text matches', async () => {
+ const { compactDocumentResult } = require('./DocumentToolResult');
+ const repo = new DocumentArtifactRepository({ userId: 'u', conversationId: 'c', quality: { queryProcessing: false, rerank: false } });
+ const doc = repo.add({ fileId: 'f', records: [{ page: 1, text: 'calibration calibration' }, { page: 2, text: 'calibration' }] });
+ const result = compactDocumentResult(await repo.executeAsync({ action: 'search', document_id: doc.documentId, query: 'calibration', limit: 1 }));
+ expect(result.hits).toHaveLength(1);
+ expect(result.continuation_token).toBeNull();
+ expect(result).toMatchObject({ search_scope: 'ranked_candidates', ordering: 'relevance', match_count: null, match_count_exact: false, continuation_scope: 'selected_evidence_only' });
+ const exact = await repo.executeAsync({ action: 'find_exact', document_id: doc.documentId, query: 'calibration', limit: 1 });
+ expect(exact.match_count).toBe(3);
+ expect(exact.matches[0].page_start).toBe(1);
+ expect(exact.continuation_token).toBeTruthy();
+});

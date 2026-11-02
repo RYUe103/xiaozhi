@@ -619,6 +619,10 @@ class DocumentArtifactRepository {
     const suspectDelivered = delivered.some(r => r.kind !== 'visual_summary' && assessPageTextQuality(r.text) === 'suspect');
     if (suspectDelivered) warnings.push('SOURCE_TEXT_SUSPECT_USE_ORIGINAL_PAGE_VERIFICATION');
     return { ...base, status: suspectDelivered ? 'partial' : base.status, action: effectiveAction, content, excerpted, offset, truncated, next_offset: truncated ? next : null, continuation_token: continuation,
+      ...(['search', 'visual_search'].includes(effectiveAction) ? {
+        search_scope: 'ranked_candidates', ordering: 'relevance', match_count: null, match_count_exact: false,
+        continuation_scope: 'selected_evidence_only',
+      } : {}),
       warnings, table_id: table?.tableId, table: table ? { structure: table.structure, rows: includeTableStructure ? table.rows : undefined,
         cells: includeTableStructure ? deliveryCells : undefined, row_provenance: includeTableStructure ? table.rowProvenance : undefined,
         complete: table.complete, columns: table.columns, source_table_id: table.sourceTableId, selected_row_indexes: table.selectedRowIndexes, total_rows: table.totalRows, selection: table.selection, source_complete: table.sourceComplete } : undefined, page_coverage: document.pageCoverage.filter((p) => args.pages ? args.pages.includes(p.page) : delivered.some((r) => r.pageStart != null && p.page >= r.pageStart && p.page <= r.pageEnd)).slice(0, 60),

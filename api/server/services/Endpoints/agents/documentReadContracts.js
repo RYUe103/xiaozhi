@@ -79,6 +79,7 @@ function createPdfReadContract() {
         'action 支持 list、info、toc、search、find_exact、read、read_table、read_adjacent、visual_page、visual_search、inspect_page；find_exact只查不可变原文并返回真实chunk/page/上下文，视觉摘要与正文分离，续读使用 continuation_token。' +
         '正文或表格不足、乱码、图例不清或需核对原页时，先检索正文或图注定位物理页，再调用本工具 read_parsed_pdf，action=inspect_page，指定 document_id、page、具体 query 和 mode 查看原图；视觉识别不等于已验证全文 OCR。' +
         '多份 PDF 必须使用 list 返回的 document_id；只使用返回的 chunk_id、section_id、table_id 继续读取。' +
+        '逐字定位、按原文顺序列出某短语的出现位置或续列匹配，使用find_exact；query填写待查原话，limit控制本次匹配数。search只返回相关性候选，不枚举出现次数；其continuation_token为空不表示全文匹配已列完。find_exact返回continuation_token时，后续轮次用同action、document_id和该令牌继续，不从旧答案猜后续命中。' +
         'search未命中或返回节选不证明全文不存在；原话数字可find_exact，默认literal保留大小写空格，必要时显式match_mode=nfkc。原文未提供的人数、因果和时态不能靠常识补全；计划与已完成分开，多项事实逐一核对。' +
         '搜索命中页不等于问题已核对：跨页问题应覆盖所有子问题，需要时read_adjacent；continuation_token表示证据尚有续文。证据充分时直接回答，避免重复相同读取。' +
         'inspect_page的status=ok仅说明输出结构完整，并非独立事实验证；partial、uncertainties或unavailable不得用于确定性补全图例、数字或单位。不清楚时说明限制，不能猜测。' +
@@ -90,6 +91,7 @@ function createPdfReadContract() {
           action: {
             type: 'string',
             enum: ['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page'],
+            description: 'search发现相关证据；find_exact按解析原文顺序逐字匹配和分页；read/read_adjacent核对正文；inspect_page核对原图。',
           },
           document_id: { type: 'string' },
           query: { type: 'string' },
