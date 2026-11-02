@@ -37,3 +37,49 @@ describe('DocumentRetrieval', () => {
     expect(fused[0].ranks).toEqual({ keyword: 1, bm25: 1 });
   });
 });
+
+const { weightedReciprocalRankFusion, protectDiverseCandidates } = require('./DocumentRetrieval');
+
+const hit = (id, page, source) => ({ record: { id, pageStart: page, text: id }, rank: 1, source });
+
+test('weighted RRF does not double count keyword and BM25 unless explicitly supplied', () => {
+  const result = weightedReciprocalRankFusion([
+    { name: 'bm25', weight: 0.75, results: [hit('lexical', 1, 'bm25')] },
+    { name: 'vector', weight: 1, results: [hit('semantic', 2, 'vector')] },
+  ]);
+  expect(result.map(x => x.record.id)).toEqual(['semantic', 'lexical']);
+  expect(result[0].score).toBeGreaterThan(result[1].score);
+});
+
+test('candidate protection preserves exclusive same-page evidence without underfilling', () => {
+  const vector = Array.from({ length: 10 }, (_, i) => hit(`v${i}`, 87, 'vector'));
+  const bm25 = [hit('b-unique', 82, 'bm25'), hit('v0', 87, 'bm25')];
+  const fused = weightedReciprocalRankFusion([
+    { name: 'bm25', weight: 0.75, results: bm25 },
+    { name: 'vector', weight: 1, results: vector },
+  ]);
+  const result = protectDiverseCandidates(fused, [
+    { name: 'bm25', results: bm25 }, { name: 'vector', results: vector },
+  ], { limit: 6, uniquePerChannel: 2, maxPerPage: 2 });
+  expect(result.map(x => x.record.id)).toContain('b-unique');
+  expect(result).toHaveLength(6);
+  expect(new Set(result.map(x => x.record.id)).size).toBe(6);
+  expect(result.every(x => Number.isFinite(x.score) && x.ranks)).toBe(true);
+});
+
+test('duplicate channel results never add votes and invalid weights are rejected', () => {
+  const a = hit('a', 1, 'vector');
+  const result = weightedReciprocalRankFusion([{ name: 'vector', results: [a, a] }]);
+  expect(result[0].score).toBeCloseTo(1 / 61);
+  expect(result[0].ranks.vector).toBe(1);
+  expect(() => weightedReciprocalRankFusion([], { k: -1 })).toThrow('INVALID_RRF_K');
+  expect(() => weightedReciprocalRankFusion([{ weight: Infinity }])).toThrow('INVALID_RRF_WEIGHT');
+});
+
+test('protection cannot reorder fused scores or exceed a small pool', () => {
+  const channels = ['bm25', 'vector'].map(name => ({ name, results: Array.from({ length: 20 }, (_, i) => hit(name + i, i, name)) }));
+  const fused = weightedReciprocalRankFusion(channels);
+  const result = protectDiverseCandidates(fused, channels, { limit: 3 });
+  expect(result).toHaveLength(3);
+  expect(result.map(h => h.score)).toEqual(result.map(h => h.score).sort((a, b) => b - a));
+});

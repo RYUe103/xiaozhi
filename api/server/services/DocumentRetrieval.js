@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const CJK = /[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]/;
 const segmenter = typeof Intl.Segmenter === 'function' ? new Intl.Segmenter('zh', { granularity: 'word' }) : null;
 const hash = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
-const INDEX_VERSION = 'jit-lexical-v2';
+const INDEX_VERSION = 'jit-lexical-v3-context';
 const normalized = (value) => String(value || '').normalize('NFKC').toLowerCase();
 
 function tokenize(value = '') {
@@ -37,7 +37,7 @@ class DocumentLexicalIndex {
     this.lengths = [];
     this.kinds = new Map();
     records.forEach((record, index) => {
-      const value = frequencies?.[index] || frequency(record.text);
+      const value = frequencies?.[index] || frequency(record.indexText ?? record.text);
       this.lengths.push(value.length);
       for (const [term, count] of value.counts) {
         if (!this.postings.has(term)) this.postings.set(term, new Map());
@@ -56,10 +56,10 @@ class DocumentLexicalIndex {
     // Bound concurrency and Mongo request size; unchanged records reuse their per-content index.
     for (let start = 0; start < records.length; start += 32) {
       const batch = await Promise.all(records.slice(start, start + 32).map(async (record) => {
-        const key = hash([scope, record.id, record.kind, record.text]);
+        const key = hash([scope, record.id, record.kind, record.text, record.retrievalContext?.key, record.indexText]);
         const stored = await cache?.get(key, scope);
         if (validFrequency(stored)) { reused++; return stored; }
-        const value = frequency(record.text); updated++;
+        const value = frequency(record.indexText ?? record.text); updated++;
         await cache?.set(key, scope, value);
         return value;
       }));
@@ -118,6 +118,81 @@ function reciprocalRankFusion(resultSets = [], options = {}) {
   }
   return [...byId.values()].sort((a, b) => b.score - a.score || String(a.record.id).localeCompare(String(b.record.id)));
 }
+/** Weighted fusion for independent retrieval channels.  Keyword is intentionally
+ * kept out of this helper's default callers when it duplicates BM25 postings. */
+function weightedReciprocalRankFusion(channels = [], { k = 60 } = {}) {
+  if (!Number.isFinite(k) || k < 0) throw new TypeError('INVALID_RRF_K');
+  const byId = new Map();
+  for (const channel of channels) {
+    const weight = Number(channel.weight ?? 1);
+    if (!Number.isFinite(weight) || weight < 0) throw new TypeError('INVALID_RRF_WEIGHT');
+    if (!weight) continue;
+    for (const [rank, item] of (channel.results || []).entries()) {
+      const id = item.record?.id || item.record?.chunkId || item.record?.sourceRecordId;
+      if (!id) continue;
+      const entry = byId.get(id) || { record: item.record, score: 0, sources: [], ranks: {} };
+      const source = channel.name || item.source || 'unknown';
+      // A repeated result (or repeated channel) is not an independent vote.
+      if (!entry.sources.includes(source)) {
+        entry.score += weight / (k + rank + 1);
+        entry.sources.push(source);
+        entry.ranks[source] = rank + 1;
+      }
+      byId.set(id, entry);
+    }
+  }
+  return [...byId.values()].sort((a, b) => b.score - a.score || String(a.record.id).localeCompare(String(b.record.id)));
+}
+
+/** Reserve a bounded share for exclusive channel evidence, preserving fused
+ * scores and order. Page diversity is soft: it never leaves an underfilled pool.
+ * Protection affects reranker INPUT only, not the final answer ranking. */
+function protectDiverseCandidates(fused = [], channels = [], { limit = 40, uniquePerChannel, maxPerPage = 4 } = {}) {
+  limit = Math.min(60, Math.max(1, Math.floor(limit)));
+  maxPerPage = Math.max(1, Math.floor(maxPerPage));
+  const idOf = item => item.record?.id || item.record?.chunkId;
+  const pool = new Map(fused.map(item => [idOf(item), item]));
+  const memberships = new Map();
+  for (const channel of channels) for (const item of channel.results || []) {
+    const id = idOf(item);
+    if (!id) continue;
+    if (!memberships.has(id)) memberships.set(id, new Set());
+    memberships.get(id).add(channel.name);
+  }
+  const selected = new Set(), pages = new Map(), texts = new Set();
+  const add = (item, relax = false) => {
+    const id = idOf(item);
+    if (!id || selected.has(id) || selected.size >= limit) return false;
+    const record = item.record;
+    const page = record.pageStart == null ? null : JSON.stringify([record.documentId, record.pageStart]);
+    // Only collapse identical text at the same source location; equal wording on
+    // another page can be separate evidence and must retain its provenance.
+    const fingerprint = record.text ? hash([record.documentId, record.pageStart, record.pageEnd, record.text]) : id;
+    if (texts.has(fingerprint) || (!relax && page && (pages.get(page) || 0) >= maxPerPage)) return false;
+    selected.add(id); texts.add(fingerprint);
+    if (page) pages.set(page, (pages.get(page) || 0) + 1);
+    return true;
+  };
+  // Retain half the pool for strongest fused evidence before reservations.
+  for (const item of fused) { if (selected.size >= Math.ceil(limit / 2)) break; add(item); }
+  const quota = Math.min(uniquePerChannel ?? Math.floor(limit / Math.max(4, channels.length * 2)), Math.floor(limit / 4));
+  // Round-robin avoids the first channel consuming all reserved capacity.
+  const exclusive = channels.map(channel => (channel.results || []).filter(item =>
+    memberships.get(idOf(item))?.size === 1 &&
+    (channel.name !== 'vector' || item.score == null || item.score > 0))
+    .slice(0, channel.maxProtected ?? quota));
+  for (let rank = 0; rank < quota; rank++) for (let c = 0; c < exclusive.length; c++) {
+    const item = exclusive[c][rank];
+    if (!item) continue;
+    const id = idOf(item);
+    // Keyword supplements retain provenance but do not receive a duplicate RRF vote.
+    if (!pool.has(id)) pool.set(id, { record: item.record, score: 0, sources: [channels[c].name], ranks: { [channels[c].name]: rank + 1 } });
+    add(pool.get(id), true);
+  }
+  for (const item of pool.values()) add(item);
+  for (const item of pool.values()) add(item, true);
+  return [...pool.values()].filter(item => selected.has(idOf(item)));
+}
 function searchRecords(records = [], query = '', options = {}) {
   const index = options.index || new DocumentLexicalIndex(records);
   const result = index.search(query);
@@ -140,4 +215,4 @@ function createMongoLexicalCache(mongoose) {
     async set(key, scope, frequencies) { await (await ready()).updateOne({ key, scope }, { $set: { frequencies, expiresAt: new Date(Date.now() + 7 * 86400000) } }, { upsert: true }); },
   };
 }
-module.exports = { tokenizeQuery, tokenize, keywordScore, keywordSearch, bm25Search, reciprocalRankFusion, searchRecords, DocumentLexicalIndex, createMongoLexicalCache };
+module.exports = { tokenizeQuery, tokenize, keywordScore, keywordSearch, bm25Search, reciprocalRankFusion, weightedReciprocalRankFusion, protectDiverseCandidates, searchRecords, DocumentLexicalIndex, createMongoLexicalCache };

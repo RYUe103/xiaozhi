@@ -90,3 +90,18 @@ describe('Semantic ranking safeguards', () => {
      expect(line).not.toContain('private-scope');
    } finally { spy.mockRestore(); if (previous === undefined) delete process.env.SANSUO_JIT_TRACE; else process.env.SANSUO_JIT_TRACE = previous; }
  });
+
+test('reranker sees the configured 60 candidates and treats length output as partial fallback', async () => {
+ const {DocumentEvidenceReranker}=require('./DocumentEvidenceReranker'); const old={...process.env};
+ process.env.QWEN_BASE_URL='https://example.invalid'; process.env.QWEN_API_KEY='test-only';
+ const candidates=Array.from({length:60},(_,i)=>({record:{id:String(i),text:'original evidence'}}));
+ const events=[];
+ try {
+  const ranker=new DocumentEvidenceReranker({candidateLimit:60,fetchImpl:async(_url,args)=>{
+   const body=JSON.parse(args.body);expect(JSON.parse(body.messages[1].content).candidates).toHaveLength(60);
+   return {ok:true,json:async()=>({choices:[{finish_reason:'length',message:{content:'{"ranking":[59,0]}'}}],usage:{total_tokens:12}})};
+  }});
+  expect(await ranker.rank('question',candidates,{emit:(_stage,e)=>events.push(e)})).toBe(candidates);
+  expect(events[0].warning).toBe('RERANK_PARTIAL'); expect(ranker.usage.total_tokens).toBe(12);
+ } finally {process.env=old;}
+});
