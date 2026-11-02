@@ -1,0 +1,1787 @@
+{
+  "scope": "isolated evaluation; accounting records, not complete provider billing",
+  "results": [
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_001",
+      "conversationId": "6091743b-fbbd-4753-a5dc-39fd8709b00d",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3291,
+          "tokenValue": -115.18500000000002,
+          "messageId": "5f792e76-9cd4-4df0-8646-acb24794efe4",
+          "createdAt": "2026-11-02T03:22:11.658Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -153,
+          "tokenValue": -21.114,
+          "messageId": "5f792e76-9cd4-4df0-8646-acb24794efe4",
+          "createdAt": "2026-11-02T03:22:11.658Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -5898,
+          "tokenValue": -206.43,
+          "messageId": "5f792e76-9cd4-4df0-8646-acb24794efe4",
+          "createdAt": "2026-11-02T03:22:11.658Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -144,
+          "tokenValue": -19.872,
+          "messageId": "5f792e76-9cd4-4df0-8646-acb24794efe4",
+          "createdAt": "2026-11-02T03:22:11.658Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -6717,
+          "tokenValue": -235.09500000000003,
+          "messageId": "5f792e76-9cd4-4df0-8646-acb24794efe4",
+          "createdAt": "2026-11-02T03:22:11.658Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -168,
+          "tokenValue": -23.184,
+          "messageId": "5f792e76-9cd4-4df0-8646-acb24794efe4",
+          "createdAt": "2026-11-02T03:22:11.658Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -8696,
+          "tokenValue": -304.36,
+          "messageId": "5f792e76-9cd4-4df0-8646-acb24794efe4",
+          "createdAt": "2026-11-02T03:22:11.658Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -285,
+          "tokenValue": -39.330000000000005,
+          "messageId": "5f792e76-9cd4-4df0-8646-acb24794efe4",
+          "createdAt": "2026-11-02T03:22:11.658Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "6091743b-fbbd-4753-a5dc-39fd8709b00d",
+          "documents": 1,
+          "elapsedMs": 34,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_002",
+      "conversationId": "8d0b3aa8-2812-464f-bef2-dff4a7733f8c",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3301,
+          "tokenValue": -115.53500000000001,
+          "messageId": "dd563e3a-d9e4-409c-acce-8fc803c2446f",
+          "createdAt": "2026-11-02T03:22:43.994Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -205,
+          "tokenValue": -28.290000000000003,
+          "messageId": "dd563e3a-d9e4-409c-acce-8fc803c2446f",
+          "createdAt": "2026-11-02T03:22:43.994Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -5476,
+          "tokenValue": -191.66000000000003,
+          "messageId": "dd563e3a-d9e4-409c-acce-8fc803c2446f",
+          "createdAt": "2026-11-02T03:22:43.994Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -321,
+          "tokenValue": -44.298,
+          "messageId": "dd563e3a-d9e4-409c-acce-8fc803c2446f",
+          "createdAt": "2026-11-02T03:22:43.994Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "8d0b3aa8-2812-464f-bef2-dff4a7733f8c",
+          "documents": 1,
+          "elapsedMs": 17,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_003",
+      "conversationId": "ace67711-36c8-4ff2-8d64-81c3747359af",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3298,
+          "tokenValue": -115.43,
+          "messageId": "4064079e-eeca-44f1-b894-047f89ac0c0e",
+          "createdAt": "2026-11-02T03:23:33.536Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -229,
+          "tokenValue": -31.602000000000004,
+          "messageId": "4064079e-eeca-44f1-b894-047f89ac0c0e",
+          "createdAt": "2026-11-02T03:23:33.537Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -5727,
+          "tokenValue": -200.44500000000002,
+          "messageId": "4064079e-eeca-44f1-b894-047f89ac0c0e",
+          "createdAt": "2026-11-02T03:23:33.537Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -811,
+          "tokenValue": -111.918,
+          "messageId": "4064079e-eeca-44f1-b894-047f89ac0c0e",
+          "createdAt": "2026-11-02T03:23:33.537Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -6116,
+          "tokenValue": -214.06000000000003,
+          "messageId": "4064079e-eeca-44f1-b894-047f89ac0c0e",
+          "createdAt": "2026-11-02T03:23:33.537Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -543,
+          "tokenValue": -74.93400000000001,
+          "messageId": "4064079e-eeca-44f1-b894-047f89ac0c0e",
+          "createdAt": "2026-11-02T03:23:33.537Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "ace67711-36c8-4ff2-8d64-81c3747359af",
+          "documents": 1,
+          "elapsedMs": 13,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_004",
+      "conversationId": "09e86e67-bddd-4094-8c9b-fb22c1523133",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3296,
+          "tokenValue": -115.36000000000001,
+          "messageId": "e267a25f-db86-45c7-b442-b1e674e06125",
+          "createdAt": "2026-11-02T03:24:04.364Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -158,
+          "tokenValue": -21.804000000000002,
+          "messageId": "e267a25f-db86-45c7-b442-b1e674e06125",
+          "createdAt": "2026-11-02T03:24:04.364Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -6693,
+          "tokenValue": -234.25500000000002,
+          "messageId": "e267a25f-db86-45c7-b442-b1e674e06125",
+          "createdAt": "2026-11-02T03:24:04.364Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -228,
+          "tokenValue": -31.464000000000002,
+          "messageId": "e267a25f-db86-45c7-b442-b1e674e06125",
+          "createdAt": "2026-11-02T03:24:04.364Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -7486,
+          "tokenValue": -262.01000000000005,
+          "messageId": "e267a25f-db86-45c7-b442-b1e674e06125",
+          "createdAt": "2026-11-02T03:24:04.364Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -179,
+          "tokenValue": -24.702,
+          "messageId": "e267a25f-db86-45c7-b442-b1e674e06125",
+          "createdAt": "2026-11-02T03:24:04.364Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "09e86e67-bddd-4094-8c9b-fb22c1523133",
+          "documents": 1,
+          "elapsedMs": 14,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_005",
+      "conversationId": "ea3d5661-7ca2-4c98-be1c-45cae99b4784",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3304,
+          "tokenValue": -115.64000000000001,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.696Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -158,
+          "tokenValue": -21.804000000000002,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.697Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -5573,
+          "tokenValue": -195.055,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.697Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -142,
+          "tokenValue": -19.596,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.697Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -6385,
+          "tokenValue": -223.47500000000002,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.697Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -140,
+          "tokenValue": -19.32,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.697Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -8505,
+          "tokenValue": -297.675,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.697Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -141,
+          "tokenValue": -19.458000000000002,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.697Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -10599,
+          "tokenValue": -370.96500000000003,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.697Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -144,
+          "tokenValue": -19.872,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.697Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -12749,
+          "tokenValue": -446.21500000000003,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.697Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -267,
+          "tokenValue": -36.846000000000004,
+          "messageId": "b3e6a454-e608-4671-8b26-4dcd6f8fc5ad",
+          "createdAt": "2026-11-02T03:24:47.697Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "ea3d5661-7ca2-4c98-be1c-45cae99b4784",
+          "documents": 1,
+          "elapsedMs": 11,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_006",
+      "conversationId": "58a1126b-55d9-482c-bd5d-426c3acea2ab",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3302,
+          "tokenValue": -115.57000000000001,
+          "messageId": "0b917881-9d66-4212-8864-53a1cf956c54",
+          "createdAt": "2026-11-02T03:25:20.228Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -158,
+          "tokenValue": -21.804000000000002,
+          "messageId": "0b917881-9d66-4212-8864-53a1cf956c54",
+          "createdAt": "2026-11-02T03:25:20.228Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -6902,
+          "tokenValue": -241.57000000000002,
+          "messageId": "0b917881-9d66-4212-8864-53a1cf956c54",
+          "createdAt": "2026-11-02T03:25:20.228Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -504,
+          "tokenValue": -69.552,
+          "messageId": "0b917881-9d66-4212-8864-53a1cf956c54",
+          "createdAt": "2026-11-02T03:25:20.228Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "58a1126b-55d9-482c-bd5d-426c3acea2ab",
+          "documents": 1,
+          "elapsedMs": 14,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_007",
+      "conversationId": "3ecbd774-352c-4b77-b655-badc03855a44",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3306,
+          "tokenValue": -115.71000000000001,
+          "messageId": "ce684842-a2a5-43bd-8688-612f4fb8c437",
+          "createdAt": "2026-11-02T03:26:15.786Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -229,
+          "tokenValue": -31.602000000000004,
+          "messageId": "ce684842-a2a5-43bd-8688-612f4fb8c437",
+          "createdAt": "2026-11-02T03:26:15.786Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -7556,
+          "tokenValue": -264.46000000000004,
+          "messageId": "ce684842-a2a5-43bd-8688-612f4fb8c437",
+          "createdAt": "2026-11-02T03:26:15.786Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -1364,
+          "tokenValue": -188.23200000000003,
+          "messageId": "ce684842-a2a5-43bd-8688-612f4fb8c437",
+          "createdAt": "2026-11-02T03:26:15.786Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "3ecbd774-352c-4b77-b655-badc03855a44",
+          "documents": 1,
+          "elapsedMs": 14,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_008",
+      "conversationId": "7d9bc88a-a435-4f30-acbf-1b0977dc2af3",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3312,
+          "tokenValue": -115.92000000000002,
+          "messageId": "76d0a083-ce2f-4cd9-b896-0b649539b382",
+          "createdAt": "2026-11-02T03:27:43.128Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -211,
+          "tokenValue": -29.118000000000002,
+          "messageId": "76d0a083-ce2f-4cd9-b896-0b649539b382",
+          "createdAt": "2026-11-02T03:27:43.128Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -7950,
+          "tokenValue": -278.25,
+          "messageId": "76d0a083-ce2f-4cd9-b896-0b649539b382",
+          "createdAt": "2026-11-02T03:27:43.128Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -2846,
+          "tokenValue": -392.74800000000005,
+          "messageId": "76d0a083-ce2f-4cd9-b896-0b649539b382",
+          "createdAt": "2026-11-02T03:27:43.128Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "7d9bc88a-a435-4f30-acbf-1b0977dc2af3",
+          "documents": 1,
+          "elapsedMs": 12,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_009",
+      "conversationId": "0bcd47c1-4b42-4fce-9b79-0030ed619e76",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3307,
+          "tokenValue": -115.745,
+          "messageId": "0850715f-d2d3-4fc8-9ae6-3df7cd6d963a",
+          "createdAt": "2026-11-02T03:29:11.243Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -280,
+          "tokenValue": -38.64,
+          "messageId": "0850715f-d2d3-4fc8-9ae6-3df7cd6d963a",
+          "createdAt": "2026-11-02T03:29:11.243Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -9680,
+          "tokenValue": -338.8,
+          "messageId": "0850715f-d2d3-4fc8-9ae6-3df7cd6d963a",
+          "createdAt": "2026-11-02T03:29:11.244Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -864,
+          "tokenValue": -119.23200000000001,
+          "messageId": "0850715f-d2d3-4fc8-9ae6-3df7cd6d963a",
+          "createdAt": "2026-11-02T03:29:11.244Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -11370,
+          "tokenValue": -397.95000000000005,
+          "messageId": "0850715f-d2d3-4fc8-9ae6-3df7cd6d963a",
+          "createdAt": "2026-11-02T03:29:11.244Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -325,
+          "tokenValue": -44.85,
+          "messageId": "0850715f-d2d3-4fc8-9ae6-3df7cd6d963a",
+          "createdAt": "2026-11-02T03:29:11.244Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -13894,
+          "tokenValue": -486.29,
+          "messageId": "0850715f-d2d3-4fc8-9ae6-3df7cd6d963a",
+          "createdAt": "2026-11-02T03:29:11.244Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -163,
+          "tokenValue": -22.494000000000003,
+          "messageId": "0850715f-d2d3-4fc8-9ae6-3df7cd6d963a",
+          "createdAt": "2026-11-02T03:29:11.244Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -14707,
+          "tokenValue": -514.745,
+          "messageId": "0850715f-d2d3-4fc8-9ae6-3df7cd6d963a",
+          "createdAt": "2026-11-02T03:29:11.244Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -1883,
+          "tokenValue": -259.85400000000004,
+          "messageId": "0850715f-d2d3-4fc8-9ae6-3df7cd6d963a",
+          "createdAt": "2026-11-02T03:29:11.244Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "0bcd47c1-4b42-4fce-9b79-0030ed619e76",
+          "documents": 1,
+          "elapsedMs": 12,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_010",
+      "conversationId": "936a09c2-d002-4414-89ea-3a9da786ee85",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3300,
+          "tokenValue": -115.50000000000001,
+          "messageId": "e70cbc55-a467-4291-924f-c82a4ce0d466",
+          "createdAt": "2026-11-02T03:29:59.633Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -173,
+          "tokenValue": -23.874000000000002,
+          "messageId": "e70cbc55-a467-4291-924f-c82a4ce0d466",
+          "createdAt": "2026-11-02T03:29:59.633Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -6812,
+          "tokenValue": -238.42000000000002,
+          "messageId": "e70cbc55-a467-4291-924f-c82a4ce0d466",
+          "createdAt": "2026-11-02T03:29:59.633Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -1288,
+          "tokenValue": -177.74400000000003,
+          "messageId": "e70cbc55-a467-4291-924f-c82a4ce0d466",
+          "createdAt": "2026-11-02T03:29:59.633Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "936a09c2-d002-4414-89ea-3a9da786ee85",
+          "documents": 1,
+          "elapsedMs": 20,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_011",
+      "conversationId": "1a99e7da-14d1-46a0-92a1-ee7cc239f02e",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3301,
+          "tokenValue": -115.53500000000001,
+          "messageId": "798739ea-aa1c-4b4c-a2c8-f9058f61d61e",
+          "createdAt": "2026-11-02T03:30:55.312Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -148,
+          "tokenValue": -20.424000000000003,
+          "messageId": "798739ea-aa1c-4b4c-a2c8-f9058f61d61e",
+          "createdAt": "2026-11-02T03:30:55.313Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -6732,
+          "tokenValue": -235.62000000000003,
+          "messageId": "798739ea-aa1c-4b4c-a2c8-f9058f61d61e",
+          "createdAt": "2026-11-02T03:30:55.313Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -237,
+          "tokenValue": -32.706,
+          "messageId": "798739ea-aa1c-4b4c-a2c8-f9058f61d61e",
+          "createdAt": "2026-11-02T03:30:55.313Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -7623,
+          "tokenValue": -266.805,
+          "messageId": "798739ea-aa1c-4b4c-a2c8-f9058f61d61e",
+          "createdAt": "2026-11-02T03:30:55.313Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -125,
+          "tokenValue": -17.25,
+          "messageId": "798739ea-aa1c-4b4c-a2c8-f9058f61d61e",
+          "createdAt": "2026-11-02T03:30:55.313Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -8511,
+          "tokenValue": -297.88500000000005,
+          "messageId": "798739ea-aa1c-4b4c-a2c8-f9058f61d61e",
+          "createdAt": "2026-11-02T03:30:55.313Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -1281,
+          "tokenValue": -176.77800000000002,
+          "messageId": "798739ea-aa1c-4b4c-a2c8-f9058f61d61e",
+          "createdAt": "2026-11-02T03:30:55.313Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "1a99e7da-14d1-46a0-92a1-ee7cc239f02e",
+          "documents": 1,
+          "elapsedMs": 14,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_012",
+      "conversationId": "4f40e97d-250d-4c33-b292-7334c08e2a00",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3295,
+          "tokenValue": -115.32500000000002,
+          "messageId": "03cb4102-4e69-4154-bca2-3dd840a83aa9",
+          "createdAt": "2026-11-02T03:31:58.663Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -189,
+          "tokenValue": -26.082,
+          "messageId": "03cb4102-4e69-4154-bca2-3dd840a83aa9",
+          "createdAt": "2026-11-02T03:31:58.663Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -5796,
+          "tokenValue": -202.86,
+          "messageId": "03cb4102-4e69-4154-bca2-3dd840a83aa9",
+          "createdAt": "2026-11-02T03:31:58.663Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -922,
+          "tokenValue": -127.236,
+          "messageId": "03cb4102-4e69-4154-bca2-3dd840a83aa9",
+          "createdAt": "2026-11-02T03:31:58.663Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -8401,
+          "tokenValue": -294.035,
+          "messageId": "03cb4102-4e69-4154-bca2-3dd840a83aa9",
+          "createdAt": "2026-11-02T03:31:58.663Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -1246,
+          "tokenValue": -171.948,
+          "messageId": "03cb4102-4e69-4154-bca2-3dd840a83aa9",
+          "createdAt": "2026-11-02T03:31:58.663Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "4f40e97d-250d-4c33-b292-7334c08e2a00",
+          "documents": 1,
+          "elapsedMs": 14,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_013",
+      "conversationId": "08edb61b-cfca-4ab4-afb9-dc9f973cd1c6",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3303,
+          "tokenValue": -115.605,
+          "messageId": "e5bfa7b9-29ca-472e-b98b-8b3c31fb5249",
+          "createdAt": "2026-11-02T03:32:42.909Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -151,
+          "tokenValue": -20.838,
+          "messageId": "e5bfa7b9-29ca-472e-b98b-8b3c31fb5249",
+          "createdAt": "2026-11-02T03:32:42.909Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -6678,
+          "tokenValue": -233.73000000000002,
+          "messageId": "e5bfa7b9-29ca-472e-b98b-8b3c31fb5249",
+          "createdAt": "2026-11-02T03:32:42.909Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -137,
+          "tokenValue": -18.906000000000002,
+          "messageId": "e5bfa7b9-29ca-472e-b98b-8b3c31fb5249",
+          "createdAt": "2026-11-02T03:32:42.909Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -7455,
+          "tokenValue": -260.925,
+          "messageId": "e5bfa7b9-29ca-472e-b98b-8b3c31fb5249",
+          "createdAt": "2026-11-02T03:32:42.909Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -969,
+          "tokenValue": -133.722,
+          "messageId": "e5bfa7b9-29ca-472e-b98b-8b3c31fb5249",
+          "createdAt": "2026-11-02T03:32:42.909Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "08edb61b-cfca-4ab4-afb9-dc9f973cd1c6",
+          "documents": 1,
+          "elapsedMs": 14,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_014",
+      "conversationId": "baa2f765-ff05-4c56-afb3-edd216ba1e90",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3303,
+          "tokenValue": -115.605,
+          "messageId": "23017815-9149-4caf-a5ab-2b5c88b9b859",
+          "createdAt": "2026-11-02T03:33:29.834Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -198,
+          "tokenValue": -27.324,
+          "messageId": "23017815-9149-4caf-a5ab-2b5c88b9b859",
+          "createdAt": "2026-11-02T03:33:29.835Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -5727,
+          "tokenValue": -200.44500000000002,
+          "messageId": "23017815-9149-4caf-a5ab-2b5c88b9b859",
+          "createdAt": "2026-11-02T03:33:29.835Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -211,
+          "tokenValue": -29.118000000000002,
+          "messageId": "23017815-9149-4caf-a5ab-2b5c88b9b859",
+          "createdAt": "2026-11-02T03:33:29.835Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -7355,
+          "tokenValue": -257.425,
+          "messageId": "23017815-9149-4caf-a5ab-2b5c88b9b859",
+          "createdAt": "2026-11-02T03:33:29.835Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -551,
+          "tokenValue": -76.03800000000001,
+          "messageId": "23017815-9149-4caf-a5ab-2b5c88b9b859",
+          "createdAt": "2026-11-02T03:33:29.835Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "baa2f765-ff05-4c56-afb3-edd216ba1e90",
+          "documents": 1,
+          "elapsedMs": 29,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_015",
+      "conversationId": "c2bc5080-9686-4f97-a60a-d3fa015002a5",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3307,
+          "tokenValue": -115.745,
+          "messageId": "12de7c0e-354d-4799-8143-6df6bd6f2c92",
+          "createdAt": "2026-11-02T03:34:44.463Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -313,
+          "tokenValue": -43.194,
+          "messageId": "12de7c0e-354d-4799-8143-6df6bd6f2c92",
+          "createdAt": "2026-11-02T03:34:44.463Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -5761,
+          "tokenValue": -201.63500000000002,
+          "messageId": "12de7c0e-354d-4799-8143-6df6bd6f2c92",
+          "createdAt": "2026-11-02T03:34:44.463Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -2058,
+          "tokenValue": -284.004,
+          "messageId": "12de7c0e-354d-4799-8143-6df6bd6f2c92",
+          "createdAt": "2026-11-02T03:34:44.463Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "c2bc5080-9686-4f97-a60a-d3fa015002a5",
+          "documents": 1,
+          "elapsedMs": 12,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_016",
+      "conversationId": "6afa8083-878d-44c2-9a4d-3c717d91eff2",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3317,
+          "tokenValue": -116.09500000000001,
+          "messageId": "690df209-8cbc-4f5a-bb33-4420232b4990",
+          "createdAt": "2026-11-02T03:35:23.779Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -180,
+          "tokenValue": -24.840000000000003,
+          "messageId": "690df209-8cbc-4f5a-bb33-4420232b4990",
+          "createdAt": "2026-11-02T03:35:23.779Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -5860,
+          "tokenValue": -205.10000000000002,
+          "messageId": "690df209-8cbc-4f5a-bb33-4420232b4990",
+          "createdAt": "2026-11-02T03:35:23.779Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -647,
+          "tokenValue": -89.286,
+          "messageId": "690df209-8cbc-4f5a-bb33-4420232b4990",
+          "createdAt": "2026-11-02T03:35:23.779Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "6afa8083-878d-44c2-9a4d-3c717d91eff2",
+          "documents": 1,
+          "elapsedMs": 15,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_017",
+      "conversationId": "4763c001-509e-4951-ad05-26378d7979f8",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3320,
+          "tokenValue": -116.20000000000002,
+          "messageId": "fb255561-4b05-4ffc-8d07-91260d4bff1c",
+          "createdAt": "2026-11-02T03:36:06.932Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -162,
+          "tokenValue": -22.356,
+          "messageId": "fb255561-4b05-4ffc-8d07-91260d4bff1c",
+          "createdAt": "2026-11-02T03:36:06.932Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -6341,
+          "tokenValue": -221.93500000000003,
+          "messageId": "fb255561-4b05-4ffc-8d07-91260d4bff1c",
+          "createdAt": "2026-11-02T03:36:06.932Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -702,
+          "tokenValue": -96.876,
+          "messageId": "fb255561-4b05-4ffc-8d07-91260d4bff1c",
+          "createdAt": "2026-11-02T03:36:06.932Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "4763c001-509e-4951-ad05-26378d7979f8",
+          "documents": 1,
+          "elapsedMs": 12,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_018",
+      "conversationId": "257f7c6c-5c57-40a4-8be3-ce1b1ca9ad85",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3300,
+          "tokenValue": -115.50000000000001,
+          "messageId": "324830b1-3215-45cd-a2e1-cbccf6a296a6",
+          "createdAt": "2026-11-02T03:36:55.956Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -160,
+          "tokenValue": -22.080000000000002,
+          "messageId": "324830b1-3215-45cd-a2e1-cbccf6a296a6",
+          "createdAt": "2026-11-02T03:36:55.957Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -5198,
+          "tokenValue": -181.93,
+          "messageId": "324830b1-3215-45cd-a2e1-cbccf6a296a6",
+          "createdAt": "2026-11-02T03:36:55.957Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -185,
+          "tokenValue": -25.53,
+          "messageId": "324830b1-3215-45cd-a2e1-cbccf6a296a6",
+          "createdAt": "2026-11-02T03:36:55.957Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -7692,
+          "tokenValue": -269.22,
+          "messageId": "324830b1-3215-45cd-a2e1-cbccf6a296a6",
+          "createdAt": "2026-11-02T03:36:55.957Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -161,
+          "tokenValue": -22.218000000000004,
+          "messageId": "324830b1-3215-45cd-a2e1-cbccf6a296a6",
+          "createdAt": "2026-11-02T03:36:55.957Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -8863,
+          "tokenValue": -310.20500000000004,
+          "messageId": "324830b1-3215-45cd-a2e1-cbccf6a296a6",
+          "createdAt": "2026-11-02T03:36:55.957Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -217,
+          "tokenValue": -29.946,
+          "messageId": "324830b1-3215-45cd-a2e1-cbccf6a296a6",
+          "createdAt": "2026-11-02T03:36:55.957Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "257f7c6c-5c57-40a4-8be3-ce1b1ca9ad85",
+          "documents": 1,
+          "elapsedMs": 16,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_019",
+      "conversationId": "97e57806-c8ee-433f-84e8-7cb2150f0889",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3301,
+          "tokenValue": -115.53500000000001,
+          "messageId": "a2119725-ce30-4e02-9195-7426c3b2b550",
+          "createdAt": "2026-11-02T03:37:39.326Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -142,
+          "tokenValue": -19.596,
+          "messageId": "a2119725-ce30-4e02-9195-7426c3b2b550",
+          "createdAt": "2026-11-02T03:37:39.327Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -5630,
+          "tokenValue": -197.05,
+          "messageId": "a2119725-ce30-4e02-9195-7426c3b2b550",
+          "createdAt": "2026-11-02T03:37:39.327Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -525,
+          "tokenValue": -72.45,
+          "messageId": "a2119725-ce30-4e02-9195-7426c3b2b550",
+          "createdAt": "2026-11-02T03:37:39.327Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -8296,
+          "tokenValue": -290.36,
+          "messageId": "a2119725-ce30-4e02-9195-7426c3b2b550",
+          "createdAt": "2026-11-02T03:37:39.327Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -548,
+          "tokenValue": -75.62400000000001,
+          "messageId": "a2119725-ce30-4e02-9195-7426c3b2b550",
+          "createdAt": "2026-11-02T03:37:39.327Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "97e57806-c8ee-433f-84e8-7cb2150f0889",
+          "documents": 1,
+          "elapsedMs": 10,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "independent-r5",
+      "id": "longpdf_020",
+      "conversationId": "3fb3cfcd-5a40-45bb-aec0-e8cd994593ec",
+      "records": [
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -3295,
+          "tokenValue": -115.32500000000002,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -169,
+          "tokenValue": -23.322000000000003,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -6713,
+          "tokenValue": -234.955,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -361,
+          "tokenValue": -49.818000000000005,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -9995,
+          "tokenValue": -349.82500000000005,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -229,
+          "tokenValue": -31.602000000000004,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -13807,
+          "tokenValue": -483.24500000000006,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -184,
+          "tokenValue": -25.392000000000003,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -17058,
+          "tokenValue": -597.0300000000001,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -232,
+          "tokenValue": -32.016000000000005,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -20503,
+          "tokenValue": -717.605,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -170,
+          "tokenValue": -23.46,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -24136,
+          "tokenValue": -844.7600000000001,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -216,
+          "tokenValue": -29.808000000000003,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -27696,
+          "tokenValue": -969.3600000000001,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -137,
+          "tokenValue": -18.906000000000002,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -29684,
+          "tokenValue": -1038.94,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -174,
+          "tokenValue": -24.012,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -33408,
+          "tokenValue": -1169.2800000000002,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -208,
+          "tokenValue": -28.704,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -37036,
+          "tokenValue": -1296.2600000000002,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -194,
+          "tokenValue": -26.772000000000002,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "prompt",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -40477,
+          "tokenValue": -1416.6950000000002,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        },
+        {
+          "tokenType": "completion",
+          "model": "qwen3.6-plus",
+          "context": "message",
+          "rawAmount": -290,
+          "tokenValue": -40.02,
+          "messageId": "a5bf047e-77d9-410c-ab59-0430f0e4e635",
+          "createdAt": "2026-11-02T03:39:37.161Z"
+        }
+      ],
+      "directory_snapshots": [
+        {
+          "conversationId": "3fb3cfcd-5a40-45bb-aec0-e8cd994593ec",
+          "documents": 1,
+          "elapsedMs": 9,
+          "tools": [
+            {
+              "id": "SanSuoMain__qwen3.6-plus___三所小智",
+              "names": [
+                "execute_code",
+                "read_parsed_pdf"
+              ],
+              "registry": [
+                "execute_code",
+                "read_parsed_pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "reviewer": "AI provisional against frozen gold, previous source-image review and actual tool output; not independent human accuracy",
+  "source_sha": "6d2ec2b2998ea315d1b7682bd281412dec251fe6",
+  "status": "completed_ai_review",
+  "same_exclusions_as_baseline": [
+    "longpdf_009",
+    "longpdf_017",
+    "longpdf_018",
+    "longpdf_019",
+    "longpdf_020"
+  ],
+  "rows": [
+    {
+      "id": "longpdf_001",
+      "rating": "partial",
+      "core_correct": true,
+      "complete": false,
+      "citation": "correct",
+      "notes": "日期未明确年份，省略gold主分会场；8时30分和主持人/地点/原页引用正确。主分会场并非显式问项，gold过细风险单列。"
+    },
+    {
+      "id": "longpdf_002",
+      "rating": "correct",
+      "core_correct": true,
+      "complete": true,
+      "citation": "correct",
+      "notes": "95/31/53/11和截止时间正确；明确引用42页。"
+    },
+    {
+      "id": "longpdf_003",
+      "rating": "correct",
+      "core_correct": true,
+      "complete": true,
+      "citation": "correct",
+      "notes": "36/12/6及69页正确；额外6次交流/120多次/32个项目可见同页源文字。"
+    },
+    {
+      "id": "longpdf_004",
+      "rating": "correct",
+      "core_correct": true,
+      "complete": true,
+      "citation": "correct",
+      "notes": "地点、展期和140/60/80正确；76页引用正确。"
+    },
+    {
+      "id": "longpdf_005",
+      "rating": "correct",
+      "core_correct": true,
+      "complete": true,
+      "citation": "missing",
+      "notes": "开闭幕日期、313/271和313/267以及差4正确；最终未标原页。"
+    },
+    {
+      "id": "longpdf_006",
+      "rating": "correct",
+      "core_correct": true,
+      "complete": true,
+      "citation": "correct",
+      "notes": "两届78/67/85.9和95/82/86.3准确，区分35/67办结率，未重现历史把满意率主体错绑。"
+    },
+    {
+      "id": "longpdf_007",
+      "rating": "partial",
+      "core_correct": true,
+      "complete": true,
+      "citation": "missing",
+      "notes": "主要问题和4000/2000/10.13亿/930正确；将问题发生年份2021写成黄焯指出问题的时间，现有证据未证实该时间归属。对策对应图可视为分析，不能当已证实因果；最终未标页。"
+    },
+    {
+      "id": "longpdf_008",
+      "rating": "incorrect",
+      "core_correct": false,
+      "complete": false,
+      "citation": "missing",
+      "notes": "遗漏莫宇宁；无经济增收证据的判断合理，但进一步断言建议尚未转化为政策/拨款、均停留投入规划端，缺乏完整证据。",
+      "failure_categories": [
+        "B: evidence delivered but omitted",
+        "C: unsupported inference"
+      ],
+      "evidence_note": "实际工具输出包含莫宇宁与40多名茶农；最终漏姓名，且追加尚未转化为政策/拨款的断言。"
+    },
+    {
+      "id": "longpdf_009",
+      "rating": "unscored",
+      "exploratory_rating": "correct",
+      "core_correct": true,
+      "complete": true,
+      "citation": "correct",
+      "notes": "按原有gold地名上平/上坪缺陷排除正式暂评分母。此次自主纠正上坪，取得72和84页，明确30万元仍为下一步，保留完整答案。"
+    },
+    {
+      "id": "longpdf_010",
+      "rating": "partial",
+      "core_correct": false,
+      "complete": false,
+      "citation": "missing",
+      "failure_categories": [
+        "A: rerank/delivery excluded required evidence",
+        "B: no supplementary read"
+      ],
+      "notes": "金秀15次/2500余人次缺失，目标RRF28进入40池但rerank27落出最终10条。把80余名委员因未声明去重而降格也不准确；不得由此推出线上线下交集。"
+    },
+    {
+      "id": "longpdf_011",
+      "rating": "partial",
+      "core_correct": true,
+      "complete": true,
+      "citation": "missing",
+      "notes": "三类质量及三机制基本覆盖，但将报告提出机制写为建立了；后续又混入其他文章的已联合发文与制度固化结论，时态/主体风险。"
+    },
+    {
+      "id": "longpdf_012",
+      "rating": "correct",
+      "core_correct": true,
+      "complete": true,
+      "citation": "missing",
+      "notes": "主要障碍与对应政策/保障/风险建议覆盖，三权分立及收益权是原文现有表述，未按外部常识改写；归纳六项为分组，最终无原页引用。"
+    },
+    {
+      "id": "longpdf_013",
+      "rating": "partial",
+      "core_correct": true,
+      "complete": false,
+      "citation": "correct",
+      "notes": "调研协商整改及反馈数字正确，有72页引用；和基线一样缺gold要求的5月观察时间。"
+    },
+    {
+      "id": "longpdf_014",
+      "rating": "partial",
+      "core_correct": true,
+      "complete": false,
+      "citation": "correct",
+      "notes": "两类工作室服务侧重点基本正确；省略gold的6月1日，且将服务划分为事后/事前没有原文支持，群众诉求与履职平台未充分展开。"
+    },
+    {
+      "id": "longpdf_015",
+      "rating": "partial",
+      "core_correct": true,
+      "complete": true,
+      "citation": "missing",
+      "notes": "规划评审/未认定/5至10年建设目标正确；额外断言周期从认定获批后才开始，以及国家或自治区正式认定的具体主体，原文引段未支持。"
+    },
+    {
+      "id": "longpdf_016",
+      "rating": "partial",
+      "core_correct": true,
+      "complete": true,
+      "citation": "partly_correct",
+      "notes": "35/67约52.2和32件正确，25页支持；但追加11件未立案一律不进入正式交办督办，属于未核实的流程扩展，5/15/18交叉引用的适用范围未充分标明。"
+    },
+    {
+      "id": "longpdf_017",
+      "rating": "unscored",
+      "exploratory_rating": "correct",
+      "core_correct": true,
+      "complete": true,
+      "citation": "correct",
+      "notes": "6500/1000/2000/9500及不同捐助主体正确，按原页写防溺水；原gold误写防疫，本题沿用历史排除规则，完整记录不删除。"
+    },
+    {
+      "id": "longpdf_018",
+      "rating": "unscored",
+      "exploratory_rating": "partial",
+      "core_correct": true,
+      "complete": null,
+      "citation": "correct",
+      "notes": "不编造票价，76页引用与展览资料一致；但从局部核查扩展为全文没有收费信息未独立证实，沿用缺失性gold排除规则。"
+    },
+    {
+      "id": "longpdf_019",
+      "rating": "unscored",
+      "exploratory_rating": "correct",
+      "core_correct": true,
+      "complete": null,
+      "citation": "correct",
+      "notes": "不编造逐人名单，90/91页所列规模和匿名老人合理；全文无任何患者姓名仍需独立全篇核验，沿用缺失性gold排除规则。"
+    },
+    {
+      "id": "longpdf_020",
+      "rating": "unscored",
+      "exploratory_rating": "correct",
+      "core_correct": true,
+      "complete": null,
+      "citation": "correct",
+      "notes": "明确五年为未来计划，不造实际增收百分比；10次相近search和1次相邻读取共117.194秒，重复检索开销明显。缺失性gold按原规则排除。"
+    }
+  ],
+  "strict_correct": 6,
+  "scorable": 15,
+  "core_correct": 13,
+  "complete": 10,
+  "citation_counts": {
+    "correct": 7,
+    "partly_correct": 1,
+    "missing": 7
+  },
+  "human_reviewed": 0,
+  "interpretation": "AI provisional, not formal accuracy; strict score includes additional unsupported claims and frozen-gold completeness; no simultaneous matched baseline run."
+}

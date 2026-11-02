@@ -1,0 +1,22 @@
+{
+  "source_sha256": "eb78d5cb7a90fc93ca8521541de85a30d5b160987c178cbe8689409e1b28987b",
+  "code_sha": "1dd5f66",
+  "actual_parser": "FITZ fallback; cloud mode configured but this public source SHA was not allowlisted",
+  "classification": [
+    "source text garbled",
+    "semantic search cannot locate reliable page",
+    "VL on page19 partial and question unrelated to that page",
+    "Agent turns partial/no match into whole-document absence"
+  ],
+  "agent_completed": true,
+  "factual_success": false,
+  "tools": 13,
+  "real_vl_calls": 1,
+  "vl_elapsed_ms": 7858,
+  "vl_tokens": 5100,
+  "real_find_exact_calls": 3,
+  "sandbox_fallback": "rejected by existing readonly PDF policy",
+  "references_saved": 8,
+  "fix": "6d2ec2b: C1 glyph corruption flagged suspect; source text and incomplete exact scope returned partial; original results retained",
+  "cloud_rerun": "separate batch after exact public SHA allowlist; no production env modification"
+}

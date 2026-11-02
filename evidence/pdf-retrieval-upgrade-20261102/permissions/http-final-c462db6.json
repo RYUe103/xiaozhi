@@ -1,0 +1,112 @@
+{
+  "scope": "Phase5 isolated live HTTP; synthetic DOCX/CSV are compatibility fixtures, not PDF accuracy evidence",
+  "checks": [
+    {
+      "name": "plain_chat",
+      "ok": true,
+      "conversationId": "9cb38fb9-fa5f-4e43-9c2b-bf593237c96f",
+      "messageId": "eb4d028d-1305-4d06-bb84-3720b22b3f92",
+      "elapsed_ms": 7280,
+      "answer": "15",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "docx_read",
+      "ok": true,
+      "conversationId": "114d5894-bc7c-4a21-a2ca-a05fb1e17166",
+      "messageId": "add3dfd6-eb9a-4b86-8f75-a4cb94866cac",
+      "elapsed_ms": 8172,
+      "answer": "根据文档内容，**RX-481 的校验周期为 17 天**。",
+      "active": false,
+      "error": false,
+      "tools": [
+        {
+          "id": "call_b5057d6dd3964ca09cd6cc58",
+          "name": "read_parsed_docx",
+          "args": "{\"action\":\"search\",\"document_id\":\"doc_13dcc21caf183d8a6902\",\"query\":\"RX-481\"}",
+          "type": "tool_call",
+          "progress": 1,
+          "output": "{\"status\":\"ok\",\"document_id\":\"doc_13dcc21caf183d8a6902\",\"file_id\":\"180a646b-233d-48ea-9ed0-ed3da36e4839\",\"filename\":\"regression.docx\",\"action\":\"search\",\"scope\":\"keyword_selection\",\"content\":\"[paragraph=1 chunk=chunk_f7c10dfb17f5e42c8df3]\\n回归测试记录：样机 RX-481 的校验周期为 17 天。此文档仅用于测试。\",\"offset\":0,\"truncated\":false,\"next_offset\":null,\"hits\":[{\"chunk_id\":\"chunk_f7c10dfb17f5e42c8df3\",\"paragraph_id\":\"paragraph_70d89d2b87f7a65e164b\",\"paragraph_index\":1}],\"tables\":[],\"reference\":{\"document_id\":\"doc_13dcc21caf183d8a6902\",\"chunk_id\":\"chunk_f7c10dfb17f5e42c8df3\",\"paragraph_id\":\"paragraph_70d89d2b87f7a65e164b\",\"paragraph_index\":1,\"table_id\":null,\"source_hash\":null,\"version\":\"0adb0a012ac1ffa2f0fc7acf0b5265edba0e1f93940ce2f1e201772381b43bf0\"},\"matched_paragraphs\":1,\"matched_segments\":1,\"total_paragraphs\":1,\"total_segments\":1,\"paragraph_start\":1,\"paragraph_end\":1}"
+        }
+      ]
+    },
+    {
+      "name": "csv_execute_code",
+      "ok": true,
+      "conversationId": "e1f055a6-1db0-4eb3-94d1-9f9f8b6e2026",
+      "messageId": "7de2dd82-fb17-438a-99e3-36fc35d13c3e",
+      "elapsed_ms": 37032,
+      "answer": "ZX-917 的 **period_days** 值为 **23**。",
+      "active": false,
+      "error": false,
+      "tools": [
+        {
+          "id": "call_40516febeefe40779c366e8a",
+          "name": "execute_code",
+          "args": "{\"code\":\"import pandas as pd\\n\\ndf = pd.read_csv('/mnt/data/phase5.csv')\\nresult = df.loc[df['model'] == 'ZX-917', 'period_days'].values[0]\\nprint(f\\\"ZX-917 的 period_days 值为: {result}\\\")\",\"lang\":\"py\"}",
+          "type": "tool_call",
+          "progress": 1,
+          "output": "stdout:\nZX-917 的 period_days 值为: 23"
+        }
+      ]
+    },
+    {
+      "name": "docx_followup_without_reattachment",
+      "ok": true,
+      "conversationId": "114d5894-bc7c-4a21-a2ca-a05fb1e17166",
+      "messageId": "46bc9b10-e9a0-4534-bf3a-bd1fc131e091",
+      "elapsed_ms": 3232,
+      "answer": "17 天",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "xlsx_read",
+      "ok": true,
+      "conversationId": "7da5ab52-b989-4ac5-861b-6895feac3818",
+      "messageId": "07c522a0-6d8e-43cf-bf41-6762353a88e4",
+      "elapsed_ms": 4164,
+      "answer": "根据附件 Excel 的内容，**KM-883** 的 **period_days** 是 **29**。",
+      "active": false,
+      "error": false,
+      "tools": []
+    },
+    {
+      "name": "generated_file_persisted_and_downloaded",
+      "ok": true,
+      "conversationId": "761e3f44-8376-4f98-acec-a87cd2190b91",
+      "messageId": "7d01d656-2e55-4a8f-9c07-6313d63285af",
+      "elapsed_ms": 11328,
+      "answer": "文件 `acceptance.txt` 已生成，内容为 **工具生成验收 37**（UTF-8 编码）。\n\n📥 **下载链接：** [acceptance.txt](sandbox:/mnt/data/acceptance.txt)",
+      "active": false,
+      "error": false,
+      "tools": [
+        {
+          "id": "call_45f08007b90b4779af95360e",
+          "name": "execute_code",
+          "args": "{\"code\":\"with open('/mnt/data/acceptance.txt', 'w', encoding='utf-8') as f:\\n    f.write('工具生成验收 37')\\nprint('文件已生成')\",\"lang\":\"py\"}",
+          "type": "tool_call",
+          "progress": 1,
+          "output": "stdout:\n文件已生成"
+        }
+      ],
+      "outputs": [
+        {
+          "filename": "acceptance.txt",
+          "status": 200,
+          "bytes": 21,
+          "sha256": "d28be398b590bcdf97f22b7dadf7c4340102ac3ab8d46a975c7adc2b04ae814a",
+          "expected_content": true
+        }
+      ]
+    },
+    {
+      "name": "foreign_message_isolation",
+      "ok": true,
+      "http_status": 200
+    }
+  ]
+}

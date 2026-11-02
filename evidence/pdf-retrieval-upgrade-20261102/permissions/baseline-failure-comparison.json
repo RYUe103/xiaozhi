@@ -1,0 +1,42 @@
+{
+  "baseline_sha": "2911f67",
+  "candidate_sha": "569cbb5",
+  "same_failed_tests": true,
+  "baseline_failures": [
+    "BaseClient sendMessage file population DOCX visual questions reuse persisted images, select later images, and never reparse",
+    "BaseClient sendMessage file population answers a ready DOCX from persisted context without forcing execute_code",
+    "BaseClient sendMessage file population answers a ready PDF without execution (follow-up=false)",
+    "BaseClient sendMessage file population answers a ready PDF without execution (follow-up=true)",
+    "BaseClient sendMessage file population batches persisted fitz PDF pages by 20 and selects an explicitly requested page",
+    "BaseClient sendMessage file population completes the fitz index in batches while exposing only the requested page",
+    "BaseClient sendMessage file population missing DOCX visual artifacts do not trigger sandbox fallback",
+    "BaseClient sendMessage file population missing PDF artifacts never fall back to the generic sandbox reader",
+    "BaseClient sendMessage file population retrieves a persisted fitz VL index within the current conversation and reviews only matching pages",
+    "BaseClient sendMessage file population retrieves a relevant late MinerU chunk instead of truncating a long PDF prefix",
+    "BaseClient sendMessage file population reuses persisted DOCX text context without reading the original file twice",
+    "BaseClient sendMessage file population reuses persisted PDF MinerU Markdown context without reading the original file",
+    "BaseClient sendMessage file population reviews only the requested MinerU page image and ignores extracted figures",
+    "BaseClient sendMessage file population samples across legacy MinerU Markdown when chunks are unavailable",
+    "BaseClient sendMessage file population samples the beginning, middle, and end for a whole-document PDF summary",
+    "BaseClient sendMessage file population selects a requested PDF page and its neighboring chunks when page metadata exists"
+  ],
+  "candidate_failures": [
+    "BaseClient sendMessage file population DOCX visual questions reuse persisted images, select later images, and never reparse",
+    "BaseClient sendMessage file population answers a ready DOCX from persisted context without forcing execute_code",
+    "BaseClient sendMessage file population answers a ready PDF without execution (follow-up=false)",
+    "BaseClient sendMessage file population answers a ready PDF without execution (follow-up=true)",
+    "BaseClient sendMessage file population batches persisted fitz PDF pages by 20 and selects an explicitly requested page",
+    "BaseClient sendMessage file population completes the fitz index in batches while exposing only the requested page",
+    "BaseClient sendMessage file population missing DOCX visual artifacts do not trigger sandbox fallback",
+    "BaseClient sendMessage file population missing PDF artifacts never fall back to the generic sandbox reader",
+    "BaseClient sendMessage file population retrieves a persisted fitz VL index within the current conversation and reviews only matching pages",
+    "BaseClient sendMessage file population retrieves a relevant late MinerU chunk instead of truncating a long PDF prefix",
+    "BaseClient sendMessage file population reuses persisted DOCX text context without reading the original file twice",
+    "BaseClient sendMessage file population reuses persisted PDF MinerU Markdown context without reading the original file",
+    "BaseClient sendMessage file population reviews only the requested MinerU page image and ignores extracted figures",
+    "BaseClient sendMessage file population samples across legacy MinerU Markdown when chunks are unavailable",
+    "BaseClient sendMessage file population samples the beginning, middle, and end for a whole-document PDF summary",
+    "BaseClient sendMessage file population selects a requested PDF page and its neighboring chunks when page metadata exists"
+  ],
+  "new_failures": []
+}

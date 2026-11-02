@@ -1,0 +1,306 @@
+diff --git a/api/server/services/DocumentArtifactRepository.js b/api/server/services/DocumentArtifactRepository.js
+index 3d762b1..0e42c12 100644
+--- a/api/server/services/DocumentArtifactRepository.js
++++ b/api/server/services/DocumentArtifactRepository.js
+@@ -1,6 +1,6 @@
+ const crypto = require('crypto');
+ const { buildPdfDocument } = require('./DocumentContextService');
+-const { searchRecords, reciprocalRankFusion, tokenizeQuery, DocumentLexicalIndex } = require('./DocumentRetrieval');
++const { searchRecords, reciprocalRankFusion, weightedReciprocalRankFusion, protectDiverseCandidates, tokenizeQuery, DocumentLexicalIndex } = require('./DocumentRetrieval');
+ const { buildDocumentTables } = require('./DocumentTables');
+ const { DocumentQueryProcessor } = require('./DocumentQueryProcessor');
+ const { DocumentEvidenceReranker } = require('./DocumentEvidenceReranker');
+@@ -80,7 +80,9 @@ class DocumentArtifactRepository {
+     this.vectorSearch = vectorSearch;
+     this.lexicalCache = lexicalCache;
+     this.authorize = authorize;
+-    this.quality = { queryProcessing: true, candidateDepth: 30, compactDelivery: true, rerank: true, ...quality };
++    this.quality = { queryProcessing: true, candidateDepth: 60, rrfDepth: 40, rrfK: 60,
++      bm25Weight: 0.75, vectorWeight: 1, keywordUniqueCandidates: 4, vectorUniqueCandidates: 8,
++      maxCandidatesPerPage: 4, compactDelivery: true, rerank: true, ...quality };
+     this.trace = trace || new DocumentJitTrace({ sink: (event) => runtimeEvent(event.stage, [this.userId, this.conversationId].join(':'), event) });
+     this.queryProcessor = new DocumentQueryProcessor({ enabled: this.quality.queryProcessing });
+     this.reranker = new DocumentEvidenceReranker(this.quality.rerankOptions || {});
+@@ -381,8 +383,24 @@ class DocumentArtifactRepository {
+       const lexical = { keyword: merge('keyword'), bm25: merge('bm25'), visual: merge('visual'), vector: merge('vector'),
+         warnings: [...new Set(variants.flatMap(v => v.warnings))] };
+       const rt = Date.now();
+-      lexical.fused = reciprocalRankFusion(action === 'visual_search' ? [lexical.visual, lexical.vector] : [lexical.keyword, lexical.bm25, lexical.visual, lexical.vector]).slice(0, this.quality.rerank ? 20 : Math.min(12, input.limit || 6));
+-      this.trace.emit('RRF', { elapsed_ms: Date.now() - rt, candidates: depth, hits: lexical.fused.map(h => ({ id: h.record.id, page: h.record.pageStart, score: h.score, ranks: h.ranks, sources: h.sources })) });
++      const rerankDepth = Math.min(60, Math.max(input.limit || 6, this.quality.rrfDepth));
++      const channels = action === 'visual_search'
++        ? [{ name: 'visual', weight: 1, results: lexical.visual }, { name: 'vector', weight: this.quality.vectorWeight, results: lexical.vector }]
++        : [{ name: 'bm25', weight: this.quality.bm25Weight, results: lexical.bm25 }, { name: 'vector', weight: this.quality.vectorWeight, results: lexical.vector }];
++      const weighted = weightedReciprocalRankFusion(channels, { k: this.quality.rrfK });
++      const protectedChannels = action === 'visual_search' ? channels : [
++        ...channels,
++        { name: 'keyword', results: lexical.keyword.slice(0, this.quality.keywordUniqueCandidates) },
++      ];
++      lexical.fused = protectDiverseCandidates(weighted, protectedChannels, {
++        limit: this.quality.rerank ? rerankDepth : Math.min(12, input.limit || 6),
++        uniquePerChannel: this.quality.vectorUniqueCandidates,
++        maxPerPage: this.quality.maxCandidatesPerPage,
++      });
++      this.trace.emit('RRF', { elapsed_ms: Date.now() - rt, candidates: depth, weighted: true,
++        weights: { bm25: this.quality.bm25Weight, vector: this.quality.vectorWeight, k: this.quality.rrfK },
++        protected_candidates: lexical.fused.length,
++        hits: lexical.fused.map(h => ({ id: h.record.id, page: h.record.pageStart, score: h.score, ranks: h.ranks, sources: h.sources })) });
+       if (this.quality.rerank) lexical.fused = (await this.reranker.rank(input.query, lexical.fused, this.trace)).slice(0, Math.min(12, input.limit || 6));
+       if (document.lexicalCacheWarning) lexical.warnings.push(document.lexicalCacheWarning);
+       result = this.execute(input, lexical);
+@@ -407,12 +425,58 @@ class DocumentArtifactRepository {
+     return { content: results.map((r) => r.content).filter(Boolean).join('\n\n'), hits: results.flatMap((r) => r.hits || []), scope: 'sampled_overview' };
+   }
+ 
++  findExact(document, args = {}) {
++    const query = String(args.query || '').trim();
++    if (!query) return fail('QUERY_REQUIRED', 'find_exact 需要提供要查找的原文。');
++    const limit = Math.min(50, Math.max(1, Number(args.limit) || 10));
++    const contextChars = Math.min(2000, Math.max(0, Number(args.context_chars) || 500));
++    const pages = Array.isArray(args.pages) ? new Set(args.pages.filter(Number.isInteger)) : null;
++    const chunkId = args.chunk_id ? String(args.chunk_id) : null;
++    const normalize = value => String(value || '').normalize('NFKC').toLocaleLowerCase();
++    const needle = normalize(query);
++    const matches = [];
++    for (const record of document.records) {
++      if (chunkId && record.chunkId !== chunkId && record.id !== chunkId) continue;
++      if (pages && !pages.has(record.pageStart) && !pages.has(record.pageEnd)) continue;
++      const source = String(record.text || '');
++      const haystack = normalize(source);
++      let from = 0;
++      while (from <= haystack.length && matches.length < limit) {
++        const at = haystack.indexOf(needle, from);
++        if (at < 0) break;
++        // NFKC can change code-unit width. Locate the corresponding original
++        // slice by normalizing progressively, preserving an auditable source offset.
++        let sourceStart = 0, normalizedLength = 0;
++        while (sourceStart < source.length && normalizedLength < at) {
++          normalizedLength = normalize(source.slice(0, ++sourceStart)).length;
++        }
++        let sourceEnd = sourceStart;
++        while (sourceEnd < source.length && normalize(source.slice(sourceStart, sourceEnd + 1)).length < needle.length) sourceEnd++;
++        const matchText = source.slice(sourceStart, Math.max(sourceEnd + 1, sourceStart));
++        matches.push({ chunk_id: record.chunkId, page_start: record.pageStart, page_end: record.pageEnd,
++          match_text: matchText, context_before: source.slice(Math.max(0, sourceStart - contextChars), sourceStart),
++          context_after: source.slice(Math.max(sourceEnd + 1, sourceStart), Math.min(source.length, sourceEnd + 1 + contextChars)),
++          source_offset: sourceStart, source_length: matchText.length,
++          next_action: { action: 'read', chunk_id: record.chunkId, page: record.pageStart } });
++        from = at + Math.max(needle.length, 1);
++      }
++      if (matches.length >= limit) break;
++    }
++    return { ...this._baseForDocument(document), status: 'ok', action: 'find_exact', query,
++      matches, match_count: matches.length, truncated: matches.length >= limit,
++      warning: '仅搜索不可变解析原文；无命中不代表全文不存在，扫描无文字页请使用 inspect_page。' };
++  }
++
++  _baseForDocument(document) {
++    return { document_id: document.documentId, filename: document.filename, version: document.version };
++  }
++
+   execute(input = {}, retrievalOverride = null) {
+     let args = { ...input };
+     if (!args.pages && Number.isInteger(args.page) && ['read', 'read_table'].includes(args.action)) args.pages = [args.page];
+     let continuationIds;
+     const action = args.action || 'search';
+-    if (!['list', 'info', 'toc', 'search', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search'].includes(action)) return fail('ACTION_INVALID', '不支持的文档动作。');
++    if (!['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search'].includes(action)) return fail('ACTION_INVALID', '不支持的文档动作。');
+     if (action === 'list') return { status: 'ok', documents: this.listDocuments() };
+     const document = args.document_id ? this.documents.get(args.document_id) : this.documents.size === 1 ? [...this.documents.values()][0] : null;
+     if (!document) return { ...fail('DOCUMENT_NOT_FOUND', '请指定当前聊天可用的 document_id。'), documents: this.listDocuments() };
+@@ -425,6 +489,9 @@ class DocumentArtifactRepository {
+     }
+     if (!input.continuation_token && Number(input.offset) > 0) return fail('CONTINUATION_REQUIRED', '继续读取必须使用服务端签发的 continuation_token。');
+     const base = { status: 'ok', ok: true, document_id: document.documentId, filename: document.filename, version: document.version };
++    if (action === 'find_exact') {
++      return this.findExact(document, args);
++    }
+     if (action === 'info') {
+       const coverageOffset = Math.max(0, Math.floor(Number(args.coverage_offset) || 0));
+       const coverage = document.pageCoverage.filter((p) => !args.pages || args.pages.includes(p.page));
+diff --git a/api/server/services/DocumentArtifactRepository.spec.js b/api/server/services/DocumentArtifactRepository.spec.js
+index d5156d3..2b7aa1d 100644
+--- a/api/server/services/DocumentArtifactRepository.spec.js
++++ b/api/server/services/DocumentArtifactRepository.spec.js
+@@ -162,3 +162,22 @@ test('query-only read searches existing channels instead of returning missing pa
+  const explicit=await repo.executeAsync({action:'read',document_id:doc.documentId,query:'检修周期',pages:[2]});
+  expect(explicit.error.code).toBe('PAGE_TEXT_UNAVAILABLE');
+ });
++
++test('find_exact locates immutable source text with page, chunk and bounded context', () => {
++ const { repo, doc } = fixture();
++ const result = repo.execute({ action: 'find_exact', document_id: doc.documentId, query: '检修周期为三个月', context_chars: 8 });
++ expect(result.status).toBe('ok');
++ expect(result.matches).toHaveLength(1);
++ expect(result.matches[0]).toMatchObject({ page_start: 3, chunk_id: doc.records[1].chunkId, match_text: '检修周期为三个月' });
++ expect(result.matches[0].context_before.length).toBeLessThanOrEqual(8);
++ expect(result.matches[0].context_after.length).toBeLessThanOrEqual(8);
++ expect(repo.execute({ action: 'find_exact', document_id: doc.documentId, query: '不存在的原文' }).matches).toEqual([]);
++});
++
++test('find_exact normalizes Unicode compatibility forms without changing source offset', () => {
++ const { repo, doc } = fixture();
++ doc.records[0].text += ' 温度：８０℃';
++ const result = repo.execute({ action: 'find_exact', document_id: doc.documentId, query: '温度：80℃' });
++ expect(result.matches[0].match_text).toBe('温度：８０℃');
++ expect(doc.records[0].text.slice(result.matches[0].source_offset, result.matches[0].source_offset + result.matches[0].source_length)).toBe(result.matches[0].match_text);
++});
+diff --git a/api/server/services/DocumentRetrieval.js b/api/server/services/DocumentRetrieval.js
+index 7b61906..afdf204 100644
+--- a/api/server/services/DocumentRetrieval.js
++++ b/api/server/services/DocumentRetrieval.js
+@@ -118,6 +118,44 @@ function reciprocalRankFusion(resultSets = [], options = {}) {
+   }
+   return [...byId.values()].sort((a, b) => b.score - a.score || String(a.record.id).localeCompare(String(b.record.id)));
+ }
++/** Weighted fusion for independent retrieval channels.  Keyword is intentionally
++ * kept out of this helper's default callers when it duplicates BM25 postings. */
++function weightedReciprocalRankFusion(channels = [], { k = 60 } = {}) {
++  const byId = new Map();
++  for (const channel of channels) {
++    const weight = Number(channel.weight ?? 1);
++    if (!(weight > 0)) continue;
++    for (const [rank, item] of (channel.results || []).entries()) {
++      const id = item.record?.id || item.record?.chunkId || item.record?.sourceRecordId;
++      if (!id) continue;
++      const entry = byId.get(id) || { record: item.record, score: 0, sources: [], ranks: {} };
++      const source = channel.name || item.source || 'unknown';
++      entry.score += weight / (Number(k) + rank + 1);
++      if (!entry.sources.includes(source)) entry.sources.push(source);
++      entry.ranks[source] = rank + 1;
++      byId.set(id, entry);
++    }
++  }
++  return [...byId.values()].sort((a, b) => b.score - a.score || String(a.record.id).localeCompare(String(b.record.id)));
++}
++
++/** Keep channel-unique evidence alive before a reranker sees the pool. */
++function protectDiverseCandidates(fused = [], channels = [], { limit = 40, uniquePerChannel = 4, maxPerPage = 4 } = {}) {
++  const selected = [], seen = new Set(), pageCounts = new Map();
++  const add = (item, ignorePage = false) => {
++    const id = item.record?.id || item.record?.chunkId;
++    if (!id || seen.has(id)) return false;
++    const page = item.record?.pageStart ?? item.record?.page_start ?? null;
++    if (!ignorePage && page != null && (pageCounts.get(page) || 0) >= maxPerPage) return false;
++    seen.add(id); selected.push(item); if (page != null) pageCounts.set(page, (pageCounts.get(page) || 0) + 1); return true;
++  };
++  for (const channel of channels) {
++    let count = 0;
++    for (const item of channel.results || []) if (count < uniquePerChannel && add(item, true)) count++;
++  }
++  for (const item of fused) { if (selected.length >= limit) break; add(item); }
++  return selected.slice(0, limit);
++}
+ function searchRecords(records = [], query = '', options = {}) {
+   const index = options.index || new DocumentLexicalIndex(records);
+   const result = index.search(query);
+@@ -140,4 +178,4 @@ function createMongoLexicalCache(mongoose) {
+     async set(key, scope, frequencies) { await (await ready()).updateOne({ key, scope }, { $set: { frequencies, expiresAt: new Date(Date.now() + 7 * 86400000) } }, { upsert: true }); },
+   };
+ }
+-module.exports = { tokenizeQuery, tokenize, keywordScore, keywordSearch, bm25Search, reciprocalRankFusion, searchRecords, DocumentLexicalIndex, createMongoLexicalCache };
++module.exports = { tokenizeQuery, tokenize, keywordScore, keywordSearch, bm25Search, reciprocalRankFusion, weightedReciprocalRankFusion, protectDiverseCandidates, searchRecords, DocumentLexicalIndex, createMongoLexicalCache };
+diff --git a/api/server/services/DocumentRetrieval.spec.js b/api/server/services/DocumentRetrieval.spec.js
+index cc494c5..14d6356 100644
+--- a/api/server/services/DocumentRetrieval.spec.js
++++ b/api/server/services/DocumentRetrieval.spec.js
+@@ -1,39 +1,26 @@
+-const {
+-  tokenizeQuery,
+-  keywordScore,
+-  bm25Search,
+-  reciprocalRankFusion,
+-  searchRecords,
+-} = require('./DocumentRetrieval');
++const { weightedReciprocalRankFusion, protectDiverseCandidates } = require('./DocumentRetrieval');
+ 
+-describe('DocumentRetrieval', () => {
+-  const records = [
+-    { id: 'a', text: 'GB 12345-2024 轴承温度达到 80 摄氏度时停机', kind: 'extracted_text', index: 0 },
+-    { id: 'b', text: '巡检周期为三个月，普通维护记录', kind: 'extracted_text', index: 1 },
+-    { id: 'c', text: '扫描页视觉摘要：轴承温度报警阈值为 80 摄氏度', kind: 'visual_summary', index: 2 },
+-  ];
++const hit = (id, page, source) => ({ record: { id, pageStart: page, text: id }, rank: 1, source });
+ 
+-  test('tokenizes Chinese terms and exact standards/numbers', () => {
+-    expect(tokenizeQuery('GB 12345-2024 轴承温度')).toEqual(
+-      expect.arrayContaining(['gb', '12345-2024', '轴承', '温度']),
+-    );
+-    expect(keywordScore(records[0].text, 'GB 12345-2024')).toBeGreaterThan(0);
+-  });
+-
+-  test('ranks BM25 candidates and keeps visual channel separate', () => {
+-    const result = searchRecords(records, '轴承温度 80', { includeVisual: true });
+-    expect(result.bm25[0].record.id).toBe('a');
+-    expect(result.visual[0].record.id).toBe('c');
+-    expect(result.fused[0]).toHaveProperty('ranks');
+-    expect(result.warnings).toContain('vector_search_unavailable');
+-  });
++test('weighted RRF does not double count keyword and BM25 unless explicitly supplied', () => {
++  const result = weightedReciprocalRankFusion([
++    { name: 'bm25', weight: 0.75, results: [hit('lexical', 1, 'bm25')] },
++    { name: 'vector', weight: 1, results: [hit('semantic', 2, 'vector')] },
++  ]);
++  expect(result.map(x => x.record.id)).toEqual(['semantic', 'lexical']);
++  expect(result[0].score).toBeGreaterThan(result[1].score);
++});
+ 
+-  test('fuses independent rankings with source and rank evidence', () => {
+-    const fused = reciprocalRankFusion([
+-      [{ record: records[0], source: 'keyword' }],
+-      [{ record: records[0], source: 'bm25' }],
+-    ]);
+-    expect(fused[0]).toMatchObject({ record: records[0], sources: ['keyword', 'bm25'] });
+-    expect(fused[0].ranks).toEqual({ keyword: 1, bm25: 1 });
+-  });
++test('candidate protection keeps channel-unique evidence and limits same-page flooding', () => {
++  const vector = Array.from({ length: 10 }, (_, i) => hit(`v${i}`, 87, 'vector'));
++  const bm25 = [hit('b-unique', 82, 'bm25'), hit('v0', 87, 'bm25')];
++  const fused = weightedReciprocalRankFusion([
++    { name: 'bm25', weight: 0.75, results: bm25 },
++    { name: 'vector', weight: 1, results: vector },
++  ]);
++  const result = protectDiverseCandidates(fused, [
++    { name: 'bm25', results: bm25 }, { name: 'vector', results: vector },
++  ], { limit: 6, uniquePerChannel: 2, maxPerPage: 2 });
++  expect(result.map(x => x.record.id)).toContain('b-unique');
++  expect(result.filter(x => x.record.pageStart === 87)).toHaveLength(2);
+ });
+diff --git a/api/server/services/Endpoints/agents/documentReadContracts.js b/api/server/services/Endpoints/agents/documentReadContracts.js
+index 246e2b5..0c24603 100644
+--- a/api/server/services/Endpoints/agents/documentReadContracts.js
++++ b/api/server/services/Endpoints/agents/documentReadContracts.js
+@@ -76,7 +76,7 @@ function createPdfReadContract() {
+       name: PDF_READ_TOOL,
+       description:
+         '按需查阅当前聊天中已完成持久解析的 PDF，不执行代码、不启动沙箱、不重新解析。' +
+-        'action 支持 list、info、toc、search、read、read_table、read_adjacent、visual_page、visual_search、inspect_page；视觉摘要与正文分离，续读使用 continuation_token。' +
++        'action 支持 list、info、toc、search、find_exact、read、read_table、read_adjacent、visual_page、visual_search、inspect_page；find_exact只查不可变原文并返回真实chunk/page/上下文，视觉摘要与正文分离，续读使用 continuation_token。' +
+         '正文或表格不足、乱码、图例不清或需核对原页时，先检索正文或图注定位物理页，再调用本工具 read_parsed_pdf，action=inspect_page，指定 document_id、page、具体 query 和 mode 查看原图；视觉识别不等于已验证全文 OCR。' +
+         '多份 PDF 必须使用 list 返回的 document_id；只使用返回的 chunk_id、section_id、table_id 继续读取。' +
+         '搜索命中页不等于问题已核对：跨页问题应覆盖所有子问题，需要时read_adjacent；continuation_token表示证据尚有续文。证据充分时直接回答，避免重复相同读取。' +
+@@ -88,10 +88,11 @@ function createPdfReadContract() {
+         properties: {
+           action: {
+             type: 'string',
+-            enum: ['list', 'info', 'toc', 'search', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page'],
++            enum: ['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page'],
+           },
+           document_id: { type: 'string' },
+           query: { type: 'string' },
++          context_chars: { type: 'integer', minimum: 0, maximum: 2000 },
+           page: { type: 'integer', minimum: 1, maximum: 100000 },
+           mode: { type: 'string', enum: ['auto', 'text', 'table', 'figure', 'formula'] },
+           block_id: { type: 'string', description: '检索返回的 MinerU 块 ID，可读取已验证映射的图块；图例或坐标轴上下文不全时省略此项读取原页。不能与 region 同用。' },
+@@ -113,9 +114,10 @@ function createPdfReadContract() {
+       },
+     };
+     const schema = z.object({
+-      action: z.enum(['list', 'info', 'toc', 'search', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page']).optional(),
++      action: z.enum(['list', 'info', 'toc', 'search', 'find_exact', 'read', 'read_table', 'read_adjacent', 'visual_page', 'visual_search', 'inspect_page']).optional(),
+       document_id: z.string().max(200).optional(),
+       query: z.string().max(1000).optional(),
++      context_chars: z.number().int().min(0).max(2000).optional(),
+       page: z.preprocess(value => typeof value === 'string' && /^[1-9][0-9]*$/.test(value) ? Number(value) : value, z.number().int().min(1).max(100000)).optional(),
+       mode: z.enum(['auto', 'text', 'table', 'figure', 'formula']).optional(),
+       block_id: z.string().optional(),

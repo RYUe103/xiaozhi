@@ -1,0 +1,46 @@
+{
+  "scope": "real isolated Mongo/storage find_exact permission checks; tool-level, not Agent",
+  "checks": [
+    {
+      "name": "metadata_only_discovery",
+      "ok": true
+    },
+    {
+      "name": "actual_persisted_read",
+      "ok": true
+    },
+    {
+      "name": "request_content_load_reused",
+      "ok": true
+    },
+    {
+      "name": "forged_document",
+      "ok": true
+    },
+    {
+      "name": "foreign_user",
+      "ok": true
+    },
+    {
+      "name": "foreign_conversation",
+      "ok": true
+    },
+    {
+      "name": "source_changed",
+      "ok": true
+    },
+    {
+      "name": "owner_revoked",
+      "ok": true
+    },
+    {
+      "name": "parser_changed",
+      "ok": true
+    },
+    {
+      "name": "restored_after_mutation",
+      "ok": true
+    }
+  ],
+  "downloads": 6
+}

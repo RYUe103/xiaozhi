@@ -1,0 +1,3 @@
+首次r3-first.json使用了原用户问题作为重排query，而真实链路使用Agent压缩的工具query；两个arm一致但与真实Agent协议不同，不能作为精确复现。脚本已修复为读取冻结tool.args.query，保留首次结果。另首次来源字段sourceRecordId应为sourceChunkId，事件runtime id仍有效。
+
+最终Agent r4与r2/r3的原题相同，但Agent自主生成query不同：r4目标Vector第10/BM25第16，r2/r3为28/34。最终交付改善不能全部归因于候选保护修复，算法同输入收益仅由独立冻结trace回放证明。

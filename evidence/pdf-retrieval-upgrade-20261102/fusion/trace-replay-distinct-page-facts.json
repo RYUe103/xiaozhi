@@ -1,0 +1,632 @@
+{
+  "kind": "offline_real_trace_replay",
+  "warning": "Each channel was logged at depth 30. Pool 40/60 is a union of those channels, NOT true per-channel Recall@40/60. One annotated missing fact, no Agent or final answer claim.",
+  "inputs": [
+    {
+      "file": "evidence/agent-tools-refactor-20261102/multiturn/r1/turn_07.json",
+      "sha256": "016fea3884aeaef46a3cbe6539667f54e3d62fd943f9192ec4d4523134cef6ce"
+    },
+    {
+      "file": "evidence/agent-tools-refactor-20261102/multiturn/r2/turn_07.json",
+      "sha256": "87cdc13753d64e11513ce41a619211bcdfce8bed5994fd2ae796929181fbcd98"
+    },
+    {
+      "file": "evidence/agent-tools-refactor-20261102/multiturn/r3/turn_07.json",
+      "sha256": "28004c1cf33122297a4e2e33956a4d6ab21d95caab6d5ec6b85697390aec3770"
+    }
+  ],
+  "rows": [
+    {
+      "run": "r1",
+      "mode": "legacy",
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": 20
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": true,
+      "count": 20,
+      "target_position": 13
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": 19
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": true,
+      "count": 20,
+      "target_position": 13
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": 19
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": true,
+      "count": 20,
+      "target_position": 13
+    },
+    {
+      "run": "r1",
+      "mode": "legacy",
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": 28
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": 20
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": true,
+      "count": 40,
+      "target_position": 20
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": 19
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": true,
+      "count": 40,
+      "target_position": 19
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": 19
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": true,
+      "count": 40,
+      "target_position": 19
+    },
+    {
+      "run": "r1",
+      "mode": "legacy",
+      "limit": 60,
+      "protected": false,
+      "count": 51,
+      "target_position": 28
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": false,
+      "count": 43,
+      "target_position": 20
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": true,
+      "count": 47,
+      "target_position": 20
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": false,
+      "count": 43,
+      "target_position": 19
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": true,
+      "count": 47,
+      "target_position": 19
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": false,
+      "count": 43,
+      "target_position": 19
+    },
+    {
+      "run": "r1",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": true,
+      "count": 47,
+      "target_position": 19
+    },
+    {
+      "run": "r2",
+      "mode": "legacy",
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": true,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": true,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": true,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r2",
+      "mode": "legacy",
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": null
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": null
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": true,
+      "count": 40,
+      "target_position": null
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": 26
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": true,
+      "count": 40,
+      "target_position": 26
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": 26
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": true,
+      "count": 40,
+      "target_position": 26
+    },
+    {
+      "run": "r2",
+      "mode": "legacy",
+      "limit": 60,
+      "protected": false,
+      "count": 53,
+      "target_position": 44
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": false,
+      "count": 50,
+      "target_position": 41
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": true,
+      "count": 53,
+      "target_position": 41
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": false,
+      "count": 50,
+      "target_position": 26
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": true,
+      "count": 53,
+      "target_position": 26
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": false,
+      "count": 50,
+      "target_position": 26
+    },
+    {
+      "run": "r2",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": true,
+      "count": 53,
+      "target_position": 26
+    },
+    {
+      "run": "r3",
+      "mode": "legacy",
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": 18
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": true,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": 15
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": true,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": false,
+      "count": 20,
+      "target_position": 15
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 20,
+      "protected": true,
+      "count": 20,
+      "target_position": null
+    },
+    {
+      "run": "r3",
+      "mode": "legacy",
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": 32
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": 18
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": true,
+      "count": 40,
+      "target_position": 18
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": 15
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": true,
+      "count": 40,
+      "target_position": 15
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": false,
+      "count": 40,
+      "target_position": 15
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 40,
+      "protected": true,
+      "count": 40,
+      "target_position": 15
+    },
+    {
+      "run": "r3",
+      "mode": "legacy",
+      "limit": 60,
+      "protected": false,
+      "count": 52,
+      "target_position": 32
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": false,
+      "count": 49,
+      "target_position": 18
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": true,
+      "count": 52,
+      "target_position": 18
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": false,
+      "count": 49,
+      "target_position": 15
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": true,
+      "count": 52,
+      "target_position": 15
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": false,
+      "count": 49,
+      "target_position": 15
+    },
+    {
+      "run": "r3",
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "limit": 60,
+      "protected": true,
+      "count": 52,
+      "target_position": 15
+    }
+  ]
+}

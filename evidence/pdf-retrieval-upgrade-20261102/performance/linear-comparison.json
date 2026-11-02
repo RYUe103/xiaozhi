@@ -1,0 +1,845 @@
+{
+  "baseline-r3": {
+    "completed": 10,
+    "n": 10,
+    "p50_ms": 30731.5,
+    "p95_ms": 37132.9,
+    "rows": [
+      {
+        "id": "turn_01",
+        "elapsed_ms": 30095,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 75,
+        "embedding_tokens": 49223,
+        "rerank_calls": 1,
+        "rerank_tokens": 2099,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 6,
+          "BM25": 6,
+          "Vector": 12701,
+          "RRF": 0,
+          "Rerank": 2881,
+          "EvidenceDelivery": 16524
+        }
+      },
+      {
+        "id": "turn_02",
+        "elapsed_ms": 37159,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_03",
+        "elapsed_ms": 15434,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_04",
+        "elapsed_ms": 31368,
+        "completed": true,
+        "tool_calls": 3,
+        "model_requests": 4,
+        "embedding_calls": 2,
+        "embedding_tokens": 15,
+        "rerank_calls": 2,
+        "rerank_tokens": 4222,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 1,
+          "BM25": 3,
+          "Vector": 1896,
+          "RRF": 0,
+          "Rerank": 2630,
+          "EvidenceDelivery": 5184
+        }
+      },
+      {
+        "id": "turn_05",
+        "elapsed_ms": 32926,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_06",
+        "elapsed_ms": 25714,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_07",
+        "elapsed_ms": 33037,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 1,
+        "embedding_tokens": 14,
+        "rerank_calls": 1,
+        "rerank_tokens": 2485,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 1,
+          "Vector": 959,
+          "RRF": 0,
+          "Rerank": 890,
+          "EvidenceDelivery": 2343
+        }
+      },
+      {
+        "id": "turn_08",
+        "elapsed_ms": 37101,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 1,
+        "embedding_tokens": 8,
+        "rerank_calls": 1,
+        "rerank_tokens": 2405,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 1,
+          "BM25": 1,
+          "Vector": 839,
+          "RRF": 0,
+          "Rerank": 1816,
+          "EvidenceDelivery": 3104
+        }
+      },
+      {
+        "id": "turn_09",
+        "elapsed_ms": 17563,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_10",
+        "elapsed_ms": 17466,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      }
+    ]
+  },
+  "r2": {
+    "completed": 8,
+    "n": 10,
+    "p50_ms": 32409.5,
+    "p95_ms": 202447.0,
+    "rows": [
+      {
+        "id": "turn_01",
+        "elapsed_ms": 36305,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 75,
+        "embedding_tokens": 49223,
+        "rerank_calls": 1,
+        "rerank_tokens": 3894,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 2,
+          "BM25": 2,
+          "Vector": 17162,
+          "RRF": 8,
+          "Rerank": 1072,
+          "EvidenceDelivery": 19152
+        }
+      },
+      {
+        "id": "turn_02",
+        "elapsed_ms": 9400,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_03",
+        "elapsed_ms": 34986,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_04",
+        "elapsed_ms": 27860,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 1,
+        "embedding_tokens": 6,
+        "rerank_calls": 1,
+        "rerank_tokens": 3288,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 2,
+          "BM25": 2,
+          "Vector": 1487,
+          "RRF": 1,
+          "Rerank": 1250,
+          "EvidenceDelivery": 3228
+        }
+      },
+      {
+        "id": "turn_05",
+        "elapsed_ms": 29833,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_06",
+        "elapsed_ms": 180601,
+        "completed": false,
+        "tool_calls": 2,
+        "model_requests": 3,
+        "embedding_calls": 1,
+        "embedding_tokens": 13,
+        "rerank_calls": 1,
+        "rerank_tokens": 4034,
+        "failures": {
+          "code": "MODEL_TIMEOUT",
+          "retryable": false,
+          "status": null,
+          "cause": null
+        },
+        "stage_ms": {
+          "Keyword": 1,
+          "BM25": 2,
+          "Vector": 1414,
+          "RRF": 1,
+          "Rerank": 3704,
+          "EvidenceDelivery": 5723
+        }
+      },
+      {
+        "id": "turn_07",
+        "elapsed_ms": 41377,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 1,
+        "embedding_tokens": 10,
+        "rerank_calls": 1,
+        "rerank_tokens": 4127,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 1,
+          "BM25": 2,
+          "Vector": 940,
+          "RRF": 1,
+          "Rerank": 1429,
+          "EvidenceDelivery": 2995
+        }
+      },
+      {
+        "id": "turn_08",
+        "elapsed_ms": 23595,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_09",
+        "elapsed_ms": 8166,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_10",
+        "elapsed_ms": 220321,
+        "completed": false,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": {
+          "code": "MODEL_NETWORK_ERROR",
+          "retryable": true,
+          "status": null,
+          "cause": "UND_ERR_SOCKET"
+        },
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      }
+    ]
+  },
+  "r3": {
+    "completed": 10,
+    "n": 10,
+    "p50_ms": 39737.5,
+    "p95_ms": 79758.05,
+    "rows": [
+      {
+        "id": "turn_01",
+        "elapsed_ms": 91958,
+        "completed": true,
+        "tool_calls": 2,
+        "model_requests": 3,
+        "embedding_calls": 68,
+        "embedding_tokens": 44926,
+        "rerank_calls": 1,
+        "rerank_tokens": 4379,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 7,
+          "BM25": 8,
+          "Vector": 37935,
+          "RRF": 28,
+          "Rerank": 4022,
+          "EvidenceDelivery": 42783
+        }
+      },
+      {
+        "id": "turn_02",
+        "elapsed_ms": 43365,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_03",
+        "elapsed_ms": 12371,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_04",
+        "elapsed_ms": 29027,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 8,
+        "embedding_tokens": 4302,
+        "rerank_calls": 1,
+        "rerank_tokens": 4567,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 2,
+          "BM25": 3,
+          "Vector": 2459,
+          "RRF": 8,
+          "Rerank": 3671,
+          "EvidenceDelivery": 6732
+        }
+      },
+      {
+        "id": "turn_05",
+        "elapsed_ms": 22669,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_06",
+        "elapsed_ms": 39223,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_07",
+        "elapsed_ms": 40252,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 1,
+        "embedding_tokens": 10,
+        "rerank_calls": 1,
+        "rerank_tokens": 4248,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 1,
+          "BM25": 1,
+          "Vector": 1239,
+          "RRF": 6,
+          "Rerank": 3912,
+          "EvidenceDelivery": 5735
+        }
+      },
+      {
+        "id": "turn_08",
+        "elapsed_ms": 48397,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 1,
+        "embedding_tokens": 5,
+        "rerank_calls": 1,
+        "rerank_tokens": 2027,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 1,
+          "Vector": 1171,
+          "RRF": 4,
+          "Rerank": 3494,
+          "EvidenceDelivery": 5190
+        }
+      },
+      {
+        "id": "turn_09",
+        "elapsed_ms": 64847,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_10",
+        "elapsed_ms": 38200,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      }
+    ]
+  },
+  "r4": {
+    "completed": 10,
+    "n": 10,
+    "p50_ms": 21641.5,
+    "p95_ms": 55116.7,
+    "rows": [
+      {
+        "id": "turn_01",
+        "elapsed_ms": 43211,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 75,
+        "embedding_tokens": 49223,
+        "rerank_calls": 1,
+        "rerank_tokens": 3593,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 1,
+          "BM25": 1,
+          "Vector": 21803,
+          "RRF": 8,
+          "Rerank": 3693,
+          "EvidenceDelivery": 26478
+        }
+      },
+      {
+        "id": "turn_02",
+        "elapsed_ms": 7348,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_03",
+        "elapsed_ms": 11323,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_04",
+        "elapsed_ms": 20631,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 1,
+        "embedding_tokens": 11,
+        "rerank_calls": 1,
+        "rerank_tokens": 4403,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 1,
+          "BM25": 2,
+          "Vector": 1360,
+          "RRF": 7,
+          "Rerank": 3704,
+          "EvidenceDelivery": 5538
+        }
+      },
+      {
+        "id": "turn_05",
+        "elapsed_ms": 30845,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_06",
+        "elapsed_ms": 54548,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_07",
+        "elapsed_ms": 55582,
+        "completed": true,
+        "tool_calls": 1,
+        "model_requests": 2,
+        "embedding_calls": 1,
+        "embedding_tokens": 7,
+        "rerank_calls": 1,
+        "rerank_tokens": 4529,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 4,
+          "BM25": 5,
+          "Vector": 1684,
+          "RRF": 9,
+          "Rerank": 3701,
+          "EvidenceDelivery": 6423
+        }
+      },
+      {
+        "id": "turn_08",
+        "elapsed_ms": 22652,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_09",
+        "elapsed_ms": 13362,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      },
+      {
+        "id": "turn_10",
+        "elapsed_ms": 15453,
+        "completed": true,
+        "tool_calls": 0,
+        "model_requests": 1,
+        "embedding_calls": 0,
+        "embedding_tokens": 0,
+        "rerank_calls": 0,
+        "rerank_tokens": 0,
+        "failures": null,
+        "stage_ms": {
+          "Keyword": 0,
+          "BM25": 0,
+          "Vector": 0,
+          "RRF": 0,
+          "Rerank": 0,
+          "EvidenceDelivery": 0
+        }
+      }
+    ]
+  },
+  "method": "Linear interpolation at (n-1)*p, same as prior longpdf evaluator; includes failed turns. Earlier r*-summary used nearest-rank and is retained. No SLA claim."
+}

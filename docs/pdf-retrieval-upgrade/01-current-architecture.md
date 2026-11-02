@@ -1,0 +1,5 @@
+# 实际架构审计（2911f67）
+当前原生Agent生命周期沿用上一轮，SessionDocumentResources每请求发现授权元数据，模型调用后BaseClient惰性创建Repository。工具暴露不依赖问题关键词。
+DocumentRetrieval：Intl.Segmenter中文词+双/三字gram；Keyword与BM25共享postings，Keyword按词长命中，BM25 k1=1.2/b=.75。现三路等权RRF K60使词法重复投票。QueryProcessor原查询保留，可能额外生成两条子查询；各通道内部RRF后再次跨通道RRF。Repository候选depth30（最多60），RRF先截20，Qwen精排候选20、摘录1200、12秒、每请求最多4次，最终默认6/最大12。关键词窗口截取可能丢长块命中位置。
+Vector使用服务端配置的兼容embedding，百炼默认text-embedding-v4；6000字符分段，余弦最大分聚合回父chunk，不回传最佳segment offset。每请求query缓存128，Mongo原文向量TTL7天，key绑定user/conversation/document/source/binding/parser/provider/model/revision。部分batch失败保留已成功缓存但不返回不完整排序。BM25缓存每记录frequency，user/conversation/document+text版本；未显式绑定parser版本（相同文本分词结果相同）。
+Repository原文records与visualRecords分开，search默认排除视觉摘要；table与页覆盖另存。授权callback执行前后检查。读取续读HMAC绑定用户/会话/文档/version/selection/expiry。旧原文并非完整OCR保证，未知页码不能猜。

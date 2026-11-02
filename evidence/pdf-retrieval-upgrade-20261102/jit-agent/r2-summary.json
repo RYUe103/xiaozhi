@@ -1,0 +1,407 @@
+{
+  "scope": "one frozen candidate batch; completion is not correctness; not a matched simultaneous A/B",
+  "completed": 8,
+  "total": 10,
+  "p50_ms": 29833,
+  "p95_ms": 220321,
+  "rows": [
+    {
+      "id": "turn_01",
+      "completed": true,
+      "elapsed_ms": 36305,
+      "tools": [
+        {
+          "name": "read_parsed_pdf",
+          "args": "{\"action\":\"search\",\"document_id\":\"doc_efbaa75108c1e68996e0\",\"query\":\"文化路 交通整治\"}"
+        }
+      ],
+      "stages": {
+        "ModelTransport": {
+          "count": 4,
+          "elapsed_ms": 19022
+        },
+        "QueryProcessor": {
+          "count": 1,
+          "elapsed_ms": 0
+        },
+        "Keyword": {
+          "count": 1,
+          "elapsed_ms": 2
+        },
+        "BM25": {
+          "count": 1,
+          "elapsed_ms": 2
+        },
+        "Vector": {
+          "count": 1,
+          "elapsed_ms": 17162
+        },
+        "RRF": {
+          "count": 1,
+          "elapsed_ms": 8
+        },
+        "Rerank": {
+          "count": 1,
+          "elapsed_ms": 1072
+        },
+        "EvidenceDelivery": {
+          "count": 1,
+          "elapsed_ms": 19152
+        }
+      },
+      "model_usage": [],
+      "rerank_usage": [
+        {
+          "prompt_tokens": 3865,
+          "completion_tokens": 29,
+          "total_tokens": 3894,
+          "completion_tokens_details": {
+            "text_tokens": 29
+          },
+          "prompt_tokens_details": {
+            "text_tokens": 3865
+          }
+        }
+      ],
+      "vector_usage": [
+        {
+          "calls": 75,
+          "chars": 82257,
+          "total_tokens": 49223
+        }
+      ],
+      "answer": "根据材料（第72页），文化路校园交通整治的相关信息如下：\n\n---\n\n## 推动者\n\n**市政协第三活动小组**——4月15日，该小组20多名委员到文化路调研，广泛听取校方及群众关于整治校园周边环境的意见建议；4月19日，委员与**交警部门**有关人员到学校门口现场办公，协商解决道路交通安全隐患。\n\n## 主要解决的问题\n\n| 问题 | 具体表现 |\n|---|---|\n| **道路拥堵** | 文化路全长约1000米、双向通行，分布有市第八中学、市民族中学和市民族小学三所学校，在校师生8000余人，加上周边住宅小区较多，上下学时段极易拥堵 |\n| **交通违规行为** | 家长随意停车、掉头，车辆经过斑马线不礼让行人，容易造成交通瘫痪 |\n| **交通安全隐患** | 校园周边道路交通安全隐患突出 |\n\n## 整治措施与成效\n\n交警部门对文化路进行严管：在路口两端新增\"学校密集路段，请车辆合理绕行\"\"限速30km/h\"等标志牌，并将学校门口的交通标识线由实线改为虚线。整治后，3所学校门口交通安全及拥堵情况得到极大改善。\n\n---\n\n### 解释示意图\n\n```mermaid\nflowchart TD\n  A[\"市政协第三活动小组调研\"] --> B[\"发现文化路校园周边拥堵与安全隐患\"]\n  B --> C[\"广泛听取校方及群众意见\"]\n  C --> D[\"与交警部门现场办公协商\"]\n  D --> E[\"交警部门实施整治措施\"]\n  E --> F[\"新增指示牌与限速标志\"]\n  E --> G[\"交通标识线由实线改虚线\"]\n  F --> H[\"3所学校门口拥堵与安全隐患极大改善\"]\n  G --> H\n```\n\n**简要说明：** 市政协第三活动小组调研发现问题后，联合交警部门通过增设标志牌、调整标线等具体措施，有效解决了文化路上下学时段的交通拥堵和安全隐患问题。",
+      "factual_review": "pending",
+      "error": null
+    },
+    {
+      "id": "turn_02",
+      "completed": true,
+      "elapsed_ms": 9400,
+      "tools": [],
+      "stages": {
+        "ModelTransport": {
+          "count": 2,
+          "elapsed_ms": 9205
+        }
+      },
+      "model_usage": [],
+      "rerank_usage": [],
+      "vector_usage": [],
+      "answer": "根据材料内容，文化路校园交通整治具体修改的交通设施及限速如下：\n\n**1. 具体改动的交通设施**\n* **新增指示标志牌**：在路口两端新增了提示牌，内容为“学校密集路段，请车辆合理绕行”。\n* **新增限速标志牌**：设立了明确的限速提示牌。\n* **修改地面标线**：将学校门口的交通标识线**由实线改为虚线**（便于车辆在确保安全的前提下灵活通行或避让）。\n\n**2. 限速标准**\n* 限速为 **30km/h**。",
+      "factual_review": "pending",
+      "error": null
+    },
+    {
+      "id": "turn_03",
+      "completed": true,
+      "elapsed_ms": 34986,
+      "tools": [],
+      "stages": {
+        "ModelTransport": {
+          "count": 2,
+          "elapsed_ms": 35244
+        }
+      },
+      "model_usage": [],
+      "rerank_usage": [],
+      "vector_usage": [],
+      "answer": "以下是关于整改措施的**原文依据**和**具体出处**：\n\n### 1. 原文出处\n* **文档**：《41489021-892f-5f2a-9c49-d0515dad08a2.pdf》\n* **页码**：第 **72** 页\n* **文章标题**：《履职解难题畅通上学路——市政协第三活动小组推动解决校园周边安全隐患见闻》\n\n### 2. 原文摘录\n> “经过协商，交警部门对文化路进行严管，**在路口两端新增“学校密集路段，请车辆合理绕行”“限速30km/h”等标志牌，并将学校门口的交通标识线由实线改为虚线**。”\n\n### 3. 原文与措施的对应关系\n| 整改措施 | 原文依据 |\n| :--- | :--- |\n| **新增标志牌** | 原文：“在路口两端新增……标志牌” |\n| **限速 30km/h** | 原文：“……新增……‘限速30km/h’等标志牌” |\n| **交通标识线由实线改虚线** | 原文：“……并将学校门口的交通标识线由实线改为虚线” |",
+      "factual_review": "pending",
+      "error": null
+    },
+    {
+      "id": "turn_04",
+      "completed": true,
+      "elapsed_ms": 27860,
+      "tools": [
+        {
+          "name": "read_parsed_pdf",
+          "args": "{\"action\":\"search\",\"document_id\":\"doc_efbaa75108c1e68996e0\",\"query\":\"象州上平村\"}"
+        }
+      ],
+      "stages": {
+        "ModelTransport": {
+          "count": 4,
+          "elapsed_ms": 25147
+        },
+        "QueryProcessor": {
+          "count": 1,
+          "elapsed_ms": 0
+        },
+        "Keyword": {
+          "count": 1,
+          "elapsed_ms": 2
+        },
+        "BM25": {
+          "count": 1,
+          "elapsed_ms": 2
+        },
+        "Vector": {
+          "count": 1,
+          "elapsed_ms": 1487
+        },
+        "RRF": {
+          "count": 1,
+          "elapsed_ms": 1
+        },
+        "Rerank": {
+          "count": 1,
+          "elapsed_ms": 1250
+        },
+        "EvidenceDelivery": {
+          "count": 1,
+          "elapsed_ms": 3228
+        }
+      },
+      "model_usage": [],
+      "rerank_usage": [
+        {
+          "prompt_tokens": 3269,
+          "completion_tokens": 19,
+          "total_tokens": 3288,
+          "completion_tokens_details": {
+            "text_tokens": 19
+          },
+          "prompt_tokens_details": {
+            "text_tokens": 3269
+          }
+        }
+      ],
+      "vector_usage": [
+        {
+          "calls": 1,
+          "chars": 5,
+          "total_tokens": 6
+        }
+      ],
+      "answer": "根据材料（第84页），象州县中平镇**上坪村**（材料中写作“上坪村”）通过委员读书履职改善生活的具体事项如下：\n\n### 1. 具体改善事项\n* **安装太阳能路灯**：在村内安装了**100多盏**造型美观的太阳能路灯，解决了村民夜间出行和活动的照明问题。\n* **基础设施改造与村容村貌提升**：象州县民宗局采纳委员建议，**投资30万元**用于改善上坪村的基础设施，改造提升村容村貌，促进乡风文明建设。\n\n### 2. 推动机制\n* 象州县政协在中平社区创建了**委员读书实践活动基地**。\n* 读书活动的开展搭建了委员与群众交流、了解社情民意的桥梁，委员们通过这一平台收集民意，从而推动了上述民生问题的解决。\n\n### 3. 原文依据\n> “夜幕降临，象州县中平镇上坪村的路灯准时亮了起来，**100多盏造型美观的太阳能路灯**发出柔和的亮光……”\n>\n> “上坪村的变化，还得益于**县政协在中平社区创建了委员读书实践活动基地**。读书活动的正常开展搭建起了委员与群众交流、了解社情民意的桥梁，推动民生问题的解决。”\n>\n> “象州县民宗局还将充分采纳我们的建议，**投资30万元用于改善**全国民族团结进步先进集体**上坪村的基础设施，改造提升村容村貌**……”\n\n---\n\n### 解释示意图\n\n```mermaid\nflowchart TD\n  A[\"县政协在中平社区创建委员读书实践活动基地\"] --> B[\"读书活动搭建委员与群众交流桥梁\"]\n  B --> C[\"委员了解社情民意并提出建议\"]\n  C --> D[\"象州县民宗局采纳建议\"]\n  D --> E[\"投资30万元改善基础设施与村容村貌\"]\n  D --> F[\"安装100多盏太阳能路灯\"]\n  E --> G[\"上坪村村民生活条件显著改善\"]\n  F --> G\n```",
+      "factual_review": "pending",
+      "error": null
+    },
+    {
+      "id": "turn_05",
+      "completed": true,
+      "elapsed_ms": 29833,
+      "tools": [],
+      "stages": {
+        "ModelTransport": {
+          "count": 2,
+          "elapsed_ms": 30553
+        }
+      },
+      "model_usage": [],
+      "rerank_usage": [],
+      "vector_usage": [],
+      "answer": "根据材料内容，这两个事件的落实情况对比如下：\n\n### 1. 已落实的措施\n* **文化路校园交通整治**：\n  * **设施改动**：交警部门已在路口两端新增“学校密集路段，请车辆合理绕行”“限速30km/h”等标志牌。\n  * **标线调整**：已将学校门口的交通标识线**由实线改为虚线**。\n  * **管理手段**：已对该路段进行严管。\n  * **成效**：3所学校门口的交通安全及拥堵情况已得到极大改善。\n* **象州上坪村改善生活**：\n  * **设施建设**：村内已安装并启用了**100多盏造型美观的太阳能路灯**（原文描述“路灯准时亮了起来”）。\n\n### 2. 下一步资金计划\n* **象州上坪村改善生活**：\n  * 象州县民宗局计划**投资30万元**，用于改善上坪村的基础设施、改造提升村容村貌及促进乡风文明建设（原文表述为“下一步……还将……投资30万元用于改善”）。\n* **文化路校园交通整治**：\n  * 材料中**未提及具体的资金计划**，仅提到下一步将继续关注城区学校反映的其他安全隐患问题并推动解决。\n\n---\n\n### 解释示意图\n\n```mermaid\nflowchart LR\n  subgraph Event1 [\"文化路校园交通整治\"]\n    A[\"已落实：新增标志牌、改虚线、严管\"]\n    B[\"计划：持续关注其他民生问题\"]\n  end\n  subgraph Event2 [\"象州上坪村改善生活\"]\n    C[\"已落实：安装100多盏太阳能路灯\"]\n    D[\"计划：投资30万元改造基础设施\"]\n  end\n```",
+      "factual_review": "pending",
+      "error": null
+    },
+    {
+      "id": "turn_06",
+      "completed": false,
+      "elapsed_ms": 180601,
+      "tools": [
+        {
+          "name": "read_parsed_pdf",
+          "args": "{\"action\":\"search\",\"document_id\":\"doc_efbaa75108c1e68996e0\",\"query\":\"4+14+2+1+N 模式\"}"
+        },
+        {
+          "name": "read_parsed_pdf",
+          "args": "{\"action\":\"read\",\"chunk_id\":\"chunk_d9b04e7acf568b7da67c\"}"
+        }
+      ],
+      "stages": {
+        "ModelTransport": {
+          "count": 7,
+          "elapsed_ms": 177353
+        },
+        "QueryProcessor": {
+          "count": 1,
+          "elapsed_ms": 0
+        },
+        "Keyword": {
+          "count": 1,
+          "elapsed_ms": 1
+        },
+        "BM25": {
+          "count": 1,
+          "elapsed_ms": 2
+        },
+        "Vector": {
+          "count": 1,
+          "elapsed_ms": 1414
+        },
+        "RRF": {
+          "count": 1,
+          "elapsed_ms": 1
+        },
+        "Rerank": {
+          "count": 1,
+          "elapsed_ms": 3704
+        },
+        "EvidenceDelivery": {
+          "count": 2,
+          "elapsed_ms": 5723
+        }
+      },
+      "model_usage": [],
+      "rerank_usage": [
+        {
+          "prompt_tokens": 3875,
+          "completion_tokens": 159,
+          "total_tokens": 4034,
+          "completion_tokens_details": {
+            "text_tokens": 159
+          },
+          "prompt_tokens_details": {
+            "text_tokens": 3875
+          }
+        }
+      ],
+      "vector_usage": [
+        {
+          "calls": 1,
+          "chars": 13,
+          "total_tokens": 13
+        }
+      ],
+      "answer": "根据材料（第83-84页），象州县政协的读书平台组织方式与上平村民生改善之间的联系如下：\n\n### 1. 平台构成：“4+14+2+1+N”模式\n象州县政协构建了“4+14+2+1+N”的委员读书实践工作新格局，具体构成包括：\n*   **4**：以 **4个“书香政协”委员读书实践活动基地** 为龙头。\n*   **14**：以 **14个“书香政协 委员书屋”** 为延伸。\n*   **2**：以 **“线上线下”2种结合** 为渠道。\n*   **1**：建成 **1个常态化网红“书香打卡点”**。\n*   **N**：开展 **N种形式多样的委员读书交流活动**。\n\n### 2. 平台如何转化为履职（以上平村为例）\n读书平台并非孤立的文化活动，而是通过以下路径转化为实际的履职成果：\n\n1.  **阵地延伸**：县政协将读书实践活动基地（\"4\"的组成部分）直接创建在 **中平社区**。\n2.  **搭建桥梁**：依托基地开展读书活动（\"N\"的组成部分），使其成为委员与群众交流、了解社情民意的桥梁。\n3.  **收集民意**：委员在读书互动中深入群众，收集到关于改善上平村基础设施的诉求。\n4.  **推动解决**：将民意转化为履职行动，推动相关部门落实整改。\n\n### 3. 转化成果（上平村案例）\n通过上述路径，上平村取得了两项具体成果：\n*   **已落实**：村内安装并启用了 **100多盏太阳能路灯**。\n*   **下一步计划**：象州县民宗局采纳委员建议，计划 **投资30万元** 用于改善基础设施、提升村容村貌。\n\n---\n\n### 解释示意图\n\n```mermaid\nflowchart TD\n    A[\"象州读书平台构成：4+14+2+1+N\"]\n    B[\"4个读书实践活动基地\"]\n    C[\"14个委员书屋\"]\n    D[\"线上线下2种结合渠道\"]\n    E[\"1个网红书香打卡点\"]\n    F[\"N种读书交流活动\"]\n    \n    A --> B\n    A --> C\n    A --> D\n    A --> E\n    A --> F\n    \n    B --> G[\"在中平社区建立读书实践活动基地\"]\n    F --> H[\"开展读书交流活动，搭建委员与群众沟通桥梁\"]\n    \n    G --> H\n    H --> I[\"委员了解社情民意\"]\n    I --> J[\"推动民生问题解决\"]\n    \n    J --> K[\"上平村已安装100多盏太阳能路灯\"]\n    J --> L[\"民宗局采纳建议，计划\n本次回答未完成：模型请求超时（MODEL_TIMEOUT）。已取得的证据不能视为完成核对的答案；请稍后重试。",
+      "factual_review": "pending",
+      "error": {
+        "code": "MODEL_TIMEOUT",
+        "retryable": false,
+        "status": null,
+        "cause": null
+      }
+    },
+    {
+      "id": "turn_07",
+      "completed": true,
+      "elapsed_ms": 41377,
+      "tools": [
+        {
+          "name": "read_parsed_pdf",
+          "args": "{\"action\":\"search\",\"document_id\":\"doc_efbaa75108c1e68996e0\",\"query\":\"金秀 线上线下 读书\"}"
+        }
+      ],
+      "stages": {
+        "ModelTransport": {
+          "count": 4,
+          "elapsed_ms": 39955
+        },
+        "QueryProcessor": {
+          "count": 1,
+          "elapsed_ms": 0
+        },
+        "Keyword": {
+          "count": 1,
+          "elapsed_ms": 1
+        },
+        "BM25": {
+          "count": 1,
+          "elapsed_ms": 2
+        },
+        "Vector": {
+          "count": 1,
+          "elapsed_ms": 940
+        },
+        "RRF": {
+          "count": 1,
+          "elapsed_ms": 1
+        },
+        "Rerank": {
+          "count": 1,
+          "elapsed_ms": 1429
+        },
+        "EvidenceDelivery": {
+          "count": 1,
+          "elapsed_ms": 2995
+        }
+      },
+      "model_usage": [],
+      "rerank_usage": [
+        {
+          "prompt_tokens": 4102,
+          "completion_tokens": 25,
+          "total_tokens": 4127,
+          "completion_tokens_details": {
+            "text_tokens": 25
+          },
+          "prompt_tokens_details": {
+            "text_tokens": 4102
+          }
+        }
+      ],
+      "vector_usage": [
+        {
+          "calls": 1,
+          "chars": 10,
+          "total_tokens": 10
+        }
+      ],
+      "answer": "根据材料（第87页《金秀瑶族自治县政协：“双线发力”推动履职和读书活动双促进》），金秀县政协开展线上线下读书的具体方式与规模数据如下：\n\n### 一、 线上开展方式与规模\n* **开展方式**：淡化时间和空间限制，依托**政协微信公众号**和**界别委员活动小组微信群**，开展线上“好书我阅读”活动。委员通过**短视频、微信语音、微信群视频**等方式进行互动分享。\n* **规模数据**：读书实践活动开展以来，共有 **80余名** 县政协委员通过线上渠道进行读书互动分享。\n\n### 二、 线下开展方式与规模\n* **开展方式**：制定《2022年工作计划》，以 **7项具体工作** 为抓手（推荐书目、建平台、分享活动、“走读广西·阅美大瑶山”系列活动、研讨班、调研交流、心得征集）。建立“6+1”委员读书交流平台，依托委员读书小组、书屋、书吧、读书角开展活动，并向群众、学生、旅客免费开放。\n* **规模数据**：\n  * 在居民小区、“同心小剧场”、委员企业等地共设置 **委员工作室6个**、**委员书屋1个**、**飘香书吧3个**。\n  * 形成 **“6+1”** 委员读书交流平台架构。\n  * 线下推进 **7项** 具体抓手工作。\n\n### 三、 核心数据汇总\n| 维度 | 具体数据/指标 |\n|:---|:---|\n| **线上参与人数** | 80余名县政协委员 |\n| **线下实体阵地** | 委员工作室6个、委员书屋1个、飘香书吧3个 |\n| **平台架构** | “6+1”委员读书交流平台 |\n| **工作计划抓手** | 7项具体工作 |\n\n### 解释示意图\n```mermaid\nflowchart TD\n  A[\"金秀政协“双线发力”读书模式\"]\n  B[\"线上发力\"]\n  C[\"线下发力\"]\n  D[\"平台：公众号/微信群\"]\n  E[\"形式：短视频/语音/视频互动\"]\n  F[\"规模：80余名委员参与\"]\n  G[\"计划：7项具体工作抓手\"]\n  H[\"架构：“6+1”交流平台\"]\n  I[\"阵地：6工作室+1书屋+3书吧\"]\n  J[\"开放：免费面向群众/学生/旅客\"]\n  \n  A --> B\n  A --> C\n  B --> D\n  B --> E\n  B --> F\n  C --> G\n  C --> H\n  C --> I\n  C --> J\n```\n\n### 原文依据\n> “**线上**发力……开展好线上‘好书我阅读’活动，利用政协微信公众号、界别委员活动小组微信群等线上平台，鼓励委员通过短视频、微信语音、微信群视频等方式进行线上互动分享。据统计，读书实践活动开展以来，金秀瑶族自治县共有**80余名**县政协委员通过线上渠道进行读书互动分享……”\n> \n> “**线下**发力……制定了《金秀县政协深化开展“书香政协香飘八桂”2022年工作计划》，以**7项具体工作**为抓手……建立‘**6+1**’委员读书交流平台……在居民小区、‘同心小剧场’、委员企业等地设置**委员工作室6个、委员书屋1个、飘香书吧3个**，并免费向群众、学生、旅客开放……”",
+      "factual_review": "pending",
+      "error": null
+    },
+    {
+      "id": "turn_08",
+      "completed": true,
+      "elapsed_ms": 23595,
+      "tools": [],
+      "stages": {
+        "ModelTransport": {
+          "count": 2,
+          "elapsed_ms": 24490
+        }
+      },
+      "model_usage": [],
+      "rerank_usage": [],
+      "vector_usage": [],
+      "answer": "**结论：不能断言。** 这两个说法在材料中均无依据，且部分说法明显违背常识。\n\n### 1. 为什么不能断言“有2500多名不同委员参加”？\n* **材料无数据支持**：原文仅提到线下设施（6个工作室、1个书屋、3个书吧）“免费向群众、学生、旅客开放”，并未统计或提及任何具体的参与总人数，更没有“2500多名”这一数字。\n* **违背政协常识**：金秀瑶族自治县为县级行政区，县级政协委员总数通常在200至300人左右。即便包含列席人员或群众，将参与读书活动的人数表述为“2500多名**委员**”在行政级别和人员编制上均不成立。\n\n### 2. 为什么不能断言“全部80多名线上委员都参加了线下活动”？\n* **缺乏交叉数据**：原文仅说明“共有80余名县政协委员通过线上渠道进行读书互动分享”，并未提供线下活动的参与名单或人数。\n* **逻辑无法互推**：线上互动（利用微信、短视频等）具有跨时空特性，而线下活动依托实体阵地（书屋、工作室等）。材料中没有任何信息表明这80余名线上参与者与线下参与者存在“完全重合”的关系。\n\n---\n\n### 解释示意图\n\n```mermaid\nflowchart TD\n  A[\"材料提供的事实\"]\n  B[\"线上：80余名委员互动分享\"]\n  C[\"线下：6工作室+1书屋+3书吧<br>面向群众/学生/旅客开放\"]\n  \n  D[\"断言一：2500多名委员参加\"]\n  E[\"断言二：80多名线上委员全参加线下\"]\n  \n  A --> B\n  A --> C\n  \n  B -.->|无数据支持| D\n  C -.->|无数据支持| D\n  B -.->|无人员重叠数据| E\n  C -.->|无人员重叠数据| E\n  \n  style D fill:#ffe6e6,stroke:#ff9999,stroke-width:2px\n  style E fill:#ffe6e6,stroke:#ff9999,stroke-width:2px\n```",
+      "factual_review": "pending",
+      "error": null
+    },
+    {
+      "id": "turn_09",
+      "completed": true,
+      "elapsed_ms": 8166,
+      "tools": [],
+      "stages": {
+        "ModelTransport": {
+          "count": 2,
+          "elapsed_ms": 8920
+        }
+      },
+      "model_usage": [],
+      "rerank_usage": [],
+      "vector_usage": [],
+      "answer": "根据材料内容，**无法确定**文化路这次整改安装交通标志实际花了多少钱。\n\n原文仅描述了交警部门采取的整改措施（新增标志牌、修改标线等）及取得的成效，**未提及任何关于资金投入或具体费用的数字**。材料中提到的“投资30万元”是针对象州县上坪村的基础设施改善计划，与文化路无关。",
+      "factual_review": "pending",
+      "error": null
+    },
+    {
+      "id": "turn_10",
+      "completed": false,
+      "elapsed_ms": 220321,
+      "tools": [],
+      "stages": {
+        "ModelTransport": {
+          "count": 3,
+          "elapsed_ms": 220413
+        }
+      },
+      "model_usage": [],
+      "rerank_usage": [],
+      "vector_usage": [],
+      "answer": "本次回答未完成：模型连接中断（MODEL_NETWORK_ERROR）。已取得的证据不能视为完成核对的答案；请稍后重试。",
+      "factual_review": "pending",
+      "error": {
+        "code": "MODEL_NETWORK_ERROR",
+        "retryable": true,
+        "status": null,
+        "cause": "UND_ERR_SOCKET"
+      }
+    }
+  ]
+}

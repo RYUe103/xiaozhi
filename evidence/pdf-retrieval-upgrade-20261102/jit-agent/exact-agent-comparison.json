@@ -1,0 +1,203 @@
+{
+  "scope": "same two natural-language questions; autonomous real Agent, not forced tool routing",
+  "batches": [
+    {
+      "name": "exact-agent-r1",
+      "source_sha": "6d2ec2b",
+      "rows": [
+        {
+          "turn": "turn_01",
+          "completed": true,
+          "elapsed_ms": 38779,
+          "calls": [
+            {
+              "action": "search",
+              "limit": 12,
+              "uses_previous_token": false,
+              "matches": [],
+              "match_count": null,
+              "next_offset": null,
+              "status": "ok"
+            }
+          ]
+        },
+        {
+          "turn": "turn_02",
+          "completed": true,
+          "elapsed_ms": 20782,
+          "calls": []
+        }
+      ],
+      "token_roundtrip": false,
+      "acceptance": "failed: ranked search mistaken for ordered exhaustive matches"
+    },
+    {
+      "name": "exact-agent-r2",
+      "source_sha": "10f24ce",
+      "rows": [
+        {
+          "turn": "turn_01",
+          "completed": true,
+          "elapsed_ms": 20775,
+          "calls": [
+            {
+              "action": "find_exact",
+              "limit": 5,
+              "uses_previous_token": false,
+              "matches": [
+                {
+                  "index": null,
+                  "page": 8,
+                  "source_offset": 218,
+                  "match_text": "委员读书"
+                },
+                {
+                  "index": null,
+                  "page": 8,
+                  "source_offset": 524,
+                  "match_text": "委员读书"
+                },
+                {
+                  "index": null,
+                  "page": 8,
+                  "source_offset": 92,
+                  "match_text": "委员读书"
+                },
+                {
+                  "index": null,
+                  "page": 19,
+                  "source_offset": 183,
+                  "match_text": "委员读书"
+                },
+                {
+                  "index": null,
+                  "page": 22,
+                  "source_offset": 80,
+                  "match_text": "委员读书"
+                }
+              ],
+              "match_count": 56,
+              "next_offset": 5,
+              "status": "partial"
+            }
+          ]
+        },
+        {
+          "turn": "turn_02",
+          "completed": true,
+          "elapsed_ms": 43314,
+          "calls": [
+            {
+              "action": "find_exact",
+              "limit": 5,
+              "uses_previous_token": true,
+              "matches": [
+                {
+                  "index": null,
+                  "page": 47,
+                  "source_offset": 25,
+                  "match_text": "委员读书"
+                },
+                {
+                  "index": null,
+                  "page": 49,
+                  "source_offset": 160,
+                  "match_text": "委员读书"
+                },
+                {
+                  "index": null,
+                  "page": 49,
+                  "source_offset": 192,
+                  "match_text": "委员读书"
+                },
+                {
+                  "index": null,
+                  "page": 68,
+                  "source_offset": 11,
+                  "match_text": "委员读书"
+                },
+                {
+                  "index": null,
+                  "page": 68,
+                  "source_offset": 16,
+                  "match_text": "委员读书"
+                }
+              ],
+              "match_count": 56,
+              "next_offset": 10,
+              "status": "partial"
+            }
+          ]
+        }
+      ],
+      "token_roundtrip": true,
+      "acceptance": "partial: genuine exact and valid continuation; requested 5 but displayed 2, skipped positions"
+    },
+    {
+      "name": "exact-agent-r3",
+      "source_sha": "c462db6",
+      "rows": [
+        {
+          "turn": "turn_01",
+          "completed": true,
+          "elapsed_ms": 13566,
+          "calls": [
+            {
+              "action": "find_exact",
+              "limit": 2,
+              "uses_previous_token": false,
+              "matches": [
+                {
+                  "index": 1,
+                  "page": 8,
+                  "source_offset": 218,
+                  "match_text": "委员读书"
+                },
+                {
+                  "index": 2,
+                  "page": 8,
+                  "source_offset": 524,
+                  "match_text": "委员读书"
+                }
+              ],
+              "match_count": 56,
+              "next_offset": 2,
+              "status": "partial"
+            }
+          ]
+        },
+        {
+          "turn": "turn_02",
+          "completed": true,
+          "elapsed_ms": 35057,
+          "calls": [
+            {
+              "action": "find_exact",
+              "limit": 2,
+              "uses_previous_token": true,
+              "matches": [
+                {
+                  "index": 3,
+                  "page": 8,
+                  "source_offset": 92,
+                  "match_text": "委员读书"
+                },
+                {
+                  "index": 4,
+                  "page": 19,
+                  "source_offset": 183,
+                  "match_text": "委员读书"
+                }
+              ],
+              "match_count": 56,
+              "next_offset": 4,
+              "status": "partial"
+            }
+          ]
+        }
+      ],
+      "token_roundtrip": true,
+      "acceptance": "passed for parsed-text literal paging: returned 1/2 then 3/4; final wording calls parsed count full-text, OCR completeness not certified"
+    }
+  ]
+}

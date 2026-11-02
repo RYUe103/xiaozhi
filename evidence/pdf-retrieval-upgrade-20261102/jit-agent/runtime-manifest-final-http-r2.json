@@ -1,0 +1,48 @@
+{
+  "source_sha": "c462db63e0e846ba632d4e3f7f8f4f8f8b9913e9",
+  "runtime": "/tmp/sansuo-phase5-candidate-20261101",
+  "files": [
+    {
+      "path": "api/server/services/DocumentArtifactRepository.js",
+      "sha256": "5ab0082eb57085fdbb7544940904b522a8dbe034bf0e5b2c5254e2f6332053a0"
+    },
+    {
+      "path": "api/server/services/DocumentEvidenceReranker.js",
+      "sha256": "e37feced89d6aea15c0aad4ccea01cc489b488d6737235c11dc535c94ba6337d"
+    },
+    {
+      "path": "api/server/services/DocumentExactSearch.js",
+      "sha256": "7b9b895429f42f013165cb7fb46a0c29a422481af968a853cc543d275d1c2670"
+    },
+    {
+      "path": "api/server/services/DocumentRetrieval.js",
+      "sha256": "2e6e9a83af6d412052e395c40bc422730592aea30d6afc71be79c565ea4679e2"
+    },
+    {
+      "path": "api/server/services/DocumentRetrievalContext.js",
+      "sha256": "7b6334d6ab4e13f348be0f0da53b88156e5f85593416f88f3ea4a4b1453ccaa0"
+    },
+    {
+      "path": "api/server/services/DocumentVectorSearch.js",
+      "sha256": "027dae96d7a7b8a2263471a246f1ff16402784a429306c43ce99533ef35817d6"
+    },
+    {
+      "path": "api/server/services/Endpoints/agents/documentReadContracts.js",
+      "sha256": "9b72167ff46866f0f1a983faed3f78dff36cbcf9de9f3816e964c06c8cab2d2c"
+    },
+    {
+      "path": "api/server/services/DocumentToolResult.js",
+      "sha256": "d62f2e386896fb8240b13fca97432cc2f7d0be7ad8c403cefceff817e6bf63f0"
+    }
+  ],
+  "settings": {
+    "fusion": "weighted",
+    "bm25": 0.75,
+    "vector": 1,
+    "pool": 40,
+    "contextual": false,
+    "additional_public_pdf_allowlist_sha256": "eb78d5cb7a90fc93ca8521541de85a30d5b160987c178cbe8689409e1b28987b",
+    "env_file_modified": false
+  },
+  "batch": "final-http-r2"
+}

@@ -1,0 +1,38 @@
+{
+  "source_sha": "6d2ec2b2998ea315d1b7682bd281412dec251fe6",
+  "question_id": "longpdf_010",
+  "target_source_chunk": "mineru_fe620c0ffc31706d034e0f04",
+  "target_runtime_chunk": "chunk_d80f0ff96dc2cea37fd1",
+  "stages": [
+    {
+      "stage": "Keyword",
+      "rank": 36,
+      "depth": 60
+    },
+    {
+      "stage": "BM25",
+      "rank": 18,
+      "depth": 60
+    },
+    {
+      "stage": "Vector",
+      "rank": 51,
+      "depth": 60
+    },
+    {
+      "stage": "RRF",
+      "rank": 28,
+      "depth": 40
+    },
+    {
+      "stage": "Rerank",
+      "rank": 27,
+      "depth": 40
+    }
+  ],
+  "delivered": false,
+  "tool_query": [
+    "{\"action\":\"search\",\"document_id\":\"doc_a76cfd719dd4da0ab6b4\",\"query\":\"象州 金秀 委员读书 线上线下\",\"limit\":10}"
+  ],
+  "scope": "postrun diagnostic using frozen source identity; never fed to Agent"
+}

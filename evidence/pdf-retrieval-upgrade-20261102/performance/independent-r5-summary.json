@@ -1,0 +1,1385 @@
+{
+  "method": "linear interpolation; all questions including failures; no best-answer mixing",
+  "limits": [
+    "Page coverage unions all query variants and tool calls; not fragment recall.",
+    "Trace stages overlap (Keyword/BM25 and EvidenceDelivery); do not sum them as wall time.",
+    "RRF page coverage approximates rerank input; model skip/failure is separate.",
+    "Main model usage comes from separate application transaction export; unknown is not zero.",
+    "Failed rerank usage may be absent from trace; success usage is a lower bound.",
+    "Cache hit counts are not instrumented; no numeric hit rate is invented."
+  ],
+  "total": 20,
+  "completed": 20,
+  "p50_ms": 48330.5,
+  "p95_ms": 89537.60000000002,
+  "rows": [
+    {
+      "id": "longpdf_001",
+      "completed": true,
+      "elapsed_ms": 55718,
+      "tools": 3,
+      "vl_calls": 0,
+      "model_transport_headers_received": 4,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 8,
+          "reported_elapsed_ms": 22465
+        },
+        "QueryProcessor": {
+          "events": 2,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 2,
+          "reported_elapsed_ms": 3
+        },
+        "BM25": {
+          "events": 2,
+          "reported_elapsed_ms": 4
+        },
+        "Vector": {
+          "events": 2,
+          "reported_elapsed_ms": 27616
+        },
+        "RRF": {
+          "events": 2,
+          "reported_elapsed_ms": 14
+        },
+        "Rerank": {
+          "events": 2,
+          "reported_elapsed_ms": 7035
+        },
+        "EvidenceDelivery": {
+          "events": 3,
+          "reported_elapsed_ms": 35831
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 76,
+        "chars": 82267,
+        "total_tokens": 49229
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 6198,
+        "completion_tokens": 318,
+        "total_tokens": 6516
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_002",
+      "completed": true,
+      "elapsed_ms": 31801,
+      "tools": 1,
+      "vl_calls": 0,
+      "model_transport_headers_received": 2,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 4,
+          "reported_elapsed_ms": 13171
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 15185
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 6
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3725
+        },
+        "EvidenceDelivery": {
+          "events": 1,
+          "reported_elapsed_ms": 19733
+        }
+      },
+      "warnings": [
+        "RERANK_FAILED"
+      ],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82267,
+        "total_tokens": 49234
+      },
+      "rerank_success_usage": null,
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_003",
+      "completed": true,
+      "elapsed_ms": 49472,
+      "tools": 2,
+      "vl_calls": 0,
+      "model_transport_headers_received": 3,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 6,
+          "reported_elapsed_ms": 31900
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 2
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 2
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 14501
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 8
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3511
+        },
+        "EvidenceDelivery": {
+          "events": 2,
+          "reported_elapsed_ms": 18873
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82272,
+        "total_tokens": 49234
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 4737,
+        "completion_tokens": 159,
+        "total_tokens": 4896
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_004",
+      "completed": true,
+      "elapsed_ms": 30986,
+      "tools": 2,
+      "vl_calls": 0,
+      "model_transport_headers_received": 3,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 6,
+          "reported_elapsed_ms": 15441
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 12810
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 9
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3413
+        },
+        "EvidenceDelivery": {
+          "events": 2,
+          "reported_elapsed_ms": 17073
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82264,
+        "total_tokens": 49231
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 4187,
+        "completion_tokens": 159,
+        "total_tokens": 4346
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_005",
+      "completed": true,
+      "elapsed_ms": 42368,
+      "tools": 5,
+      "vl_calls": 0,
+      "model_transport_headers_received": 6,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 12,
+          "reported_elapsed_ms": 29253
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 13845
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 8
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3539
+        },
+        "EvidenceDelivery": {
+          "events": 5,
+          "reported_elapsed_ms": 18327
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82267,
+        "total_tokens": 49232
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 3438,
+        "completion_tokens": 155,
+        "total_tokens": 3593
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_006",
+      "completed": true,
+      "elapsed_ms": 33208,
+      "tools": 1,
+      "vl_calls": 0,
+      "model_transport_headers_received": 2,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 4,
+          "reported_elapsed_ms": 15591
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 4
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 4
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 13744
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 8
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3780
+        },
+        "EvidenceDelivery": {
+          "events": 1,
+          "reported_elapsed_ms": 18577
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82264,
+        "total_tokens": 49231
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 4356,
+        "completion_tokens": 159,
+        "total_tokens": 4515
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_007",
+      "completed": true,
+      "elapsed_ms": 54763,
+      "tools": 1,
+      "vl_calls": 0,
+      "model_transport_headers_received": 2,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 4,
+          "reported_elapsed_ms": 30942
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 20611
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 9
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3498
+        },
+        "EvidenceDelivery": {
+          "events": 1,
+          "reported_elapsed_ms": 25158
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82261,
+        "total_tokens": 49229
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 3643,
+        "completion_tokens": 151,
+        "total_tokens": 3794
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_008",
+      "completed": true,
+      "elapsed_ms": 88051,
+      "tools": 2,
+      "vl_calls": 0,
+      "model_transport_headers_received": 2,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 4,
+          "reported_elapsed_ms": 55431
+        },
+        "QueryProcessor": {
+          "events": 2,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 2,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 2,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 2,
+          "reported_elapsed_ms": 44980
+        },
+        "RRF": {
+          "events": 2,
+          "reported_elapsed_ms": 25
+        },
+        "Rerank": {
+          "events": 2,
+          "reported_elapsed_ms": 7592
+        },
+        "EvidenceDelivery": {
+          "events": 2,
+          "reported_elapsed_ms": 55428
+        }
+      },
+      "warnings": [
+        "VECTOR_TIMEOUT"
+      ],
+      "vector_usage_request_max": {
+        "calls": 131,
+        "chars": 148720,
+        "total_tokens": 87912
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 8464,
+        "completion_tokens": 318,
+        "total_tokens": 8782
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_009",
+      "completed": true,
+      "elapsed_ms": 88082,
+      "tools": 8,
+      "vl_calls": 0,
+      "model_transport_headers_received": 5,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 10,
+          "reported_elapsed_ms": 69081
+        },
+        "QueryProcessor": {
+          "events": 2,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 2,
+          "reported_elapsed_ms": 2
+        },
+        "BM25": {
+          "events": 2,
+          "reported_elapsed_ms": 2
+        },
+        "Vector": {
+          "events": 2,
+          "reported_elapsed_ms": 33599
+        },
+        "RRF": {
+          "events": 2,
+          "reported_elapsed_ms": 13
+        },
+        "Rerank": {
+          "events": 2,
+          "reported_elapsed_ms": 7245
+        },
+        "EvidenceDelivery": {
+          "events": 8,
+          "reported_elapsed_ms": 44172
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 150,
+        "chars": 164516,
+        "total_tokens": 98448
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 7219,
+        "completion_tokens": 315,
+        "total_tokens": 7534
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_010",
+      "completed": true,
+      "elapsed_ms": 47362,
+      "tools": 1,
+      "vl_calls": 0,
+      "model_transport_headers_received": 2,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 4,
+          "reported_elapsed_ms": 29376
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 15341
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 9
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3618
+        },
+        "EvidenceDelivery": {
+          "events": 1,
+          "reported_elapsed_ms": 19749
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82264,
+        "total_tokens": 49233
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 4637,
+        "completion_tokens": 155,
+        "total_tokens": 4792
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_011",
+      "completed": true,
+      "elapsed_ms": 55664,
+      "tools": 3,
+      "vl_calls": 0,
+      "model_transport_headers_received": 4,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 8,
+          "reported_elapsed_ms": 40285
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 15050
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 10
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3738
+        },
+        "EvidenceDelivery": {
+          "events": 3,
+          "reported_elapsed_ms": 19670
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82266,
+        "total_tokens": 49232
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 5063,
+        "completion_tokens": 159,
+        "total_tokens": 5222
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_012",
+      "completed": true,
+      "elapsed_ms": 64032,
+      "tools": 4,
+      "vl_calls": 0,
+      "model_transport_headers_received": 3,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 6,
+          "reported_elapsed_ms": 46279
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 14480
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 10
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3839
+        },
+        "EvidenceDelivery": {
+          "events": 4,
+          "reported_elapsed_ms": 19418
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82261,
+        "total_tokens": 49228
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 3752,
+        "completion_tokens": 159,
+        "total_tokens": 3911
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_013",
+      "completed": true,
+      "elapsed_ms": 43273,
+      "tools": 2,
+      "vl_calls": 0,
+      "model_transport_headers_received": 3,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 6,
+          "reported_elapsed_ms": 28778
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 13220
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 9
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3529
+        },
+        "EvidenceDelivery": {
+          "events": 2,
+          "reported_elapsed_ms": 17597
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82258,
+        "total_tokens": 49225
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 3562,
+        "completion_tokens": 148,
+        "total_tokens": 3710
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_014",
+      "completed": true,
+      "elapsed_ms": 46484,
+      "tools": 3,
+      "vl_calls": 0,
+      "model_transport_headers_received": 3,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 6,
+          "reported_elapsed_ms": 31141
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 14029
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 8
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3759
+        },
+        "EvidenceDelivery": {
+          "events": 3,
+          "reported_elapsed_ms": 18715
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82261,
+        "total_tokens": 49229
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 3635,
+        "completion_tokens": 159,
+        "total_tokens": 3794
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_015",
+      "completed": true,
+      "elapsed_ms": 74923,
+      "tools": 1,
+      "vl_calls": 0,
+      "model_transport_headers_received": 2,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 4,
+          "reported_elapsed_ms": 51833
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 19348
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 12
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3824
+        },
+        "EvidenceDelivery": {
+          "events": 1,
+          "reported_elapsed_ms": 24224
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82270,
+        "total_tokens": 49233
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 4266,
+        "completion_tokens": 159,
+        "total_tokens": 4425
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_016",
+      "completed": true,
+      "elapsed_ms": 39459,
+      "tools": 1,
+      "vl_calls": 0,
+      "model_transport_headers_received": 2,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 4,
+          "reported_elapsed_ms": 18518
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 2
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 17270
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 13
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3921
+        },
+        "EvidenceDelivery": {
+          "events": 1,
+          "reported_elapsed_ms": 21989
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82271,
+        "total_tokens": 49237
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 3894,
+        "completion_tokens": 159,
+        "total_tokens": 4053
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_017",
+      "completed": true,
+      "elapsed_ms": 42452,
+      "tools": 1,
+      "vl_calls": 0,
+      "model_transport_headers_received": 2,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 4,
+          "reported_elapsed_ms": 18944
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 20444
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 8
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3763
+        },
+        "EvidenceDelivery": {
+          "events": 1,
+          "reported_elapsed_ms": 25143
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82272,
+        "total_tokens": 49238
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 3801,
+        "completion_tokens": 159,
+        "total_tokens": 3960
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_018",
+      "completed": true,
+      "elapsed_ms": 49299,
+      "tools": 3,
+      "vl_calls": 1,
+      "model_transport_headers_received": 4,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 8,
+          "reported_elapsed_ms": 20195
+        },
+        "QueryProcessor": {
+          "events": 2,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 2,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 2,
+          "reported_elapsed_ms": 2
+        },
+        "Vector": {
+          "events": 2,
+          "reported_elapsed_ms": 14890
+        },
+        "RRF": {
+          "events": 2,
+          "reported_elapsed_ms": 13
+        },
+        "Rerank": {
+          "events": 2,
+          "reported_elapsed_ms": 7928
+        },
+        "EvidenceDelivery": {
+          "events": 2,
+          "reported_elapsed_ms": 23804
+        },
+        "PageVisionTransport": {
+          "events": 2,
+          "reported_elapsed_ms": 13895
+        },
+        "PageVision": {
+          "events": 1,
+          "reported_elapsed_ms": 8303
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 76,
+        "chars": 82271,
+        "total_tokens": 49239
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 6152,
+        "completion_tokens": 318,
+        "total_tokens": 6470
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_019",
+      "completed": true,
+      "elapsed_ms": 43579,
+      "tools": 4,
+      "vl_calls": 0,
+      "model_transport_headers_received": 3,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 6,
+          "reported_elapsed_ms": 27899
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 13652
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 9
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3585
+        },
+        "EvidenceDelivery": {
+          "events": 4,
+          "reported_elapsed_ms": 18142
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82262,
+        "total_tokens": 49232
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 3540,
+        "completion_tokens": 159,
+        "total_tokens": 3699
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "longpdf_020",
+      "completed": true,
+      "elapsed_ms": 117194,
+      "tools": 11,
+      "vl_calls": 0,
+      "model_transport_headers_received": 12,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 24,
+          "reported_elapsed_ms": 78887
+        },
+        "QueryProcessor": {
+          "events": 10,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 10,
+          "reported_elapsed_ms": 8
+        },
+        "BM25": {
+          "events": 10,
+          "reported_elapsed_ms": 11
+        },
+        "Vector": {
+          "events": 10,
+          "reported_elapsed_ms": 36116
+        },
+        "RRF": {
+          "events": 10,
+          "reported_elapsed_ms": 70
+        },
+        "Rerank": {
+          "events": 10,
+          "reported_elapsed_ms": 15712
+        },
+        "EvidenceDelivery": {
+          "events": 11,
+          "reported_elapsed_ms": 52893
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 84,
+        "chars": 82381,
+        "total_tokens": 49350
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 15070,
+        "completion_tokens": 636,
+        "total_tokens": 15706
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    }
+  ]
+}

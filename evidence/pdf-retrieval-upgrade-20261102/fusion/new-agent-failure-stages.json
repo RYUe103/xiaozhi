@@ -1,0 +1,104 @@
+{
+  "scope": "one frozen annotated necessary fragment, not general Recall",
+  "rows": [
+    {
+      "batch": "r2",
+      "runtime_chunk_id": "chunk_4ab045f31ce9fd68ad94",
+      "stages": [
+        {
+          "stage": "Keyword",
+          "count": 60,
+          "target_rank": null
+        },
+        {
+          "stage": "BM25",
+          "count": 60,
+          "target_rank": 34
+        },
+        {
+          "stage": "Vector",
+          "count": 60,
+          "target_rank": 28
+        },
+        {
+          "stage": "RRF",
+          "count": 40,
+          "target_rank": null
+        },
+        {
+          "stage": "Rerank",
+          "count": 40,
+          "target_rank": null
+        }
+      ],
+      "delivered": false,
+      "answer_includes_required_numbers": false
+    },
+    {
+      "batch": "r3",
+      "runtime_chunk_id": "chunk_276e8e8bf10cbc694131",
+      "stages": [
+        {
+          "stage": "Keyword",
+          "count": 60,
+          "target_rank": null
+        },
+        {
+          "stage": "BM25",
+          "count": 60,
+          "target_rank": 34
+        },
+        {
+          "stage": "Vector",
+          "count": 60,
+          "target_rank": 28
+        },
+        {
+          "stage": "RRF",
+          "count": 40,
+          "target_rank": null
+        },
+        {
+          "stage": "Rerank",
+          "count": 40,
+          "target_rank": null
+        }
+      ],
+      "delivered": false,
+      "answer_includes_required_numbers": false
+    },
+    {
+      "batch": "r4",
+      "runtime_chunk_id": "chunk_06214ae7ed4ceb83970d",
+      "stages": [
+        {
+          "stage": "Keyword",
+          "count": 60,
+          "target_rank": 18
+        },
+        {
+          "stage": "BM25",
+          "count": 60,
+          "target_rank": 16
+        },
+        {
+          "stage": "Vector",
+          "count": 60,
+          "target_rank": 10
+        },
+        {
+          "stage": "RRF",
+          "count": 40,
+          "target_rank": 9
+        },
+        {
+          "stage": "Rerank",
+          "count": 40,
+          "target_rank": 1
+        }
+      ],
+      "delivered": true,
+      "answer_includes_required_numbers": true
+    }
+  ]
+}

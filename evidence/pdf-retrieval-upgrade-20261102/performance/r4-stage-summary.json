@@ -1,0 +1,382 @@
+{
+  "method": "linear interpolation; all questions including failures; no best-answer mixing",
+  "limits": [
+    "Page coverage unions all query variants and tool calls; not fragment recall.",
+    "Trace stages overlap (Keyword/BM25 and EvidenceDelivery); do not sum them as wall time.",
+    "RRF page coverage approximates rerank input; model skip/failure is separate.",
+    "Main model usage comes from separate application transaction export; unknown is not zero.",
+    "Failed rerank usage may be absent from trace; success usage is a lower bound.",
+    "Cache hit counts are not instrumented; no numeric hit rate is invented."
+  ],
+  "total": 10,
+  "completed": 10,
+  "p50_ms": 21641.5,
+  "p95_ms": 55116.7,
+  "rows": [
+    {
+      "id": "turn_01",
+      "completed": true,
+      "elapsed_ms": 43211,
+      "tools": 1,
+      "vl_calls": 0,
+      "model_transport_headers_received": 2,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 4,
+          "reported_elapsed_ms": 17856
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 21803
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 8
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3693
+        },
+        "EvidenceDelivery": {
+          "events": 1,
+          "reported_elapsed_ms": 26478
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 75,
+        "chars": 82258,
+        "total_tokens": 49223
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 3434,
+        "completion_tokens": 159,
+        "total_tokens": 3593
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "turn_02",
+      "completed": true,
+      "elapsed_ms": 7348,
+      "tools": 0,
+      "vl_calls": 0,
+      "model_transport_headers_received": 1,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 2,
+          "reported_elapsed_ms": 8186
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": null,
+      "rerank_success_usage": null,
+      "main_model_usage": null,
+      "page_coverage_proxy": {},
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "turn_03",
+      "completed": true,
+      "elapsed_ms": 11323,
+      "tools": 0,
+      "vl_calls": 0,
+      "model_transport_headers_received": 1,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 2,
+          "reported_elapsed_ms": 11285
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": null,
+      "rerank_success_usage": null,
+      "main_model_usage": null,
+      "page_coverage_proxy": {},
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "turn_04",
+      "completed": true,
+      "elapsed_ms": 20631,
+      "tools": 1,
+      "vl_calls": 0,
+      "model_transport_headers_received": 2,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 4,
+          "reported_elapsed_ms": 17575
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 1
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 2
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 1360
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 7
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3704
+        },
+        "EvidenceDelivery": {
+          "events": 1,
+          "reported_elapsed_ms": 5538
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 1,
+        "chars": 15,
+        "total_tokens": 11
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 4244,
+        "completion_tokens": 159,
+        "total_tokens": 4403
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "turn_05",
+      "completed": true,
+      "elapsed_ms": 30845,
+      "tools": 0,
+      "vl_calls": 0,
+      "model_transport_headers_received": 1,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 2,
+          "reported_elapsed_ms": 31771
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": null,
+      "rerank_success_usage": null,
+      "main_model_usage": null,
+      "page_coverage_proxy": {},
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "turn_06",
+      "completed": true,
+      "elapsed_ms": 54548,
+      "tools": 0,
+      "vl_calls": 0,
+      "model_transport_headers_received": 1,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 2,
+          "reported_elapsed_ms": 55621
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": null,
+      "rerank_success_usage": null,
+      "main_model_usage": null,
+      "page_coverage_proxy": {},
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "turn_07",
+      "completed": true,
+      "elapsed_ms": 55582,
+      "tools": 1,
+      "vl_calls": 0,
+      "model_transport_headers_received": 2,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 4,
+          "reported_elapsed_ms": 49721
+        },
+        "QueryProcessor": {
+          "events": 1,
+          "reported_elapsed_ms": 0
+        },
+        "Keyword": {
+          "events": 1,
+          "reported_elapsed_ms": 4
+        },
+        "BM25": {
+          "events": 1,
+          "reported_elapsed_ms": 5
+        },
+        "Vector": {
+          "events": 1,
+          "reported_elapsed_ms": 1684
+        },
+        "RRF": {
+          "events": 1,
+          "reported_elapsed_ms": 9
+        },
+        "Rerank": {
+          "events": 1,
+          "reported_elapsed_ms": 3701
+        },
+        "EvidenceDelivery": {
+          "events": 1,
+          "reported_elapsed_ms": 6423
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": {
+        "calls": 1,
+        "chars": 12,
+        "total_tokens": 7
+      },
+      "rerank_success_usage": {
+        "prompt_tokens": 4370,
+        "completion_tokens": 159,
+        "total_tokens": 4529
+      },
+      "main_model_usage": null,
+      "page_coverage_proxy": {
+        "BM25@20": 1.0,
+        "BM25@40": 1.0,
+        "BM25@60": 1.0,
+        "Vector@20": 1.0,
+        "Vector@40": 1.0,
+        "Vector@60": 1.0,
+        "rerank_input": 1.0,
+        "delivery": 1.0
+      },
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "turn_08",
+      "completed": true,
+      "elapsed_ms": 22652,
+      "tools": 0,
+      "vl_calls": 0,
+      "model_transport_headers_received": 1,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 2,
+          "reported_elapsed_ms": 23183
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": null,
+      "rerank_success_usage": null,
+      "main_model_usage": null,
+      "page_coverage_proxy": {},
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "turn_09",
+      "completed": true,
+      "elapsed_ms": 13362,
+      "tools": 0,
+      "vl_calls": 0,
+      "model_transport_headers_received": 1,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 2,
+          "reported_elapsed_ms": 13352
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": null,
+      "rerank_success_usage": null,
+      "main_model_usage": null,
+      "page_coverage_proxy": {},
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    },
+    {
+      "id": "turn_10",
+      "completed": true,
+      "elapsed_ms": 15453,
+      "tools": 0,
+      "vl_calls": 0,
+      "model_transport_headers_received": 1,
+      "model_failure": null,
+      "stages": {
+        "ModelTransport": {
+          "events": 2,
+          "reported_elapsed_ms": 16286
+        }
+      },
+      "warnings": [],
+      "vector_usage_request_max": null,
+      "rerank_success_usage": null,
+      "main_model_usage": null,
+      "page_coverage_proxy": {},
+      "fragment_recall": null,
+      "answer_accuracy": null,
+      "citation_accuracy": null
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "scope": "real depth60 channel trace and immutable original text; one annotated missing fragment, NOT corpus-wide Recall",
+  "source_trace": "evidence/pdf-retrieval-upgrade-20261102/jit-agent/r3/turn_07.json",
+  "target_source_chunk": "mineru_fe620c0ffc31706d034e0f04",
+  "channel_depths": {
+    "keyword": 60,
+    "bm25": 60,
+    "vector": 60
+  },
+  "rows": [
+    {
+      "mode": "legacy",
+      "limit": 20,
+      "target_rank": null
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "protect": false,
+      "limit": 20,
+      "target_rank": null,
+      "candidate_count": 20
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "protect": true,
+      "limit": 20,
+      "target_rank": null,
+      "candidate_count": 20
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "protect": false,
+      "limit": 20,
+      "target_rank": null,
+      "candidate_count": 20
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "protect": true,
+      "limit": 20,
+      "target_rank": null,
+      "candidate_count": 20
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "protect": false,
+      "limit": 20,
+      "target_rank": null,
+      "candidate_count": 20
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "protect": true,
+      "limit": 20,
+      "target_rank": null,
+      "candidate_count": 20
+    },
+    {
+      "mode": "legacy",
+      "limit": 40,
+      "target_rank": null
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "protect": false,
+      "limit": 40,
+      "target_rank": 28,
+      "candidate_count": 40
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "protect": true,
+      "limit": 40,
+      "target_rank": 28,
+      "candidate_count": 40
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "protect": false,
+      "limit": 40,
+      "target_rank": 28,
+      "candidate_count": 40
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "protect": true,
+      "limit": 40,
+      "target_rank": 28,
+      "candidate_count": 40
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "protect": false,
+      "limit": 40,
+      "target_rank": 26,
+      "candidate_count": 40
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "protect": true,
+      "limit": 40,
+      "target_rank": 26,
+      "candidate_count": 40
+    },
+    {
+      "mode": "legacy",
+      "limit": 60,
+      "target_rank": 50
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "protect": false,
+      "limit": 60,
+      "target_rank": 28,
+      "candidate_count": 60
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 1,
+      "vector_weight": 1,
+      "protect": true,
+      "limit": 60,
+      "target_rank": 28,
+      "candidate_count": 60
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "protect": false,
+      "limit": 60,
+      "target_rank": 28,
+      "candidate_count": 60
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.75,
+      "vector_weight": 1,
+      "protect": true,
+      "limit": 60,
+      "target_rank": 28,
+      "candidate_count": 60
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "protect": false,
+      "limit": 60,
+      "target_rank": 26,
+      "candidate_count": 60
+    },
+    {
+      "mode": "weighted",
+      "bm25_weight": 0.5,
+      "vector_weight": 1,
+      "protect": true,
+      "limit": 60,
+      "target_rank": 26,
+      "candidate_count": 60
+    }
+  ]
+}

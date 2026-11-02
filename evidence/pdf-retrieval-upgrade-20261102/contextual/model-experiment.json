@@ -1,0 +1,71 @@
+{
+  "scope": "real Qwen context generation feasibility, not retrieval/Agent accuracy",
+  "source_sha256": "bf32d7315b6830cdadf292210465fac94c897bda461292d102ae04468aa702fc",
+  "model": "qwen3.6-plus",
+  "prompt_version": "source-only-context-experiment-v1",
+  "results": [
+    {
+      "index": 146,
+      "elapsed_ms": 2628,
+      "usage": {
+        "prompt_tokens": 540,
+        "completion_tokens": 69,
+        "total_tokens": 609,
+        "completion_tokens_details": {
+          "text_tokens": 69
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 540
+        }
+      },
+      "finish_reason": "stop",
+      "raw": "{\n\"context\": \"完善制度机制，聚焦重点，切实履行人民政协民主监督职能。丰富民主监督形式，突出监督重点，抓住民生关键，改进组织领导、权益保障等机制，推进制度化、规范化、程序化，抓好与市纪委联动协作，提升监督实效。\",\n\"uncertain\": false\n}",
+      "accepted_for_experiment": true,
+      "numeric_guard_rejected": false,
+      "indexed": false,
+      "human_review": "pending"
+    },
+    {
+      "index": 366,
+      "elapsed_ms": 1608,
+      "usage": {
+        "prompt_tokens": 406,
+        "completion_tokens": 72,
+        "total_tokens": 478,
+        "completion_tokens_details": {
+          "text_tokens": 72
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 406
+        }
+      },
+      "finish_reason": "stop",
+      "raw": "{\n\"context\": \"会议审议了市政协常委会工作报告（草案）、提案工作情况报告（草案）等文件，通过了市政协五届二次常委会议程（草案）、日程。建议中国人民政治协商会议来宾市第五届委员会第二次会议于2022年1月11日至13日召开。\",\n\"uncertain\": false\n}",
+      "accepted_for_experiment": false,
+      "numeric_guard_rejected": false,
+      "indexed": false,
+      "human_review": "pending"
+    },
+    {
+      "index": 586,
+      "elapsed_ms": 1768,
+      "usage": {
+        "prompt_tokens": 262,
+        "completion_tokens": 72,
+        "total_tokens": 334,
+        "completion_tokens_details": {
+          "text_tokens": 72
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 262
+        }
+      },
+      "finish_reason": "stop",
+      "raw": "{\n\"context\": \"6月29日上午，政协来宾市委员会主办“展风采铸同心促共进”主题书画展在市群众艺术馆举行。这是建市20年来首次以来宾市政协名义举办的书画展，获自治区政协支持，刘正东、王西冀赠展书法作品。\",\n\"uncertain\": false\n}",
+      "accepted_for_experiment": true,
+      "numeric_guard_rejected": false,
+      "indexed": false,
+      "human_review": "pending"
+    }
+  ]
+}

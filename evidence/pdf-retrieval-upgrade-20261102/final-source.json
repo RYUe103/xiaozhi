@@ -1,0 +1,119 @@
+{
+  "business_source_sha": "c462db63e0e846ba632d4e3f7f8f4f8f8b9913e9",
+  "base_sha": "2911f679b9ed6dbb7eed5b5bc5641514691a46a5",
+  "remote_last_verified_sha": "2911f679b9ed6dbb7eed5b5bc5641514691a46a5",
+  "files": [
+    {
+      "path": "api/server/services/DocumentArtifactRepository.js",
+      "sha256": "5ab0082eb57085fdbb7544940904b522a8dbe034bf0e5b2c5254e2f6332053a0"
+    },
+    {
+      "path": "api/server/services/DocumentArtifactRepository.spec.js",
+      "sha256": "c9cef8c1c517399f3ff2db2c163ee425b3b2840331213c298e330dd171e721e6"
+    },
+    {
+      "path": "api/server/services/DocumentEvidenceReranker.js",
+      "sha256": "e37feced89d6aea15c0aad4ccea01cc489b488d6737235c11dc535c94ba6337d"
+    },
+    {
+      "path": "api/server/services/DocumentExactSearch.js",
+      "sha256": "7b9b895429f42f013165cb7fb46a0c29a422481af968a853cc543d275d1c2670"
+    },
+    {
+      "path": "api/server/services/DocumentExactSearch.spec.js",
+      "sha256": "2edf2ff30c313c1a87f2cf0907550b3b66e96d5a782f4631d084af2b7141e709"
+    },
+    {
+      "path": "api/server/services/DocumentQuality.spec.js",
+      "sha256": "5d4602577be8b8e81fda9db35e5c524de0d29f9036b41c86e0f92f2ee7083b47"
+    },
+    {
+      "path": "api/server/services/DocumentRetrieval.js",
+      "sha256": "2e6e9a83af6d412052e395c40bc422730592aea30d6afc71be79c565ea4679e2"
+    },
+    {
+      "path": "api/server/services/DocumentRetrieval.spec.js",
+      "sha256": "7d8034f3f93e77feca4c4c7d39c06739910e660d24c51638e7fbc9e63f5a4b0a"
+    },
+    {
+      "path": "api/server/services/DocumentRetrievalContext.js",
+      "sha256": "7b6334d6ab4e13f348be0f0da53b88156e5f85593416f88f3ea4a4b1453ccaa0"
+    },
+    {
+      "path": "api/server/services/DocumentRetrievalContext.spec.js",
+      "sha256": "05bed51e28a8a97b73d4e4bb72ccea85fb5d03f707de073349a1a6536eea2a89"
+    },
+    {
+      "path": "api/server/services/DocumentToolResult.js",
+      "sha256": "d62f2e386896fb8240b13fca97432cc2f7d0be7ad8c403cefceff817e6bf63f0"
+    },
+    {
+      "path": "api/server/services/DocumentToolResult.spec.js",
+      "sha256": "5d4e015548eecb38203f407a11ef3b6c6eb06b5c1728e31facf7cbe94b52c65e"
+    },
+    {
+      "path": "api/server/services/DocumentVectorSearch.js",
+      "sha256": "027dae96d7a7b8a2263471a246f1ff16402784a429306c43ce99533ef35817d6"
+    },
+    {
+      "path": "api/server/services/DocumentVectorSearch.spec.js",
+      "sha256": "a487e7938a293e1fd195496259d79a93a48515270031bdfa0e1e806d33abf721"
+    },
+    {
+      "path": "api/server/services/Endpoints/agents/documentReadContracts.js",
+      "sha256": "9b72167ff46866f0f1a983faed3f78dff36cbcf9de9f3816e964c06c8cab2d2c"
+    },
+    {
+      "path": "scripts/evaluation/document-jit/benchmark-exact-backends.cjs",
+      "sha256": "e761a4d4f035b8b39ff9917f2a51d46640ceb27d7135df658d69c61d36e11e81"
+    },
+    {
+      "path": "scripts/evaluation/document-jit/compare-contextual-lexical.cjs",
+      "sha256": "4764a414cf54f8743ef39a6b9161bf4d0dd7ef78351e7067813f67770dde4146"
+    },
+    {
+      "path": "scripts/evaluation/document-jit/experiment-context-model.cjs",
+      "sha256": "eb57e949ed12fb14df6a57d8ae9289f3ea50a4584307caa309d7c2aab4c7d79d"
+    },
+    {
+      "path": "scripts/evaluation/document-jit/replay-fusion-upgrade.cjs",
+      "sha256": "14eae20cdfdf8d22b86b629c2b6c7018f5ecc0565d420a82240999f965ec4570"
+    },
+    {
+      "path": "scripts/evaluation/document-jit/replay-real-rerank-upgrade.cjs",
+      "sha256": "a76ef41303da04c90ebc3566387fbaecdc2e43306adb20bd7e7c4a99774ccdf3"
+    },
+    {
+      "path": "scripts/evaluation/document-jit/summarize-retrieval-upgrade.cjs",
+      "sha256": "f81287862327fac36eada43f314002276e24054383b71f7b45ccd13892ded46e"
+    }
+  ],
+  "frozen_integrity": [
+    {
+      "path": "evidence/longpdf-accuracy-20261101/multiturn-questions.json",
+      "sha256": "ab31c23902a06887c48d12ac95e9dbcb5783fd19193a6f827f3f0befa5171f12",
+      "unchanged_from_baseline": true,
+      "final_sha256": "ab31c23902a06887c48d12ac95e9dbcb5783fd19193a6f827f3f0befa5171f12"
+    },
+    {
+      "path": "evidence/longpdf-accuracy-20261101/questions.json",
+      "sha256": "febdfe75cd6e911ef6f3a98c9e95beebfaf16b3c186f39e2448f30ef703ee517",
+      "unchanged_from_baseline": true,
+      "final_sha256": "febdfe75cd6e911ef6f3a98c9e95beebfaf16b3c186f39e2448f30ef703ee517"
+    },
+    {
+      "path": "evidence/longpdf-accuracy-20261101/inference-manifest.json",
+      "sha256": "71d3b21e7d8da75c85965f936e90fcf29abc6b19ffedbed1efbe36e12dc31b2e",
+      "unchanged_from_baseline": true,
+      "final_sha256": "71d3b21e7d8da75c85965f936e90fcf29abc6b19ffedbed1efbe36e12dc31b2e"
+    },
+    {
+      "path": "evidence/longpdf-accuracy-20261101/gold-freeze.json",
+      "sha256": "7f2005b26b39ee39edb75f7550719c344e07620caa096cd1402bc6a82df7aaa5",
+      "unchanged_from_baseline": true,
+      "final_sha256": "7f2005b26b39ee39edb75f7550719c344e07620caa096cd1402bc6a82df7aaa5"
+    }
+  ],
+  "production_deployed": false,
+  "pushed": false
+}

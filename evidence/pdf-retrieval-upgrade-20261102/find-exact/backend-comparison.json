@@ -1,0 +1,175 @@
+{
+  "scope": "actual frozen parsed text; host backend benchmark, no Agent",
+  "rounds": [
+    {
+      "memory_ms": 0.3017499999999984,
+      "rg_ms": 64.28875000000001,
+      "memory_matches": 0,
+      "rg_matches": 0,
+      "same_count": true,
+      "rg_exit": 1
+    },
+    {
+      "memory_ms": 0.17120799999999292,
+      "rg_ms": 30.057583000000008,
+      "memory_matches": 2,
+      "rg_matches": 2,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.16495899999999608,
+      "rg_ms": 30.556208999999996,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.11549999999999727,
+      "rg_ms": 27.657792,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.11362499999998477,
+      "rg_ms": 25.379875,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.08137500000000841,
+      "rg_ms": 28.973291999999987,
+      "memory_matches": 2,
+      "rg_matches": 2,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.0677079999999819,
+      "rg_ms": 26.837917000000033,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.06945799999999736,
+      "rg_ms": 26.657916999999998,
+      "memory_matches": 5,
+      "rg_matches": 5,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.10591699999997672,
+      "rg_ms": 27.11558299999996,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.06820900000002439,
+      "rg_ms": 27.557834000000014,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.19591700000000856,
+      "rg_ms": 27.189040999999975,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.16220900000001848,
+      "rg_ms": 27.162083999999993,
+      "memory_matches": 2,
+      "rg_matches": 2,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.424541999999974,
+      "rg_ms": 30.06850000000003,
+      "memory_matches": 2,
+      "rg_matches": 2,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.09291699999999992,
+      "rg_ms": 30.21804199999997,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.1437909999999647,
+      "rg_ms": 31.83616699999999,
+      "memory_matches": 16,
+      "rg_matches": 16,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.3600829999999746,
+      "rg_ms": 34.314167,
+      "memory_matches": 19,
+      "rg_matches": 19,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.1833329999999478,
+      "rg_ms": 30.93708300000003,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.23062500000003183,
+      "rg_ms": 28.718541999999957,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.18320799999992232,
+      "rg_ms": 28.34145799999999,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    },
+    {
+      "memory_ms": 0.14658299999996416,
+      "rg_ms": 28.54174999999998,
+      "memory_matches": 1,
+      "rg_matches": 1,
+      "same_count": true,
+      "rg_exit": 0
+    }
+  ],
+  "rg_available": true,
+  "memory": {
+    "p50_ms": 0.14658299999996416,
+    "p95_ms": 0.3600829999999746
+  },
+  "rg": {
+    "p50_ms": 28.54174999999998,
+    "p95_ms": 34.314167
+  },
+  "decision": "Keep memory default: source offsets and authorization already in Repository; rg deployment and normalized-source mapping add complexity. No rg runtime dependency."
+}
