@@ -2,7 +2,8 @@ const crypto = require('crypto');
 const CJK = /[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]/;
 const segmenter = typeof Intl.Segmenter === 'function' ? new Intl.Segmenter('zh', { granularity: 'word' }) : null;
 const hash = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
-const INDEX_VERSION = 'jit-lexical-v3-context';
+const INDEX_VERSION = 'jit-lexical-v2';
+const CONTEXT_INDEX_VERSION = 'jit-lexical-v3-context';
 const normalized = (value) => String(value || '').normalize('NFKC').toLowerCase();
 
 function tokenize(value = '') {
@@ -50,13 +51,16 @@ class DocumentLexicalIndex {
   }
   static async load(records, { cache, userId, conversationId, documentId } = {}) {
     if (!userId || !conversationId || !documentId) throw new Error('DOCUMENT_ACCESS_DENIED');
-    const scope = hash([INDEX_VERSION, userId, conversationId, documentId]);
+    const indexVersion = records.some(r => r.retrievalContext) ? CONTEXT_INDEX_VERSION : INDEX_VERSION;
+    const scope = hash([indexVersion, userId, conversationId, documentId]);
     let reused = 0, updated = 0;
     const frequencies = [];
     // Bound concurrency and Mongo request size; unchanged records reuse their per-content index.
     for (let start = 0; start < records.length; start += 32) {
       const batch = await Promise.all(records.slice(start, start + 32).map(async (record) => {
-        const key = hash([scope, record.id, record.kind, record.text, record.retrievalContext?.key, record.indexText]);
+        const key = record.retrievalContext
+          ? hash([scope, record.id, record.kind, record.text, record.retrievalContext.key, record.indexText])
+          : hash([scope, record.id, record.kind, record.text]);
         const stored = await cache?.get(key, scope);
         if (validFrequency(stored)) { reused++; return stored; }
         const value = frequency(record.indexText ?? record.text); updated++;
@@ -66,7 +70,7 @@ class DocumentLexicalIndex {
       frequencies.push(...batch);
     }
     const index = new DocumentLexicalIndex(records, frequencies);
-    index.cacheStats = { reused, updated, index_version: INDEX_VERSION };
+    index.cacheStats = { reused, updated, index_version: indexVersion };
     return index;
   }
   search(query, kind = 'extracted_text', options = {}) {
@@ -181,8 +185,9 @@ function protectDiverseCandidates(fused = [], channels = [], { limit = 40, uniqu
     if (page) { pages.set(page, (pages.get(page) || 0) + 1); if (!pageTerms.has(page)) pageTerms.set(page, []); pageTerms.get(page).push(terms); }
     return true;
   };
-  // Retain half the pool for strongest fused evidence before reservations.
-  for (const item of fused) { if (selected.size >= Math.ceil(limit / 2)) break; add(item); }
+  // Preserve the strongest 75%: protection must not crowd out evidence that
+  // both channels rank reasonably well just because it is not exclusive.
+  for (const item of fused) { if (selected.size >= Math.ceil(limit * 0.75)) break; add(item); }
   const quota = Math.min(uniquePerChannel ?? Math.floor(limit / Math.max(4, channels.length * 2)), Math.floor(limit / 4));
   // Round-robin avoids the first channel consuming all reserved capacity.
   const exclusive = channels.map(channel => (channel.results || []).filter(item =>

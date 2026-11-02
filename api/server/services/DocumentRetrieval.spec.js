@@ -89,3 +89,11 @@ test('same page may contain many distinct facts; a page quota alone cannot drop 
  const result=protectDiverseCandidates(fused,[{name:'bm25',results:records}],{limit:8,maxPerPage:2});
  expect(result).toHaveLength(8);
 });
+test('exclusive reservations cannot evict middle-ranked evidence supported by both channels', () => {
+ const bm25=Array.from({length:60},(_,i)=>hit('b'+i,i,'bm25'));
+ const vector=Array.from({length:60},(_,i)=>hit(i<35?'b'+i:'v'+i,i,'vector'));
+ const channels=[{name:'bm25',weight:.75,results:bm25},{name:'vector',weight:1,results:vector}];
+ const fused=weightedReciprocalRankFusion(channels);
+ const selected=protectDiverseCandidates(fused,channels,{limit:40});
+ expect(selected.map(h=>h.record.id)).toEqual(expect.arrayContaining(fused.slice(0,30).map(h=>h.record.id)));
+});

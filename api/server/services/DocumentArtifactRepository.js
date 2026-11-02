@@ -438,7 +438,7 @@ class DocumentArtifactRepository {
 
   findExact(document, args = {}) {
     let result;
-    try { result = exactSearch(document.records, args); }
+    try { result = exactSearch(document.records, args, document.structuredBlocks); }
     catch (error) { return fail(error.message, '精确查找参数无效。'); }
     const selection = { ...args, action: 'find_exact', offset: undefined, continuation_token: undefined };
     const token = result.truncated ? this.sign({ document: document.documentId, version: document.version, selection, offset: result.next_offset }) : null;
@@ -449,7 +449,7 @@ class DocumentArtifactRepository {
       hits: result.matches.map(m => ({ ...m, document_id: document.documentId })),
       reference: first ? { document_id: document.documentId, chunk_id: first.chunk_id, page_start: first.page_start, page_end: first.page_end,
         version: document.version, user_id: this.userId, conversation_id: this.conversationId } : undefined,
-      warning: '仅查解析原文块；未命中不代表全文不存在。跨块短语需拆分定位后 read_adjacent；无可靠文字页可 inspect_page。' };
+      warning: '仅查解析原文块；未命中不代表全文不存在。跨块仅核对有原始父块的连续片段；其他跨块短语需拆分后 read_adjacent；无可靠文字页可 inspect_page。' };
   }
 
   execute(input = {}, retrievalOverride = null) {

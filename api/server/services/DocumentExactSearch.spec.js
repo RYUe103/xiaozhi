@@ -49,3 +49,17 @@ test('repeated adversarial text returns an explicit lower-bound count and suppor
  const r=exactSearch([record('a'.repeat(12000))],{query:'a',limit:2,offset:10000});
  expect(r.match_count_exact).toBe(false);expect(r.scan_truncated).toBe(true);expect(r.matches[0].source_offset).toBe(10000);expect(r.next_offset).toBe(10002);
 });
+test('cross chunk matching requires verified original parent and preserves each source offset', () => {
+ const records=[{...record('原文ABC'),id:'a',chunkId:'a',block_id:'b',pageStart:2,pageEnd:2},{...record('DEF尾部'),id:'b',chunkId:'b',block_id:'b',pageStart:3,pageEnd:3}];
+ const args={query:'ABC\nDEF'};
+ expect(exactSearch(records,args).matches).toHaveLength(0);
+ const result=exactSearch(records,args,[{block_id:'b',text:'原文ABC\nDEF尾部'}]);
+ expect(result.matches[0]).toMatchObject({match_text:'ABC\nDEF',source_offset:null,source_block_offset:2,chunk_ids:['a','b'],page_start:2,page_end:3});
+ expect(result.matches[0].source_segments).toEqual([{chunk_id:'a',source_offset:2,source_length:3,page_start:2,page_end:2},{chunk_id:'b',source_offset:0,source_length:3,page_start:3,page_end:3}]);
+ expect(exactSearch(records,args,[{block_id:'b',text:'unrelated'}]).matches).toHaveLength(0);
+});
+test('per-call text output budget limits matches with a resumable offset', () => {
+ const r=exactSearch([record(('context '.repeat(20)+'target ').repeat(5))],{query:'target',context_chars:50,max_chars:100});
+ expect(r.matches).toHaveLength(1);expect(r.truncated).toBe(true);expect(r.next_offset).toBe(1);
+ const m=r.matches[0];expect(m.match_text.length+m.context_before.length+m.context_after.length).toBeLessThanOrEqual(100);
+});
