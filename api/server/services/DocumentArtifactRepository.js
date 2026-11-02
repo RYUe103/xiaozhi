@@ -412,7 +412,8 @@ class DocumentArtifactRepository {
         weights: { bm25: this.quality.bm25Weight, vector: this.quality.vectorWeight, k: this.quality.rrfK },
         protected_candidates: lexical.fused.length,
         hits: lexical.fused.map(h => ({ id: h.record.id, page: h.record.pageStart, score: h.score, ranks: h.ranks, sources: h.sources })) });
-      if (this.quality.rerank) lexical.fused = (await this.reranker.rank(input.query, lexical.fused, this.trace)).slice(0, Math.min(12, input.limit || 6));
+      if (this.quality.rerank) lexical.fused = await this.reranker.rank(input.query, lexical.fused, this.trace);
+      lexical.fused = lexical.fused.slice(0, Math.min(12, input.limit || 6));
       if (document.lexicalCacheWarning) lexical.warnings.push(document.lexicalCacheWarning);
       result = this.execute(input, lexical);
     }
